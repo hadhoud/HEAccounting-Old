@@ -1,0 +1,40 @@
+﻿-------------------------------------------------------------------------------------------------------
+07-03-2020
+-Reload Currency Data After Currency Rate 
+-Hide Default Currency From Currency Rate 
+-Fix Color in Add New Sales Orders In Window State
+-Add Backup and restore
+-Add Inventory Item
+-Add Inventory in Quantity Report And Fix It
+-Open Card From Account Reports in Right Click
+-Add report For Quantity History
+-Add  Inventory Items Report Form
+-Fix Creditors Debitors Text Change in DropDown 
+-Add Alert in Home Form For Cheques and QTY
+-Add Cheques Report Form
+-Update Check Status in Cheques Report Form
+-Add Pay invoice For Sales Orders , Purchase Orders
+-Fix Home Summary
+-Fix SO Report add PAid label , Purchase Orders
+-Fix Add New SalesOrders Add label to Paid  , Purchase Orders
+-Add Remember me on login
+-Add default Status to all Form
+-Add Print Report for all Customer Invoices
+-Fix Date in SO,PO,AccDetails,ItemsSell,PricesReport Forms From Start Month to End month
+-Fix Date in QuantityHistory,InventoryItems,ChequesRpt Forms From Start Month to End month
+
+----------------------------------------------------------------------------------------------------------------
+
+1-	Fix Update Customer add tolower to title
+2-	Fix Press BtnPayInvoice When no Selected Rows (SO Form , PO Form)
+3-	Fix Update Status For Check When no Selected Rows
+4-	Add Field ModifiedDate To RptSelectSOHeader
+5-	Fix Update Modified Date in PayInvoice
+6-	Add Pay date to Invoice Print Report SO
+7-	Add Field ModifiedDate To RptSelectPOHeader
+8-	Add Pay date to Invoice Print Report PO
+9-	Add hide or show Some Columns
+10- Add Edit For Item Name
+11- Fix RptSelectPOHeader
+12- Allow Edit for SO (Status Posted and Unposted)
+13- Allow Delete for SO 

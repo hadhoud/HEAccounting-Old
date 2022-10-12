@@ -1,0 +1,775 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C78C0A0B-7BFA-460D-A8B2-156023B0C231}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>HEHAccounting.My.MyApplication</StartupObject>
+    <RootNamespace>HEHAccounting</RootNamespace>
+    <AssemblyName>HEHAccounting</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>HEHAccounting.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>HEHAccounting.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Telerik.Reporting, Version=16.1.22.622, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files (x86)\Progress\Telerik Reporting R2 2022\Bin\Telerik.Reporting.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.ReportViewer.WinForms, Version=16.1.22.622, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Progress\Telerik Reporting R2 2022\Bin\Telerik.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.WinControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.GridView, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.WinControls.GridView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RadDock, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.WinControls.RadDock.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.RichTextEditor, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.WinControls.RichTextEditor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2007Black, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.WinControls.Themes.Office2007Black.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2010Blue, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.WinControls.Themes.Office2010Blue.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Windows7, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.WinControls.Themes.Windows7.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.WinControls.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2022.2.613.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.Windows.Documents.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip, Version=2022.2.613.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.Windows.Zip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2022.2.622.40\TelerikCommon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Daily\Daily.Designer.vb">
+      <DependentUpon>Daily.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Daily\Daily.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Daily\HomeForm.Designer.vb">
+      <DependentUpon>HomeForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Daily\HomeForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoices\PayInvoice.Designer.vb">
+      <DependentUpon>PayInvoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Invoices\PayInvoice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoices\PurchaseOrders\PurchaseOrderFrm.Designer.vb">
+      <DependentUpon>PurchaseOrderFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Invoices\PurchaseOrders\PurchaseOrderFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\Inventory.Designer.vb">
+      <DependentUpon>Inventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Items\Inventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Notes\GeneralNotes.Designer.vb">
+      <DependentUpon>GeneralNotes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Notes\GeneralNotes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notes\NoteReceive.Designer.vb">
+      <DependentUpon>NoteReceive.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Notes\NoteReceive.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notes\NotesPayable.Designer.vb">
+      <DependentUpon>NotesPayable.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Notes\NotesPayable.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ChequesRpt.Designer.vb">
+      <DependentUpon>ChequesRpt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ChequesRpt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\DebitsCredits.Designer.vb">
+      <DependentUpon>DebitsCredits.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DebitsCredits.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\InventoryItems.Designer.vb">
+      <DependentUpon>InventoryItems.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InventoryItems.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ItemsSell.Designer.vb">
+      <DependentUpon>ItemsSell.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ItemsSell.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\PricesReport.Designer.vb">
+      <DependentUpon>PricesReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PricesReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\QuantityHistory.Designer.vb">
+      <DependentUpon>QuantityHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\QuantityHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SharedClasses\AmountInWords.vb" />
+    <Compile Include="SharedClasses\ApplicationEvents.vb" />
+    <Compile Include="Customers\CustomerPopup.Designer.vb">
+      <DependentUpon>CustomerPopup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\CustomerPopup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoices\PurchaseOrders\AddNewPurchaseInvoice.Designer.vb">
+      <DependentUpon>AddNewPurchaseInvoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Invoices\PurchaseOrders\AddNewPurchaseInvoice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoices\SalesOrders\AddNewSaleInvoice.Designer.vb">
+      <DependentUpon>AddNewSaleInvoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Invoices\SalesOrders\AddNewSaleInvoice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoices\SalesOrders\SalesOrderFrm.Designer.vb">
+      <DependentUpon>SalesOrderFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Invoices\SalesOrders\SalesOrderFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\ItemsPopup.Designer.vb">
+      <DependentUpon>ItemsPopup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Items\ItemsPopup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\ItemTree.Designer.vb">
+      <DependentUpon>ItemTree.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Items\ItemTree.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ShowReport.Designer.vb">
+      <DependentUpon>ShowReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ShowReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SharedClasses\AllPublicVariables.vb" />
+    <Compile Include="Customers\AddNewCustomer.Designer.vb">
+      <DependentUpon>AddNewCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\AddNewCustomer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customers\Customers.Designer.vb">
+      <DependentUpon>Customers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\Customers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\Groups.Designer.vb">
+      <DependentUpon>Groups.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Items\Groups.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SharedClasses\HEConstant.vb" />
+    <Compile Include="SharedClasses\StringlocalizationId.vb" />
+    <Compile Include="SharedForm\HEMessage.Designer.vb">
+      <DependentUpon>HEMessage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SharedForm\HEMessage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\AddNewItem.Designer.vb">
+      <DependentUpon>AddNewItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Items\AddNewItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\Items.Designer.vb">
+      <DependentUpon>Items.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Items\Items.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SharedForm\Home.Designer.vb">
+      <DependentUpon>Home.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SharedForm\Home.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SharedForm\MainForm.Designer.vb">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SharedForm\MainForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SharedClasses\MyArabicLocalization.vb" />
+    <Compile Include="SharedClasses\Database.vb" />
+    <Compile Include="SharedClasses\Functions.vb" />
+    <Compile Include="Tools\Accounts\Accounts.Designer.vb">
+      <DependentUpon>Accounts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Accounts\Accounts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Accounts\AccountsDetails.Designer.vb">
+      <DependentUpon>AccountsDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Accounts\AccountsDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Accounts\AddGeneralAccounts.Designer.vb">
+      <DependentUpon>AddGeneralAccounts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Accounts\AddGeneralAccounts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Accounts\OpeningBalance.Designer.vb">
+      <DependentUpon>OpeningBalance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Accounts\OpeningBalance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Curreny\AddNewCurrency.Designer.vb">
+      <DependentUpon>AddNewCurrency.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Curreny\AddNewCurrency.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Curreny\CurrencyRate.Designer.vb">
+      <DependentUpon>CurrencyRate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Curreny\CurrencyRate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Curreny\FrmCurrency.Designer.vb">
+      <DependentUpon>FrmCurrency.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Curreny\FrmCurrency.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Settings\AddUsers.Designer.vb">
+      <DependentUpon>AddUsers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Settings\AddUsers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Settings\CompanyInfo.Designer.vb">
+      <DependentUpon>CompanyInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Settings\CompanyInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Users\PasswordPopup.Designer.vb">
+      <DependentUpon>PasswordPopup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Users\PasswordPopup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Settings\ProgAbout.Designer.vb">
+      <DependentUpon>ProgAbout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Settings\ProgAbout.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Settings\UserSettings.Designer.vb">
+      <DependentUpon>UserSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Settings\UserSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Users\Bakup.Designer.vb">
+      <DependentUpon>Bakup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Users\Bakup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Users\ChangePassword.Designer.vb">
+      <DependentUpon>ChangePassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Users\ChangePassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Users\LoginFrm.Designer.vb">
+      <DependentUpon>LoginFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Users\LoginFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vendors\AddNewVendor.Designer.vb">
+      <DependentUpon>AddNewVendor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vendors\AddNewVendor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vendors\Vendors.Designer.vb">
+      <DependentUpon>Vendors.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vendors\Vendors.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vendors\VendorsPopup.Designer.vb">
+      <DependentUpon>VendorsPopup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vendors\VendorsPopup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Customers\AddNewCustomer.resx">
+      <DependentUpon>AddNewCustomer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customers\CustomerPopup.resx">
+      <DependentUpon>CustomerPopup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customers\Customers.resx">
+      <DependentUpon>Customers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Daily\Daily.resx">
+      <DependentUpon>Daily.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Daily\HomeForm.resx">
+      <DependentUpon>HomeForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoices\PayInvoice.resx">
+      <DependentUpon>PayInvoice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoices\PurchaseOrders\AddNewPurchaseInvoice.resx">
+      <DependentUpon>AddNewPurchaseInvoice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoices\PurchaseOrders\PurchaseOrderFrm.resx">
+      <DependentUpon>PurchaseOrderFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoices\SalesOrders\AddNewSaleInvoice.resx">
+      <DependentUpon>AddNewSaleInvoice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoices\SalesOrders\SalesOrderFrm.resx">
+      <DependentUpon>SalesOrderFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\Groups.resx">
+      <DependentUpon>Groups.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\Inventory.resx">
+      <DependentUpon>Inventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\ItemsPopup.resx">
+      <DependentUpon>ItemsPopup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\ItemTree.resx">
+      <DependentUpon>ItemTree.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notes\GeneralNotes.resx">
+      <DependentUpon>GeneralNotes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notes\NoteReceive.resx">
+      <DependentUpon>NoteReceive.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notes\NotesPayable.resx">
+      <DependentUpon>NotesPayable.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ChequesRpt.resx">
+      <DependentUpon>ChequesRpt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DebitsCredits.resx">
+      <DependentUpon>DebitsCredits.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InventoryItems.resx">
+      <DependentUpon>InventoryItems.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ItemsSell.resx">
+      <DependentUpon>ItemsSell.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PricesReport.resx">
+      <DependentUpon>PricesReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\QuantityHistory.resx">
+      <DependentUpon>QuantityHistory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ShowReport.resx">
+      <DependentUpon>ShowReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SharedForm\HEMessage.resx">
+      <DependentUpon>HEMessage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\AddNewItem.resx">
+      <DependentUpon>AddNewItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\Items.resx">
+      <DependentUpon>Items.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SharedForm\Home.resx">
+      <DependentUpon>Home.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SharedForm\MainForm.resx">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Accounts\Accounts.resx">
+      <DependentUpon>Accounts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Accounts\AccountsDetails.resx">
+      <DependentUpon>AccountsDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Accounts\AddGeneralAccounts.resx">
+      <DependentUpon>AddGeneralAccounts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Accounts\OpeningBalance.resx">
+      <DependentUpon>OpeningBalance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Curreny\AddNewCurrency.resx">
+      <DependentUpon>AddNewCurrency.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Curreny\CurrencyRate.resx">
+      <DependentUpon>CurrencyRate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Curreny\FrmCurrency.resx">
+      <DependentUpon>FrmCurrency.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Settings\AddUsers.resx">
+      <DependentUpon>AddUsers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Settings\CompanyInfo.resx">
+      <DependentUpon>CompanyInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Users\PasswordPopup.resx">
+      <DependentUpon>PasswordPopup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Settings\ProgAbout.resx">
+      <DependentUpon>ProgAbout.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Settings\UserSettings.resx">
+      <DependentUpon>UserSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Users\Bakup.resx">
+      <DependentUpon>Bakup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Users\ChangePassword.resx">
+      <DependentUpon>ChangePassword.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Users\LoginFrm.resx">
+      <DependentUpon>LoginFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendors\AddNewVendor.resx">
+      <DependentUpon>AddNewVendor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendors\Vendors.resx">
+      <DependentUpon>Vendors.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendors\VendorsPopup.resx">
+      <DependentUpon>VendorsPopup.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\Items.datasource" />
+    <None Include="My Project\DataSources\StringlocalizationId.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\feedback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Create.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Erase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Listt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Supplier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Suplier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Creates.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noimage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Danger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Redo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sync.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_white_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Groups.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\List.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Explain.txt" />
+    <Content Include="Logo.ico" />
+    <None Include="Resources\Shopping cart.png" />
+    <None Include="Resources\database_save.png" />
+    <None Include="Resources\DatabasePic.png" />
+    <None Include="Resources\Dollars.png" />
+    <None Include="Resources\Target.png" />
+    <Content Include="WhatsNew.txt" />
+    <None Include="Resources\chart.ico" />
+    <None Include="Resources\notes.ico" />
+    <None Include="Resources\dollar.ico" />
+    <None Include="Resources\car key.ico" />
+    <None Include="Resources\application.ico" />
+    <None Include="Resources\about.ico" />
+    <None Include="Resources\InformationSmall.png" />
+    <None Include="Resources\Background.png" />
+    <None Include="Resources\applogo.png" />
+    <None Include="Resources\Deselect.png" />
+    <None Include="Resources\Select.png" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\basket.png" />
+    <None Include="Resources\cost.png" />
+    <None Include="Resources\statistics.png" />
+    <None Include="Resources\facebook_profile_image.png" />
+    <None Include="Resources\AccountReport.png" />
+    <None Include="Resources\box_down.png" />
+    <None Include="Resources\box_down - Copy.png" />
+    <None Include="Resources\coins_add.png" />
+    <None Include="Resources\lock_edit.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\report_user.png" />
+    <None Include="Resources\report_magnify.png" />
+    <None Include="Resources\report_add.png" />
+    <None Include="Resources\Application.png" />
+    <None Include="Resources\Favourites.png" />
+    <None Include="Resources\book_open.png" />
+    <None Include="Resources\money_euro.png" />
+    <None Include="Resources\EveryDay.png" />
+    <None Include="Resources\money.png" />
+    <None Include="Resources\money_delete.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\login.png" />
+    <None Include="Resources\my-invoices.png" />
+    <None Include="Resources\money_add.png" />
+    <None Include="Resources\print.png" />
+    <None Include="Resources\category.png" />
+    <None Include="Resources\invoice.png" />
+    <None Include="Resources\billing.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties ShouldAddDPIScalingManifest="True" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

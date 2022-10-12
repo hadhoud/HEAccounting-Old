@@ -1,0 +1,132 @@
+﻿DEbit    دين
+Credit   
+
+Continue:
+On TRX For ITem QTY and Price Reports
+Check To Show LAtin OR Not (Settings Options)
+DB LOg Form All
+Add contexxt For GEt LAst Price in SO PO
+
+90
+Cheques 2
+InsertCheck:           -  insertTemp 
+UpdateCheck:
+
+Currencies 4
+InsertCurrencyVal:     -InsertLOG
+InsertNewCurrency:     -insertTemp   (Insert First CurRate)
+SelectCurrencies: 
+SelectCurrenciesVal:   -Currencies Rate
+
+
+Customers 4
+Insert Customers		 - insert Temp  (InsertAccount)   InsertLOG
+UpdateCustomer: 		 - (UpdateAccounts)   InsertLOG
+Select Customers
+SelectCustomersbyID:	 -Get Customer By ID
+
+Vendors 4
+InsertVendors     - insert Temp   (InsertAccount)   InsertLOG
+SelectVendors:
+SelectVendorByID:
+UpdateVendor:		- (UpdateAccounts)   InsertLOG
+
+
+SalesOrders 8
+InsertNewSalesOrderHeader:   -  insertTemp   InsertTransactions   InsertAccountDetails(Status Posted)    InsertLOG
+InsertNewSalesOrdersDetails:  - UpdateQuantityForItem(Status Posted) 
+SelectSalesOrdersDetailsJoinItems:
+SelectSalesOrdersDetailsJoinItemsByID:
+SelectSalesOrdersJoinCustomers:
+SelectSalesOrdersJoinCustomersByID:
+UpdateSalesOrdersHeader:		-UpdateTransactions   InsertAccountDetails(Status Posted)    InsertLOG
+DeleteSalesOrdersDetails:
+
+PurchaseOrderHeader: 8
+InsertNewPurchaseOrderHeader:		    -insertTemp  InsertTransactions  InsertAccountDetails(Status Posted)    InsertLOG
+InsertNewPurchaseOrdersDetails:			-UpdateQuantityForItem(Status Posted)     UpdateLastPrice(Status Posted , PO)
+SelectPurchasesOrdersDetailsJoinItems:
+SelectPurchasesOrdersDetailsJoinItemsByID:
+SelectPurchasesOrdersJoinVendor:
+SelectPurchasesOrdersJoinVendorByID:
+UpdatePurchaseOrderHeader:              -UpdateTransactions   InsertAccountDetails(Status Posted)    InsertLOG
+DeletePurchaseOrdersDetails:
+
+
+NotesPayable 3
+InsetNotesPayable:       -insertTemp  InsertTransactions   InsertAccountDetails(Status Posted)    InsertLOG
+UpdateNotesPayable:     - UpdateTransactions     InsertAccountDetails(Status Posted)    InsertLOG
+SelectNotesPayByID:		-Get Specific NP
+
+NotesReceive 3
+InsetNotesReceive:       -insertTemp  InsertTransactions   InsertAccountDetails(Status Posted)    InsertLOG
+UpdateNotesReceive:		 - UpdateTransactions    InsertAccountDetails(Status Posted)     InsertLOG
+SelectNotesReceiveByID:  -Get Specific NR
+
+General Notes  3
+InsertGeneralNotes:		 -insertTemp(NGP , NGR)  InsertTransactions   InsertAccountDetails(Status Posted)  InsertLOG
+UpdateGeneralNotes:      - UpdateTransactions    InsertAccountDetails(Status Posted)   InsertLOG
+SelectGeneralNotesByID:  -Get Specific (NGR Or NGP By ID)
+
+Items 11
+UpdateItem		        - InsertLOG      UpdateLastPrice  
+InsertNewItem:          - insertTemp     UpdateLastPrice  -InsertLOG
+InsertNewGroup:         -insertTemp     InsertLOG     
+SelectItems:			-Get ITems
+SelectGroups: 
+SelectItemName:         -For ItemsNameAuto
+SelectItemsByGroups:    -For Item Tree
+SelectItemsByID:        -Get Specific Item
+SelectItemsForOrders:    -In SO and Po With in Specific Currency
+UpdateGroup:            -Update Group    InsertLOG
+UpdateGroupForItem:     -UpdateGroupForItem 
+
+REPORTS   6
+RptSelectItemsSODetails:  -For Report
+RptSelectPOHeader:         -For Report
+RptSelectItemsPODetails:  -For Report
+RptSelectSOHeader:         -For Report
+RPTSelectNotesPayByID:
+RPTSelectNotesReceiveByID:
+
+Account 7
+SelectAccounts
+InsertAccountDetails
+InsertBaLancedAccount
+InsertGeneralAccount
+SelectAccountDetailsSum
+SelectAccountsReports:
+UpdateGeneralAccount
+
+General 18
+UpdateLstPrice :		-Insert in ItemsSellingHistory and Purchasing History   UpdateItem(PO)   InsertLOG
+InsertTransactions:	
+SelectAppSettings: 
+SelectBalanceByAccount: (Vendor Or Customer)
+SelectCompanyInfo: 
+SelectDaily:            -Select By Created Date
+UpdateQuantityForItem:  -UpdateItem(PO)   InsertLOG
+UpdateTransactions:
+GetID:
+InsertLog:
+GetNameRepetition:      - Check Repetition (Items , Groups ,Vendors 'Allow Settings' , Customers 'Allow Settings')
+GetCreditDebitAccount:
+GetItemsPurchase:
+GetItemsSell: 
+GetItemsPurchasePrices:
+GetItemsSalesPrices:
+GetItemsQuantityHistory:
+GetHomeSummarySOCach:	- For Home Page 
+SelectUsers:
+SelectUsersRoleForms:
+InsertUserRoles:
+
+Settings 8
+SelectShortcuts:
+SelectUserSettings:
+UpdateLanguage:
+UpdateUserSettings:
+UpdateUserShortcuts:
+GetUserBYUsername:
+UpdatePassword:
+InsertDefaultShortcuts:

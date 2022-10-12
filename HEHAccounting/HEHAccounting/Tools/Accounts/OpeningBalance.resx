@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="TableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="LblCurrencyVal.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LblCurrencyVal.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="LblCurrencyVal.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt, style=Bold</value>
+  </data>
+  <data name="LblCurrencyVal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>171, 36</value>
+  </data>
+  <data name="LblCurrencyVal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 36</value>
+  </data>
+  <data name="LblCurrencyVal.TabIndex" type="System.Int32, mscorlib">
+    <value>86</value>
+  </data>
+  <data name="LblCurrencyVal.Text" xml:space="preserve">
+    <value>قيمة الصرف</value>
+  </data>
+  <data name="LblCurrencyVal.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;LblCurrencyVal.Name" xml:space="preserve">
+    <value>LblCurrencyVal</value>
+  </data>
+  <data name="&gt;&gt;LblCurrencyVal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblCurrencyVal.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;LblCurrencyVal.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="LblCurrency.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LblCurrency.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="LblCurrency.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt, style=Bold</value>
+  </data>
+  <data name="LblCurrency.Location" type="System.Drawing.Point, System.Drawing">
+    <value>171, 6</value>
+  </data>
+  <data name="LblCurrency.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 30</value>
+  </data>
+  <data name="LblCurrency.TabIndex" type="System.Int32, mscorlib">
+    <value>85</value>
+  </data>
+  <data name="LblCurrency.Text" xml:space="preserve">
+    <value>العملة</value>
+  </data>
+  <data name="LblCurrency.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;LblCurrency.Name" xml:space="preserve">
+    <value>LblCurrency</value>
+  </data>
+  <data name="&gt;&gt;LblCurrency.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblCurrency.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;LblCurrency.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="DropCurrency.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="DropCurrency.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt, style=Bold</value>
+  </data>
+  <data name="DropCurrency.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 9</value>
+  </data>
+  <data name="DropCurrency.MaxLength" type="System.Int32, mscorlib">
+    <value>65535</value>
+  </data>
+  <data name="DropCurrency.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 24</value>
+  </data>
+  <data name="DropCurrency.TabIndex" type="System.Int32, mscorlib">
+    <value>83</value>
+  </data>
+  <data name="&gt;&gt;DropCurrency.Name" xml:space="preserve">
+    <value>DropCurrency</value>
+  </data>
+  <data name="&gt;&gt;DropCurrency.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadDropDownList, Telerik.WinControls.UI, Version=2019.3.1022.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;DropCurrency.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;DropCurrency.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="TxtDebitOn.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TxtDebitOn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt, style=Bold</value>
+  </data>
+  <data name="TxtDebitOn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 165</value>
+  </data>
+  <data name="TxtDebitOn.Mask" xml:space="preserve">
+    <value>G</value>
+  </data>
+  <assembly alias="Telerik.WinControls.UI" name="Telerik.WinControls.UI, Version=2019.3.1022.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+  <data name="TxtDebitOn.MaskType" type="Telerik.WinControls.UI.MaskType, Telerik.WinControls.UI">
+    <value>Numeric</value>
+  </data>
+  <data name="TxtDebitOn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 24</value>
+  </data>
+  <data name="TxtDebitOn.TabIndex" type="System.Int32, mscorlib">
+    <value>82</value>
+  </data>
+  <data name="TxtDebitOn.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TxtDebitOn.Name" xml:space="preserve">
+    <value>TxtDebitOn</value>
+  </data>
+  <data name="&gt;&gt;TxtDebitOn.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadMaskedEditBox, Telerik.WinControls.UI, Version=2019.3.1022.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;TxtDebitOn.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;TxtDebitOn.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="TxtCreditFor.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TxtCreditFor.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt, style=Bold</value>
+  </data>
+  <data name="TxtCreditFor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 135</value>
+  </data>
+  <data name="TxtCreditFor.Mask" xml:space="preserve">
+    <value>G</value>
+  </data>
+  <data name="TxtCreditFor.MaskType" type="Telerik.WinControls.UI.MaskType, Telerik.WinControls.UI">
+    <value>Numeric</value>
+  </data>
+  <data name="TxtCreditFor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 24</value>
+  </data>
+  <data name="TxtCreditFor.TabIndex" type="System.Int32, mscorlib">
+    <value>81</value>
+  </data>
+  <data name="TxtCreditFor.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TxtCreditFor.Name" xml:space="preserve">
+    <value>TxtCreditFor</value>
+  </data>
+  <data name="&gt;&gt;TxtCreditFor.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadMaskedEditBox, Telerik.WinControls.UI, Version=2019.3.1022.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;TxtCreditFor.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;TxtCreditFor.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="TxtAccounts.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="TxtAccounts.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TxtAccounts.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt, style=Bold</value>
+  </data>
+  <data name="TxtAccountsBtn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 0, 0</value>
+  </data>
+  <data name="TxtAccountsBtn.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TxtAccounts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 75</value>
+  </data>
+  <data name="TxtAccounts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 24</value>
+  </data>
+  <data name="TxtAccounts.TabIndex" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="&gt;&gt;TxtAccounts.Name" xml:space="preserve">
+    <value>TxtAccounts</value>
+  </data>
+  <data name="&gt;&gt;TxtAccounts.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadButtonTextBox, Telerik.WinControls.UI, Version=2019.3.1022.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;TxtAccounts.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;TxtAccounts.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="Label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt, style=Bold</value>
+  </data>
+  <data name="Label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>171, 162</value>
+  </data>
+  <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 30</value>
+  </data>
+  <data name="Label3.TabIndex" type="System.Int32, mscorlib">
+    <value>78</value>
+  </data>
+  <data name="Label3.Text" xml:space="preserve">
+    <value>عليه</value>
+  </data>
+  <data name="Label3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label3.Name" xml:space="preserve">
+    <value>Label3</value>
+  </data>
+  <data name="&gt;&gt;Label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label3.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt, style=Bold</value>
+  </data>
+  <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>171, 132</value>
+  </data>
+  <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 30</value>
+  </data>
+  <data name="Label2.TabIndex" type="System.Int32, mscorlib">
+    <value>77</value>
+  </data>
+  <data name="Label2.Text" xml:space="preserve">
+    <value>له</value>
+  </data>
+  <data name="Label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label2.Name" xml:space="preserve">
+    <value>Label2</value>
+  </data>
+  <data name="&gt;&gt;Label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="LblUsername.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LblUsername.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="LblUsername.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt, style=Bold</value>
+  </data>
+  <data name="LblUsername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>171, 72</value>
+  </data>
+  <data name="LblUsername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 30</value>
+  </data>
+  <data name="LblUsername.TabIndex" type="System.Int32, mscorlib">
+    <value>75</value>
+  </data>
+  <data name="LblUsername.Text" xml:space="preserve">
+    <value>الحساب</value>
+  </data>
+  <data name="LblUsername.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;LblUsername.Name" xml:space="preserve">
+    <value>LblUsername</value>
+  </data>
+  <data name="&gt;&gt;LblUsername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LblUsername.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;LblUsername.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt, style=Bold</value>
+  </data>
+  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>171, 102</value>
+  </data>
+  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 30</value>
+  </data>
+  <data name="Label1.TabIndex" type="System.Int32, mscorlib">
+    <value>76</value>
+  </data>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>إسم الحساب</value>
+  </data>
+  <data name="Label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
+    <value>Label1</value>
+  </data>
+  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="TxtAccName.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TxtAccName.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="TxtAccName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt, style=Bold</value>
+  </data>
+  <data name="TxtAccName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 105</value>
+  </data>
+  <data name="TxtAccName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 24</value>
+  </data>
+  <data name="TxtAccName.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="&gt;&gt;TxtAccName.Name" xml:space="preserve">
+    <value>TxtAccName</value>
+  </data>
+  <data name="&gt;&gt;TxtAccName.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadTextBox, Telerik.WinControls.UI, Version=2019.3.1022.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;TxtAccName.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;TxtAccName.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="TableLayoutPanel2.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="BtnSaveAndNew.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="BtnSaveAndNew.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt, style=Bold</value>
+  </data>
+  <data name="BtnSaveAndNew.ImageAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="BtnSaveAndNew.Location" type="System.Drawing.Point, System.Drawing">
+    <value>137, 3</value>
+  </data>
+  <data name="BtnSaveAndNew.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 5, 3</value>
+  </data>
+  <data name="BtnSaveAndNew.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 36</value>
+  </data>
+  <data name="BtnSaveAndNew.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="BtnSaveAndNew.Text" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="BtnSaveAndNew.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;BtnSaveAndNew.Name" xml:space="preserve">
+    <value>BtnSaveAndNew</value>
+  </data>
+  <data name="&gt;&gt;BtnSaveAndNew.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadButton, Telerik.WinControls.UI, Version=2019.3.1022.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;BtnSaveAndNew.Parent" xml:space="preserve">
+    <value>TableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;BtnSaveAndNew.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="BtnClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="BtnClose.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt, style=Bold</value>
+  </data>
+  <data name="BtnClose.ImageAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="BtnClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 3</value>
+  </data>
+  <data name="BtnClose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 36</value>
+  </data>
+  <data name="BtnClose.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="BtnClose.Text" xml:space="preserve">
+    <value>إغلاق</value>
+  </data>
+  <data name="BtnClose.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;BtnClose.Name" xml:space="preserve">
+    <value>BtnClose</value>
+  </data>
+  <data name="&gt;&gt;BtnClose.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadButton, Telerik.WinControls.UI, Version=2019.3.1022.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;BtnClose.Parent" xml:space="preserve">
+    <value>TableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;BtnClose.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TableLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 201</value>
+  </data>
+  <data name="TableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="TableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 47</value>
+  </data>
+  <data name="TableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
+    <value>79</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel2.Name" xml:space="preserve">
+    <value>TableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel2.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel2.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="TableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="BtnSaveAndNew" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="BtnClose" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="AutoSize,0,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="TableLayoutPanel4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TableLayoutPanel4.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="TxtCurrencyVal.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TxtCurrencyVal.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="TxtCurrencyVal.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt, style=Bold</value>
+  </data>
+  <data name="TxtCurrencyVal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>35, 3</value>
+  </data>
+  <data name="TxtCurrencyVal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 24</value>
+  </data>
+  <data name="TxtCurrencyVal.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="TxtCurrencyVal.Text" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;TxtCurrencyVal.Name" xml:space="preserve">
+    <value>TxtCurrencyVal</value>
+  </data>
+  <data name="&gt;&gt;TxtCurrencyVal.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadTextBox, Telerik.WinControls.UI, Version=2019.3.1022.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;TxtCurrencyVal.Parent" xml:space="preserve">
+    <value>TableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;TxtCurrencyVal.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <assembly alias="Telerik.WinControls" name="Telerik.WinControls, Version=2019.3.1022.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+  <data name="BtnGetCurrencyVal.DisplayStyle" type="Telerik.WinControls.DisplayStyle, Telerik.WinControls">
+    <value>Image</value>
+  </data>
+  <data name="BtnGetCurrencyVal.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="BtnGetCurrencyVal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="BtnGetCurrencyVal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 24</value>
+  </data>
+  <data name="BtnGetCurrencyVal.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="BtnGetCurrencyVal.Text" xml:space="preserve">
+    <value>RadButton1</value>
+  </data>
+  <data name="&gt;&gt;BtnGetCurrencyVal.Name" xml:space="preserve">
+    <value>BtnGetCurrencyVal</value>
+  </data>
+  <data name="&gt;&gt;BtnGetCurrencyVal.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadButton, Telerik.WinControls.UI, Version=2019.3.1022.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;BtnGetCurrencyVal.Parent" xml:space="preserve">
+    <value>TableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;BtnGetCurrencyVal.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TableLayoutPanel4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TableLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 39</value>
+  </data>
+  <data name="TableLayoutPanel4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 0, 3</value>
+  </data>
+  <data name="TableLayoutPanel4.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="TableLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 30</value>
+  </data>
+  <data name="TableLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel4.Name" xml:space="preserve">
+    <value>TableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel4.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel4.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="TableLayoutPanel4.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="TxtCurrencyVal" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="BtnGetCurrencyVal" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="Percent,100,Absolute,30" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="TableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="TableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="TableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>249, 251</value>
+  </data>
+  <data name="TableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>78</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel1.Name" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="LblCurrencyVal" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="LblCurrency" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="DropCurrency" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="TxtDebitOn" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="TxtCreditFor" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="TxtAccounts" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Label3" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Label2" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="LblUsername" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Label1" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="TxtAccName" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="TableLayoutPanel2" Row="8" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="TableLayoutPanel4" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="Absolute,6,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,Absolute,6,Percent,100,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>249, 251</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt, style=Bold</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAIAGBgAAAEACADIBgAAJgAAABgYAAABACAAiAkAAO4GAAAoAAAAGAAAADAAAAABAAgAAAAAAKAC
+        AAAAAAAAAAAAAAABAAAAAAAANbxgADe7XwA3uVoANLdXADa1VAA1sEwANa5KACGLGQAihxMALJUpACKL
+        GwArjiAAK5AiAFuyVwArjyIALJktACqOIQAlixsAUqlGADe5WQAqjiIALJAkACSMHAB/3rEAOLxeAAAA
+        AABRrE8AKowfADe+ZABCrUoAN7ZXACWNHwA4ulkAUa1OADi3WAA3tFMAN7ZYACmOIAA3v2cApujMADOp
+        QwA2v2cAULtjADS1VAAvlCYANrlZAFGtUAA6nTMAfuC0AGa7ZgCG3rIAk+W/ADfBagAwqD4ANrVWAIzh
+        uQA3vmAAMcFpACKJFwAqjR8AMqhBADaaLQBZsVYAgdqqADe+YwA3tlYANcFnADO4XAAoixsApuG8AJfb
+        qQA9ul0AdMJ2AB6IFQA4tloAOqA3AGTFdgBKpUEANsFoACaNHwAunC8ANblcAKLt1AB/yIEAN8JsAIHc
+        rABtz44AW8V4AAAAAAArjR8AOLxcACCKFwCA37QAgN+zAHzZpACG4rwANbBLACyYKgCE47kAWcFwAEjD
+        bgAukiUAjOS/AAAAAAA0w20AQsVzAEjEcwAzw2oAIogVADO6WABrv24AHoQQACqMHgCJ4rsAOLdXACuL
+        HgA3vWIANrxhAFmwVgAqkCMAet2uACWKGgArlCQAg+K4ADi2WAAtpDkANMFnACuUJgB626sAMLdTAELK
+        gQAuyHMAQM+FAHTWoAAsix0AM75kADW+ZAA4vGAANb9nAC6gNgBIw3AAR8uBAHjQkAB81JUASb5oAAAA
+        AACm3rYAJ40dAAAAAACi3LEAObtfADW8XQAyrkoAoufKAC3AYwAuwmsAl+XHAJLnyABowHQAJI0bADGz
+        UAA1ul4AAAAAAEqqRwAqkiYANK1EADWxTwBEvWAAacyMAGHIgAA1wmsAX8d7ADWzUAA6t1gAKYwcAFbA
+        bgAtmi8AOL5fACOJGAA7pDoAScJrAFqyWQA0sVAAYtSXADSzUwB+2acAAAAAAIPdrAAtlykALZcrADi5
+        WQCI58IAOLlaADi6WwCE4bkAN7hXAIXiugArjyMAmdmoADW3WgA/njQAVK5RAEu0WQBKtlwANrhYAEHF
+        dgBIyXsAKI8iAEjKfgCI3K8ANa9KADSuTABDxXAAgd2yAErEcQAAAAAAVbBRAC2YLAAsmCwAhOC3AH7e
+        sAAxuloAScFtADS3VQB0zosAqebFAB+HEwAvpTwAiOG6AFOuUQA4tVYANrpdACiLHQA2vmUANr1iADSy
+        TwA3vWMAN71hADa9YQC27tgAWbFXAH3fsQB63q0AgtqrAEOtSQAxpj4AMKc/ACeQHgBMxXMAg+K5AIHc
+        rQBrvGcALZkrAC6kOgA3wWsA////ABkZGRkZGRkZGRmk/L0JFRkZGRkZGRkZGRkZGRkZGRkZxRC8IHLS
+        Gw4ZGRkZGRkZGRkZGRkZGRQJ9QbDIyPmYDzZFBkZGRkZGRkZGRkZLKXAHitHrQRBIiK+0gwZGRkZGRkZ
+        GRlNpyQkIJ5IkDbTUCN8SqYMGRkZGRkZGWVMAxMeS7IatMwGWRCsE8EoDhkZGRkZGcjWgW19JRnl3i0F
+        GRmwWhOxDBkZGRkZGS6P4I6jGRkhZAIFGRnaGAIYDxkZGRkZGREWERbPGRkhjKHrGRlh7ed0DxkZGRkZ
+        GRkZGRkZGRnJagG2G3OYiQE4dxkZGRkZGRkZGRkZGRka1AC4i5dA7ib2DhkZGRkZGRkZGRULev2gdXXq
+        HOwcNDULGRkZGRkZGRkZOw/f/oqHiOkpVFHjfxQZGRkZGRkZGRkMymtOfs6oaULHhgsOGRkZGRkZGRkZ
+        GR/7u805EhLY0KoDCxkZGRkZGRkZGRkZGQpGP9EIEhkNjWhDCxkZGRkZGRkZGRkZGVtFufM6GRkNgpvd
+        CxkLcK4LFRkZGRkZGQeS+lVsHRkNN7f46ESag4SWEBkZGRkZGR8xJ4DbHeINM9VWb/RxMmazGRkZGRkZ
+        GRmflZl4+amvXBeFY18XxKsRGRkZGRkZGRkZ91PvnHsw3NxdwmK/KnkZGRkZGRkZGRkZGQc9bsbh5PHy
+        V8sqkxkZGRkZGRkZGRkZGRkZCkk+Up1eCCWTGRkZGRkZGRkZGRkZGRkZGRkvtXbwTxkZGRkZGRkZGf/B
+        /wD/AP8A/AA/APgAHwDwAA8A4AAHAOBDBwDgwwcA4MMHAP/ABwD/wAcA/AAPAPgAHwDwAH8A4AH/AOBB
+        /wDgwQcA4EAHAOAADwDwAA8A+AAfAPwAPwD/AH8A/8H/ACgAAAAYAAAAMAAAAAEAIAAAAAAAYAkAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKpIm/y2Z
+        K/8tlyv/LJUp/yyQJGMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAALJAkCiuPI24qjiG0LZcp/zi6Wf84t1f/Na9J/yqMH+srjyJ9LJAkHwAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACqQJB0qjiLQLJQp/zGm
+        Pv81rUn/N7hX/ze0U/83tFP/OLVW/zWwS/8yqEH/LZgs/yqOItAskCQcAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAKI4iRS+UJv80rUT/OLla/ze2V/80tVT/Pbpd/zq3WP82tVT/N7ZW/zi3
+        WP84t1j/OLlZ/zWvSv8rkCL/LJAkWQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAojiIKSqVB/0S9
+        YP83tlj/N7ZY/zi6Wf9owHT/dMJ2/0m+aP82tVb/NK5M/y6cL/82tFT/OLZY/zi2Wv81sU//K5Ai/yuR
+        JAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAukiWpZMV2/zS3Vv83uVn/N7ZX/zqgN/8jiRhpUaxP/0nC
+        a/82uFj/Na5K/yuNH7cqjiH/NbNQ/ze5Wf84ulv/M6lD/yuPIr0AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAA/njT/SsRx/zC3U/8zulj/LaQ5/ymOIH0AAAAAU65R/0nBbf82uVn/NbBM/yqOIngAAAAALZov5Di8
+        XP83uVn/OL5f/yuQIv8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABRrVD/fNSV/3TOi/940JD/SqpH/wAA
+        AAAAAAAAUa1O/0jDbv82uVr/NLBM/yqOIYAAAAAALJgsdzi8Xv83uVr/OLxe/yyZLf8AAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAnjiDHJIwczCWLG8wkjBzOKI8isgAAAAAAAAAAUa1O/0jDcP81ul7/NLJP/yqO
+        IngAAAAALJgq1De9Yf82ul3/N71i/yyZLf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAVK5R/0jEc/82u1//NLFQ/yqMH7grix7sMq5K/zi8YP83u1//N75g/yqQ
+        I/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACyQJAwojR9QUaxP/0PF
+        cP81vGD/NLNT/y6gNv81vF3/N75j/za9Yf83v2f/MKc//yuPIoEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAskCRGK44gziuUJP8upDr/MbNQ/zW8Yf82vGH/Nr1i/ze+ZP83vWP/N75k/zfB
+        av8wqD7/K44g5wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACqNH74smS3/NLdV/zfB
+        a/81v2f/M75k/zW+ZP82vmX/Nr9n/zfCbP81uVz/L6U8/yuUJv8qjiKpAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAK5Ai1Eu0Wf8zw2r/NsFo/zTBZ/9IyXv/acyM/0LFc/81wWf/Nbda/ymK
+        GvwrjiC3K48ibiyQJAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAljR80a7xn/4Pd
+        rP9BxXb/McFp/z+8Yv9SqUb/VbBR/0jKfv81wmv/NLdX/yuOIHYAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiixqEl9up/4Haqv+I3K//V8uF/yKGE/MAAAAAUbBO/0fL
+        gf80w23/M7hc/yuOIH8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAgiheApuG8/37Zp/+C2qv/bMyL/yKJF3UAAAAAT69O/0LKgf8uwmv/Mbpa/yuOIHcskCRQK44g/yqM
+        Hv8pjBz/K44g/yyQJGIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhixiGpt62/4Hcrf+B3Kz/cdOV/yKI
+        FckAAAAAXrRb/4zhuf9i1Jf/TMVz/yiLHWUoixvVLcBj/y7Ic/9Az4X/Obtf/yqOIYsAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAljR8fZrtm/6bozP9626v/hOC3/0KtSv8fhxO8W7JX/5Plv/+B3bL/bc+O/x6E
+        EPNDrUn/ieK7/4besv+M5L//O6Q6/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJI0b06Lc
+        sf+i58r/et2u/4Piuf9hyID/VsBu/4DftP9/3rH/dNag/1nBcP+G4rz/f96x/4Xiuv9fx3v/JYsb1QAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACeQHud/yIH/tu7Y/5flx/+D4rj/fuC0/33e
+        sP9+3rD/gN+z/4Thuf+E47n/iOfC/1C7Y/8jiRj9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAhihmCNpot/2u/bv+Z2aj/qebF/4jhuv9937H/et6t/1vFeP9Ktlz/J44c/yeN
+        HakAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACKL
+        GzMeiBV4WbFW/6Lt1P+S58j/fNmk/yGHE8QpjiBBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOp0z/1qyWf9ZsFb/WbFX/yaN
+        H2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/wf8A/gB/APgAHwDwAA8A4AAHAOAA
+        BwDgQQcA4MEHAODBBwD/wAcA/wAHAPwADwD4AB8A8AA/AOAB/wDgQf8A4EAHAOBABwDgAA8A8AAPAPgA
+        HwD8AD8A/wD/AP/B/wA=
+</value>
+  </data>
+  <data name="$this.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Yes</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>رصد إفتتاحي</value>
+  </data>
+  <data name="&gt;&gt;TxtAccountsBtn.Name" xml:space="preserve">
+    <value>TxtAccountsBtn</value>
+  </data>
+  <data name="&gt;&gt;TxtAccountsBtn.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadButtonElement, Telerik.WinControls.UI, Version=2019.3.1022.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>OpeningBalance</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>Telerik.WinControls.UI.RadForm, Telerik.WinControls.UI, Version=2019.3.1022.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e</value>
+  </data>
+</root>
