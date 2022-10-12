@@ -1,0 +1,16 @@
+D:\vb.net Project 2018\HEHAccounting\.vs\HEHAccounting\lut\0\b\HEHAccounting.exe.config
+D:\vb.net Project 2018\HEHAccounting\.vs\HEHAccounting\lut\0\b\HEHAccounting.exe
+D:\vb.net Project 2018\HEHAccounting\.vs\HEHAccounting\lut\0\i\HEHAccounting\x86\Debug\HEHAccounting.vbprojAssemblyReference.cache
+D:\vb.net Project 2018\HEHAccounting\.vs\HEHAccounting\lut\0\i\HEHAccounting\x86\Debug\HEHAccounting.Customers.resources
+D:\vb.net Project 2018\HEHAccounting\.vs\HEHAccounting\lut\0\i\HEHAccounting\x86\Debug\HEHAccounting.AddNewItem.resources
+D:\vb.net Project 2018\HEHAccounting\.vs\HEHAccounting\lut\0\i\HEHAccounting\x86\Debug\HEHAccounting.Items.resources
+D:\vb.net Project 2018\HEHAccounting\.vs\HEHAccounting\lut\0\i\HEHAccounting\x86\Debug\HEHAccounting.Login.resources
+D:\vb.net Project 2018\HEHAccounting\.vs\HEHAccounting\lut\0\i\HEHAccounting\x86\Debug\HEHAccounting.MainForm.resources
+D:\vb.net Project 2018\HEHAccounting\.vs\HEHAccounting\lut\0\i\HEHAccounting\x86\Debug\HEHAccounting.Resources.resources
+D:\vb.net Project 2018\HEHAccounting\.vs\HEHAccounting\lut\0\i\HEHAccounting\x86\Debug\HEHAccounting.UCItems.resources
+D:\vb.net Project 2018\HEHAccounting\.vs\HEHAccounting\lut\0\i\HEHAccounting\x86\Debug\HEHAccounting.WaitingBar.resources
+D:\vb.net Project 2018\HEHAccounting\.vs\HEHAccounting\lut\0\i\HEHAccounting\x86\Debug\HEHAccounting.vbproj.GenerateResource.cache
+D:\vb.net Project 2018\HEHAccounting\.vs\HEHAccounting\lut\0\i\HEHAccounting\x86\Debug\HEHAccounting.exe.licenses
+D:\vb.net Project 2018\HEHAccounting\.vs\HEHAccounting\lut\0\i\HEHAccounting\x86\Debug\HEHAccounting.vbproj.CoreCompileInputs.cache
+D:\vb.net Project 2018\HEHAccounting\.vs\HEHAccounting\lut\0\i\HEHAccounting\x86\Debug\HEHAccounting.vbproj.CopyComplete
+D:\vb.net Project 2018\HEHAccounting\.vs\HEHAccounting\lut\0\i\HEHAccounting\x86\Debug\HEHAccounting.exe

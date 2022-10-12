@@ -1,0 +1,165 @@
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\bin\Debug\HEHAccounting.exe.config
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\bin\Debug\HEHAccounting.exe
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\bin\Debug\HEHAccounting.pdb
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\bin\Debug\HEHAccounting.xml
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\bin\Debug\Telerik.Reporting.dll
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\bin\Debug\Telerik.ReportViewer.WinForms.dll
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.dll
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.GridView.dll
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.RadDock.dll
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.RichTextEditor.dll
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.Themes.Office2007Black.dll
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.Themes.Office2010Blue.dll
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.Themes.Windows7.dll
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.UI.dll
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\bin\Debug\TelerikCommon.dll
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\bin\Debug\Telerik.Reporting.pdb
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\bin\Debug\Telerik.Reporting.xml
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\bin\Debug\Telerik.ReportViewer.WinForms.pdb
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\bin\Debug\Telerik.ReportViewer.WinForms.xml
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.xml
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.GridView.xml
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.RadDock.xml
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.RichTextEditor.xml
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.UI.xml
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.AddNewCustomer.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.CustomerPopup.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.Customers.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.Daily.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.HomeForm.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.Form1.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.PayInvoice.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.AddNewPurchaseInvoice.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.PurchaseOrderFrm.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.AddNewSaleInvoice.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.SalesOrderFrm.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.Groups.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.Inventory.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.ItemsPopup.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.ItemTree.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.GeneralNotes.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.NoteReceive.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.NotesPayable.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.ChequesRpt.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.DebitsCredits.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.InventoryItems.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.ItemsSell.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.PricesReport.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.QuantityHistory.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.ShowReport.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.HEMessage.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.AddNewItem.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.Items.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.Home.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.MainForm.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.Resources.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.Accounts.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.AccountsDetails.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.AddGeneralAccounts.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.OpeningBalance.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.AddNewCurrency.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.CurrencyRate.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.FrmCurrency.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.AddUsers.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.CompanyInfo.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.PasswordPopup.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.ProgAbout.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.UserSettings.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.BackupFrm.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.ChangePassword.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.LoginFrm.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.AddNewVendor.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.Vendors.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.VendorsPopup.resources
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.vbproj.GenerateResource.cache
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.exe.licenses
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.vbproj.CoreCompileInputs.cache
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.vbproj.CopyComplete
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.exe
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.xml
+D:\vb.net Project 2018\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.pdb
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\HEHAccounting.exe.config
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\HEHAccounting.exe
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\HEHAccounting.pdb
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\HEHAccounting.xml
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\Telerik.Reporting.dll
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\Telerik.ReportViewer.WinForms.dll
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.dll
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.GridView.dll
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.RadDock.dll
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.RichTextEditor.dll
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.Themes.Office2007Black.dll
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.Themes.Office2010Blue.dll
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.Themes.Windows7.dll
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.UI.dll
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\Telerik.Windows.Documents.Core.dll
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\Telerik.Windows.Zip.dll
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\TelerikCommon.dll
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\Telerik.Reporting.pdb
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\Telerik.Reporting.xml
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\Telerik.ReportViewer.WinForms.pdb
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\Telerik.ReportViewer.WinForms.xml
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.xml
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.GridView.xml
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.RadDock.xml
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.RichTextEditor.xml
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\Telerik.WinControls.UI.xml
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\Telerik.Windows.Documents.Core.xml
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\bin\Debug\Telerik.Windows.Zip.xml
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.vbproj.AssemblyReference.cache
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.AddNewCustomer.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.CustomerPopup.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.Customers.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.Daily.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.HomeForm.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.Form1.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.PayInvoice.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.AddNewPurchaseInvoice.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.PurchaseOrderFrm.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.AddNewSaleInvoice.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.SalesOrderFrm.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.Groups.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.Inventory.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.ItemsPopup.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.ItemTree.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.GeneralNotes.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.NoteReceive.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.NotesPayable.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.ChequesRpt.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.DebitsCredits.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.InventoryItems.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.ItemsSell.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.PricesReport.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.QuantityHistory.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.ShowReport.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.HEMessage.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.AddNewItem.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.Items.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.Home.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.MainForm.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.Resources.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.Accounts.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.AccountsDetails.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.AddGeneralAccounts.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.OpeningBalance.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.AddNewCurrency.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.CurrencyRate.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.FrmCurrency.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.AddUsers.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.CompanyInfo.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.PasswordPopup.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.ProgAbout.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.UserSettings.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.BackupFrm.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.ChangePassword.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.LoginFrm.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.AddNewVendor.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.Vendors.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.VendorsPopup.resources
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.vbproj.GenerateResource.cache
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.exe.licenses
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.vbproj.CoreCompileInputs.cache
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.vbproj.CopyComplete
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.exe
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.xml
+D:\vb.net and php Project 2020\HEHAccounting\HEHAccounting\obj\x86\Debug\HEHAccounting.pdb
