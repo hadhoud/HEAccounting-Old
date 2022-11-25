@@ -720,7 +720,9 @@
     <None Include="Reports\ReportsForm\ArSO101.trdp" />
     <None Include="Reports\ReportsForm\ArSOCustomers.trdp" />
     <None Include="Reports\ReportsForm\ArSODetails101.trdp" />
-    <None Include="Reports\ReportsForm\EN\EnSO101.trdp" />
+    <None Include="Reports\ReportsForm\EN\EnSO101.trdp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Reports\ReportsForm\EN\EnSODetails101.trdp" />
     <None Include="Resources\Refresh.png" />
   </ItemGroup>
