@@ -12,3 +12,5 @@
 *.lock
 *.suo
 /bin
+/HEHAccounting/HEHAccounting/bin/Debug
+/HEHAccounting/HEHAccounting/obj/Debug
