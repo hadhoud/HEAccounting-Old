@@ -21,6 +21,9 @@
     Public BoolShowLang As Boolean
     Public BoolLTRLanguage As Boolean
     Public Lang As String
+    Public BoolShowSalesDailyWin As Boolean
+    Public BoolShowDashboardForm As Boolean
+    Public BoolShowCurrencyRateInStatus As Boolean
 
     'UserSettings
 
@@ -31,6 +34,8 @@
     Public BoolShowAddSalesOrdersColPurchasePrice As Boolean
     Public BoolShowSalesOrdersColCustomerTitle As Boolean
     Public BoolShowSalesOrdersColCurrencySymb As Boolean
+    Public iSalesOrderDefaultCustomerID As Integer
+    Public BoolShowSalesOrdersPrintQuestionAfterSave As Boolean
 
     'Purchase Order Setting
     Public BoolShowItemsInPOMainForm As Boolean
@@ -86,4 +91,6 @@
     Public LoStrId As New StringlocalizationId
     Public Currencydata As DataTable
     Public UserRolesdt As DataTable
+
+    Public LastDollarCurrencyRate As String
 End Module

@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="ServerName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">HADIESRAA-PC</Value>
+      <Value Profile="(Default)">(Local)</Value>
     </Setting>
     <Setting Name="ServerMode" Type="System.String" Scope="User">
       <Value Profile="(Default)">Windows</Value>
@@ -11,22 +11,22 @@
     <Setting Name="RemmberUserName" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="UserPassword" Type="System.String" Scope="User">
+    <Setting Name="DBUserPassword" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="ServerCheck" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="DBName" Type="System.String" Scope="User">
       <Value Profile="(Default)">HEAccounting</Value>
     </Setting>
     <Setting Name="ConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=(local);Initial Catalog=HEAccounting;Integrated Security=SSPI&lt;/ConnectionString&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;Data Source=(local);Initial Catalog=HEAccounting;Integrated Security=False;&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=(local);Initial Catalog=HEAccounting;Integrated Security=SSPI</Value>
+      <Value Profile="(Default)">Data Source=(local);Initial Catalog=HEAccounting;Integrated Security=False;</Value>
+    </Setting>
+    <Setting Name="DBUserName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">sa</Value>
     </Setting>
   </Settings>
 </SettingsFile>

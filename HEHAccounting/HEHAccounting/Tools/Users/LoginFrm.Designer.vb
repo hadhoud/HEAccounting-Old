@@ -105,10 +105,10 @@ Partial Class LoginFrm
         Me.TxtUserName.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtUserName.Location = New System.Drawing.Point(3, 50)
         Me.TxtUserName.Name = "TxtUserName"
-        Me.TxtUserName.ShortcutsEnabled = False
         Me.TxtUserName.ShowClearButton = True
         Me.TxtUserName.Size = New System.Drawing.Size(184, 24)
         Me.TxtUserName.TabIndex = 70
+        Me.TxtUserName.Text = "Admin"
         Me.TxtUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.TxtUserName.ThemeName = "Office2010Blue"
         '

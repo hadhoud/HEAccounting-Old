@@ -69,7 +69,7 @@ Partial Friend Class Items
         '
         Me.GridItems.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.GridItems.Name = "GridItems"
-        Me.GridItems.Size = New System.Drawing.Size(38, 507)
+        Me.GridItems.Size = New System.Drawing.Size(80, 515)
         Me.GridItems.TabIndex = 11
         Me.GridItems.ThemeName = "Office2010Blue"
         '
@@ -84,7 +84,7 @@ Partial Friend Class Items
         Me.PnlOptions.Location = New System.Drawing.Point(0, 0)
         Me.PnlOptions.Name = "PnlOptions"
         Me.PnlOptions.Padding = New System.Windows.Forms.Padding(3)
-        Me.PnlOptions.Size = New System.Drawing.Size(255, 507)
+        Me.PnlOptions.Size = New System.Drawing.Size(255, 515)
         Me.PnlOptions.TabIndex = 2
         Me.PnlOptions.Visible = False
         '
@@ -185,7 +185,6 @@ Partial Friend Class Items
         Me.TxtItemName.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtItemName.Location = New System.Drawing.Point(3, 83)
         Me.TxtItemName.Name = "TxtItemName"
-        Me.TxtItemName.ShortcutsEnabled = False
         Me.TxtItemName.ShowClearButton = True
         Me.TxtItemName.Size = New System.Drawing.Size(168, 24)
         Me.TxtItemName.TabIndex = 6
@@ -209,7 +208,6 @@ Partial Friend Class Items
         Me.TxtItemBarcode.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtItemBarcode.Location = New System.Drawing.Point(3, 23)
         Me.TxtItemBarcode.Name = "TxtItemBarcode"
-        Me.TxtItemBarcode.ShortcutsEnabled = False
         Me.TxtItemBarcode.ShowClearButton = True
         Me.TxtItemBarcode.Size = New System.Drawing.Size(168, 24)
         Me.TxtItemBarcode.TabIndex = 4
@@ -222,7 +220,6 @@ Partial Friend Class Items
         Me.TxtItemid.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtItemid.Location = New System.Drawing.Point(3, 53)
         Me.TxtItemid.Name = "TxtItemid"
-        Me.TxtItemid.ShortcutsEnabled = False
         Me.TxtItemid.ShowClearButton = True
         Me.TxtItemid.Size = New System.Drawing.Size(168, 24)
         Me.TxtItemid.TabIndex = 5
@@ -281,7 +278,6 @@ Partial Friend Class Items
         'BtnDelete
         '
         Me.BtnDelete.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.BtnDelete.Enabled = False
         Me.BtnDelete.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.BtnDelete.Image = CType(resources.GetObject("BtnDelete.Image"), System.Drawing.Image)
         Me.BtnDelete.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight
@@ -312,7 +308,7 @@ Partial Friend Class Items
         Me.AcceptButton = Me.BtnFiltering
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.CancelButton = Me.BtnReset
-        Me.ClientSize = New System.Drawing.Size(293, 507)
+        Me.ClientSize = New System.Drawing.Size(335, 515)
         Me.Controls.Add(Me.GridItems)
         Me.Controls.Add(Me.PnlOptions)
         Me.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

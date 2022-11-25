@@ -129,10 +129,14 @@ Partial Class HomeForm
         CType(Me.TxtNoteReceiveCheck, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtNotePay, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadCollapsibleCheques, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadCollapsibleCheques.SuspendLayout()
         Me.PnlAllCollapse.SuspendLayout()
         CType(Me.RadCollapsibleShortcuts, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadCollapsibleShortcuts.SuspendLayout()
         CType(Me.RadCollapsibleAlertMessage, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadCollapsibleAlertMessage.SuspendLayout()
         CType(Me.RadCollapsibleItemsMinQty, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadCollapsibleItemsMinQty.SuspendLayout()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -929,7 +933,7 @@ Partial Class HomeForm
         '
         'RadCollapsibleCheques.PanelContainer
         '
-        Me.RadCollapsibleCheques.PanelContainer.Size = New System.Drawing.Size(449, 0)
+        Me.RadCollapsibleCheques.PanelContainer.Size = New System.Drawing.Size(449, 1)
         Me.RadCollapsibleCheques.Size = New System.Drawing.Size(451, 29)
         Me.RadCollapsibleCheques.TabIndex = 70
         '
@@ -1033,7 +1037,7 @@ Partial Class HomeForm
         '
         Me.RadCollapsibleItemsMinQty.PanelContainer.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadCollapsibleItemsMinQty.PanelContainer.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.RadCollapsibleItemsMinQty.PanelContainer.Size = New System.Drawing.Size(449, 0)
+        Me.RadCollapsibleItemsMinQty.PanelContainer.Size = New System.Drawing.Size(449, 1)
         Me.RadCollapsibleItemsMinQty.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.RadCollapsibleItemsMinQty.Size = New System.Drawing.Size(451, 29)
         Me.RadCollapsibleItemsMinQty.TabIndex = 72
@@ -1129,10 +1133,14 @@ Partial Class HomeForm
         CType(Me.TxtNoteReceiveCheck, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtNotePay, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadCollapsibleCheques, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadCollapsibleCheques.ResumeLayout(False)
         Me.PnlAllCollapse.ResumeLayout(False)
         CType(Me.RadCollapsibleShortcuts, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadCollapsibleShortcuts.ResumeLayout(False)
         CType(Me.RadCollapsibleAlertMessage, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadCollapsibleAlertMessage.ResumeLayout(False)
         CType(Me.RadCollapsibleItemsMinQty, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadCollapsibleItemsMinQty.ResumeLayout(False)
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

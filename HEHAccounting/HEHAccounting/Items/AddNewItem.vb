@@ -105,6 +105,27 @@ Public Class AddNewItem
         End If
     End Sub
 
+    Private Function ItemBarCodeExist() As String
+        If TxtItemBarcode.Text.Trim <> "" Then
+            Dim Param(1) As String
+            Param(0) = "@cBarcode , " & Me.TxtItemBarcode.Text
+            If BtnSaveAndNew.Tag = "Save" Then
+                Param(1) = "@iID , " & Nothing
+            Else
+                Param(1) = "@iID , " & Me.TxtItemid.Text
+            End If
+            Dim result = GetScalarProcedure("GetBarcodeRepetition", Param)
+            If result = "0" Then
+                Return ""
+            Else
+                Return result
+            End If
+        Else
+            Return ""
+        End If
+
+    End Function
+
     Private Function NameRepetition() As Boolean
         Dim Param(2) As String
         Param(0) = "@VTableName , Items"
@@ -131,6 +152,11 @@ Public Class AddNewItem
         If Me.TxtItemName.Text.Trim.Length <> 0 And Me.MTxtItemSellingPrice.Value <> "0" And
             Me.MTxtItemPurchasingPrice.Value <> "0" Then
             If MessageShowAsk(IIf(BtnSaveAndNew.Tag = "Edit", Con.Ask_Edit, Con.Ask_Add)) = DialogResult.Yes Then
+                Dim item_barcode_repititon_result = ItemBarCodeExist()
+                If item_barcode_repititon_result <> "" Then
+                    MessageShowInfo(Con.Msg_Items_Barcode_Already_Added & " (" & item_barcode_repititon_result & ")")
+                    Exit Sub
+                End If
                 If NameRepetition() Then
                     MessageShowInfo(Con.Msg_Items_Already_Added)
                     Exit Sub

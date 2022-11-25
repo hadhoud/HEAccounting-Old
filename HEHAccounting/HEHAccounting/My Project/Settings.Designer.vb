@@ -15,7 +15,7 @@ Option Explicit On
 Namespace My
     
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.4.0.0"),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.4.0.0"),  _
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
     Partial Friend NotInheritable Class MySettings
         Inherits Global.System.Configuration.ApplicationSettingsBase
@@ -56,7 +56,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("HADIESRAA-PC")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("(Local)")>  _
         Public Property ServerName() As String
             Get
                 Return CType(Me("ServerName"),String)
@@ -93,24 +93,12 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-        Public Property UserPassword() As String
+        Public Property DBUserPassword() As String
             Get
-                Return CType(Me("UserPassword"),String)
+                Return CType(Me("DBUserPassword"),String)
             End Get
             Set
-                Me("UserPassword") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
-        Public Property ServerCheck() As Boolean
-            Get
-                Return CType(Me("ServerCheck"),Boolean)
-            End Get
-            Set
-                Me("ServerCheck") = value
+                Me("DBUserPassword") = value
             End Set
         End Property
         
@@ -129,11 +117,23 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=HEAccounting;Integrated Security=SSPI")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=HEAccounting;Integrated Security=False;")>  _
         Public ReadOnly Property ConnectionString() As String
             Get
                 Return CType(Me("ConnectionString"),String)
             End Get
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("sa")>  _
+        Public Property DBUserName() As String
+            Get
+                Return CType(Me("DBUserName"),String)
+            End Get
+            Set
+                Me("DBUserName") = value
+            End Set
         End Property
     End Class
 End Namespace

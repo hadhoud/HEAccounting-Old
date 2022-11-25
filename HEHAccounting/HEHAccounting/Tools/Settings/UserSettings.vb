@@ -2,6 +2,9 @@
 Imports Telerik.WinControls.UI
 
 Public Class UserSettings
+
+    Dim SODefaultCustomerID As String
+    Dim SODefaultCustomerTitle As String
     Sub New()
 
         ' This call is required by the designer.
@@ -151,6 +154,8 @@ Public Class UserSettings
         Me.chkAddSalesOrdersColPurchasePrice.Checked = BoolShowAddSalesOrdersColPurchasePrice
         Me.ChkSalesOrdersColCustomerTitle.Checked = BoolShowSalesOrdersColCustomerTitle
         Me.ChkSalesOrdersColCurrencySymb.Checked = BoolShowSalesOrdersColCurrencySymb
+        Me.chkSOShowPrintQuestionAfterSave.Checked = BoolShowSalesOrdersPrintQuestionAfterSave
+        LoadSODefaultCustomer()
 
         'Purchase Order Setting
         Me.ChkShowItemsInPOMainForm.Checked = BoolShowItemsInPOMainForm
@@ -177,7 +182,13 @@ Public Class UserSettings
         Me.ChkShowUsers.Checked = BoolShowUsers
         Me.ChkShowItemsUnits.Checked = BoolShowUnits
         Me.ChkShowLang.Checked = BoolShowLang
+        Me.chkShowSalesDailyWin.Checked = BoolShowSalesDailyWin
+        Me.chkShowDashboardForm.Checked = BoolShowDashboardForm
+        Me.chkShowCurrencyRateInStatus.Checked = BoolShowCurrencyRateInStatus
 
+        Me.TxtSODefaultCustomer.AutoCompleteSource = AutoCompleteSource.CustomSource
+        Me.TxtSODefaultCustomer.AutoCompleteCustomSource = CustomerNameAuto
+        Me.TxtSODefaultCustomer.AutoCompleteMode = AutoCompleteMode.SuggestAppend
     End Sub
 
     Private Sub GridShortcuts_KeyDown(sender As Object, e As KeyEventArgs) Handles GridShortcuts.KeyDown
@@ -198,7 +209,7 @@ Public Class UserSettings
 
     Private Sub BtnSaveAndNew_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         If MessageShowAsk(Con.Ask_Edit) = DialogResult.Yes Then
-            Dim Param(26) As String
+            Dim Param(28) As String
             Param(0) = "@BSShowDailyPage , " & IIf(ChkShowDailyPageWhenOpen.Checked = True, True, False)
             Param(1) = "@BSShowProgramAlerts , " & IIf(ChkShowProgramAlerts.Checked = True, True, False)
             Param(2) = "@BSAllowCustomerRepetition , " & IIf(ChkAllowCustomerRepetition.Checked = True, True, False)
@@ -215,10 +226,10 @@ Public Class UserSettings
             Param(13) = "@ReportFormCurrency , " & Me.DropCurrenyReport.SelectedValue
             Param(14) = "@BSShowSOAsWindow , " & IIf(ChkShowSOInWindow.Checked = True, True, False)
             Param(15) = "@ISShowChequesDay , " & Me.NumChequesDay.Value
-            Param(16) = "@ISSOStatus , " & Me.DropSOStatus.SelectedValue
-            Param(17) = "@ISPOStatus , " & Me.DropPOStatus.SelectedValue
-            Param(18) = "@ISNPStatus , " & Me.DropNPStatus.SelectedValue
-            Param(19) = "@ISNRStatus , " & Me.DropNRStatus.SelectedValue
+            Param(16) = "@ISSOStatus , " & IIf(Me.DropSOStatus.SelectedValue <> Nothing, Me.DropSOStatus.SelectedValue, 1)
+            Param(17) = "@ISPOStatus , " & IIf(Me.DropPOStatus.SelectedValue <> Nothing, Me.DropPOStatus.SelectedValue, 1)
+            Param(18) = "@ISNPStatus , " & IIf(Me.DropNPStatus.SelectedValue <> Nothing, Me.DropNPStatus.SelectedValue, 1)
+            Param(19) = "@ISNRStatus , " & IIf(Me.DropNRStatus.SelectedValue <> Nothing, Me.DropNRStatus.SelectedValue, 1)
 
             Param(20) = "@BSAddSalesOrdersColPurchasePrice , " & IIf(chkAddSalesOrdersColPurchasePrice.Checked = True, True, False)
             Param(21) = "@BSAddPurchasesOrdersColPurchasePrice , " & IIf(chkAddPurchasesOrdersColPurchasePrice.Checked = True, True, False)
@@ -226,10 +237,10 @@ Public Class UserSettings
             Param(23) = "@BSSalesOrdersColCurrencySymb , " & IIf(ChkSalesOrdersColCurrencySymb.Checked = True, True, False)
             Param(24) = "@BSPurchasesOrdersColVendorTitle , " & IIf(ChkPurchasesOrdersColVendorTitle.Checked = True, True, False)
             Param(25) = "@BSPurchasesOrdersColCurrencySymb , " & IIf(ChkPurchasesOrdersColCurrencySymb.Checked = True, True, False)
+            Param(26) = "@iSODefaultCustomerID , " & IIf(SODefaultCustomerID = String.Empty, 0, SODefaultCustomerID)
+            Param(27) = "@bSOShowPrintQuestionAfterSave , " & IIf(chkSOShowPrintQuestionAfterSave.Checked = True, True, False)
 
-
-
-            Param(26) = "@IUserID , " & UserID
+            Param(28) = "@IUserID , " & UserID
             ExecuteProcedureWithParameters("UpdateUserSettings", Param)
             UpdateUserShortcuts()
             If UserType = UserRole.Programmer Then
@@ -239,13 +250,16 @@ Public Class UserSettings
     End Sub
 
     Private Sub UpdateAppSettings()
-        Dim Param(5) As String
+        Dim Param(8) As String
         Param(0) = "@Clang , " & Me.DropLang.SelectedValue.ToString
         Param(1) = "@BShowBarcode , " & IIf(ChkShowBarcode.Checked = True, True, False)
         Param(2) = "@BShowLanguage , " & IIf(ChkShowLang.Checked = True, True, False)
         Param(3) = "@BShowUsers , " & IIf(ChkShowUsers.Checked = True, True, False)
         Param(4) = "@BLTR , " & IIf(Me.DropLang.SelectedValue = LoStrId.LangAr, False, True)
         Param(5) = "@BShowUnits , " & IIf(ChkShowItemsUnits.Checked = True, True, False)
+        Param(6) = "@bShowSalesDailyWin , " & IIf(chkShowSalesDailyWin.Checked = True, True, False)
+        Param(7) = "@bShowDashboardForm , " & IIf(chkShowDashboardForm.Checked = True, True, False)
+        Param(8) = "@bShowCurrencyRateInStatus , " & IIf(chkShowCurrencyRateInStatus.Checked = True, True, False)
         ExecuteProcedureWithParameters("UpdateAppSettings", Param)
     End Sub
 
@@ -253,5 +267,40 @@ Public Class UserSettings
         Me.Close()
     End Sub
 
+    Private Sub TxtSODefaultCustomer_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles TxtSODefaultCustomer.Validating
+        If Not CustomerNameAuto.Contains(Me.TxtSODefaultCustomer.Text.ToLower) Then
+            If Not CustomerNameAuto.Contains(Me.TxtSODefaultCustomer.Text.ToLower & "/" & SODefaultCustomerTitle & "/" & SODefaultCustomerID) Then
+                Me.TxtSODefaultCustomer.Text = String.Empty
+                SODefaultCustomerID = String.Empty
+                SODefaultCustomerTitle = String.Empty
+            End If
+        Else
+            Dim CustomerData() As String = Me.TxtSODefaultCustomer.Text.Split("/")
+            SODefaultCustomerID = CustomerData(2)
+            Me.TxtSODefaultCustomer.Text = CustomerData(0)
+            SODefaultCustomerTitle = CustomerData(1)
+        End If
+    End Sub
 
+    Private Sub LoadSODefaultCustomer()
+        For Each customer In CustomerNameAuto
+            Dim CustomerData() As String = customer.Split("/")
+            If iSalesOrderDefaultCustomerID.ToString() = CustomerData(2) Then
+                Me.TxtSODefaultCustomer.Text = CustomerData(0)
+                SODefaultCustomerID = iSalesOrderDefaultCustomerID
+            End If
+        Next
+    End Sub
+    Private Sub TxtSODefaultCustomerBtn_Click(sender As Object, e As EventArgs) Handles TxtCustomerBtn.Click
+        Dim FrmGetCustomer As New CustomerPopup
+        FrmGetCustomer.ShowDialog()
+        If Not FrmGetCustomer.GetCustomerName.Length = 0 Then
+            CustomerNameAuto.Add(FrmGetCustomer.GetCustomerName.ToLower)
+            Me.TxtSODefaultCustomer.Text = FrmGetCustomer.GetCustomerName
+        End If
+    End Sub
+
+    Private Sub TxtSODefaultCustomer_ToolTipTextNeeded(sender As Object, e As ToolTipTextNeededEventArgs) Handles TxtSODefaultCustomer.ToolTipTextNeeded
+        e.ToolTipText = SODefaultCustomerTitle
+    End Sub
 End Class

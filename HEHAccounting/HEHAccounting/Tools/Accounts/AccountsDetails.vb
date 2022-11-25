@@ -113,6 +113,8 @@ Public Class AccountsDetails
         HideShowColummn(Me.GridAccountsDetails, Me.GridAccountsDetails.Columns("AccountNumber").Index, False)
         HideShowColummn(Me.GridAccountsDetails, Me.GridAccountsDetails.Columns("AccountName").Index, False)
         HideShowColummn(Me.GridAccountsDetails, Me.GridAccountsDetails.Columns("AccountLatinName").Index, False)
+        HideShowColummn(Me.GridAccountsDetails, Me.GridAccountsDetails.Columns("CurrencyVal").Index, False)
+
         If Me.CheckDetailsWithCurrency.Checked = False Then
             Dim DtSum As DataTable = ExecuteProcedureDatatableWithParameters("SelectAccountDetailsSum", Param)
             Me.TxtForHim.Text = DtSum.Rows(0).Item("ForHim").ToString

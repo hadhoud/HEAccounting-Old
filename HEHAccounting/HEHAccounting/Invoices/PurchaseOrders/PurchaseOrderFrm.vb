@@ -60,8 +60,12 @@ Public Class PurchaseOrderFrm
         HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("PaymentType").Index, False)
         HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("status").Index, False)
 
+        HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("CurrencyVal").Index, False)
+
         HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("VendorTitle").Index, BoolShowPurchasesOrdersColVendorTitle)
-        HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("CurrencySymb").Index, BoolShowPurchasesOrdersColCurrencySymb)
+
+        HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("CurrencySymb").Index, False)
+        HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("InvoiceCurrencySymb").Index, BoolShowPurchasesOrdersColCurrencySymb)
 
         If BoolShowItemsInPOMainForm Then
             ShowItemsInGrid()

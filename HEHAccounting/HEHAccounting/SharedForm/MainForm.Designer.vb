@@ -28,6 +28,10 @@ Partial Class MainForm
         Me.LblStatusUsername = New Telerik.WinControls.UI.RadLabelElement()
         Me.CommandBarSeparator1 = New Telerik.WinControls.UI.CommandBarSeparator()
         Me.StripLblDateNow = New Telerik.WinControls.UI.RadLabelElement()
+        Me.CommandBarSeparator2 = New Telerik.WinControls.UI.CommandBarSeparator()
+        Me.stripLblLastDollarRate = New Telerik.WinControls.UI.RadLabelElement()
+        Me.stripLblDollarRateValue = New Telerik.WinControls.UI.RadLabelElement()
+        Me.CommandBarSeparator3 = New Telerik.WinControls.UI.CommandBarSeparator()
         Me.RadRibbonBarGroup1 = New Telerik.WinControls.UI.RadRibbonBarGroup()
         Me.Office2010BlueTheme1 = New Telerik.WinControls.Themes.Office2010BlueTheme()
         Me.WindowDock = New Telerik.WinControls.UI.Docking.RadDock()
@@ -42,10 +46,12 @@ Partial Class MainForm
         Me.RibBtnNew = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnEdit = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnClose = New Telerik.WinControls.UI.RadButtonElement()
-        Me.RibGOption = New Telerik.WinControls.UI.RadRibbonBarGroup()
         Me.RibBtnShowOption = New Telerik.WinControls.UI.RadToggleButtonElement()
+        Me.RibGOption = New Telerik.WinControls.UI.RadRibbonBarGroup()
+        Me.RibButtonDashboard = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnHomeForm = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnDaily = New Telerik.WinControls.UI.RadButtonElement()
+        Me.RibBtnSalesWin = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibGForms = New Telerik.WinControls.UI.RadRibbonBarGroup()
         Me.RibonbtnItems = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnCustomers = New Telerik.WinControls.UI.RadButtonElement()
@@ -99,6 +105,7 @@ Partial Class MainForm
         Me.RibBtnSalesPrices = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnItemMostSell = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnInventoryItems = New Telerik.WinControls.UI.RadButtonElement()
+        Me.RibBtnItemsSalesWin = New Telerik.WinControls.UI.RadButtonElement()
         Me.RadRibbonBarGroup9 = New Telerik.WinControls.UI.RadRibbonBarGroup()
         Me.RadButtonElement5 = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnRptCheques = New Telerik.WinControls.UI.RadButtonElement()
@@ -112,10 +119,10 @@ Partial Class MainForm
         '
         'RadStatusStrip1
         '
-        Me.RadStatusStrip1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.LblUserName, Me.LblStatusUsername, Me.CommandBarSeparator1, Me.StripLblDateNow})
+        Me.RadStatusStrip1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.LblUserName, Me.LblStatusUsername, Me.CommandBarSeparator1, Me.StripLblDateNow, Me.CommandBarSeparator2, Me.stripLblLastDollarRate, Me.stripLblDollarRateValue, Me.CommandBarSeparator3})
         Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 513)
         Me.RadStatusStrip1.Name = "RadStatusStrip1"
-        Me.RadStatusStrip1.Size = New System.Drawing.Size(1238, 24)
+        Me.RadStatusStrip1.Size = New System.Drawing.Size(1302, 24)
         Me.RadStatusStrip1.SizingGrip = False
         Me.RadStatusStrip1.TabIndex = 1
         Me.RadStatusStrip1.ThemeName = "Office2010Blue"
@@ -155,8 +162,41 @@ Partial Class MainForm
         Me.StripLblDateNow.TextAlignment = System.Drawing.ContentAlignment.TopRight
         Me.StripLblDateNow.TextWrap = True
         '
+        'CommandBarSeparator2
+        '
+        Me.CommandBarSeparator2.Name = "CommandBarSeparator2"
+        Me.RadStatusStrip1.SetSpring(Me.CommandBarSeparator2, False)
+        Me.CommandBarSeparator2.VisibleInOverflowMenu = False
+        '
+        'stripLblLastDollarRate
+        '
+        Me.stripLblLastDollarRate.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.stripLblLastDollarRate.Name = "stripLblLastDollarRate"
+        Me.RadStatusStrip1.SetSpring(Me.stripLblLastDollarRate, False)
+        Me.stripLblLastDollarRate.Text = "سعر صرف الدولار:"
+        Me.stripLblLastDollarRate.TextAlignment = System.Drawing.ContentAlignment.TopRight
+        Me.stripLblLastDollarRate.TextWrap = True
+        '
+        'stripLblDollarRateValue
+        '
+        Me.stripLblDollarRateValue.FlipText = False
+        Me.stripLblDollarRateValue.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.stripLblDollarRateValue.ForeColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(9, Byte), Integer), CType(CType(29, Byte), Integer))
+        Me.stripLblDollarRateValue.Name = "stripLblDollarRateValue"
+        Me.RadStatusStrip1.SetSpring(Me.stripLblDollarRateValue, False)
+        Me.stripLblDollarRateValue.Text = "RadLabelElement2"
+        Me.stripLblDollarRateValue.TextAlignment = System.Drawing.ContentAlignment.TopRight
+        Me.stripLblDollarRateValue.TextWrap = True
+        '
+        'CommandBarSeparator3
+        '
+        Me.CommandBarSeparator3.Name = "CommandBarSeparator3"
+        Me.RadStatusStrip1.SetSpring(Me.CommandBarSeparator3, False)
+        Me.CommandBarSeparator3.VisibleInOverflowMenu = False
+        '
         'RadRibbonBarGroup1
         '
+        Me.RadRibbonBarGroup1.CreateAdapterMethod = Nothing
         Me.RadRibbonBarGroup1.Name = "RadRibbonBarGroup1"
         '
         'WindowDock
@@ -176,7 +216,7 @@ Partial Class MainForm
         '
         Me.WindowDock.RootElement.MinSize = New System.Drawing.Size(25, 25)
         Me.WindowDock.SingleScreen = True
-        Me.WindowDock.Size = New System.Drawing.Size(1238, 347)
+        Me.WindowDock.Size = New System.Drawing.Size(1302, 347)
         Me.WindowDock.TabIndex = 6
         Me.WindowDock.TabStop = False
         Me.WindowDock.ThemeName = "Office2010Blue"
@@ -226,25 +266,14 @@ Partial Class MainForm
         'RadRibbonBar1
         '
         Me.RadRibbonBar1.CommandTabs.AddRange(New Telerik.WinControls.RadItem() {Me.RibbonTabHome, Me.RibTabTools, Me.RibbonTab3})
-        '
-        '
-        '
-        Me.RadRibbonBar1.ExitButton.Text = "Exit"
-        Me.RadRibbonBar1.ExitButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.RadRibbonBar1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadRibbonBar1.LocalizationSettings.LayoutModeText = "Simplified Layout"
         Me.RadRibbonBar1.Location = New System.Drawing.Point(0, 0)
         Me.RadRibbonBar1.Name = "RadRibbonBar1"
         '
         '
         '
-        Me.RadRibbonBar1.OptionsButton.Text = "Options"
-        Me.RadRibbonBar1.OptionsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        '
-        '
-        '
         Me.RadRibbonBar1.RootElement.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.WrapAroundChildren
-        Me.RadRibbonBar1.Size = New System.Drawing.Size(1238, 166)
+        Me.RadRibbonBar1.Size = New System.Drawing.Size(1302, 166)
         Me.RadRibbonBar1.StartButtonImage = Global.HEHAccounting.My.Resources.Resources.applogo
         Me.RadRibbonBar1.TabIndex = 0
         Me.RadRibbonBar1.Text = "MainForm"
@@ -261,9 +290,10 @@ Partial Class MainForm
         '
         'RibGroupLabelMostanad
         '
+        Me.RibGroupLabelMostanad.CreateAdapterMethod = Nothing
         Me.RibGroupLabelMostanad.FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding
         Me.RibGroupLabelMostanad.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.RibGroupLabelMostanad.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnNew, Me.RibBtnEdit, Me.RibBtnClose})
+        Me.RibGroupLabelMostanad.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnNew, Me.RibBtnEdit, Me.RibBtnClose, Me.RibBtnShowOption})
         Me.RibGroupLabelMostanad.Name = "RibGroupLabelMostanad"
         Me.RibGroupLabelMostanad.Padding = New System.Windows.Forms.Padding(0)
         Me.RibGroupLabelMostanad.ShadowDepth = 1
@@ -299,12 +329,6 @@ Partial Class MainForm
         Me.RibBtnClose.Text = "إغلاق"
         Me.RibBtnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'RibGOption
-        '
-        Me.RibGOption.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnShowOption, Me.RibBtnHomeForm, Me.RibBtnDaily})
-        Me.RibGOption.Name = "RibGOption"
-        Me.RibGOption.Text = "خيارات"
-        '
         'RibBtnShowOption
         '
         Me.RibBtnShowOption.Image = Global.HEHAccounting.My.Resources.Resources.Target
@@ -313,6 +337,21 @@ Partial Class MainForm
         Me.RibBtnShowOption.ReadOnly = False
         Me.RibBtnShowOption.Text = "إظهار"
         Me.RibBtnShowOption.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'RibGOption
+        '
+        Me.RibGOption.CreateAdapterMethod = Nothing
+        Me.RibGOption.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibButtonDashboard, Me.RibBtnHomeForm, Me.RibBtnDaily, Me.RibBtnSalesWin})
+        Me.RibGOption.Name = "RibGOption"
+        Me.RibGOption.Text = "خيارات"
+        '
+        'RibButtonDashboard
+        '
+        Me.RibButtonDashboard.Image = Global.HEHAccounting.My.Resources.Resources.statistics1
+        Me.RibButtonDashboard.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RibButtonDashboard.Name = "RibButtonDashboard"
+        Me.RibButtonDashboard.Text = "تحليلات"
+        Me.RibButtonDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'RibBtnHomeForm
         '
@@ -331,8 +370,18 @@ Partial Class MainForm
         Me.RibBtnDaily.Text = "اليومية"
         Me.RibBtnDaily.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
+        'RibBtnSalesWin
+        '
+        Me.RibBtnSalesWin.Image = Global.HEHAccounting.My.Resources.Resources.my_invoices
+        Me.RibBtnSalesWin.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RibBtnSalesWin.Name = "RibBtnSalesWin"
+        Me.RibBtnSalesWin.Text = "أرباح مبيعات"
+        Me.RibBtnSalesWin.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RibBtnSalesWin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
         'RibGForms
         '
+        Me.RibGForms.CreateAdapterMethod = Nothing
         Me.RibGForms.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibonbtnItems, Me.RibBtnCustomers, Me.RibBtnVendors, Me.RibBtnSalesOrders, Me.RibBtnPurchaseOrders})
         Me.RibGForms.Name = "RibGForms"
         Me.RibGForms.Text = "النماذج"
@@ -394,6 +443,7 @@ Partial Class MainForm
         '
         'RibGFastLink
         '
+        Me.RibGFastLink.CreateAdapterMethod = Nothing
         Me.RibGFastLink.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnAddSalesInvoices, Me.RibBtnAddPurchaseInvoices, Me.RibBtnAddItem, Me.RibBtnNotesPay, Me.RibBtnNotesReceive})
         Me.RibGFastLink.Name = "RibGFastLink"
         Me.RibGFastLink.Text = "روابط سريعة"
@@ -442,6 +492,7 @@ Partial Class MainForm
         '
         'RadRibbonBarGroup3
         '
+        Me.RadRibbonBarGroup3.CreateAdapterMethod = Nothing
         Me.RadRibbonBarGroup3.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnAbout, Me.RibBtnExit})
         Me.RadRibbonBarGroup3.Name = "RadRibbonBarGroup3"
         Me.RadRibbonBarGroup3.Text = " "
@@ -472,6 +523,7 @@ Partial Class MainForm
         '
         'RGToolsItems
         '
+        Me.RGToolsItems.CreateAdapterMethod = Nothing
         Me.RGToolsItems.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnItemsTree, Me.RibBtnGroups, Me.RibBtnItemsInventory})
         Me.RGToolsItems.Name = "RGToolsItems"
         Me.RGToolsItems.Text = "الأصناف"
@@ -504,6 +556,7 @@ Partial Class MainForm
         'RadRibbonBarGroup4
         '
         Me.RadRibbonBarGroup4.AutoSize = True
+        Me.RadRibbonBarGroup4.CreateAdapterMethod = Nothing
         Me.RadRibbonBarGroup4.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnKoyod})
         Me.RadRibbonBarGroup4.Name = "RadRibbonBarGroup4"
         Me.RadRibbonBarGroup4.Text = "القيود"
@@ -541,6 +594,7 @@ Partial Class MainForm
         '
         'RadRibbonBarGroup6
         '
+        Me.RadRibbonBarGroup6.CreateAdapterMethod = Nothing
         Me.RadRibbonBarGroup6.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnAccounts, Me.RibBtnAddAccount, Me.RibBtnOpenningBalance, Me.RibBtnAccountReport})
         Me.RadRibbonBarGroup6.Name = "RadRibbonBarGroup6"
         Me.RadRibbonBarGroup6.Text = "الحسابات"
@@ -579,6 +633,7 @@ Partial Class MainForm
         '
         'RadRibbonBarGroup2
         '
+        Me.RadRibbonBarGroup2.CreateAdapterMethod = Nothing
         Me.RadRibbonBarGroup2.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnCurrencies, Me.RibBtnCurrRate, Me.RibBtnUserInfo, Me.RibBtnUserSettings, Me.RadDropDownButtonElement1})
         Me.RadRibbonBarGroup2.Name = "RadRibbonBarGroup2"
         Me.RadRibbonBarGroup2.Text = "الإعدادات"
@@ -647,6 +702,7 @@ Partial Class MainForm
         '
         'RadRibbonBarGroup5
         '
+        Me.RadRibbonBarGroup5.CreateAdapterMethod = Nothing
         Me.RadRibbonBarGroup5.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnChangePass, Me.RibBtnUsers})
         Me.RadRibbonBarGroup5.Name = "RadRibbonBarGroup5"
         Me.RadRibbonBarGroup5.Text = "المستخدمين"
@@ -677,6 +733,7 @@ Partial Class MainForm
         '
         'RadRibbonBarGroup7
         '
+        Me.RadRibbonBarGroup7.CreateAdapterMethod = Nothing
         Me.RadRibbonBarGroup7.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnCreditsReport, Me.RibBtnDebitsReport})
         Me.RadRibbonBarGroup7.Name = "RadRibbonBarGroup7"
         Me.RadRibbonBarGroup7.Text = "الديون"
@@ -699,7 +756,8 @@ Partial Class MainForm
         '
         'RadRibbonBarGroup8
         '
-        Me.RadRibbonBarGroup8.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnPurchasePrices, Me.RibBtnItemPurchase, Me.RibBtnQuantity, Me.RibBtnSalesPrices, Me.RibBtnItemMostSell, Me.RibBtnInventoryItems})
+        Me.RadRibbonBarGroup8.CreateAdapterMethod = Nothing
+        Me.RadRibbonBarGroup8.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnPurchasePrices, Me.RibBtnItemPurchase, Me.RibBtnQuantity, Me.RibBtnSalesPrices, Me.RibBtnItemMostSell, Me.RibBtnInventoryItems, Me.RibBtnItemsSalesWin})
         Me.RadRibbonBarGroup8.Name = "RadRibbonBarGroup8"
         Me.RadRibbonBarGroup8.Text = "حركة أصناف"
         '
@@ -753,8 +811,17 @@ Partial Class MainForm
         Me.RibBtnInventoryItems.Text = "جردات الأصناف"
         Me.RibBtnInventoryItems.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
+        'RibBtnItemsSalesWin
+        '
+        Me.RibBtnItemsSalesWin.Image = Global.HEHAccounting.My.Resources.Resources.my_invoices
+        Me.RibBtnItemsSalesWin.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RibBtnItemsSalesWin.Name = "RibBtnItemsSalesWin"
+        Me.RibBtnItemsSalesWin.Text = "مبيعات أصناف"
+        Me.RibBtnItemsSalesWin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
         'RadRibbonBarGroup9
         '
+        Me.RadRibbonBarGroup9.CreateAdapterMethod = Nothing
         Me.RadRibbonBarGroup9.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RadButtonElement5, Me.RibBtnRptCheques})
         Me.RadRibbonBarGroup9.Name = "RadRibbonBarGroup9"
         Me.RadRibbonBarGroup9.Text = "تقارير عامة"
@@ -778,18 +845,20 @@ Partial Class MainForm
         Me.AllowAero = False
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1238, 537)
+        Me.ClientSize = New System.Drawing.Size(1302, 537)
         Me.Controls.Add(Me.WindowDock)
         Me.Controls.Add(Me.RadStatusStrip1)
         Me.Controls.Add(Me.RadRibbonBar1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Nothing
+        Me.MinimumSize = New System.Drawing.Size(1310, 542)
         Me.Name = "MainForm"
         Me.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         '
         '
         '
         Me.RootElement.ApplyShapeToControl = True
+        Me.RootElement.MinSize = New System.Drawing.Size(1310, 542)
         Me.Text = "MainForm"
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WindowDock, System.ComponentModel.ISupportInitialize).EndInit()
@@ -817,7 +886,6 @@ Partial Class MainForm
     Friend DocumentContainer1 As Telerik.WinControls.UI.Docking.DocumentContainer
     Friend WithEvents RibBtnEdit As Telerik.WinControls.UI.RadButtonElement
     Friend RibGOption As Telerik.WinControls.UI.RadRibbonBarGroup
-    Friend RibBtnShowOptions As Telerik.WinControls.UI.RadButtonElement
     Friend RibBtnShowOption As Telerik.WinControls.UI.RadToggleButtonElement
     Friend RibGForms As Telerik.WinControls.UI.RadRibbonBarGroup
     Friend WithEvents RibBtnCustomers As Telerik.WinControls.UI.RadButtonElement
@@ -870,8 +938,10 @@ Partial Class MainForm
     Friend WithEvents RibBtnItemPurchase As Telerik.WinControls.UI.RadButtonElement
     Friend WithEvents RibBtnSalesPrices As Telerik.WinControls.UI.RadButtonElement
     Friend WithEvents LblUserName As Telerik.WinControls.UI.RadLabelElement
+    Friend WithEvents stripLblLastDollarRate As Telerik.WinControls.UI.RadLabelElement
     Friend WithEvents LblStatusUsername As Telerik.WinControls.UI.RadLabelElement
     Friend WithEvents CommandBarSeparator1 As Telerik.WinControls.UI.CommandBarSeparator
+    Friend WithEvents CommandBarSeparator2 As Telerik.WinControls.UI.CommandBarSeparator
     Friend WithEvents StripLblDateNow As Telerik.WinControls.UI.RadLabelElement
     Friend WithEvents RibBtnHomeForm As Telerik.WinControls.UI.RadButtonElement
     Friend WithEvents RibBtnUserInfo As Telerik.WinControls.UI.RadButtonElement
@@ -882,4 +952,9 @@ Partial Class MainForm
     Friend WithEvents RadMenuSeparatorItem2 As Telerik.WinControls.UI.RadMenuSeparatorItem
     Friend WithEvents RibBtnInventoryItems As Telerik.WinControls.UI.RadButtonElement
     Friend WithEvents RibBtnRptCheques As Telerik.WinControls.UI.RadButtonElement
+    Friend WithEvents RibBtnSalesWin As Telerik.WinControls.UI.RadButtonElement
+    Friend WithEvents stripLblDollarRateValue As Telerik.WinControls.UI.RadLabelElement
+    Friend WithEvents CommandBarSeparator3 As Telerik.WinControls.UI.CommandBarSeparator
+    Friend WithEvents RibBtnItemsSalesWin As Telerik.WinControls.UI.RadButtonElement
+    Friend WithEvents RibButtonDashboard As Telerik.WinControls.UI.RadButtonElement
 End Class

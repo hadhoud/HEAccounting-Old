@@ -26,11 +26,13 @@ Partial Class AddNewSaleInvoice
         Dim GridViewSummaryItem1 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
         Dim GridViewSummaryItem2 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
         Dim GridViewSummaryItem3 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
+        Dim GridViewSummaryItem4 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
         Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.Office2010BlueTheme1 = New Telerik.WinControls.Themes.Office2010BlueTheme()
         Me.GridInvItem = New Telerik.WinControls.UI.RadGridView()
         Me.TLPHeader = New System.Windows.Forms.TableLayoutPanel()
         Me.LblItemName = New System.Windows.Forms.Label()
+        Me.lblItemPurchasePriceLira = New Telerik.WinControls.UI.RadLabel()
         Me.TxtItemBarcode = New Telerik.WinControls.UI.RadTextBox()
         Me.LblItemID = New System.Windows.Forms.Label()
         Me.LblBarcode = New System.Windows.Forms.Label()
@@ -38,6 +40,7 @@ Partial Class AddNewSaleInvoice
         Me.TxtItemName = New Telerik.WinControls.UI.RadButtonTextBox()
         Me.ATxtItemNameBtn = New Telerik.WinControls.UI.RadButtonElement()
         Me.BtnAdd = New Telerik.WinControls.UI.RadButton()
+        Me.lblItemPurchasePriceDollar = New Telerik.WinControls.UI.RadLabel()
         Me.DropStatus = New Telerik.WinControls.UI.RadDropDownList()
         Me.LblStatus = New System.Windows.Forms.Label()
         Me.RadioCash = New Telerik.WinControls.UI.RadRadioButton()
@@ -51,7 +54,7 @@ Partial Class AddNewSaleInvoice
         Me.TLPSOHeader = New System.Windows.Forms.TableLayoutPanel()
         Me.LblPaid = New System.Windows.Forms.Label()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TxtCurrencyVal = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtDollarRate = New Telerik.WinControls.UI.RadTextBox()
         Me.BtnGetCurrencyVal = New Telerik.WinControls.UI.RadButton()
         Me.LblInvID = New System.Windows.Forms.Label()
         Me.LblDueTotal = New System.Windows.Forms.Label()
@@ -69,18 +72,22 @@ Partial Class AddNewSaleInvoice
         Me.LblDropCurrency = New System.Windows.Forms.Label()
         Me.DropCurrency = New Telerik.WinControls.UI.RadDropDownList()
         Me.LblCurrValue = New System.Windows.Forms.Label()
+        Me.TxtCurrencyVal = New Telerik.WinControls.UI.RadTextBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TLPCommand = New System.Windows.Forms.TableLayoutPanel()
         Me.BtnSaveAndNew = New Telerik.WinControls.UI.RadButton()
         Me.BtnPrint = New Telerik.WinControls.UI.RadButton()
         Me.CustomerTooltip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.TimerPurchasePrice = New System.Windows.Forms.Timer(Me.components)
         CType(Me.GridInvItem, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridInvItem.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TLPHeader.SuspendLayout()
+        CType(Me.lblItemPurchasePriceLira, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtItemBarcode, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtItemid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtItemName, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnAdd, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lblItemPurchasePriceDollar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DropStatus, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadioCash, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadioReturns, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,7 +98,7 @@ Partial Class AddNewSaleInvoice
         CType(Me.TxtTotalDue, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TLPSOHeader.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
-        CType(Me.TxtCurrencyVal, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtDollarRate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnGetCurrencyVal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel3.SuspendLayout()
         CType(Me.TxtDiscount, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -99,6 +106,7 @@ Partial Class AddNewSaleInvoice
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.RadioDebt, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DropCurrency, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtCurrencyVal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TLPCommand.SuspendLayout()
         CType(Me.BtnSaveAndNew, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -109,7 +117,7 @@ Partial Class AddNewSaleInvoice
         'GridInvItem
         '
         Me.GridInvItem.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridInvItem.Location = New System.Drawing.Point(5, 63)
+        Me.GridInvItem.Location = New System.Drawing.Point(5, 71)
         '
         '
         '
@@ -125,12 +133,16 @@ Partial Class AddNewSaleInvoice
         GridViewSummaryItem3.AggregateExpression = Nothing
         GridViewSummaryItem3.FormatString = "{0}"
         GridViewSummaryItem3.Name = "TotalDue"
-        Me.GridInvItem.MasterTemplate.SummaryRowsBottom.Add(New Telerik.WinControls.UI.GridViewSummaryRowItem(New Telerik.WinControls.UI.GridViewSummaryItem() {GridViewSummaryItem1, GridViewSummaryItem2, GridViewSummaryItem3}))
+        GridViewSummaryItem4.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
+        GridViewSummaryItem4.AggregateExpression = Nothing
+        GridViewSummaryItem4.FormatString = "{0}"
+        GridViewSummaryItem4.Name = "PurchasingPrice"
+        Me.GridInvItem.MasterTemplate.SummaryRowsBottom.Add(New Telerik.WinControls.UI.GridViewSummaryRowItem(New Telerik.WinControls.UI.GridViewSummaryItem() {GridViewSummaryItem1, GridViewSummaryItem2, GridViewSummaryItem3, GridViewSummaryItem4}))
         Me.GridInvItem.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.GridInvItem.Name = "GridInvItem"
         Me.GridInvItem.NewRowEnterKeyMode = Telerik.WinControls.UI.RadGridViewNewRowEnterKeyMode.EnterMovesToNextCell
         Me.TableLayoutPanel1.SetRowSpan(Me.GridInvItem, 2)
-        Me.GridInvItem.Size = New System.Drawing.Size(814, 416)
+        Me.GridInvItem.Size = New System.Drawing.Size(814, 408)
         Me.GridInvItem.TabIndex = 4
         Me.GridInvItem.TabStop = False
         Me.GridInvItem.ThemeName = "Office2010Blue"
@@ -138,26 +150,30 @@ Partial Class AddNewSaleInvoice
         'TLPHeader
         '
         Me.TLPHeader.BackColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.TLPHeader.ColumnCount = 5
+        Me.TLPHeader.ColumnCount = 7
         Me.TLPHeader.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TLPHeader.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TLPHeader.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TLPHeader.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TLPHeader.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 383.0!))
+        Me.TLPHeader.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.TLPHeader.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TLPHeader.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 119.0!))
         Me.TLPHeader.Controls.Add(Me.LblItemName, 2, 0)
+        Me.TLPHeader.Controls.Add(Me.lblItemPurchasePriceLira, 6, 0)
         Me.TLPHeader.Controls.Add(Me.TxtItemBarcode, 0, 1)
         Me.TLPHeader.Controls.Add(Me.LblItemID, 1, 0)
         Me.TLPHeader.Controls.Add(Me.LblBarcode, 0, 0)
         Me.TLPHeader.Controls.Add(Me.TxtItemid, 1, 1)
         Me.TLPHeader.Controls.Add(Me.TxtItemName, 2, 1)
         Me.TLPHeader.Controls.Add(Me.BtnAdd, 4, 0)
+        Me.TLPHeader.Controls.Add(Me.lblItemPurchasePriceDollar, 6, 1)
         Me.TLPHeader.Dock = System.Windows.Forms.DockStyle.Top
         Me.TLPHeader.Location = New System.Drawing.Point(5, 3)
         Me.TLPHeader.Name = "TLPHeader"
         Me.TLPHeader.RowCount = 2
         Me.TLPHeader.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TLPHeader.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TLPHeader.Size = New System.Drawing.Size(814, 54)
+        Me.TLPHeader.Size = New System.Drawing.Size(814, 62)
         Me.TLPHeader.TabIndex = 2
         '
         'LblItemName
@@ -167,10 +183,21 @@ Partial Class AddNewSaleInvoice
         Me.LblItemName.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblItemName.Location = New System.Drawing.Point(364, 0)
         Me.LblItemName.Name = "LblItemName"
-        Me.LblItemName.Size = New System.Drawing.Size(145, 19)
+        Me.LblItemName.Size = New System.Drawing.Size(145, 30)
         Me.LblItemName.TabIndex = 74
         Me.LblItemName.Text = "إسم الصنف"
         Me.LblItemName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblItemPurchasePriceLira
+        '
+        Me.lblItemPurchasePriceLira.AutoSize = False
+        Me.lblItemPurchasePriceLira.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblItemPurchasePriceLira.Location = New System.Drawing.Point(3, 3)
+        Me.lblItemPurchasePriceLira.Name = "lblItemPurchasePriceLira"
+        Me.lblItemPurchasePriceLira.Size = New System.Drawing.Size(113, 24)
+        Me.lblItemPurchasePriceLira.TabIndex = 75
+        Me.lblItemPurchasePriceLira.TextAlignment = System.Drawing.ContentAlignment.TopRight
+        Me.lblItemPurchasePriceLira.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'TxtItemBarcode
         '
@@ -178,7 +205,7 @@ Partial Class AddNewSaleInvoice
         Me.TxtItemBarcode.BackColor = System.Drawing.Color.White
         Me.TxtItemBarcode.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtItemBarcode.HideSelection = False
-        Me.TxtItemBarcode.Location = New System.Drawing.Point(666, 22)
+        Me.TxtItemBarcode.Location = New System.Drawing.Point(666, 33)
         Me.TxtItemBarcode.MaxLength = 65535
         Me.TxtItemBarcode.Name = "TxtItemBarcode"
         Me.TxtItemBarcode.ShowClearButton = True
@@ -195,7 +222,7 @@ Partial Class AddNewSaleInvoice
         Me.LblItemID.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblItemID.Location = New System.Drawing.Point(515, 0)
         Me.LblItemID.Name = "LblItemID"
-        Me.LblItemID.Size = New System.Drawing.Size(145, 19)
+        Me.LblItemID.Size = New System.Drawing.Size(145, 30)
         Me.LblItemID.TabIndex = 73
         Me.LblItemID.Text = "كود الصنف"
         Me.LblItemID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -207,7 +234,7 @@ Partial Class AddNewSaleInvoice
         Me.LblBarcode.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblBarcode.Location = New System.Drawing.Point(666, 0)
         Me.LblBarcode.Name = "LblBarcode"
-        Me.LblBarcode.Size = New System.Drawing.Size(145, 19)
+        Me.LblBarcode.Size = New System.Drawing.Size(145, 30)
         Me.LblBarcode.TabIndex = 66
         Me.LblBarcode.Text = "الباركود"
         Me.LblBarcode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -218,7 +245,7 @@ Partial Class AddNewSaleInvoice
         Me.TxtItemid.BackColor = System.Drawing.Color.White
         Me.TxtItemid.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtItemid.HideSelection = False
-        Me.TxtItemid.Location = New System.Drawing.Point(515, 22)
+        Me.TxtItemid.Location = New System.Drawing.Point(515, 33)
         Me.TxtItemid.Mask = "G"
         Me.TxtItemid.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtItemid.Name = "TxtItemid"
@@ -237,7 +264,7 @@ Partial Class AddNewSaleInvoice
         Me.TxtItemName.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtItemName.HideSelection = False
         Me.TxtItemName.LeftButtonItems.AddRange(New Telerik.WinControls.RadItem() {Me.ATxtItemNameBtn})
-        Me.TxtItemName.Location = New System.Drawing.Point(364, 22)
+        Me.TxtItemName.Location = New System.Drawing.Point(364, 33)
         Me.TxtItemName.MaxLength = 65535
         Me.TxtItemName.Name = "TxtItemName"
         Me.TxtItemName.ShowClearButton = True
@@ -263,7 +290,7 @@ Partial Class AddNewSaleInvoice
         Me.BtnAdd.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnAdd.Image = Global.HEHAccounting.My.Resources.Resources.Create
         Me.BtnAdd.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.BtnAdd.Location = New System.Drawing.Point(247, 8)
+        Me.BtnAdd.Location = New System.Drawing.Point(247, 12)
         Me.BtnAdd.Name = "BtnAdd"
         Me.TLPHeader.SetRowSpan(Me.BtnAdd, 2)
         Me.BtnAdd.Size = New System.Drawing.Size(91, 37)
@@ -272,10 +299,21 @@ Partial Class AddNewSaleInvoice
         Me.BtnAdd.Text = "إضافة"
         Me.BtnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         '
+        'lblItemPurchasePriceDollar
+        '
+        Me.lblItemPurchasePriceDollar.AutoSize = False
+        Me.lblItemPurchasePriceDollar.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblItemPurchasePriceDollar.Location = New System.Drawing.Point(3, 33)
+        Me.lblItemPurchasePriceDollar.Name = "lblItemPurchasePriceDollar"
+        Me.lblItemPurchasePriceDollar.Size = New System.Drawing.Size(113, 24)
+        Me.lblItemPurchasePriceDollar.TabIndex = 76
+        Me.lblItemPurchasePriceDollar.TextAlignment = System.Drawing.ContentAlignment.TopRight
+        '
         'DropStatus
         '
         Me.DropStatus.BackColor = System.Drawing.Color.White
         Me.DropStatus.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DropStatus.DropDownAnimationEnabled = True
         Me.DropStatus.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DropStatus.Location = New System.Drawing.Point(3, 213)
         Me.DropStatus.MaxLength = 65535
@@ -452,6 +490,7 @@ Partial Class AddNewSaleInvoice
         Me.TLPSOHeader.Controls.Add(Me.LblDropCurrency, 0, 1)
         Me.TLPSOHeader.Controls.Add(Me.DropCurrency, 1, 1)
         Me.TLPSOHeader.Controls.Add(Me.LblCurrValue, 0, 2)
+        Me.TLPSOHeader.Controls.Add(Me.TxtCurrencyVal, 1, 0)
         Me.TLPSOHeader.Location = New System.Drawing.Point(822, 0)
         Me.TLPSOHeader.Margin = New System.Windows.Forms.Padding(0)
         Me.TLPSOHeader.Name = "TLPSOHeader"
@@ -494,7 +533,7 @@ Partial Class AddNewSaleInvoice
         Me.TableLayoutPanel4.ColumnCount = 2
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel4.Controls.Add(Me.TxtCurrencyVal, 0, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.txtDollarRate, 0, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.BtnGetCurrencyVal, 1, 0)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(0, 53)
@@ -505,24 +544,24 @@ Partial Class AddNewSaleInvoice
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(159, 30)
         Me.TableLayoutPanel4.TabIndex = 44
         '
-        'TxtCurrencyVal
+        'txtDollarRate
         '
-        Me.TxtCurrencyVal.AcceptsTab = True
-        Me.TxtCurrencyVal.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.TxtCurrencyVal.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TxtCurrencyVal.Enabled = False
-        Me.TxtCurrencyVal.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtCurrencyVal.HideSelection = False
-        Me.TxtCurrencyVal.Location = New System.Drawing.Point(35, 3)
-        Me.TxtCurrencyVal.MaxLength = 65535
-        Me.TxtCurrencyVal.Name = "TxtCurrencyVal"
-        Me.TxtCurrencyVal.Size = New System.Drawing.Size(121, 24)
-        Me.TxtCurrencyVal.TabIndex = 5
-        Me.TxtCurrencyVal.Tag = "1"
-        Me.TxtCurrencyVal.Text = "1"
-        Me.TxtCurrencyVal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TxtCurrencyVal.ThemeName = "Office2010Blue"
-        Me.TxtCurrencyVal.WordWrap = False
+        Me.txtDollarRate.AcceptsTab = True
+        Me.txtDollarRate.AutoSize = False
+        Me.txtDollarRate.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtDollarRate.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtDollarRate.Enabled = False
+        Me.txtDollarRate.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDollarRate.HideSelection = False
+        Me.txtDollarRate.Location = New System.Drawing.Point(35, 3)
+        Me.txtDollarRate.MaxLength = 65535
+        Me.txtDollarRate.Name = "txtDollarRate"
+        Me.txtDollarRate.Size = New System.Drawing.Size(121, 24)
+        Me.txtDollarRate.TabIndex = 6
+        Me.txtDollarRate.Tag = "1"
+        Me.txtDollarRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtDollarRate.ThemeName = "Office2010Blue"
+        Me.txtDollarRate.WordWrap = False
         '
         'BtnGetCurrencyVal
         '
@@ -724,6 +763,7 @@ Partial Class AddNewSaleInvoice
         'DropCurrency
         '
         Me.DropCurrency.BackColor = System.Drawing.Color.White
+        Me.DropCurrency.DropDownAnimationEnabled = True
         Me.DropCurrency.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DropCurrency.Location = New System.Drawing.Point(3, 23)
         Me.DropCurrency.MaxLength = 65535
@@ -744,6 +784,26 @@ Partial Class AddNewSaleInvoice
         Me.LblCurrValue.TabIndex = 20
         Me.LblCurrValue.Text = "قيمة الصرف"
         Me.LblCurrValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'TxtCurrencyVal
+        '
+        Me.TxtCurrencyVal.AcceptsTab = True
+        Me.TxtCurrencyVal.AutoSize = False
+        Me.TxtCurrencyVal.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.TxtCurrencyVal.Enabled = False
+        Me.TxtCurrencyVal.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtCurrencyVal.HideSelection = False
+        Me.TxtCurrencyVal.Location = New System.Drawing.Point(125, 3)
+        Me.TxtCurrencyVal.MaxLength = 65535
+        Me.TxtCurrencyVal.Name = "TxtCurrencyVal"
+        Me.TxtCurrencyVal.Size = New System.Drawing.Size(31, 14)
+        Me.TxtCurrencyVal.TabIndex = 5
+        Me.TxtCurrencyVal.Tag = "1"
+        Me.TxtCurrencyVal.Text = "1"
+        Me.TxtCurrencyVal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtCurrencyVal.ThemeName = "Office2010Blue"
+        Me.TxtCurrencyVal.Visible = False
+        Me.TxtCurrencyVal.WordWrap = False
         '
         'TableLayoutPanel1
         '
@@ -813,6 +873,9 @@ Partial Class AddNewSaleInvoice
         Me.BtnPrint.Text = "طباعة"
         Me.BtnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         '
+        'TimerPurchasePrice
+        '
+        '
         'AddNewSaleInvoice
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -839,10 +902,12 @@ Partial Class AddNewSaleInvoice
         CType(Me.GridInvItem, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TLPHeader.ResumeLayout(False)
         Me.TLPHeader.PerformLayout()
+        CType(Me.lblItemPurchasePriceLira, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtItemBarcode, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtItemid, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtItemName, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnAdd, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lblItemPurchasePriceDollar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DropStatus, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadioCash, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadioReturns, System.ComponentModel.ISupportInitialize).EndInit()
@@ -854,8 +919,7 @@ Partial Class AddNewSaleInvoice
         Me.TLPSOHeader.ResumeLayout(False)
         Me.TLPSOHeader.PerformLayout()
         Me.TableLayoutPanel4.ResumeLayout(False)
-        Me.TableLayoutPanel4.PerformLayout()
-        CType(Me.TxtCurrencyVal, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtDollarRate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnGetCurrencyVal, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
@@ -865,6 +929,7 @@ Partial Class AddNewSaleInvoice
         Me.TableLayoutPanel2.PerformLayout()
         CType(Me.RadioDebt, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DropCurrency, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtCurrencyVal, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
         Me.TLPCommand.ResumeLayout(False)
@@ -921,5 +986,9 @@ Partial Class AddNewSaleInvoice
     Friend WithEvents TxtCurrencyVal As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents BtnGetCurrencyVal As Telerik.WinControls.UI.RadButton
     Friend WithEvents LblPaid As Label
+    Friend WithEvents txtDollarRate As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents lblItemPurchasePriceLira As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents lblItemPurchasePriceDollar As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents TimerPurchasePrice As Timer
 End Class
 

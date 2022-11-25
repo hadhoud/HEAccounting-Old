@@ -4,6 +4,7 @@
     '  of the Project Designer ("Properties" under the "Project" menu).
     Public FrmMainForm As MainForm
     Private Sub Home_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = False
         Me.Version.Text = System.String.Format(Me.Version.Text, My.Application.Info.Version.Major, My.Application.Info.Version.Minor)
         BackgroundWorker1.RunWorkerAsync()
         'FrmMainForm = New MainForm
@@ -66,6 +67,7 @@
         FrmMainForm = New MainForm
         '  LogMessage("FrmMainForm6")
     End Sub
+
     Public Sub ReloadCurrency()
         'Currencydata
         Currencydata = Nothing
@@ -73,9 +75,10 @@
         '   Currencydata.Clear()
         Currencydata = ExecuteProcedureDatatable("SelectCurrencies")
         'LogMessage("Currency1")
+        LastDollarCurrencyRate = GetScalarProcedureWithoutParam("GetLastDollarRate")
     End Sub
+
     Public Sub ReloadUserRoles()
-        'Currencydata
         UserRolesdt = Nothing
         UserRolesdt = New DataTable
         Dim param(0) As String
@@ -112,6 +115,8 @@
             BoolShowAddSalesOrdersColPurchasePrice = UserSettingDt.Rows(0).Item("SAddSalesOrdersColPurchasePrice")
             BoolShowSalesOrdersColCustomerTitle = UserSettingDt.Rows(0).Item("SSalesOrdersColCustomerTitle")
             BoolShowSalesOrdersColCurrencySymb = UserSettingDt.Rows(0).Item("SSalesOrdersColCurrencySymb")
+            iSalesOrderDefaultCustomerID = UserSettingDt.Rows(0).Item("iSODefaultCustomerID")
+            BoolShowSalesOrdersPrintQuestionAfterSave = UserSettingDt.Rows(0).Item("bSalesOrdersShowPrintQuestionAfterSave")
 
             'Purchase Order Setting
             BoolShowItemsInPOMainForm = UserSettingDt.Rows(0).Item("SShowItemsInPOMainForm")
@@ -151,6 +156,9 @@
                 BoolLTRLanguage = AppSettingDt.Rows(0).Item("LTR")
                 BoolShowUnits = AppSettingDt.Rows(0).Item("ShowUnits")
                 BoolShowUsers = AppSettingDt.Rows(0).Item("ShowUsers")
+                BoolShowSalesDailyWin = AppSettingDt.Rows(0).Item("bShowSalesDailyWinScreen")
+                BoolShowDashboardForm = AppSettingDt.Rows(0).Item("bShowDashboardForm")
+                BoolShowCurrencyRateInStatus = AppSettingDt.Rows(0).Item("bShowCurrencyRateInStatus")
             End If
             'LogMessage("GetAppSettings4")
         Else
@@ -160,6 +168,9 @@
             BoolLTRLanguage = False
             BoolShowUnits = False
             BoolShowUsers = False
+            BoolShowSalesDailyWin = False
+            BoolShowDashboardForm = False
+            BoolShowCurrencyRateInStatus = False
         End If
 
     End Sub

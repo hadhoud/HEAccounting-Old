@@ -1,4 +1,5 @@
-﻿Imports Telerik.WinControls.Data
+﻿Imports Telerik.WinControls
+Imports Telerik.WinControls.Data
 Imports Telerik.WinControls.UI
 
 Public Class SalesOrderFrm
@@ -15,6 +16,8 @@ Public Class SalesOrderFrm
         End If
         RefrechGrid()
         '  AddLinkColumn()
+        Me.GridSalesOrders.BottomPinnedRowsMode = GridViewBottomPinnedRowsMode.Fixed
+        GridSalesOrders.MasterView.SummaryRows(0).PinPosition = PinnedRowPosition.Bottom
         InitiateGrid(Me.GridSalesOrders, Grouping:=IIf(BoolShowItemsInSOMainForm, False, True))
         FillDropList()
     End Sub
@@ -52,8 +55,12 @@ Public Class SalesOrderFrm
         HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("PaymentType").Index, False)
         HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("status").Index, False)
 
+        HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("CurrencyVal").Index, False)
+
         HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("CustomerTitle").Index, BoolShowSalesOrdersColCustomerTitle)
-        HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("CurrencySymb").Index, BoolShowSalesOrdersColCurrencySymb)
+
+        HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("CurrencySymb").Index, False)
+        HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("InvoiceCurrencySymb").Index, BoolShowSalesOrdersColCurrencySymb)
         If BoolShowItemsInSOMainForm Then
             ShowItemsInGrid()
         End If
@@ -426,7 +433,7 @@ Public Class SalesOrderFrm
 
                 OpenReport(Con.RptSOCustomers, param)
             End If
-            Else
+        Else
             MessageShowInfo(Con.Msg_Choose_a_Customer)
         End If
     End Sub
@@ -455,8 +462,22 @@ Public Class SalesOrderFrm
                     End If
                 End If
             End If
-            End If
+        End If
 
 
     End Sub
+
+    Private Sub GridSalesOrders_ViewCellFormatting(sender As Object, e As CellFormattingEventArgs) Handles GridSalesOrders.ViewCellFormatting
+        If (e.CellElement.RowInfo.Group Is Nothing And TypeOf e.CellElement Is GridSummaryCellElement) Then
+            e.CellElement.ForeColor = Color.Blue
+            e.CellElement.RowElement.DrawFill = True
+            e.CellElement.RowElement.GradientStyle = Telerik.WinControls.GradientStyles.Solid
+            e.CellElement.RowElement.BackColor = Color.FromArgb(239, 246, 255)
+        Else
+            e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, ValueResetFlags.Local)
+            e.CellElement.RowElement.ResetValue(LightVisualElement.GradientStyleProperty, ValueResetFlags.Local)
+            e.CellElement.RowElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
+        End If
+    End Sub
+
 End Class

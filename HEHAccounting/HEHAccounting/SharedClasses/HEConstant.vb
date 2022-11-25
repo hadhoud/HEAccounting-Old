@@ -103,6 +103,7 @@
     Public Msg_No_Trx_on_Accounts As String
     Public Msg_No_Items_Added As String
     Public Msg_Items_Already_Added As String
+    Public Msg_Items_Barcode_Already_Added As String
     Public Msg_Item_Has_Been_Updated As String
     Public Msg_Group_Has_Been_Updated As String
     Public Msg_Invoice_Has_Been_Updated As String
@@ -135,7 +136,7 @@
     Public Msg_Invoice_Status_ISUnposted As String
     Public Msg_Notes_Status_ISUnposted As String
     Public Msg_Choose_a_Customer As String
-
+    Public Msg_System_Config_Enter_User_And_Pass As String
     Sub New()
         If BoolLTRLanguage Then
 
@@ -259,7 +260,8 @@
             Msg_Cust_Updated_From_Customer_Form = "It's a Customer Account Update It From Customer Form"
             Msg_Ven_Updated_From_Vendor_Form = "It's a Vendor Account Update It From Vendor Form"
             Msg_Account_Has_Been_Updated = "Account Has Been Modified"
-            Msg_Items_Already_Added = "Item Already Added Before"
+            Msg_Items_Already_Added = "Item Name Already Added Before"
+            Msg_Items_Barcode_Already_Added = "Item Barcode Already Added Before"
             Msg_Customer_Already_Added = "Customer Already Added Before"
             Msg_Vendor_Already_Added = "Vendor Already Added Before"
             Msg_Groups_Already_Added = "Group Already Added Before"
@@ -272,6 +274,7 @@
             Msg_Invoice_Status_ISUnposted = "Invoice Is Unposted"
             Msg_Notes_Status_ISUnposted = "Notes Is Unposted"
             Msg_Choose_a_Customer = "Choose a Customer"
+            Msg_System_Config_Enter_User_And_Pass = "Please Enter UserName and Password"
         Else
 
 
@@ -392,6 +395,7 @@
             Msg_Ven_Updated_From_Vendor_Form = "حساب مورد يمكن تعديله من نموزج الموردين"
             Msg_Account_Has_Been_Updated = "تم تعديل الحساب"
             Msg_Items_Already_Added = "الصنف موجود لا يمكن تكرار الإسم"
+            Msg_Items_Barcode_Already_Added = "الصنف موجود لا يمكن تكرار الباركود"
             Msg_Customer_Already_Added = "الزيون موجود لا يمكن تكرار الإسم"
             Msg_Vendor_Already_Added = "المورد موجود لا يمكن تكرار الإسم"
             Msg_Groups_Already_Added = "المجموعة موجودة لا يمكن تكرار الإسم"
@@ -404,6 +408,7 @@
             Msg_Invoice_Status_ISUnposted = "هذه الفاتورة غير مرحلة"
             Msg_Notes_Status_ISUnposted = "السند غير مرحل"
             Msg_Choose_a_Customer = "يجب إختيار زبون"
+            Msg_System_Config_Enter_User_And_Pass = "تأكد من إسم المستخدم و كلمة المرور"
         End If
 
 

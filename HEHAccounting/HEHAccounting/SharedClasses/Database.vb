@@ -1,24 +1,32 @@
 ﻿Imports System.Data.OleDb
 Imports System.Data.SqlClient
+Imports HEHAccounting.My
 Imports HEHAccounting.My.MySettings
 
 Public Class Database
     Dim connectionstrng As String
     Private ReadOnly ConSql As New SqlConnection
     Public Function Connectionstr() As String
-        'If My.MySettings.Default.ServerMode = "SQL" Then
-        '    connectionstrng = New String() {"Data Source=", My.MySettings.Default.ServerName, " ; Database =",
-        '                                           My.MySettings.Default.DBName, " ; ", " Integrated Security = False;",
-        '                                           "UserID=", My.MySettings.Default.UserName, "Password=", My.MySettings.Default.UserPassword}
-        'Else
-        '    connectionstrng = New String() {"Data Source=", My.MySettings.Default.ServerName, " ; Initial Catalog =",
-        '                                           My.MySettings.Default.DBName, " ; ", " Integrated Security = true;"}
-        'End If
-        '   connectionstrng = {"Data Source=HadiEsraa;", "Initial Catalog=HEAccounting;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework"}
-        ' connectionstrng = {"Data Source=HadiEsraa;Initial Catalog=HEAccounting;Integrated Security=True"}
+        Dim dbUserPassword As String = ""
+        Dim dbUSerName As String = ""
+        Dim dbName As String = ""
+        Dim serverName As String = ""
 
-        connectionstrng = My.Settings.ConnectionString.ToString
+        dbName = My.Settings.DBName.ToString()
+        serverName = My.Settings.ServerName.ToString()
+
+        If My.Settings.ServerMode = "Windows" Then
+            connectionstrng = "Data Source=(" & serverName & ");Initial Catalog=" & dbName & ";Integrated Security=True;"
+
+        ElseIf My.Settings.ServerMode = "SQLServer" Then
+
+            dbUSerName = My.Settings.DBUserName.ToString()
+            dbUserPassword = Decode(My.Settings.DBUserPassword.ToString())
+
+            connectionstrng = "Data Source=(" & serverName & ");Initial Catalog=" & dbName & ";Integrated Security=False; User ID=" & dbUSerName & " ;Password=" & dbUserPassword & ";"
+        End If
         Return String.Concat(connectionstrng)
+        'Return String.Concat(connectionstrng)
     End Function
 
     Public Function Connect() As Boolean
@@ -143,6 +151,25 @@ Public Class Database
             Return Nothing
         End If
 
+    End Function
+
+    Public Function GetScalarProcedureWithoutParam(Procedure As String) As String
+        Try
+            If Connect() Then
+                Dim cmd As New SqlCommand With {
+            .CommandType = CommandType.StoredProcedure,
+            .CommandText = Procedure,
+            .Connection = ConSql
+        }
+                Return cmd.ExecuteScalar()
+
+            Else
+                Return "0"
+            End If
+        Catch ex As Exception
+            Close()
+            Return "0"
+        End Try
     End Function
 
     Public Function GetScalarProcedureWithParam(Procedure As String, Param As SqlParameter()) As String

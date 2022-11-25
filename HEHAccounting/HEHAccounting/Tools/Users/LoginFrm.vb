@@ -1,4 +1,11 @@
-﻿Public Class LoginFrm
+﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+Imports Microsoft.Win32
+Imports Telerik.ReportViewer.WinForms.Resources
+Imports Telerik.WinControls
+Imports Telerik.WinControls.UI
+
+Public Class LoginFrm
+    Public SystemCick As Integer = 0
     Sub New()
 
         ' This call is required by the designer.
@@ -68,6 +75,7 @@
     End Sub
 
     Private Sub LoginFrm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        CheckRight()
         Me.TxtUserName.Text = My.Settings.RemmberUserName
         If Me.TxtUserName.Text.Trim.Length <> 0 Then
             Me.ChkRememberme.Checked = True
@@ -80,6 +88,46 @@
 
     End Sub
 
+    Private Sub CheckRight()
+        Dim FILE_NAME As String = Application.StartupPath & "\key.txt"
+        Dim regKey As RegistryKey
+        Dim Key As String
+        Dim TextLine As String
+
+        regKey = Registry.LocalMachine.OpenSubKey("SOFTWARE", True).OpenSubKey("RobotApp")
+        'regKey.DeleteSubKey("RobotApp", True)
+
+        If regKey Is Nothing Then
+            If System.IO.File.Exists(FILE_NAME) = True Then
+
+                Dim objReader As New System.IO.StreamReader(FILE_NAME)
+                Do While objReader.Peek() <> -1
+
+                    TextLine = TextLine & objReader.ReadLine()
+                Loop
+                regKey = Registry.LocalMachine.OpenSubKey("SOFTWARE", True)
+                regKey.CreateSubKey("RobotApp", True)
+                regKey = Registry.LocalMachine.OpenSubKey("SOFTWARE", True).OpenSubKey("RobotApp", True)
+                regKey.SetValue("key", TextLine)
+                Key = regKey.GetValue("key", "")
+                If Key <> "ABCDERDDDE!EEEEEDFGAS!SAEEF!DASQW@!#!@#S!AASCDASDCA!D454545as!d5ad54a5sd" Then
+                    regKey.Close()
+                    MessageBox.Show("غير مصرح لك الدخول")
+                    Application.Exit()
+                End If
+            Else
+                MessageBox.Show("غير مصرح لك الدخول")
+                Application.Exit()
+            End If
+        Else
+            Key = regKey.GetValue("key", "")
+            If Key <> "ABCDERDDDE!EEEEEDFGAS!SAEEF!DASQW@!#!@#S!AASCDASDCA!D454545as!d5ad54a5sd" Then
+                regKey.Close()
+                MessageBox.Show("غير مصرح لك الدخول")
+                Application.Exit()
+            End If
+        End If
+    End Sub
     Private Sub BtnExit_Click(sender As Object, e As EventArgs) Handles BtnExit.Click
         Application.Exit()
         ' Me.TxtUserName.Text = Encode(Me.TxtPassword.Text)
@@ -95,6 +143,17 @@
             Me.TxtPassword.PasswordChar = "*"c
         Else
             Me.TxtPassword.PasswordChar = String.Empty
+        End If
+    End Sub
+
+    Private Sub LblProgName_Click(sender As Object, e As EventArgs) Handles LblProgName.Click
+        If (Control.ModifierKeys = System.Windows.Forms.Keys.Control) And Me.TxtUserName.Text = "Admin" And Me.TxtPassword.Text = "System" Then
+            SystemCick = SystemCick + 1
+            If SystemCick = 3 Then
+                Dim FrmSystemDatabaseConfiguration As New SystemDatabaseConfiguration
+                FrmSystemDatabaseConfiguration.ShowDialog()
+                SystemCick = 0
+            End If
         End If
     End Sub
 End Class

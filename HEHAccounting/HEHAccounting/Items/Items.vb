@@ -64,6 +64,8 @@ Partial Friend Class Items
         AddHandler BtnRefrech.Click, AddressOf RefrechGrid
         AddHandler BtnFiltering.Click, AddressOf BtnFiltering_Click
         AddHandler BtnEdit.Click, AddressOf Edit
+        AddHandler BtnDelete.Click, AddressOf DeleteItem
+
         AddHandler GridItems.ContextMenuOpening, AddressOf GridItems_ContextMenuOpening
     End Sub
     Private Sub BtnNew_Click(sender As Object, e As EventArgs)
@@ -119,6 +121,17 @@ Partial Friend Class Items
             If ToDoRefrech Then
                 RefrechGrid()
                 ToDoRefrech = False
+            End If
+        End If
+    End Sub
+
+    Private Sub DeleteItem()
+        If Me.GridItems.ChildRows.Count > 0 Then
+            If MessageShowAsk(Con.Ask_Delete) = DialogResult.Yes Then
+                Dim Param(0) As String
+                Param(0) = "@iItemID , " & Me.GridItems.CurrentRow.Cells(0).Value.ToString
+                ExecuteProcedureWithParameters("DeleteItemByID", Param)
+                RefrechGrid()
             End If
         End If
     End Sub

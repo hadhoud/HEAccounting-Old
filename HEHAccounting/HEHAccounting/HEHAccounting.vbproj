@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -13,7 +13,7 @@
     <AssemblyName>HEHAccounting</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -29,6 +29,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -74,13 +75,37 @@
   <PropertyGroup>
     <ApplicationIcon>Logo.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>HEHAccounting.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>HEHAccounting.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Toolkit.Uwp.Notifications, Version=7.0.0.0, Culture=neutral, PublicKeyToken=4aff67a105548ee2" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -97,6 +122,7 @@
       <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.WinControls.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Telerik.WinControls.ChartView, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.GridView, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.WinControls.GridView.dll</HintPath>
       <Private>True</Private>
@@ -105,6 +131,7 @@
       <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.WinControls.RadDock.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Telerik.WinControls.RadToastNotification, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.RichTextEditor, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.WinControls.RichTextEditor.dll</HintPath>
       <Private>True</Private>
@@ -117,6 +144,7 @@
       <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.WinControls.Themes.Office2010Blue.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2019, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.Themes.Windows7, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.WinControls.Themes.Windows7.dll</HintPath>
       <Private>True</Private>
@@ -151,6 +179,18 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomControls\DashboardItem.Designer.vb">
+      <DependentUpon>DashboardItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\DashboardItem.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Daily\SalesDailyWin.Designer.vb">
+      <DependentUpon>SalesDailyWin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Daily\SalesDailyWin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Daily\Daily.Designer.vb">
       <DependentUpon>Daily.vb</DependentUpon>
     </Compile>
@@ -246,6 +286,12 @@
     <Compile Include="Reports\QuantityHistory.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reports\ItemsSalesWinReport.Designer.vb">
+      <DependentUpon>ItemsSalesWinReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ItemsSalesWinReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SharedClasses\AmountInWords.vb" />
     <Compile Include="SharedClasses\ApplicationEvents.vb" />
     <Compile Include="Customers\CustomerPopup.Designer.vb">
@@ -335,6 +381,12 @@
     <Compile Include="SharedForm\Home.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SharedForm\DashboardForm.Designer.vb">
+      <DependentUpon>DashboardForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SharedForm\DashboardForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SharedForm\MainForm.Designer.vb">
       <DependentUpon>MainForm.vb</DependentUpon>
     </Compile>
@@ -345,6 +397,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -408,6 +461,12 @@
     <Compile Include="Tools\Settings\CompanyInfo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Tools\Users\SystemDatabaseConfiguration.Designer.vb">
+      <DependentUpon>SystemDatabaseConfiguration.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Users\SystemDatabaseConfiguration.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Tools\Users\PasswordPopup.Designer.vb">
       <DependentUpon>PasswordPopup.vb</DependentUpon>
     </Compile>
@@ -464,6 +523,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CustomControls\DashboardItem.resx">
+      <DependentUpon>DashboardItem.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customers\AddNewCustomer.resx">
       <DependentUpon>AddNewCustomer.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -473,6 +535,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customers\Customers.resx">
       <DependentUpon>Customers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Daily\SalesDailyWin.resx">
+      <DependentUpon>SalesDailyWin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Daily\Daily.resx">
       <DependentUpon>Daily.vb</DependentUpon>
@@ -537,6 +602,9 @@
     <EmbeddedResource Include="Reports\QuantityHistory.resx">
       <DependentUpon>QuantityHistory.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ItemsSalesWinReport.resx">
+      <DependentUpon>ItemsSalesWinReport.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\ShowReport.resx">
       <DependentUpon>ShowReport.vb</DependentUpon>
     </EmbeddedResource>
@@ -552,8 +620,12 @@
     <EmbeddedResource Include="SharedForm\Home.resx">
       <DependentUpon>Home.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SharedForm\DashboardForm.resx">
+      <DependentUpon>DashboardForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SharedForm\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -588,6 +660,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\Settings\CompanyInfo.resx">
       <DependentUpon>CompanyInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Users\SystemDatabaseConfiguration.resx">
+      <DependentUpon>SystemDatabaseConfiguration.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\Users\PasswordPopup.resx">
       <DependentUpon>PasswordPopup.vb</DependentUpon>
@@ -633,6 +708,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Reports\ReportsForm\ArAccRpt101.trdp" />
+    <None Include="Reports\ReportsForm\ArAccRptCur101.trdp" />
+    <None Include="Reports\ReportsForm\ArHeader.trdp" />
+    <None Include="Reports\ReportsForm\ArHeader.trdx" />
+    <None Include="Reports\ReportsForm\ArNP101.trdp" />
+    <None Include="Reports\ReportsForm\ArNR101.trdp" />
+    <None Include="Reports\ReportsForm\ArPO101.trdp" />
+    <None Include="Reports\ReportsForm\ArPODetails101.trdp" />
+    <None Include="Reports\ReportsForm\ArQuantityHistory101.trdp" />
+    <None Include="Reports\ReportsForm\ArSO101.trdp" />
+    <None Include="Reports\ReportsForm\ArSOCustomers.trdp" />
+    <None Include="Reports\ReportsForm\ArSODetails101.trdp" />
+    <None Include="Reports\ReportsForm\EN\EnSO101.trdp" />
+    <None Include="Reports\ReportsForm\EN\EnSODetails101.trdp" />
     <None Include="Resources\Refresh.png" />
   </ItemGroup>
   <ItemGroup>
@@ -716,6 +805,10 @@
     <None Include="Resources\DatabasePic.png" />
     <None Include="Resources\Dollars.png" />
     <None Include="Resources\Target.png" />
+    <Content Include="Reports\ReportsForm\6.jpg" />
+    <Content Include="Reports\ReportsForm\Untitled.jpg" />
+    <Content Include="SQL\NeededSqlFiles\DefaultData.sql" />
+    <Content Include="SQL\NeededSqlFiles\ResetProgramData.sql" />
     <Content Include="WhatsNew.txt" />
     <None Include="Resources\chart.ico" />
     <None Include="Resources\notes.ico" />
@@ -758,7 +851,10 @@
     <None Include="Resources\invoice.png" />
     <None Include="Resources\billing.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="SQL\Procedures\" />
+    <Folder Include="SQL\Tables\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <ProjectExtensions>
     <VisualStudio>

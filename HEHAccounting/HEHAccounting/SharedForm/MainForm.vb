@@ -11,9 +11,12 @@ Public Class MainForm
     Dim FrmSalesOrders As SalesOrderFrm
     Dim FrmPurchasesOrders As PurchaseOrderFrm
     Dim FrmDaily As Daily
+    Dim FrmSalesDailyWin As SalesDailyWin
     Dim FrmHomeForm As HomeForm
     Dim FrmDebitsCredits As DebitsCredits
     Dim FrmAddNewSalesInvoices As AddNewSaleInvoice
+    Dim FrmItemsSalesWinReport As ItemsSalesWinReport
+    Dim FrmDashboard As DashboardForm
 
     Dim FrmToOpen As String
     Dim FrmOpenTimer As New Timer
@@ -40,9 +43,18 @@ Public Class MainForm
         If UserType = UserRole.Programmer Then
             Me.RibBtnUsers.Visibility = ElementVisibility.Visible
             Me.RibBtnCurrencies.Visibility = ElementVisibility.Visible
+            Me.RibBtnSalesWin.Visibility = ElementVisibility.Visible
+            Me.RibButtonDashboard.Visibility = IIf(BoolShowDashboardForm, ElementVisibility.Visible, ElementVisibility.Collapsed)
+            Me.stripLblDollarRateValue.Visibility = IIf(BoolShowCurrencyRateInStatus, ElementVisibility.Visible, ElementVisibility.Collapsed)
+            Me.stripLblLastDollarRate.Visibility = IIf(BoolShowCurrencyRateInStatus, ElementVisibility.Visible, ElementVisibility.Collapsed)
         Else
             Me.RibBtnUsers.Visibility = IIf(BoolShowUsers, ElementVisibility.Visible, ElementVisibility.Collapsed)
             Me.RibBtnCurrencies.Visibility = IIf(BoolShowUsers, ElementVisibility.Visible, ElementVisibility.Collapsed)
+            Me.RibBtnSalesWin.Visibility = IIf(BoolShowSalesDailyWin, ElementVisibility.Visible, ElementVisibility.Collapsed)
+            Me.RibButtonDashboard.Visibility = IIf(BoolShowDashboardForm, ElementVisibility.Visible, ElementVisibility.Collapsed)
+            Me.stripLblDollarRateValue.Visibility = IIf(BoolShowCurrencyRateInStatus, ElementVisibility.Visible, ElementVisibility.Collapsed)
+            Me.stripLblLastDollarRate.Visibility = IIf(BoolShowCurrencyRateInStatus, ElementVisibility.Visible, ElementVisibility.Collapsed)
+
         End If
         Dim PORow As DataRow = UserRolesdt.Select("KeyName = 'PO'").First
         Me.RibBtnAddPurchaseInvoices.Enabled = (UserType = UserRole.Programmer Or PORow("AllowAdd").ToString)
@@ -401,6 +413,18 @@ Public Class MainForm
             End If
             ActWindow(FrmDaily)
 
+        ElseIf FrmToOpen = "SalesDailyWin" Then
+            If FrmSalesDailyWin Is Nothing Then
+                FrmSalesDailyWin = New SalesDailyWin With {
+                    .Width = WindowDock.Width,
+                    .Height = WindowDock.Height,
+                    .MdiParent = Me
+                }
+                FrmSalesDailyWin.Show()
+                ActWindow(FrmSalesDailyWin)
+            End If
+
+            ActWindow(FrmSalesDailyWin)
         ElseIf FrmToOpen = "HomeForm" Then
             If FrmHomeForm Is Nothing Then
                 FrmHomeForm = New HomeForm With {
@@ -454,6 +478,31 @@ Public Class MainForm
             FrmDebitsCredits.DropType.SelectedValue = CreditsDebits.Debts
             FrmDebitsCredits.Text = Con.Debtors
             ActWindow(FrmDebitsCredits)
+
+        ElseIf FrmToOpen = "RPTItemsSalesWin" Then
+            If FrmItemsSalesWinReport Is Nothing Then
+                FrmItemsSalesWinReport = New ItemsSalesWinReport With {
+                    .Width = WindowDock.Width,
+                    .Height = WindowDock.Height,
+                    .MdiParent = Me
+                }
+                FrmItemsSalesWinReport.Show()
+            End If
+            ActWindow(FrmItemsSalesWinReport)
+
+
+        ElseIf FrmToOpen = "FrmDashboard" Then
+            If FrmDashboard Is Nothing Then
+                FrmDashboard = New DashboardForm With {
+                    .Width = WindowDock.Width,
+                    .Height = WindowDock.Height,
+                    .MdiParent = Me
+                }
+                FrmDashboard.Show()
+                ActWindow(FrmDashboard)
+            End If
+            ActWindow(FrmDashboard)
+
         End If
 
         Me.Cursor = Cursors.Default
@@ -622,8 +671,18 @@ Public Class MainForm
                 Case "Daily"
                     FrmDaily.PnlOptions.Visible = Vis
                     Exit Select
+                Case "SalesDailyWin"
+                    FrmSalesDailyWin.PnlOptions.Visible = Vis
+                    Exit Select
                 Case "DebitsCredits"
                     FrmDebitsCredits.PnlOptions.Visible = Vis
+                    Exit Select
+                Case "ItemsSalesDailyWinReport"
+                    FrmItemsSalesWinReport.PnlOptions.Visible = Vis
+                    Exit Select
+
+                Case "FrmDashboard"
+                    'FrmDashboard.PnlOptions.Visible = Vis
                     Exit Select
             End Select
         End If
@@ -634,16 +693,23 @@ Public Class MainForm
         Select Case e.NewWindow.Tag
             Case "Items"
                 Frmitems = Nothing
+                Exit Select
             Case "Customers"
                 FrmCustomers = Nothing
+                Exit Select
             Case "Vendors"
                 FrmVendors = Nothing
             Case "SalesOrders"
                 FrmSalesOrders = Nothing
+                Exit Select
             Case "PurchasesOrders"
                 FrmPurchasesOrders = Nothing
+                Exit Select
             Case "Daily"
                 FrmDaily = Nothing
+                Exit Select
+            Case "SalesDailyWin"
+                FrmSalesDailyWin = Nothing
                 Exit Select
             Case "HomeForm"
                 FrmHomeForm = Nothing
@@ -654,7 +720,12 @@ Public Class MainForm
             Case "DebitsCredits"
                 FrmDebitsCredits = Nothing
                 Exit Select
-
+            Case "ItemsSalesDailyWinReport"
+                FrmItemsSalesWinReport = Nothing
+                Exit Select
+            Case "FrmDashboard"
+                FrmDashboard = Nothing
+                Exit Select
         End Select
     End Sub
     Private Sub ActWindow(Frm As Form)
@@ -720,6 +791,12 @@ Public Class MainForm
                         Me.RibBtnShowOption.IsChecked = FrmDaily.PnlOptions.Visible
                     End If
                     Exit Select
+                Case "SalesDailyWin"
+                    If FrmSalesDailyWin IsNot Nothing Then
+                        Me.RibBtnNew.Enabled = False
+                        Me.RibBtnShowOption.IsChecked = FrmSalesDailyWin.PnlOptions.Visible
+                    End If
+                    Exit Select
                 Case "HomeForm"
                     If FrmHomeForm IsNot Nothing Then
                         Me.RibBtnEdit.Enabled = False
@@ -739,6 +816,20 @@ Public Class MainForm
                         Me.RibBtnEdit.Enabled = False
                         Me.RibBtnNew.Enabled = False
                         Me.RibBtnShowOption.IsChecked = FrmDebitsCredits.PnlOptions.Visible
+                    End If
+                    Exit Select
+                Case "ItemsSalesDailyWinReport"
+                    If FrmItemsSalesWinReport IsNot Nothing Then
+                        Me.RibBtnEdit.Enabled = False
+                        Me.RibBtnNew.Enabled = False
+                        Me.RibBtnShowOption.IsChecked = FrmItemsSalesWinReport.PnlOptions.Visible
+                    End If
+                    Exit Select
+                Case "FrmDashboard"
+                    If FrmDashboard IsNot Nothing Then
+                        Me.RibBtnEdit.Enabled = False
+                        Me.RibBtnNew.Enabled = False
+                        'Me.RibBtnShowOption.IsChecked = FrmDashboard.PnlOptions.Visible
                     End If
                     Exit Select
             End Select
@@ -851,6 +942,7 @@ Public Class MainForm
 
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SubscribeShortcuts()
+        Me.stripLblDollarRateValue.Text = LastDollarCurrencyRate
         If BoolShowDailyPageWhenOpen Then
             FrmToOpen = "Daily"
             FrmOpenTimer.Start()
@@ -880,6 +972,7 @@ Public Class MainForm
         Dim FrmAddCurrRate As New CurrencyRate
         FrmAddCurrRate.ShowDialog()
         Home.ReloadCurrency()
+        Me.stripLblDollarRateValue.Text = LastDollarCurrencyRate
     End Sub
 
     Private Sub MainForm_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
@@ -978,6 +1071,27 @@ Public Class MainForm
         Dim FrmCheques As New ChequesRpt
         FrmCheques.ShowDialog()
     End Sub
+
+    Private Sub RibBtnSalesWin_Click(sender As Object, e As EventArgs) Handles RibBtnSalesWin.Click
+        FrmToOpen = "SalesDailyWin"
+        FrmOpenTimer.Start()
+    End Sub
+
+    Private Sub RibBtnItemsSalesWin_Click(sender As Object, e As EventArgs) Handles RibBtnItemsSalesWin.Click
+        FrmToOpen = "RPTItemsSalesWin"
+        FrmOpenTimer.Start()
+    End Sub
+
+    Private Sub RibButtonDashboard_Click(sender As Object, e As EventArgs) Handles RibButtonDashboard.Click
+        FrmToOpen = "FrmDashboard"
+        FrmOpenTimer.Start()
+    End Sub
+
+    'Private Sub RibBtnDashboard_Click(sender As Object, e As EventArgs)
+    '    FrmToOpen = "FrmDashboard"
+    '    FrmOpenTimer.Start()
+    'End Sub
+
 End Class
 Public Class MyDragDropService
     Inherits DragDropService

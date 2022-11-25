@@ -104,7 +104,7 @@ Module Functions
                 Return "أقل كمية"
 
             Case "SellingPrice"
-                Return "سعر البيع"
+                Return "سعر المبيع"
 
             Case "PurchasingPrice"
                 Return "سعر الشراء"
@@ -179,6 +179,15 @@ Module Functions
             Case "CurrencyVal"
                 Return "قيمة الصرف"
 
+            Case "DollarRate"
+                Return "سعر الصرف"
+
+            Case "SellPurchaseDifference"
+                Return "ربح / خسارة"
+
+            Case "PurchaseTotalDue"
+                Return "صافي الشراء"
+
             Case "HyperInvID", "InvID", "TrsID", "InventoryID"
                 Return "الرقم"
 
@@ -218,6 +227,17 @@ Module Functions
             Case "SubTotal", "BeforeDiscount"
                 Return "المجموع"
 
+            Case "SubTotal.LL"
+                Return "المجموع ل.ل"
+
+            Case "SubTotal.$"
+                Return "المجموع $"
+
+            Case "TotalDue.LL"
+                Return "صافي ل.ل"
+
+            Case "TotalDue.$"
+                Return "صافي $"
 
             Case "Status", "StatusName"
                 Return "الحالة"
@@ -231,6 +251,9 @@ Module Functions
 
             Case "Symb"
                 Return "رمز العملة"
+
+            Case "InvoiceCurrencySymb"
+                Return "عملة الفاتورة"
 
             Case "PartName"
                 Return "جزء العملة"
@@ -298,6 +321,23 @@ Module Functions
 
             Case "AllowPosted"
                 Return "الترحيل"
+
+                 'Items Sales Daily Win
+            Case "TotalPurchasingPrice"
+                Return "مجموع الشراء"
+
+            Case "TotalSellingPrice"
+                Return "مجموع المبيع"
+
+            Case "TotalSellingPrice"
+                Return "مجموع المبيع"
+
+            Case "TotalDueSellingPrice"
+                Return "صافي المبيع"
+
+            Case "InvoiceNumber"
+                Return "رقم الفاتورة"
+
             Case Else
                 Return ColName
         End Select
@@ -431,7 +471,8 @@ Module Functions
 
             Case "CurrencyVal"
                 Return "Cur. Rate"
-
+            Case "DollarRate"
+                Return "Dollar Rate"
             Case "Symb"
                 Return "Symbol"
 
@@ -491,6 +532,11 @@ Module Functions
 
             Case "AllowPosted"
                 Return "Posted"
+
+                'Items Sales Daily Win
+            Case "TotalPurchasingPrice"
+                Return "Total Purchasing Price"
+
             Case Else
                 Return ColName
         End Select
@@ -708,7 +754,7 @@ Module Functions
             ParameterValue = PR(1).Trim
             TypeChar = ParameterName.Substring(1, 1)
 
-            Select Case TypeChar
+            Select Case TypeChar.ToUpper()
 
                 Case "I" 'Integer
                     OneSqlParameter = New SqlParameter(ParameterName, SqlDbType.Int)
@@ -796,6 +842,10 @@ Module Functions
     Function GetScalarProcedure(ByVal Procedure As String, ByVal Param() As String) As String
         Return Db.GetScalarProcedureWithParam(Procedure, GetSqlParameter(Param))
     End Function
+    Function GetScalarProcedureWithoutParam(ByVal Procedure As String) As String
+        Return Db.GetScalarProcedureWithoutParam(Procedure)
+    End Function
+
     Function ExecuteProcedureDatatableWithParameters(ByVal Procedure As String, ByVal Param() As String) As DataTable
         Return Db.SelectProcedureDataTableWithParam(Procedure, GetSqlParameter(Param))
     End Function

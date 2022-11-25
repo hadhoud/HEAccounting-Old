@@ -10,7 +10,7 @@ Public Class AddNewSaleInvoice
     Dim CustomerID As String
     Dim CustomerTitle As String
     Dim oldstatus As Integer
-    Dim timer As Timer
+    Dim boolTimerStarted As Boolean = False
     Sub New()
 
         ' This call is required by the designer.
@@ -20,6 +20,7 @@ Public Class AddNewSaleInvoice
         If BoolLTRLanguage Then
             ChangeToEng()
         End If
+        TimerPurchasePrice.Interval = 1500
         ShowPermissions()
         FillGrid()
 
@@ -107,7 +108,6 @@ Public Class AddNewSaleInvoice
         Me.TxtItemName.AutoCompleteCustomSource = ItemsNameAuto
         Me.TxtItemName.AutoCompleteMode = AutoCompleteMode.SuggestAppend
 
-
         Me.TxtCustomer.AutoCompleteSource = AutoCompleteSource.CustomSource
         Me.TxtCustomer.AutoCompleteCustomSource = CustomerNameAuto
         Me.TxtCustomer.AutoCompleteMode = AutoCompleteMode.SuggestAppend
@@ -137,6 +137,9 @@ Public Class AddNewSaleInvoice
             Me.DropCurrency.SelectedValue = DtSalesOrderHeaders.Rows(0).Item("CurrencyID")
             Me.TxtCurrencyVal.Text = DtSalesOrderHeaders.Rows(0).Item("CurrencyVal").ToString
             Me.TxtCurrencyVal.Tag = DtSalesOrderHeaders.Rows(0).Item("CurrencyRateID").ToString
+
+            Me.txtDollarRate.Text = DtSalesOrderHeaders.Rows(0).Item("fDollarRate_amt").ToString
+
             Me.TxtDiscount.Value = DtSalesOrderHeaders.Rows(0).Item("Discount").ToString
             Dim DtSalesOrderDetailsItems As DataTable = ExecuteProcedureDatatableWithParameters("SelectSalesOrdersDetailsJoinItemsByID", Param)
             For i As Integer = 0 To DtSalesOrderDetailsItems.Rows.Count - 1
@@ -505,7 +508,7 @@ Public Class AddNewSaleInvoice
                 CustomerTitle = String.Empty
             End If
         Else
-                Dim CustomerData() As String = Me.TxtCustomer.Text.Split("/")
+            Dim CustomerData() As String = Me.TxtCustomer.Text.Split("/")
             CustomerID = CustomerData(2)
             Me.TxtCustomer.Text = CustomerData(0)
             CustomerTitle = CustomerData(1)
@@ -542,7 +545,7 @@ Public Class AddNewSaleInvoice
                         End If
                     End If
 
-                    Dim Param(12) As String
+                    Dim Param(13) As String
                     Param(0) = "@TDueDate , " & Me.MskTxtInvDate.Value
                     Param(1) = "@ICustomerID , " & CustomerID
                     Param(2) = "@CPaymentType , " & IIf(Me.RadioCash.IsChecked, "C", "D")
@@ -552,10 +555,11 @@ Public Class AddNewSaleInvoice
                     Param(6) = "@FSubTotal , " & Me.TxtSubTotal.Text
                     Param(7) = "@FTotalDue , " & Me.TxtTotalDue.Text
                     Param(8) = "@ICurrencyRateID , " & Me.TxtCurrencyVal.Tag.ToString
-                    Param(9) = "@ISpecialOfferSOID , " & 0
-                    Param(10) = "@FDiscount , " & Me.TxtDiscount.Text
-                    Param(11) = "@IInvID , " & Me.TxtInvID.Text
-                    Param(12) = "@IUserID , " & UserID
+                    Param(9) = "@iDollarRate_amt , " & Me.txtDollarRate.Text
+                    Param(10) = "@ISpecialOfferSOID , " & 0
+                    Param(11) = "@FDiscount , " & Me.TxtDiscount.Text
+                    Param(12) = "@IInvID , " & Me.TxtInvID.Text
+                    Param(13) = "@IUserID , " & UserID
 
                     If BtnSaveAndNew.Tag = "Save" Then
                         ExecuteProcedureWithParameters("InsertNewSalesOrderHeader", Param)
@@ -564,8 +568,10 @@ Public Class AddNewSaleInvoice
                         Dim Rptparam(0) As String
                         Rptparam(0) = "InvID , " & Me.TxtInvID.Text
                         If Not BoolForPrint Then
-                            If MessageShowAsk(Con.Ask_Do_You_Want_Print_Invoice) = DialogResult.Yes Then
-                                OpenReport(Con.RptSalesOrder, Rptparam)
+                            If BoolShowSalesOrdersPrintQuestionAfterSave Then
+                                If MessageShowAsk(Con.Ask_Do_You_Want_Print_Invoice) = DialogResult.Yes Then
+                                    OpenReport(Con.RptSalesOrder, Rptparam)
+                                End If
                             End If
                         Else
                             OpenReport(Con.RptSalesOrder, Rptparam)
@@ -589,8 +595,10 @@ Public Class AddNewSaleInvoice
                         Dim Rptparam(0) As String
                         Rptparam(0) = "InvID , " & Me.TxtInvID.Text
                         If Not BoolForPrint Then
-                            If MessageShowAsk(Con.Ask_Do_You_Want_Print_Invoice) = DialogResult.Yes Then
-                                OpenReport(Con.RptSalesOrder, Rptparam)
+                            If BoolShowSalesOrdersPrintQuestionAfterSave Then
+                                If MessageShowAsk(Con.Ask_Do_You_Want_Print_Invoice) = DialogResult.Yes Then
+                                    OpenReport(Con.RptSalesOrder, Rptparam)
+                                End If
                             End If
                         Else
                             OpenReport(Con.RptSalesOrder, Rptparam)
@@ -634,8 +642,22 @@ Public Class AddNewSaleInvoice
         Me.RadioCash.IsChecked = True
         Me.RadioSales.IsChecked = True
         Me.DropCurrency.SelectedValue = 1
+        Me.txtDollarRate.Text = LastDollarCurrencyRate
         Me.MskTxtInvDate.Focus()
+        LoadSODefaultCustomer()
     End Sub
+
+    Private Sub LoadSODefaultCustomer()
+        For Each customer In CustomerNameAuto
+            Dim CustomerData() As String = customer.Split("/")
+            If iSalesOrderDefaultCustomerID.ToString() = CustomerData(2) Then
+                Me.TxtCustomer.Text = CustomerData(0)
+                CustomerTitle = CustomerData(1)
+                CustomerID = iSalesOrderDefaultCustomerID
+            End If
+        Next
+    End Sub
+
     Private Sub GridInvItem_GroupSummaryEvaluate(sender As Object, e As GroupSummaryEvaluationEventArgs) Handles GridInvItem.GroupSummaryEvaluate
         If e.SummaryItem.Name = "TotalDue" Then
             ' e.FormatString = String.Format("There are {0} ships total.", e.Value)
@@ -732,8 +754,10 @@ Public Class AddNewSaleInvoice
             If FrmAddCurrVal.GetCurrencyVal.Length <> 0 And FrmAddCurrVal.GetCurrencyRateID.Length <> 0 Then
                 Me.TxtCurrencyVal.Text = FrmAddCurrVal.GetCurrencyVal
                 Me.TxtCurrencyVal.Tag = FrmAddCurrVal.GetCurrencyRateID
+                Me.txtDollarRate.Text = FrmAddCurrVal.GetCurrencyVal
             End If
         Else
+            Me.txtDollarRate.Text = LastDollarCurrencyRate
             DropCurerncySelectedChange()
         End If
     End Sub
@@ -745,5 +769,34 @@ Public Class AddNewSaleInvoice
                 TxtItemName.Focus()
             End If
         End If
+    End Sub
+
+    Private Sub GridInvItem_CellDoubleClick(sender As Object, e As GridViewCellEventArgs) Handles GridInvItem.CellDoubleClick
+        Dim column As GridViewDataColumn = TryCast(e.Column, GridViewDataColumn)
+        If TypeOf e.Row Is GridViewDataRowInfo AndAlso column IsNot Nothing Then
+            If column.Name = "Item_name" Then
+                Dim purchase_price = e.Row.Cells("PurchasingPrice").Value
+                If Me.DropCurrency.SelectedValue = 1 Then
+                    lblItemPurchasePriceLira.Text = purchase_price & " ل.ل"
+                    lblItemPurchasePriceDollar.Text = (purchase_price / Me.txtDollarRate.Text) & " $"
+                Else
+                    lblItemPurchasePriceDollar.Text = purchase_price & " $"
+                    lblItemPurchasePriceLira.Text = (purchase_price * Me.txtDollarRate.Text) & " ل.ل"
+                End If
+                If Not boolTimerStarted Then
+                    TimerPurchasePrice.Start()
+                End If
+
+                'Me.lblItemPurchasePriceLira.Visible = True
+                'Me.lblItemPurchasePriceDollar.Visible = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TimerPurchasePrice_Tick(sender As Object, e As EventArgs) Handles TimerPurchasePrice.Tick
+        Me.lblItemPurchasePriceLira.Text = ""
+        Me.lblItemPurchasePriceDollar.Text = ""
+        TimerPurchasePrice.Stop()
+        boolTimerStarted = False
     End Sub
 End Class

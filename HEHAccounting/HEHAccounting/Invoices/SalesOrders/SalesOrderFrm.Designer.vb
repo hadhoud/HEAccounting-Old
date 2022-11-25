@@ -24,6 +24,11 @@ Partial Class SalesOrderFrm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SalesOrderFrm))
+        Dim GridViewSummaryItem1 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
+        Dim GridViewSummaryItem2 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
+        Dim GridViewSummaryItem3 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
+        Dim GridViewSummaryItem4 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
+        Dim GridViewSummaryItem5 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
         Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.PnlOptions = New Telerik.WinControls.UI.RadPanel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
@@ -103,7 +108,7 @@ Partial Class SalesOrderFrm
         Me.PnlOptions.Location = New System.Drawing.Point(0, 0)
         Me.PnlOptions.Name = "PnlOptions"
         Me.PnlOptions.Padding = New System.Windows.Forms.Padding(3)
-        Me.PnlOptions.Size = New System.Drawing.Size(255, 483)
+        Me.PnlOptions.Size = New System.Drawing.Size(255, 447)
         Me.PnlOptions.TabIndex = 3
         Me.PnlOptions.Tag = ""
         Me.PnlOptions.Visible = False
@@ -259,6 +264,7 @@ Partial Class SalesOrderFrm
         Me.DropStatus.BackColor = System.Drawing.Color.White
         Me.TableLayoutPanel1.SetColumnSpan(Me.DropStatus, 2)
         Me.DropStatus.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DropStatus.DropDownAnimationEnabled = True
         Me.DropStatus.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DropStatus.Location = New System.Drawing.Point(3, 8)
         Me.DropStatus.MaxLength = 65535
@@ -388,6 +394,8 @@ Partial Class SalesOrderFrm
         Me.MskTxtInvDateFrom.Mask = "dd/MM/yyyy"
         Me.MskTxtInvDateFrom.MaskType = Telerik.WinControls.UI.MaskType.DateTime
         Me.MskTxtInvDateFrom.Name = "MskTxtInvDateFrom"
+        Me.MskTxtInvDateFrom.SelectedText = "01"
+        Me.MskTxtInvDateFrom.SelectionLength = 2
         Me.MskTxtInvDateFrom.Size = New System.Drawing.Size(145, 24)
         Me.MskTxtInvDateFrom.TabIndex = 24
         Me.MskTxtInvDateFrom.TabStop = False
@@ -404,6 +412,8 @@ Partial Class SalesOrderFrm
         Me.MskTxtInvDateTo.Mask = "dd/MM/yyyy"
         Me.MskTxtInvDateTo.MaskType = Telerik.WinControls.UI.MaskType.DateTime
         Me.MskTxtInvDateTo.Name = "MskTxtInvDateTo"
+        Me.MskTxtInvDateTo.SelectedText = "01"
+        Me.MskTxtInvDateTo.SelectionLength = 2
         Me.MskTxtInvDateTo.Size = New System.Drawing.Size(145, 24)
         Me.MskTxtInvDateTo.TabIndex = 25
         Me.MskTxtInvDateTo.TabStop = False
@@ -490,6 +500,7 @@ Partial Class SalesOrderFrm
         '
         Me.TableLayoutPanel1.SetColumnSpan(Me.DropCurrency, 2)
         Me.DropCurrency.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DropCurrency.DropDownAnimationEnabled = True
         Me.DropCurrency.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DropCurrency.Location = New System.Drawing.Point(3, 38)
         Me.DropCurrency.MaxLength = 65535
@@ -503,6 +514,7 @@ Partial Class SalesOrderFrm
         '
         Me.TableLayoutPanel1.SetColumnSpan(Me.DropPaymentType, 2)
         Me.DropPaymentType.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DropPaymentType.DropDownAnimationEnabled = True
         Me.DropPaymentType.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DropPaymentType.Location = New System.Drawing.Point(3, 222)
         Me.DropPaymentType.MaxLength = 65535
@@ -596,9 +608,31 @@ Partial Class SalesOrderFrm
         '
         '
         '
+        Me.GridSalesOrders.MasterTemplate.BottomPinnedRowsMode = Telerik.WinControls.UI.GridViewBottomPinnedRowsMode.Fixed
+        GridViewSummaryItem1.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Count
+        GridViewSummaryItem1.AggregateExpression = Nothing
+        GridViewSummaryItem1.FormatString = "{0}"
+        GridViewSummaryItem1.Name = "InvID"
+        GridViewSummaryItem2.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
+        GridViewSummaryItem2.AggregateExpression = Nothing
+        GridViewSummaryItem2.FormatString = "{0}"
+        GridViewSummaryItem2.Name = "SubTotal.LL"
+        GridViewSummaryItem3.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
+        GridViewSummaryItem3.AggregateExpression = Nothing
+        GridViewSummaryItem3.FormatString = "{0}"
+        GridViewSummaryItem3.Name = "TotalDue.LL"
+        GridViewSummaryItem4.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
+        GridViewSummaryItem4.AggregateExpression = Nothing
+        GridViewSummaryItem4.FormatString = "{0}"
+        GridViewSummaryItem4.Name = "TotalDue.$"
+        GridViewSummaryItem5.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
+        GridViewSummaryItem5.AggregateExpression = Nothing
+        GridViewSummaryItem5.FormatString = "{0}"
+        GridViewSummaryItem5.Name = "Discount"
+        Me.GridSalesOrders.MasterTemplate.SummaryRowsBottom.Add(New Telerik.WinControls.UI.GridViewSummaryRowItem(New Telerik.WinControls.UI.GridViewSummaryItem() {GridViewSummaryItem1, GridViewSummaryItem2, GridViewSummaryItem3, GridViewSummaryItem4, GridViewSummaryItem5}))
         Me.GridSalesOrders.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.GridSalesOrders.Name = "GridSalesOrders"
-        Me.GridSalesOrders.Size = New System.Drawing.Size(310, 483)
+        Me.GridSalesOrders.Size = New System.Drawing.Size(208, 447)
         Me.GridSalesOrders.TabIndex = 4
         Me.GridSalesOrders.ThemeName = "Office2010Blue"
         '
@@ -608,7 +642,7 @@ Partial Class SalesOrderFrm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(234, Byte), Integer), CType(CType(245, Byte), Integer))
         Me.CancelButton = Me.BtnReset
-        Me.ClientSize = New System.Drawing.Size(565, 483)
+        Me.ClientSize = New System.Drawing.Size(463, 447)
         Me.Controls.Add(Me.GridSalesOrders)
         Me.Controls.Add(Me.PnlOptions)
         Me.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -667,11 +701,6 @@ Partial Class SalesOrderFrm
     Friend WithEvents LblInvID As Label
     Friend WithEvents LblCustomer As Label
     Friend WithEvents TxtInvID As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents BtnNew As Telerik.WinControls.UI.RadButton
-    Friend WithEvents BtnEdit As Telerik.WinControls.UI.RadButton
-    Friend WithEvents BtnDelete As Telerik.WinControls.UI.RadButton
-    Friend WithEvents BtnRefrech As Telerik.WinControls.UI.RadButton
     Friend WithEvents LblPaymentType As Label
     Friend WithEvents LblTo As Label
     Friend WithEvents LblInvType As Label
@@ -695,5 +724,10 @@ Partial Class SalesOrderFrm
     Friend WithEvents BtnPrint As Telerik.WinControls.UI.RadDropDownButton
     Friend WithEvents BtnPrintInvoice As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents BtnInvoicesReport As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+    Friend WithEvents BtnNew As Telerik.WinControls.UI.RadButton
+    Friend WithEvents BtnEdit As Telerik.WinControls.UI.RadButton
+    Friend WithEvents BtnDelete As Telerik.WinControls.UI.RadButton
+    Friend WithEvents BtnRefrech As Telerik.WinControls.UI.RadButton
 End Class
 

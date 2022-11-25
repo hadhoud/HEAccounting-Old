@@ -314,6 +314,8 @@ Public Class AddNewPurchaseInvoice
         Me.TxtInvoiceReference.Text = DPurchaseOrderHeaders.Rows(0).Item("InvoiceNumber").ToString
         Me.TxtCurrencyVal.Text = DPurchaseOrderHeaders.Rows(0).Item("CurrencyVal").ToString
         Me.TxtCurrencyVal.Tag = DPurchaseOrderHeaders.Rows(0).Item("CurrencyRateID").ToString
+        Me.txtDollarRate.Text = DPurchaseOrderHeaders.Rows(0).Item("fDollarRate_amt").ToString
+
         Me.TxtDiscount.Value = DPurchaseOrderHeaders.Rows(0).Item("Discount").ToString
         Dim DtPurchasesOrderDetailsItems As DataTable = ExecuteProcedureDatatableWithParameters("SelectPurchasesOrdersDetailsJoinItemsByID", Param)
         For i As Integer = 0 To DtPurchasesOrderDetailsItems.Rows.Count - 1
@@ -482,7 +484,7 @@ Public Class AddNewPurchaseInvoice
                         End If
                     End If
 
-                    Dim Param(12) As String
+                    Dim Param(13) As String
                     Param(0) = "@TDueDate , " & Me.MskTxtInvDate.Value
                     Param(1) = "@IVendorID , " & VendorID
                     Param(2) = "@CPaymentType , " & IIf(Me.RadioCash.IsChecked, "C", "D")
@@ -492,10 +494,11 @@ Public Class AddNewPurchaseInvoice
                     Param(6) = "@FSubTotal , " & Me.TxtSubTotal.Text
                     Param(7) = "@FTotalDue , " & Me.TxtTotalDue.Text
                     Param(8) = "@ICurrencyRateID , " & Me.TxtCurrencyVal.Tag.ToString
-                    Param(9) = "@CInvoiceNumber , " & Evalquote(Me.TxtInvoiceReference.Text)
-                    Param(10) = "@FDiscount , " & Me.TxtDiscount.Text
-                    Param(11) = "@IInvID , " & Me.TxtInvID.Text
-                    Param(12) = "@IUserID , " & UserID
+                    Param(9) = "@iDollarRate_amt , " & Me.txtDollarRate.Text
+                    Param(10) = "@CInvoiceNumber , " & Evalquote(Me.TxtInvoiceReference.Text)
+                    Param(11) = "@FDiscount , " & Me.TxtDiscount.Text
+                    Param(12) = "@IInvID , " & Me.TxtInvID.Text
+                    Param(13) = "@IUserID , " & UserID
 
                     If BtnSaveAndNew.Tag = "Save" Then
                         ExecuteProcedureWithParameters("InsertNewPurchaseOrderHeader", Param)
@@ -567,6 +570,7 @@ Public Class AddNewPurchaseInvoice
         Me.RadioCash.IsChecked = True
         Me.RadioPurchases.IsChecked = True
         Me.DropCurrency.SelectedValue = 1
+        Me.txtDollarRate.Text = LastDollarCurrencyRate
         Me.MskTxtInvDate.Value = Date.Now.Date
         Me.TxtInvoiceReference.Text = String.Empty
         Me.TxtItemid.Focus()
@@ -713,8 +717,10 @@ Public Class AddNewPurchaseInvoice
             If FrmAddCurrVal.GetCurrencyVal.Length <> 0 And FrmAddCurrVal.GetCurrencyRateID.Length <> 0 Then
                 Me.TxtCurrencyVal.Text = FrmAddCurrVal.GetCurrencyVal
                 Me.TxtCurrencyVal.Tag = FrmAddCurrVal.GetCurrencyRateID
+                Me.txtDollarRate.Text = FrmAddCurrVal.GetCurrencyVal
             End If
         Else
+            Me.txtDollarRate.Text = LastDollarCurrencyRate
             DropCurerncySelectedChange()
         End If
     End Sub

@@ -7,6 +7,7 @@ Public Class BackupFrm
             DbProgressBar.Value1 = 0
             DbProgressBar.Visible = True
             DbTimer.Enabled = True
+            Me.BtnSave.Enabled = False
             DbBackgroundWorker.RunWorkerAsync()
         End If
     End Sub
