@@ -9,3 +9,6 @@
 /.vs/HEHAccounting/FileContentIndex/01141139-d6a2-4742-949c-6376828a9c67.vsidx
 *.vsidx
 /.vs
+*.lock
+*.suo
+/bin
