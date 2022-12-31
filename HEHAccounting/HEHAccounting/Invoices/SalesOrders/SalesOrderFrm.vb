@@ -20,6 +20,14 @@ Public Class SalesOrderFrm
         GridSalesOrders.MasterView.SummaryRows(0).PinPosition = PinnedRowPosition.Bottom
         InitiateGrid(Me.GridSalesOrders, Grouping:=IIf(BoolShowItemsInSOMainForm, False, True))
         FillDropList()
+        ShowPermissions()
+    End Sub
+
+    Sub ShowPermissions()
+        Dim SORow As DataRow = UserRolesdt.Select("KeyName = 'SO'").First
+        Me.BtnNew.Enabled = SORow("AllowAdd").ToString
+        Me.BtnEdit.Enabled = SORow("AllowEdit").ToString
+        Me.BtnDelete.Enabled = SORow("AllowDelete").ToString
     End Sub
 
     Private Sub ChangeToEng()
@@ -123,6 +131,7 @@ Public Class SalesOrderFrm
         }
         InitiateGridChild(ChildTemplateItems)
         HideShowColummnChild(ChildTemplateItems, ChildTemplateItems.Columns("InvID").Index, False)
+        HideShowColummnChild(ChildTemplateItems, ChildTemplateItems.Columns("PurchasingPrice").Index, BoolShowPurchasingPriceInScreensByUser)
         Me.GridSalesOrders.MasterTemplate.Templates.Add(ChildTemplateItems)
 
         Dim relation As New GridViewRelation(Me.GridSalesOrders.MasterTemplate) With {

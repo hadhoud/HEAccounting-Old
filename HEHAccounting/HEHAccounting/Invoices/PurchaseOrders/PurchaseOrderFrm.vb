@@ -21,9 +21,10 @@ Public Class PurchaseOrderFrm
         ShowPermissions()
     End Sub
     Sub ShowPermissions()
-        Dim ItemsRow As DataRow = UserRolesdt.Select("KeyName = 'PO'").First
-        Me.BtnNew.Enabled = (UserType = UserRole.Programmer Or ItemsRow("AllowAdd").ToString)
-        Me.BtnEdit.Enabled = (UserType = UserRole.Programmer Or ItemsRow("AllowEdit").ToString)
+        Dim PORow As DataRow = UserRolesdt.Select("KeyName = 'PO'").First
+        Me.BtnNew.Enabled = PORow("AllowAdd").ToString
+        Me.BtnEdit.Enabled = PORow("AllowEdit").ToString
+        Me.BtnDelete.Enabled = PORow("AllowDelete").ToString
         '  Me.BtnNew.Enabled = (UserType = UserRole.Programmer Or ItemsRow("AllowDelete").ToString)
     End Sub
     Private Sub ChangeToEng()
@@ -126,6 +127,7 @@ Public Class PurchaseOrderFrm
         }
         InitiateGridChild(ChildTemplateItems)
         HideShowColummnChild(ChildTemplateItems, ChildTemplateItems.Columns("InvID").Index, False)
+        HideShowColummnChild(ChildTemplateItems, ChildTemplateItems.Columns("PurchasingPrice").Index, BoolShowPurchasingPriceInScreensByUser)
         Me.GridPurchaseOrders.MasterTemplate.Templates.Add(ChildTemplateItems)
 
         Dim relation As New GridViewRelation(Me.GridPurchaseOrders.MasterTemplate) With {

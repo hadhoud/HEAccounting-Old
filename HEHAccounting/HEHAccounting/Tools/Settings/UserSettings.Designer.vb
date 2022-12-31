@@ -105,6 +105,7 @@ Partial Class UserSettings
         Me.ChkShowBarcode = New Telerik.WinControls.UI.RadCheckBox()
         Me.ChkShowItemsUnits = New Telerik.WinControls.UI.RadCheckBox()
         Me.chkShowSalesDailyWin = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkShowDashboardForm = New Telerik.WinControls.UI.RadCheckBox()
         Me.chkShowCurrencyRateInStatus = New Telerik.WinControls.UI.RadCheckBox()
         Me.DropLang = New Telerik.WinControls.UI.RadDropDownList()
         Me.PageColumns = New Telerik.WinControls.UI.RadPageViewPage()
@@ -124,7 +125,6 @@ Partial Class UserSettings
         Me.ChkSalesOrdersColCustomerTitle = New Telerik.WinControls.UI.RadCheckBox()
         Me.ChkSalesOrdersColCurrencySymb = New Telerik.WinControls.UI.RadCheckBox()
         Me.Office2010BlueTheme1 = New Telerik.WinControls.Themes.Office2010BlueTheme()
-        Me.chkShowDashboardForm = New Telerik.WinControls.UI.RadCheckBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.BtnClose, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -185,6 +185,7 @@ Partial Class UserSettings
         CType(Me.ChkShowBarcode, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChkShowItemsUnits, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkShowSalesDailyWin, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkShowDashboardForm, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkShowCurrencyRateInStatus, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DropLang, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PageColumns.SuspendLayout()
@@ -199,7 +200,6 @@ Partial Class UserSettings
         Me.FlowLayoutPanel3.SuspendLayout()
         CType(Me.ChkSalesOrdersColCustomerTitle, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChkSalesOrdersColCurrencySymb, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chkShowDashboardForm, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -226,7 +226,7 @@ Partial Class UserSettings
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.01504!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.98496!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 201.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.BtnClose, 2, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.BtnSave, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.TxtItemPicture, 0, 0)
@@ -243,7 +243,7 @@ Partial Class UserSettings
         Me.BtnClose.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.Image = Global.HEHAccounting.My.Resources.Resources.Close
         Me.BtnClose.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.BtnClose.Location = New System.Drawing.Point(212, 3)
+        Me.BtnClose.Location = New System.Drawing.Point(213, 3)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(104, 36)
         Me.BtnClose.TabIndex = 1
@@ -256,7 +256,7 @@ Partial Class UserSettings
         Me.BtnSave.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSave.Image = Global.HEHAccounting.My.Resources.Resources.Save
         Me.BtnSave.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.BtnSave.Location = New System.Drawing.Point(346, 3)
+        Me.BtnSave.Location = New System.Drawing.Point(347, 3)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(103, 36)
         Me.BtnSave.TabIndex = 0
@@ -1118,7 +1118,7 @@ Partial Class UserSettings
         Me.Label7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label7.Location = New System.Drawing.Point(437, 9)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(110, 19)
+        Me.Label7.Size = New System.Drawing.Size(110, 30)
         Me.Label7.TabIndex = 24
         Me.Label7.Text = "العملة"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1126,7 +1126,7 @@ Partial Class UserSettings
         'NumericUpDown1
         '
         Me.NumericUpDown1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.NumericUpDown1.Location = New System.Drawing.Point(273, 31)
+        Me.NumericUpDown1.Location = New System.Drawing.Point(273, 42)
         Me.NumericUpDown1.Maximum = New Decimal(New Integer() {60, 0, 0, 0})
         Me.NumericUpDown1.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDown1.Name = "NumericUpDown1"
@@ -1139,7 +1139,7 @@ Partial Class UserSettings
         '
         Me.Label8.AutoSize = True
         Me.Label8.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label8.Location = New System.Drawing.Point(437, 28)
+        Me.Label8.Location = New System.Drawing.Point(437, 39)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(110, 32)
         Me.Label8.TabIndex = 14
@@ -1163,7 +1163,7 @@ Partial Class UserSettings
         Me.DropCurrenyReport.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DropCurrenyReport.Location = New System.Drawing.Point(273, 12)
         Me.DropCurrenyReport.Name = "DropCurrenyReport"
-        Me.DropCurrenyReport.Size = New System.Drawing.Size(158, 13)
+        Me.DropCurrenyReport.Size = New System.Drawing.Size(158, 24)
         Me.DropCurrenyReport.TabIndex = 25
         Me.DropCurrenyReport.ThemeName = "Office2010Blue"
         '
@@ -1267,6 +1267,16 @@ Partial Class UserSettings
         Me.chkShowSalesDailyWin.TabIndex = 4
         Me.chkShowSalesDailyWin.Text = "إظهار شاشة أرباح المبيعات"
         Me.chkShowSalesDailyWin.ThemeName = "Office2010Blue"
+        '
+        'chkShowDashboardForm
+        '
+        Me.chkShowDashboardForm.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkShowDashboardForm.Location = New System.Drawing.Point(116, 166)
+        Me.chkShowDashboardForm.Name = "chkShowDashboardForm"
+        Me.chkShowDashboardForm.Size = New System.Drawing.Size(140, 22)
+        Me.chkShowDashboardForm.TabIndex = 6
+        Me.chkShowDashboardForm.Text = "إظهار شاشة التحليلات"
+        Me.chkShowDashboardForm.ThemeName = "Office2010Blue"
         '
         'chkShowCurrencyRateInStatus
         '
@@ -1490,16 +1500,6 @@ Partial Class UserSettings
         Me.ChkSalesOrdersColCurrencySymb.Text = "رمز العملة"
         Me.ChkSalesOrdersColCurrencySymb.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'chkShowDashboardForm
-        '
-        Me.chkShowDashboardForm.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkShowDashboardForm.Location = New System.Drawing.Point(116, 166)
-        Me.chkShowDashboardForm.Name = "chkShowDashboardForm"
-        Me.chkShowDashboardForm.Size = New System.Drawing.Size(140, 22)
-        Me.chkShowDashboardForm.TabIndex = 6
-        Me.chkShowDashboardForm.Text = "إظهار شاشة التحليلات"
-        Me.chkShowDashboardForm.ThemeName = "Office2010Blue"
-        '
         'UserSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1588,6 +1588,7 @@ Partial Class UserSettings
         CType(Me.ChkShowBarcode, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ChkShowItemsUnits, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkShowSalesDailyWin, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkShowDashboardForm, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkShowCurrencyRateInStatus, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DropLang, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PageColumns.ResumeLayout(False)
@@ -1607,7 +1608,6 @@ Partial Class UserSettings
         Me.FlowLayoutPanel3.PerformLayout()
         CType(Me.ChkSalesOrdersColCustomerTitle, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ChkSalesOrdersColCurrencySymb, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chkShowDashboardForm, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

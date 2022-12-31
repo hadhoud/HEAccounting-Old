@@ -67,7 +67,9 @@
             FillGridViewProcedureWithParameters(Me.GridItems, "GetItemsSell", Param)
         Else
             FillGridViewProcedureWithParameters(Me.GridItems, "GetItemsPurchase", Param)
+            HideShowColummn(Me.GridItems, Me.GridItems.Columns("PurchasingPrice").Index, BoolShowPurchasingPriceInScreensByUser)
         End If
+
     End Sub
     Private Sub TxtItemName_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles TxtItemName.Validating
         If Not ItemsNameAuto.Contains(Me.TxtItemName.Text.ToLower) Then

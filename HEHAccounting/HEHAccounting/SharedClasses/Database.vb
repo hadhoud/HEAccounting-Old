@@ -23,7 +23,7 @@ Public Class Database
             dbUSerName = My.Settings.DBUserName.ToString()
             dbUserPassword = Decode(My.Settings.DBUserPassword.ToString())
 
-            connectionstrng = "Data Source=(" & serverName & ");Initial Catalog=" & dbName & ";Integrated Security=False; User ID=" & dbUSerName & " ;Password=" & dbUserPassword & ";"
+            connectionstrng = "Data Source=" & serverName & ";Initial Catalog=" & dbName & ";Integrated Security=False; User ID=" & dbUSerName & " ;Password=" & dbUserPassword & ";"
         End If
         Return String.Concat(connectionstrng)
         'Return String.Concat(connectionstrng)

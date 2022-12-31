@@ -304,7 +304,7 @@ Public Class AddNewSaleInvoice
         'HideShowColummn(GridInvItem, Me.GridInvItem.Columns.Item("SellingPricePercent").Index, False)
         HideShowColummn(GridInvItem, Me.GridInvItem.Columns.Item("IsAlertQtyOnBuy").Index, False)
         ' HideShowColummn(GridInvItem, Me.GridInvItem.Columns.Item("SpecialOfferID").Index, False)
-        HideShowColummn(GridInvItem, Me.GridInvItem.Columns.Item("PurchasingPrice").Index, BoolShowAddSalesOrdersColPurchasePrice)
+        HideShowColummn(GridInvItem, Me.GridInvItem.Columns.Item("PurchasingPrice").Index, BoolShowPurchasingPriceInScreensByUser And BoolShowAddSalesOrdersColPurchasePrice)
     End Sub
 
     Private Sub DeleteItem()
@@ -768,6 +768,26 @@ Public Class AddNewSaleInvoice
             If column.Name = "Qty" And EnterPressed = "ItemName" Then
                 TxtItemName.Focus()
             End If
+        ElseIf e.KeyCode = Keys.F9 Then
+            If BoolShowPurchasingPriceInScreensByUser Then
+                Dim purchase_price = Me.GridInvItem.CurrentRow.Cells("PurchasingPrice").Value
+                If Not purchase_price Is Nothing Then
+                    If Me.DropCurrency.SelectedValue = 1 Then
+                        lblItemPurchasePriceLira.Text = purchase_price & " ل.ل"
+                        lblItemPurchasePriceDollar.Text = Math.Round((purchase_price / Me.txtDollarRate.Text), 3) & " $"
+                    Else
+                        lblItemPurchasePriceDollar.Text = purchase_price & " $"
+                        lblItemPurchasePriceLira.Text = (purchase_price * Me.txtDollarRate.Text) & " ل.ل"
+                    End If
+                    If Not boolTimerStarted Then
+                        TimerPurchasePrice.Start()
+                    End If
+
+                    'Me.lblItemPurchasePriceLira.Visible = True
+                    'Me.lblItemPurchasePriceDollar.Visible = True
+                End If
+
+            End If
         End If
     End Sub
 
@@ -775,20 +795,22 @@ Public Class AddNewSaleInvoice
         Dim column As GridViewDataColumn = TryCast(e.Column, GridViewDataColumn)
         If TypeOf e.Row Is GridViewDataRowInfo AndAlso column IsNot Nothing Then
             If column.Name = "Item_name" Then
-                Dim purchase_price = e.Row.Cells("PurchasingPrice").Value
-                If Me.DropCurrency.SelectedValue = 1 Then
-                    lblItemPurchasePriceLira.Text = purchase_price & " ل.ل"
-                    lblItemPurchasePriceDollar.Text = (purchase_price / Me.txtDollarRate.Text) & " $"
-                Else
-                    lblItemPurchasePriceDollar.Text = purchase_price & " $"
-                    lblItemPurchasePriceLira.Text = (purchase_price * Me.txtDollarRate.Text) & " ل.ل"
-                End If
-                If Not boolTimerStarted Then
-                    TimerPurchasePrice.Start()
-                End If
+                If BoolShowPurchasingPriceInScreensByUser Then
+                    Dim purchase_price = e.Row.Cells("PurchasingPrice").Value
+                    If Me.DropCurrency.SelectedValue = 1 Then
+                        lblItemPurchasePriceLira.Text = purchase_price & " ل.ل"
+                        lblItemPurchasePriceDollar.Text = (purchase_price / Me.txtDollarRate.Text) & " $"
+                    Else
+                        lblItemPurchasePriceDollar.Text = purchase_price & " $"
+                        lblItemPurchasePriceLira.Text = (purchase_price * Me.txtDollarRate.Text) & " ل.ل"
+                    End If
+                    If Not boolTimerStarted Then
+                        TimerPurchasePrice.Start()
+                    End If
 
-                'Me.lblItemPurchasePriceLira.Visible = True
-                'Me.lblItemPurchasePriceDollar.Visible = True
+                    'Me.lblItemPurchasePriceLira.Visible = True
+                    'Me.lblItemPurchasePriceDollar.Visible = True
+                End If
             End If
         End If
     End Sub

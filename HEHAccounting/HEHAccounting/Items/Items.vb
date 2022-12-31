@@ -22,8 +22,9 @@ Partial Friend Class Items
         Me.LblBarCode.Visible = BoolShowBarcode
         Me.TxtItemBarcode.Visible = BoolShowBarcode
         Dim ItemsRow As DataRow = UserRolesdt.Select("KeyName = 'ITS'").First
-        Me.BtnNew.Enabled = (UserType = UserRole.Programmer Or ItemsRow("AllowAdd").ToString)
-        Me.BtnEdit.Enabled = (UserType = UserRole.Programmer Or ItemsRow("AllowEdit").ToString)
+        Me.BtnNew.Enabled = ItemsRow("AllowAdd").ToString
+        Me.BtnEdit.Enabled = ItemsRow("AllowEdit").ToString
+        Me.BtnDelete.Enabled = ItemsRow("AllowDelete").ToString
         '  Me.BtnNew.Enabled = (UserType = UserRole.Programmer Or ItemsRow("AllowDelete").ToString)
     End Sub
     Private Sub ChangeToEng()
@@ -47,6 +48,7 @@ Partial Friend Class Items
     Public Sub RefrechGrid()
         FillGridViewProcedure(Me.GridItems, "SelectItems")
         HideShowColummn(Me.GridItems, 1, BoolShowBarcode)
+        HideShowColummn(Me.GridItems, Me.GridItems.Columns("PurchasingPrice").Index, BoolShowPurchasingPriceInScreensByUser)
     End Sub
     'Protected Overrides Sub OnLoad(e As EventArgs)
     '    If Not ProgramHasError Then

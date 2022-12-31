@@ -1,4 +1,5 @@
 ﻿Imports Telerik.WinControls.UI
+Imports Telerik.Windows.Documents.FormatProviders.OpenXml.Model
 
 Public Class AddUsers
     Sub New()
@@ -110,6 +111,11 @@ Public Class AddUsers
         Me.TxtFullName.Text = String.Empty
         Me.TxtUserName.Text = String.Empty
         Me.DropUserType.SelectedValue = UserRole.Admin
+        Me.chkShowSalesDailyWin.Checked = False
+        Me.chkShowHomeForm.Checked = False
+        Me.chkShowDashboardForm.Checked = False
+        Me.chkShowPurchasingPriceInProg.Checked = False
+        Me.chkShowItemsSalesWinReport.Checked = False
         BtnDeselectAll.PerformClick()
         GetID()
     End Sub
@@ -140,6 +146,7 @@ Public Class AddUsers
                 If BtnSave.Tag = "Save" Then
                     ExecuteProcedureWithParameters("InsertUser", Param)
                     InsertUserRoles()
+                    UpdateUserPermissions()
                     FormClear()
                     RefrechGrid()
                 ElseIf BtnSave.Tag = "Edit" Then
@@ -148,6 +155,7 @@ Public Class AddUsers
                     ParamDelete(0) = "@IUserID , " & Me.TxtNewUserID.Text
                     ExecuteProcedureWithParameters("DeleteUserRoles", ParamDelete)
                     InsertUserRoles()
+                    UpdateUserPermissions()
                     FormClear()
                     RefrechGrid()
                     Me.BtnSave.Tag = "Save"
@@ -196,6 +204,17 @@ Public Class AddUsers
         Next
     End Sub
 
+    Private Sub UpdateUserPermissions()
+        Dim ParamPermissions(5) As String
+        ParamPermissions(0) = "@bShowHomeScreenByUser , " & Me.chkShowHomeForm.Checked
+        ParamPermissions(1) = "@bShowDashboardFormByUser , " & Me.chkShowDashboardForm.Checked
+        ParamPermissions(2) = "@bShowPurchasingPriceInScreensByUser , " & Me.chkShowPurchasingPriceInProg.Checked
+        ParamPermissions(3) = "@bShowSalesDailyWinScreenByUser , " & Me.chkShowSalesDailyWin.Checked
+        ParamPermissions(4) = "@bShowItemsSalesWinReportScreenByUser , " & Me.chkShowItemsSalesWinReport.Checked
+        ParamPermissions(5) = "@IUserID , " & Me.TxtNewUserID.Text
+        ExecuteProcedureWithParameters("UpdateUserPermissions", ParamPermissions)
+
+    End Sub
     Private Sub BtnSelectAll_Click(sender As Object, e As EventArgs) Handles BtnSelectAll.Click
         For Each row In GridPermissions.Rows
             row.Cells("AllowAdd").Value = 1
@@ -239,5 +258,27 @@ Public Class AddUsers
         ' Dim dtRoles As DataTable = ExecuteProcedureDatatableWithParameters("SelectUsersRoles", ParamRoles)
         FillGridViewProcedureWithParameters(Me.GridPermissions, "SelectUsersRoles", ParamRoles)
         HideShowColummn(Me.GridPermissions, Me.GridPermissions.Columns("KeyName").Index, False)
+        FillPermissionsCheckboxList()
+    End Sub
+
+    Private Sub FillPermissionsCheckboxList()
+        Dim Param(0) As String
+        Param(0) = "@IUserID , " & Me.GridUsers.CurrentRow.Cells("UserID").Value.ToString
+        Dim dtUserPermissions As DataTable = ExecuteProcedureDatatableWithParameters("SelectUserPermissions", Param)
+        If dtUserPermissions.Rows.Count > 0 Then
+            Me.chkShowHomeForm.Checked = dtUserPermissions.Rows(0).Item("bShowHomeScreenByUser")
+            Me.chkShowSalesDailyWin.Checked = dtUserPermissions.Rows(0).Item("bShowSalesDailyWinScreenByUser")
+            Me.chkShowDashboardForm.Checked = dtUserPermissions.Rows(0).Item("bShowDashboardFormByUser")
+            Me.chkShowPurchasingPriceInProg.Checked = dtUserPermissions.Rows(0).Item("bShowPurchasingPriceInScreensByUser")
+            Me.chkShowItemsSalesWinReport.Checked = dtUserPermissions.Rows(0).Item("bShowItemsSalesWinReportScreenByUser")
+        End If
+    End Sub
+
+    Private Sub btnNewUser_Click(sender As Object, e As EventArgs) Handles btnNewUser.Click
+        FormClear()
+        RefrechGrid()
+        Me.BtnSave.Tag = "Save"
+        ExexuteGrid()
+        Home.ReloadUserRoles()
     End Sub
 End Class

@@ -100,6 +100,15 @@
             ShowChequesDay = UserSettingDt.Rows(0).Item("SShowChequesDay").ToString
             HomeFormCurrency = UserSettingDt.Rows(0).Item("SHomeFormCurrency").ToString
 
+            'User Permissions:
+            BoolShowHomeScreenByUser = UserSettingDt.Rows(0).Item("bShowHomeScreenByUser")
+            BoolShowPurchasingPriceInScreensByUser = UserSettingDt.Rows(0).Item("bShowHomeScreenByUser")
+            BoolShowDashboardScreenByUser = UserSettingDt.Rows(0).Item("bShowDashboardFormByUser")
+            BoolShowSalesDailyWinScreenByUser = UserSettingDt.Rows(0).Item("bShowSalesDailyWinScreenByUser")
+            BoolShowPurchasingPriceInScreensByUser = UserSettingDt.Rows(0).Item("bShowPurchasingPriceInScreensByUser")
+            BoolShowItemsSalesWinReportScreenByUser = UserSettingDt.Rows(0).Item("bShowItemsSalesWinReportScreenByUser")
+
+
             'Customer Setting
             BoolAllowCustomerRepetition = UserSettingDt.Rows(0).Item("SAllowCustomerRepetition")
             BoolForcingEnterCustomerLatin = UserSettingDt.Rows(0).Item("SForcingEnterCustomerLatin")

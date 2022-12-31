@@ -25,6 +25,13 @@
     Public BoolShowDashboardForm As Boolean
     Public BoolShowCurrencyRateInStatus As Boolean
 
+    'User Permissions:
+    Public BoolShowHomeScreenByUser As Boolean
+    Public BoolShowSalesDailyWinScreenByUser As Boolean
+    Public BoolShowDashboardScreenByUser As Boolean
+    Public BoolShowPurchasingPriceInScreensByUser As Boolean
+    Public BoolShowItemsSalesWinReportScreenByUser As Boolean
+
     'UserSettings
 
     'Sale Order Setting

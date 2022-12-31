@@ -43,29 +43,37 @@ Public Class MainForm
         If UserType = UserRole.Programmer Then
             Me.RibBtnUsers.Visibility = ElementVisibility.Visible
             Me.RibBtnCurrencies.Visibility = ElementVisibility.Visible
-            Me.RibBtnSalesWin.Visibility = ElementVisibility.Visible
-            Me.RibButtonDashboard.Visibility = IIf(BoolShowDashboardForm, ElementVisibility.Visible, ElementVisibility.Collapsed)
+            Me.RibBtnSalesWin.Visibility = IIf(BoolShowSalesDailyWin And BoolShowSalesDailyWinScreenByUser, ElementVisibility.Visible, ElementVisibility.Collapsed)
+            Me.RibButtonDashboard.Visibility = IIf(BoolShowDashboardForm And BoolShowDashboardScreenByUser, ElementVisibility.Visible, ElementVisibility.Collapsed)
+            Me.RibBtnHomeForm.Visibility = IIf(BoolShowHomeScreenByUser, ElementVisibility.Visible, ElementVisibility.Collapsed)
             Me.stripLblDollarRateValue.Visibility = IIf(BoolShowCurrencyRateInStatus, ElementVisibility.Visible, ElementVisibility.Collapsed)
             Me.stripLblLastDollarRate.Visibility = IIf(BoolShowCurrencyRateInStatus, ElementVisibility.Visible, ElementVisibility.Collapsed)
+            Me.RibBtnItemsSalesWin.Visibility = IIf(BoolShowItemsSalesWinReportScreenByUser, ElementVisibility.Visible, ElementVisibility.Collapsed)
+            Me.RibBtnPurchasePrices.Visibility = IIf(BoolShowPurchasingPriceInScreensByUser, ElementVisibility.Visible, ElementVisibility.Collapsed)
         Else
             Me.RibBtnUsers.Visibility = IIf(BoolShowUsers, ElementVisibility.Visible, ElementVisibility.Collapsed)
             Me.RibBtnCurrencies.Visibility = IIf(BoolShowUsers, ElementVisibility.Visible, ElementVisibility.Collapsed)
-            Me.RibBtnSalesWin.Visibility = IIf(BoolShowSalesDailyWin, ElementVisibility.Visible, ElementVisibility.Collapsed)
-            Me.RibButtonDashboard.Visibility = IIf(BoolShowDashboardForm, ElementVisibility.Visible, ElementVisibility.Collapsed)
+            Me.RibBtnSalesWin.Visibility = IIf(BoolShowSalesDailyWin And BoolShowSalesDailyWinScreenByUser, ElementVisibility.Visible, ElementVisibility.Collapsed)
+            Me.RibButtonDashboard.Visibility = IIf(BoolShowDashboardForm And BoolShowDashboardScreenByUser, ElementVisibility.Visible, ElementVisibility.Collapsed)
+            Me.RibBtnHomeForm.Visibility = IIf(BoolShowHomeScreenByUser, ElementVisibility.Visible, ElementVisibility.Collapsed)
             Me.stripLblDollarRateValue.Visibility = IIf(BoolShowCurrencyRateInStatus, ElementVisibility.Visible, ElementVisibility.Collapsed)
             Me.stripLblLastDollarRate.Visibility = IIf(BoolShowCurrencyRateInStatus, ElementVisibility.Visible, ElementVisibility.Collapsed)
+            Me.RibBtnItemsSalesWin.Visibility = IIf(BoolShowItemsSalesWinReportScreenByUser, ElementVisibility.Visible, ElementVisibility.Collapsed)
+            Me.RibBtnPurchasePrices.Visibility = IIf(BoolShowPurchasingPriceInScreensByUser, ElementVisibility.Visible, ElementVisibility.Collapsed)
 
         End If
+
+
         Dim PORow As DataRow = UserRolesdt.Select("KeyName = 'PO'").First
-        Me.RibBtnAddPurchaseInvoices.Enabled = (UserType = UserRole.Programmer Or PORow("AllowAdd").ToString)
+        Me.RibBtnAddPurchaseInvoices.Enabled = PORow("AllowAdd").ToString
         Dim SORow As DataRow = UserRolesdt.Select("KeyName = 'SO'").First
-        Me.RibBtnAddSalesInvoices.Enabled = (UserType = UserRole.Programmer Or SORow("AllowAdd").ToString)
+        Me.RibBtnAddSalesInvoices.Enabled = SORow("AllowAdd").ToString
         Dim ItemsRow As DataRow = UserRolesdt.Select("KeyName = 'ITS'").First
-        Me.RibBtnAddItem.Enabled = (UserType = UserRole.Programmer Or ItemsRow("AllowAdd").ToString)
+        Me.RibBtnAddItem.Enabled = ItemsRow("AllowAdd").ToString
         Dim NRRow As DataRow = UserRolesdt.Select("KeyName = 'NR'").First
-        Me.RibBtnNotesReceive.Enabled = (UserType = UserRole.Programmer Or NRRow("AllowAdd").ToString)
+        Me.RibBtnNotesReceive.Enabled = NRRow("AllowAdd").ToString
         Dim NPRow As DataRow = UserRolesdt.Select("KeyName = 'NP'").First
-        Me.RibBtnNotesPay.Enabled = (UserType = UserRole.Programmer Or NPRow("AllowAdd").ToString)
+        Me.RibBtnNotesPay.Enabled = NPRow("AllowAdd").ToString
     End Sub
     Private Sub SubscribeShortcuts()
         '  Me.RibonbtnItems.Shortcuts.Add(New RadShortcut(Keys.Alt, Keys.A))
