@@ -171,6 +171,7 @@ Public Class NoteReceive
         Me.LblBankName.Text = LoStrId.LblBankName
         Me.LblCheckType.Text = LoStrId.LblCheckType
         Me.BtnSaveAndNew.Text = LoStrId.LblSaveNew
+        Me.BtnClose.Text = LoStrId.LblClose
         Me.RadioCash.Text = LoStrId.LblCash
         Me.RadioCheck.Text = LoStrId.LblCheck
         Me.BtnPrint.Text = LoStrId.LblPrint

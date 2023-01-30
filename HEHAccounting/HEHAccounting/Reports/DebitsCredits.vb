@@ -45,7 +45,7 @@ Public Class DebitsCredits
         Me.BtnAccRpt.Text = LoStrId.LblNew
         Me.BtnReset.Text = LoStrId.LblReset
         Me.BtnRefrech.Text = LoStrId.LblRefrech
-        Me.Text = LoStrId.LblDaiy
+        Me.Text = LoStrId.LblDebtorsCreditors
     End Sub
 
     Public Sub RefrechGrid()

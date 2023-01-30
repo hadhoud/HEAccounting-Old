@@ -6,88 +6,10 @@ Imports Telerik.Reporting
 Imports Telerik.WinControls.Data
 Imports Telerik.WinControls.UI
 
-'RadRibbonBar1.LocalizationSettings.ShowQuickAccessMenuBelowItemText = "ENG Show below the ribbon"
-'RadRibbonBar1.LocalizationSettings.MinimizeRibbonItemText = "ENG Minimize the ribbon"
-'RadRibbonBar1.LocalizationSettings.ShowQuickAccessMenuAboveItemText = "ENG Show above the ribbon"
-'RadRibbonBar1.LocalizationSettings.MaximizeRibbonItemText = "ENG Maximize the ribbon"
-'RadRibbonBar1.LocalizationSettings.LayoutModeText = "Simplified Ribbon"
+
 Module Functions
     ReadOnly Db As New Database
-    Enum Status
-        'Order current status. Posted = 1 morhal ;UnPosted = 2 Not Morahal;
-        Posted = 1
-        UnPosted = 2
-    End Enum
-    Structure PaymentType
-        'Order current status. Posted = 1 morhal ;UnPosted = 2 Not Morahal;
-        Const Cash = "C"
-        Const Debt = "D"
-        Const Paid = "PI"
-    End Structure
 
-    Enum UserRole
-        'Order current status. Posted = 1 morhal ;UnPosted = 2 Not Morahal;
-        Programmer = 1
-        Admin = 2
-        User = 3
-    End Enum
-    Structure AbbForms
-        Const Items = "IT"
-        Const AddItems = "AIT"
-        Const GroupsTree = "GT"
-        Const AddGroups = "AG"
-        Const SalesOrders = "SO"
-        Const AddSaleOrder = "ASO"
-        Const PurchasesOrders = "PO"
-        Const AddPurchaseOrder = "APO"
-        Const NotesPay = "NP"
-        Const NotesReceive = "NR"
-        Const GeneralNotes = "NG"
-    End Structure
-    'Structure FormsPermissions
-    '    Const Items = "IT"
-    '    Const Groups = "G"
-    '    Const SalesOrders = "SO"
-    '    Const PurchasesOrders = "PO"
-    '    Const NotesPay = "NP"
-    '    Const NotesReceive = "NR"
-    '    Const GeneralNotes = "NG"
-    '    Const Account = "ACC"
-    'End Structure
-    Structure AbbTransaction
-        Const SalesOrders = "SO"
-        Const ReturnSales = "RSO"
-        Const PurchasesOrders = "PO"
-        Const ReturnPurchases = "RPO"
-        Const NotesPay = "NP"
-        Const NotesReceive = "NR"
-        Const GeneralNotesPay = "NGP"
-        Const GeneralNotesReceive = "NGR"
-    End Structure
-
-    Structure CreditsDebits
-        Const Credits = "CForHim"
-        Const Debts = "DOnHim"
-    End Structure
-
-    Enum CheckStatus
-        'Check current status. 1 = NotCollected ;2 = Collected;  3 = Returned ;
-        NotCollected = 1
-        Collected = 2
-        Returned = 3
-    End Enum
-    Function ChangeTextButtonToRight(ByVal BTnTextBox As RadButtonTextBox, ByVal BTnElement As RadButtonElement)
-        BTnTextBox.LeftButtonItems.Remove(BTnElement)
-        BTnTextBox.RightButtonItems.Add(BTnElement)
-        Return True
-    End Function
-    Public Sub UpdateLang(ByVal Lang As String)
-        Dim param(1) As String
-        param(0) = "@lang , " & Lang
-        param(1) = "@LTR , " & IIf(Lang = "Ar", False, True)
-        ExecuteProcedureWithParameters("UpdateLanguage", param)
-        Home.GetAppSettings()
-    End Sub
     Function ChangeColNameToArabic(ByVal ColName As String) As String
         Select Case ColName
             'Form Items:
@@ -223,6 +145,9 @@ Module Functions
 
             Case "DueDate"
                 Return "التاريخ"
+
+            Case "SalesProfitByQty"
+                Return "الربح"
 
             Case "SubTotal", "BeforeDiscount"
                 Return "المجموع"
@@ -422,6 +347,12 @@ Module Functions
             Case "HyperInvID"
                 Return "InvID"
 
+            Case "SellPurchaseDifference"
+                Return "Profit/Loss"
+
+            Case "PurchaseTotalDue"
+                Return "Purchase Total"
+
             Case "Discount"
                 Return "Discount"
 
@@ -456,13 +387,28 @@ Module Functions
             Case "DueDate"
                 Return "Due Date"
 
+            Case "SalesProfitByQty"
+                Return "Profit By Qty"
+
             Case "SubTotal"
                 Return "SubTotal"
+
+            Case "SubTotal.LL"
+                Return "SubTotal LL"
+
+            Case "SubTotal.$"
+                Return "SubTotal $"
+
+            Case "TotalDue.LL"
+                Return "TotalDue LL"
+
+            Case "TotalDue.$"
+                Return "TotalDue $"
 
             Case "TotalDue"
                 Return "Total Due"
 
-            Case "Status"
+            Case "Status", "StatusName"
                 Return "Status"
 
                 'Currency
@@ -473,8 +419,12 @@ Module Functions
                 Return "Cur. Rate"
             Case "DollarRate"
                 Return "Dollar Rate"
+
             Case "Symb"
                 Return "Symbol"
+
+            Case "InvoiceCurrencySymb"
+                Return "Currency"
 
             Case "PartName"
                 Return "Part Name"
@@ -570,19 +520,6 @@ Module Functions
         Return ReturnRptParameter
     End Function
 
-    Public Sub InitiateTitleForm(ByVal Frm As RadForm, Optional ByVal TitleFlg As Boolean = False)
-        Frm.FormElement.TitleBar.Font = New Font("Times New Roman", 12, FontStyle.Bold)
-        '  Frm.FormElement.TitleBar.TitlePrimitive.ForeColor = Color.White
-        If TitleFlg Then
-            If BoolLTRLanguage Then
-                Frm.Text = LoStrId.LblLatinProgramName
-            Else
-                Frm.Text = LoStrId.LblProgramName
-            End If
-        End If
-    End Sub
-
-
     Public Sub MessageShowInfo(ByVal msg As String, Optional error_fl As Boolean = False)
         Dim msgshow As New HEMessage(msg, OkOrYes:="Ok", error_fl)
         ' msgshow.btnyes.rowspan = New Point(msgshow.Size.Width / 2 - msgshow.btnyes.Size.Width / 2, msgshow.btnyes.Location.Y)
@@ -595,264 +532,6 @@ Module Functions
         Return msgshow.ShowDialog()
     End Function
 
-    Public Sub InitiateGrid(ByVal grid As RadGridView, Optional ByVal Editing As Boolean = False, Optional ByVal Grouping As Boolean = False, Optional ByVal Bestfit As Boolean = False)
-        grid.AllowAddNewRow = False
-        grid.AllowEditRow = Editing
-        grid.AllowDeleteRow = False
-        grid.AllowCellContextMenu = False
-        grid.AllowRowHeaderContextMenu = False
-        grid.AllowColumnHeaderContextMenu = False
-        grid.AllowColumnChooser = False
-        grid.AllowColumnReorder = False
-        grid.AllowRowResize = False
-        grid.ClipboardCutMode = GridViewClipboardCutMode.Disable
-        grid.ClipboardCopyMode = GridViewClipboardCopyMode.Disable
-        grid.ClipboardPasteMode = GridViewClipboardPasteMode.Disable
-        grid.AutoSizeColumnsMode = GridViewAutoSizeColumnsMode.Fill
-        grid.EnableGrouping = Grouping
-        grid.RightToLeft = RightToLeft.Inherit
-        grid.AutoSizeRows = False
-        grid.TableElement.RowHeight = 35
-        grid.TableElement.TableHeaderHeight = 35
-        grid.Font = New System.Drawing.Font("Times New Roman", 12, FontStyle.Bold, GraphicsUnit.Point)
-        For Each Col As GridViewDataColumn In grid.Columns
-            Col.TextAlignment = ContentAlignment.MiddleCenter
-            If BoolLTRLanguage Then
-                Col.HeaderText = ChangeColNameToEnglish(Col.Name)
-            Else
-                Col.HeaderText = ChangeColNameToArabic(Col.Name)
-            End If
-            Col.AutoSizeMode = BestFitColumnMode.None
-            Col.BestFit()
-            If (Col.Name.ToLower.Contains("code") Or Col.Name.ToLower.Contains("id")) And Col.Name.ToLower <> "notesid" Then
-                Col.AutoSizeMode = BestFitColumnMode.HeaderCells
-                Col.BestFit()
-                Col.Width = 45
-            ElseIf Col.Name.Contains("Date") Then
-                Col.FormatString = "{0:dd/MM/yyyy}"
-                Col.AutoSizeMode = BestFitColumnMode.AllCells
-                Col.BestFit()
-            End If
-        Next
-
-    End Sub
-
-    Public Sub InitiateGridChild(ByVal grid As GridViewTemplate)
-        grid.AllowAddNewRow = False
-        grid.AllowEditRow = False
-        grid.AllowDeleteRow = False
-        grid.AllowCellContextMenu = False
-        grid.AllowRowHeaderContextMenu = False
-        grid.AllowColumnHeaderContextMenu = False
-        grid.AllowColumnChooser = False
-        grid.AllowColumnReorder = False
-        grid.AllowRowResize = False
-        grid.AutoSizeColumnsMode = GridViewAutoSizeColumnsMode.Fill
-        grid.EnableGrouping = False
-        'grid.RightToLeft = RightToLeft.Inherit
-        'grid.s = False
-        'grid.TableElement.RowHeight = 35
-        'grid.TableElement.TableHeaderHeight = 35
-        'grid.Font = New Drawing.Font("Times New Roman", 12, FontStyle.Bold, GraphicsUnit.Point)
-        For Each Col As GridViewDataColumn In grid.Columns
-            Col.TextAlignment = ContentAlignment.MiddleCenter
-            If BoolLTRLanguage Then
-                Col.HeaderText = ChangeColNameToEnglish(Col.Name)
-            Else
-                Col.HeaderText = ChangeColNameToArabic(Col.Name)
-            End If
-            If Col.Name.Contains("Date") Then
-                Col.FormatString = "{0:dd/MM/yyyy}"
-            End If
-        Next
-
-    End Sub
-    Public Sub Initiatedropdownlist(ByVal dropddown As RadDropDownList, Optional ByVal SelectedindexZero As Boolean = True)
-        dropddown.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        dropddown.RootElement.Alignment = ContentAlignment.MiddleCenter
-        dropddown.DefaultItemsCountInDropDown = 9
-        dropddown.ListElement.ItemHeight = 30
-        dropddown.Font = Appfont
-        For Each rad As RadListDataItem In dropddown.Items
-            rad.Font = Appfont
-            rad.TextAlignment = ContentAlignment.MiddleCenter
-        Next
-        If SelectedindexZero Then
-            dropddown.SelectedIndex = -1
-        End If
-    End Sub
-
-    Public Sub HideShowColummn(ByVal Grid As RadGridView, ByVal Index As Integer, ByVal IsVsible As Boolean)
-        Grid.Columns(Index).IsVisible = IsVsible
-    End Sub
-
-    Public Sub HideShowColummnChild(ByVal Grid As GridViewTemplate, ByVal Index As Integer, ByVal IsvVsible As Boolean)
-        Grid.Columns(Index).IsVisible = IsvVsible
-    End Sub
-    Public Sub FillGridViewProcedure(ByVal Grid As RadGridView, ByVal ProcedureName As String)
-        Grid.MasterTemplate.BeginUpdate()
-        Grid.MasterTemplate.DataSource = Db.SelectProcedureDataTable(ProcedureName)
-        Grid.MasterTemplate.EndUpdate()
-    End Sub
-
-    Public Sub FillTreeProcedure(ByVal MTree As RadTreeView, ByVal ProcedureName As String)
-        MTree.BeginUpdate()
-        MTree.DataSource = Db.SelectProcedureDataTable(ProcedureName)
-        MTree.ValueMember = "GroupID"
-        MTree.DisplayMember = "GroupName"
-        MTree.EndUpdate()
-    End Sub
-
-    Public Sub FillGridViewQuery(ByVal Grid As RadGridView, ByVal Query As String)
-        Grid.BeginUpdate()
-        Grid.DataSource = Db.SelectQueryDatatable(Query)
-        Grid.EndUpdate()
-    End Sub
-
-    Public Sub FilterGrid(ByVal Grid As RadGridView, ByVal FilterPropertyName As String, ByVal FilterStr As String, ByVal Opera As Telerik.WinControls.Data.FilterOperator)
-        Dim filter As New FilterDescriptor With {
-            .PropertyName = FilterPropertyName,
-            .Operator = Opera,
-            .Value = FilterStr
-        }
-        '   filter.IsFilterEditor = True
-        Grid.EnableFiltering = True
-        Grid.ShowFilteringRow = False
-        Grid.FilterDescriptors.Add(filter)
-        If Grid.Rows.Count = 0 Then
-            Grid.ShowNoDataText = True
-        End If
-    End Sub
-
-    Public Sub FillGridViewProcedureWithParameters(ByVal Grid As RadGridView, ByVal ProcedureName As String, ByVal Param() As String)
-        Grid.MasterTemplate.BeginUpdate()
-        Grid.MasterTemplate.DataSource = Db.SelectProcedureDataTableWithParam(ProcedureName, GetSqlParameter(Param))
-        Grid.MasterTemplate.EndUpdate()
-    End Sub
-
-    Public Sub ExecuteProcedureWithParameters(ByVal ProcedureName As String, ByVal Param() As String)
-        Db.ExecuteProcedureWithParam(ProcedureName, GetSqlParameter(Param))
-    End Sub
-    Public Sub ExecuteQuerySQL(ByVal Query As String)
-        Db.ExecuteQuery(Query)
-    End Sub
-    Function ExecuteQueryDatatable(ByVal Query As String) As DataTable
-        Return Db.SelectQueryDatatable(Query)
-    End Function
-    Function GetSqlParameter(ByVal Param() As String) As SqlParameter()
-        Dim TypeChar As String
-        Dim parametercount As Integer = Param.Count - 1
-        Dim OneSqlParameter As SqlParameter
-        Dim ReturnSqlParameter(parametercount) As SqlParameter
-        Dim i As Integer = 0
-        Dim ParameterName As String
-        Dim ParameterValue As String
-        For Each pa In Param
-            Dim PR() As String
-            PR = pa.Split(",")
-            ParameterName = PR(0).Trim
-            ParameterValue = PR(1).Trim
-            TypeChar = ParameterName.Substring(1, 1)
-
-            Select Case TypeChar.ToUpper()
-
-                Case "I" 'Integer
-                    OneSqlParameter = New SqlParameter(ParameterName, SqlDbType.Int)
-                    If ParameterValue = "" Then
-                        OneSqlParameter.Value = DBNull.Value
-                    Else
-                        OneSqlParameter.Value = Integer.Parse(ParameterValue)
-                    End If
-                    Exit Select
-
-                Case "F" 'Float
-                    OneSqlParameter = New SqlParameter(ParameterName, SqlDbType.Float)
-                    If ParameterValue = "" Then
-                        OneSqlParameter.Value = DBNull.Value
-                    Else
-                        OneSqlParameter.Value = Double.Parse(ParameterValue)
-                    End If
-                    Exit Select
-
-                Case "B" 'Bit
-                    OneSqlParameter = New SqlParameter(ParameterName, SqlDbType.Bit) With {
-                        .Value = Convert.ToBoolean(ParameterValue)
-                    }
-                    Exit Select
-
-                Case "D"
-                    OneSqlParameter = New SqlParameter(ParameterName, SqlDbType.Decimal)
-                    If ParameterValue = "" Then
-                        OneSqlParameter.Value = DBNull.Value
-                    Else
-                        OneSqlParameter.Value = Decimal.Parse(ParameterValue)
-                    End If
-                    Exit Select
-
-                Case "T"
-                    OneSqlParameter = New SqlParameter(ParameterName, SqlDbType.DateTime)
-                    If ParameterValue = "" Then
-                        OneSqlParameter.Value = DBNull.Value
-                    Else
-                        OneSqlParameter.Value = Convert.ToDateTime(ParameterValue)
-                    End If
-                    Exit Select
-
-                Case "C"
-                    OneSqlParameter = New SqlParameter(ParameterName, SqlDbType.NVarChar)
-                    If ParameterValue = "" Then
-                        OneSqlParameter.Value = DBNull.Value
-                    Else
-                        OneSqlParameter.Value = ParameterValue
-                    End If
-                    Exit Select
-
-                Case "V"
-                    OneSqlParameter = New SqlParameter(ParameterName, SqlDbType.NVarChar)
-                    If ParameterValue = "" Then
-                        OneSqlParameter.Value = DBNull.Value
-                    Else
-                        OneSqlParameter.Value = ParameterValue
-                    End If
-                    Exit Select
-
-                Case Else
-                    OneSqlParameter = New SqlParameter(ParameterName, SqlDbType.Char)
-                    If ParameterValue = "" Then
-                        OneSqlParameter.Value = DBNull.Value
-                    Else
-                        OneSqlParameter.Value = ParameterValue
-                    End If
-                    Exit Select
-
-            End Select
-
-            ReturnSqlParameter(i) = OneSqlParameter
-            i += 1
-        Next
-
-        Return ReturnSqlParameter
-
-    End Function
-
-    Function GetValueQuery(ByVal Query As String) As String
-        Return Db.GetScalarQuery(Query)
-    End Function
-
-    Function GetScalarProcedure(ByVal Procedure As String, ByVal Param() As String) As String
-        Return Db.GetScalarProcedureWithParam(Procedure, GetSqlParameter(Param))
-    End Function
-    Function GetScalarProcedureWithoutParam(ByVal Procedure As String) As String
-        Return Db.GetScalarProcedureWithoutParam(Procedure)
-    End Function
-
-    Function ExecuteProcedureDatatableWithParameters(ByVal Procedure As String, ByVal Param() As String) As DataTable
-        Return Db.SelectProcedureDataTableWithParam(Procedure, GetSqlParameter(Param))
-    End Function
-
-    Function ExecuteProcedureDatatable(ByVal Procedure As String) As DataTable
-        Return Db.SelectProcedureDataTable(Procedure)
-    End Function
 
     Function Evalisinteger(ByVal txt As String) As Boolean
         Dim Value As Integer
@@ -899,6 +578,7 @@ Module Functions
         'ProgramHasError = True
         'ProgramHasErrorMsg = Con.Msg_Db_NotConnected
     End Sub
+
     Public Sub LogMessage(msg As String)
         Dim message As String = String.Format("Time: {0}", DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"))
         message += Environment.NewLine

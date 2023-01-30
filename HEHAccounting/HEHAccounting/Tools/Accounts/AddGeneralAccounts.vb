@@ -26,12 +26,12 @@ Public Class AddGeneralAccounts
     End Sub
 
     Private Sub BtnSaveAndNew_Click(sender As Object, e As EventArgs) Handles BtnSaveAndNew.Click
-        If Me.TxtAccName.Text.Trim.Length <> 0 And Me.TxtLatinName.Text.Trim.Length <> 0 Then
+        If Me.TxtAccName.Text.Trim.Length <> 0 Then
             If MessageShowAsk(IIf(BtnSaveAndNew.Tag = "Edit", Con.Ask_Edit, Con.Ask_Add)) = DialogResult.Yes Then
                 Dim Param(3) As String
                 Param(0) = "@IAccountID , " & Me.TxtCode.Text
                 Param(1) = "@CAccountName , " & Evalquote(Me.TxtAccName.Text)
-                Param(2) = "@CAccountLatinName , " & Evalquote(Me.TxtLatinName.Text)
+                Param(2) = "@CAccountLatinName , " & IIf(Me.TxtLatinName.Text.Trim.Length <> 0, Evalquote(Me.TxtLatinName.Text), Evalquote(Me.TxtAccName.Text))
                 Param(3) = "@IUserID , " & UserID
                 If BtnSaveAndNew.Tag = "Save" Then
                     ExecuteProcedureWithParameters("InsertGeneralAccount", Param)

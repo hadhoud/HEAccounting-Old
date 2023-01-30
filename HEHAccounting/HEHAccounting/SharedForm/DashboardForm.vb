@@ -124,9 +124,6 @@ Public Class DashboardForm
         Return LblLink
     End Function
 
-
-
-
     Private Sub InitializeBarPaymentValueChart()
 
         AddHandler Me.PieChartPaymentType.LabelFormatting, AddressOf LabelFormatting
@@ -151,25 +148,43 @@ Public Class DashboardForm
         Dim barSeries_Renamed As New BarSeries With {
             .ShowLabels = True
         }
+        If radioSalesChart.IsChecked Then
+            Me.chartPayemntValues.Area.View.Palette = KnownPalette.Rainbow
+        Else
+            Me.chartPayemntValues.Area.View.Palette = KnownPalette.Autumn
+        End If
+
+
         Dim verticalMaxValue As Integer = 0
         Dim dt As DataTable = ExecuteQueryDatatable("GetDashboardTotalSalesByMonth")
 
         For Each ItemsRow As DataRow In dt.Rows
-            barSeries_Renamed.DataPoints.Add(New CategoricalDataPoint(Convert.ToDouble(ItemsRow("fTotalDue").ToString), ItemsRow("iMonth")))
-            If Convert.ToDouble(ItemsRow("fTotalDue").ToString) > verticalMaxValue Then
-                verticalMaxValue = Convert.ToDouble(ItemsRow("fTotalDue").ToString)
+            If radioSalesChart.IsChecked Then
+                barSeries_Renamed.DataPoints.Add(New CategoricalDataPoint(Convert.ToDouble(ItemsRow("fSOTotalDue").ToString), ItemsRow("iMonth")))
+                If Convert.ToDouble(ItemsRow("fSOTotalDue").ToString) > verticalMaxValue Then
+                    verticalMaxValue = Convert.ToDouble(ItemsRow("fSOTotalDue").ToString)
+                End If
+            Else
+                barSeries_Renamed.DataPoints.Add(New CategoricalDataPoint(Convert.ToDouble(ItemsRow("fSOProftis").ToString), ItemsRow("iMonth")))
+                If Convert.ToDouble(ItemsRow("fSOProftis").ToString) > verticalMaxValue Then
+                    verticalMaxValue = Convert.ToDouble(ItemsRow("fSOProftis").ToString)
+                End If
             End If
+
         Next
         Me.chartPayemntValues.Series.Add(barSeries_Renamed)
         barSeries_Renamed.VerticalAxis.ShowLabels = False
-
         Dim verticalAxis As LinearAxis = TryCast(barSeries_Renamed.VerticalAxis, LinearAxis)
         verticalAxis.BorderColor = Color.FromArgb(209, 209, 209)
         verticalAxis.Font = Appfont
         verticalAxis.CustomFontSize = 10.0F
         verticalAxis.Minimum = 0
         verticalAxis.Maximum = Math.Max(verticalMaxValue, 5)
-        verticalAxis.Title = "إجمالي المبيعات"
+        If radioSalesChart.IsChecked Then
+            verticalAxis.Title = IIf(BoolLTRLanguage, LoStrId.str_latin_Sales_Total, LoStrId.str_Sales_Total)
+        Else
+            verticalAxis.Title = IIf(BoolLTRLanguage, LoStrId.str_latin_Proftis_Total, LoStrId.str_Sales_Profits)
+        End If
 
         Dim horizontalAxis As CategoricalAxis = TryCast(barSeries_Renamed.HorizontalAxis, CategoricalAxis)
         horizontalAxis.LabelFitMode = AxisLabelFitMode.MultiLine
@@ -278,6 +293,14 @@ Public Class DashboardForm
 
     Private Sub datatimer_Tick(sender As Object, e As EventArgs) Handles datatimer.Tick
         FillData()
+    End Sub
+
+    Private Sub radioSalesChart_ToggleStateChanged(sender As Object, args As StateChangedEventArgs) Handles radioSalesChart.ToggleStateChanged
+        loadDataPaymentBarChart()
+    End Sub
+
+    Private Sub radioSalesProfitsChart_ToggleStateChanged(sender As Object, args As StateChangedEventArgs) Handles radioSalesProfitsChart.ToggleStateChanged
+        loadDataPaymentBarChart()
     End Sub
 
 End Class

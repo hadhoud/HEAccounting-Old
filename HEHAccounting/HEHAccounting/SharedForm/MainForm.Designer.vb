@@ -32,6 +32,8 @@ Partial Class MainForm
         Me.stripLblLastDollarRate = New Telerik.WinControls.UI.RadLabelElement()
         Me.stripLblDollarRateValue = New Telerik.WinControls.UI.RadLabelElement()
         Me.CommandBarSeparator3 = New Telerik.WinControls.UI.CommandBarSeparator()
+        Me.StriplblVersion = New Telerik.WinControls.UI.RadLabelElement()
+        Me.StriplblVersionInfo = New Telerik.WinControls.UI.RadLabelElement()
         Me.RadRibbonBarGroup1 = New Telerik.WinControls.UI.RadRibbonBarGroup()
         Me.Office2010BlueTheme1 = New Telerik.WinControls.Themes.Office2010BlueTheme()
         Me.WindowDock = New Telerik.WinControls.UI.Docking.RadDock()
@@ -42,15 +44,10 @@ Partial Class MainForm
         Me.RadOffice2007ScreenTipElement3 = New Telerik.WinControls.UI.RadOffice2007ScreenTipElement()
         Me.RadRibbonBar1 = New Telerik.WinControls.UI.RadRibbonBar()
         Me.RibbonTabHome = New Telerik.WinControls.UI.RibbonTab()
-        Me.RibGroupLabelMostanad = New Telerik.WinControls.UI.RadRibbonBarGroup()
-        Me.RibBtnNew = New Telerik.WinControls.UI.RadButtonElement()
-        Me.RibBtnEdit = New Telerik.WinControls.UI.RadButtonElement()
-        Me.RibBtnClose = New Telerik.WinControls.UI.RadButtonElement()
-        Me.RibBtnShowOption = New Telerik.WinControls.UI.RadToggleButtonElement()
         Me.RibGOption = New Telerik.WinControls.UI.RadRibbonBarGroup()
-        Me.RibButtonDashboard = New Telerik.WinControls.UI.RadButtonElement()
-        Me.RibBtnHomeForm = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnDaily = New Telerik.WinControls.UI.RadButtonElement()
+        Me.RibBtnHomeForm = New Telerik.WinControls.UI.RadButtonElement()
+        Me.RibButtonDashboard = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnSalesWin = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibGForms = New Telerik.WinControls.UI.RadRibbonBarGroup()
         Me.RibonbtnItems = New Telerik.WinControls.UI.RadButtonElement()
@@ -64,41 +61,40 @@ Partial Class MainForm
         Me.RibBtnAddItem = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnNotesPay = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnNotesReceive = New Telerik.WinControls.UI.RadButtonElement()
-        Me.RadRibbonBarGroup3 = New Telerik.WinControls.UI.RadRibbonBarGroup()
-        Me.RibBtnAbout = New Telerik.WinControls.UI.RadButtonElement()
-        Me.RibBtnExit = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibTabTools = New Telerik.WinControls.UI.RibbonTab()
         Me.RGToolsItems = New Telerik.WinControls.UI.RadRibbonBarGroup()
         Me.RibBtnItemsTree = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnGroups = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnItemsInventory = New Telerik.WinControls.UI.RadButtonElement()
-        Me.RadRibbonBarGroup4 = New Telerik.WinControls.UI.RadRibbonBarGroup()
+        Me.RGGournalEntry = New Telerik.WinControls.UI.RadRibbonBarGroup()
         Me.RibBtnKoyod = New Telerik.WinControls.UI.RadDropDownButtonElement()
         Me.GeneralNotesPayable = New Telerik.WinControls.UI.RadMenuItem()
         Me.RadMenuSeparatorItem1 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
         Me.GeneralNotesReceive = New Telerik.WinControls.UI.RadMenuItem()
-        Me.RadRibbonBarGroup6 = New Telerik.WinControls.UI.RadRibbonBarGroup()
+        Me.RGToolsAccounts = New Telerik.WinControls.UI.RadRibbonBarGroup()
         Me.RibBtnAccounts = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnAddAccount = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnOpenningBalance = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnAccountReport = New Telerik.WinControls.UI.RadButtonElement()
-        Me.RadRibbonBarGroup2 = New Telerik.WinControls.UI.RadRibbonBarGroup()
+        Me.RGToolsSetting = New Telerik.WinControls.UI.RadRibbonBarGroup()
         Me.RibBtnCurrencies = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnCurrRate = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnUserInfo = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnUserSettings = New Telerik.WinControls.UI.RadButtonElement()
-        Me.RadDropDownButtonElement1 = New Telerik.WinControls.UI.RadDropDownButtonElement()
+        Me.RibBtnDatabase = New Telerik.WinControls.UI.RadDropDownButtonElement()
         Me.RadMenuBackup = New Telerik.WinControls.UI.RadMenuItem()
         Me.RadMenuSeparatorItem2 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
         Me.RadMenuRestore = New Telerik.WinControls.UI.RadMenuItem()
-        Me.RadRibbonBarGroup5 = New Telerik.WinControls.UI.RadRibbonBarGroup()
+        Me.RibBtnAbout = New Telerik.WinControls.UI.RadButtonElement()
+        Me.RibBtnExit = New Telerik.WinControls.UI.RadButtonElement()
+        Me.RGToolsUsers = New Telerik.WinControls.UI.RadRibbonBarGroup()
         Me.RibBtnChangePass = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnUsers = New Telerik.WinControls.UI.RadButtonElement()
-        Me.RibbonTab3 = New Telerik.WinControls.UI.RibbonTab()
-        Me.RadRibbonBarGroup7 = New Telerik.WinControls.UI.RadRibbonBarGroup()
+        Me.RibTabReports = New Telerik.WinControls.UI.RibbonTab()
+        Me.RGReportsDebitCredit = New Telerik.WinControls.UI.RadRibbonBarGroup()
         Me.RibBtnCreditsReport = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnDebitsReport = New Telerik.WinControls.UI.RadButtonElement()
-        Me.RadRibbonBarGroup8 = New Telerik.WinControls.UI.RadRibbonBarGroup()
+        Me.RGItemsReports = New Telerik.WinControls.UI.RadRibbonBarGroup()
         Me.RibBtnPurchasePrices = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnItemPurchase = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnQuantity = New Telerik.WinControls.UI.RadButtonElement()
@@ -106,23 +102,38 @@ Partial Class MainForm
         Me.RibBtnItemMostSell = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnInventoryItems = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnItemsSalesWin = New Telerik.WinControls.UI.RadButtonElement()
-        Me.RadRibbonBarGroup9 = New Telerik.WinControls.UI.RadRibbonBarGroup()
+        Me.RGReportsGeneralReports = New Telerik.WinControls.UI.RadRibbonBarGroup()
         Me.RadButtonElement5 = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnRptCheques = New Telerik.WinControls.UI.RadButtonElement()
+        Me.CommandBarRowElement3 = New Telerik.WinControls.UI.CommandBarRowElement()
+        Me.CommandBarRowTopMostanad = New Telerik.WinControls.UI.CommandBarRowElement()
+        Me.CommandBarMostanadStripElement = New Telerik.WinControls.UI.CommandBarStripElement()
+        Me.BtnCommandBarMostanadNew = New Telerik.WinControls.UI.CommandBarButton()
+        Me.CommandBarSeparator4 = New Telerik.WinControls.UI.CommandBarSeparator()
+        Me.BtnCommandBarEdit = New Telerik.WinControls.UI.CommandBarButton()
+        Me.CommandBarSeparator5 = New Telerik.WinControls.UI.CommandBarSeparator()
+        Me.BtnCommandBarCloseForm = New Telerik.WinControls.UI.CommandBarButton()
+        Me.CommandBarSeparator6 = New Telerik.WinControls.UI.CommandBarSeparator()
+        Me.BtnCommandBarShowHideForm = New Telerik.WinControls.UI.CommandBarToggleButton()
+        Me.CommandBarSeparator7 = New Telerik.WinControls.UI.CommandBarSeparator()
+        Me.BtnCommandBarExitApp = New Telerik.WinControls.UI.CommandBarButton()
+        Me.CommandBarSeparator8 = New Telerik.WinControls.UI.CommandBarSeparator()
+        Me.CommandBarMostanad = New Telerik.WinControls.UI.RadCommandBar()
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WindowDock, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.WindowDock.SuspendLayout()
         CType(Me.DocumentContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadRibbonBar1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CommandBarMostanad, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RadStatusStrip1
         '
-        Me.RadStatusStrip1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.LblUserName, Me.LblStatusUsername, Me.CommandBarSeparator1, Me.StripLblDateNow, Me.CommandBarSeparator2, Me.stripLblLastDollarRate, Me.stripLblDollarRateValue, Me.CommandBarSeparator3})
-        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 513)
+        Me.RadStatusStrip1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.LblUserName, Me.LblStatusUsername, Me.CommandBarSeparator1, Me.StripLblDateNow, Me.CommandBarSeparator2, Me.stripLblLastDollarRate, Me.stripLblDollarRateValue, Me.CommandBarSeparator3, Me.StriplblVersion, Me.StriplblVersionInfo})
+        Me.RadStatusStrip1.Location = New System.Drawing.Point(0, 713)
         Me.RadStatusStrip1.Name = "RadStatusStrip1"
-        Me.RadStatusStrip1.Size = New System.Drawing.Size(1302, 24)
+        Me.RadStatusStrip1.Size = New System.Drawing.Size(1356, 24)
         Me.RadStatusStrip1.SizingGrip = False
         Me.RadStatusStrip1.TabIndex = 1
         Me.RadStatusStrip1.ThemeName = "Office2010Blue"
@@ -194,6 +205,25 @@ Partial Class MainForm
         Me.RadStatusStrip1.SetSpring(Me.CommandBarSeparator3, False)
         Me.CommandBarSeparator3.VisibleInOverflowMenu = False
         '
+        'StriplblVersion
+        '
+        Me.StriplblVersion.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.StriplblVersion.Name = "StriplblVersion"
+        Me.RadStatusStrip1.SetSpring(Me.StriplblVersion, False)
+        Me.StriplblVersion.Text = "الإصدار:"
+        Me.StriplblVersion.TextAlignment = System.Drawing.ContentAlignment.TopRight
+        Me.StriplblVersion.TextWrap = True
+        '
+        'StriplblVersionInfo
+        '
+        Me.StriplblVersionInfo.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.StriplblVersionInfo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(253, Byte), Integer), CType(CType(9, Byte), Integer), CType(CType(29, Byte), Integer))
+        Me.StriplblVersionInfo.Name = "StriplblVersionInfo"
+        Me.RadStatusStrip1.SetSpring(Me.StriplblVersionInfo, False)
+        Me.StriplblVersionInfo.Text = "{0}.{1}.{2}{3}"
+        Me.StriplblVersionInfo.TextAlignment = System.Drawing.ContentAlignment.TopRight
+        Me.StriplblVersionInfo.TextWrap = True
+        '
         'RadRibbonBarGroup1
         '
         Me.RadRibbonBarGroup1.CreateAdapterMethod = Nothing
@@ -207,7 +237,7 @@ Partial Class MainForm
         Me.WindowDock.Dock = System.Windows.Forms.DockStyle.Fill
         Me.WindowDock.DocumentManager.DocumentInsertOrder = Telerik.WinControls.UI.Docking.DockWindowInsertOrder.ToBack
         Me.WindowDock.IsCleanUpTarget = True
-        Me.WindowDock.Location = New System.Drawing.Point(0, 166)
+        Me.WindowDock.Location = New System.Drawing.Point(0, 201)
         Me.WindowDock.MainDocumentContainer = Me.DocumentContainer1
         Me.WindowDock.Name = "WindowDock"
         Me.WindowDock.Padding = New System.Windows.Forms.Padding(0)
@@ -216,7 +246,7 @@ Partial Class MainForm
         '
         Me.WindowDock.RootElement.MinSize = New System.Drawing.Size(25, 25)
         Me.WindowDock.SingleScreen = True
-        Me.WindowDock.Size = New System.Drawing.Size(1302, 347)
+        Me.WindowDock.Size = New System.Drawing.Size(1356, 512)
         Me.WindowDock.TabIndex = 6
         Me.WindowDock.TabStop = False
         Me.WindowDock.ThemeName = "Office2010Blue"
@@ -265,15 +295,16 @@ Partial Class MainForm
         '
         'RadRibbonBar1
         '
-        Me.RadRibbonBar1.CommandTabs.AddRange(New Telerik.WinControls.RadItem() {Me.RibbonTabHome, Me.RibTabTools, Me.RibbonTab3})
+        Me.RadRibbonBar1.CommandTabs.AddRange(New Telerik.WinControls.RadItem() {Me.RibbonTabHome, Me.RibTabTools, Me.RibTabReports})
         Me.RadRibbonBar1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadRibbonBar1.Location = New System.Drawing.Point(0, 0)
         Me.RadRibbonBar1.Name = "RadRibbonBar1"
         '
         '
         '
-        Me.RadRibbonBar1.RootElement.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.WrapAroundChildren
-        Me.RadRibbonBar1.Size = New System.Drawing.Size(1302, 166)
+        Me.RadRibbonBar1.RootElement.AutoSize = True
+        Me.RadRibbonBar1.RootElement.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.[Auto]
+        Me.RadRibbonBar1.Size = New System.Drawing.Size(1356, 166)
         Me.RadRibbonBar1.StartButtonImage = Global.HEHAccounting.My.Resources.Resources.applogo
         Me.RadRibbonBar1.TabIndex = 0
         Me.RadRibbonBar1.Text = "MainForm"
@@ -282,76 +313,26 @@ Partial Class MainForm
         'RibbonTabHome
         '
         Me.RibbonTabHome.IsSelected = True
-        Me.RibbonTabHome.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibGroupLabelMostanad, Me.RibGOption, Me.RibGForms, Me.RibGFastLink, Me.RadRibbonBarGroup3})
+        Me.RibbonTabHome.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibGOption, Me.RibGForms, Me.RibGFastLink})
         Me.RibbonTabHome.Name = "RibbonTabHome"
         Me.RibbonTabHome.ShowHorizontalLine = False
         Me.RibbonTabHome.Text = "الرئيسية"
         Me.RibbonTabHome.UseMnemonic = False
         '
-        'RibGroupLabelMostanad
-        '
-        Me.RibGroupLabelMostanad.CreateAdapterMethod = Nothing
-        Me.RibGroupLabelMostanad.FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding
-        Me.RibGroupLabelMostanad.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.RibGroupLabelMostanad.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnNew, Me.RibBtnEdit, Me.RibBtnClose, Me.RibBtnShowOption})
-        Me.RibGroupLabelMostanad.Name = "RibGroupLabelMostanad"
-        Me.RibGroupLabelMostanad.Padding = New System.Windows.Forms.Padding(0)
-        Me.RibGroupLabelMostanad.ShadowDepth = 1
-        Me.RibGroupLabelMostanad.Text = "مستند"
-        Me.RibGroupLabelMostanad.TextOrientation = System.Windows.Forms.Orientation.Horizontal
-        '
-        'RibBtnNew
-        '
-        Me.RibBtnNew.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RibBtnNew.Image = Global.HEHAccounting.My.Resources.Resources.Create
-        Me.RibBtnNew.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.RibBtnNew.Name = "RibBtnNew"
-        Me.RibBtnNew.Padding = New System.Windows.Forms.Padding(8, 1, 8, 1)
-        Me.RibBtnNew.Text = "جديد"
-        Me.RibBtnNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'RibBtnEdit
-        '
-        Me.RibBtnEdit.Image = Global.HEHAccounting.My.Resources.Resources.Modify
-        Me.RibBtnEdit.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.RibBtnEdit.Name = "RibBtnEdit"
-        Me.RibBtnEdit.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.RibBtnEdit.Text = "تعديل"
-        Me.RibBtnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'RibBtnClose
-        '
-        Me.RibBtnClose.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.RibBtnClose.Image = Global.HEHAccounting.My.Resources.Resources.Close
-        Me.RibBtnClose.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.RibBtnClose.Name = "RibBtnClose"
-        Me.RibBtnClose.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.RibBtnClose.Text = "إغلاق"
-        Me.RibBtnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'RibBtnShowOption
-        '
-        Me.RibBtnShowOption.Image = Global.HEHAccounting.My.Resources.Resources.Target
-        Me.RibBtnShowOption.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.RibBtnShowOption.Name = "RibBtnShowOption"
-        Me.RibBtnShowOption.ReadOnly = False
-        Me.RibBtnShowOption.Text = "إظهار"
-        Me.RibBtnShowOption.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
         'RibGOption
         '
         Me.RibGOption.CreateAdapterMethod = Nothing
-        Me.RibGOption.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibButtonDashboard, Me.RibBtnHomeForm, Me.RibBtnDaily, Me.RibBtnSalesWin})
+        Me.RibGOption.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnDaily, Me.RibBtnHomeForm, Me.RibButtonDashboard, Me.RibBtnSalesWin})
         Me.RibGOption.Name = "RibGOption"
         Me.RibGOption.Text = "خيارات"
         '
-        'RibButtonDashboard
+        'RibBtnDaily
         '
-        Me.RibButtonDashboard.Image = Global.HEHAccounting.My.Resources.Resources.statistics1
-        Me.RibButtonDashboard.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.RibButtonDashboard.Name = "RibButtonDashboard"
-        Me.RibButtonDashboard.Text = "تحليلات"
-        Me.RibButtonDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.RibBtnDaily.Image = Global.HEHAccounting.My.Resources.Resources.EveryDay
+        Me.RibBtnDaily.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RibBtnDaily.Name = "RibBtnDaily"
+        Me.RibBtnDaily.Text = "اليومية"
+        Me.RibBtnDaily.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'RibBtnHomeForm
         '
@@ -362,13 +343,13 @@ Partial Class MainForm
         Me.RibBtnHomeForm.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         Me.RibBtnHomeForm.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'RibBtnDaily
+        'RibButtonDashboard
         '
-        Me.RibBtnDaily.Image = Global.HEHAccounting.My.Resources.Resources.EveryDay
-        Me.RibBtnDaily.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.RibBtnDaily.Name = "RibBtnDaily"
-        Me.RibBtnDaily.Text = "اليومية"
-        Me.RibBtnDaily.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.RibButtonDashboard.Image = Global.HEHAccounting.My.Resources.Resources.statistics1
+        Me.RibButtonDashboard.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RibButtonDashboard.Name = "RibButtonDashboard"
+        Me.RibButtonDashboard.Text = "تحليلات"
+        Me.RibButtonDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'RibBtnSalesWin
         '
@@ -424,6 +405,7 @@ Partial Class MainForm
         Me.RibBtnSalesOrders.StretchVertically = True
         Me.RibBtnSalesOrders.Text = "فواتير مبيعات"
         Me.RibBtnSalesOrders.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.RibBtnSalesOrders.TextWrap = True
         '
         'RibBtnPurchaseOrders
         '
@@ -440,6 +422,15 @@ Partial Class MainForm
         Me.RibBtnPurchaseOrders.StretchVertically = True
         Me.RibBtnPurchaseOrders.Text = "فواتير مشتريات"
         Me.RibBtnPurchaseOrders.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.RibBtnPurchaseOrders.TextWrap = True
+        CType(Me.RibBtnPurchaseOrders.GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).MeasureTrailingSpaces = True
+        CType(Me.RibBtnPurchaseOrders.GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).TextWrap = True
+        CType(Me.RibBtnPurchaseOrders.GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).FlipText = False
+        CType(Me.RibBtnPurchaseOrders.GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).LineLimit = False
+        CType(Me.RibBtnPurchaseOrders.GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Alignment = System.Drawing.ContentAlignment.MiddleCenter
+        CType(Me.RibBtnPurchaseOrders.GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.[Auto]
+        CType(Me.RibBtnPurchaseOrders.GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentContent
+        CType(Me.RibBtnPurchaseOrders.GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'RibGFastLink
         '
@@ -490,33 +481,10 @@ Partial Class MainForm
         Me.RibBtnNotesReceive.Text = "سند قبض"
         Me.RibBtnNotesReceive.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'RadRibbonBarGroup3
-        '
-        Me.RadRibbonBarGroup3.CreateAdapterMethod = Nothing
-        Me.RadRibbonBarGroup3.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnAbout, Me.RibBtnExit})
-        Me.RadRibbonBarGroup3.Name = "RadRibbonBarGroup3"
-        Me.RadRibbonBarGroup3.Text = " "
-        '
-        'RibBtnAbout
-        '
-        Me.RibBtnAbout.Image = Global.HEHAccounting.My.Resources.Resources.Information
-        Me.RibBtnAbout.Name = "RibBtnAbout"
-        Me.RibBtnAbout.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.RibBtnAbout.Text = "حول "
-        Me.RibBtnAbout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'RibBtnExit
-        '
-        Me.RibBtnExit.Image = Global.HEHAccounting.My.Resources.Resources.Close
-        Me.RibBtnExit.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.RibBtnExit.Name = "RibBtnExit"
-        Me.RibBtnExit.Text = "خروج"
-        Me.RibBtnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
         'RibTabTools
         '
         Me.RibTabTools.IsSelected = False
-        Me.RibTabTools.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RGToolsItems, Me.RadRibbonBarGroup4, Me.RadRibbonBarGroup6, Me.RadRibbonBarGroup2, Me.RadRibbonBarGroup5})
+        Me.RibTabTools.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RGToolsItems, Me.RGGournalEntry, Me.RGToolsAccounts, Me.RGToolsSetting, Me.RGToolsUsers})
         Me.RibTabTools.Name = "RibTabTools"
         Me.RibTabTools.Text = "أدوات"
         Me.RibTabTools.UseMnemonic = False
@@ -553,13 +521,13 @@ Partial Class MainForm
         Me.RibBtnItemsInventory.Text = "جردة أصناف"
         Me.RibBtnItemsInventory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'RadRibbonBarGroup4
+        'RGGournalEntry
         '
-        Me.RadRibbonBarGroup4.AutoSize = True
-        Me.RadRibbonBarGroup4.CreateAdapterMethod = Nothing
-        Me.RadRibbonBarGroup4.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnKoyod})
-        Me.RadRibbonBarGroup4.Name = "RadRibbonBarGroup4"
-        Me.RadRibbonBarGroup4.Text = "القيود"
+        Me.RGGournalEntry.AutoSize = True
+        Me.RGGournalEntry.CreateAdapterMethod = Nothing
+        Me.RGGournalEntry.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnKoyod})
+        Me.RGGournalEntry.Name = "RGGournalEntry"
+        Me.RGGournalEntry.Text = "القيود"
         '
         'RibBtnKoyod
         '
@@ -592,12 +560,12 @@ Partial Class MainForm
         Me.GeneralNotesReceive.Name = "GeneralNotesReceive"
         Me.GeneralNotesReceive.Text = "سند قبض عام"
         '
-        'RadRibbonBarGroup6
+        'RGToolsAccounts
         '
-        Me.RadRibbonBarGroup6.CreateAdapterMethod = Nothing
-        Me.RadRibbonBarGroup6.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnAccounts, Me.RibBtnAddAccount, Me.RibBtnOpenningBalance, Me.RibBtnAccountReport})
-        Me.RadRibbonBarGroup6.Name = "RadRibbonBarGroup6"
-        Me.RadRibbonBarGroup6.Text = "الحسابات"
+        Me.RGToolsAccounts.CreateAdapterMethod = Nothing
+        Me.RGToolsAccounts.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnAccounts, Me.RibBtnAddAccount, Me.RibBtnOpenningBalance, Me.RibBtnAccountReport})
+        Me.RGToolsAccounts.Name = "RGToolsAccounts"
+        Me.RGToolsAccounts.Text = "الحسابات"
         '
         'RibBtnAccounts
         '
@@ -631,12 +599,12 @@ Partial Class MainForm
         Me.RibBtnAccountReport.Text = "كشف حساب"
         Me.RibBtnAccountReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'RadRibbonBarGroup2
+        'RGToolsSetting
         '
-        Me.RadRibbonBarGroup2.CreateAdapterMethod = Nothing
-        Me.RadRibbonBarGroup2.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnCurrencies, Me.RibBtnCurrRate, Me.RibBtnUserInfo, Me.RibBtnUserSettings, Me.RadDropDownButtonElement1})
-        Me.RadRibbonBarGroup2.Name = "RadRibbonBarGroup2"
-        Me.RadRibbonBarGroup2.Text = "الإعدادات"
+        Me.RGToolsSetting.CreateAdapterMethod = Nothing
+        Me.RGToolsSetting.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnCurrencies, Me.RibBtnCurrRate, Me.RibBtnUserInfo, Me.RibBtnUserSettings, Me.RibBtnDatabase, Me.RibBtnAbout, Me.RibBtnExit})
+        Me.RGToolsSetting.Name = "RGToolsSetting"
+        Me.RGToolsSetting.Text = "الإعدادات"
         '
         'RibBtnCurrencies
         '
@@ -670,17 +638,17 @@ Partial Class MainForm
         Me.RibBtnUserSettings.Text = "الإعدادات"
         Me.RibBtnUserSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'RadDropDownButtonElement1
+        'RibBtnDatabase
         '
-        Me.RadDropDownButtonElement1.ArrowButtonMinSize = New System.Drawing.Size(12, 12)
-        Me.RadDropDownButtonElement1.DropDownDirection = Telerik.WinControls.UI.RadDirection.Down
-        Me.RadDropDownButtonElement1.ExpandArrowButton = False
-        Me.RadDropDownButtonElement1.Image = Global.HEHAccounting.My.Resources.Resources.Database
-        Me.RadDropDownButtonElement1.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.RadDropDownButtonElement1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RadMenuBackup, Me.RadMenuSeparatorItem2, Me.RadMenuRestore})
-        Me.RadDropDownButtonElement1.Name = "RadDropDownButtonElement1"
-        Me.RadDropDownButtonElement1.Text = "قاعدة البيانات"
-        Me.RadDropDownButtonElement1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.RibBtnDatabase.ArrowButtonMinSize = New System.Drawing.Size(12, 12)
+        Me.RibBtnDatabase.DropDownDirection = Telerik.WinControls.UI.RadDirection.Down
+        Me.RibBtnDatabase.ExpandArrowButton = False
+        Me.RibBtnDatabase.Image = Global.HEHAccounting.My.Resources.Resources.Database
+        Me.RibBtnDatabase.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RibBtnDatabase.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RadMenuBackup, Me.RadMenuSeparatorItem2, Me.RadMenuRestore})
+        Me.RibBtnDatabase.Name = "RibBtnDatabase"
+        Me.RibBtnDatabase.Text = "قاعدة البيانات"
+        Me.RibBtnDatabase.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'RadMenuBackup
         '
@@ -700,12 +668,31 @@ Partial Class MainForm
         Me.RadMenuRestore.Name = "RadMenuRestore"
         Me.RadMenuRestore.Text = "إستعادة نسخة"
         '
-        'RadRibbonBarGroup5
+        'RibBtnAbout
         '
-        Me.RadRibbonBarGroup5.CreateAdapterMethod = Nothing
-        Me.RadRibbonBarGroup5.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnChangePass, Me.RibBtnUsers})
-        Me.RadRibbonBarGroup5.Name = "RadRibbonBarGroup5"
-        Me.RadRibbonBarGroup5.Text = "المستخدمين"
+        Me.RibBtnAbout.Image = Global.HEHAccounting.My.Resources.Resources.Information
+        Me.RibBtnAbout.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RibBtnAbout.Name = "RibBtnAbout"
+        Me.RibBtnAbout.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.RibBtnAbout.Text = "حول "
+        Me.RibBtnAbout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        CType(Me.RibBtnAbout.GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).LineLimit = False
+        CType(Me.RibBtnAbout.GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Alignment = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'RibBtnExit
+        '
+        Me.RibBtnExit.Image = Global.HEHAccounting.My.Resources.Resources.Close
+        Me.RibBtnExit.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RibBtnExit.Name = "RibBtnExit"
+        Me.RibBtnExit.Text = "خروج"
+        Me.RibBtnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'RGToolsUsers
+        '
+        Me.RGToolsUsers.CreateAdapterMethod = Nothing
+        Me.RGToolsUsers.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnChangePass, Me.RibBtnUsers})
+        Me.RGToolsUsers.Name = "RGToolsUsers"
+        Me.RGToolsUsers.Text = "المستخدمين"
         '
         'RibBtnChangePass
         '
@@ -723,20 +710,20 @@ Partial Class MainForm
         Me.RibBtnUsers.Text = "مستخدمين"
         Me.RibBtnUsers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'RibbonTab3
+        'RibTabReports
         '
-        Me.RibbonTab3.IsSelected = False
-        Me.RibbonTab3.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RadRibbonBarGroup7, Me.RadRibbonBarGroup8, Me.RadRibbonBarGroup9})
-        Me.RibbonTab3.Name = "RibbonTab3"
-        Me.RibbonTab3.Text = "تقارير"
-        Me.RibbonTab3.UseMnemonic = False
+        Me.RibTabReports.IsSelected = False
+        Me.RibTabReports.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RGReportsDebitCredit, Me.RGItemsReports, Me.RGReportsGeneralReports})
+        Me.RibTabReports.Name = "RibTabReports"
+        Me.RibTabReports.Text = "تقارير"
+        Me.RibTabReports.UseMnemonic = False
         '
-        'RadRibbonBarGroup7
+        'RGReportsDebitCredit
         '
-        Me.RadRibbonBarGroup7.CreateAdapterMethod = Nothing
-        Me.RadRibbonBarGroup7.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnCreditsReport, Me.RibBtnDebitsReport})
-        Me.RadRibbonBarGroup7.Name = "RadRibbonBarGroup7"
-        Me.RadRibbonBarGroup7.Text = "الديون"
+        Me.RGReportsDebitCredit.CreateAdapterMethod = Nothing
+        Me.RGReportsDebitCredit.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnCreditsReport, Me.RibBtnDebitsReport})
+        Me.RGReportsDebitCredit.Name = "RGReportsDebitCredit"
+        Me.RGReportsDebitCredit.Text = "الديون"
         '
         'RibBtnCreditsReport
         '
@@ -754,12 +741,12 @@ Partial Class MainForm
         Me.RibBtnDebitsReport.Text = "مدينون/عليهم"
         Me.RibBtnDebitsReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'RadRibbonBarGroup8
+        'RGItemsReports
         '
-        Me.RadRibbonBarGroup8.CreateAdapterMethod = Nothing
-        Me.RadRibbonBarGroup8.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnPurchasePrices, Me.RibBtnItemPurchase, Me.RibBtnQuantity, Me.RibBtnSalesPrices, Me.RibBtnItemMostSell, Me.RibBtnInventoryItems, Me.RibBtnItemsSalesWin})
-        Me.RadRibbonBarGroup8.Name = "RadRibbonBarGroup8"
-        Me.RadRibbonBarGroup8.Text = "حركة أصناف"
+        Me.RGItemsReports.CreateAdapterMethod = Nothing
+        Me.RGItemsReports.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnPurchasePrices, Me.RibBtnItemPurchase, Me.RibBtnQuantity, Me.RibBtnSalesPrices, Me.RibBtnItemMostSell, Me.RibBtnInventoryItems, Me.RibBtnItemsSalesWin})
+        Me.RGItemsReports.Name = "RGItemsReports"
+        Me.RGItemsReports.Text = "حركة أصناف"
         '
         'RibBtnPurchasePrices
         '
@@ -816,15 +803,15 @@ Partial Class MainForm
         Me.RibBtnItemsSalesWin.Image = Global.HEHAccounting.My.Resources.Resources.my_invoices
         Me.RibBtnItemsSalesWin.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
         Me.RibBtnItemsSalesWin.Name = "RibBtnItemsSalesWin"
-        Me.RibBtnItemsSalesWin.Text = "مبيعات أصناف"
+        Me.RibBtnItemsSalesWin.Text = "أرباح مبيعات أصناف"
         Me.RibBtnItemsSalesWin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'RadRibbonBarGroup9
+        'RGReportsGeneralReports
         '
-        Me.RadRibbonBarGroup9.CreateAdapterMethod = Nothing
-        Me.RadRibbonBarGroup9.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RadButtonElement5, Me.RibBtnRptCheques})
-        Me.RadRibbonBarGroup9.Name = "RadRibbonBarGroup9"
-        Me.RadRibbonBarGroup9.Text = "تقارير عامة"
+        Me.RGReportsGeneralReports.CreateAdapterMethod = Nothing
+        Me.RGReportsGeneralReports.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RadButtonElement5, Me.RibBtnRptCheques})
+        Me.RGReportsGeneralReports.Name = "RGReportsGeneralReports"
+        Me.RGReportsGeneralReports.Text = "تقارير عامة"
         '
         'RadButtonElement5
         '
@@ -840,31 +827,217 @@ Partial Class MainForm
         Me.RibBtnRptCheques.Text = "الشيكات"
         Me.RibBtnRptCheques.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
+        'CommandBarRowElement3
+        '
+        Me.CommandBarRowElement3.MinSize = New System.Drawing.Size(25, 25)
+        Me.CommandBarRowElement3.Name = "CommandBarRowElement3"
+        '
+        'CommandBarRowTopMostanad
+        '
+        Me.CommandBarRowTopMostanad.AutoSize = True
+        Me.CommandBarRowTopMostanad.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize
+        Me.CommandBarRowTopMostanad.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarRowTopMostanad.DrawBorder = False
+        Me.CommandBarRowTopMostanad.DrawFill = False
+        Me.CommandBarRowTopMostanad.DrawImage = True
+        Me.CommandBarRowTopMostanad.DrawText = False
+        Me.CommandBarRowTopMostanad.EnableElementShadow = False
+        Me.CommandBarRowTopMostanad.FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentContent
+        Me.CommandBarRowTopMostanad.FlipText = False
+        Me.CommandBarRowTopMostanad.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CommandBarRowTopMostanad.GradientStyle = Telerik.WinControls.GradientStyles.Linear
+        Me.CommandBarRowTopMostanad.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.CommandBarRowTopMostanad.MinSize = New System.Drawing.Size(25, 25)
+        Me.CommandBarRowTopMostanad.Name = "CommandBarRowTopMostanad"
+        Me.CommandBarRowTopMostanad.ShowHorizontalLine = False
+        Me.CommandBarRowTopMostanad.Strips.AddRange(New Telerik.WinControls.UI.CommandBarStripElement() {Me.CommandBarMostanadStripElement})
+        Me.CommandBarRowTopMostanad.Text = ""
+        Me.CommandBarRowTopMostanad.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.CommandBarRowTopMostanad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.CommandBarRowTopMostanad.TextOrientation = System.Windows.Forms.Orientation.Horizontal
+        Me.CommandBarRowTopMostanad.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarRowTopMostanad.UseCompatibleTextRendering = False
+        '
+        'CommandBarMostanadStripElement
+        '
+        Me.CommandBarMostanadStripElement.BorderBoxStyle = Telerik.WinControls.BorderBoxStyle.SingleBorder
+        Me.CommandBarMostanadStripElement.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarMostanadStripElement.DisplayName = "CommandBarMostanadStripElement"
+        Me.CommandBarMostanadStripElement.DrawBorder = True
+        Me.CommandBarMostanadStripElement.DrawFill = True
+        Me.CommandBarMostanadStripElement.DrawImage = True
+        Me.CommandBarMostanadStripElement.EnableDragging = False
+        '
+        '
+        '
+        Me.CommandBarMostanadStripElement.Grip.Visibility = Telerik.WinControls.ElementVisibility.Hidden
+        Me.CommandBarMostanadStripElement.Items.AddRange(New Telerik.WinControls.UI.RadCommandBarBaseItem() {Me.BtnCommandBarMostanadNew, Me.CommandBarSeparator4, Me.BtnCommandBarEdit, Me.CommandBarSeparator5, Me.BtnCommandBarCloseForm, Me.CommandBarSeparator6, Me.BtnCommandBarShowHideForm, Me.CommandBarSeparator7, Me.BtnCommandBarExitApp, Me.CommandBarSeparator8})
+        Me.CommandBarMostanadStripElement.Name = "CommandBarMostanadStripElement"
+        '
+        '
+        '
+        Me.CommandBarMostanadStripElement.OverflowButton.Visibility = Telerik.WinControls.ElementVisibility.Collapsed
+        Me.CommandBarMostanadStripElement.Padding = New System.Windows.Forms.Padding(0, 0, 0, 5)
+        Me.CommandBarMostanadStripElement.StretchHorizontally = True
+        Me.CommandBarMostanadStripElement.StretchVertically = True
+        Me.CommandBarMostanadStripElement.Text = ""
+        Me.CommandBarMostanadStripElement.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarMostanadStripElement.UseCompatibleTextRendering = False
+        CType(Me.CommandBarMostanadStripElement.GetChildAt(0), Telerik.WinControls.UI.RadCommandBarGrip).Visibility = Telerik.WinControls.ElementVisibility.Hidden
+        CType(Me.CommandBarMostanadStripElement.GetChildAt(2), Telerik.WinControls.UI.RadCommandBarOverflowButton).Visibility = Telerik.WinControls.ElementVisibility.Collapsed
+        '
+        'BtnCommandBarMostanadNew
+        '
+        Me.BtnCommandBarMostanadNew.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.BtnCommandBarMostanadNew.DisplayName = "CommandBarButton1"
+        Me.BtnCommandBarMostanadNew.DrawText = True
+        Me.BtnCommandBarMostanadNew.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.BtnCommandBarMostanadNew.Image = Global.HEHAccounting.My.Resources.Resources.Create
+        Me.BtnCommandBarMostanadNew.Name = "BtnCommandBarMostanadNew"
+        Me.BtnCommandBarMostanadNew.Text = "جديد"
+        Me.BtnCommandBarMostanadNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BtnCommandBarMostanadNew.TextOrientation = System.Windows.Forms.Orientation.Horizontal
+        Me.BtnCommandBarMostanadNew.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.BtnCommandBarMostanadNew.TextWrap = False
+        Me.BtnCommandBarMostanadNew.UseCompatibleTextRendering = False
+        '
+        'CommandBarSeparator4
+        '
+        Me.CommandBarSeparator4.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator4.DisplayName = "CommandBarSeparator4"
+        Me.CommandBarSeparator4.Name = "CommandBarSeparator4"
+        Me.CommandBarSeparator4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator4.UseCompatibleTextRendering = False
+        Me.CommandBarSeparator4.VisibleInOverflowMenu = False
+        '
+        'BtnCommandBarEdit
+        '
+        Me.BtnCommandBarEdit.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.BtnCommandBarEdit.DisplayName = "CommandBarButton1"
+        Me.BtnCommandBarEdit.DrawText = True
+        Me.BtnCommandBarEdit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.BtnCommandBarEdit.Image = Global.HEHAccounting.My.Resources.Resources.Modify
+        Me.BtnCommandBarEdit.Name = "BtnCommandBarEdit"
+        Me.BtnCommandBarEdit.Text = "تعديل"
+        Me.BtnCommandBarEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BtnCommandBarEdit.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.BtnCommandBarEdit.UseCompatibleTextRendering = False
+        '
+        'CommandBarSeparator5
+        '
+        Me.CommandBarSeparator5.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator5.DisplayName = "CommandBarSeparator5"
+        Me.CommandBarSeparator5.Name = "CommandBarSeparator5"
+        Me.CommandBarSeparator5.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator5.UseCompatibleTextRendering = False
+        Me.CommandBarSeparator5.VisibleInOverflowMenu = False
+        '
+        'BtnCommandBarCloseForm
+        '
+        Me.BtnCommandBarCloseForm.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.BtnCommandBarCloseForm.DisplayName = "CommandBarButton2"
+        Me.BtnCommandBarCloseForm.DrawText = True
+        Me.BtnCommandBarCloseForm.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.BtnCommandBarCloseForm.Image = Global.HEHAccounting.My.Resources.Resources.Close
+        Me.BtnCommandBarCloseForm.Name = "BtnCommandBarCloseForm"
+        Me.BtnCommandBarCloseForm.Text = "إغلاق"
+        Me.BtnCommandBarCloseForm.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BtnCommandBarCloseForm.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.BtnCommandBarCloseForm.UseCompatibleTextRendering = False
+        '
+        'CommandBarSeparator6
+        '
+        Me.CommandBarSeparator6.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator6.DisplayName = "CommandBarSeparator6"
+        Me.CommandBarSeparator6.Name = "CommandBarSeparator6"
+        Me.CommandBarSeparator6.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator6.UseCompatibleTextRendering = False
+        Me.CommandBarSeparator6.VisibleInOverflowMenu = False
+        '
+        'BtnCommandBarShowHideForm
+        '
+        Me.BtnCommandBarShowHideForm.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.BtnCommandBarShowHideForm.DisplayName = "CommandBarToggleButton1"
+        Me.BtnCommandBarShowHideForm.DrawText = True
+        Me.BtnCommandBarShowHideForm.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.BtnCommandBarShowHideForm.Image = Global.HEHAccounting.My.Resources.Resources.Target
+        Me.BtnCommandBarShowHideForm.Name = "BtnCommandBarShowHideForm"
+        Me.BtnCommandBarShowHideForm.Text = "إظهار"
+        Me.BtnCommandBarShowHideForm.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BtnCommandBarShowHideForm.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.BtnCommandBarShowHideForm.UseCompatibleTextRendering = False
+        '
+        'CommandBarSeparator7
+        '
+        Me.CommandBarSeparator7.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator7.DisplayName = "CommandBarSeparator7"
+        Me.CommandBarSeparator7.Name = "CommandBarSeparator7"
+        Me.CommandBarSeparator7.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator7.UseCompatibleTextRendering = False
+        Me.CommandBarSeparator7.VisibleInOverflowMenu = False
+        '
+        'BtnCommandBarExitApp
+        '
+        Me.BtnCommandBarExitApp.Alignment = System.Drawing.ContentAlignment.TopLeft
+        Me.BtnCommandBarExitApp.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.BtnCommandBarExitApp.DisplayName = "CommandBarButton1"
+        Me.BtnCommandBarExitApp.DrawText = True
+        Me.BtnCommandBarExitApp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(139, Byte), Integer))
+        Me.BtnCommandBarExitApp.Image = Global.HEHAccounting.My.Resources.Resources.Close
+        Me.BtnCommandBarExitApp.Name = "BtnCommandBarExitApp"
+        Me.BtnCommandBarExitApp.Text = "خروج"
+        Me.BtnCommandBarExitApp.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.BtnCommandBarExitApp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BtnCommandBarExitApp.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.BtnCommandBarExitApp.UseCompatibleTextRendering = False
+        '
+        'CommandBarSeparator8
+        '
+        Me.CommandBarSeparator8.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator8.DisplayName = "CommandBarSeparator8"
+        Me.CommandBarSeparator8.Name = "CommandBarSeparator8"
+        Me.CommandBarSeparator8.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator8.UseCompatibleTextRendering = False
+        Me.CommandBarSeparator8.VisibleInOverflowMenu = False
+        '
+        'CommandBarMostanad
+        '
+        Me.CommandBarMostanad.Dock = System.Windows.Forms.DockStyle.Top
+        Me.CommandBarMostanad.Location = New System.Drawing.Point(0, 166)
+        Me.CommandBarMostanad.Name = "CommandBarMostanad"
+        Me.CommandBarMostanad.Rows.AddRange(New Telerik.WinControls.UI.CommandBarRowElement() {Me.CommandBarRowTopMostanad})
+        Me.CommandBarMostanad.Size = New System.Drawing.Size(1356, 35)
+        Me.CommandBarMostanad.TabIndex = 7
+        CType(Me.CommandBarMostanad.GetChildAt(0), Telerik.WinControls.UI.RadCommandBarElement).DrawFill = True
+        '
         'MainForm
         '
         Me.AllowAero = False
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1302, 537)
+        Me.ClientSize = New System.Drawing.Size(1356, 737)
         Me.Controls.Add(Me.WindowDock)
+        Me.Controls.Add(Me.CommandBarMostanad)
         Me.Controls.Add(Me.RadStatusStrip1)
         Me.Controls.Add(Me.RadRibbonBar1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Nothing
-        Me.MinimumSize = New System.Drawing.Size(1310, 542)
+        Me.MinimumSize = New System.Drawing.Size(1364, 726)
         Me.Name = "MainForm"
         Me.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         '
         '
         '
         Me.RootElement.ApplyShapeToControl = True
-        Me.RootElement.MinSize = New System.Drawing.Size(1310, 542)
+        Me.RootElement.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.[Auto]
+        Me.RootElement.MinSize = New System.Drawing.Size(1460, 743)
         Me.Text = "MainForm"
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WindowDock, System.ComponentModel.ISupportInitialize).EndInit()
         Me.WindowDock.ResumeLayout(False)
         CType(Me.DocumentContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadRibbonBar1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CommandBarMostanad, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -873,20 +1046,15 @@ Partial Class MainForm
     Friend RadRibbonBar1 As Telerik.WinControls.UI.RadRibbonBar
     Friend RadStatusStrip1 As Telerik.WinControls.UI.RadStatusStrip
     Friend RibbonTabHome As Telerik.WinControls.UI.RibbonTab
-    Friend RibGroupLabelMostanad As Telerik.WinControls.UI.RadRibbonBarGroup
-    Friend RibBtnNew As Telerik.WinControls.UI.RadButtonElement
-    Friend RibBtnClose As Telerik.WinControls.UI.RadButtonElement
     Friend RadRibbonBarGroup1 As Telerik.WinControls.UI.RadRibbonBarGroup
-    Friend RibbonTab3 As Telerik.WinControls.UI.RibbonTab
+    Friend RibTabReports As Telerik.WinControls.UI.RibbonTab
     Friend RibTabTools As Telerik.WinControls.UI.RibbonTab
     Friend RibGFastLink As Telerik.WinControls.UI.RadRibbonBarGroup
     Friend RibonbtnItems As Telerik.WinControls.UI.RadButtonElement
     Friend Office2010BlueTheme1 As Telerik.WinControls.Themes.Office2010BlueTheme
     Friend WindowDock As Telerik.WinControls.UI.Docking.RadDock
     Friend DocumentContainer1 As Telerik.WinControls.UI.Docking.DocumentContainer
-    Friend WithEvents RibBtnEdit As Telerik.WinControls.UI.RadButtonElement
     Friend RibGOption As Telerik.WinControls.UI.RadRibbonBarGroup
-    Friend RibBtnShowOption As Telerik.WinControls.UI.RadToggleButtonElement
     Friend RibGForms As Telerik.WinControls.UI.RadRibbonBarGroup
     Friend WithEvents RibBtnCustomers As Telerik.WinControls.UI.RadButtonElement
     Friend WithEvents RibBtnVendors As Telerik.WinControls.UI.RadButtonElement
@@ -908,32 +1076,31 @@ Partial Class MainForm
     Friend WithEvents RadOffice2007ScreenTipElement2 As Telerik.WinControls.UI.RadOffice2007ScreenTipElement
     Friend WithEvents RadOffice2007ScreenTipElement3 As Telerik.WinControls.UI.RadOffice2007ScreenTipElement
     Friend WithEvents RadOffice2007ScreenTipElement4 As Telerik.WinControls.UI.RadOffice2007ScreenTipElement
-    Friend WithEvents RadRibbonBarGroup2 As Telerik.WinControls.UI.RadRibbonBarGroup
-    Friend WithEvents RadRibbonBarGroup3 As Telerik.WinControls.UI.RadRibbonBarGroup
+    Friend WithEvents RGToolsSetting As Telerik.WinControls.UI.RadRibbonBarGroup
     Friend WithEvents RibBtnExit As Telerik.WinControls.UI.RadButtonElement
     Friend WithEvents RibBtnCurrRate As Telerik.WinControls.UI.RadButtonElement
-    Friend WithEvents RadRibbonBarGroup4 As Telerik.WinControls.UI.RadRibbonBarGroup
+    Friend WithEvents RGGournalEntry As Telerik.WinControls.UI.RadRibbonBarGroup
     Friend WithEvents RibBtnKoyod As Telerik.WinControls.UI.RadDropDownButtonElement
     Friend WithEvents RadMenuSeparatorItem1 As Telerik.WinControls.UI.RadMenuSeparatorItem
     Friend WithEvents GeneralNotesPayable As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents GeneralNotesReceive As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents RibBtnAddAccount As Telerik.WinControls.UI.RadButtonElement
-    Friend WithEvents RadRibbonBarGroup5 As Telerik.WinControls.UI.RadRibbonBarGroup
+    Friend WithEvents RGToolsUsers As Telerik.WinControls.UI.RadRibbonBarGroup
     Friend WithEvents RibBtnChangePass As Telerik.WinControls.UI.RadButtonElement
     Friend WithEvents RibBtnUsers As Telerik.WinControls.UI.RadButtonElement
     Friend WithEvents RibBtnAccounts As Telerik.WinControls.UI.RadButtonElement
-    Friend WithEvents RadRibbonBarGroup6 As Telerik.WinControls.UI.RadRibbonBarGroup
+    Friend WithEvents RGToolsAccounts As Telerik.WinControls.UI.RadRibbonBarGroup
     Friend WithEvents RibBtnAccountReport As Telerik.WinControls.UI.RadButtonElement
     Friend WithEvents RibBtnOpenningBalance As Telerik.WinControls.UI.RadButtonElement
-    Friend WithEvents RadRibbonBarGroup7 As Telerik.WinControls.UI.RadRibbonBarGroup
+    Friend WithEvents RGReportsDebitCredit As Telerik.WinControls.UI.RadRibbonBarGroup
     Friend WithEvents RibBtnCreditsReport As Telerik.WinControls.UI.RadButtonElement
     Friend WithEvents RibBtnDebitsReport As Telerik.WinControls.UI.RadButtonElement
     Friend WithEvents RibBtnItemsInventory As Telerik.WinControls.UI.RadButtonElement
-    Friend WithEvents RadRibbonBarGroup8 As Telerik.WinControls.UI.RadRibbonBarGroup
+    Friend WithEvents RGItemsReports As Telerik.WinControls.UI.RadRibbonBarGroup
     Friend WithEvents RibBtnPurchasePrices As Telerik.WinControls.UI.RadButtonElement
     Friend WithEvents RibBtnQuantity As Telerik.WinControls.UI.RadButtonElement
     Friend WithEvents RibBtnItemMostSell As Telerik.WinControls.UI.RadButtonElement
-    Friend WithEvents RadRibbonBarGroup9 As Telerik.WinControls.UI.RadRibbonBarGroup
+    Friend WithEvents RGReportsGeneralReports As Telerik.WinControls.UI.RadRibbonBarGroup
     Friend WithEvents RadButtonElement5 As Telerik.WinControls.UI.RadButtonElement
     Friend WithEvents RibBtnItemPurchase As Telerik.WinControls.UI.RadButtonElement
     Friend WithEvents RibBtnSalesPrices As Telerik.WinControls.UI.RadButtonElement
@@ -946,7 +1113,7 @@ Partial Class MainForm
     Friend WithEvents RibBtnHomeForm As Telerik.WinControls.UI.RadButtonElement
     Friend WithEvents RibBtnUserInfo As Telerik.WinControls.UI.RadButtonElement
     Friend WithEvents RibBtnAbout As Telerik.WinControls.UI.RadButtonElement
-    Friend WithEvents RadDropDownButtonElement1 As Telerik.WinControls.UI.RadDropDownButtonElement
+    Friend WithEvents RibBtnDatabase As Telerik.WinControls.UI.RadDropDownButtonElement
     Friend WithEvents RadMenuBackup As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents RadMenuRestore As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents RadMenuSeparatorItem2 As Telerik.WinControls.UI.RadMenuSeparatorItem
@@ -957,4 +1124,20 @@ Partial Class MainForm
     Friend WithEvents CommandBarSeparator3 As Telerik.WinControls.UI.CommandBarSeparator
     Friend WithEvents RibBtnItemsSalesWin As Telerik.WinControls.UI.RadButtonElement
     Friend WithEvents RibButtonDashboard As Telerik.WinControls.UI.RadButtonElement
+    Friend WithEvents CommandBarRowElement3 As Telerik.WinControls.UI.CommandBarRowElement
+    Friend WithEvents CommandBarRowTopMostanad As Telerik.WinControls.UI.CommandBarRowElement
+    Friend WithEvents CommandBarMostanadStripElement As Telerik.WinControls.UI.CommandBarStripElement
+    Friend WithEvents BtnCommandBarMostanadNew As Telerik.WinControls.UI.CommandBarButton
+    Friend WithEvents CommandBarSeparator4 As Telerik.WinControls.UI.CommandBarSeparator
+    Friend WithEvents BtnCommandBarEdit As Telerik.WinControls.UI.CommandBarButton
+    Friend WithEvents CommandBarSeparator5 As Telerik.WinControls.UI.CommandBarSeparator
+    Friend WithEvents BtnCommandBarCloseForm As Telerik.WinControls.UI.CommandBarButton
+    Friend WithEvents CommandBarSeparator6 As Telerik.WinControls.UI.CommandBarSeparator
+    Friend WithEvents BtnCommandBarShowHideForm As Telerik.WinControls.UI.CommandBarToggleButton
+    Friend WithEvents CommandBarSeparator7 As Telerik.WinControls.UI.CommandBarSeparator
+    Friend WithEvents BtnCommandBarExitApp As Telerik.WinControls.UI.CommandBarButton
+    Friend WithEvents CommandBarSeparator8 As Telerik.WinControls.UI.CommandBarSeparator
+    Friend WithEvents CommandBarMostanad As Telerik.WinControls.UI.RadCommandBar
+    Friend WithEvents StriplblVersion As Telerik.WinControls.UI.RadLabelElement
+    Friend WithEvents StriplblVersionInfo As Telerik.WinControls.UI.RadLabelElement
 End Class

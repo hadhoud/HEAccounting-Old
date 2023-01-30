@@ -59,6 +59,19 @@
     'Notes Receive Setting
     Public DefaultNRStatus As Integer
 
+    'Option Panels setting
+    Public BoolOptionPanelTreasury As Boolean
+    Public BoolOptionPanelDaily As Boolean
+    Public BoolOptionPanelAnalysis As Boolean
+    Public BoolOptionPanelSalesProfits As Boolean
+    Public BoolOptionPanelItemsSalesProfits As Boolean
+    Public BoolOptionPanelItems As Boolean
+    Public BoolOptionPanelCustomers As Boolean
+    Public BoolOptionPanelVendors As Boolean
+    Public BoolOptionPanelSalesOrders As Boolean
+    Public BoolOptionPanelPurchasesOrders As Boolean
+    Public BoolOptionPanelCreditorsDebitors As Boolean
+
     'Program General Setting
     Public BoolShowProgramAlerts As Boolean
     Public BoolShowDailyPageWhenOpen As Boolean

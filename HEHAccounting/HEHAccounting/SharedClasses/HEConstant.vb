@@ -2,6 +2,12 @@
 
     ' All Messages String
 
+    'version
+    Public Lbl_One_Version As Integer
+    Public Lbl_Two_Version As Integer
+    Public Lbl_Year_One_Version As Integer
+    Public Lbl_Year_Two_Version As Integer
+
     'For label not in StringlocalizationId
     Public Lbl_Yes As String
     Public Lbl_No As String
@@ -137,10 +143,16 @@
     Public Msg_Notes_Status_ISUnposted As String
     Public Msg_Choose_a_Customer As String
     Public Msg_System_Config_Enter_User_And_Pass As String
+
     Sub New()
+
+        'version
+        Lbl_One_Version = 1
+        Lbl_Two_Version = 8
+        Lbl_Year_One_Version = 2
+        Lbl_Year_Two_Version = 3
+
         If BoolLTRLanguage Then
-
-
 
             'For label not in StringlocalizationId  Arabic - Engish
             OnHim = "On Him"

@@ -189,6 +189,20 @@ Public Class UserSettings
         Me.TxtSODefaultCustomer.AutoCompleteSource = AutoCompleteSource.CustomSource
         Me.TxtSODefaultCustomer.AutoCompleteCustomSource = CustomerNameAuto
         Me.TxtSODefaultCustomer.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+
+
+        'Option Panel Settings
+        Me.chkOptionTreasury.Checked = BoolOptionPanelTreasury
+        Me.chkOptionDaily.Checked = BoolOptionPanelDaily
+        Me.chkOptionAnalysis.Checked = BoolOptionPanelAnalysis
+        Me.chkOptionSalesProfits.Checked = BoolOptionPanelSalesProfits
+        Me.chkOptionItemsSalesProfits.Checked = BoolOptionPanelItemsSalesProfits
+        Me.chkOptionItems.Checked = BoolOptionPanelItems
+        Me.chkOptionCustomers.Checked = BoolOptionPanelCustomers
+        Me.chkOptionVendors.Checked = BoolOptionPanelVendors
+        Me.chkOptionSalesOrders.Checked = BoolOptionPanelSalesOrders
+        Me.chkOptionPurchasesOrders.Checked = BoolOptionPanelPurchasesOrders
+        Me.chkOptionCreditorsDebitors.Checked = BoolOptionPanelCreditorsDebitors
     End Sub
 
     Private Sub GridShortcuts_KeyDown(sender As Object, e As KeyEventArgs) Handles GridShortcuts.KeyDown
@@ -197,6 +211,7 @@ Public Class UserSettings
             Me.GridShortcuts.CurrentRow.Cells("ShortcutValue").Value = e.Modifiers.ToString & "+" & kc.ConvertToString(e.KeyCode)
         End If
     End Sub
+
     Private Sub UpdateUserShortcuts()
         For Each Row In Me.GridShortcuts.Rows
             Dim Param(2) As String
@@ -205,6 +220,23 @@ Public Class UserSettings
             Param(2) = "@IUserID , " & UserID
             ExecuteProcedureWithParameters("UpdateUserShortcuts", Param)
         Next
+    End Sub
+
+    Private Sub UpdateUserOptionsPanelSetting()
+        Dim Param(11) As String
+        Param(0) = "@bTreasuryShow_fl , " & chkOptionTreasury.Checked
+        Param(1) = "@bDailyShow_fl , " & chkOptionDaily.Checked
+        Param(2) = "@bAnalysisShow_fl , " & chkOptionAnalysis.Checked
+        Param(3) = "@bSalesProfitsShow_fl , " & chkOptionSalesProfits.Checked
+        Param(4) = "@bItemsSalesProfitsShow_fl , " & chkOptionItemsSalesProfits.Checked
+        Param(5) = "@bItemsShow_fl , " & chkOptionItems.Checked
+        Param(6) = "@bCustomersShow_fl , " & chkOptionCustomers.Checked
+        Param(7) = "@bVendorsShow_fl , " & chkOptionVendors.Checked
+        Param(8) = "@bSalesOrdersShow_fl , " & chkOptionSalesOrders.Checked
+        Param(9) = "@bPurchasesOrdersShow_fl , " & chkOptionPurchasesOrders.Checked
+        Param(10) = "@bCreditorsDebitorsShow_fl , " & chkOptionCreditorsDebitors.Checked
+        Param(11) = "@IUserID , " & UserID
+        ExecuteProcedureWithParameters("UpdateUserDefaultOptionPanelsSetting", Param)
     End Sub
 
     Private Sub BtnSaveAndNew_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
@@ -243,6 +275,7 @@ Public Class UserSettings
             Param(28) = "@IUserID , " & UserID
             ExecuteProcedureWithParameters("UpdateUserSettings", Param)
             UpdateUserShortcuts()
+            UpdateUserOptionsPanelSetting()
             If UserType = UserRole.Programmer Then
                 UpdateAppSettings()
             End If
@@ -291,6 +324,7 @@ Public Class UserSettings
             End If
         Next
     End Sub
+
     Private Sub TxtSODefaultCustomerBtn_Click(sender As Object, e As EventArgs) Handles TxtCustomerBtn.Click
         Dim FrmGetCustomer As New CustomerPopup
         FrmGetCustomer.ShowDialog()

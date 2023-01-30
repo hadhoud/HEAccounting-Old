@@ -177,6 +177,7 @@ Public Class NotesPayable
         Me.BtnPrint.Text = LoStrId.LblPrint
         Me.ChkAlert.Text = LoStrId.LblAlertOnCheckDueDate
         Me.LblDesc.Text = LoStrId.LblDescription
+        Me.BtnClose.Text = LoStrId.LblClose
         ChangeTextButtonToRight(Me.TxtVendor, TxtVendorBtn)
 
     End Sub

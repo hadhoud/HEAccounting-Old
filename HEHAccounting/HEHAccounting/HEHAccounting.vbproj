@@ -14,6 +14,8 @@
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,11 +27,9 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationVersion>1.1.23.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -99,11 +99,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Toolkit.Uwp.Notifications, Version=7.0.0.0, Culture=neutral, PublicKeyToken=4aff67a105548ee2" />
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
@@ -165,6 +169,8 @@
       <HintPath>..\lib\RCWF\2022.2.622.40\TelerikCommon.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -184,6 +190,12 @@
     </Compile>
     <Compile Include="CustomControls\DashboardItem.vb">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Daily\FrmTreasury.Designer.vb">
+      <DependentUpon>FrmTreasury.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Daily\FrmTreasury.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Daily\SalesDailyWin.Designer.vb">
       <DependentUpon>SalesDailyWin.vb</DependentUpon>
@@ -219,6 +231,12 @@
       <DependentUpon>PurchaseOrderFrm.vb</DependentUpon>
     </Compile>
     <Compile Include="Invoices\PurchaseOrders\PurchaseOrderFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoices\SalesOrders\CalculateQuantity.Designer.vb">
+      <DependentUpon>CalculateQuantity.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Invoices\SalesOrders\CalculateQuantity.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Items\Inventory.Designer.vb">
@@ -292,6 +310,7 @@
     <Compile Include="Reports\ItemsSalesWinReport.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Settings.vb" />
     <Compile Include="SharedClasses\AmountInWords.vb" />
     <Compile Include="SharedClasses\ApplicationEvents.vb" />
     <Compile Include="Customers\CustomerPopup.Designer.vb">
@@ -355,6 +374,13 @@
     <Compile Include="Items\Groups.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CustomControls\CustomItemNameTextBoxControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SharedClasses\Currencies.vb" />
+    <Compile Include="SharedClasses\ControlsFunctions.vb" />
+    <Compile Include="SharedClasses\Enums.vb" />
+    <Compile Include="SharedClasses\DatabaseFunctions.vb" />
     <Compile Include="SharedClasses\HEConstant.vb" />
     <Compile Include="SharedClasses\StringlocalizationId.vb" />
     <Compile Include="SharedForm\HEMessage.Designer.vb">
@@ -536,6 +562,9 @@
     <EmbeddedResource Include="Customers\Customers.resx">
       <DependentUpon>Customers.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Daily\FrmTreasury.resx">
+      <DependentUpon>FrmTreasury.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Daily\SalesDailyWin.resx">
       <DependentUpon>SalesDailyWin.vb</DependentUpon>
     </EmbeddedResource>
@@ -559,6 +588,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Invoices\SalesOrders\AddNewSaleInvoice.resx">
       <DependentUpon>AddNewSaleInvoice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoices\SalesOrders\CalculateQuantity.resx">
+      <DependentUpon>CalculateQuantity.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Invoices\SalesOrders\SalesOrderFrm.resx">
       <DependentUpon>SalesOrderFrm.vb</DependentUpon>
@@ -837,6 +869,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Reports\Untitled.jpg" />
+    <None Include="Resources\Refresh16.png" />
     <Content Include="SQL\NeededSqlFiles\DefaultData.sql" />
     <Content Include="SQL\NeededSqlFiles\ResetProgramData.sql" />
     <Content Include="WhatsNew.txt" />

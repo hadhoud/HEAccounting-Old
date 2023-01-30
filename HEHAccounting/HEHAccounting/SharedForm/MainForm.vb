@@ -17,7 +17,7 @@ Public Class MainForm
     Dim FrmAddNewSalesInvoices As AddNewSaleInvoice
     Dim FrmItemsSalesWinReport As ItemsSalesWinReport
     Dim FrmDashboard As DashboardForm
-
+    Dim FrmTreasuryForm As FrmTreasury
     Dim FrmToOpen As String
     Dim FrmOpenTimer As New Timer
     Sub New()
@@ -309,41 +309,103 @@ Public Class MainForm
     Private Sub ChangeToEng()
         Me.RightToLeft = RightToLeft.No
         Me.Text = LoStrId.LblLatinProgramName & " - " & CompanyLatinName
-        Me.RibBtnClose.Text = LoStrId.LblClose
-        Me.RibBtnNew.Text = LoStrId.LblNew
-        Me.RibonbtnItems.Text = LoStrId.LblItems
-        Me.RibBtnGroups.Text = LoStrId.LblGroups
 
-        Me.RibBtnEdit.Text = LoStrId.LblEdit
-        Me.RibBtnShowOption.Text = LoStrId.LblShow
+        Me.RadRibbonBar1.Font = New Font("Times New Roman", 10, FontStyle.Bold)
+        Me.BtnCommandBarCloseForm.Text = LoStrId.LblClose
+        Me.BtnCommandBarMostanadNew.Text = LoStrId.LblNew
+        Me.BtnCommandBarEdit.Text = LoStrId.LblEdit
+        Me.BtnCommandBarShowHideForm.Text = LoStrId.LblShow
+
+        Me.RibBtnDaily.Text = LoStrId.LblDaily
+        Me.RibButtonDashboard.Text = LoStrId.LblDashboard
+        Me.RibBtnHomeForm.Text = LoStrId.lblHome
+        Me.RibBtnSalesWin.Text = LoStrId.lblSalesProfit
+
+        Me.RibonbtnItems.Text = LoStrId.LblItems
         Me.RibBtnCustomers.Text = LoStrId.lblCustomers
         Me.RibBtnVendors.Text = LoStrId.lblVendors
         Me.RibBtnSalesOrders.Text = LoStrId.LblSalesOrders
         Me.RibBtnPurchaseOrders.Text = LoStrId.lblPurchasesOrders
-        Me.RibBtnItemsTree.Text = LoStrId.LblItemTree
+
         Me.RibBtnAddItem.Text = LoStrId.LblAddItem
         Me.RibBtnAddSalesInvoices.Text = LoStrId.LblAddSO
         Me.RibBtnAddPurchaseInvoices.Text = LoStrId.LblAddPO
         Me.RibBtnNotesPay.Text = LoStrId.LblNotePayable
         Me.RibBtnNotesReceive.Text = LoStrId.LblNoteReceive
 
+        Me.RGToolsItems.Text = LoStrId.LblItems
+        Me.RibBtnItemsTree.Text = LoStrId.LblItemTree
+        Me.RibBtnGroups.Text = LoStrId.LblGroups
+        Me.RibBtnInventoryItems.Text = LoStrId.LblItems
+        Me.RibBtnItemsInventory.Text = LoStrId.LblInevntoryItems
+
+        Me.RGGournalEntry.Text = LoStrId.LblJournalEntry
+        Me.RibBtnKoyod.Text = LoStrId.LblJournalEntry
+        Me.GeneralNotesPayable.Text = LoStrId.LblGeneralJournalPay
+        Me.GeneralNotesReceive.Text = LoStrId.LblGeneralJournalReceive
+
+        Me.RGToolsAccounts.Text = LoStrId.LblAccounts
+        Me.RibBtnAccounts.Text = LoStrId.LblAccounts
+        Me.RibBtnAddAccount.Text = LoStrId.LblAddAccounts
+        Me.RibBtnOpenningBalance.Text = LoStrId.LblOpenningBalance
+        Me.RibBtnAccountReport.Text = LoStrId.LblAccountStatement
+
+
+        Me.RibBtnCurrencies.Text = LoStrId.LblCurrencies
+        Me.RibBtnCurrRate.Text = LoStrId.LblCurrenciesRate
+
+        Me.RGToolsSetting.Text = LoStrId.LblSetting
+        Me.RibBtnUserInfo.Text = LoStrId.LblInfo
+        Me.RibBtnUserSettings.Text = LoStrId.LblSetting
+        Me.RibBtnDatabase.Text = LoStrId.LblDatabase
+        Me.RibBtnAbout.Text = LoStrId.LblAbout
+        Me.RibBtnExit.Text = LoStrId.LblLatinExit
+
+        Me.RGToolsUsers.Text = LoStrId.LblUsers
+        Me.RibBtnChangePass.Text = LoStrId.LblChangePassword
+        Me.RibBtnUsers.Text = LoStrId.LblUsers
+
+        Me.RGReportsDebitCredit.Text = LoStrId.LblDebtorsCreditors
+        Me.RibBtnCreditsReport.Text = LoStrId.LblCreditors
+        Me.RibBtnDebitsReport.Text = LoStrId.LblDebtors
+
+        Me.RGItemsReports.Text = LoStrId.LblItemsReports
+        Me.RibBtnPurchasePrices.Text = LoStrId.LblPurchasingPriceReport
+        Me.RibBtnItemPurchase.Text = LoStrId.LblPurchasingCountReport
+        Me.RibBtnQuantity.Text = LoStrId.LblQuantityReport
+        Me.RibBtnSalesPrices.Text = LoStrId.lblSellingPriceReport
+        Me.RibBtnItemMostSell.Text = LoStrId.LblSellingCountReport
+        Me.RibBtnInventoryItems.Text = LoStrId.LblInevntoryItemsReport
+        Me.RibBtnItemsSalesWin.Text = LoStrId.LblItemsSalesProfitReport
+
+        Me.RGReportsGeneralReports.Text = LoStrId.LblGeneralReports
+        Me.RibBtnRptCheques.Text = LoStrId.LblChequesReport
+
         'Tabs
         Me.RibbonTabHome.Text = LoStrId.lblHome
+        Me.RibTabTools.Text = LoStrId.lblTools
+        Me.RibTabReports.Text = LoStrId.lblReports
 
         'Groups
         Me.RibGFastLink.Text = LoStrId.LblQuicklinks
-        Me.RibGroupLabelMostanad.Text = LoStrId.LblDocument
         Me.RibGOption.Text = LoStrId.LblPageOption
         Me.RibGForms.Text = LoStrId.LblForms
+
+        Me.LblUserName.Text = LoStrId.LblLatinUsername
+        Me.stripLblLastDollarRate.Text = LoStrId.LblDollarRate
     End Sub
 
     Sub SubscribeEvents()
         AddHandler WindowDock.DockWindowAdded, AddressOf WindowDock_DockWindowAdded
         AddHandler WindowDock.ActiveWindowChanged, AddressOf WindowDock_ActiveWindowChanged
         AddHandler WindowDock.DockWindowClosing, AddressOf WindowDock_DockWindowClosing
-        AddHandler RibBtnClose.Click, AddressOf RibBtnClose_Click
-        AddHandler RibBtnNew.Click, AddressOf RibBtnNew_Click
-        AddHandler RibBtnShowOption.Click, AddressOf RibBtnShowOption_Click
+
+        AddHandler BtnCommandBarCloseForm.Click, AddressOf BtnCommandBarCloseForm_Click
+        AddHandler BtnCommandBarMostanadNew.Click, AddressOf BtnCommandBarMostanadNew_Click
+        AddHandler BtnCommandBarShowHideForm.Click, AddressOf BtnCommandBarShowHideForm_Click
+        AddHandler BtnCommandBarEdit.Click, AddressOf BtnCommandBarEdit_Click
+        AddHandler BtnCommandBarExitApp.Click, AddressOf RibBtnExit_Click
+
         AddHandler RibonbtnItems.Click, AddressOf RibonbtnItems_Click
         AddHandler RibBtnCustomers.Click, AddressOf RibBtnCustomers_Click
         AddHandler FrmOpenTimer.Tick, AddressOf FrmOpenTimerTick
@@ -364,6 +426,7 @@ Public Class MainForm
                     .MdiParent = Me
                 }
                 Frmitems.Show()
+                Frmitems.PnlOptions.Visible = BoolOptionPanelItems
             End If
             ActWindow(Frmitems)
 
@@ -374,6 +437,7 @@ Public Class MainForm
                     .Height = WindowDock.Height,
                     .MdiParent = Me
                 }
+                FrmCustomers.PnlOptions.Visible = BoolOptionPanelCustomers
                 FrmCustomers.Show()
             End If
             ActWindow(FrmCustomers)
@@ -385,6 +449,7 @@ Public Class MainForm
                     .Height = WindowDock.Height,
                     .MdiParent = Me
                 }
+                FrmVendors.PnlOptions.Visible = BoolOptionPanelVendors
                 FrmVendors.Show()
             End If
             ActWindow(FrmVendors)
@@ -395,6 +460,7 @@ Public Class MainForm
                     .Height = WindowDock.Height,
                     .MdiParent = Me
                 }
+                FrmSalesOrders.PnlOptions.Visible = BoolOptionPanelSalesOrders
                 FrmSalesOrders.Show()
             End If
             ActWindow(FrmSalesOrders)
@@ -405,6 +471,7 @@ Public Class MainForm
                     .Height = WindowDock.Height,
                     .MdiParent = Me
                 }
+                FrmPurchasesOrders.PnlOptions.Visible = BoolOptionPanelPurchasesOrders
                 FrmPurchasesOrders.Show()
             End If
             ActWindow(FrmPurchasesOrders)
@@ -416,8 +483,9 @@ Public Class MainForm
                     .Height = WindowDock.Height,
                     .MdiParent = Me
                 }
+                FrmDaily.PnlOptions.Visible = BoolOptionPanelDaily
                 FrmDaily.Show()
-                ActWindow(FrmDaily)
+                'ActWindow(FrmDaily)
             End If
             ActWindow(FrmDaily)
 
@@ -428,11 +496,12 @@ Public Class MainForm
                     .Height = WindowDock.Height,
                     .MdiParent = Me
                 }
+                FrmSalesDailyWin.PnlOptions.Visible = BoolOptionPanelSalesProfits
                 FrmSalesDailyWin.Show()
-                ActWindow(FrmSalesDailyWin)
+                'ActWindow(FrmSalesDailyWin)
             End If
-
             ActWindow(FrmSalesDailyWin)
+
         ElseIf FrmToOpen = "HomeForm" Then
             If FrmHomeForm Is Nothing Then
                 FrmHomeForm = New HomeForm With {
@@ -441,9 +510,23 @@ Public Class MainForm
                     .MdiParent = Me
                 }
                 FrmHomeForm.Show()
-                ActWindow(FrmHomeForm)
+                'ActWindow(FrmHomeForm)
             End If
             ActWindow(FrmHomeForm)
+
+        ElseIf FrmToOpen = "FrmTreasury" Then
+            If FrmTreasuryForm Is Nothing Then
+                FrmTreasuryForm = New FrmTreasury With {
+                    .Width = WindowDock.Width,
+                    .Height = WindowDock.Height,
+                    .FormBorderStyle = Windows.Forms.FormBorderStyle.None,
+                    .MdiParent = Me
+                }
+                FrmTreasuryForm.PnlOptions.Visible = BoolOptionPanelTreasury
+                FrmTreasuryForm.Show()
+                'ActWindow(FrmTreasuryForm)
+            End If
+            ActWindow(FrmTreasuryForm)
 
         ElseIf FrmToOpen = "AddNewSaleInvoice" Then
             If FrmAddNewSalesInvoices Is Nothing Then
@@ -465,8 +548,9 @@ Public Class MainForm
                     .WhatToSelect = "CForHim",
                     .MdiParent = Me
                 }
+                FrmDebitsCredits.PnlOptions.Visible = BoolOptionPanelCreditorsDebitors
                 FrmDebitsCredits.Show()
-                ActWindow(FrmDebitsCredits)
+                'ActWindow(FrmDebitsCredits)
             End If
             FrmDebitsCredits.DropType.SelectedValue = CreditsDebits.Credits
             FrmDebitsCredits.Text = Con.Creditors
@@ -480,8 +564,9 @@ Public Class MainForm
                       .WhatToSelect = "DOnHim",
                     .MdiParent = Me
                 }
+                FrmDebitsCredits.PnlOptions.Visible = BoolOptionPanelCreditorsDebitors
                 FrmDebitsCredits.Show()
-                ActWindow(FrmDebitsCredits)
+                'ActWindow(FrmDebitsCredits)
             End If
             FrmDebitsCredits.DropType.SelectedValue = CreditsDebits.Debts
             FrmDebitsCredits.Text = Con.Debtors
@@ -494,6 +579,7 @@ Public Class MainForm
                     .Height = WindowDock.Height,
                     .MdiParent = Me
                 }
+                FrmItemsSalesWinReport.PnlOptions.Visible = BoolOptionPanelItemsSalesProfits
                 FrmItemsSalesWinReport.Show()
             End If
             ActWindow(FrmItemsSalesWinReport)
@@ -506,8 +592,9 @@ Public Class MainForm
                     .Height = WindowDock.Height,
                     .MdiParent = Me
                 }
+                FrmDashboard.PnlOptions.Visible = False 'BoolOptionPanelAnalysis
                 FrmDashboard.Show()
-                ActWindow(FrmDashboard)
+                'ActWindow(FrmDashboard)
             End If
             ActWindow(FrmDashboard)
 
@@ -623,13 +710,13 @@ Public Class MainForm
         Me.WindowState = FormWindowState.Maximized
         MyBase.OnLoad(e)
     End Sub
-    Private Sub RibBtnClose_Click(sender As Object, e As EventArgs)
+    Private Sub BtnCommandBarCloseForm_Click(sender As Object, e As EventArgs)
         If WindowDock.DockWindows.Count > 0 Then
             Me.WindowDock.ActiveWindow.Close()
         End If
     End Sub
 
-    Private Sub RibBtnNew_Click(sender As Object, e As EventArgs)
+    Private Sub BtnCommandBarMostanadNew_Click(sender As Object, e As EventArgs)
         If Me.WindowDock.DockWindows.Count > 0 Then
             Select Case Me.WindowDock.ActiveWindow.Tag
                 Case "Items"
@@ -651,11 +738,11 @@ Public Class MainForm
         End If
     End Sub
 
-    Private Sub RibBtnShowOption_Click(sender As Object, e As EventArgs)
+    Private Sub BtnCommandBarShowHideForm_Click(sender As Object, e As EventArgs)
         If WindowDock.DockWindows.Count > 0 Then
             Dim ActWindow As HostWindow = Me.WindowDock.ActiveWindow
             Dim Vis As Boolean
-            If Me.RibBtnShowOption.ToggleState = Enumerations.ToggleState.On Then
+            If Me.BtnCommandBarShowHideForm.ToggleState = Enumerations.ToggleState.On Then
                 Vis = False
             Else
                 Vis = True
@@ -688,9 +775,11 @@ Public Class MainForm
                 Case "ItemsSalesDailyWinReport"
                     FrmItemsSalesWinReport.PnlOptions.Visible = Vis
                     Exit Select
-
                 Case "FrmDashboard"
                     'FrmDashboard.PnlOptions.Visible = Vis
+                    Exit Select
+                Case "FrmTreasury"
+                    FrmTreasuryForm.PnlOptions.Visible = Vis
                     Exit Select
             End Select
         End If
@@ -721,6 +810,9 @@ Public Class MainForm
                 Exit Select
             Case "HomeForm"
                 FrmHomeForm = Nothing
+                Exit Select
+            Case "FrmTreasury"
+                FrmTreasuryForm = Nothing
                 Exit Select
             Case "AddNewSaleInvoice"
                 FrmAddNewSalesInvoices = Nothing
@@ -756,88 +848,97 @@ Public Class MainForm
     Private Sub EnableDocumentBtn()
         If WindowDock.DockWindows.DocumentWindows.Count > 0 Then
             ' e.DockWindow.TabStripItem.ForeColor = Color.Blue
+            Me.BtnCommandBarShowHideForm.Enabled = True
             Select Case Me.WindowDock.ActiveWindow.Tag
                 Case "Items"
                     If Frmitems IsNot Nothing Then
-                        Me.RibBtnNew.Enabled = Frmitems.BtnNew.Enabled
-                        Me.RibBtnEdit.Enabled = Frmitems.BtnEdit.Enabled
-                        Me.RibBtnShowOption.IsChecked = Frmitems.PnlOptions.Visible
+                        Me.BtnCommandBarMostanadNew.Enabled = Frmitems.BtnNew.Enabled
+                        Me.BtnCommandBarEdit.Enabled = Frmitems.BtnEdit.Enabled
+                        Me.BtnCommandBarShowHideForm.CheckState = IIf(Frmitems.PnlOptions.Visible, CheckState.Checked, CheckState.Unchecked)
                     End If
                     Exit Select
                 Case "Customers"
                     If FrmCustomers IsNot Nothing Then
-                        Me.RibBtnNew.Enabled = FrmCustomers.BtnNew.Enabled
-                        Me.RibBtnShowOption.IsChecked = FrmCustomers.PnlOptions.Visible
-                        Me.RibBtnEdit.Enabled = FrmCustomers.BtnEdit.Enabled
+                        Me.BtnCommandBarMostanadNew.Enabled = FrmCustomers.BtnNew.Enabled
+                        Me.BtnCommandBarShowHideForm.CheckState = IIf(FrmCustomers.PnlOptions.Visible, CheckState.Checked, CheckState.Unchecked)
+                        Me.BtnCommandBarEdit.Enabled = FrmCustomers.BtnEdit.Enabled
                     End If
                     Exit Select
                 Case "Vendors"
                     If FrmVendors IsNot Nothing Then
-                        Me.RibBtnNew.Enabled = FrmVendors.BtnNew.Enabled
-                        Me.RibBtnShowOption.IsChecked = FrmVendors.PnlOptions.Visible
-                        Me.RibBtnEdit.Enabled = FrmVendors.BtnEdit.Enabled
+                        Me.BtnCommandBarMostanadNew.Enabled = FrmVendors.BtnNew.Enabled
+                        Me.BtnCommandBarShowHideForm.CheckState = IIf(FrmVendors.PnlOptions.Visible, CheckState.Checked, CheckState.Unchecked)
+                        Me.BtnCommandBarEdit.Enabled = FrmVendors.BtnEdit.Enabled
                     End If
                     Exit Select
                 Case "SalesOrders"
                     If FrmSalesOrders IsNot Nothing Then
-                        Me.RibBtnNew.Enabled = FrmSalesOrders.BtnNew.Enabled
-                        Me.RibBtnShowOption.IsChecked = FrmSalesOrders.PnlOptions.Visible
-                        Me.RibBtnEdit.Enabled = FrmSalesOrders.BtnEdit.Enabled
+                        Me.BtnCommandBarMostanadNew.Enabled = FrmSalesOrders.BtnNew.Enabled
+                        Me.BtnCommandBarShowHideForm.CheckState = IIf(FrmSalesOrders.PnlOptions.Visible, CheckState.Checked, CheckState.Unchecked)
+                        Me.BtnCommandBarEdit.Enabled = FrmSalesOrders.BtnEdit.Enabled
                     End If
                     Exit Select
                 Case "PurchasesOrders"
                     If FrmPurchasesOrders IsNot Nothing Then
-                        Me.RibBtnNew.Enabled = FrmPurchasesOrders.BtnNew.Enabled
-                        Me.RibBtnShowOption.IsChecked = FrmPurchasesOrders.PnlOptions.Visible
-                        Me.RibBtnEdit.Enabled = FrmPurchasesOrders.BtnEdit.Enabled
+                        Me.BtnCommandBarMostanadNew.Enabled = FrmPurchasesOrders.BtnNew.Enabled
+                        Me.BtnCommandBarShowHideForm.CheckState = IIf(FrmPurchasesOrders.PnlOptions.Visible, CheckState.Checked, CheckState.Unchecked)
+                        Me.BtnCommandBarEdit.Enabled = FrmPurchasesOrders.BtnEdit.Enabled
                     End If
                     Exit Select
                 Case "Daily"
                     If FrmDaily IsNot Nothing Then
-                        Me.RibBtnEdit.Enabled = FrmDaily.BtnOpen.Enabled
-                        Me.RibBtnNew.Enabled = False
-                        Me.RibBtnShowOption.IsChecked = FrmDaily.PnlOptions.Visible
+                        Me.BtnCommandBarEdit.Enabled = FrmDaily.BtnOpen.Enabled
+                        Me.BtnCommandBarMostanadNew.Enabled = False
+                        Me.BtnCommandBarShowHideForm.CheckState = IIf(FrmDaily.PnlOptions.Visible, CheckState.Checked, CheckState.Unchecked)
                     End If
                     Exit Select
                 Case "SalesDailyWin"
                     If FrmSalesDailyWin IsNot Nothing Then
-                        Me.RibBtnNew.Enabled = False
-                        Me.RibBtnShowOption.IsChecked = FrmSalesDailyWin.PnlOptions.Visible
+                        Me.BtnCommandBarMostanadNew.Enabled = False
+                        Me.BtnCommandBarShowHideForm.CheckState = IIf(FrmSalesDailyWin.PnlOptions.Visible, CheckState.Checked, CheckState.Unchecked)
                     End If
                     Exit Select
                 Case "HomeForm"
                     If FrmHomeForm IsNot Nothing Then
-                        Me.RibBtnEdit.Enabled = False
-                        Me.RibBtnNew.Enabled = False
-                        Me.RibBtnShowOption.IsChecked = False
+                        Me.BtnCommandBarEdit.Enabled = False
+                        Me.BtnCommandBarMostanadNew.Enabled = False
+                        Me.BtnCommandBarShowHideForm.CheckState = CheckState.Unchecked
+                    End If
+                    Exit Select
+                Case "FrmTreasury"
+                    If FrmTreasuryForm IsNot Nothing Then
+                        Me.BtnCommandBarEdit.Enabled = False
+                        Me.BtnCommandBarMostanadNew.Enabled = False
+                        Me.BtnCommandBarShowHideForm.CheckState = IIf(FrmTreasuryForm.PnlOptions.Visible, CheckState.Checked, CheckState.Unchecked)
                     End If
                     Exit Select
                 Case "AddNewSaleInvoice"
                     If FrmAddNewSalesInvoices IsNot Nothing Then
-                        Me.RibBtnEdit.Enabled = False
-                        Me.RibBtnNew.Enabled = False
-                        Me.RibBtnShowOption.IsChecked = False
+                        Me.BtnCommandBarEdit.Enabled = False
+                        Me.BtnCommandBarMostanadNew.Enabled = False
+                        Me.BtnCommandBarShowHideForm.CheckState = CheckState.Checked
+                        Me.BtnCommandBarShowHideForm.Enabled = False
                     End If
                     Exit Select
                 Case "DebitsCredits"
                     If FrmDebitsCredits IsNot Nothing Then
-                        Me.RibBtnEdit.Enabled = False
-                        Me.RibBtnNew.Enabled = False
-                        Me.RibBtnShowOption.IsChecked = FrmDebitsCredits.PnlOptions.Visible
+                        Me.BtnCommandBarEdit.Enabled = False
+                        Me.BtnCommandBarMostanadNew.Enabled = False
+                        Me.BtnCommandBarShowHideForm.CheckState = IIf(FrmDebitsCredits.PnlOptions.Visible, CheckState.Checked, CheckState.Unchecked)
                     End If
                     Exit Select
                 Case "ItemsSalesDailyWinReport"
                     If FrmItemsSalesWinReport IsNot Nothing Then
-                        Me.RibBtnEdit.Enabled = False
-                        Me.RibBtnNew.Enabled = False
-                        Me.RibBtnShowOption.IsChecked = FrmItemsSalesWinReport.PnlOptions.Visible
+                        Me.BtnCommandBarEdit.Enabled = False
+                        Me.BtnCommandBarMostanadNew.Enabled = False
+                        Me.BtnCommandBarShowHideForm.CheckState = IIf(FrmItemsSalesWinReport.PnlOptions.Visible, CheckState.Checked, CheckState.Unchecked)
                     End If
                     Exit Select
                 Case "FrmDashboard"
                     If FrmDashboard IsNot Nothing Then
-                        Me.RibBtnEdit.Enabled = False
-                        Me.RibBtnNew.Enabled = False
-                        'Me.RibBtnShowOption.IsChecked = FrmDashboard.PnlOptions.Visible
+                        Me.BtnCommandBarEdit.Enabled = False
+                        Me.BtnCommandBarMostanadNew.Enabled = False
+                        'Me.BtnCommandBarShowHideForm.IsChecked = FrmDashboard.PnlOptions.Visible
                     End If
                     Exit Select
             End Select
@@ -851,7 +952,7 @@ Public Class MainForm
     End Sub
 
 
-    Private Sub RibBtnEdit_Click(sender As Object, e As EventArgs) Handles RibBtnEdit.Click
+    Private Sub BtnCommandBarEdit_Click(sender As Object, e As EventArgs)
         If Me.WindowDock.DockWindows.Count > 0 Then
             Select Case Me.WindowDock.ActiveWindow.Tag
                 Case "Items"
@@ -951,19 +1052,23 @@ Public Class MainForm
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SubscribeShortcuts()
         Me.stripLblDollarRateValue.Text = LastDollarCurrencyRate
+        Me.StriplblVersionInfo.Text = System.String.Format(Me.StriplblVersionInfo.Text, Con.Lbl_One_Version, Con.Lbl_Two_Version, Con.Lbl_Year_One_Version, Con.Lbl_Year_Two_Version)
         If BoolShowDailyPageWhenOpen Then
             FrmToOpen = "Daily"
             FrmOpenTimer.Start()
         End If
     End Sub
     Private Sub RibBtnHomeForm_Click(sender As Object, e As EventArgs) Handles RibBtnHomeForm.Click
-        FrmToOpen = "HomeForm"
+        'FrmToOpen = "HomeForm"
+        FrmToOpen = "FrmTreasury"
         FrmOpenTimer.Start()
     End Sub
     Private Sub RibBtnUserSettings_Click(sender As Object, e As EventArgs) Handles RibBtnUserSettings.Click
         Dim FrmUserSettings As New UserSettings
         FrmUserSettings.ShowDialog()
+        'Reload User Setting
         Home.GetUserSettings()
+        Home.GetUserOptionPanelsSettings()
     End Sub
 
     Private Sub RibBtnCurrencies_Click(sender As Object, e As EventArgs) Handles RibBtnCurrencies.Click

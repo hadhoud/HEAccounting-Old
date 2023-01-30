@@ -19,6 +19,7 @@ Public Class LoginFrm
         Me.BtnExit.Text = LoStrId.LblExit
         Me.LblPassword.Text = LoStrId.LblPassword
         Me.LblUsername.Text = LoStrId.LblUsername
+        Me.ChkRememberme.Text = LoStrId.LblRememberMe
         Me.Text = LoStrId.LblLoginFrm
         Me.RightToLeft = RightToLeft.Yes
         UpdateLang("Ar")
@@ -68,6 +69,7 @@ Public Class LoginFrm
         Me.BtnExit.Text = LoStrId.LblLatinExit
         Me.LblPassword.Text = LoStrId.LblLatinPassword
         Me.LblUsername.Text = LoStrId.LblLatinUsername
+        Me.ChkRememberme.Text = LoStrId.LblLatinRememberMe
         Me.Text = LoStrId.LblLatinLoginFrm
         Me.RightToLeft = RightToLeft.No
         UpdateLang("En")

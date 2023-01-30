@@ -28,8 +28,8 @@ Partial Class DashboardItem
         Me.lblHeader = New Telerik.WinControls.UI.RadLabel()
         Me.Office2010BlueTheme1 = New Telerik.WinControls.Themes.Office2010BlueTheme()
         Me.ContentPanel = New Telerik.WinControls.UI.RadPanel()
-        Me.RoundRectShape1 = New Telerik.WinControls.RoundRectShape(Me.components)
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.RoundRectShape1 = New Telerik.WinControls.RoundRectShape(Me.components)
         CType(Me.imgItem, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lblFirstText, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lblHeader, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,6 +63,7 @@ Partial Class DashboardItem
         Me.lblFirstText.Size = New System.Drawing.Size(260, 55)
         Me.lblFirstText.TabIndex = 1
         Me.lblFirstText.Text = "qwe"
+        Me.lblFirstText.TextAlignment = System.Drawing.ContentAlignment.TopRight
         '
         'lblHeader
         '
@@ -77,6 +78,7 @@ Partial Class DashboardItem
         Me.lblHeader.Size = New System.Drawing.Size(199, 48)
         Me.lblHeader.TabIndex = 0
         Me.lblHeader.Text = "header"
+        Me.lblHeader.TextAlignment = System.Drawing.ContentAlignment.TopRight
         '
         'ContentPanel
         '

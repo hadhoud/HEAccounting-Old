@@ -4,7 +4,7 @@
     End Sub
 
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
-        If Me.TxtPassword.Text.Length <> 0 And Me.TxtPassword.Text = "@li@123456" Then
+        If Me.TxtPassword.Text.Length <> 0 And Me.TxtPassword.Text = "alrida" Then
             Me.DialogResult = DialogResult.Yes
         Else
             Me.TxtPassword.Clear()

@@ -15,7 +15,31 @@
 
     Private Sub ChangeToEng()
         Me.RightToLeft = RightToLeft.No
+
+        'Me.RightToLeftLayout = False
+
         Me.Text = LoStrId.lblHome
+
+        Me.RadGroubSales.Text = LoStrId.LblSales
+        Me.lblSales.Text = LoStrId.LblSales
+        Me.lblCashSales.Text = LoStrId.lblCashSales
+        Me.lblDebtSales.Text = LoStrId.lblDebtSales
+        Me.lblReturnSalesCash.Text = LoStrId.lblReturnSalesCash
+        Me.lblReturnSalesDebt.Text = LoStrId.lblReturnSalesDebt
+        Me.lblReturnSales.Text = LoStrId.lblReturnSales
+
+        Me.RadGroupPurchases.Text = LoStrId.LblPurchases
+        Me.lblPurchases.Text = LoStrId.LblPurchases
+        Me.lblPurchasesCash.Text = LoStrId.lblCashPurchases
+        Me.lblPurchasesDebt.Text = LoStrId.lblDebtPurchases
+        Me.lblReturnPurchasesCash.Text = LoStrId.lblReturnPurchasesCash
+        Me.lblReturnPurchasesDebt.Text = LoStrId.lblReturnPurchasesDebt
+        Me.lblReturnPurchases.Text = LoStrId.lblReturnPurchases
+
+        Me.RadGroupNotes.Text = LoStrId.LblNotes
+
+
+        Me.GroupGeneral.Text = LoStrId.LblGeneral
     End Sub
 
     Private Sub FillData()

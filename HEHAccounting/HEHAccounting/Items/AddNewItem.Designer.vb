@@ -52,7 +52,7 @@ Partial Class AddNewItem
         Me.LblPurchasingPrice = New System.Windows.Forms.Label()
         Me.MTxtItemSellingPrice = New Telerik.WinControls.UI.RadMaskedEditBox()
         Me.LblQuantity = New System.Windows.Forms.Label()
-        Me.LblPercentage = New System.Windows.Forms.Label()
+        Me.LblCurrency = New System.Windows.Forms.Label()
         Me.LblSellingPrice = New System.Windows.Forms.Label()
         Me.PageUnits = New Telerik.WinControls.UI.RadPageViewPage()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
@@ -355,7 +355,7 @@ Partial Class AddNewItem
         Me.TableLayoutPanel1.Controls.Add(Me.LblPurchasingPrice, 0, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.MTxtItemSellingPrice, 1, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.LblQuantity, 0, 4)
-        Me.TableLayoutPanel1.Controls.Add(Me.LblPercentage, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.LblCurrency, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.LblSellingPrice, 0, 3)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 3)
@@ -389,14 +389,14 @@ Partial Class AddNewItem
         Me.MTxtMinQty.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MTxtMinQty.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MTxtMinQty.Location = New System.Drawing.Point(3, 137)
-        Me.MTxtMinQty.Mask = "G"
+        Me.MTxtMinQty.Mask = "F3"
         Me.MTxtMinQty.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.MTxtMinQty.Name = "MTxtMinQty"
         Me.MTxtMinQty.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.MTxtMinQty.Size = New System.Drawing.Size(169, 24)
         Me.MTxtMinQty.TabIndex = 4
         Me.MTxtMinQty.TabStop = False
-        Me.MTxtMinQty.Text = "0"
+        Me.MTxtMinQty.Text = "0.000"
         Me.MTxtMinQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.MTxtMinQty.ThemeName = "Office2010Blue"
         '
@@ -434,14 +434,14 @@ Partial Class AddNewItem
         Me.MTxtItemQty.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MTxtItemQty.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MTxtItemQty.Location = New System.Drawing.Point(3, 107)
-        Me.MTxtItemQty.Mask = "G"
+        Me.MTxtItemQty.Mask = "F3"
         Me.MTxtItemQty.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.MTxtItemQty.Name = "MTxtItemQty"
         Me.MTxtItemQty.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.MTxtItemQty.Size = New System.Drawing.Size(169, 24)
         Me.MTxtItemQty.TabIndex = 3
         Me.MTxtItemQty.TabStop = False
-        Me.MTxtItemQty.Text = "0"
+        Me.MTxtItemQty.Text = "0.000"
         Me.MTxtItemQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.MTxtItemQty.ThemeName = "Office2010Blue"
         '
@@ -488,17 +488,17 @@ Partial Class AddNewItem
         Me.LblQuantity.Text = "الكمية"
         Me.LblQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'LblPercentage
+        'LblCurrency
         '
-        Me.LblPercentage.AutoSize = True
-        Me.LblPercentage.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LblPercentage.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblPercentage.Location = New System.Drawing.Point(178, 14)
-        Me.LblPercentage.Name = "LblPercentage"
-        Me.LblPercentage.Size = New System.Drawing.Size(69, 30)
-        Me.LblPercentage.TabIndex = 69
-        Me.LblPercentage.Text = "العملة"
-        Me.LblPercentage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LblCurrency.AutoSize = True
+        Me.LblCurrency.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LblCurrency.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblCurrency.Location = New System.Drawing.Point(178, 14)
+        Me.LblCurrency.Name = "LblCurrency"
+        Me.LblCurrency.Size = New System.Drawing.Size(69, 30)
+        Me.LblCurrency.TabIndex = 69
+        Me.LblCurrency.Text = "العملة"
+        Me.LblCurrency.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblSellingPrice
         '
@@ -767,7 +767,7 @@ Partial Class AddNewItem
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 96.48438!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.515624!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 167.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 169.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.ChkAlertMinQty, 0, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.ChkCheckQtyInSale, 0, 2)
         Me.TableLayoutPanel2.Controls.Add(Me.ChkItemHasExpiredDt, 0, 3)
@@ -791,9 +791,9 @@ Partial Class AddNewItem
         Me.ChkAlertMinQty.Checked = True
         Me.ChkAlertMinQty.CheckState = System.Windows.Forms.CheckState.Checked
         Me.ChkAlertMinQty.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ChkAlertMinQty.Location = New System.Drawing.Point(299, 23)
+        Me.ChkAlertMinQty.Location = New System.Drawing.Point(301, 23)
         Me.ChkAlertMinQty.Name = "ChkAlertMinQty"
-        Me.ChkAlertMinQty.Size = New System.Drawing.Size(209, 34)
+        Me.ChkAlertMinQty.Size = New System.Drawing.Size(207, 34)
         Me.ChkAlertMinQty.TabIndex = 12
         Me.ChkAlertMinQty.Text = "تنبيه عند أقل كمية"
         Me.ChkAlertMinQty.UseVisualStyleBackColor = True
@@ -803,9 +803,9 @@ Partial Class AddNewItem
         Me.ChkCheckQtyInSale.Checked = True
         Me.ChkCheckQtyInSale.CheckState = System.Windows.Forms.CheckState.Checked
         Me.ChkCheckQtyInSale.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ChkCheckQtyInSale.Location = New System.Drawing.Point(299, 63)
+        Me.ChkCheckQtyInSale.Location = New System.Drawing.Point(301, 63)
         Me.ChkCheckQtyInSale.Name = "ChkCheckQtyInSale"
-        Me.ChkCheckQtyInSale.Size = New System.Drawing.Size(209, 34)
+        Me.ChkCheckQtyInSale.Size = New System.Drawing.Size(207, 34)
         Me.ChkCheckQtyInSale.TabIndex = 13
         Me.ChkCheckQtyInSale.Text = "إنتباه للكمية عند البيع"
         Me.ChkCheckQtyInSale.UseVisualStyleBackColor = True
@@ -813,9 +813,9 @@ Partial Class AddNewItem
         'ChkItemHasExpiredDt
         '
         Me.ChkItemHasExpiredDt.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ChkItemHasExpiredDt.Location = New System.Drawing.Point(299, 103)
+        Me.ChkItemHasExpiredDt.Location = New System.Drawing.Point(301, 103)
         Me.ChkItemHasExpiredDt.Name = "ChkItemHasExpiredDt"
-        Me.ChkItemHasExpiredDt.Size = New System.Drawing.Size(209, 34)
+        Me.ChkItemHasExpiredDt.Size = New System.Drawing.Size(207, 34)
         Me.ChkItemHasExpiredDt.TabIndex = 14
         Me.ChkItemHasExpiredDt.Text = "صنف له تاريخ صلاحية"
         Me.ChkItemHasExpiredDt.UseVisualStyleBackColor = True
@@ -824,9 +824,9 @@ Partial Class AddNewItem
         '
         Me.ChkAlertBeforeExpiredDt.AutoSize = True
         Me.ChkAlertBeforeExpiredDt.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ChkAlertBeforeExpiredDt.Location = New System.Drawing.Point(299, 143)
+        Me.ChkAlertBeforeExpiredDt.Location = New System.Drawing.Point(301, 143)
         Me.ChkAlertBeforeExpiredDt.Name = "ChkAlertBeforeExpiredDt"
-        Me.ChkAlertBeforeExpiredDt.Size = New System.Drawing.Size(209, 34)
+        Me.ChkAlertBeforeExpiredDt.Size = New System.Drawing.Size(207, 34)
         Me.ChkAlertBeforeExpiredDt.TabIndex = 15
         Me.ChkAlertBeforeExpiredDt.Text = "تنبيه قبل إنتهاء الصلاحية"
         Me.ChkAlertBeforeExpiredDt.UseVisualStyleBackColor = True
@@ -836,7 +836,7 @@ Partial Class AddNewItem
         Me.TableLayoutPanel2.SetColumnSpan(Me.PictureBox1, 2)
         Me.PictureBox1.ErrorImage = Global.HEHAccounting.My.Resources.Resources.Danger
         Me.PictureBox1.Image = Global.HEHAccounting.My.Resources.Resources.photo
-        Me.PictureBox1.Location = New System.Drawing.Point(5, 3)
+        Me.PictureBox1.Location = New System.Drawing.Point(7, 3)
         Me.PictureBox1.Name = "PictureBox1"
         Me.TableLayoutPanel2.SetRowSpan(Me.PictureBox1, 5)
         Me.PictureBox1.Size = New System.Drawing.Size(281, 174)
@@ -1011,7 +1011,7 @@ Partial Class AddNewItem
     Friend WithEvents MTxtItemPurchasingPrice As Telerik.WinControls.UI.RadMaskedEditBox
     Friend WithEvents MTxtItemQty As Telerik.WinControls.UI.RadMaskedEditBox
     Friend WithEvents MTxtItemSellingPrice As Telerik.WinControls.UI.RadMaskedEditBox
-    Friend WithEvents LblPercentage As Label
+    Friend WithEvents LblCurrency As Label
     Friend WithEvents DropCurrency As Telerik.WinControls.UI.RadDropDownList
 End Class
 

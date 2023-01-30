@@ -14,6 +14,10 @@ Public Class ItemsSalesWinReport
             ChangeToEng()
         End If
         TimerFrm.Interval = TimerDailyForm * 60 * 1000
+
+        Me.MskTxtInvDateFrom.Value = Date.Now
+        Me.MskTxtInvDateTo.Value = Date.Now
+
         RefrechGrid()
 
         Me.GridDaily.BottomPinnedRowsMode = GridViewBottomPinnedRowsMode.Fixed
@@ -27,33 +31,16 @@ Public Class ItemsSalesWinReport
     End Sub
 
     Public Sub RefrechGrid()
-        Dim Param(0) As String
-        Param(0) = "@TDailyDate , " & Date.Now.Date
+        Dim Param(1) As String
+        Param(0) = "@tFromDate , " & Me.MskTxtInvDateFrom.Value
+        Param(1) = "@tTODate , " & Me.MskTxtInvDateTo.Value
         FillGridViewProcedureWithParameters(Me.GridDaily, "GetItemsSalesDailyWin", Param)
         HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("PaymentType").Index, False)
     End Sub
 
-    Private Sub RefrechDateGrid()
-        Dim Param(0) As String
-        If ChkAlldate.Checked = True Then
-            Param(0) = "@TDailyDate , 1999-01-01"
-            FillGridViewProcedureWithParameters(Me.GridDaily, "GetItemsSalesDailyWin", Param)
-        Else
-            Me.DailyCalendar.SelectedDate = DateTime.MinValue
-            Dim selDate As DateTime = Me.DailyCalendar.FocusedDate
-            Dim mouseLoc As Point = Me.DailyCalendar.PointToClient(Cursor.Position)
-            Dim selElement As RadElement = Me.DailyCalendar.ElementTree.GetElementAtPoint(mouseLoc)
-            If selElement IsNot Nothing And TypeOf CType(selElement, CalendarCellElement) Is CalendarCellElement Then
-                Dim selCell As CalendarCellElement = CType(selElement, CalendarCellElement)
-                selDate = selCell.Date
-                Param(0) = "@TDailyDate , " & selDate
-            Else
-                Param(0) = "@TDailyDate , " & Date.Now.Date
-            End If
-            FillGridViewProcedureWithParameters(Me.GridDaily, "GetItemsSalesDailyWin", Param)
-            'HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("Refertype").Index, False)
-        End If
-        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("PaymentType").Index, False)
+    Private Sub RefrechWithFilterGrid()
+        RefrechGrid()
+
         Me.GridDaily.FilterDescriptors.Clear()
         If Me.TxtItemName.Text.Trim.Length <> 0 Then
             FilterGrid(Me.GridDaily, "Item_name", Me.TxtItemName.Text, FilterOperator.Contains)
@@ -66,7 +53,7 @@ Public Class ItemsSalesWinReport
         Me.BtnRefrech.Text = LoStrId.LblEdit
         Me.BtnReset.Text = LoStrId.LblReset
         Me.BtnRefrech.Text = LoStrId.LblRefrech
-        Me.Text = LoStrId.LblDaiy
+        Me.Text = LoStrId.LblItemsSalesProfitReport
         ChangeTextButtonToRight(Me.TxtItemName, TxtItemsBtn)
     End Sub
 
@@ -76,36 +63,23 @@ Public Class ItemsSalesWinReport
         Me.TxtItemName.AutoCompleteMode = AutoCompleteMode.SuggestAppend
     End Sub
 
-    Private Sub DailyCalendar_SelectionChanged(sender As Object, e As EventArgs) Handles DailyCalendar.SelectionChanged
-        RefrechDateGrid()
-    End Sub
-
-    Private Sub ChkAlldate_ToggleStateChanged(sender As Object, args As StateChangedEventArgs) Handles ChkAlldate.ToggleStateChanged
-        If ChkAlldate.Checked = True Then
-            Me.DailyCalendar.Enabled = False
-        Else
-            Me.DailyCalendar.Enabled = True
-        End If
-        RefrechDateGrid()
-    End Sub
-
     Private Sub BtnFiltering_Click(sender As Object, e As EventArgs) Handles BtnFiltering.Click
-        RefrechDateGrid()
+        RefrechWithFilterGrid()
     End Sub
 
     Private Sub BtnReset_Click(sender As Object, e As EventArgs) Handles BtnReset.Click
-        Me.DailyCalendar.SelectedDate = DateTime.MinValue
         Me.TxtItemName.Clear()
-        Me.ChkAlldate.Checked = False
-        RefrechDateGrid()
+        Me.MskTxtInvDateFrom.Value = Date.Now
+        Me.MskTxtInvDateTo.Value = Date.Now
+        RefrechGrid()
     End Sub
 
     Private Sub BtnRefrech_Click(sender As Object, e As EventArgs) Handles BtnRefrech.Click
-        RefrechDateGrid()
+        RefrechWithFilterGrid()
     End Sub
 
     Private Sub TimerFrm_Tick(sender As Object, e As EventArgs) Handles TimerFrm.Tick
-        RefrechDateGrid()
+        RefrechWithFilterGrid()
     End Sub
 
     Private Sub TxtCustomerBtn_Click(sender As Object, e As EventArgs)

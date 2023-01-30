@@ -13,7 +13,10 @@ Public Class SalesDailyWin
         If BoolLTRLanguage Then
             ChangeToEng()
         End If
+
         TimerFrm.Interval = TimerDailyForm * 60 * 1000
+
+        InitiateDatePicker()
         RefrechGrid()
 
         Me.GridDaily.BottomPinnedRowsMode = GridViewBottomPinnedRowsMode.Fixed
@@ -23,23 +26,16 @@ Public Class SalesDailyWin
         FillDropList()
     End Sub
     Private Sub Daily_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         AutoComplete()
         TimerFrm.Start()
     End Sub
 
+    Private Sub InitiateDatePicker()
+        InitiateDateTimePicker(MskTxtInvDateFrom, DateSerial(2020, 1, 1), True, True)
+        InitiateDateTimePicker(MskTxtInvDateTo, DateSerial(2020, 1, 1), True, True)
+    End Sub
     Private Sub FillDropList()
-        'Dim Sitem As New RadListDataItem With {
-        '    .Text = Con.Posted,
-        '    .Value = Con.Posted
-        '}
-        'Me.DropStatus.Items.Add(Sitem)
-
-        'Sitem = New RadListDataItem With {
-        '    .Text = Con.UnPosted,
-        '    .Value = Con.UnPosted
-        '}
-        'Me.DropStatus.Items.Add(Sitem)
-
 
         Dim PaymentTypeItem As New RadListDataItem With {
             .Text = Con.Cash,
@@ -59,51 +55,39 @@ Public Class SalesDailyWin
         }
         Me.DropPaymentType.Items.Add(PaymentTypeItem)
 
-        'Me.DropCurrency.ValueMember = "CurrencyID"
-        'Me.DropCurrency.DisplayMember = IIf(BoolLTRLanguage = True, "LatinSymb", "Symb")
-        'Me.DropCurrency.DataSource = Currencydata
-
-        'Initiatedropdownlist(Me.DropCurrency)
-        'Initiatedropdownlist(Me.DropStatus, False)
         Initiatedropdownlist(Me.DropPaymentType, False)
     End Sub
+
     Public Sub RefrechGrid()
-        Dim Param(1) As String
-        Param(0) = "@TDailyDate , " & Date.Now.Date
-        Param(1) = "@sPaymentType , 0"
+        Dim Param(2) As String
+        Param(0) = "@tFromDate , " & IIf(Me.MskTxtInvDateFrom.Checked, Me.MskTxtInvDateFrom.Value, "")
+        Param(1) = "@tTODate , " & IIf(Me.MskTxtInvDateTo.Checked, Me.MskTxtInvDateTo.Value, "")
+        Param(2) = "@sPaymentType , " & IIf(Me.DropPaymentType.SelectedIndex <> -1, Me.DropPaymentType.SelectedValue, "0")
         FillGridViewProcedureWithParameters(Me.GridDaily, "GetSalesOrdersDailyWin", Param)
-        'HideShowColummn(Me.GridDaily, IIf(BoolLTRLanguage, Me.GridDaily.Columns("Description").Index, Me.GridDaily.Columns("LatinDescription").Index), False)
-        'HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("Refertype").Index, False)
     End Sub
 
-    Private Sub RefrechDateGrid()
-        Dim Param(1) As String
-        If ChkAlldate.Checked = True Then
-            Param(0) = "@TDailyDate , 1999-01-01"
-            Param(1) = "@sPaymentType , " & IIf(Me.DropPaymentType.SelectedIndex <> -1, Me.DropPaymentType.SelectedValue, "0")
-            FillGridViewProcedureWithParameters(Me.GridDaily, "GetSalesOrdersDailyWin", Param)
-        Else
-            Me.DailyCalendar.SelectedDate = DateTime.MinValue
-            Param(0) = "@TDailyDate , " & Me.DailyCalendar.FocusedDate.Date
-            Param(1) = "@sPaymentType , " & IIf(Me.DropPaymentType.SelectedIndex <> -1, Me.DropPaymentType.SelectedValue, "0")
-            FillGridViewProcedureWithParameters(Me.GridDaily, "GetSalesOrdersDailyWin", Param)
-            'HideShowColummn(Me.GridDaily, IIf(BoolLTRLanguage, Me.GridDaily.Columns("Description").Index, Me.GridDaily.Columns("LatinDescription").Index), False)
-            'HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("Refertype").Index, False)
-        End If
+    Private Sub RefrechWithFilterGrid()
+        RefrechGrid()
 
         Me.GridDaily.FilterDescriptors.Clear()
         If Me.TxtCustomer.Text.Trim.Length <> 0 Then
             FilterGrid(Me.GridDaily, "CustomerName", Me.TxtCustomer.Text, FilterOperator.Contains)
         End If
+
     End Sub
     Private Sub ChangeToEng()
         Me.RightToLeft = RightToLeft.No
         Me.RightToLeftLayout = False
         Me.BtnFiltering.Text = LoStrId.LblFiltering
-        Me.BtnRefrech.Text = LoStrId.LblEdit
+        Me.BtnRefrech.Text = LoStrId.LblRefrech
         Me.BtnReset.Text = LoStrId.LblReset
         Me.BtnRefrech.Text = LoStrId.LblRefrech
-        Me.Text = LoStrId.LblDaiy
+        Me.Text = LoStrId.lblSalesProfit
+        Me.LblCustomerName.Text = LoStrId.lblCustomer
+        Me.LblPaymentType.Text = LoStrId.LblPayment
+        Me.LblFrom.Text = LoStrId.LblFrom
+        Me.LblTo.Text = LoStrId.LblTo
+
         ChangeTextButtonToRight(Me.TxtCustomer, TxtCustomerBtn)
     End Sub
 
@@ -113,37 +97,25 @@ Public Class SalesDailyWin
         Me.TxtCustomer.AutoCompleteMode = AutoCompleteMode.SuggestAppend
     End Sub
 
-    Private Sub DailyCalendar_SelectionChanged(sender As Object, e As EventArgs) Handles DailyCalendar.SelectionChanged
-        RefrechDateGrid()
-    End Sub
-
-    Private Sub ChkAlldate_ToggleStateChanged(sender As Object, args As StateChangedEventArgs) Handles ChkAlldate.ToggleStateChanged
-        If ChkAlldate.Checked = True Then
-            Me.DailyCalendar.Enabled = False
-        Else
-            Me.DailyCalendar.Enabled = True
-        End If
-        RefrechDateGrid()
-    End Sub
 
     Private Sub BtnFiltering_Click(sender As Object, e As EventArgs) Handles BtnFiltering.Click
-        RefrechDateGrid()
+        RefrechWithFilterGrid()
     End Sub
 
     Private Sub BtnReset_Click(sender As Object, e As EventArgs) Handles BtnReset.Click
-        Me.DailyCalendar.SelectedDate = DateTime.MinValue
+        Me.MskTxtInvDateFrom.Value = Date.Now
+        Me.MskTxtInvDateTo.Value = Date.Now
         Me.DropPaymentType.SelectedIndex = -1
         Me.TxtCustomer.Clear()
-        Me.ChkAlldate.Checked = False
-        RefrechDateGrid()
+        RefrechGrid()
     End Sub
 
     Private Sub BtnRefrech_Click(sender As Object, e As EventArgs) Handles BtnRefrech.Click
-        RefrechDateGrid()
+        RefrechWithFilterGrid()
     End Sub
 
     Private Sub TimerFrm_Tick(sender As Object, e As EventArgs) Handles TimerFrm.Tick
-        RefrechDateGrid()
+        RefrechWithFilterGrid()
     End Sub
 
     Private Sub TxtCustomerBtn_Click(sender As Object, e As EventArgs) Handles TxtCustomerBtn.Click

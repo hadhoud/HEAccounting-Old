@@ -5,7 +5,7 @@
     Public FrmMainForm As MainForm
     Private Sub Home_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = False
-        Me.Version.Text = System.String.Format(Me.Version.Text, My.Application.Info.Version.Major, My.Application.Info.Version.Minor)
+        Me.Version.Text = System.String.Format(Me.Version.Text, Con.Lbl_One_Version, Con.Lbl_Two_Version, Con.Lbl_Year_One_Version, Con.Lbl_Year_Two_Version)
         BackgroundWorker1.RunWorkerAsync()
         'FrmMainForm = New MainForm
         'FrmMainForm.Show()
@@ -62,6 +62,7 @@
         ReloadCurrency()
         ReloadUserRoles()
         GetUserSettings()
+        GetUserOptionPanelsSettings()
         GetAppSettings()
         GetCompanyInfo()
         FrmMainForm = New MainForm
@@ -153,6 +154,25 @@
         End If
     End Sub
 
+    Public Sub GetUserOptionPanelsSettings()
+        Dim Param(0) As String
+        Param(0) = "@IUserID , " & UserID
+        Dim UserOptionPanelsSettingDt As DataTable = ExecuteProcedureDatatableWithParameters("SelectUserOptionPanelsSettings", Param)
+        If UserOptionPanelsSettingDt.Rows.Count > 0 Then
+            'Option Panels Setting
+            BoolOptionPanelTreasury = UserOptionPanelsSettingDt.Rows(0).Item("bTreasuryShow_fl")
+            BoolOptionPanelDaily = UserOptionPanelsSettingDt.Rows(0).Item("bDailyShow_fl")
+            BoolOptionPanelAnalysis = UserOptionPanelsSettingDt.Rows(0).Item("bAnalysisShow_fl")
+            BoolOptionPanelSalesProfits = UserOptionPanelsSettingDt.Rows(0).Item("bSalesProfitsShow_fl")
+            BoolOptionPanelItemsSalesProfits = UserOptionPanelsSettingDt.Rows(0).Item("bItemsSalesProfitsShow_fl")
+            BoolOptionPanelItems = UserOptionPanelsSettingDt.Rows(0).Item("bItemsShow_fl")
+            BoolOptionPanelCustomers = UserOptionPanelsSettingDt.Rows(0).Item("bCustomersShow_fl")
+            BoolOptionPanelVendors = UserOptionPanelsSettingDt.Rows(0).Item("bVendorsShow_fl")
+            BoolOptionPanelSalesOrders = UserOptionPanelsSettingDt.Rows(0).Item("bSalesOrdersShow_fl")
+            BoolOptionPanelPurchasesOrders = UserOptionPanelsSettingDt.Rows(0).Item("bPurchasesOrdersShow_fl")
+            BoolOptionPanelCreditorsDebitors = UserOptionPanelsSettingDt.Rows(0).Item("bCreditorsDebitorsShow_fl")
+        End If
+    End Sub
     Public Sub GetAppSettings()
 
         Dim AppSettingDt As DataTable = ExecuteProcedureDatatable("SelectAppSettings")

@@ -53,7 +53,7 @@ Public Class AddNewItem
         Me.LblSellingPrice.Text = LoStrId.LblSellingPrice
         Me.LblQuantity.Text = LoStrId.LblQuantity
         Me.LblMinQty.Text = LoStrId.LblMinQuantity
-        Me.LblPercentage.Text = LoStrId.LblPercent
+        Me.LblCurrency.Text = LoStrId.LblCurrency
         Me.LblLatinName.Text = LoStrId.LblLatinName
         Me.ChkItemHasExpiredDt.Text = LoStrId.LblIsitemHasExpiredDate
         Me.ChkAlertBeforeExpiredDt.Text = LoStrId.LblAnalertbeforetheexpiration
@@ -101,7 +101,7 @@ Public Class AddNewItem
             Me.BtnSaveAndNew.Text = IIf(BoolLTRLanguage, LoStrId.LblEdit, "تعديل")
             Me.BtnSaveAndNew.Tag = "Edit"
             'Me.TxtItemName.Enabled = False
-            Me.MTxtItemQty.Enabled = False
+            'Me.MTxtItemQty.Enabled = False
         End If
     End Sub
 

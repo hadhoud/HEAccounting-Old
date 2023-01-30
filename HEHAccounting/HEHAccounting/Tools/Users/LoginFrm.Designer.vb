@@ -119,7 +119,6 @@ Partial Class LoginFrm
         Me.TxtPassword.Location = New System.Drawing.Point(3, 80)
         Me.TxtPassword.Name = "TxtPassword"
         Me.TxtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TxtPassword.ShortcutsEnabled = False
         Me.TxtPassword.ShowClearButton = True
         Me.TxtPassword.Size = New System.Drawing.Size(184, 24)
         Me.TxtPassword.TabIndex = 71

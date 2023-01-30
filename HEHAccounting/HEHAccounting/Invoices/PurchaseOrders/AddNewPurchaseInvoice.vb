@@ -68,7 +68,7 @@ Public Class AddNewPurchaseInvoice
     Private Sub FillGrid()
         Dim QuantityCol As New GridViewDecimalColumn With {
             .Name = "Qty",
-            .DecimalPlaces = 0,
+            .DecimalPlaces = 3,
             .Minimum = 0
         }
 
@@ -111,6 +111,7 @@ Public Class AddNewPurchaseInvoice
             {
         .Name = "Item_name",
         .FieldName = "Item_name",
+        .AutoSizeMode = BestFitColumnMode.DisplayedDataCells,
         .[ReadOnly] = True
           }
 

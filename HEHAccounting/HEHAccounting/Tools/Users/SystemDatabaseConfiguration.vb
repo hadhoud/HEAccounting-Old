@@ -1,4 +1,5 @@
-﻿Imports HEHAccounting.My
+﻿Imports System.Configuration
+Imports HEHAccounting.My
 Imports HEHAccounting.My.MySettings
 Public Class SystemDatabaseConfiguration
 
@@ -21,6 +22,15 @@ Public Class SystemDatabaseConfiguration
                     My.Settings.DBUserPassword = Encode(Me.TxtDBPassword.Text)
                     My.Settings.ServerName = Me.txtServerName.Text
                     My.Settings.ServerMode = "SQLServer"
+                    Dim connectionstrng = "Data Source=" & Me.txtServerName.Text & ";Initial Catalog=" & Me.TxtDBUserName.Text & ";Integrated Security=False; User ID=" & Me.TxtDBUserName.Text & " ;Password=" & Me.TxtDBPassword.Text & ";"
+                    Dim config As Configuration = ConfigurationManager.OpenExeConfiguration(System.Reflection.Assembly.GetExecutingAssembly().Location)
+                    Dim section As ConnectionStringsSection = DirectCast(config.GetSection("connectionStrings"), ConnectionStringsSection)
+                    ' See the App.config file for the name to be used in the following
+                    Dim settings As ConnectionStringSettings = section.ConnectionStrings("HEHAccounting.My.MySettings.HEAccountingReportDB")
+                    settings.ConnectionString = connectionstrng
+                    settings.ProviderName = "System.Data.SqlClient"
+                    config.Save()
+
                 End If
             Else
                 My.Settings.DBName = Me.TxtDBName.Text
@@ -28,6 +38,16 @@ Public Class SystemDatabaseConfiguration
                 My.Settings.DBUserPassword = ""
                 My.Settings.ServerName = Me.txtServerName.Text
                 My.Settings.ServerMode = "Windows"
+                Dim connectionstrng = "Data Source=(" & Me.txtServerName.Text & ");Initial Catalog=" & Me.TxtDBName.Text & ";Integrated Security=True;"
+                Dim config As Configuration = ConfigurationManager.OpenExeConfiguration(System.Reflection.Assembly.GetExecutingAssembly().Location)
+                Dim section As ConnectionStringsSection = DirectCast(config.GetSection("connectionStrings"), ConnectionStringsSection)
+                ' See the App.config file for the name to be used in the following
+                Dim settings As ConnectionStringSettings = section.ConnectionStrings("HEHAccounting.My.MySettings.HEAccountingReportDB")
+                'Dim builder As New System.Data.OleDb.OleDbConnectionStringBuilder(settings.ConnectionString)
+                'builder("Data Source") = "C:\User\Documents\db1.mdb"
+                settings.ConnectionString = connectionstrng
+                settings.ProviderName = "System.Data.SqlClient"
+                config.Save()
             End If
         End If
         Me.Close()

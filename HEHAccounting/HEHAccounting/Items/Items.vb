@@ -82,7 +82,10 @@ Partial Friend Class Items
     Private Sub BtnFiltering_Click(sender As Object, e As EventArgs) Handles BtnFiltering.Click
         Me.GridItems.FilterDescriptors.Clear()
         FilterGrid(Me.GridItems, "Item_name", Me.TxtItemName.Text.Trim, FilterOperator.Contains)
-        FilterGrid(Me.GridItems, "Item_id", Me.TxtItemid.Text.Trim, FilterOperator.Contains)
+
+        If Val(Me.TxtItemid.Text.Trim) <> 0 Then
+            FilterGrid(Me.GridItems, "Item_id", Me.TxtItemid.Text.Trim, FilterOperator.IsEqualTo)
+        End If
         FilterGrid(Me.GridItems, "Barcode", Me.TxtItemBarcode.Text.Trim, FilterOperator.Contains)
         Me.TxtItemBarcode.Text = ""
 

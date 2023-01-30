@@ -19,6 +19,7 @@ Public Class SalesOrderFrm
         Me.GridSalesOrders.BottomPinnedRowsMode = GridViewBottomPinnedRowsMode.Fixed
         GridSalesOrders.MasterView.SummaryRows(0).PinPosition = PinnedRowPosition.Bottom
         InitiateGrid(Me.GridSalesOrders, Grouping:=IIf(BoolShowItemsInSOMainForm, False, True))
+        InitiateDatePicker()
         FillDropList()
         ShowPermissions()
     End Sub
@@ -43,7 +44,6 @@ Public Class SalesOrderFrm
         Me.BtnNew.Text = LoStrId.LblNew
         Me.BtnEdit.Text = LoStrId.LblEdit
         Me.BtnDelete.Text = LoStrId.LblDelete
-        Me.BtnRefrech.Text = LoStrId.LblRefrech
         Me.BtnReset.Text = LoStrId.LblReset
         Me.BtnFiltering.Text = LoStrId.LblFiltering
         'Me.RadioCash.Text = LoStrId.LblCash
@@ -52,8 +52,14 @@ Public Class SalesOrderFrm
         Me.RadioReturns.Text = LoStrId.LblReturn
         Me.BtnPrint.Text = LoStrId.LblPrint
         Me.LblStatus.Text = LoStrId.LblStatus
+        Me.BtnPayInvoice.Text = LoStrId.LblPay
         ChangeTextButtonToRight(Me.TxtCustomer, TxtCustomerBtn)
 
+    End Sub
+
+    Private Sub InitiateDatePicker()
+        InitiateDateTimePicker(MskTxtInvDateFrom, DateSerial(2020, 1, 1), True, False)
+        InitiateDateTimePicker(MskTxtInvDateTo, DateSerial(2020, 1, 1), True, False)
     End Sub
 
     Public Sub RefrechGrid()
@@ -72,6 +78,8 @@ Public Class SalesOrderFrm
         If BoolShowItemsInSOMainForm Then
             ShowItemsInGrid()
         End If
+
+        FilterGrid(Me.GridSalesOrders, "DueDate", DateSerial(Year(Date.Now), Month(Date.Now), DateAndTime.Day(Date.Now)), FilterOperator.IsEqualTo)
     End Sub
 
     Private Sub FillDropList()
@@ -106,10 +114,7 @@ Public Class SalesOrderFrm
         }
         Me.DropPaymentType.Items.Add(PaymentTypeItem)
 
-        Me.DropCurrency.ValueMember = "CurrencyID"
-        Me.DropCurrency.DisplayMember = IIf(BoolLTRLanguage = True, "LatinSymb", "Symb")
-        Me.DropCurrency.DataSource = Currencydata
-
+        FillDropCurrencyFromCurrencyData(Me.DropCurrency, IIf(BoolLTRLanguage = True, "LatinSymb", "Symb"), True)
         Initiatedropdownlist(Me.DropCurrency)
         Initiatedropdownlist(Me.DropStatus, False)
         Initiatedropdownlist(Me.DropPaymentType, False)
@@ -132,6 +137,8 @@ Public Class SalesOrderFrm
         InitiateGridChild(ChildTemplateItems)
         HideShowColummnChild(ChildTemplateItems, ChildTemplateItems.Columns("InvID").Index, False)
         HideShowColummnChild(ChildTemplateItems, ChildTemplateItems.Columns("PurchasingPrice").Index, BoolShowPurchasingPriceInScreensByUser)
+        HideShowColummnChild(ChildTemplateItems, ChildTemplateItems.Columns("iCurrencyID").Index, False)
+
         Me.GridSalesOrders.MasterTemplate.Templates.Add(ChildTemplateItems)
 
         Dim relation As New GridViewRelation(Me.GridSalesOrders.MasterTemplate) With {
@@ -176,7 +183,7 @@ Public Class SalesOrderFrm
         AutoComplete()
         '   LoadFirst()
         Me.MskTxtInvDateFrom.Value = DateSerial(Year(Date.Now), Month(Date.Now), 1)
-        Me.MskTxtInvDateTo.Value = DateSerial(Year(Date.Now), Month(Date.Now) + 1, 0)
+        Me.MskTxtInvDateTo.Value = DateSerial(Year(Date.Now), Month(Date.Now), DateAndTime.Day(Date.Now))
     End Sub
 
     Private Sub BtnFiltering_Click(sender As Object, e As EventArgs) Handles BtnFiltering.Click
@@ -198,7 +205,7 @@ Public Class SalesOrderFrm
         End If
 
         If Me.DropCurrency.SelectedIndex <> -1 Then
-            FilterGrid(Me.GridSalesOrders, "CurrencySymb", Me.DropCurrency.Text.ToString, FilterOperator.IsEqualTo)
+            FilterGrid(Me.GridSalesOrders, "CurrencySymb", Me.DropCurrency.SelectedValue.ToString, FilterOperator.IsEqualTo)
         End If
 
         If Me.DropStatus.SelectedIndex <> -1 Then
@@ -213,20 +220,12 @@ Public Class SalesOrderFrm
         '    FilterGrid(Me.GridSalesOrders, "PaymentTypeName", Con.Debt, FilterOperator.IsEqualTo)
         'End If
 
-        If CheckDateFrom.Checked Then
+        If MskTxtInvDateFrom.Checked Then
             FilterGrid(Me.GridSalesOrders, "DueDate", Me.MskTxtInvDateFrom.Value, FilterOperator.IsGreaterThanOrEqualTo)
         End If
-        If CheckDateTo.Checked Then
+        If MskTxtInvDateTo.Checked Then
             FilterGrid(Me.GridSalesOrders, "DueDate", Me.MskTxtInvDateTo.Value, FilterOperator.IsLessThanOrEqualTo)
         End If
-    End Sub
-
-    Private Sub CheckDateFrom_ToggleStateChanged(sender As Object, args As StateChangedEventArgs) Handles CheckDateFrom.ToggleStateChanged
-        Me.MskTxtInvDateFrom.Enabled = CheckDateFrom.Checked
-    End Sub
-
-    Private Sub CheckDateTo_ToggleStateChanged(sender As Object, args As StateChangedEventArgs) Handles CheckDateTo.ToggleStateChanged
-        Me.MskTxtInvDateTo.Enabled = CheckDateTo.Checked
     End Sub
 
     Private Sub RadioSales_ToggleStateChanged(sender As Object, args As StateChangedEventArgs) Handles RadioSales.ToggleStateChanged
@@ -250,18 +249,13 @@ Public Class SalesOrderFrm
         Me.TxtCustomer.Clear()
         Me.TxtInvID.Clear()
         Me.DropPaymentType.SelectedIndex = -1
-        'Me.RadioCash.CheckState = CheckState.Unchecked
-        'Me.RadioDebt.CheckState = CheckState.Unchecked
         Me.RadioSales.CheckState = CheckState.Unchecked
         Me.RadioReturns.CheckState = CheckState.Unchecked
-        Me.CheckDateFrom.Checked = False
-        Me.CheckDateTo.Checked = False
+        Me.MskTxtInvDateFrom.Checked = False
+        Me.MskTxtInvDateTo.Checked = False
         Me.DropCurrency.SelectedIndex = -1
         Me.DropStatus.SelectedIndex = -1
-    End Sub
-
-    Private Sub BtnRefrech_Click(sender As Object, e As EventArgs) Handles BtnRefrech.Click
-        RefrechGrid()
+        BtnFiltering.PerformClick()
     End Sub
 
     Private Sub BtnNew_Click(sender As Object, e As EventArgs) Handles BtnNew.Click
@@ -269,6 +263,7 @@ Public Class SalesOrderFrm
         FrmAddNewSaleInvoice.ShowDialog()
         If ToDoRefrech Then
             RefrechGrid()
+            BtnFiltering.PerformClick()
             ToDoRefrech = False
         End If
     End Sub
@@ -303,13 +298,13 @@ Public Class SalesOrderFrm
         End If
     End Sub
 
-    Private Sub MskTxtInvDateFrom_KeyDown(sender As Object, e As KeyEventArgs) Handles MskTxtInvDateFrom.KeyDown
+    Private Sub MskTxtInvDateFrom_KeyDown(sender As Object, e As KeyEventArgs)
         If e.KeyCode = Keys.Enter Then
             Me.BtnFiltering.PerformClick()
         End If
     End Sub
 
-    Private Sub MskTxtInvDateTo_KeyDown(sender As Object, e As KeyEventArgs) Handles MskTxtInvDateTo.KeyDown
+    Private Sub MskTxtInvDateTo_KeyDown(sender As Object, e As KeyEventArgs)
         If e.KeyCode = Keys.Enter Then
             Me.BtnFiltering.PerformClick()
         End If
@@ -329,6 +324,7 @@ Public Class SalesOrderFrm
             FrmShowSalesOrder.ShowDialog()
             If ToDoRefrech Then
                 RefrechGrid()
+                BtnFiltering.PerformClick()
                 ToDoRefrech = False
             End If
         End If
@@ -348,6 +344,7 @@ Public Class SalesOrderFrm
                         FrmPayInvoice.ShowDialog()
                         If ToDoRefrech Then
                             RefrechGrid()
+                            BtnFiltering.PerformClick()
                             ToDoRefrech = False
                         End If
                     Else
@@ -367,6 +364,7 @@ Public Class SalesOrderFrm
                         FrmPayInvoice.ShowDialog()
                         If ToDoRefrech Then
                             RefrechGrid()
+                            BtnFiltering.PerformClick()
                             ToDoRefrech = False
                         End If
                     Else
@@ -410,12 +408,12 @@ Public Class SalesOrderFrm
                 Else
                     param(1) = "ICurrencyID , 0"
                 End If
-                If Me.CheckDateFrom.Checked Then
+                If Me.MskTxtInvDateFrom.Checked Then
                     param(2) = "TDateFrom , " & Me.MskTxtInvDateFrom.Value
                 Else
                     param(2) = "TDateFrom , 1991-01-01"
                 End If
-                If Me.CheckDateTo.Checked Then
+                If Me.MskTxtInvDateTo.Checked Then
                     param(3) = "TDateTO , " & Me.MskTxtInvDateTo.Value
                 Else
                     param(3) = "TDateTO , 1992-02-02"
@@ -487,6 +485,40 @@ Public Class SalesOrderFrm
             e.CellElement.RowElement.ResetValue(LightVisualElement.GradientStyleProperty, ValueResetFlags.Local)
             e.CellElement.RowElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
         End If
+        If Not TypeOf e.CellElement Is GridDetailViewCellElement Then
+            If e.Column.Name = "SubTotal.LL" Or e.Column.Name = "Discount" Or e.Column.Name = "TotalDue.LL" Then
+                e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, 0, False, False)
+            ElseIf e.Column.Name = "TotalDue.$" Then
+                e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, 0, True, False)
+            End If
+        End If
+
     End Sub
 
+    Private Sub GridSalesOrders_CellFormatting(sender As Object, e As CellFormattingEventArgs) Handles GridSalesOrders.CellFormatting
+        If e.CellElement.ColumnInfo.Name = "PaymentTypeName" Then
+            If e.Row.Cells("PaymentType").Value = "D" Then
+                e.CellElement.DrawFill = True
+                e.CellElement.GradientStyle = Telerik.WinControls.GradientStyles.Solid
+                e.CellElement.BackColor = Color.Red
+            Else
+                e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, ValueResetFlags.Local)
+                e.CellElement.ResetValue(LightVisualElement.GradientStyleProperty, ValueResetFlags.Local)
+                e.CellElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
+            End If
+        End If
+
+        If e.Column.Name = "SubTotal.LL" Or e.Column.Name = "Discount" Or e.Column.Name = "TotalDue.LL" Then
+            e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, 0, False, False)
+        ElseIf e.Column.Name = "TotalDue.$" Then
+            e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, 0, True, False)
+        End If
+        'iCurrencyID
+        If e.Column.Name = "TotalDue" Or e.Column.Name = "SubTotal" Or e.Column.Name = "SellingPrice" Or e.Column.Name = "PurchasingPrice" Then
+
+            e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, e.Row.Cells("iCurrencyID").Value, True, False)
+
+        End If
+
+    End Sub
 End Class

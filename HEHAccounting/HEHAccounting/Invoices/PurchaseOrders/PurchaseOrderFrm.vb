@@ -1,4 +1,5 @@
-﻿Imports Telerik.WinControls.Data
+﻿Imports Telerik.WinControls
+Imports Telerik.WinControls.Data
 Imports Telerik.WinControls.UI
 
 Public Class PurchaseOrderFrm
@@ -17,8 +18,23 @@ Public Class PurchaseOrderFrm
         RefrechGrid()
 
         InitiateGrid(Me.GridPurchaseOrders, Grouping:=IIf(BoolShowItemsInPOMainForm, False, True))
+        InitiateDatePicker()
         FillDropList()
         ShowPermissions()
+        ShowGridSummaryRow()
+    End Sub
+
+    Private Sub InitiateDatePicker()
+        InitiateDateTimePicker(MskTxtInvDateFrom, DateSerial(2020, 1, 1), True, False)
+        InitiateDateTimePicker(MskTxtInvDateTo, DateSerial(2020, 1, 1), True, False)
+    End Sub
+
+    Private Sub ShowGridSummaryRow()
+        GridViewAddSummaryRow(GridPurchaseOrders, "InvID", "{0}", GridAggregateFunction.Count)
+        GridViewAddSummaryRow(GridPurchaseOrders, "SubTotal.LL", "{0}", GridAggregateFunction.Sum)
+        GridViewAddSummaryRow(GridPurchaseOrders, "TotalDue.LL", "{0}", GridAggregateFunction.Sum)
+        GridViewAddSummaryRow(GridPurchaseOrders, "Discount", "{0}", GridAggregateFunction.Sum)
+        GridViewAddSummaryRow(GridPurchaseOrders, "TotalDue.$", "{0}", GridAggregateFunction.Sum)
     End Sub
     Sub ShowPermissions()
         Dim PORow As DataRow = UserRolesdt.Select("KeyName = 'PO'").First
@@ -49,6 +65,7 @@ Public Class PurchaseOrderFrm
         Me.RadioReturns.Text = LoStrId.LblReturn
         Me.BtnPrint.Text = LoStrId.LblPrint
         Me.LblStatus.Text = LoStrId.LblStatus
+        Me.BtnPayInvoice.Text = LoStrId.LblPay
 
         ChangeTextButtonToRight(Me.TxtVendor, TxtVendorBtn)
 
@@ -71,6 +88,7 @@ Public Class PurchaseOrderFrm
         If BoolShowItemsInPOMainForm Then
             ShowItemsInGrid()
         End If
+        FilterGrid(Me.GridPurchaseOrders, "DueDate", DateSerial(Year(Date.Now), Month(Date.Now), 1), FilterOperator.IsEqualTo)
     End Sub
     Private Sub FillDropList()
         Dim Sitem As New RadListDataItem With {
@@ -103,9 +121,7 @@ Public Class PurchaseOrderFrm
         }
         Me.DropPaymentType.Items.Add(PaymentTypeItem)
 
-        Me.DropCurrency.ValueMember = IIf(BoolLTRLanguage = True, "LatinSymb", "Symb")
-        Me.DropCurrency.DisplayMember = IIf(BoolLTRLanguage = True, "LatinSymb", "Symb")
-        Me.DropCurrency.DataSource = Currencydata
+        FillDropCurrencyFromCurrencyData(Me.DropCurrency, IIf(BoolLTRLanguage = True, "LatinSymb", "Symb"), True)
         Initiatedropdownlist(Me.DropCurrency)
         Initiatedropdownlist(Me.DropStatus, False)
         Initiatedropdownlist(Me.DropPaymentType, False)
@@ -138,7 +154,7 @@ Public Class PurchaseOrderFrm
         relation.ChildColumnNames.Add("InvID")
         Me.GridPurchaseOrders.Relations.Add(relation)
     End Sub
-    Private Sub BtnNew_Click(sender As Object, e As EventArgs) Handles BtnNew.Click
+    Private Sub BtnNew_Click(sender As Object, e As EventArgs)
         Dim FrmAddNewPurchaseInvoice As New AddNewPurchaseInvoice
         FrmAddNewPurchaseInvoice.ShowDialog()
         If ToDoRefrech Then
@@ -200,16 +216,17 @@ Public Class PurchaseOrderFrm
         '    FilterGrid(Me.GridPurchaseOrders, "PaymentType", Con.Debt, FilterOperator.IsEqualTo)
         'End If
 
-        If CheckDateFrom.Checked Then
+        If MskTxtInvDateFrom.Checked Then
             FilterGrid(Me.GridPurchaseOrders, "DueDate", Me.MskTxtInvDateFrom.Value, FilterOperator.IsGreaterThanOrEqualTo)
         End If
-        If CheckDateTo.Checked Then
+        If MskTxtInvDateTo.Checked Then
             FilterGrid(Me.GridPurchaseOrders, "DueDate", Me.MskTxtInvDateTo.Value, FilterOperator.IsLessThanOrEqualTo)
         End If
     End Sub
 
     Private Sub BtnReset_Click(sender As Object, e As EventArgs) Handles BtnReset.Click
         Me.GridPurchaseOrders.FilterDescriptors.Clear()
+        FilterGrid(Me.GridPurchaseOrders, "DueDate", DateSerial(Year(Date.Now), Month(Date.Now), 1), FilterOperator.IsEqualTo)
         Me.TxtVendor.Clear()
         Me.TxtInvID.Clear()
         Me.DropPaymentType.SelectedIndex = -1
@@ -217,8 +234,8 @@ Public Class PurchaseOrderFrm
         'Me.RadioDebt.CheckState = CheckState.Unchecked
         Me.RadioPurchase.CheckState = CheckState.Unchecked
         Me.RadioReturns.CheckState = CheckState.Unchecked
-        Me.CheckDateFrom.Checked = False
-        Me.CheckDateTo.Checked = False
+        Me.MskTxtInvDateFrom.Checked = False
+        Me.MskTxtInvDateTo.Checked = False
         Me.DropCurrency.SelectedIndex = -1
         Me.DropStatus.SelectedIndex = -1
     End Sub
@@ -249,7 +266,7 @@ Public Class PurchaseOrderFrm
     Private Sub PurchaseOrderFrm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AutoComplete()
         Me.MskTxtInvDateFrom.Value = DateSerial(Year(Date.Now), Month(Date.Now), 1)
-        Me.MskTxtInvDateTo.Value = DateSerial(Year(Date.Now), Month(Date.Now) + 1, 0)
+        Me.MskTxtInvDateTo.Value = DateSerial(Year(Date.Now), Month(Date.Now), DateAndTime.Day(Date.Now))
     End Sub
 
     Private Sub TxtVendor_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles TxtVendor.Validating
@@ -263,14 +280,6 @@ Public Class PurchaseOrderFrm
             Me.TxtVendor.Text = VendorData(0)
             VendorTitle = VendorData(1)
         End If
-    End Sub
-
-    Private Sub CheckDateFrom_ToggleStateChanged(sender As Object, args As StateChangedEventArgs) Handles CheckDateFrom.ToggleStateChanged
-        Me.MskTxtInvDateFrom.Enabled = CheckDateFrom.Checked
-    End Sub
-
-    Private Sub CheckDateTo_ToggleStateChanged(sender As Object, args As StateChangedEventArgs) Handles CheckDateTo.ToggleStateChanged
-        Me.MskTxtInvDateTo.Enabled = CheckDateTo.Checked
     End Sub
 
     Private Sub RadioPurchase_ToggleStateChanged(sender As Object, args As StateChangedEventArgs) Handles RadioPurchase.ToggleStateChanged
@@ -308,13 +317,13 @@ Public Class PurchaseOrderFrm
         End If
     End Sub
 
-    Private Sub MskTxtInvDateFrom_KeyDown(sender As Object, e As KeyEventArgs) Handles MskTxtInvDateFrom.KeyDown
+    Private Sub MskTxtInvDateFrom_KeyDown(sender As Object, e As KeyEventArgs)
         If e.KeyCode = Keys.Enter Then
             Me.BtnFiltering.PerformClick()
         End If
     End Sub
 
-    Private Sub MskTxtInvDateTo_KeyDown(sender As Object, e As KeyEventArgs) Handles MskTxtInvDateTo.KeyDown
+    Private Sub MskTxtInvDateTo_KeyDown(sender As Object, e As KeyEventArgs)
         If e.KeyCode = Keys.Enter Then
             Me.BtnFiltering.PerformClick()
         End If
@@ -380,5 +389,18 @@ Public Class PurchaseOrderFrm
 
     Private Sub LblStatus_Click(sender As Object, e As EventArgs) Handles LblStatus.Click
         Me.DropStatus.SelectedIndex = -1
+    End Sub
+
+    Private Sub GridSalesOrders_ViewCellFormatting(sender As Object, e As CellFormattingEventArgs) Handles GridPurchaseOrders.ViewCellFormatting
+        If (e.CellElement.RowInfo.Group Is Nothing And TypeOf e.CellElement Is GridSummaryCellElement) Then
+            e.CellElement.ForeColor = Color.Blue
+            e.CellElement.RowElement.DrawFill = True
+            e.CellElement.RowElement.GradientStyle = Telerik.WinControls.GradientStyles.Solid
+            e.CellElement.RowElement.BackColor = Color.FromArgb(239, 246, 255)
+        Else
+            e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, ValueResetFlags.Local)
+            e.CellElement.RowElement.ResetValue(LightVisualElement.GradientStyleProperty, ValueResetFlags.Local)
+            e.CellElement.RowElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
+        End If
     End Sub
 End Class

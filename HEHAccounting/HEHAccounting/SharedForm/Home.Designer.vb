@@ -96,7 +96,7 @@ Partial Class Home
         Me.Version.Name = "Version"
         Me.Version.Size = New System.Drawing.Size(168, 40)
         Me.Version.TabIndex = 1
-        Me.Version.Text = "Version {0}.{1:00}"
+        Me.Version.Text = "Version {0}.{1}.{2}{3}"
         Me.Version.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label3

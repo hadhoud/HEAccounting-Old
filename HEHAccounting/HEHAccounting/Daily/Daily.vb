@@ -13,13 +13,22 @@ Public Class Daily
             ChangeToEng()
         End If
         TimerFrm.Interval = TimerDailyForm * 60 * 1000
+        InitiateDatePicker()
         RefrechGrid()
+        ShowGridSummaryRow()
         InitiateGrid(Me.GridDaily, Grouping:=True)
     End Sub
     Private Sub Daily_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         FillDropList()
+
         TimerFrm.Start()
     End Sub
+
+    Private Sub InitiateDatePicker()
+        InitiateDateTimePicker(MskTxtInvDateFrom, DateSerial(2020, 1, 1), True, True)
+        InitiateDateTimePicker(MskTxtInvDateTo, DateSerial(2020, 1, 1), True, True)
+    End Sub
+
     Private Sub FillDropList()
         'DropTrxType
         Dim item As New RadListDataItem With {
@@ -90,6 +99,12 @@ Public Class Daily
 
     End Sub
 
+    Private Sub ShowGridSummaryRow()
+        GridViewAddSummaryRow(GridDaily, "TrsID", "{0}", GridAggregateFunction.Count)
+        GridViewAddSummaryRow(GridDaily, "CreatedDate", "{0:dd/MM/yyyy}", GridAggregateFunction.Max)
+        GridViewAddSummaryRow(GridDaily, "DueDate", "{0:dd/MM/yyyy}", GridAggregateFunction.Max)
+    End Sub
+
     'Sub AutoComplete()
     '    Dim CustomerVendorAuto As New AutoCompleteStringCollection
     '    For Each Cus In CustomerNameAuto
@@ -104,34 +119,16 @@ Public Class Daily
     'End Sub
 
     Public Sub RefrechGrid()
-        Dim Param(0) As String
-        Param(0) = "@TDailyDate , " & Date.Now.Date
+        Dim Param(1) As String
+        Param(0) = "@tFromDate , " & IIf(Me.MskTxtInvDateFrom.Checked, Me.MskTxtInvDateFrom.Value, "")
+        Param(1) = "@tTODate , " & IIf(Me.MskTxtInvDateTo.Checked, Me.MskTxtInvDateTo.Value, "")
         FillGridViewProcedureWithParameters(Me.GridDaily, "SelectDaily", Param)
         HideShowColummn(Me.GridDaily, IIf(BoolLTRLanguage, Me.GridDaily.Columns("Description").Index, Me.GridDaily.Columns("LatinDescription").Index), False)
         HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("Refertype").Index, False)
     End Sub
 
     Private Sub RefrechDateGrid()
-        Dim Param(0) As String
-        If ChkAlldate.Checked = True Then
-            Param(0) = "@TDailyDate , 1999-01-01"
-            FillGridViewProcedureWithParameters(Me.GridDaily, "SelectDaily", Param)
-        Else
-            Me.DailyCalendar.SelectedDate = DateTime.MinValue
-            Dim selDate As DateTime = Me.DailyCalendar.FocusedDate
-            Dim mouseLoc As Point = Me.DailyCalendar.PointToClient(Cursor.Position)
-            Dim selElement As RadElement = Me.DailyCalendar.ElementTree.GetElementAtPoint(mouseLoc)
-            If selElement IsNot Nothing And TypeOf CType(selElement, CalendarCellElement) Is CalendarCellElement Then
-                Dim selCell As CalendarCellElement = CType(selElement, CalendarCellElement)
-                selDate = selCell.Date
-                Param(0) = "@TDailyDate , " & selDate
-            Else
-                Param(0) = "@TDailyDate , " & Date.Now.Date
-            End If
-            FillGridViewProcedureWithParameters(Me.GridDaily, "SelectDaily", Param)
-            HideShowColummn(Me.GridDaily, IIf(BoolLTRLanguage, Me.GridDaily.Columns("Description").Index, Me.GridDaily.Columns("LatinDescription").Index), False)
-            HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("Refertype").Index, False)
-        End If
+        RefrechGrid()
         Me.GridDaily.FilterDescriptors.Clear()
         If Me.TxtCustomerVendor.Text.Trim.Length <> 0 Then
             FilterGrid(Me.GridDaily, "CustomerName", Me.TxtCustomerVendor.Text, FilterOperator.Contains)
@@ -153,21 +150,11 @@ Public Class Daily
         Me.BtnOpen.Text = LoStrId.LblNew
         Me.BtnReset.Text = LoStrId.LblReset
         Me.BtnRefrech.Text = LoStrId.LblRefrech
-        Me.Text = LoStrId.LblDaiy
-    End Sub
+        Me.Text = LoStrId.LblDaily
+        Me.LblType.Text = LoStrId.LblType
+        Me.LblCustomerVendor.Text = LoStrId.LblCustomerVendor
+        Me.lblStatus.Text = LoStrId.LblStatus
 
-
-    Private Sub DailyCalendar_SelectionChanged(sender As Object, e As EventArgs) Handles DailyCalendar.SelectionChanged
-        RefrechDateGrid()
-    End Sub
-
-    Private Sub ChkAlldate_ToggleStateChanged(sender As Object, args As StateChangedEventArgs) Handles ChkAlldate.ToggleStateChanged
-        If ChkAlldate.Checked = True Then
-            Me.DailyCalendar.Enabled = False
-        Else
-            Me.DailyCalendar.Enabled = True
-        End If
-        RefrechDateGrid()
     End Sub
 
     Private Sub BtnFiltering_Click(sender As Object, e As EventArgs) Handles BtnFiltering.Click
@@ -175,10 +162,10 @@ Public Class Daily
     End Sub
 
     Private Sub BtnReset_Click(sender As Object, e As EventArgs) Handles BtnReset.Click
-        Me.DailyCalendar.SelectedDate = DateTime.MinValue
+        Me.MskTxtInvDateFrom.Value = DateTime.Now
+        Me.MskTxtInvDateTo.Value = DateTime.Now
         Me.TxtCustomerVendor.Clear()
         Me.DropTrxType.SelectedIndex = -1
-        Me.ChkAlldate.Checked = False
         Me.DropStatus.SelectedIndex = -1
         RefrechDateGrid()
     End Sub
@@ -238,5 +225,30 @@ Public Class Daily
 
     Private Sub TimerFrm_Tick(sender As Object, e As EventArgs) Handles TimerFrm.Tick
         RefrechDateGrid()
+    End Sub
+
+    Private Sub LblType_Click(sender As Object, e As EventArgs) Handles LblType.Click
+        Me.DropTrxType.SelectedIndex = -1
+    End Sub
+
+    Private Sub LblCustomerVendor_Click(sender As Object, e As EventArgs) Handles LblCustomerVendor.Click
+        Me.TxtCustomerVendor.Clear()
+    End Sub
+
+    Private Sub lblStatus_Click(sender As Object, e As EventArgs) Handles lblStatus.Click
+        Me.DropStatus.SelectedIndex = -1
+    End Sub
+
+    Private Sub GridSalesOrders_ViewCellFormatting(sender As Object, e As CellFormattingEventArgs) Handles GridDaily.ViewCellFormatting
+        If (e.CellElement.RowInfo.Group Is Nothing And TypeOf e.CellElement Is GridSummaryCellElement) Then
+            e.CellElement.ForeColor = Color.Blue
+            e.CellElement.RowElement.DrawFill = True
+            e.CellElement.RowElement.GradientStyle = Telerik.WinControls.GradientStyles.Solid
+            e.CellElement.RowElement.BackColor = Color.FromArgb(239, 246, 255)
+        Else
+            e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, ValueResetFlags.Local)
+            e.CellElement.RowElement.ResetValue(LightVisualElement.GradientStyleProperty, ValueResetFlags.Local)
+            e.CellElement.RowElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
+        End If
     End Sub
 End Class

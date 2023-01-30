@@ -69,7 +69,7 @@ Partial Friend Class Items
         '
         Me.GridItems.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.GridItems.Name = "GridItems"
-        Me.GridItems.Size = New System.Drawing.Size(80, 515)
+        Me.GridItems.Size = New System.Drawing.Size(20, 521)
         Me.GridItems.TabIndex = 11
         Me.GridItems.ThemeName = "Office2010Blue"
         '
@@ -84,7 +84,7 @@ Partial Friend Class Items
         Me.PnlOptions.Location = New System.Drawing.Point(0, 0)
         Me.PnlOptions.Name = "PnlOptions"
         Me.PnlOptions.Padding = New System.Windows.Forms.Padding(3)
-        Me.PnlOptions.Size = New System.Drawing.Size(255, 515)
+        Me.PnlOptions.Size = New System.Drawing.Size(255, 521)
         Me.PnlOptions.TabIndex = 2
         Me.PnlOptions.Visible = False
         '
@@ -302,13 +302,14 @@ Partial Friend Class Items
         Me.BtnRefrech.TabIndex = 3
         Me.BtnRefrech.Text = "تحديث"
         Me.BtnRefrech.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BtnRefrech.Visible = False
         '
         'Items
         '
         Me.AcceptButton = Me.BtnFiltering
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.CancelButton = Me.BtnReset
-        Me.ClientSize = New System.Drawing.Size(335, 515)
+        Me.ClientSize = New System.Drawing.Size(275, 521)
         Me.Controls.Add(Me.GridItems)
         Me.Controls.Add(Me.PnlOptions)
         Me.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
