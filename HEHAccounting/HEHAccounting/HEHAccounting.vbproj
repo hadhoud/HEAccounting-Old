@@ -245,6 +245,12 @@
     <Compile Include="Items\Inventory.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Items\AllInventory.Designer.vb">
+      <DependentUpon>AllInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Items\AllInventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -606,6 +612,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Items\ItemTree.resx">
       <DependentUpon>ItemTree.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\AllInventory.resx">
+      <DependentUpon>AllInventory.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Notes\GeneralNotes.resx">
       <DependentUpon>GeneralNotes.vb</DependentUpon>

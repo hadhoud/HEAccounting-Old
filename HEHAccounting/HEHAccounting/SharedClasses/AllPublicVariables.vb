@@ -71,6 +71,7 @@
     Public BoolOptionPanelSalesOrders As Boolean
     Public BoolOptionPanelPurchasesOrders As Boolean
     Public BoolOptionPanelCreditorsDebitors As Boolean
+    Public BoolOptionPanelAllInventory As Boolean
 
     'Program General Setting
     Public BoolShowProgramAlerts As Boolean

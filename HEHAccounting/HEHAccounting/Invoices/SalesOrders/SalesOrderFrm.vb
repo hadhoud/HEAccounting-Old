@@ -391,8 +391,9 @@ Public Class SalesOrderFrm
 
     Private Sub BtnPrintInvoice_Click(sender As Object, e As EventArgs) Handles BtnPrintInvoice.Click
         If Me.GridSalesOrders.ChildRows.Count <> 0 And Me.GridSalesOrders.Rows.Count <> 0 Then
-            Dim param(0) As String
+            Dim param(1) As String
             param(0) = "InvID , " & Me.GridSalesOrders.CurrentRow.Cells("InvID").Value
+            param(1) = "WaterMark , " & CompanyLatinName
             OpenReport(Con.RptSalesOrder, param)
         End If
     End Sub

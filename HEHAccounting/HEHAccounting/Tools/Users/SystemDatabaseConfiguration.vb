@@ -22,7 +22,7 @@ Public Class SystemDatabaseConfiguration
                     My.Settings.DBUserPassword = Encode(Me.TxtDBPassword.Text)
                     My.Settings.ServerName = Me.txtServerName.Text
                     My.Settings.ServerMode = "SQLServer"
-                    Dim connectionstrng = "Data Source=" & Me.txtServerName.Text & ";Initial Catalog=" & Me.TxtDBUserName.Text & ";Integrated Security=False; User ID=" & Me.TxtDBUserName.Text & " ;Password=" & Me.TxtDBPassword.Text & ";"
+                    Dim connectionstrng = "Data Source=" & Me.txtServerName.Text & ";Initial Catalog=" & Me.TxtDBName.Text & ";Integrated Security=False; User ID=" & Me.TxtDBUserName.Text & " ;Password=" & Me.TxtDBPassword.Text & ";"
                     Dim config As Configuration = ConfigurationManager.OpenExeConfiguration(System.Reflection.Assembly.GetExecutingAssembly().Location)
                     Dim section As ConnectionStringsSection = DirectCast(config.GetSection("connectionStrings"), ConnectionStringsSection)
                     ' See the App.config file for the name to be used in the following

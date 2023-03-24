@@ -38,11 +38,6 @@
     <Margins>
       <MarginsU Left="0in" Right="0in" Top="0.3in" Bottom="0.4in" />
     </Margins>
-    <Watermarks>
-      <TextWatermark Text="Original" Color="Black" Orientation="Diagonal" Position="Front" Opacity="0.02" PrintOnFirstPage="True" PrintOnLastPage="True">
-        <Font Name="Tahoma" Size="150pt" Bold="False" Italic="False" Underline="False" Strikeout="False" />
-      </TextWatermark>
-    </Watermarks>
   </PageSettings>
   <StyleSheet>
     <StyleRule>

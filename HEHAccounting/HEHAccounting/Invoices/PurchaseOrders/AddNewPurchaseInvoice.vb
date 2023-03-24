@@ -181,7 +181,7 @@ Public Class AddNewPurchaseInvoice
                 Param(0) = "@CBy , Name"
                 Param(1) = "@CItemName , " & Evalquote(Me.TxtItemName.Text)
                 Param(2) = "@ICurrencyID , " & Me.DropCurrency.SelectedValue
-                Param(3) = "@CurrencyVal , " & Me.TxtCurrencyVal.Text
+                Param(3) = "@CurrencyVal , " & Me.txtDollarRate.Text
                 AddItemToGrid(ExecuteProcedureDatatableWithParameters("SelectItemsForOrders", Param))
                 Me.TxtItemName.Text = ""
 
@@ -190,7 +190,7 @@ Public Class AddNewPurchaseInvoice
                 Param(0) = "@CBy , ID"
                 Param(1) = "@IItemID , " & Me.TxtItemid.Text
                 Param(2) = "@ICurrencyID , " & Me.DropCurrency.SelectedValue
-                Param(3) = "@CurrencyVal , " & Me.TxtCurrencyVal.Text
+                Param(3) = "@CurrencyVal , " & Me.txtDollarRate.Text
                 AddItemToGrid(ExecuteProcedureDatatableWithParameters("SelectItemsForOrders", Param))
                 Me.TxtItemid.Text = ""
 
@@ -199,7 +199,7 @@ Public Class AddNewPurchaseInvoice
                 Param(0) = "@CBy , Barcode"
                 Param(1) = "@CBarcode , " & Evalquote(Me.TxtItemBarcode.Text)
                 Param(2) = "@ICurrencyID , " & Me.DropCurrency.SelectedValue
-                Param(3) = "@CurrencyVal , " & Me.TxtCurrencyVal.Text
+                Param(3) = "@CurrencyVal , " & Me.txtDollarRate.Text
                 AddItemToGrid(ExecuteProcedureDatatableWithParameters("SelectItemsForOrders", Param))
                 Me.TxtItemBarcode.Text = ""
             End If
@@ -240,6 +240,9 @@ Public Class AddNewPurchaseInvoice
 
             Me.GridInvItem.Columns("Item_name").BestFit()
             Checkdata(rowInfo)
+            Me.GridInvItem.Rows.Last.IsCurrent = True
+            Me.GridInvItem.Columns("Qty").IsCurrent = True
+            GridInvItem.Focus()
         Else
             MessageShowInfo(Con.Msg_Item_Not_Found)
         End If
@@ -485,7 +488,7 @@ Public Class AddNewPurchaseInvoice
                         End If
                     End If
 
-                    Dim Param(13) As String
+                    Dim Param(14) As String
                     Param(0) = "@TDueDate , " & Me.MskTxtInvDate.Value
                     Param(1) = "@IVendorID , " & VendorID
                     Param(2) = "@CPaymentType , " & IIf(Me.RadioCash.IsChecked, "C", "D")
@@ -495,11 +498,12 @@ Public Class AddNewPurchaseInvoice
                     Param(6) = "@FSubTotal , " & Me.TxtSubTotal.Text
                     Param(7) = "@FTotalDue , " & Me.TxtTotalDue.Text
                     Param(8) = "@ICurrencyRateID , " & Me.TxtCurrencyVal.Tag.ToString
-                    Param(9) = "@iDollarRate_amt , " & Me.txtDollarRate.Text
-                    Param(10) = "@CInvoiceNumber , " & Evalquote(Me.TxtInvoiceReference.Text)
-                    Param(11) = "@FDiscount , " & Me.TxtDiscount.Text
-                    Param(12) = "@IInvID , " & Me.TxtInvID.Text
-                    Param(13) = "@IUserID , " & UserID
+                    Param(9) = "@ICurrencyID , " & Me.DropCurrency.SelectedValue
+                    Param(10) = "@fDollarRate_amt , " & Me.txtDollarRate.Text
+                    Param(11) = "@CInvoiceNumber , " & Evalquote(Me.TxtInvoiceReference.Text)
+                    Param(12) = "@FDiscount , " & Me.TxtDiscount.Text
+                    Param(13) = "@IInvID , " & Me.TxtInvID.Text
+                    Param(14) = "@IUserID , " & UserID
 
                     If BtnSaveAndNew.Tag = "Save" Then
                         ExecuteProcedureWithParameters("InsertNewPurchaseOrderHeader", Param)

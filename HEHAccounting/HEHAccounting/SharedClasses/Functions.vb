@@ -31,6 +31,21 @@ Module Functions
             Case "PurchasingPrice"
                 Return "سعر الشراء"
 
+            Case "PurchasingPriceUSD"
+                Return "سعر الشراء $"
+
+            Case "PurchasingPriceLL"
+                Return "سعر الشراء ل.ل"
+
+            Case "InventoryNote"
+                Return "ملاحظات"
+
+            Case "TotalPurchasingPriceLL"
+                Return "مجموع الشراء ل.ل"
+
+            Case "TotalPurchasingPriceUSD"
+                Return "مجموع الشراء $"
+
             Case "Barcode"
                 Return "الباركود"
 
@@ -97,6 +112,9 @@ Module Functions
 
             Case "CurrencySymb"
                 Return "الرمز"
+
+            Case "Currency"
+                Return "العملة"
 
             Case "CurrencyVal"
                 Return "قيمة الصرف"
@@ -289,6 +307,18 @@ Module Functions
 
             Case "Barcode"
                 Return "Barcode"
+
+            Case "PurchasingPriceUSD"
+                Return "Purchasing Price $"
+
+            Case "PurchasingPriceLL"
+                Return "Purchasing Price L.L"
+
+            Case "InventoryNote"
+                Return "Note"
+
+            Case "TotalPurchasingPriceLL"
+                Return "Total Price L.L"
 
             Case "LastPurchasingPrice"
                 Return "Last Purchasing Price"

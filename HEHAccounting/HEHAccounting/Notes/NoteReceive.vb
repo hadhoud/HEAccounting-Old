@@ -25,6 +25,7 @@ Public Class NoteReceive
         EnableDisable(False)
         FillDropList()
         ShowPermissions()
+        Me.txtDollarRateAmt.Text = LastDollarCurrencyRate
     End Sub
     Private Sub NoteReceive_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AutoComplete()
@@ -303,20 +304,22 @@ Public Class NoteReceive
     Private Sub BtnSaveAndNew_Click(sender As Object, e As EventArgs) Handles BtnSaveAndNew.Click
         If FormCheck() Then
             If MessageShowAsk(IIf(BtnSaveAndNew.Tag = "Edit", Con.Ask_Edit, Con.Ask_Add)) = DialogResult.Yes Then
-                Dim Param(12) As String
+                Dim Param(14) As String
                 Param(0) = "@INotesID  , " & Me.TxtCode.Text
                 Param(1) = "@ICustomerID , " & CustomerID
                 Param(2) = "@FAmount , " & Me.TxtAmount.Value
                 Param(3) = "@FBalance, " & Me.TxtAccBalance.Text
                 Param(4) = "@FAmountEuality , " & Me.TxtEqualValue.Text
                 Param(5) = "@ICurrencyRateID , " & EditCurrencyRateID
-                Param(6) = "@TDueDate , " & Me.TxtDueDate.Value
-                Param(7) = "@CPaymentType , " & IIf(Me.RadioCash.IsChecked, "C", "Check")
-                Param(8) = "@CDescription , " & Evalquote(Me.TxtDesc.Text)
-                Param(9) = "@ICheckID , " & IIf(Me.RadioCheck.IsChecked, CheckID, Nothing)
-                Param(10) = "@IInvoiceReference , " & InvoiceReference
-                Param(11) = "@IStatus , " & Me.DropStatus.SelectedValue
-                Param(12) = "@IUserID , " & UserID
+                Param(6) = "@ICurrencyID , " & Me.DropCurrency.SelectedValue
+                Param(7) = "@fDollarRate_amt , " & txtDollarRateAmt.Text
+                Param(8) = "@TDueDate , " & Me.TxtDueDate.Value
+                Param(9) = "@CPaymentType , " & IIf(Me.RadioCash.IsChecked, "C", "Check")
+                Param(10) = "@CDescription , " & Evalquote(Me.TxtDesc.Text)
+                Param(11) = "@ICheckID , " & IIf(Me.RadioCheck.IsChecked, CheckID, Nothing)
+                Param(12) = "@IInvoiceReference , " & InvoiceReference
+                Param(13) = "@IStatus , " & Me.DropStatus.SelectedValue
+                Param(14) = "@IUserID , " & UserID
                 If BtnSaveAndNew.Tag = "Save" Then
                     ExecuteProcedureWithParameters("InsertNotesReceive", Param)
                     If Me.RadioCheck.IsChecked Then

@@ -6,7 +6,7 @@
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-
+        Me.txtDollarRateAmt.Text = LastDollarCurrencyRate
     End Sub
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
         Me.Close()
@@ -16,13 +16,15 @@
         If Me.TxtCreditFor.Text <> "0" Or Me.TxtDebitOn.Text <> "0" And
         Me.TxtAccName.Text <> String.Empty Then
             If MessageShowAsk(Con.Ask_Add) = DialogResult.Yes Then
-                Dim Param(5) As String
+                Dim Param(7) As String
                 Param(0) = "@CAccountNumber , " & Me.TxtAccounts.Text
                 Param(1) = "@FForHim  ," & Me.TxtCreditFor.Text
                 Param(2) = "@FOnHim   , " & Me.TxtDebitOn.Text
                 Param(3) = "@IUserID , " & UserID
                 Param(4) = "@ICurrencyID , " & Me.DropCurrency.SelectedValue
                 Param(5) = "@FCurrencyVal , " & Me.TxtCurrencyVal.Text
+                Param(6) = "@fDollarRate_amt , " & txtDollarRateAmt.Text
+                Param(7) = "@CurrencyRateID ," & Me.TxtCurrencyVal.Tag
                 ExecuteProcedureWithParameters("InsertBaLancedAccount", Param)
                 FormClear()
             End If

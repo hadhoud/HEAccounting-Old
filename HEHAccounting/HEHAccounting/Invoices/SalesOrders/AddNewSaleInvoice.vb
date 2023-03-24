@@ -593,7 +593,7 @@ Public Class AddNewSaleInvoice
                     Param(7) = "@FTotalDue , " & Me.TxtTotalDue.Text
                     Param(8) = "@ICurrencyRateID , " & Me.TxtCurrencyVal.Tag.ToString
                     Param(9) = "@ICurrencyID , " & Me.DropCurrency.SelectedValue
-                    Param(10) = "@iDollarRate_amt , " & Me.txtDollarRate.Text
+                    Param(10) = "@fDollarRate_amt , " & Me.txtDollarRate.Text
                     Param(11) = "@ISpecialOfferSOID , " & 0
                     Param(12) = "@FDiscount , " & Me.TxtDiscount.Text
                     Param(13) = "@IInvID , " & Me.TxtInvID.Text
@@ -603,8 +603,9 @@ Public Class AddNewSaleInvoice
                         ExecuteProcedureWithParameters("InsertNewSalesOrderHeader", Param)
                         InsertItemDetails()
 
-                        Dim Rptparam(0) As String
+                        Dim Rptparam(1) As String
                         Rptparam(0) = "InvID , " & Me.TxtInvID.Text
+                        Rptparam(1) = "WaterMark , " & CompanyLatinName
                         If Not BoolForPrint Then
                             If BoolShowSalesOrdersPrintQuestionAfterSave Then
                                 If MessageShowAsk(Con.Ask_Do_You_Want_Print_Invoice) = DialogResult.Yes Then
@@ -630,8 +631,9 @@ Public Class AddNewSaleInvoice
                             EnableDisable(False)
                         End If
                         ToDoRefrech = True
-                        Dim Rptparam(0) As String
+                        Dim Rptparam(1) As String
                         Rptparam(0) = "InvID , " & Me.TxtInvID.Text
+                        Rptparam(1) = "WaterMark , " & CompanyLatinName
                         If Not BoolForPrint Then
                             If BoolShowSalesOrdersPrintQuestionAfterSave Then
                                 If MessageShowAsk(Con.Ask_Do_You_Want_Print_Invoice) = DialogResult.Yes Then
@@ -840,8 +842,9 @@ Public Class AddNewSaleInvoice
 
     Private Sub BtnPrint_Click(sender As Object, e As EventArgs) Handles BtnPrint.Click
         If Me.BtnSaveAndNew.Enabled = False Then
-            Dim Rptparam(0) As String
+            Dim Rptparam(1) As String
             Rptparam(0) = "InvID , " & Me.TxtInvID.Text
+            Rptparam(1) = "WaterMark , " & CompanyLatinName
             OpenReport(Con.RptSalesOrder, Rptparam)
         Else
             BoolForPrint = True
@@ -972,5 +975,7 @@ Public Class AddNewSaleInvoice
 
     End Sub
 
-
+    Private Sub LblCurrValue_Click(sender As Object, e As EventArgs) Handles LblCurrValue.Click
+        tblCurrencyRow.Visible = Not tblCurrencyRow.Visible
+    End Sub
 End Class

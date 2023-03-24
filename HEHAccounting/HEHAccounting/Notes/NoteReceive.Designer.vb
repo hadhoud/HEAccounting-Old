@@ -70,6 +70,7 @@ Partial Class NoteReceive
         Me.BtnGetCurrencyVal = New Telerik.WinControls.UI.RadButton()
         Me.ToolTipCustomer = New System.Windows.Forms.ToolTip(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.txtDollarRateAmt = New Telerik.WinControls.UI.RadTextBox()
         Me.TLPCommand.SuspendLayout()
         CType(Me.BtnSaveAndNew, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnPrint, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -98,6 +99,7 @@ Partial Class NoteReceive
         Me.TableLayoutPanel4.SuspendLayout()
         CType(Me.TxtCurrencyVal, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnGetCurrencyVal, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtDollarRateAmt, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -235,6 +237,7 @@ Partial Class NoteReceive
         '
         Me.DropCheckStatus.BackColor = System.Drawing.Color.White
         Me.DropCheckStatus.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DropCheckStatus.DropDownAnimationEnabled = True
         Me.DropCheckStatus.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DropCheckStatus.Location = New System.Drawing.Point(3, 93)
         Me.DropCheckStatus.MaxLength = 65535
@@ -343,8 +346,6 @@ Partial Class NoteReceive
         Me.TxtCheckDueDate.Mask = "dd/MM/yyyy"
         Me.TxtCheckDueDate.MaskType = Telerik.WinControls.UI.MaskType.DateTime
         Me.TxtCheckDueDate.Name = "TxtCheckDueDate"
-        Me.TxtCheckDueDate.SelectedText = "01"
-        Me.TxtCheckDueDate.SelectionLength = 2
         Me.TxtCheckDueDate.Size = New System.Drawing.Size(160, 24)
         Me.TxtCheckDueDate.TabIndex = 12
         Me.TxtCheckDueDate.TabStop = False
@@ -435,6 +436,7 @@ Partial Class NoteReceive
         '
         Me.DropStatus.BackColor = System.Drawing.Color.White
         Me.DropStatus.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DropStatus.DropDownAnimationEnabled = True
         Me.DropStatus.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DropStatus.Location = New System.Drawing.Point(3, 33)
         Me.DropStatus.MaxLength = 65535
@@ -679,6 +681,7 @@ Partial Class NoteReceive
         '
         Me.DropCurrency.BackColor = System.Drawing.Color.White
         Me.DropCurrency.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DropCurrency.DropDownAnimationEnabled = True
         Me.DropCurrency.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DropCurrency.Location = New System.Drawing.Point(3, 93)
         Me.DropCurrency.MaxLength = 65535
@@ -697,8 +700,6 @@ Partial Class NoteReceive
         Me.TxtDueDate.Mask = "dd/MM/yyyy"
         Me.TxtDueDate.MaskType = Telerik.WinControls.UI.MaskType.DateTime
         Me.TxtDueDate.Name = "TxtDueDate"
-        Me.TxtDueDate.SelectedText = "01"
-        Me.TxtDueDate.SelectionLength = 2
         Me.TxtDueDate.Size = New System.Drawing.Size(178, 24)
         Me.TxtDueDate.TabIndex = 12
         Me.TxtDueDate.TabStop = False
@@ -726,11 +727,13 @@ Partial Class NoteReceive
         'TableLayoutPanel4
         '
         Me.TableLayoutPanel4.AutoSize = True
-        Me.TableLayoutPanel4.ColumnCount = 2
+        Me.TableLayoutPanel4.ColumnCount = 3
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1.0!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.TableLayoutPanel4.Controls.Add(Me.txtDollarRateAmt, 1, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.BtnGetCurrencyVal, 2, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.TxtCurrencyVal, 0, 0)
-        Me.TableLayoutPanel4.Controls.Add(Me.BtnGetCurrencyVal, 1, 0)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(0, 123)
         Me.TableLayoutPanel4.Margin = New System.Windows.Forms.Padding(0, 3, 0, 3)
@@ -744,19 +747,19 @@ Partial Class NoteReceive
         '
         Me.TxtCurrencyVal.AcceptsTab = True
         Me.TxtCurrencyVal.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.TxtCurrencyVal.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtCurrencyVal.Enabled = False
         Me.TxtCurrencyVal.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCurrencyVal.HideSelection = False
-        Me.TxtCurrencyVal.Location = New System.Drawing.Point(35, 3)
+        Me.TxtCurrencyVal.Location = New System.Drawing.Point(186, 3)
         Me.TxtCurrencyVal.MaxLength = 65535
         Me.TxtCurrencyVal.Name = "TxtCurrencyVal"
-        Me.TxtCurrencyVal.Size = New System.Drawing.Size(146, 24)
+        Me.TxtCurrencyVal.Size = New System.Drawing.Size(33, 24)
         Me.TxtCurrencyVal.TabIndex = 5
         Me.TxtCurrencyVal.Tag = "1"
         Me.TxtCurrencyVal.Text = "1"
         Me.TxtCurrencyVal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.TxtCurrencyVal.ThemeName = "Office2010Blue"
+        Me.TxtCurrencyVal.Visible = False
         Me.TxtCurrencyVal.WordWrap = False
         '
         'BtnGetCurrencyVal
@@ -769,6 +772,25 @@ Partial Class NoteReceive
         Me.BtnGetCurrencyVal.Size = New System.Drawing.Size(26, 24)
         Me.BtnGetCurrencyVal.TabIndex = 6
         Me.BtnGetCurrencyVal.Text = "RadButton1"
+        '
+        'txtDollarRateAmt
+        '
+        Me.txtDollarRateAmt.AcceptsTab = True
+        Me.txtDollarRateAmt.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtDollarRateAmt.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtDollarRateAmt.Enabled = False
+        Me.txtDollarRateAmt.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDollarRateAmt.HideSelection = False
+        Me.txtDollarRateAmt.Location = New System.Drawing.Point(35, 3)
+        Me.txtDollarRateAmt.MaxLength = 65535
+        Me.txtDollarRateAmt.Name = "txtDollarRateAmt"
+        Me.txtDollarRateAmt.Size = New System.Drawing.Size(145, 24)
+        Me.txtDollarRateAmt.TabIndex = 7
+        Me.txtDollarRateAmt.Tag = "1"
+        Me.txtDollarRateAmt.Text = "1"
+        Me.txtDollarRateAmt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtDollarRateAmt.ThemeName = "Office2010Blue"
+        Me.txtDollarRateAmt.WordWrap = False
         '
         'NoteReceive
         '
@@ -824,6 +846,7 @@ Partial Class NoteReceive
         Me.TableLayoutPanel4.PerformLayout()
         CType(Me.TxtCurrencyVal, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnGetCurrencyVal, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtDollarRateAmt, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -875,5 +898,6 @@ Partial Class NoteReceive
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents TxtCurrencyVal As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents BtnGetCurrencyVal As Telerik.WinControls.UI.RadButton
+    Friend WithEvents txtDollarRateAmt As Telerik.WinControls.UI.RadTextBox
 End Class
 

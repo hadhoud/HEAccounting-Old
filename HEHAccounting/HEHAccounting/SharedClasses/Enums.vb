@@ -1,6 +1,10 @@
 ﻿
 Module Enums
 
+    Structure TagValue
+        Const CurrencyUSDCommas = "CurrencyUSDCommas"
+        Const CurrencyLLCommas = "CurrencyLLCommas"
+    End Structure
     Enum Status
         'Order current status. Posted = 1 morhal ;UnPosted = 2 Not Morahal;
         Posted = 1

@@ -203,6 +203,7 @@ Public Class UserSettings
         Me.chkOptionSalesOrders.Checked = BoolOptionPanelSalesOrders
         Me.chkOptionPurchasesOrders.Checked = BoolOptionPanelPurchasesOrders
         Me.chkOptionCreditorsDebitors.Checked = BoolOptionPanelCreditorsDebitors
+        Me.chkOptionAllInventory.Checked = BoolOptionPanelAllInventory
     End Sub
 
     Private Sub GridShortcuts_KeyDown(sender As Object, e As KeyEventArgs) Handles GridShortcuts.KeyDown
@@ -223,7 +224,7 @@ Public Class UserSettings
     End Sub
 
     Private Sub UpdateUserOptionsPanelSetting()
-        Dim Param(11) As String
+        Dim Param(12) As String
         Param(0) = "@bTreasuryShow_fl , " & chkOptionTreasury.Checked
         Param(1) = "@bDailyShow_fl , " & chkOptionDaily.Checked
         Param(2) = "@bAnalysisShow_fl , " & chkOptionAnalysis.Checked
@@ -235,7 +236,8 @@ Public Class UserSettings
         Param(8) = "@bSalesOrdersShow_fl , " & chkOptionSalesOrders.Checked
         Param(9) = "@bPurchasesOrdersShow_fl , " & chkOptionPurchasesOrders.Checked
         Param(10) = "@bCreditorsDebitorsShow_fl , " & chkOptionCreditorsDebitors.Checked
-        Param(11) = "@IUserID , " & UserID
+        Param(11) = "@bAllInventoryShow_fl , " & chkOptionAllInventory.Checked
+        Param(12) = "@IUserID , " & UserID
         ExecuteProcedureWithParameters("UpdateUserDefaultOptionPanelsSetting", Param)
     End Sub
 

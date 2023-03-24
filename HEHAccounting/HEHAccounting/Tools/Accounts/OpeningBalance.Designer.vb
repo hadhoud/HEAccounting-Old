@@ -42,6 +42,7 @@ Partial Class OpeningBalance
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.TxtCurrencyVal = New Telerik.WinControls.UI.RadTextBox()
         Me.BtnGetCurrencyVal = New Telerik.WinControls.UI.RadButton()
+        Me.txtDollarRateAmt = New Telerik.WinControls.UI.RadTextBox()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.DropCurrency, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtDebitOn, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -54,6 +55,7 @@ Partial Class OpeningBalance
         Me.TableLayoutPanel4.SuspendLayout()
         CType(Me.TxtCurrencyVal, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnGetCurrencyVal, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtDollarRateAmt, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -91,6 +93,7 @@ Partial Class OpeningBalance
         Me.DropCurrency.BackColor = System.Drawing.Color.White
         Me.DropCurrency.Cursor = System.Windows.Forms.Cursors.Default
         resources.ApplyResources(Me.DropCurrency, "DropCurrency")
+        Me.DropCurrency.DropDownAnimationEnabled = True
         Me.DropCurrency.Name = "DropCurrency"
         Me.DropCurrency.Tag = ""
         Me.DropCurrency.ThemeName = "Office2010Blue"
@@ -191,8 +194,9 @@ Partial Class OpeningBalance
         'TableLayoutPanel4
         '
         resources.ApplyResources(Me.TableLayoutPanel4, "TableLayoutPanel4")
+        Me.TableLayoutPanel4.Controls.Add(Me.txtDollarRateAmt, 1, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.BtnGetCurrencyVal, 2, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.TxtCurrencyVal, 0, 0)
-        Me.TableLayoutPanel4.Controls.Add(Me.BtnGetCurrencyVal, 1, 0)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         '
         'TxtCurrencyVal
@@ -215,6 +219,20 @@ Partial Class OpeningBalance
         resources.ApplyResources(Me.BtnGetCurrencyVal, "BtnGetCurrencyVal")
         Me.BtnGetCurrencyVal.Image = Global.HEHAccounting.My.Resources.Resources.search
         Me.BtnGetCurrencyVal.Name = "BtnGetCurrencyVal"
+        '
+        'txtDollarRateAmt
+        '
+        Me.txtDollarRateAmt.AcceptsTab = True
+        Me.txtDollarRateAmt.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtDollarRateAmt.Cursor = System.Windows.Forms.Cursors.Default
+        resources.ApplyResources(Me.txtDollarRateAmt, "txtDollarRateAmt")
+        Me.txtDollarRateAmt.HideSelection = False
+        Me.txtDollarRateAmt.MaxLength = 65535
+        Me.txtDollarRateAmt.Name = "txtDollarRateAmt"
+        Me.txtDollarRateAmt.Tag = "1"
+        Me.txtDollarRateAmt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtDollarRateAmt.ThemeName = "Office2010Blue"
+        Me.txtDollarRateAmt.WordWrap = False
         '
         'OpeningBalance
         '
@@ -246,6 +264,7 @@ Partial Class OpeningBalance
         Me.TableLayoutPanel4.PerformLayout()
         CType(Me.TxtCurrencyVal, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnGetCurrencyVal, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtDollarRateAmt, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -270,5 +289,6 @@ Partial Class OpeningBalance
     Friend WithEvents BtnGetCurrencyVal As Telerik.WinControls.UI.RadButton
     Friend WithEvents LblCurrency As Label
     Friend WithEvents LblCurrencyVal As Label
+    Friend WithEvents txtDollarRateAmt As Telerik.WinControls.UI.RadTextBox
 End Class
 

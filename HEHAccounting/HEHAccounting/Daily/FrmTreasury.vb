@@ -66,8 +66,9 @@ Public Class FrmTreasury
         ConvertMaskedTextToCurrency(txtSOPOLL, Summarydt.Rows(0).Item("TotalSOPOLL").ToString, Currency.LebaneaseLire)
         ConvertMaskedTextToCurrency(txtSOPODollar, Summarydt.Rows(0).Item("TotalSOPODollar").ToString, Currency.Dollar)
 
-        txtSOCount.Text = Summarydt.Rows(0).Item("TotalSOCount").ToString
-        txtPOCount.Text = Summarydt.Rows(0).Item("TotalPOCount").ToString
+        ConvertMaskedTextToCurrency(txtAllItemsPriceLL, Summarydt.Rows(0).Item("AllIemsPriceLL").ToString, Currency.LebaneaseLire)
+        ConvertMaskedTextToCurrency(txtAllItemsPriceUSD, Summarydt.Rows(0).Item("AllIemsPriceUSD").ToString, Currency.Dollar)
+        ConvertMaskedTextToCurrency(txtAllItemsPrice, Summarydt.Rows(0).Item("AllIemsPrice").ToString, selected_Currecny)
 
         ConvertMaskedTextToCurrency(txtSalesProfitLL, Summarydt.Rows(0).Item("SOProfitsLL").ToString, Currency.LebaneaseLire)
         ConvertMaskedTextToCurrency(txtSalesProfitDollar, Val(Summarydt.Rows(0).Item("SOProfitsLL")) / Val(LastDollarCurrencyRate), Currency.Dollar)

@@ -79,10 +79,10 @@ Partial Class FrmTreasury
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtSalesProfitLL = New Telerik.WinControls.UI.RadMaskedEditBox()
         Me.Label23 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.txtPOCount = New Telerik.WinControls.UI.RadMaskedEditBox()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.txtSOCount = New Telerik.WinControls.UI.RadMaskedEditBox()
+        Me.LblAllItemsPricesLL = New System.Windows.Forms.Label()
+        Me.txtAllItemsPriceLL = New Telerik.WinControls.UI.RadMaskedEditBox()
+        Me.LblAllItemsPricesUSD = New System.Windows.Forms.Label()
+        Me.txtAllItemsPriceUSD = New Telerik.WinControls.UI.RadMaskedEditBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtSOPOLL = New Telerik.WinControls.UI.RadMaskedEditBox()
@@ -121,6 +121,8 @@ Partial Class FrmTreasury
         Me.Label10 = New System.Windows.Forms.Label()
         Me.TxtInCash = New Telerik.WinControls.UI.RadMaskedEditBox()
         Me.FirstRunTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.txtAllItemsPrice = New Telerik.WinControls.UI.RadMaskedEditBox()
         CType(Me.PnlOptions, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PnlOptions.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -153,8 +155,8 @@ Partial Class FrmTreasury
         CType(Me.txtSalesProfitPercent, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtSalesProfitDollar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtSalesProfitLL, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtPOCount, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtSOCount, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtAllItemsPriceLL, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtAllItemsPriceUSD, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtSOPOLL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtSalesDollar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtSalesLL, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -173,6 +175,7 @@ Partial Class FrmTreasury
         CType(Me.TxtNoteReceive, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtNoteReceiveCheck, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtInCash, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtAllItemsPrice, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -249,14 +252,14 @@ Partial Class FrmTreasury
         Me.DateTimePickerFrom.Size = New System.Drawing.Size(169, 24)
         Me.DateTimePickerFrom.TabIndex = 29
         Me.DateTimePickerFrom.TabStop = False
-        Me.DateTimePickerFrom.Text = "01/11/2023"
+        Me.DateTimePickerFrom.Text = "11/01/2023"
         Me.DateTimePickerFrom.ThemeName = "Office2010Blue"
-        Me.DateTimePickerFrom.Value = New Date(2023, 11, 1, 0, 0, 0, 0)
+        Me.DateTimePickerFrom.Value = New Date(2023, 1, 11, 0, 0, 0, 0)
         CType(Me.DateTimePickerFrom.GetChildAt(0), Telerik.WinControls.UI.RadDateTimePickerElement).Shape = Nothing
         CType(Me.DateTimePickerFrom.GetChildAt(0), Telerik.WinControls.UI.RadDateTimePickerElement).RightToLeft = True
         CType(Me.DateTimePickerFrom.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadCheckBoxElement).TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         CType(Me.DateTimePickerFrom.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadCheckBoxElement).Visibility = Telerik.WinControls.ElementVisibility.Collapsed
-        CType(Me.DateTimePickerFrom.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "01/11/2023"
+        CType(Me.DateTimePickerFrom.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "11/01/2023"
         CType(Me.DateTimePickerFrom.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         '
         'DateTimePickerTo
@@ -270,14 +273,14 @@ Partial Class FrmTreasury
         Me.DateTimePickerTo.Size = New System.Drawing.Size(169, 24)
         Me.DateTimePickerTo.TabIndex = 30
         Me.DateTimePickerTo.TabStop = False
-        Me.DateTimePickerTo.Text = "11/01/2023"
+        Me.DateTimePickerTo.Text = "01/11/2023"
         Me.DateTimePickerTo.ThemeName = "Office2010Blue"
-        Me.DateTimePickerTo.Value = New Date(2023, 1, 11, 0, 0, 0, 0)
+        Me.DateTimePickerTo.Value = New Date(2023, 11, 1, 0, 0, 0, 0)
         CType(Me.DateTimePickerTo.GetChildAt(0), Telerik.WinControls.UI.RadDateTimePickerElement).Shape = Nothing
         CType(Me.DateTimePickerTo.GetChildAt(0), Telerik.WinControls.UI.RadDateTimePickerElement).RightToLeft = True
         CType(Me.DateTimePickerTo.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadCheckBoxElement).TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         CType(Me.DateTimePickerTo.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadCheckBoxElement).Visibility = Telerik.WinControls.ElementVisibility.Collapsed
-        CType(Me.DateTimePickerTo.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "11/01/2023"
+        CType(Me.DateTimePickerTo.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "01/11/2023"
         CType(Me.DateTimePickerTo.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         '
         'LblTo
@@ -352,7 +355,7 @@ Partial Class FrmTreasury
         Me.TxtSO.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.TxtSO.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtSO.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TxtSO.Location = New System.Drawing.Point(21, 107)
+        Me.TxtSO.Location = New System.Drawing.Point(21, 92)
         Me.TxtSO.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtSO.Name = "TxtSO"
         Me.TxtSO.ReadOnly = True
@@ -369,7 +372,7 @@ Partial Class FrmTreasury
         Me.TxtSOCash.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.TxtSOCash.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtSOCash.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TxtSOCash.Location = New System.Drawing.Point(21, 47)
+        Me.TxtSOCash.Location = New System.Drawing.Point(21, 32)
         Me.TxtSOCash.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtSOCash.Name = "TxtSOCash"
         Me.TxtSOCash.ReadOnly = True
@@ -386,7 +389,7 @@ Partial Class FrmTreasury
         Me.TxtSODebt.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.TxtSODebt.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtSODebt.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TxtSODebt.Location = New System.Drawing.Point(21, 77)
+        Me.TxtSODebt.Location = New System.Drawing.Point(21, 62)
         Me.TxtSODebt.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtSODebt.Name = "TxtSODebt"
         Me.TxtSODebt.ReadOnly = True
@@ -403,7 +406,7 @@ Partial Class FrmTreasury
         Me.lblCashSales.AutoSize = True
         Me.lblCashSales.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lblCashSales.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lblCashSales.Location = New System.Drawing.Point(155, 44)
+        Me.lblCashSales.Location = New System.Drawing.Point(155, 29)
         Me.lblCashSales.Name = "lblCashSales"
         Me.lblCashSales.Size = New System.Drawing.Size(132, 30)
         Me.lblCashSales.TabIndex = 57
@@ -415,7 +418,7 @@ Partial Class FrmTreasury
         Me.lblDebtSales.AutoSize = True
         Me.lblDebtSales.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lblDebtSales.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lblDebtSales.Location = New System.Drawing.Point(155, 74)
+        Me.lblDebtSales.Location = New System.Drawing.Point(155, 59)
         Me.lblDebtSales.Name = "lblDebtSales"
         Me.lblDebtSales.Size = New System.Drawing.Size(132, 30)
         Me.lblDebtSales.TabIndex = 59
@@ -427,7 +430,7 @@ Partial Class FrmTreasury
         Me.lblReturnSalesCash.AutoSize = True
         Me.lblReturnSalesCash.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lblReturnSalesCash.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lblReturnSalesCash.Location = New System.Drawing.Point(155, 134)
+        Me.lblReturnSalesCash.Location = New System.Drawing.Point(155, 119)
         Me.lblReturnSalesCash.Name = "lblReturnSalesCash"
         Me.lblReturnSalesCash.Size = New System.Drawing.Size(132, 30)
         Me.lblReturnSalesCash.TabIndex = 61
@@ -439,7 +442,7 @@ Partial Class FrmTreasury
         Me.lblSales.AutoSize = True
         Me.lblSales.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lblSales.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lblSales.Location = New System.Drawing.Point(155, 104)
+        Me.lblSales.Location = New System.Drawing.Point(155, 89)
         Me.lblSales.Name = "lblSales"
         Me.lblSales.Size = New System.Drawing.Size(132, 30)
         Me.lblSales.TabIndex = 67
@@ -451,7 +454,7 @@ Partial Class FrmTreasury
         Me.lblReturnSalesDebt.AutoSize = True
         Me.lblReturnSalesDebt.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lblReturnSalesDebt.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lblReturnSalesDebt.Location = New System.Drawing.Point(155, 164)
+        Me.lblReturnSalesDebt.Location = New System.Drawing.Point(155, 149)
         Me.lblReturnSalesDebt.Name = "lblReturnSalesDebt"
         Me.lblReturnSalesDebt.Size = New System.Drawing.Size(132, 30)
         Me.lblReturnSalesDebt.TabIndex = 65
@@ -463,7 +466,7 @@ Partial Class FrmTreasury
         Me.TxtRSOCash.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.TxtRSOCash.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtRSOCash.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TxtRSOCash.Location = New System.Drawing.Point(21, 137)
+        Me.TxtRSOCash.Location = New System.Drawing.Point(21, 122)
         Me.TxtRSOCash.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtRSOCash.Name = "TxtRSOCash"
         Me.TxtRSOCash.ReadOnly = True
@@ -480,7 +483,7 @@ Partial Class FrmTreasury
         Me.TxtRSO.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.TxtRSO.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtRSO.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TxtRSO.Location = New System.Drawing.Point(21, 197)
+        Me.TxtRSO.Location = New System.Drawing.Point(21, 182)
         Me.TxtRSO.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtRSO.Name = "TxtRSO"
         Me.TxtRSO.ReadOnly = True
@@ -501,7 +504,7 @@ Partial Class FrmTreasury
         Me.TxtRSODebt.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.TxtRSODebt.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtRSODebt.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TxtRSODebt.Location = New System.Drawing.Point(21, 167)
+        Me.TxtRSODebt.Location = New System.Drawing.Point(21, 152)
         Me.TxtRSODebt.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtRSODebt.Name = "TxtRSODebt"
         Me.TxtRSODebt.ReadOnly = True
@@ -518,7 +521,7 @@ Partial Class FrmTreasury
         Me.lblReturnSales.AutoSize = True
         Me.lblReturnSales.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lblReturnSales.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lblReturnSales.Location = New System.Drawing.Point(155, 194)
+        Me.lblReturnSales.Location = New System.Drawing.Point(155, 179)
         Me.lblReturnSales.Name = "lblReturnSales"
         Me.lblReturnSales.Size = New System.Drawing.Size(132, 30)
         Me.lblReturnSales.TabIndex = 69
@@ -563,16 +566,7 @@ Partial Class FrmTreasury
         Me.tblFirst.Location = New System.Drawing.Point(0, 0)
         Me.tblFirst.Name = "tblFirst"
         Me.tblFirst.RowCount = 20
-        Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5.0!))
-        Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5.0!))
         Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle())
@@ -582,7 +576,16 @@ Partial Class FrmTreasury
         Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.tblFirst.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10.0!))
         Me.tblFirst.Size = New System.Drawing.Size(306, 485)
         Me.tblFirst.TabIndex = 79
         '
@@ -592,7 +595,7 @@ Partial Class FrmTreasury
         Me.TxtRPO.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtRPO.EnableTheming = False
         Me.TxtRPO.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TxtRPO.Location = New System.Drawing.Point(21, 429)
+        Me.TxtRPO.Location = New System.Drawing.Point(21, 381)
         Me.TxtRPO.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtRPO.Name = "TxtRPO"
         Me.TxtRPO.ReadOnly = True
@@ -610,7 +613,7 @@ Partial Class FrmTreasury
         Me.TxtRPODebt.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtRPODebt.EnableTheming = False
         Me.TxtRPODebt.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TxtRPODebt.Location = New System.Drawing.Point(21, 399)
+        Me.TxtRPODebt.Location = New System.Drawing.Point(21, 351)
         Me.TxtRPODebt.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtRPODebt.Name = "TxtRPODebt"
         Me.TxtRPODebt.ReadOnly = True
@@ -628,7 +631,7 @@ Partial Class FrmTreasury
         Me.TxtRPOCash.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtRPOCash.EnableTheming = False
         Me.TxtRPOCash.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TxtRPOCash.Location = New System.Drawing.Point(21, 369)
+        Me.TxtRPOCash.Location = New System.Drawing.Point(21, 321)
         Me.TxtRPOCash.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtRPOCash.Name = "TxtRPOCash"
         Me.TxtRPOCash.ReadOnly = True
@@ -646,7 +649,7 @@ Partial Class FrmTreasury
         Me.TxtPO.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtPO.EnableTheming = False
         Me.TxtPO.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TxtPO.Location = New System.Drawing.Point(21, 339)
+        Me.TxtPO.Location = New System.Drawing.Point(21, 291)
         Me.TxtPO.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtPO.Name = "TxtPO"
         Me.TxtPO.ReadOnly = True
@@ -664,7 +667,7 @@ Partial Class FrmTreasury
         Me.TxtPOCash.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtPOCash.EnableTheming = False
         Me.TxtPOCash.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TxtPOCash.Location = New System.Drawing.Point(21, 279)
+        Me.TxtPOCash.Location = New System.Drawing.Point(21, 231)
         Me.TxtPOCash.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtPOCash.Name = "TxtPOCash"
         Me.TxtPOCash.ReadOnly = True
@@ -680,7 +683,7 @@ Partial Class FrmTreasury
         '
         Me.lblReturnPurchases.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lblReturnPurchases.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lblReturnPurchases.Location = New System.Drawing.Point(155, 426)
+        Me.lblReturnPurchases.Location = New System.Drawing.Point(155, 378)
         Me.lblReturnPurchases.Name = "lblReturnPurchases"
         Me.lblReturnPurchases.Size = New System.Drawing.Size(132, 30)
         Me.lblReturnPurchases.TabIndex = 93
@@ -693,7 +696,7 @@ Partial Class FrmTreasury
         Me.TxtPODebt.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtPODebt.EnableTheming = False
         Me.TxtPODebt.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TxtPODebt.Location = New System.Drawing.Point(21, 309)
+        Me.TxtPODebt.Location = New System.Drawing.Point(21, 261)
         Me.TxtPODebt.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtPODebt.Name = "TxtPODebt"
         Me.TxtPODebt.ReadOnly = True
@@ -709,7 +712,7 @@ Partial Class FrmTreasury
         '
         Me.lblReturnPurchasesDebt.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lblReturnPurchasesDebt.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lblReturnPurchasesDebt.Location = New System.Drawing.Point(155, 396)
+        Me.lblReturnPurchasesDebt.Location = New System.Drawing.Point(155, 348)
         Me.lblReturnPurchasesDebt.Name = "lblReturnPurchasesDebt"
         Me.lblReturnPurchasesDebt.Size = New System.Drawing.Size(132, 30)
         Me.lblReturnPurchasesDebt.TabIndex = 89
@@ -720,7 +723,7 @@ Partial Class FrmTreasury
         '
         Me.lblPurchases.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lblPurchases.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lblPurchases.Location = New System.Drawing.Point(155, 336)
+        Me.lblPurchases.Location = New System.Drawing.Point(155, 288)
         Me.lblPurchases.Name = "lblPurchases"
         Me.lblPurchases.Size = New System.Drawing.Size(132, 30)
         Me.lblPurchases.TabIndex = 91
@@ -731,7 +734,7 @@ Partial Class FrmTreasury
         '
         Me.lblReturnPurchasesCash.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lblReturnPurchasesCash.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lblReturnPurchasesCash.Location = New System.Drawing.Point(155, 366)
+        Me.lblReturnPurchasesCash.Location = New System.Drawing.Point(155, 318)
         Me.lblReturnPurchasesCash.Name = "lblReturnPurchasesCash"
         Me.lblReturnPurchasesCash.Size = New System.Drawing.Size(132, 30)
         Me.lblReturnPurchasesCash.TabIndex = 87
@@ -742,7 +745,7 @@ Partial Class FrmTreasury
         '
         Me.lblPurchasesCash.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lblPurchasesCash.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lblPurchasesCash.Location = New System.Drawing.Point(155, 276)
+        Me.lblPurchasesCash.Location = New System.Drawing.Point(155, 228)
         Me.lblPurchasesCash.Name = "lblPurchasesCash"
         Me.lblPurchasesCash.Size = New System.Drawing.Size(132, 30)
         Me.lblPurchasesCash.TabIndex = 83
@@ -753,7 +756,7 @@ Partial Class FrmTreasury
         '
         Me.lblPurchasesDebt.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lblPurchasesDebt.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lblPurchasesDebt.Location = New System.Drawing.Point(155, 306)
+        Me.lblPurchasesDebt.Location = New System.Drawing.Point(155, 258)
         Me.lblPurchasesDebt.Name = "lblPurchasesDebt"
         Me.lblPurchasesDebt.Size = New System.Drawing.Size(132, 30)
         Me.lblPurchasesDebt.TabIndex = 85
@@ -767,7 +770,7 @@ Partial Class FrmTreasury
         Me.LblSalesSummary.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LblSalesSummary.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.LblSalesSummary.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.LblSalesSummary.Location = New System.Drawing.Point(21, 20)
+        Me.LblSalesSummary.Location = New System.Drawing.Point(21, 5)
         Me.LblSalesSummary.Name = "LblSalesSummary"
         Me.LblSalesSummary.Size = New System.Drawing.Size(266, 19)
         Me.LblSalesSummary.TabIndex = 29
@@ -781,7 +784,7 @@ Partial Class FrmTreasury
         Me.Label25.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label25.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label25.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.Label25.Location = New System.Drawing.Point(21, 252)
+        Me.Label25.Location = New System.Drawing.Point(21, 209)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(266, 19)
         Me.Label25.TabIndex = 103
@@ -838,10 +841,10 @@ Partial Class FrmTreasury
         Me.tblThird.Controls.Add(Me.Label2, 1, 12)
         Me.tblThird.Controls.Add(Me.txtSalesProfitLL, 2, 12)
         Me.tblThird.Controls.Add(Me.Label23, 1, 17)
-        Me.tblThird.Controls.Add(Me.Label22, 1, 8)
-        Me.tblThird.Controls.Add(Me.txtPOCount, 2, 8)
-        Me.tblThird.Controls.Add(Me.Label20, 1, 7)
-        Me.tblThird.Controls.Add(Me.txtSOCount, 2, 7)
+        Me.tblThird.Controls.Add(Me.LblAllItemsPricesLL, 1, 7)
+        Me.tblThird.Controls.Add(Me.txtAllItemsPriceLL, 2, 7)
+        Me.tblThird.Controls.Add(Me.LblAllItemsPricesUSD, 1, 8)
+        Me.tblThird.Controls.Add(Me.txtAllItemsPriceUSD, 2, 8)
         Me.tblThird.Controls.Add(Me.Label5, 1, 4)
         Me.tblThird.Controls.Add(Me.Label1, 1, 5)
         Me.tblThird.Controls.Add(Me.txtSOPOLL, 2, 5)
@@ -850,11 +853,13 @@ Partial Class FrmTreasury
         Me.tblThird.Controls.Add(Me.Label24, 1, 6)
         Me.tblThird.Controls.Add(Me.txtSalesLL, 2, 3)
         Me.tblThird.Controls.Add(Me.Label29, 1, 1)
+        Me.tblThird.Controls.Add(Me.Label20, 1, 9)
+        Me.tblThird.Controls.Add(Me.txtAllItemsPrice, 2, 9)
         Me.tblThird.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tblThird.Location = New System.Drawing.Point(0, 0)
         Me.tblThird.Name = "tblThird"
         Me.tblThird.RowCount = 19
-        Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5.0!))
         Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5.0!))
         Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle())
@@ -863,16 +868,16 @@ Partial Class FrmTreasury
         Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5.0!))
-        Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tblThird.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.tblThird.Size = New System.Drawing.Size(306, 485)
         Me.tblThird.TabIndex = 81
         '
@@ -883,7 +888,7 @@ Partial Class FrmTreasury
         Me.Label28.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label28.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label28.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.Label28.Location = New System.Drawing.Point(3, 252)
+        Me.Label28.Location = New System.Drawing.Point(3, 239)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(285, 19)
         Me.Label28.TabIndex = 105
@@ -896,7 +901,7 @@ Partial Class FrmTreasury
         Me.txtSOPODollar.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtSOPODollar.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.txtSOPODollar.ForeColor = System.Drawing.Color.Black
-        Me.txtSOPODollar.Location = New System.Drawing.Point(20, 137)
+        Me.txtSOPODollar.Location = New System.Drawing.Point(20, 122)
         Me.txtSOPODollar.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.txtSOPODollar.Name = "txtSOPODollar"
         Me.txtSOPODollar.ReadOnly = True
@@ -914,7 +919,7 @@ Partial Class FrmTreasury
         Me.txtGeneralProfitPercent.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtGeneralProfitPercent.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.txtGeneralProfitPercent.ForeColor = System.Drawing.Color.Black
-        Me.txtGeneralProfitPercent.Location = New System.Drawing.Point(20, 429)
+        Me.txtGeneralProfitPercent.Location = New System.Drawing.Point(20, 411)
         Me.txtGeneralProfitPercent.Mask = "p2"
         Me.txtGeneralProfitPercent.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.txtGeneralProfitPercent.Name = "txtGeneralProfitPercent"
@@ -932,7 +937,7 @@ Partial Class FrmTreasury
         Me.Label13.AutoSize = True
         Me.Label13.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label13.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label13.Location = New System.Drawing.Point(144, 396)
+        Me.Label13.Location = New System.Drawing.Point(144, 378)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(144, 30)
         Me.Label13.TabIndex = 83
@@ -945,7 +950,7 @@ Partial Class FrmTreasury
         Me.TxtGeneralProfits.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtGeneralProfits.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.TxtGeneralProfits.ForeColor = System.Drawing.Color.Black
-        Me.TxtGeneralProfits.Location = New System.Drawing.Point(20, 399)
+        Me.TxtGeneralProfits.Location = New System.Drawing.Point(20, 381)
         Me.TxtGeneralProfits.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtGeneralProfits.Name = "TxtGeneralProfits"
         Me.TxtGeneralProfits.ReadOnly = True
@@ -962,7 +967,7 @@ Partial Class FrmTreasury
         Me.Label7.AutoSize = True
         Me.Label7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label7.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label7.Location = New System.Drawing.Point(144, 366)
+        Me.Label7.Location = New System.Drawing.Point(144, 348)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(144, 30)
         Me.Label7.TabIndex = 90
@@ -975,7 +980,7 @@ Partial Class FrmTreasury
         Me.txtProfitsWithPaidNotes.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtProfitsWithPaidNotes.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.txtProfitsWithPaidNotes.ForeColor = System.Drawing.Color.Black
-        Me.txtProfitsWithPaidNotes.Location = New System.Drawing.Point(20, 369)
+        Me.txtProfitsWithPaidNotes.Location = New System.Drawing.Point(20, 351)
         Me.txtProfitsWithPaidNotes.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.txtProfitsWithPaidNotes.Name = "txtProfitsWithPaidNotes"
         Me.txtProfitsWithPaidNotes.ReadOnly = True
@@ -992,7 +997,7 @@ Partial Class FrmTreasury
         Me.Label21.AutoSize = True
         Me.Label21.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label21.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label21.Location = New System.Drawing.Point(144, 336)
+        Me.Label21.Location = New System.Drawing.Point(144, 318)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(144, 30)
         Me.Label21.TabIndex = 94
@@ -1005,7 +1010,7 @@ Partial Class FrmTreasury
         Me.txtSalesProfitPercent.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtSalesProfitPercent.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.txtSalesProfitPercent.ForeColor = System.Drawing.Color.Black
-        Me.txtSalesProfitPercent.Location = New System.Drawing.Point(20, 339)
+        Me.txtSalesProfitPercent.Location = New System.Drawing.Point(20, 321)
         Me.txtSalesProfitPercent.Mask = "p2"
         Me.txtSalesProfitPercent.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.txtSalesProfitPercent.Name = "txtSalesProfitPercent"
@@ -1023,7 +1028,7 @@ Partial Class FrmTreasury
         Me.Label6.AutoSize = True
         Me.Label6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label6.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label6.Location = New System.Drawing.Point(144, 306)
+        Me.Label6.Location = New System.Drawing.Point(144, 288)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(144, 30)
         Me.Label6.TabIndex = 89
@@ -1036,7 +1041,7 @@ Partial Class FrmTreasury
         Me.txtSalesProfitDollar.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtSalesProfitDollar.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.txtSalesProfitDollar.ForeColor = System.Drawing.Color.Black
-        Me.txtSalesProfitDollar.Location = New System.Drawing.Point(20, 309)
+        Me.txtSalesProfitDollar.Location = New System.Drawing.Point(20, 291)
         Me.txtSalesProfitDollar.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.txtSalesProfitDollar.Name = "txtSalesProfitDollar"
         Me.txtSalesProfitDollar.ReadOnly = True
@@ -1053,7 +1058,7 @@ Partial Class FrmTreasury
         Me.Label2.AutoSize = True
         Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label2.Location = New System.Drawing.Point(144, 276)
+        Me.Label2.Location = New System.Drawing.Point(144, 258)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(144, 30)
         Me.Label2.TabIndex = 86
@@ -1066,7 +1071,7 @@ Partial Class FrmTreasury
         Me.txtSalesProfitLL.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtSalesProfitLL.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.txtSalesProfitLL.ForeColor = System.Drawing.Color.Black
-        Me.txtSalesProfitLL.Location = New System.Drawing.Point(20, 279)
+        Me.txtSalesProfitLL.Location = New System.Drawing.Point(20, 261)
         Me.txtSalesProfitLL.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.txtSalesProfitLL.Name = "txtSalesProfitLL"
         Me.txtSalesProfitLL.ReadOnly = True
@@ -1083,79 +1088,79 @@ Partial Class FrmTreasury
         Me.Label23.AutoSize = True
         Me.Label23.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label23.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label23.Location = New System.Drawing.Point(144, 426)
+        Me.Label23.Location = New System.Drawing.Point(144, 408)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(144, 30)
         Me.Label23.TabIndex = 96
         Me.Label23.Text = "نسبة الأرباح عام %"
         Me.Label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label22
+        'LblAllItemsPricesLL
         '
-        Me.Label22.AutoSize = True
-        Me.Label22.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label22.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label22.Location = New System.Drawing.Point(144, 194)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(144, 30)
-        Me.Label22.TabIndex = 95
-        Me.Label22.Text = "عدد عمليات الشراء"
-        Me.Label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LblAllItemsPricesLL.AutoSize = True
+        Me.LblAllItemsPricesLL.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LblAllItemsPricesLL.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.LblAllItemsPricesLL.Location = New System.Drawing.Point(144, 149)
+        Me.LblAllItemsPricesLL.Name = "LblAllItemsPricesLL"
+        Me.LblAllItemsPricesLL.Size = New System.Drawing.Size(144, 30)
+        Me.LblAllItemsPricesLL.TabIndex = 95
+        Me.LblAllItemsPricesLL.Text = "رأس مال أصناف ل.ل"
+        Me.LblAllItemsPricesLL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'txtPOCount
+        'txtAllItemsPriceLL
         '
-        Me.txtPOCount.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.txtPOCount.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtPOCount.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.txtPOCount.ForeColor = System.Drawing.Color.Black
-        Me.txtPOCount.Location = New System.Drawing.Point(20, 197)
-        Me.txtPOCount.MaskType = Telerik.WinControls.UI.MaskType.Numeric
-        Me.txtPOCount.Name = "txtPOCount"
-        Me.txtPOCount.ReadOnly = True
-        Me.txtPOCount.ShortcutsEnabled = False
-        Me.txtPOCount.Size = New System.Drawing.Size(118, 24)
-        Me.txtPOCount.TabIndex = 94
-        Me.txtPOCount.TabStop = False
-        Me.txtPOCount.Text = "0"
-        Me.txtPOCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtPOCount.ThemeName = "Office2010Blue"
+        Me.txtAllItemsPriceLL.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtAllItemsPriceLL.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtAllItemsPriceLL.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.txtAllItemsPriceLL.ForeColor = System.Drawing.Color.Black
+        Me.txtAllItemsPriceLL.Location = New System.Drawing.Point(20, 152)
+        Me.txtAllItemsPriceLL.MaskType = Telerik.WinControls.UI.MaskType.Numeric
+        Me.txtAllItemsPriceLL.Name = "txtAllItemsPriceLL"
+        Me.txtAllItemsPriceLL.ReadOnly = True
+        Me.txtAllItemsPriceLL.ShortcutsEnabled = False
+        Me.txtAllItemsPriceLL.Size = New System.Drawing.Size(118, 24)
+        Me.txtAllItemsPriceLL.TabIndex = 94
+        Me.txtAllItemsPriceLL.TabStop = False
+        Me.txtAllItemsPriceLL.Text = "0"
+        Me.txtAllItemsPriceLL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtAllItemsPriceLL.ThemeName = "Office2010Blue"
         '
-        'Label20
+        'LblAllItemsPricesUSD
         '
-        Me.Label20.AutoSize = True
-        Me.Label20.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label20.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label20.Location = New System.Drawing.Point(144, 164)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(144, 30)
-        Me.Label20.TabIndex = 93
-        Me.Label20.Text = "عدد عمليات المبيع"
-        Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LblAllItemsPricesUSD.AutoSize = True
+        Me.LblAllItemsPricesUSD.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LblAllItemsPricesUSD.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.LblAllItemsPricesUSD.Location = New System.Drawing.Point(144, 179)
+        Me.LblAllItemsPricesUSD.Name = "LblAllItemsPricesUSD"
+        Me.LblAllItemsPricesUSD.Size = New System.Drawing.Size(144, 30)
+        Me.LblAllItemsPricesUSD.TabIndex = 93
+        Me.LblAllItemsPricesUSD.Text = "رأس مال أصناف $"
+        Me.LblAllItemsPricesUSD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'txtSOCount
+        'txtAllItemsPriceUSD
         '
-        Me.txtSOCount.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.txtSOCount.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtSOCount.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.txtSOCount.ForeColor = System.Drawing.Color.Black
-        Me.txtSOCount.Location = New System.Drawing.Point(20, 167)
-        Me.txtSOCount.MaskType = Telerik.WinControls.UI.MaskType.Numeric
-        Me.txtSOCount.Name = "txtSOCount"
-        Me.txtSOCount.ReadOnly = True
-        Me.txtSOCount.ShortcutsEnabled = False
-        Me.txtSOCount.Size = New System.Drawing.Size(118, 24)
-        Me.txtSOCount.TabIndex = 93
-        Me.txtSOCount.TabStop = False
-        Me.txtSOCount.Text = "0"
-        Me.txtSOCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtSOCount.ThemeName = "Office2010Blue"
+        Me.txtAllItemsPriceUSD.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtAllItemsPriceUSD.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtAllItemsPriceUSD.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.txtAllItemsPriceUSD.ForeColor = System.Drawing.Color.Black
+        Me.txtAllItemsPriceUSD.Location = New System.Drawing.Point(20, 182)
+        Me.txtAllItemsPriceUSD.MaskType = Telerik.WinControls.UI.MaskType.Numeric
+        Me.txtAllItemsPriceUSD.Name = "txtAllItemsPriceUSD"
+        Me.txtAllItemsPriceUSD.ReadOnly = True
+        Me.txtAllItemsPriceUSD.ShortcutsEnabled = False
+        Me.txtAllItemsPriceUSD.Size = New System.Drawing.Size(118, 24)
+        Me.txtAllItemsPriceUSD.TabIndex = 93
+        Me.txtAllItemsPriceUSD.TabStop = False
+        Me.txtAllItemsPriceUSD.Text = "0"
+        Me.txtAllItemsPriceUSD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtAllItemsPriceUSD.ThemeName = "Office2010Blue"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label5.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label5.Location = New System.Drawing.Point(144, 74)
+        Me.Label5.Location = New System.Drawing.Point(144, 59)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(144, 30)
         Me.Label5.TabIndex = 88
@@ -1167,7 +1172,7 @@ Partial Class FrmTreasury
         Me.Label1.AutoSize = True
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label1.Location = New System.Drawing.Point(144, 104)
+        Me.Label1.Location = New System.Drawing.Point(144, 89)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(144, 30)
         Me.Label1.TabIndex = 85
@@ -1180,7 +1185,7 @@ Partial Class FrmTreasury
         Me.txtSOPOLL.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtSOPOLL.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.txtSOPOLL.ForeColor = System.Drawing.Color.Black
-        Me.txtSOPOLL.Location = New System.Drawing.Point(20, 107)
+        Me.txtSOPOLL.Location = New System.Drawing.Point(20, 92)
         Me.txtSOPOLL.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.txtSOPOLL.Name = "txtSOPOLL"
         Me.txtSOPOLL.ReadOnly = True
@@ -1197,7 +1202,7 @@ Partial Class FrmTreasury
         Me.Label3.AutoSize = True
         Me.Label3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label3.Location = New System.Drawing.Point(144, 44)
+        Me.Label3.Location = New System.Drawing.Point(144, 29)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(144, 30)
         Me.Label3.TabIndex = 87
@@ -1210,7 +1215,7 @@ Partial Class FrmTreasury
         Me.txtSalesDollar.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtSalesDollar.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.txtSalesDollar.ForeColor = System.Drawing.Color.Black
-        Me.txtSalesDollar.Location = New System.Drawing.Point(20, 77)
+        Me.txtSalesDollar.Location = New System.Drawing.Point(20, 62)
         Me.txtSalesDollar.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.txtSalesDollar.Name = "txtSalesDollar"
         Me.txtSalesDollar.ReadOnly = True
@@ -1227,7 +1232,7 @@ Partial Class FrmTreasury
         Me.Label24.AutoSize = True
         Me.Label24.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label24.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label24.Location = New System.Drawing.Point(144, 134)
+        Me.Label24.Location = New System.Drawing.Point(144, 119)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(144, 30)
         Me.Label24.TabIndex = 97
@@ -1241,7 +1246,7 @@ Partial Class FrmTreasury
         Me.txtSalesLL.Cursor = System.Windows.Forms.Cursors.Default
         Me.txtSalesLL.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtSalesLL.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.txtSalesLL.Location = New System.Drawing.Point(20, 47)
+        Me.txtSalesLL.Location = New System.Drawing.Point(20, 32)
         Me.txtSalesLL.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.txtSalesLL.Name = "txtSalesLL"
         Me.txtSalesLL.ReadOnly = True
@@ -1259,7 +1264,7 @@ Partial Class FrmTreasury
         Me.Label29.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label29.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label29.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.Label29.Location = New System.Drawing.Point(3, 20)
+        Me.Label29.Location = New System.Drawing.Point(3, 5)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(285, 19)
         Me.Label29.TabIndex = 106
@@ -1324,7 +1329,7 @@ Partial Class FrmTreasury
         Me.tblSecond.Location = New System.Drawing.Point(0, 0)
         Me.tblSecond.Name = "tblSecond"
         Me.tblSecond.RowCount = 19
-        Me.tblSecond.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.tblSecond.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5.0!))
         Me.tblSecond.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tblSecond.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5.0!))
         Me.tblSecond.RowStyles.Add(New System.Windows.Forms.RowStyle())
@@ -1333,8 +1338,6 @@ Partial Class FrmTreasury
         Me.tblSecond.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tblSecond.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tblSecond.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tblSecond.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tblSecond.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tblSecond.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5.0!))
         Me.tblSecond.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tblSecond.RowStyles.Add(New System.Windows.Forms.RowStyle())
@@ -1342,7 +1345,9 @@ Partial Class FrmTreasury
         Me.tblSecond.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tblSecond.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tblSecond.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tblSecond.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tblSecond.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.tblSecond.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.tblSecond.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10.0!))
         Me.tblSecond.Size = New System.Drawing.Size(306, 485)
         Me.tblSecond.TabIndex = 81
         '
@@ -1353,7 +1358,7 @@ Partial Class FrmTreasury
         Me.Label27.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label27.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label27.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.Label27.Location = New System.Drawing.Point(21, 20)
+        Me.Label27.Location = New System.Drawing.Point(21, 5)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(266, 19)
         Me.Label27.TabIndex = 105
@@ -1367,7 +1372,7 @@ Partial Class FrmTreasury
         Me.Label26.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label26.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label26.ForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(139, Byte), Integer))
-        Me.Label26.Location = New System.Drawing.Point(21, 252)
+        Me.Label26.Location = New System.Drawing.Point(21, 214)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(266, 19)
         Me.Label26.TabIndex = 104
@@ -1379,7 +1384,7 @@ Partial Class FrmTreasury
         Me.TxtNotePay.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.TxtNotePay.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtNotePay.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TxtNotePay.Location = New System.Drawing.Point(21, 197)
+        Me.TxtNotePay.Location = New System.Drawing.Point(21, 182)
         Me.TxtNotePay.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtNotePay.Name = "TxtNotePay"
         Me.TxtNotePay.ReadOnly = True
@@ -1396,7 +1401,7 @@ Partial Class FrmTreasury
         Me.TxtNotePayCheck.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.TxtNotePayCheck.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtNotePayCheck.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TxtNotePayCheck.Location = New System.Drawing.Point(21, 167)
+        Me.TxtNotePayCheck.Location = New System.Drawing.Point(21, 152)
         Me.TxtNotePayCheck.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtNotePayCheck.Name = "TxtNotePayCheck"
         Me.TxtNotePayCheck.ReadOnly = True
@@ -1414,7 +1419,7 @@ Partial Class FrmTreasury
         Me.TxtOutDebt.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtOutDebt.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.TxtOutDebt.ForeColor = System.Drawing.Color.Black
-        Me.TxtOutDebt.Location = New System.Drawing.Point(21, 399)
+        Me.TxtOutDebt.Location = New System.Drawing.Point(21, 356)
         Me.TxtOutDebt.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtOutDebt.Name = "TxtOutDebt"
         Me.TxtOutDebt.ReadOnly = True
@@ -1431,7 +1436,7 @@ Partial Class FrmTreasury
         Me.TxtNotePayCash.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.TxtNotePayCash.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtNotePayCash.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TxtNotePayCash.Location = New System.Drawing.Point(21, 137)
+        Me.TxtNotePayCash.Location = New System.Drawing.Point(21, 122)
         Me.TxtNotePayCash.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtNotePayCash.Name = "TxtNotePayCash"
         Me.TxtNotePayCash.ReadOnly = True
@@ -1449,7 +1454,7 @@ Partial Class FrmTreasury
         Me.TxtOutCash.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtOutCash.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.TxtOutCash.ForeColor = System.Drawing.Color.Black
-        Me.TxtOutCash.Location = New System.Drawing.Point(21, 369)
+        Me.TxtOutCash.Location = New System.Drawing.Point(21, 326)
         Me.TxtOutCash.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtOutCash.Name = "TxtOutCash"
         Me.TxtOutCash.ReadOnly = True
@@ -1467,7 +1472,7 @@ Partial Class FrmTreasury
         Me.TxtOut.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtOut.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.TxtOut.ForeColor = System.Drawing.Color.Black
-        Me.TxtOut.Location = New System.Drawing.Point(21, 429)
+        Me.TxtOut.Location = New System.Drawing.Point(21, 386)
         Me.TxtOut.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtOut.Name = "TxtOut"
         Me.TxtOut.ReadOnly = True
@@ -1485,7 +1490,7 @@ Partial Class FrmTreasury
         Me.TxtIN.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtIN.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.TxtIN.ForeColor = System.Drawing.Color.Black
-        Me.TxtIN.Location = New System.Drawing.Point(21, 339)
+        Me.TxtIN.Location = New System.Drawing.Point(21, 296)
         Me.TxtIN.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtIN.Name = "TxtIN"
         Me.TxtIN.ReadOnly = True
@@ -1501,7 +1506,7 @@ Partial Class FrmTreasury
         '
         Me.Label19.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label19.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label19.Location = New System.Drawing.Point(155, 134)
+        Me.Label19.Location = New System.Drawing.Point(155, 119)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(132, 30)
         Me.Label19.TabIndex = 92
@@ -1514,7 +1519,7 @@ Partial Class FrmTreasury
         Me.TxtInDebt.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtInDebt.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.TxtInDebt.ForeColor = System.Drawing.Color.Black
-        Me.TxtInDebt.Location = New System.Drawing.Point(21, 309)
+        Me.TxtInDebt.Location = New System.Drawing.Point(21, 266)
         Me.TxtInDebt.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtInDebt.Name = "TxtInDebt"
         Me.TxtInDebt.ReadOnly = True
@@ -1531,7 +1536,7 @@ Partial Class FrmTreasury
         Me.TxtNoteReceiveCash.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.TxtNoteReceiveCash.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtNoteReceiveCash.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TxtNoteReceiveCash.Location = New System.Drawing.Point(21, 47)
+        Me.TxtNoteReceiveCash.Location = New System.Drawing.Point(21, 32)
         Me.TxtNoteReceiveCash.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtNoteReceiveCash.Name = "TxtNoteReceiveCash"
         Me.TxtNoteReceiveCash.ReadOnly = True
@@ -1548,7 +1553,7 @@ Partial Class FrmTreasury
         Me.Label4.AutoSize = True
         Me.Label4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label4.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label4.Location = New System.Drawing.Point(155, 426)
+        Me.Label4.Location = New System.Drawing.Point(155, 383)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(132, 30)
         Me.Label4.TabIndex = 81
@@ -1560,7 +1565,7 @@ Partial Class FrmTreasury
         Me.TxtNoteReceive.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.TxtNoteReceive.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtNoteReceive.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TxtNoteReceive.Location = New System.Drawing.Point(21, 107)
+        Me.TxtNoteReceive.Location = New System.Drawing.Point(21, 92)
         Me.TxtNoteReceive.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtNoteReceive.Name = "TxtNoteReceive"
         Me.TxtNoteReceive.ReadOnly = True
@@ -1576,7 +1581,7 @@ Partial Class FrmTreasury
         '
         Me.Label15.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label15.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label15.Location = New System.Drawing.Point(155, 44)
+        Me.Label15.Location = New System.Drawing.Point(155, 29)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(132, 30)
         Me.Label15.TabIndex = 82
@@ -1588,7 +1593,7 @@ Partial Class FrmTreasury
         Me.TxtNoteReceiveCheck.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.TxtNoteReceiveCheck.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtNoteReceiveCheck.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.TxtNoteReceiveCheck.Location = New System.Drawing.Point(21, 77)
+        Me.TxtNoteReceiveCheck.Location = New System.Drawing.Point(21, 62)
         Me.TxtNoteReceiveCheck.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtNoteReceiveCheck.Name = "TxtNoteReceiveCheck"
         Me.TxtNoteReceiveCheck.ReadOnly = True
@@ -1605,7 +1610,7 @@ Partial Class FrmTreasury
         Me.Label12.AutoSize = True
         Me.Label12.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label12.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label12.Location = New System.Drawing.Point(155, 396)
+        Me.Label12.Location = New System.Drawing.Point(155, 353)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(132, 30)
         Me.Label12.TabIndex = 79
@@ -1616,7 +1621,7 @@ Partial Class FrmTreasury
         '
         Me.Label18.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label18.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label18.Location = New System.Drawing.Point(155, 74)
+        Me.Label18.Location = New System.Drawing.Point(155, 59)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(132, 30)
         Me.Label18.TabIndex = 84
@@ -1628,7 +1633,7 @@ Partial Class FrmTreasury
         Me.Label8.AutoSize = True
         Me.Label8.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label8.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label8.Location = New System.Drawing.Point(155, 366)
+        Me.Label8.Location = New System.Drawing.Point(155, 323)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(132, 30)
         Me.Label8.TabIndex = 77
@@ -1639,7 +1644,7 @@ Partial Class FrmTreasury
         '
         Me.Label16.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label16.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label16.Location = New System.Drawing.Point(155, 164)
+        Me.Label16.Location = New System.Drawing.Point(155, 149)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(132, 30)
         Me.Label16.TabIndex = 88
@@ -1650,7 +1655,7 @@ Partial Class FrmTreasury
         '
         Me.Label14.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label14.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label14.Location = New System.Drawing.Point(155, 104)
+        Me.Label14.Location = New System.Drawing.Point(155, 89)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(132, 30)
         Me.Label14.TabIndex = 86
@@ -1661,7 +1666,7 @@ Partial Class FrmTreasury
         '
         Me.Label17.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label17.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label17.Location = New System.Drawing.Point(155, 194)
+        Me.Label17.Location = New System.Drawing.Point(155, 179)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(132, 30)
         Me.Label17.TabIndex = 90
@@ -1673,7 +1678,7 @@ Partial Class FrmTreasury
         Me.Label9.AutoSize = True
         Me.Label9.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label9.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label9.Location = New System.Drawing.Point(155, 336)
+        Me.Label9.Location = New System.Drawing.Point(155, 293)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(132, 30)
         Me.Label9.TabIndex = 75
@@ -1685,7 +1690,7 @@ Partial Class FrmTreasury
         Me.Label11.AutoSize = True
         Me.Label11.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label11.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label11.Location = New System.Drawing.Point(155, 306)
+        Me.Label11.Location = New System.Drawing.Point(155, 263)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(132, 30)
         Me.Label11.TabIndex = 73
@@ -1697,7 +1702,7 @@ Partial Class FrmTreasury
         Me.Label10.AutoSize = True
         Me.Label10.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label10.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label10.Location = New System.Drawing.Point(155, 276)
+        Me.Label10.Location = New System.Drawing.Point(155, 233)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(132, 30)
         Me.Label10.TabIndex = 71
@@ -1710,7 +1715,7 @@ Partial Class FrmTreasury
         Me.TxtInCash.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtInCash.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.TxtInCash.ForeColor = System.Drawing.Color.Black
-        Me.TxtInCash.Location = New System.Drawing.Point(21, 279)
+        Me.TxtInCash.Location = New System.Drawing.Point(21, 236)
         Me.TxtInCash.MaskType = Telerik.WinControls.UI.MaskType.Numeric
         Me.TxtInCash.Name = "TxtInCash"
         Me.TxtInCash.ReadOnly = True
@@ -1725,6 +1730,36 @@ Partial Class FrmTreasury
         'FirstRunTimer
         '
         Me.FirstRunTimer.Interval = 200
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label20.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label20.Location = New System.Drawing.Point(144, 209)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(144, 30)
+        Me.Label20.TabIndex = 107
+        Me.Label20.Text = "رأس مال أصناف"
+        Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txtAllItemsPrice
+        '
+        Me.txtAllItemsPrice.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtAllItemsPrice.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtAllItemsPrice.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.txtAllItemsPrice.ForeColor = System.Drawing.Color.Black
+        Me.txtAllItemsPrice.Location = New System.Drawing.Point(20, 212)
+        Me.txtAllItemsPrice.MaskType = Telerik.WinControls.UI.MaskType.Numeric
+        Me.txtAllItemsPrice.Name = "txtAllItemsPrice"
+        Me.txtAllItemsPrice.ReadOnly = True
+        Me.txtAllItemsPrice.ShortcutsEnabled = False
+        Me.txtAllItemsPrice.Size = New System.Drawing.Size(118, 24)
+        Me.txtAllItemsPrice.TabIndex = 108
+        Me.txtAllItemsPrice.TabStop = False
+        Me.txtAllItemsPrice.Text = "0"
+        Me.txtAllItemsPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtAllItemsPrice.ThemeName = "Office2010Blue"
         '
         'FrmTreasury
         '
@@ -1777,8 +1812,8 @@ Partial Class FrmTreasury
         CType(Me.txtSalesProfitPercent, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtSalesProfitDollar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtSalesProfitLL, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtPOCount, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtSOCount, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtAllItemsPriceLL, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtAllItemsPriceUSD, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtSOPOLL, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtSalesDollar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtSalesLL, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1798,6 +1833,7 @@ Partial Class FrmTreasury
         CType(Me.TxtNoteReceive, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtNoteReceiveCheck, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtInCash, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtAllItemsPrice, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -1876,10 +1912,10 @@ Partial Class FrmTreasury
     Friend WithEvents txtSOPOLL As Telerik.WinControls.UI.RadMaskedEditBox
     Friend WithEvents txtSalesDollar As Telerik.WinControls.UI.RadMaskedEditBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents Label20 As Label
-    Friend WithEvents txtPOCount As Telerik.WinControls.UI.RadMaskedEditBox
-    Friend WithEvents txtSOCount As Telerik.WinControls.UI.RadMaskedEditBox
-    Friend WithEvents Label22 As Label
+    Friend WithEvents LblAllItemsPricesUSD As Label
+    Friend WithEvents txtAllItemsPriceLL As Telerik.WinControls.UI.RadMaskedEditBox
+    Friend WithEvents txtAllItemsPriceUSD As Telerik.WinControls.UI.RadMaskedEditBox
+    Friend WithEvents LblAllItemsPricesLL As Label
     Friend WithEvents Label21 As Label
     Friend WithEvents txtSalesProfitPercent As Telerik.WinControls.UI.RadMaskedEditBox
     Friend WithEvents txtGeneralProfitPercent As Telerik.WinControls.UI.RadMaskedEditBox
@@ -1901,5 +1937,7 @@ Partial Class FrmTreasury
     Friend WithEvents DateTimePickerTo As Telerik.WinControls.UI.RadDateTimePicker
     Friend WithEvents LblDropCurrency As Label
     Friend WithEvents DropCurrency As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents Label20 As Label
+    Friend WithEvents txtAllItemsPrice As Telerik.WinControls.UI.RadMaskedEditBox
 End Class
 

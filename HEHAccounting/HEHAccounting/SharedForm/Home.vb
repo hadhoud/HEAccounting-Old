@@ -171,6 +171,7 @@
             BoolOptionPanelSalesOrders = UserOptionPanelsSettingDt.Rows(0).Item("bSalesOrdersShow_fl")
             BoolOptionPanelPurchasesOrders = UserOptionPanelsSettingDt.Rows(0).Item("bPurchasesOrdersShow_fl")
             BoolOptionPanelCreditorsDebitors = UserOptionPanelsSettingDt.Rows(0).Item("bCreditorsDebitorsShow_fl")
+            BoolOptionPanelAllInventory = UserOptionPanelsSettingDt.Rows(0).Item("bAllInventoryShow_fl")
         End If
     End Sub
     Public Sub GetAppSettings()

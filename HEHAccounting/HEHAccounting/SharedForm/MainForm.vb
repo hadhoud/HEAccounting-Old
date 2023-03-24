@@ -18,6 +18,8 @@ Public Class MainForm
     Dim FrmItemsSalesWinReport As ItemsSalesWinReport
     Dim FrmDashboard As DashboardForm
     Dim FrmTreasuryForm As FrmTreasury
+    Dim FrmAllInventory As AllInventory
+
     Dim FrmToOpen As String
     Dim FrmOpenTimer As New Timer
     Sub New()
@@ -50,6 +52,7 @@ Public Class MainForm
             Me.stripLblLastDollarRate.Visibility = IIf(BoolShowCurrencyRateInStatus, ElementVisibility.Visible, ElementVisibility.Collapsed)
             Me.RibBtnItemsSalesWin.Visibility = IIf(BoolShowItemsSalesWinReportScreenByUser, ElementVisibility.Visible, ElementVisibility.Collapsed)
             Me.RibBtnPurchasePrices.Visibility = IIf(BoolShowPurchasingPriceInScreensByUser, ElementVisibility.Visible, ElementVisibility.Collapsed)
+            Me.RGSettingProgrammer.Visibility = ElementVisibility.Visible
         Else
             Me.RibBtnUsers.Visibility = IIf(BoolShowUsers, ElementVisibility.Visible, ElementVisibility.Collapsed)
             Me.RibBtnCurrencies.Visibility = IIf(BoolShowUsers, ElementVisibility.Visible, ElementVisibility.Collapsed)
@@ -60,7 +63,7 @@ Public Class MainForm
             Me.stripLblLastDollarRate.Visibility = IIf(BoolShowCurrencyRateInStatus, ElementVisibility.Visible, ElementVisibility.Collapsed)
             Me.RibBtnItemsSalesWin.Visibility = IIf(BoolShowItemsSalesWinReportScreenByUser, ElementVisibility.Visible, ElementVisibility.Collapsed)
             Me.RibBtnPurchasePrices.Visibility = IIf(BoolShowPurchasingPriceInScreensByUser, ElementVisibility.Visible, ElementVisibility.Collapsed)
-
+            Me.RGSettingProgrammer.Visibility = ElementVisibility.Collapsed
         End If
 
 
@@ -354,14 +357,14 @@ Public Class MainForm
         Me.RibBtnCurrencies.Text = LoStrId.LblCurrencies
         Me.RibBtnCurrRate.Text = LoStrId.LblCurrenciesRate
 
-        Me.RGToolsSetting.Text = LoStrId.LblSetting
+        Me.RGToolsCurrency.Text = LoStrId.LblSetting
         Me.RibBtnUserInfo.Text = LoStrId.LblInfo
         Me.RibBtnUserSettings.Text = LoStrId.LblSetting
         Me.RibBtnDatabase.Text = LoStrId.LblDatabase
         Me.RibBtnAbout.Text = LoStrId.LblAbout
         Me.RibBtnExit.Text = LoStrId.LblLatinExit
 
-        Me.RGToolsUsers.Text = LoStrId.LblUsers
+        Me.RGSettingUsers.Text = LoStrId.LblUsers
         Me.RibBtnChangePass.Text = LoStrId.LblChangePassword
         Me.RibBtnUsers.Text = LoStrId.LblUsers
 
@@ -540,6 +543,17 @@ Public Class MainForm
             End If
             ActWindow(FrmAddNewSalesInvoices)
 
+        ElseIf FrmToOpen = "AddNewSaleInvoiceNew" Then
+
+            Dim FrmAddNewSalesInvoicesNew As New AddNewSaleInvoice With {
+                    .Width = WindowDock.Width,
+                    .Height = WindowDock.Height,
+                    .FormBorderStyle = Windows.Forms.FormBorderStyle.None,
+                    .MdiParent = Me
+                }
+            FrmAddNewSalesInvoicesNew.Show()
+            ActWindow(FrmAddNewSalesInvoicesNew)
+
         ElseIf FrmToOpen = "Credits" Then
             If FrmDebitsCredits Is Nothing Then
                 FrmDebitsCredits = New DebitsCredits With {
@@ -597,6 +611,18 @@ Public Class MainForm
                 'ActWindow(FrmDashboard)
             End If
             ActWindow(FrmDashboard)
+
+        ElseIf FrmToOpen = "FrmAllInventory" Then
+            If FrmAllInventory Is Nothing Then
+                FrmAllInventory = New AllInventory With {
+                    .Width = WindowDock.Width,
+                    .Height = WindowDock.Height,
+                    .MdiParent = Me
+                }
+                FrmAllInventory.PnlOptions.Visible = BoolOptionPanelAllInventory
+                FrmAllInventory.Show()
+            End If
+            ActWindow(FrmAllInventory)
 
         End If
 
@@ -734,6 +760,9 @@ Public Class MainForm
                 Case "PurchasesOrders"
                     FrmPurchasesOrders.BtnNew.PerformClick()
                     Exit Select
+                Case "FrmAllInventory"
+                    FrmAllInventory.BtnNew.PerformClick()
+                    Exit Select
             End Select
         End If
     End Sub
@@ -781,6 +810,9 @@ Public Class MainForm
                 Case "FrmTreasury"
                     FrmTreasuryForm.PnlOptions.Visible = Vis
                     Exit Select
+                Case "FrmAllInventory"
+                    FrmAllInventory.PnlOptions.Visible = Vis
+                    Exit Select
             End Select
         End If
     End Sub
@@ -825,6 +857,9 @@ Public Class MainForm
                 Exit Select
             Case "FrmDashboard"
                 FrmDashboard = Nothing
+                Exit Select
+            Case "FrmAllInventory"
+                FrmAllInventory = Nothing
                 Exit Select
         End Select
     End Sub
@@ -941,6 +976,13 @@ Public Class MainForm
                         'Me.BtnCommandBarShowHideForm.IsChecked = FrmDashboard.PnlOptions.Visible
                     End If
                     Exit Select
+                Case "FrmAllInventory"
+                    If FrmAllInventory IsNot Nothing Then
+                        Me.BtnCommandBarEdit.Enabled = True
+                        Me.BtnCommandBarMostanadNew.Enabled = True
+                        Me.BtnCommandBarShowHideForm.CheckState = IIf(FrmAllInventory.PnlOptions.Visible, CheckState.Checked, CheckState.Unchecked)
+                    End If
+                    Exit Select
             End Select
         End If
     End Sub
@@ -973,6 +1015,9 @@ Public Class MainForm
                 Case "Daily"
                     FrmDaily.BtnOpen.PerformClick()
                     Exit Select
+                Case "FrmAllInventory"
+                    FrmAllInventory.BtnEdit.PerformClick()
+                    Exit Select
             End Select
         End If
     End Sub
@@ -1002,7 +1047,7 @@ Public Class MainForm
     Private Sub RibBtnAddSalesInvoices_Click(sender As Object, e As EventArgs) Handles RibBtnAddSalesInvoices.Click
         Me.Cursor = Cursors.WaitCursor
         If BoolShowSOAsWindow Then
-            FrmToOpen = "AddNewSaleInvoice"
+            FrmToOpen = "AddNewSaleInvoiceNew"
             FrmOpenTimer.Start()
         Else
             Dim FrmAddNewSalesInvoice As New AddNewSaleInvoice
@@ -1198,6 +1243,15 @@ Public Class MainForm
     Private Sub RibButtonDashboard_Click(sender As Object, e As EventArgs) Handles RibButtonDashboard.Click
         FrmToOpen = "FrmDashboard"
         FrmOpenTimer.Start()
+    End Sub
+
+    Private Sub RibBtnAllInventory_Click(sender As Object, e As EventArgs) Handles RibBtnAllInventory.Click
+        FrmToOpen = "FrmAllInventory"
+        FrmOpenTimer.Start()
+    End Sub
+
+    Private Sub stripLblLastDollarRate_Click(sender As Object, e As EventArgs) Handles stripLblLastDollarRate.Click
+        stripLblDollarRateValue.Visibility = IIf(stripLblDollarRateValue.IsElementVisible, ElementVisibility.Collapsed, ElementVisibility.Visible)
     End Sub
 
     'Private Sub RibBtnDashboard_Click(sender As Object, e As EventArgs)

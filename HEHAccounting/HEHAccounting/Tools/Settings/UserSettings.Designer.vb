@@ -56,6 +56,19 @@ Partial Class UserSettings
         Me.ChkForcingEnterCustomerLatin = New Telerik.WinControls.UI.RadCheckBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.PageInvoices = New Telerik.WinControls.UI.RadPageViewPage()
+        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
+        Me.FlowLayoutPanel6 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.ChkShowItemsInSOMainForm = New Telerik.WinControls.UI.RadCheckBox()
+        Me.ChkShowSOInWindow = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkSOShowPrintQuestionAfterSave = New Telerik.WinControls.UI.RadCheckBox()
+        Me.FlowLayoutPanel5 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.TxtSODefaultCustomer = New Telerik.WinControls.UI.RadButtonTextBox()
+        Me.TxtCustomerBtn = New Telerik.WinControls.UI.RadButtonElement()
+        Me.FlowLayoutPanel7 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.DropSOStatus = New Telerik.WinControls.UI.RadDropDownList()
         Me.FlowLayoutPanel8 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.ChkShowItemsInPOMainForm = New Telerik.WinControls.UI.RadCheckBox()
@@ -74,18 +87,21 @@ Partial Class UserSettings
         Me.FlowLayoutPanel13 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.DropNPStatus = New Telerik.WinControls.UI.RadDropDownList()
-        Me.FlowLayoutPanel6 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.ChkShowItemsInSOMainForm = New Telerik.WinControls.UI.RadCheckBox()
-        Me.ChkShowSOInWindow = New Telerik.WinControls.UI.RadCheckBox()
-        Me.chkSOShowPrintQuestionAfterSave = New Telerik.WinControls.UI.RadCheckBox()
-        Me.FlowLayoutPanel5 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.TxtSODefaultCustomer = New Telerik.WinControls.UI.RadButtonTextBox()
-        Me.TxtCustomerBtn = New Telerik.WinControls.UI.RadButtonElement()
-        Me.FlowLayoutPanel7 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.DropSOStatus = New Telerik.WinControls.UI.RadDropDownList()
+        Me.PageOptionsPanel = New Telerik.WinControls.UI.RadPageViewPage()
+        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel9 = New System.Windows.Forms.TableLayoutPanel()
+        Me.chkOptionSalesProfits = New Telerik.WinControls.UI.RadCheckBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.chkOptionTreasury = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkOptionDaily = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkOptionAnalysis = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkOptionItems = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkOptionCustomers = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkOptionVendors = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkOptionSalesOrders = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkOptionItemsSalesProfits = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkOptionPurchasesOrders = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkOptionCreditorsDebitors = New Telerik.WinControls.UI.RadCheckBox()
         Me.PageShortcuts = New Telerik.WinControls.UI.RadPageViewPage()
         Me.GridShortcuts = New Telerik.WinControls.UI.RadGridView()
         Me.PageReports = New Telerik.WinControls.UI.RadPageViewPage()
@@ -96,6 +112,7 @@ Partial Class UserSettings
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.DropCurrenyReport = New Telerik.WinControls.UI.RadDropDownList()
         Me.PageProgrammer = New Telerik.WinControls.UI.RadPageViewPage()
+        Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.FlowLayoutPanel16 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.ChkShowLang = New Telerik.WinControls.UI.RadCheckBox()
@@ -123,23 +140,7 @@ Partial Class UserSettings
         Me.ChkSalesOrdersColCustomerTitle = New Telerik.WinControls.UI.RadCheckBox()
         Me.ChkSalesOrdersColCurrencySymb = New Telerik.WinControls.UI.RadCheckBox()
         Me.Office2010BlueTheme1 = New Telerik.WinControls.Themes.Office2010BlueTheme()
-        Me.PageOptionsPanel = New Telerik.WinControls.UI.RadPageViewPage()
-        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
-        Me.chkOptionTreasury = New Telerik.WinControls.UI.RadCheckBox()
-        Me.TableLayoutPanel9 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.chkOptionDaily = New Telerik.WinControls.UI.RadCheckBox()
-        Me.chkOptionAnalysis = New Telerik.WinControls.UI.RadCheckBox()
-        Me.chkOptionSalesProfits = New Telerik.WinControls.UI.RadCheckBox()
-        Me.chkOptionItems = New Telerik.WinControls.UI.RadCheckBox()
-        Me.chkOptionCustomers = New Telerik.WinControls.UI.RadCheckBox()
-        Me.chkOptionVendors = New Telerik.WinControls.UI.RadCheckBox()
-        Me.chkOptionSalesOrders = New Telerik.WinControls.UI.RadCheckBox()
-        Me.chkOptionPurchasesOrders = New Telerik.WinControls.UI.RadCheckBox()
-        Me.chkOptionItemsSalesProfits = New Telerik.WinControls.UI.RadCheckBox()
-        Me.chkOptionCreditorsDebitors = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkOptionAllInventory = New Telerik.WinControls.UI.RadCheckBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.BtnClose, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -164,6 +165,15 @@ Partial Class UserSettings
         CType(Me.ChkForcingEnterVendorLatin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChkForcingEnterCustomerLatin, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PageInvoices.SuspendLayout()
+        Me.TableLayoutPanel4.SuspendLayout()
+        Me.FlowLayoutPanel6.SuspendLayout()
+        CType(Me.ChkShowItemsInSOMainForm, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ChkShowSOInWindow, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkSOShowPrintQuestionAfterSave, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FlowLayoutPanel5.SuspendLayout()
+        CType(Me.TxtSODefaultCustomer, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FlowLayoutPanel7.SuspendLayout()
+        CType(Me.DropSOStatus, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FlowLayoutPanel8.SuspendLayout()
         CType(Me.ChkShowItemsInPOMainForm, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChkUpdateItemPurchasingPriceAfterPO, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -176,14 +186,20 @@ Partial Class UserSettings
         Me.FlowLayoutPanel12.SuspendLayout()
         Me.FlowLayoutPanel13.SuspendLayout()
         CType(Me.DropNPStatus, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.FlowLayoutPanel6.SuspendLayout()
-        CType(Me.ChkShowItemsInSOMainForm, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ChkShowSOInWindow, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chkSOShowPrintQuestionAfterSave, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.FlowLayoutPanel5.SuspendLayout()
-        CType(Me.TxtSODefaultCustomer, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.FlowLayoutPanel7.SuspendLayout()
-        CType(Me.DropSOStatus, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PageOptionsPanel.SuspendLayout()
+        Me.TableLayoutPanel6.SuspendLayout()
+        Me.TableLayoutPanel9.SuspendLayout()
+        CType(Me.chkOptionSalesProfits, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkOptionTreasury, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkOptionDaily, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkOptionAnalysis, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkOptionItems, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkOptionCustomers, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkOptionVendors, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkOptionSalesOrders, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkOptionItemsSalesProfits, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkOptionPurchasesOrders, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkOptionCreditorsDebitors, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PageShortcuts.SuspendLayout()
         CType(Me.GridShortcuts, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridShortcuts.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -192,6 +208,7 @@ Partial Class UserSettings
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DropCurrenyReport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PageProgrammer.SuspendLayout()
+        Me.TableLayoutPanel5.SuspendLayout()
         Me.FlowLayoutPanel16.SuspendLayout()
         CType(Me.ChkShowLang, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChkShowUsers, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -213,22 +230,7 @@ Partial Class UserSettings
         Me.FlowLayoutPanel3.SuspendLayout()
         CType(Me.ChkSalesOrdersColCustomerTitle, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChkSalesOrdersColCurrencySymb, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PageOptionsPanel.SuspendLayout()
-        Me.TableLayoutPanel4.SuspendLayout()
-        Me.TableLayoutPanel5.SuspendLayout()
-        Me.TableLayoutPanel6.SuspendLayout()
-        CType(Me.chkOptionTreasury, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TableLayoutPanel9.SuspendLayout()
-        CType(Me.chkOptionDaily, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chkOptionAnalysis, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chkOptionSalesProfits, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chkOptionItems, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chkOptionCustomers, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chkOptionVendors, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chkOptionSalesOrders, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chkOptionPurchasesOrders, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chkOptionItemsSalesProfits, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chkOptionCreditorsDebitors, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkOptionAllInventory, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -255,7 +257,7 @@ Partial Class UserSettings
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.01504!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.98496!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 203.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 204.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.BtnClose, 2, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.BtnSave, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.TxtItemPicture, 0, 0)
@@ -272,7 +274,7 @@ Partial Class UserSettings
         Me.BtnClose.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.Image = Global.HEHAccounting.My.Resources.Resources.Close
         Me.BtnClose.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.BtnClose.Location = New System.Drawing.Point(215, 3)
+        Me.BtnClose.Location = New System.Drawing.Point(216, 3)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(104, 36)
         Me.BtnClose.TabIndex = 1
@@ -381,7 +383,7 @@ Partial Class UserSettings
         Me.PageGeneral.Controls.Add(Me.TableLayoutPanel3)
         Me.PageGeneral.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.PageGeneral.ItemSize = New System.Drawing.SizeF(132.0!, 45.0!)
-        Me.PageGeneral.Location = New System.Drawing.Point(161, 5)
+        Me.PageGeneral.Location = New System.Drawing.Point(5, 5)
         Me.PageGeneral.Name = "PageGeneral"
         Me.PageGeneral.Size = New System.Drawing.Size(569, 359)
         Me.PageGeneral.Text = "عام"
@@ -735,6 +737,161 @@ Partial Class UserSettings
         Me.PageInvoices.Text = "الفواتير"
         Me.PageInvoices.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'TableLayoutPanel4
+        '
+        Me.TableLayoutPanel4.ColumnCount = 2
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel4.Controls.Add(Me.FlowLayoutPanel6, 0, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.FlowLayoutPanel8, 1, 0)
+        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
+        Me.TableLayoutPanel4.RowCount = 1
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(569, 359)
+        Me.TableLayoutPanel4.TabIndex = 48
+        '
+        'FlowLayoutPanel6
+        '
+        Me.FlowLayoutPanel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.FlowLayoutPanel6.Controls.Add(Me.Label11)
+        Me.FlowLayoutPanel6.Controls.Add(Me.ChkShowItemsInSOMainForm)
+        Me.FlowLayoutPanel6.Controls.Add(Me.ChkShowSOInWindow)
+        Me.FlowLayoutPanel6.Controls.Add(Me.chkSOShowPrintQuestionAfterSave)
+        Me.FlowLayoutPanel6.Controls.Add(Me.FlowLayoutPanel5)
+        Me.FlowLayoutPanel6.Controls.Add(Me.FlowLayoutPanel7)
+        Me.FlowLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FlowLayoutPanel6.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.FlowLayoutPanel6.Location = New System.Drawing.Point(288, 3)
+        Me.FlowLayoutPanel6.Name = "FlowLayoutPanel6"
+        Me.FlowLayoutPanel6.Size = New System.Drawing.Size(278, 353)
+        Me.FlowLayoutPanel6.TabIndex = 5
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Label11.Location = New System.Drawing.Point(0, 0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(273, 19)
+        Me.Label11.TabIndex = 45
+        Me.Label11.Text = "فواتير المبيعات"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'ChkShowItemsInSOMainForm
+        '
+        Me.ChkShowItemsInSOMainForm.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkShowItemsInSOMainForm.Location = New System.Drawing.Point(69, 22)
+        Me.ChkShowItemsInSOMainForm.Name = "ChkShowItemsInSOMainForm"
+        Me.ChkShowItemsInSOMainForm.Size = New System.Drawing.Size(204, 22)
+        Me.ChkShowItemsInSOMainForm.TabIndex = 0
+        Me.ChkShowItemsInSOMainForm.Text = "إظهار الأصناف في فواتير المبيعات"
+        Me.ChkShowItemsInSOMainForm.ThemeName = "Office2010Blue"
+        '
+        'ChkShowSOInWindow
+        '
+        Me.ChkShowSOInWindow.AutoSize = False
+        Me.ChkShowSOInWindow.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkShowSOInWindow.Location = New System.Drawing.Point(0, 50)
+        Me.ChkShowSOInWindow.Name = "ChkShowSOInWindow"
+        Me.ChkShowSOInWindow.Size = New System.Drawing.Size(273, 22)
+        Me.ChkShowSOInWindow.TabIndex = 7
+        Me.ChkShowSOInWindow.Text = "عرض إضافة فاتورة مبيع ضمن المستندات "
+        Me.ChkShowSOInWindow.ThemeName = "Office2010Blue"
+        '
+        'chkSOShowPrintQuestionAfterSave
+        '
+        Me.chkSOShowPrintQuestionAfterSave.AutoSize = False
+        Me.chkSOShowPrintQuestionAfterSave.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkSOShowPrintQuestionAfterSave.Location = New System.Drawing.Point(0, 78)
+        Me.chkSOShowPrintQuestionAfterSave.Name = "chkSOShowPrintQuestionAfterSave"
+        Me.chkSOShowPrintQuestionAfterSave.Size = New System.Drawing.Size(273, 22)
+        Me.chkSOShowPrintQuestionAfterSave.TabIndex = 8
+        Me.chkSOShowPrintQuestionAfterSave.Text = "إظهار سؤال الطباعة بعد الحفظ"
+        Me.chkSOShowPrintQuestionAfterSave.ThemeName = "Office2010Blue"
+        '
+        'FlowLayoutPanel5
+        '
+        Me.FlowLayoutPanel5.Controls.Add(Me.Label21)
+        Me.FlowLayoutPanel5.Controls.Add(Me.TxtSODefaultCustomer)
+        Me.FlowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FlowLayoutPanel5.Location = New System.Drawing.Point(0, 106)
+        Me.FlowLayoutPanel5.Name = "FlowLayoutPanel5"
+        Me.FlowLayoutPanel5.Size = New System.Drawing.Size(273, 32)
+        Me.FlowLayoutPanel5.TabIndex = 6
+        '
+        'Label21
+        '
+        Me.Label21.ImageAlign = System.Drawing.ContentAlignment.TopRight
+        Me.Label21.Location = New System.Drawing.Point(201, 0)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(69, 27)
+        Me.Label21.TabIndex = 53
+        Me.Label21.Text = "الزبون"
+        Me.Label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'TxtSODefaultCustomer
+        '
+        Me.TxtSODefaultCustomer.AcceptsTab = True
+        Me.TxtSODefaultCustomer.AutoSize = False
+        Me.TxtSODefaultCustomer.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtSODefaultCustomer.HideSelection = False
+        Me.TxtSODefaultCustomer.LeftButtonItems.AddRange(New Telerik.WinControls.RadItem() {Me.TxtCustomerBtn})
+        Me.TxtSODefaultCustomer.Location = New System.Drawing.Point(27, 3)
+        Me.TxtSODefaultCustomer.MaxLength = 65535
+        Me.TxtSODefaultCustomer.Name = "TxtSODefaultCustomer"
+        Me.TxtSODefaultCustomer.ShowClearButton = True
+        Me.TxtSODefaultCustomer.Size = New System.Drawing.Size(168, 24)
+        Me.TxtSODefaultCustomer.TabIndex = 54
+        Me.TxtSODefaultCustomer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtSODefaultCustomer.ThemeName = "Office2010Blue"
+        Me.TxtSODefaultCustomer.WordWrap = False
+        '
+        'TxtCustomerBtn
+        '
+        Me.TxtCustomerBtn.DisplayStyle = Telerik.WinControls.DisplayStyle.Image
+        Me.TxtCustomerBtn.Image = Global.HEHAccounting.My.Resources.Resources.find
+        Me.TxtCustomerBtn.Margin = New System.Windows.Forms.Padding(2, 0, 0, 0)
+        Me.TxtCustomerBtn.Name = "TxtCustomerBtn"
+        Me.TxtCustomerBtn.SmallImage = Global.HEHAccounting.My.Resources.Resources.find
+        Me.TxtCustomerBtn.Text = ""
+        Me.TxtCustomerBtn.UseCompatibleTextRendering = False
+        '
+        'FlowLayoutPanel7
+        '
+        Me.FlowLayoutPanel7.Controls.Add(Me.Label9)
+        Me.FlowLayoutPanel7.Controls.Add(Me.DropSOStatus)
+        Me.FlowLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FlowLayoutPanel7.Location = New System.Drawing.Point(0, 144)
+        Me.FlowLayoutPanel7.Name = "FlowLayoutPanel7"
+        Me.FlowLayoutPanel7.Size = New System.Drawing.Size(273, 33)
+        Me.FlowLayoutPanel7.TabIndex = 42
+        '
+        'Label9
+        '
+        Me.Label9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label9.Location = New System.Drawing.Point(201, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(69, 24)
+        Me.Label9.TabIndex = 25
+        Me.Label9.Text = "الحالة"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'DropSOStatus
+        '
+        Me.DropSOStatus.BackColor = System.Drawing.Color.White
+        Me.DropSOStatus.DropDownAnimationEnabled = True
+        Me.DropSOStatus.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DropSOStatus.Location = New System.Drawing.Point(27, 3)
+        Me.DropSOStatus.MaxLength = 65535
+        Me.DropSOStatus.Name = "DropSOStatus"
+        Me.DropSOStatus.Size = New System.Drawing.Size(168, 24)
+        Me.DropSOStatus.TabIndex = 41
+        Me.DropSOStatus.Tag = ""
+        Me.DropSOStatus.ThemeName = "Office2010Blue"
+        '
         'FlowLayoutPanel8
         '
         Me.FlowLayoutPanel8.AutoSize = True
@@ -932,145 +1089,190 @@ Partial Class UserSettings
         Me.DropNPStatus.Tag = ""
         Me.DropNPStatus.ThemeName = "Office2010Blue"
         '
-        'FlowLayoutPanel6
+        'PageOptionsPanel
         '
-        Me.FlowLayoutPanel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.FlowLayoutPanel6.Controls.Add(Me.Label11)
-        Me.FlowLayoutPanel6.Controls.Add(Me.ChkShowItemsInSOMainForm)
-        Me.FlowLayoutPanel6.Controls.Add(Me.ChkShowSOInWindow)
-        Me.FlowLayoutPanel6.Controls.Add(Me.chkSOShowPrintQuestionAfterSave)
-        Me.FlowLayoutPanel6.Controls.Add(Me.FlowLayoutPanel5)
-        Me.FlowLayoutPanel6.Controls.Add(Me.FlowLayoutPanel7)
-        Me.FlowLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel6.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.FlowLayoutPanel6.Location = New System.Drawing.Point(288, 3)
-        Me.FlowLayoutPanel6.Name = "FlowLayoutPanel6"
-        Me.FlowLayoutPanel6.Size = New System.Drawing.Size(278, 353)
-        Me.FlowLayoutPanel6.TabIndex = 5
+        Me.PageOptionsPanel.Controls.Add(Me.TableLayoutPanel6)
+        Me.PageOptionsPanel.ItemSize = New System.Drawing.SizeF(132.0!, 45.0!)
+        Me.PageOptionsPanel.Location = New System.Drawing.Point(5, 5)
+        Me.PageOptionsPanel.Name = "PageOptionsPanel"
+        Me.PageOptionsPanel.Size = New System.Drawing.Size(569, 359)
+        Me.PageOptionsPanel.Text = "خانة الخيارات والبحث"
         '
-        'Label11
+        'TableLayoutPanel6
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label11.Location = New System.Drawing.Point(0, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(273, 19)
-        Me.Label11.TabIndex = 45
-        Me.Label11.Text = "فواتير المبيعات"
-        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.TableLayoutPanel6.ColumnCount = 2
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel6.Controls.Add(Me.TableLayoutPanel9, 0, 0)
+        Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel6.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
+        Me.TableLayoutPanel6.RowCount = 1
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 359.0!))
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(569, 359)
+        Me.TableLayoutPanel6.TabIndex = 0
         '
-        'ChkShowItemsInSOMainForm
+        'TableLayoutPanel9
         '
-        Me.ChkShowItemsInSOMainForm.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkShowItemsInSOMainForm.Location = New System.Drawing.Point(69, 22)
-        Me.ChkShowItemsInSOMainForm.Name = "ChkShowItemsInSOMainForm"
-        Me.ChkShowItemsInSOMainForm.Size = New System.Drawing.Size(204, 22)
-        Me.ChkShowItemsInSOMainForm.TabIndex = 0
-        Me.ChkShowItemsInSOMainForm.Text = "إظهار الأصناف في فواتير المبيعات"
-        Me.ChkShowItemsInSOMainForm.ThemeName = "Office2010Blue"
+        Me.TableLayoutPanel9.ColumnCount = 2
+        Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel9.Controls.Add(Me.chkOptionSalesProfits, 0, 4)
+        Me.TableLayoutPanel9.Controls.Add(Me.Label23, 0, 0)
+        Me.TableLayoutPanel9.Controls.Add(Me.chkOptionTreasury, 0, 1)
+        Me.TableLayoutPanel9.Controls.Add(Me.chkOptionDaily, 0, 2)
+        Me.TableLayoutPanel9.Controls.Add(Me.chkOptionAnalysis, 0, 3)
+        Me.TableLayoutPanel9.Controls.Add(Me.chkOptionItems, 0, 6)
+        Me.TableLayoutPanel9.Controls.Add(Me.chkOptionCustomers, 0, 7)
+        Me.TableLayoutPanel9.Controls.Add(Me.chkOptionVendors, 0, 8)
+        Me.TableLayoutPanel9.Controls.Add(Me.chkOptionSalesOrders, 0, 9)
+        Me.TableLayoutPanel9.Controls.Add(Me.chkOptionItemsSalesProfits, 0, 5)
+        Me.TableLayoutPanel9.Controls.Add(Me.chkOptionPurchasesOrders, 0, 10)
+        Me.TableLayoutPanel9.Controls.Add(Me.chkOptionCreditorsDebitors, 0, 11)
+        Me.TableLayoutPanel9.Controls.Add(Me.chkOptionAllInventory, 1, 1)
+        Me.TableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel9.Location = New System.Drawing.Point(288, 3)
+        Me.TableLayoutPanel9.Name = "TableLayoutPanel9"
+        Me.TableLayoutPanel9.RowCount = 13
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel9.Size = New System.Drawing.Size(278, 353)
+        Me.TableLayoutPanel9.TabIndex = 4
         '
-        'ChkShowSOInWindow
+        'chkOptionSalesProfits
         '
-        Me.ChkShowSOInWindow.AutoSize = False
-        Me.ChkShowSOInWindow.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkShowSOInWindow.Location = New System.Drawing.Point(0, 50)
-        Me.ChkShowSOInWindow.Name = "ChkShowSOInWindow"
-        Me.ChkShowSOInWindow.Size = New System.Drawing.Size(273, 22)
-        Me.ChkShowSOInWindow.TabIndex = 7
-        Me.ChkShowSOInWindow.Text = "عرض إضافة فاتورة مبيع ضمن المستندات "
-        Me.ChkShowSOInWindow.ThemeName = "Office2010Blue"
+        Me.chkOptionSalesProfits.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkOptionSalesProfits.Location = New System.Drawing.Point(177, 106)
+        Me.chkOptionSalesProfits.Name = "chkOptionSalesProfits"
+        Me.chkOptionSalesProfits.Size = New System.Drawing.Size(98, 22)
+        Me.chkOptionSalesProfits.TabIndex = 6
+        Me.chkOptionSalesProfits.Text = "أرباح المبيعات"
+        Me.chkOptionSalesProfits.ThemeName = "Office2010Blue"
         '
-        'chkSOShowPrintQuestionAfterSave
+        'Label23
         '
-        Me.chkSOShowPrintQuestionAfterSave.AutoSize = False
-        Me.chkSOShowPrintQuestionAfterSave.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkSOShowPrintQuestionAfterSave.Location = New System.Drawing.Point(0, 78)
-        Me.chkSOShowPrintQuestionAfterSave.Name = "chkSOShowPrintQuestionAfterSave"
-        Me.chkSOShowPrintQuestionAfterSave.Size = New System.Drawing.Size(273, 22)
-        Me.chkSOShowPrintQuestionAfterSave.TabIndex = 8
-        Me.chkSOShowPrintQuestionAfterSave.Text = "إظهار سؤال الطباعة بعد الحفظ"
-        Me.chkSOShowPrintQuestionAfterSave.ThemeName = "Office2010Blue"
+        Me.Label23.AutoSize = True
+        Me.TableLayoutPanel9.SetColumnSpan(Me.Label23, 2)
+        Me.Label23.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label23.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Label23.Location = New System.Drawing.Point(3, 0)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(272, 19)
+        Me.Label23.TabIndex = 0
+        Me.Label23.Text = "إظهار خانة الخيارات بشكل تلقائي"
+        Me.Label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'FlowLayoutPanel5
+        'chkOptionTreasury
         '
-        Me.FlowLayoutPanel5.Controls.Add(Me.Label21)
-        Me.FlowLayoutPanel5.Controls.Add(Me.TxtSODefaultCustomer)
-        Me.FlowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel5.Location = New System.Drawing.Point(0, 106)
-        Me.FlowLayoutPanel5.Name = "FlowLayoutPanel5"
-        Me.FlowLayoutPanel5.Size = New System.Drawing.Size(273, 32)
-        Me.FlowLayoutPanel5.TabIndex = 6
+        Me.chkOptionTreasury.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkOptionTreasury.Location = New System.Drawing.Point(163, 22)
+        Me.chkOptionTreasury.Name = "chkOptionTreasury"
+        Me.chkOptionTreasury.Size = New System.Drawing.Size(112, 22)
+        Me.chkOptionTreasury.TabIndex = 3
+        Me.chkOptionTreasury.Text = "الصفحة الرئيسية"
+        Me.chkOptionTreasury.ThemeName = "Office2010Blue"
         '
-        'Label21
+        'chkOptionDaily
         '
-        Me.Label21.ImageAlign = System.Drawing.ContentAlignment.TopRight
-        Me.Label21.Location = New System.Drawing.Point(201, 0)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(69, 27)
-        Me.Label21.TabIndex = 53
-        Me.Label21.Text = "الزبون"
-        Me.Label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.chkOptionDaily.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkOptionDaily.Location = New System.Drawing.Point(171, 50)
+        Me.chkOptionDaily.Name = "chkOptionDaily"
+        Me.chkOptionDaily.Size = New System.Drawing.Size(104, 22)
+        Me.chkOptionDaily.TabIndex = 4
+        Me.chkOptionDaily.Text = "الصفحة اليومية"
+        Me.chkOptionDaily.ThemeName = "Office2010Blue"
         '
-        'TxtSODefaultCustomer
+        'chkOptionAnalysis
         '
-        Me.TxtSODefaultCustomer.AcceptsTab = True
-        Me.TxtSODefaultCustomer.AutoSize = False
-        Me.TxtSODefaultCustomer.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtSODefaultCustomer.HideSelection = False
-        Me.TxtSODefaultCustomer.LeftButtonItems.AddRange(New Telerik.WinControls.RadItem() {Me.TxtCustomerBtn})
-        Me.TxtSODefaultCustomer.Location = New System.Drawing.Point(27, 3)
-        Me.TxtSODefaultCustomer.MaxLength = 65535
-        Me.TxtSODefaultCustomer.Name = "TxtSODefaultCustomer"
-        Me.TxtSODefaultCustomer.ShowClearButton = True
-        Me.TxtSODefaultCustomer.Size = New System.Drawing.Size(168, 24)
-        Me.TxtSODefaultCustomer.TabIndex = 54
-        Me.TxtSODefaultCustomer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TxtSODefaultCustomer.ThemeName = "Office2010Blue"
-        Me.TxtSODefaultCustomer.WordWrap = False
+        Me.chkOptionAnalysis.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkOptionAnalysis.Location = New System.Drawing.Point(167, 78)
+        Me.chkOptionAnalysis.Name = "chkOptionAnalysis"
+        Me.chkOptionAnalysis.Size = New System.Drawing.Size(108, 22)
+        Me.chkOptionAnalysis.TabIndex = 5
+        Me.chkOptionAnalysis.Text = "صفحة التحليلات"
+        Me.chkOptionAnalysis.ThemeName = "Office2010Blue"
         '
-        'TxtCustomerBtn
+        'chkOptionItems
         '
-        Me.TxtCustomerBtn.DisplayStyle = Telerik.WinControls.DisplayStyle.Image
-        Me.TxtCustomerBtn.Image = Global.HEHAccounting.My.Resources.Resources.find
-        Me.TxtCustomerBtn.Margin = New System.Windows.Forms.Padding(2, 0, 0, 0)
-        Me.TxtCustomerBtn.Name = "TxtCustomerBtn"
-        Me.TxtCustomerBtn.SmallImage = Global.HEHAccounting.My.Resources.Resources.find
-        Me.TxtCustomerBtn.Text = ""
-        Me.TxtCustomerBtn.UseCompatibleTextRendering = False
+        Me.chkOptionItems.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkOptionItems.Location = New System.Drawing.Point(208, 162)
+        Me.chkOptionItems.Name = "chkOptionItems"
+        Me.chkOptionItems.Size = New System.Drawing.Size(67, 22)
+        Me.chkOptionItems.TabIndex = 7
+        Me.chkOptionItems.Text = "الأصناف"
+        Me.chkOptionItems.ThemeName = "Office2010Blue"
         '
-        'FlowLayoutPanel7
+        'chkOptionCustomers
         '
-        Me.FlowLayoutPanel7.Controls.Add(Me.Label9)
-        Me.FlowLayoutPanel7.Controls.Add(Me.DropSOStatus)
-        Me.FlowLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel7.Location = New System.Drawing.Point(0, 144)
-        Me.FlowLayoutPanel7.Name = "FlowLayoutPanel7"
-        Me.FlowLayoutPanel7.Size = New System.Drawing.Size(273, 33)
-        Me.FlowLayoutPanel7.TabIndex = 42
+        Me.chkOptionCustomers.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkOptionCustomers.Location = New System.Drawing.Point(217, 190)
+        Me.chkOptionCustomers.Name = "chkOptionCustomers"
+        Me.chkOptionCustomers.Size = New System.Drawing.Size(58, 22)
+        Me.chkOptionCustomers.TabIndex = 8
+        Me.chkOptionCustomers.Text = "الزبائن"
+        Me.chkOptionCustomers.ThemeName = "Office2010Blue"
         '
-        'Label9
+        'chkOptionVendors
         '
-        Me.Label9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Label9.Location = New System.Drawing.Point(201, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(69, 24)
-        Me.Label9.TabIndex = 25
-        Me.Label9.Text = "الحالة"
-        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.chkOptionVendors.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkOptionVendors.Location = New System.Drawing.Point(205, 218)
+        Me.chkOptionVendors.Name = "chkOptionVendors"
+        Me.chkOptionVendors.Size = New System.Drawing.Size(70, 22)
+        Me.chkOptionVendors.TabIndex = 9
+        Me.chkOptionVendors.Text = "الموردين"
+        Me.chkOptionVendors.ThemeName = "Office2010Blue"
         '
-        'DropSOStatus
+        'chkOptionSalesOrders
         '
-        Me.DropSOStatus.BackColor = System.Drawing.Color.White
-        Me.DropSOStatus.DropDownAnimationEnabled = True
-        Me.DropSOStatus.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DropSOStatus.Location = New System.Drawing.Point(27, 3)
-        Me.DropSOStatus.MaxLength = 65535
-        Me.DropSOStatus.Name = "DropSOStatus"
-        Me.DropSOStatus.Size = New System.Drawing.Size(168, 24)
-        Me.DropSOStatus.TabIndex = 41
-        Me.DropSOStatus.Tag = ""
-        Me.DropSOStatus.ThemeName = "Office2010Blue"
+        Me.chkOptionSalesOrders.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkOptionSalesOrders.Location = New System.Drawing.Point(173, 246)
+        Me.chkOptionSalesOrders.Name = "chkOptionSalesOrders"
+        Me.chkOptionSalesOrders.Size = New System.Drawing.Size(102, 22)
+        Me.chkOptionSalesOrders.TabIndex = 10
+        Me.chkOptionSalesOrders.Text = "فواتير المبيعات"
+        Me.chkOptionSalesOrders.ThemeName = "Office2010Blue"
+        '
+        'chkOptionItemsSalesProfits
+        '
+        Me.chkOptionItemsSalesProfits.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkOptionItemsSalesProfits.Location = New System.Drawing.Point(143, 134)
+        Me.chkOptionItemsSalesProfits.Name = "chkOptionItemsSalesProfits"
+        Me.chkOptionItemsSalesProfits.Size = New System.Drawing.Size(132, 22)
+        Me.chkOptionItemsSalesProfits.TabIndex = 12
+        Me.chkOptionItemsSalesProfits.Text = "أرباح مبيعات أصناف"
+        Me.chkOptionItemsSalesProfits.ThemeName = "Office2010Blue"
+        '
+        'chkOptionPurchasesOrders
+        '
+        Me.chkOptionPurchasesOrders.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkOptionPurchasesOrders.Location = New System.Drawing.Point(162, 274)
+        Me.chkOptionPurchasesOrders.Name = "chkOptionPurchasesOrders"
+        Me.chkOptionPurchasesOrders.Size = New System.Drawing.Size(113, 22)
+        Me.chkOptionPurchasesOrders.TabIndex = 11
+        Me.chkOptionPurchasesOrders.Text = "فواتير المشتريات"
+        Me.chkOptionPurchasesOrders.ThemeName = "Office2010Blue"
+        '
+        'chkOptionCreditorsDebitors
+        '
+        Me.chkOptionCreditorsDebitors.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkOptionCreditorsDebitors.Location = New System.Drawing.Point(168, 302)
+        Me.chkOptionCreditorsDebitors.Name = "chkOptionCreditorsDebitors"
+        Me.chkOptionCreditorsDebitors.Size = New System.Drawing.Size(107, 22)
+        Me.chkOptionCreditorsDebitors.TabIndex = 12
+        Me.chkOptionCreditorsDebitors.Text = "مدينون / دائنون"
+        Me.chkOptionCreditorsDebitors.ThemeName = "Office2010Blue"
         '
         'PageShortcuts
         '
@@ -1145,7 +1347,7 @@ Partial Class UserSettings
         Me.Label7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label7.Location = New System.Drawing.Point(456, 9)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(110, 30)
+        Me.Label7.Size = New System.Drawing.Size(110, 19)
         Me.Label7.TabIndex = 24
         Me.Label7.Text = "العملة"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1153,7 +1355,7 @@ Partial Class UserSettings
         'NumericUpDown1
         '
         Me.NumericUpDown1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.NumericUpDown1.Location = New System.Drawing.Point(292, 42)
+        Me.NumericUpDown1.Location = New System.Drawing.Point(292, 31)
         Me.NumericUpDown1.Maximum = New Decimal(New Integer() {60, 0, 0, 0})
         Me.NumericUpDown1.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDown1.Name = "NumericUpDown1"
@@ -1166,7 +1368,7 @@ Partial Class UserSettings
         '
         Me.Label8.AutoSize = True
         Me.Label8.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label8.Location = New System.Drawing.Point(456, 39)
+        Me.Label8.Location = New System.Drawing.Point(456, 28)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(110, 32)
         Me.Label8.TabIndex = 14
@@ -1190,7 +1392,7 @@ Partial Class UserSettings
         Me.DropCurrenyReport.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DropCurrenyReport.Location = New System.Drawing.Point(292, 12)
         Me.DropCurrenyReport.Name = "DropCurrenyReport"
-        Me.DropCurrenyReport.Size = New System.Drawing.Size(158, 24)
+        Me.DropCurrenyReport.Size = New System.Drawing.Size(158, 13)
         Me.DropCurrenyReport.TabIndex = 25
         Me.DropCurrenyReport.ThemeName = "Office2010Blue"
         '
@@ -1204,6 +1406,20 @@ Partial Class UserSettings
         Me.PageProgrammer.Size = New System.Drawing.Size(569, 359)
         Me.PageProgrammer.Text = "المبرمج"
         Me.PageProgrammer.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'TableLayoutPanel5
+        '
+        Me.TableLayoutPanel5.ColumnCount = 2
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel5.Controls.Add(Me.FlowLayoutPanel16, 0, 0)
+        Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel5.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
+        Me.TableLayoutPanel5.RowCount = 1
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(569, 359)
+        Me.TableLayoutPanel5.TabIndex = 7
         '
         'FlowLayoutPanel16
         '
@@ -1518,216 +1734,15 @@ Partial Class UserSettings
         Me.ChkSalesOrdersColCurrencySymb.Text = "رمز العملة"
         Me.ChkSalesOrdersColCurrencySymb.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'PageOptionsPanel
+        'chkOptionAllInventory
         '
-        Me.PageOptionsPanel.Controls.Add(Me.TableLayoutPanel6)
-        Me.PageOptionsPanel.ItemSize = New System.Drawing.SizeF(132.0!, 45.0!)
-        Me.PageOptionsPanel.Location = New System.Drawing.Point(5, 5)
-        Me.PageOptionsPanel.Name = "PageOptionsPanel"
-        Me.PageOptionsPanel.Size = New System.Drawing.Size(569, 359)
-        Me.PageOptionsPanel.Text = "خانة الخيارات والبحث"
-        '
-        'TableLayoutPanel4
-        '
-        Me.TableLayoutPanel4.ColumnCount = 2
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel4.Controls.Add(Me.FlowLayoutPanel6, 0, 0)
-        Me.TableLayoutPanel4.Controls.Add(Me.FlowLayoutPanel8, 1, 0)
-        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
-        Me.TableLayoutPanel4.RowCount = 1
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(569, 359)
-        Me.TableLayoutPanel4.TabIndex = 48
-        '
-        'TableLayoutPanel5
-        '
-        Me.TableLayoutPanel5.ColumnCount = 2
-        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel5.Controls.Add(Me.FlowLayoutPanel16, 0, 0)
-        Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel5.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
-        Me.TableLayoutPanel5.RowCount = 1
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(569, 359)
-        Me.TableLayoutPanel5.TabIndex = 7
-        '
-        'TableLayoutPanel6
-        '
-        Me.TableLayoutPanel6.ColumnCount = 2
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel6.Controls.Add(Me.TableLayoutPanel9, 0, 0)
-        Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel6.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
-        Me.TableLayoutPanel6.RowCount = 1
-        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(569, 359)
-        Me.TableLayoutPanel6.TabIndex = 0
-        '
-        'chkOptionTreasury
-        '
-        Me.chkOptionTreasury.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkOptionTreasury.Location = New System.Drawing.Point(163, 22)
-        Me.chkOptionTreasury.Name = "chkOptionTreasury"
-        Me.chkOptionTreasury.Size = New System.Drawing.Size(112, 22)
-        Me.chkOptionTreasury.TabIndex = 3
-        Me.chkOptionTreasury.Text = "الصفحة الرئيسية"
-        Me.chkOptionTreasury.ThemeName = "Office2010Blue"
-        '
-        'TableLayoutPanel9
-        '
-        Me.TableLayoutPanel9.ColumnCount = 1
-        Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel9.Controls.Add(Me.chkOptionSalesProfits, 0, 4)
-        Me.TableLayoutPanel9.Controls.Add(Me.Label23, 0, 0)
-        Me.TableLayoutPanel9.Controls.Add(Me.chkOptionTreasury, 0, 1)
-        Me.TableLayoutPanel9.Controls.Add(Me.chkOptionDaily, 0, 2)
-        Me.TableLayoutPanel9.Controls.Add(Me.chkOptionAnalysis, 0, 3)
-        Me.TableLayoutPanel9.Controls.Add(Me.chkOptionItems, 0, 6)
-        Me.TableLayoutPanel9.Controls.Add(Me.chkOptionCustomers, 0, 7)
-        Me.TableLayoutPanel9.Controls.Add(Me.chkOptionVendors, 0, 8)
-        Me.TableLayoutPanel9.Controls.Add(Me.chkOptionSalesOrders, 0, 9)
-        Me.TableLayoutPanel9.Controls.Add(Me.chkOptionItemsSalesProfits, 0, 5)
-        Me.TableLayoutPanel9.Controls.Add(Me.chkOptionPurchasesOrders, 0, 10)
-        Me.TableLayoutPanel9.Controls.Add(Me.chkOptionCreditorsDebitors, 0, 11)
-        Me.TableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel9.Location = New System.Drawing.Point(288, 3)
-        Me.TableLayoutPanel9.Name = "TableLayoutPanel9"
-        Me.TableLayoutPanel9.RowCount = 13
-        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel9.Size = New System.Drawing.Size(278, 353)
-        Me.TableLayoutPanel9.TabIndex = 4
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label23.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label23.Location = New System.Drawing.Point(3, 0)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(272, 19)
-        Me.Label23.TabIndex = 0
-        Me.Label23.Text = "إظهار خانة الخيارات بشكل تلقائي"
-        Me.Label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'chkOptionDaily
-        '
-        Me.chkOptionDaily.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkOptionDaily.Location = New System.Drawing.Point(171, 50)
-        Me.chkOptionDaily.Name = "chkOptionDaily"
-        Me.chkOptionDaily.Size = New System.Drawing.Size(104, 22)
-        Me.chkOptionDaily.TabIndex = 4
-        Me.chkOptionDaily.Text = "الصفحة اليومية"
-        Me.chkOptionDaily.ThemeName = "Office2010Blue"
-        '
-        'chkOptionAnalysis
-        '
-        Me.chkOptionAnalysis.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkOptionAnalysis.Location = New System.Drawing.Point(167, 78)
-        Me.chkOptionAnalysis.Name = "chkOptionAnalysis"
-        Me.chkOptionAnalysis.Size = New System.Drawing.Size(108, 22)
-        Me.chkOptionAnalysis.TabIndex = 5
-        Me.chkOptionAnalysis.Text = "صفحة التحليلات"
-        Me.chkOptionAnalysis.ThemeName = "Office2010Blue"
-        '
-        'chkOptionSalesProfits
-        '
-        Me.chkOptionSalesProfits.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkOptionSalesProfits.Location = New System.Drawing.Point(177, 106)
-        Me.chkOptionSalesProfits.Name = "chkOptionSalesProfits"
-        Me.chkOptionSalesProfits.Size = New System.Drawing.Size(98, 22)
-        Me.chkOptionSalesProfits.TabIndex = 6
-        Me.chkOptionSalesProfits.Text = "أرباح المبيعات"
-        Me.chkOptionSalesProfits.ThemeName = "Office2010Blue"
-        '
-        'chkOptionItems
-        '
-        Me.chkOptionItems.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkOptionItems.Location = New System.Drawing.Point(208, 162)
-        Me.chkOptionItems.Name = "chkOptionItems"
-        Me.chkOptionItems.Size = New System.Drawing.Size(67, 22)
-        Me.chkOptionItems.TabIndex = 7
-        Me.chkOptionItems.Text = "الأصناف"
-        Me.chkOptionItems.ThemeName = "Office2010Blue"
-        '
-        'chkOptionCustomers
-        '
-        Me.chkOptionCustomers.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkOptionCustomers.Location = New System.Drawing.Point(217, 190)
-        Me.chkOptionCustomers.Name = "chkOptionCustomers"
-        Me.chkOptionCustomers.Size = New System.Drawing.Size(58, 22)
-        Me.chkOptionCustomers.TabIndex = 8
-        Me.chkOptionCustomers.Text = "الزبائن"
-        Me.chkOptionCustomers.ThemeName = "Office2010Blue"
-        '
-        'chkOptionVendors
-        '
-        Me.chkOptionVendors.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkOptionVendors.Location = New System.Drawing.Point(205, 218)
-        Me.chkOptionVendors.Name = "chkOptionVendors"
-        Me.chkOptionVendors.Size = New System.Drawing.Size(70, 22)
-        Me.chkOptionVendors.TabIndex = 9
-        Me.chkOptionVendors.Text = "الموردين"
-        Me.chkOptionVendors.ThemeName = "Office2010Blue"
-        '
-        'chkOptionSalesOrders
-        '
-        Me.chkOptionSalesOrders.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkOptionSalesOrders.Location = New System.Drawing.Point(173, 246)
-        Me.chkOptionSalesOrders.Name = "chkOptionSalesOrders"
-        Me.chkOptionSalesOrders.Size = New System.Drawing.Size(102, 22)
-        Me.chkOptionSalesOrders.TabIndex = 10
-        Me.chkOptionSalesOrders.Text = "فواتير المبيعات"
-        Me.chkOptionSalesOrders.ThemeName = "Office2010Blue"
-        '
-        'chkOptionPurchasesOrders
-        '
-        Me.chkOptionPurchasesOrders.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkOptionPurchasesOrders.Location = New System.Drawing.Point(162, 274)
-        Me.chkOptionPurchasesOrders.Name = "chkOptionPurchasesOrders"
-        Me.chkOptionPurchasesOrders.Size = New System.Drawing.Size(113, 22)
-        Me.chkOptionPurchasesOrders.TabIndex = 11
-        Me.chkOptionPurchasesOrders.Text = "فواتير المشتريات"
-        Me.chkOptionPurchasesOrders.ThemeName = "Office2010Blue"
-        '
-        'chkOptionItemsSalesProfits
-        '
-        Me.chkOptionItemsSalesProfits.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkOptionItemsSalesProfits.Location = New System.Drawing.Point(143, 134)
-        Me.chkOptionItemsSalesProfits.Name = "chkOptionItemsSalesProfits"
-        Me.chkOptionItemsSalesProfits.Size = New System.Drawing.Size(132, 22)
-        Me.chkOptionItemsSalesProfits.TabIndex = 12
-        Me.chkOptionItemsSalesProfits.Text = "أرباح مبيعات أصناف"
-        Me.chkOptionItemsSalesProfits.ThemeName = "Office2010Blue"
-        '
-        'chkOptionCreditorsDebitors
-        '
-        Me.chkOptionCreditorsDebitors.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkOptionCreditorsDebitors.Location = New System.Drawing.Point(168, 302)
-        Me.chkOptionCreditorsDebitors.Name = "chkOptionCreditorsDebitors"
-        Me.chkOptionCreditorsDebitors.Size = New System.Drawing.Size(107, 22)
-        Me.chkOptionCreditorsDebitors.TabIndex = 12
-        Me.chkOptionCreditorsDebitors.Text = "مدينون / دائنون"
-        Me.chkOptionCreditorsDebitors.ThemeName = "Office2010Blue"
+        Me.chkOptionAllInventory.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkOptionAllInventory.Location = New System.Drawing.Point(71, 22)
+        Me.chkOptionAllInventory.Name = "chkOptionAllInventory"
+        Me.chkOptionAllInventory.Size = New System.Drawing.Size(65, 22)
+        Me.chkOptionAllInventory.TabIndex = 13
+        Me.chkOptionAllInventory.Text = "الجردات"
+        Me.chkOptionAllInventory.ThemeName = "Office2010Blue"
         '
         'UserSettings
         '
@@ -1777,6 +1792,18 @@ Partial Class UserSettings
         CType(Me.ChkForcingEnterVendorLatin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ChkForcingEnterCustomerLatin, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PageInvoices.ResumeLayout(False)
+        Me.TableLayoutPanel4.ResumeLayout(False)
+        Me.TableLayoutPanel4.PerformLayout()
+        Me.FlowLayoutPanel6.ResumeLayout(False)
+        Me.FlowLayoutPanel6.PerformLayout()
+        CType(Me.ChkShowItemsInSOMainForm, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ChkShowSOInWindow, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkSOShowPrintQuestionAfterSave, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FlowLayoutPanel5.ResumeLayout(False)
+        CType(Me.TxtSODefaultCustomer, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FlowLayoutPanel7.ResumeLayout(False)
+        Me.FlowLayoutPanel7.PerformLayout()
+        CType(Me.DropSOStatus, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FlowLayoutPanel8.ResumeLayout(False)
         Me.FlowLayoutPanel8.PerformLayout()
         CType(Me.ChkShowItemsInPOMainForm, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1790,16 +1817,21 @@ Partial Class UserSettings
         Me.FlowLayoutPanel12.ResumeLayout(False)
         Me.FlowLayoutPanel13.ResumeLayout(False)
         CType(Me.DropNPStatus, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.FlowLayoutPanel6.ResumeLayout(False)
-        Me.FlowLayoutPanel6.PerformLayout()
-        CType(Me.ChkShowItemsInSOMainForm, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ChkShowSOInWindow, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chkSOShowPrintQuestionAfterSave, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.FlowLayoutPanel5.ResumeLayout(False)
-        CType(Me.TxtSODefaultCustomer, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.FlowLayoutPanel7.ResumeLayout(False)
-        Me.FlowLayoutPanel7.PerformLayout()
-        CType(Me.DropSOStatus, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PageOptionsPanel.ResumeLayout(False)
+        Me.TableLayoutPanel6.ResumeLayout(False)
+        Me.TableLayoutPanel9.ResumeLayout(False)
+        Me.TableLayoutPanel9.PerformLayout()
+        CType(Me.chkOptionSalesProfits, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkOptionTreasury, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkOptionDaily, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkOptionAnalysis, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkOptionItems, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkOptionCustomers, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkOptionVendors, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkOptionSalesOrders, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkOptionItemsSalesProfits, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkOptionPurchasesOrders, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkOptionCreditorsDebitors, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PageShortcuts.ResumeLayout(False)
         CType(Me.GridShortcuts.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridShortcuts, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1809,6 +1841,7 @@ Partial Class UserSettings
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DropCurrenyReport, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PageProgrammer.ResumeLayout(False)
+        Me.TableLayoutPanel5.ResumeLayout(False)
         Me.FlowLayoutPanel16.ResumeLayout(False)
         Me.FlowLayoutPanel16.PerformLayout()
         CType(Me.ChkShowLang, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1836,24 +1869,7 @@ Partial Class UserSettings
         Me.FlowLayoutPanel3.PerformLayout()
         CType(Me.ChkSalesOrdersColCustomerTitle, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ChkSalesOrdersColCurrencySymb, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PageOptionsPanel.ResumeLayout(False)
-        Me.TableLayoutPanel4.ResumeLayout(False)
-        Me.TableLayoutPanel4.PerformLayout()
-        Me.TableLayoutPanel5.ResumeLayout(False)
-        Me.TableLayoutPanel6.ResumeLayout(False)
-        CType(Me.chkOptionTreasury, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TableLayoutPanel9.ResumeLayout(False)
-        Me.TableLayoutPanel9.PerformLayout()
-        CType(Me.chkOptionDaily, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chkOptionAnalysis, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chkOptionSalesProfits, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chkOptionItems, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chkOptionCustomers, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chkOptionVendors, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chkOptionSalesOrders, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chkOptionPurchasesOrders, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chkOptionItemsSalesProfits, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chkOptionCreditorsDebitors, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkOptionAllInventory, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -1974,5 +1990,6 @@ Partial Class UserSettings
     Friend WithEvents chkOptionSalesOrders As Telerik.WinControls.UI.RadCheckBox
     Friend WithEvents chkOptionItemsSalesProfits As Telerik.WinControls.UI.RadCheckBox
     Friend WithEvents chkOptionCreditorsDebitors As Telerik.WinControls.UI.RadCheckBox
+    Friend WithEvents chkOptionAllInventory As Telerik.WinControls.UI.RadCheckBox
 End Class
 
