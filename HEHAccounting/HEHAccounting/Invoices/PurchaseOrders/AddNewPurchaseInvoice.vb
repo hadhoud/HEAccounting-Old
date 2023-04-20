@@ -283,6 +283,7 @@ Public Class AddNewPurchaseInvoice
         Me.DropCurrency.DisplayMember = IIf(BoolLTRLanguage = True, "LatinName", "CurrName")
         Me.DropCurrency.DataSource = Currencydata
         Initiatedropdownlist(Me.DropCurrency)
+        Me.DropCurrency.SelectedValue = ProgramFormCurrency
 
     End Sub
     Sub AutoComplete()
@@ -549,7 +550,7 @@ Public Class AddNewPurchaseInvoice
 
     Private Sub InsertItemDetails()
         For i As Integer = 0 To GridInvItem.ChildRows.Count - 1
-            Dim ParamDetails(11) As String
+            Dim ParamDetails(12) As String
             ParamDetails(0) = "@TDueDate , " & Me.MskTxtInvDate.Value
             ParamDetails(1) = "@IItemID , " & Me.GridInvItem.Rows(i).Cells("Item_id").Value
             ParamDetails(2) = "@FSubTotal , " & Me.GridInvItem.Rows(i).Cells("SubTotal").Value
@@ -561,7 +562,8 @@ Public Class AddNewPurchaseInvoice
             ParamDetails(8) = "@FPurchasingPrice , " & Me.GridInvItem.Rows(i).Cells("PurchasingPrice").Value
             ParamDetails(9) = "@FAvailableQty , " & Me.GridInvItem.Rows(i).Cells("AvailableQty").Value
             ParamDetails(10) = "@ICurrencyID , " & Me.DropCurrency.SelectedValue
-            ParamDetails(11) = "@IUserID , " & UserID
+            ParamDetails(11) = "@fDollarRate_amt , " & Me.txtDollarRate.Text
+            ParamDetails(12) = "@IUserID , " & UserID
             ExecuteProcedureWithParameters("InsertNewPurchaseOrdersDetails", ParamDetails)
         Next
     End Sub
@@ -574,7 +576,7 @@ Public Class AddNewPurchaseInvoice
         Me.GridInvItem.Rows.Clear()
         Me.RadioCash.IsChecked = True
         Me.RadioPurchases.IsChecked = True
-        Me.DropCurrency.SelectedValue = 1
+        Me.DropCurrency.SelectedValue = ProgramFormCurrency
         Me.txtDollarRate.Text = LastDollarCurrencyRate
         Me.MskTxtInvDate.Value = Date.Now.Date
         Me.TxtInvoiceReference.Text = String.Empty
@@ -727,6 +729,19 @@ Public Class AddNewPurchaseInvoice
         Else
             Me.txtDollarRate.Text = LastDollarCurrencyRate
             DropCurerncySelectedChange()
+        End If
+    End Sub
+
+    Private Sub GridInvItem_KeyDown(sender As Object, e As KeyEventArgs) Handles GridInvItem.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Dim column As GridViewDataColumn = TryCast(sender.CurrentColumn, GridViewDataColumn)
+            If column.Name = "Qty" And EnterPressed = "ItemName" Then
+                TxtItemName.Focus()
+            ElseIf column.Name = "Qty" And EnterPressed = "ItemID" Then
+                TxtItemid.Focus()
+            ElseIf column.Name = "Qty" And EnterPressed = "Barcode" Then
+                TxtItemBarcode.Focus()
+            End If
         End If
     End Sub
 End Class

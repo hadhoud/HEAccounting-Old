@@ -24,9 +24,9 @@ Module ControlsFunctions
     Public Sub InitiateDateTimePicker(datePicker As RadDateTimePicker, minDate As Date, boolShowFooter As Boolean, isChecked As Boolean)
         datePicker.DateTimePickerElement.Calendar.HeaderNavigationMode = HeaderNavigationMode.Zoom
         datePicker.DateTimePickerElement.TextBoxElement.TextAlign = HorizontalAlignment.Center
-        datePicker.NullDate = Date.Today
-        datePicker.NullText = Date.Today
-        datePicker.NullableValue = Date.Today
+        'datePicker.NullDate = Date.Today
+        'datePicker.NullText = Date.Today
+        'datePicker.NullableValue = Date.Today
         datePicker.MinDate = minDate
         datePicker.Value = Date.Today
         datePicker.Text = Date.Today

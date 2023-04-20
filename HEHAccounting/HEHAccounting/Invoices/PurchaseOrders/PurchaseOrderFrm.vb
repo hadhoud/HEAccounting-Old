@@ -18,6 +18,7 @@ Public Class PurchaseOrderFrm
         RefrechGrid()
 
         InitiateGrid(Me.GridPurchaseOrders, Grouping:=IIf(BoolShowItemsInPOMainForm, False, True))
+
         InitiateDatePicker()
         FillDropList()
         ShowPermissions()
@@ -31,10 +32,13 @@ Public Class PurchaseOrderFrm
 
     Private Sub ShowGridSummaryRow()
         GridViewAddSummaryRow(GridPurchaseOrders, "InvID", "{0}", GridAggregateFunction.Count)
-        GridViewAddSummaryRow(GridPurchaseOrders, "SubTotal.LL", "{0}", GridAggregateFunction.Sum)
-        GridViewAddSummaryRow(GridPurchaseOrders, "TotalDue.LL", "{0}", GridAggregateFunction.Sum)
-        GridViewAddSummaryRow(GridPurchaseOrders, "Discount", "{0}", GridAggregateFunction.Sum)
-        GridViewAddSummaryRow(GridPurchaseOrders, "TotalDue.$", "{0}", GridAggregateFunction.Sum)
+        GridViewAddSummaryRow(GridPurchaseOrders, "SubTotalLL", "{0}", GridAggregateFunction.Sum)
+        GridViewAddSummaryRow(GridPurchaseOrders, "TotalDueLL", "{0}", GridAggregateFunction.Sum)
+        GridViewAddSummaryRow(GridPurchaseOrders, "DiscountLL", "{0}", GridAggregateFunction.Sum)
+        GridViewAddSummaryRow(GridPurchaseOrders, "SubTotalUSD", "{0}", GridAggregateFunction.Sum)
+        GridViewAddSummaryRow(GridPurchaseOrders, "TotalDueUSD", "{0}", GridAggregateFunction.Sum)
+        GridViewAddSummaryRow(GridPurchaseOrders, "DiscountUSD", "{0}", GridAggregateFunction.Sum)
+        GridViewAddSummaryRow(GridPurchaseOrders, "DollarRate", "{0}", GridAggregateFunction.Max)
     End Sub
     Sub ShowPermissions()
         Dim PORow As DataRow = UserRolesdt.Select("KeyName = 'PO'").First
@@ -73,22 +77,31 @@ Public Class PurchaseOrderFrm
 
     Public Sub RefrechGrid()
         FillGridViewProcedure(Me.GridPurchaseOrders, "SelectPurchasesOrdersJoinVendor")
+
+        'Always Hidden
         HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns.Item("InvoiceNumber").Index, False)
         HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("ReferType").Index, False)
         HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("PaymentType").Index, False)
         HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("status").Index, False)
-
-        HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("CurrencyVal").Index, False)
-
-        HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("VendorTitle").Index, BoolShowPurchasesOrdersColVendorTitle)
-
         HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("CurrencySymb").Index, False)
-        HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("InvoiceCurrencySymb").Index, BoolShowPurchasesOrdersColCurrencySymb)
+        '#End ---
+
+        HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("VendorTitle").Index, BoolShowPurchaseOrdersColVendorTitle)
+        HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("SubTotalLL").Index, BoolShowPurchaseOrdersColSubTotalLL)
+        HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("SubTotalUSD").Index, BoolShowPurchaseOrdersColSubTotalUSD)
+        HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("DiscountLL").Index, BoolShowPurchaseOrdersColDiscountLL)
+        HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("DiscountUSD").Index, BoolShowPurchaseOrdersColDiscountUSD)
+        HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("TotalDueLL").Index, BoolShowPurchaseOrdersColTotalDueLL)
+        HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("TotalDueUSD").Index, BoolShowPurchaseOrdersColTotalDueUSD)
+        HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("DollarRate").Index, BoolShowPurchaseOrdersColCurrencyRate)
+        HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("StatusName").Index, BoolShowPurchaseOrdersColStatus)
+        HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("InvoiceCurrencySymb").Index, BoolShowPurchaseOrdersColCurrencySymb)
 
         If BoolShowItemsInPOMainForm Then
             ShowItemsInGrid()
         End If
-        FilterGrid(Me.GridPurchaseOrders, "DueDate", DateSerial(Year(Date.Now), Month(Date.Now), 1), FilterOperator.IsEqualTo)
+
+        FilterGrid(Me.GridPurchaseOrders, "DueDate", DateSerial(Year(Date.Now), Month(Date.Now), DateAndTime.Day(Date.Now)), FilterOperator.IsEqualTo)
     End Sub
     Private Sub FillDropList()
         Dim Sitem As New RadListDataItem With {
@@ -154,7 +167,7 @@ Public Class PurchaseOrderFrm
         relation.ChildColumnNames.Add("InvID")
         Me.GridPurchaseOrders.Relations.Add(relation)
     End Sub
-    Private Sub BtnNew_Click(sender As Object, e As EventArgs)
+    Private Sub BtnNew_Click(sender As Object, e As EventArgs) Handles BtnNew.Click
         Dim FrmAddNewPurchaseInvoice As New AddNewPurchaseInvoice
         FrmAddNewPurchaseInvoice.ShowDialog()
         If ToDoRefrech Then
@@ -180,6 +193,7 @@ Public Class PurchaseOrderFrm
 
     Private Sub BtnRefrech_Click(sender As Object, e As EventArgs) Handles BtnRefrech.Click
         RefrechGrid()
+        BtnFiltering_Click(New Object, New EventArgs)
     End Sub
 
     Private Sub BtnFiltering_Click(sender As Object, e As EventArgs) Handles BtnFiltering.Click
@@ -338,7 +352,8 @@ Public Class PurchaseOrderFrm
             And Me.GridPurchaseOrders.SelectedRows.Count <> 0 Then
             If Me.GridPurchaseOrders.CurrentRow.HierarchyLevel = 0 Then
                 If Me.GridPurchaseOrders.CurrentRow.Cells("Status").Value.ToString = Status.Posted Then
-                    If Me.GridPurchaseOrders.CurrentRow.Cells("PaymentType").Value.ToString = "D" Then
+                    If Me.GridPurchaseOrders.CurrentRow.Cells("PaymentType").Value.ToString = "D" _
+                            Or Me.GridPurchaseOrders.CurrentRow.Cells("PaymentType").Value.ToString = "TA" Then
                         Dim FrmPayInvoice As New PayInvoice
                         FrmPayInvoice.BoolForShowInv = True
                         FrmPayInvoice.InvNum = Me.GridPurchaseOrders.CurrentRow.Cells("InvID").Value
@@ -357,7 +372,8 @@ Public Class PurchaseOrderFrm
                 End If
             Else
                 If Me.GridPurchaseOrders.CurrentRow.ViewInfo.ParentRow.Cells("Status").Value.ToString = Status.Posted Then
-                    If Me.GridPurchaseOrders.CurrentRow.ViewInfo.ParentRow.Cells("PaymentType").Value.ToString = "D" Then
+                    If Me.GridPurchaseOrders.CurrentRow.ViewInfo.ParentRow.Cells("PaymentType").Value.ToString = "D" _
+                            Or Me.GridPurchaseOrders.CurrentRow.ViewInfo.ParentRow.Cells("PaymentType").Value.ToString = "TA" Then
                         Dim FrmPayInvoice As New PayInvoice
                         FrmPayInvoice.BoolForShowInv = True
                         FrmPayInvoice.InvNum = Me.GridPurchaseOrders.CurrentRow.ViewInfo.ParentRow.Cells("InvID").Value
@@ -391,16 +407,78 @@ Public Class PurchaseOrderFrm
         Me.DropStatus.SelectedIndex = -1
     End Sub
 
-    Private Sub GridSalesOrders_ViewCellFormatting(sender As Object, e As CellFormattingEventArgs) Handles GridPurchaseOrders.ViewCellFormatting
+    Private Sub GridPurchaseOrders_ViewCellFormatting(sender As Object, e As CellFormattingEventArgs) Handles GridPurchaseOrders.ViewCellFormatting
         If (e.CellElement.RowInfo.Group Is Nothing And TypeOf e.CellElement Is GridSummaryCellElement) Then
             e.CellElement.ForeColor = Color.Blue
             e.CellElement.RowElement.DrawFill = True
             e.CellElement.RowElement.GradientStyle = Telerik.WinControls.GradientStyles.Solid
             e.CellElement.RowElement.BackColor = Color.FromArgb(239, 246, 255)
+
+            If e.Column.Name = "SubTotalLL" Or e.Column.Name = "DiscountLL" Or e.Column.Name = "TotalDueLL" Or e.Column.Name = "DollarRate" Then
+                e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, 0, False, False)
+            End If
         Else
             e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, ValueResetFlags.Local)
             e.CellElement.RowElement.ResetValue(LightVisualElement.GradientStyleProperty, ValueResetFlags.Local)
             e.CellElement.RowElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
         End If
     End Sub
+
+    Private Sub GridPurchaseOrders_CellFormatting(sender As Object, e As CellFormattingEventArgs) Handles GridPurchaseOrders.CellFormatting
+        If e.CellElement.ColumnInfo.Name = "PaymentTypeName" Then
+            If e.Row.Cells("PaymentType").Value = "D" Then
+                e.CellElement.DrawFill = True
+                e.CellElement.GradientStyle = Telerik.WinControls.GradientStyles.Solid
+                e.CellElement.BackColor = Color.Red
+            ElseIf e.Row.Cells("PaymentType").Value = "TA" Then
+                e.CellElement.DrawFill = True
+                e.CellElement.GradientStyle = Telerik.WinControls.GradientStyles.Solid
+                e.CellElement.BackColor = Color.Yellow
+            Else
+                e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, ValueResetFlags.Local)
+                e.CellElement.ResetValue(LightVisualElement.GradientStyleProperty, ValueResetFlags.Local)
+                e.CellElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
+            End If
+        End If
+
+        If e.Column.Name = "SubTotalLL" Or e.Column.Name = "DiscountLL" Or e.Column.Name = "TotalDueLL" Or e.Column.Name = "DollarRate" Then
+            e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, 0, False, False)
+        End If
+    End Sub
+
+    Private Sub btnAllPayments_Click(sender As Object, e As EventArgs) Handles btnAllPayments.Click
+        If Me.GridPurchaseOrders.ChildRows.Count <> 0 And Me.GridPurchaseOrders.Rows.Count <> 0 _
+And Me.GridPurchaseOrders.SelectedRows.Count <> 0 Then
+            If Me.GridPurchaseOrders.CurrentRow.HierarchyLevel = 0 Then
+                If Me.GridPurchaseOrders.CurrentRow.Cells("Status").Value.ToString = Status.Posted Then
+                    If Me.GridPurchaseOrders.CurrentRow.Cells("PaymentType").Value.ToString = "PI" _
+                            Or Me.GridPurchaseOrders.CurrentRow.Cells("PaymentType").Value.ToString = "TA" Then
+                        Dim InvNum As Integer = Me.GridPurchaseOrders.CurrentRow.Cells("InvID").Value
+                        Dim ReferType As String = Me.GridPurchaseOrders.CurrentRow.Cells("ReferType").Value
+                        Dim FrmPOAllPayments As New ShowINVPayments(InvNum, ReferType)
+                        FrmPOAllPayments.ShowDialog()
+                    Else
+                        MessageShowInfo(Con.Msg_INV_Do_Not_Have_Payments)
+                    End If
+                Else
+                    MessageShowInfo(Con.Msg_Invoice_Status_ISUnposted)
+                End If
+            Else
+                If Me.GridPurchaseOrders.CurrentRow.ViewInfo.ParentRow.Cells("Status").Value.ToString = Status.Posted Then
+                    If Me.GridPurchaseOrders.CurrentRow.ViewInfo.ParentRow.Cells("PaymentType").Value.ToString = "PI" _
+                            Or Me.GridPurchaseOrders.CurrentRow.ViewInfo.ParentRow.Cells("PaymentType").Value.ToString = "TA" Then
+                        Dim InvNum As Integer = Me.GridPurchaseOrders.CurrentRow.Cells("InvID").Value
+                        Dim ReferType As String = Me.GridPurchaseOrders.CurrentRow.Cells("ReferType").Value
+                        Dim FrmPOAllPayments As New ShowINVPayments(InvNum, ReferType)
+                        FrmPOAllPayments.ShowDialog()
+                    Else
+                        MessageShowInfo(Con.Msg_INV_Do_Not_Have_Payments)
+                    End If
+                Else
+                    MessageShowInfo(Con.Msg_Invoice_Status_ISUnposted)
+                End If
+            End If
+        End If
+    End Sub
+
 End Class

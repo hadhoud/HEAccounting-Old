@@ -41,7 +41,7 @@ Partial Class AccountsDetails
         Me.BtnReset = New Telerik.WinControls.UI.RadButton()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TxtCurrencyVal = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtDollarRate = New Telerik.WinControls.UI.RadTextBox()
         Me.BtnGetCurrencyVal = New Telerik.WinControls.UI.RadButton()
         Me.LblCurrencyVal = New System.Windows.Forms.Label()
         Me.LblTo = New System.Windows.Forms.Label()
@@ -58,6 +58,7 @@ Partial Class AccountsDetails
         Me.MskTxtInvDateTo = New Telerik.WinControls.UI.RadMaskedEditBox()
         Me.CheckDateTo = New Telerik.WinControls.UI.RadCheckBox()
         Me.CheckDetailsWithCurrency = New Telerik.WinControls.UI.RadCheckBox()
+        Me.TxtCurrencyVal = New Telerik.WinControls.UI.RadTextBox()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.ContextGrid = New Telerik.WinControls.UI.RadContextMenu(Me.components)
         Me.RadConOpen = New Telerik.WinControls.UI.RadMenuItem()
@@ -76,7 +77,7 @@ Partial Class AccountsDetails
         CType(Me.BtnReset, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel7.SuspendLayout()
-        CType(Me.TxtCurrencyVal, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtDollarRate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnGetCurrencyVal, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtAccounts, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DropCurrency, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -87,6 +88,7 @@ Partial Class AccountsDetails
         CType(Me.MskTxtInvDateTo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CheckDateTo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CheckDetailsWithCurrency, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtCurrencyVal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel4.SuspendLayout()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -319,6 +321,7 @@ Partial Class AccountsDetails
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 1, 5)
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel5, 1, 6)
         Me.TableLayoutPanel1.Controls.Add(Me.CheckDetailsWithCurrency, 0, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.TxtCurrencyVal, 1, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -341,7 +344,7 @@ Partial Class AccountsDetails
         Me.TableLayoutPanel7.ColumnCount = 2
         Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel7.Controls.Add(Me.TxtCurrencyVal, 0, 0)
+        Me.TableLayoutPanel7.Controls.Add(Me.txtDollarRate, 0, 0)
         Me.TableLayoutPanel7.Controls.Add(Me.BtnGetCurrencyVal, 1, 0)
         Me.TableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel7.Location = New System.Drawing.Point(0, 78)
@@ -352,24 +355,24 @@ Partial Class AccountsDetails
         Me.TableLayoutPanel7.Size = New System.Drawing.Size(176, 30)
         Me.TableLayoutPanel7.TabIndex = 47
         '
-        'TxtCurrencyVal
+        'txtDollarRate
         '
-        Me.TxtCurrencyVal.AcceptsTab = True
-        Me.TxtCurrencyVal.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.TxtCurrencyVal.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TxtCurrencyVal.Enabled = False
-        Me.TxtCurrencyVal.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtCurrencyVal.HideSelection = False
-        Me.TxtCurrencyVal.Location = New System.Drawing.Point(35, 3)
-        Me.TxtCurrencyVal.MaxLength = 65535
-        Me.TxtCurrencyVal.Name = "TxtCurrencyVal"
-        Me.TxtCurrencyVal.Size = New System.Drawing.Size(138, 24)
-        Me.TxtCurrencyVal.TabIndex = 5
-        Me.TxtCurrencyVal.Tag = "1"
-        Me.TxtCurrencyVal.Text = "1"
-        Me.TxtCurrencyVal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TxtCurrencyVal.ThemeName = "Office2010Blue"
-        Me.TxtCurrencyVal.WordWrap = False
+        Me.txtDollarRate.AcceptsTab = True
+        Me.txtDollarRate.AutoSize = False
+        Me.txtDollarRate.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtDollarRate.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtDollarRate.Enabled = False
+        Me.txtDollarRate.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDollarRate.HideSelection = False
+        Me.txtDollarRate.Location = New System.Drawing.Point(35, 3)
+        Me.txtDollarRate.MaxLength = 65535
+        Me.txtDollarRate.Name = "txtDollarRate"
+        Me.txtDollarRate.Size = New System.Drawing.Size(138, 24)
+        Me.txtDollarRate.TabIndex = 7
+        Me.txtDollarRate.Tag = "1"
+        Me.txtDollarRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtDollarRate.ThemeName = "Office2010Blue"
+        Me.txtDollarRate.WordWrap = False
         '
         'BtnGetCurrencyVal
         '
@@ -473,6 +476,7 @@ Partial Class AccountsDetails
         '
         Me.DropCurrency.BackColor = System.Drawing.Color.White
         Me.DropCurrency.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DropCurrency.DropDownAnimationEnabled = True
         Me.DropCurrency.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DropCurrency.Location = New System.Drawing.Point(3, 48)
         Me.DropCurrency.MaxLength = 65535
@@ -508,6 +512,8 @@ Partial Class AccountsDetails
         Me.MskTxtInvDateFrom.Mask = "dd/MM/yyyy"
         Me.MskTxtInvDateFrom.MaskType = Telerik.WinControls.UI.MaskType.DateTime
         Me.MskTxtInvDateFrom.Name = "MskTxtInvDateFrom"
+        Me.MskTxtInvDateFrom.SelectedText = "01"
+        Me.MskTxtInvDateFrom.SelectionLength = 2
         Me.MskTxtInvDateFrom.Size = New System.Drawing.Size(143, 24)
         Me.MskTxtInvDateFrom.TabIndex = 25
         Me.MskTxtInvDateFrom.TabStop = False
@@ -551,8 +557,6 @@ Partial Class AccountsDetails
         Me.MskTxtInvDateTo.Mask = "dd/MM/yyyy"
         Me.MskTxtInvDateTo.MaskType = Telerik.WinControls.UI.MaskType.DateTime
         Me.MskTxtInvDateTo.Name = "MskTxtInvDateTo"
-        Me.MskTxtInvDateTo.SelectedText = "01"
-        Me.MskTxtInvDateTo.SelectionLength = 2
         Me.MskTxtInvDateTo.Size = New System.Drawing.Size(143, 24)
         Me.MskTxtInvDateTo.TabIndex = 44
         Me.MskTxtInvDateTo.TabStop = False
@@ -582,6 +586,25 @@ Partial Class AccountsDetails
         Me.CheckDetailsWithCurrency.Text = "تفصيلي حسب العملة"
         Me.CheckDetailsWithCurrency.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         Me.CheckDetailsWithCurrency.ThemeName = "Office2010Blue"
+        '
+        'TxtCurrencyVal
+        '
+        Me.TxtCurrencyVal.AcceptsTab = True
+        Me.TxtCurrencyVal.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.TxtCurrencyVal.Enabled = False
+        Me.TxtCurrencyVal.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtCurrencyVal.HideSelection = False
+        Me.TxtCurrencyVal.Location = New System.Drawing.Point(163, 3)
+        Me.TxtCurrencyVal.MaxLength = 65535
+        Me.TxtCurrencyVal.Name = "TxtCurrencyVal"
+        Me.TxtCurrencyVal.Size = New System.Drawing.Size(10, 24)
+        Me.TxtCurrencyVal.TabIndex = 5
+        Me.TxtCurrencyVal.Tag = "1"
+        Me.TxtCurrencyVal.Text = "1"
+        Me.TxtCurrencyVal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtCurrencyVal.ThemeName = "Office2010Blue"
+        Me.TxtCurrencyVal.Visible = False
+        Me.TxtCurrencyVal.WordWrap = False
         '
         'TableLayoutPanel4
         '
@@ -651,8 +674,7 @@ Partial Class AccountsDetails
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
         Me.TableLayoutPanel7.ResumeLayout(False)
-        Me.TableLayoutPanel7.PerformLayout()
-        CType(Me.TxtCurrencyVal, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtDollarRate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnGetCurrencyVal, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtAccounts, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DropCurrency, System.ComponentModel.ISupportInitialize).EndInit()
@@ -665,6 +687,7 @@ Partial Class AccountsDetails
         CType(Me.MskTxtInvDateTo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CheckDateTo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CheckDetailsWithCurrency, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtCurrencyVal, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel4.ResumeLayout(False)
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -708,5 +731,6 @@ Partial Class AccountsDetails
     Friend WithEvents ContextManagerGrid As Telerik.WinControls.UI.RadContextMenuManager
     Friend WithEvents ContextGrid As Telerik.WinControls.UI.RadContextMenu
     Friend WithEvents RadConOpen As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents txtDollarRate As Telerik.WinControls.UI.RadTextBox
 End Class
 

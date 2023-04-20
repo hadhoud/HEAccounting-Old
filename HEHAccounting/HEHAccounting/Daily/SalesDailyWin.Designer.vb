@@ -23,18 +23,26 @@ Partial Class SalesDailyWin
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim GridViewSummaryItem1 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
+        Dim GridViewSummaryItem2 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
+        Dim GridViewSummaryItem3 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
+        Dim GridViewSummaryItem4 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
+        Dim GridViewSummaryItem5 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
+        Dim GridViewSummaryItem6 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
         Dim GridViewSummaryItem7 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
         Dim GridViewSummaryItem8 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
         Dim GridViewSummaryItem9 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
         Dim GridViewSummaryItem10 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
         Dim GridViewSummaryItem11 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
         Dim GridViewSummaryItem12 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
-        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.PnlOptions = New Telerik.WinControls.UI.RadPanel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.BtnFiltering = New Telerik.WinControls.UI.RadButton()
         Me.BtnReset = New Telerik.WinControls.UI.RadButton()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.MskTxtInvDateTo = New Telerik.WinControls.UI.RadDateTimePicker()
+        Me.MskTxtInvDateFrom = New Telerik.WinControls.UI.RadDateTimePicker()
         Me.TxtCustomer = New Telerik.WinControls.UI.RadButtonTextBox()
         Me.TxtCustomerBtn = New Telerik.WinControls.UI.RadButtonElement()
         Me.LblCustomerName = New System.Windows.Forms.Label()
@@ -46,22 +54,20 @@ Partial Class SalesDailyWin
         Me.BtnRefrech = New Telerik.WinControls.UI.RadButton()
         Me.GridDaily = New Telerik.WinControls.UI.RadGridView()
         Me.TimerFrm = New System.Windows.Forms.Timer(Me.components)
-        Me.MskTxtInvDateFrom = New Telerik.WinControls.UI.RadDateTimePicker()
-        Me.MskTxtInvDateTo = New Telerik.WinControls.UI.RadDateTimePicker()
         CType(Me.PnlOptions, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PnlOptions.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         CType(Me.BtnFiltering, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnReset, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
+        CType(Me.MskTxtInvDateTo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MskTxtInvDateFrom, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtCustomer, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DropPaymentType, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.BtnRefrech, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridDaily, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridDaily.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MskTxtInvDateFrom, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MskTxtInvDateTo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -154,6 +160,41 @@ Partial Class SalesDailyWin
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(249, 167)
         Me.TableLayoutPanel1.TabIndex = 14
+        '
+        'MskTxtInvDateTo
+        '
+        Me.MskTxtInvDateTo.CustomFormat = "dd/MM/yyyy"
+        Me.MskTxtInvDateTo.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.MskTxtInvDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.MskTxtInvDateTo.Location = New System.Drawing.Point(3, 117)
+        Me.MskTxtInvDateTo.Name = "MskTxtInvDateTo"
+        Me.MskTxtInvDateTo.ShowCheckBox = True
+        Me.MskTxtInvDateTo.Size = New System.Drawing.Size(166, 24)
+        Me.MskTxtInvDateTo.TabIndex = 21
+        Me.MskTxtInvDateTo.TabStop = False
+        Me.MskTxtInvDateTo.Text = "31/03/2023"
+        Me.MskTxtInvDateTo.ThemeName = "Office2010Blue"
+        Me.MskTxtInvDateTo.Value = New Date(2023, 1, 14, 0, 0, 0, 0)
+        CType(Me.MskTxtInvDateTo.GetChildAt(0), Telerik.WinControls.UI.RadDateTimePickerElement).RightToLeft = True
+        CType(Me.MskTxtInvDateTo.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "31/03/2023"
+        '
+        'MskTxtInvDateFrom
+        '
+        Me.MskTxtInvDateFrom.CustomFormat = "dd/MM/yyyy"
+        Me.MskTxtInvDateFrom.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MskTxtInvDateFrom.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.MskTxtInvDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.MskTxtInvDateFrom.Location = New System.Drawing.Point(3, 87)
+        Me.MskTxtInvDateFrom.Name = "MskTxtInvDateFrom"
+        Me.MskTxtInvDateFrom.ShowCheckBox = True
+        Me.MskTxtInvDateFrom.Size = New System.Drawing.Size(166, 24)
+        Me.MskTxtInvDateFrom.TabIndex = 22
+        Me.MskTxtInvDateFrom.TabStop = False
+        Me.MskTxtInvDateFrom.Text = "31/03/2023"
+        Me.MskTxtInvDateFrom.ThemeName = "Office2010Blue"
+        Me.MskTxtInvDateFrom.Value = New Date(2023, 1, 14, 0, 0, 0, 0)
+        CType(Me.MskTxtInvDateFrom.GetChildAt(0), Telerik.WinControls.UI.RadDateTimePickerElement).RightToLeft = True
+        CType(Me.MskTxtInvDateFrom.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "31/03/2023"
         '
         'TxtCustomer
         '
@@ -280,32 +321,56 @@ Partial Class SalesDailyWin
         '
         '
         Me.GridDaily.MasterTemplate.BottomPinnedRowsMode = Telerik.WinControls.UI.GridViewBottomPinnedRowsMode.Fixed
+        GridViewSummaryItem1.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
+        GridViewSummaryItem1.AggregateExpression = Nothing
+        GridViewSummaryItem1.FormatString = "{0}"
+        GridViewSummaryItem1.Name = "SubTotalLL"
+        GridViewSummaryItem2.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
+        GridViewSummaryItem2.AggregateExpression = Nothing
+        GridViewSummaryItem2.FormatString = "{0}"
+        GridViewSummaryItem2.Name = "SubTotalUSD"
+        GridViewSummaryItem3.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
+        GridViewSummaryItem3.AggregateExpression = Nothing
+        GridViewSummaryItem3.FormatString = "{0}"
+        GridViewSummaryItem3.Name = "DiscountLL"
+        GridViewSummaryItem4.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
+        GridViewSummaryItem4.AggregateExpression = Nothing
+        GridViewSummaryItem4.FormatString = "{0}"
+        GridViewSummaryItem4.Name = "DiscountUSD"
+        GridViewSummaryItem5.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
+        GridViewSummaryItem5.AggregateExpression = Nothing
+        GridViewSummaryItem5.FormatString = "{0}"
+        GridViewSummaryItem5.Name = "TotalDueLL"
+        GridViewSummaryItem6.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
+        GridViewSummaryItem6.AggregateExpression = Nothing
+        GridViewSummaryItem6.FormatString = "{0}"
+        GridViewSummaryItem6.Name = "TotalDueUSD"
         GridViewSummaryItem7.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
         GridViewSummaryItem7.AggregateExpression = Nothing
         GridViewSummaryItem7.FormatString = "{0}"
-        GridViewSummaryItem7.Name = "SubTotal"
+        GridViewSummaryItem7.Name = "PurchaseTotalDueLL"
         GridViewSummaryItem8.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
         GridViewSummaryItem8.AggregateExpression = Nothing
         GridViewSummaryItem8.FormatString = "{0}"
-        GridViewSummaryItem8.Name = "Discount"
+        GridViewSummaryItem8.Name = "PurchaseTotalDueUSD"
         GridViewSummaryItem9.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
         GridViewSummaryItem9.AggregateExpression = Nothing
         GridViewSummaryItem9.FormatString = "{0}"
-        GridViewSummaryItem9.Name = "TotalDue"
+        GridViewSummaryItem9.Name = "SellPurchaseDifferenceLL"
         GridViewSummaryItem10.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
         GridViewSummaryItem10.AggregateExpression = Nothing
         GridViewSummaryItem10.FormatString = "{0}"
-        GridViewSummaryItem10.Name = "PurchaseTotalDue"
-        GridViewSummaryItem11.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
+        GridViewSummaryItem10.Name = "SellPurchaseDifferenceUSD"
+        GridViewSummaryItem11.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Count
         GridViewSummaryItem11.AggregateExpression = Nothing
         GridViewSummaryItem11.FormatString = "{0}"
-        GridViewSummaryItem11.Name = "SellPurchaseDifference"
-        GridViewSummaryItem12.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Count
+        GridViewSummaryItem11.Name = "InvID"
+        GridViewSummaryItem12.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Max
         GridViewSummaryItem12.AggregateExpression = Nothing
         GridViewSummaryItem12.FormatString = "{0}"
-        GridViewSummaryItem12.Name = "InvID"
-        Me.GridDaily.MasterTemplate.SummaryRowsBottom.Add(New Telerik.WinControls.UI.GridViewSummaryRowItem(New Telerik.WinControls.UI.GridViewSummaryItem() {GridViewSummaryItem7, GridViewSummaryItem8, GridViewSummaryItem9, GridViewSummaryItem10, GridViewSummaryItem11, GridViewSummaryItem12}))
-        Me.GridDaily.MasterTemplate.ViewDefinition = TableViewDefinition2
+        GridViewSummaryItem12.Name = "DollarRate"
+        Me.GridDaily.MasterTemplate.SummaryRowsBottom.Add(New Telerik.WinControls.UI.GridViewSummaryRowItem(New Telerik.WinControls.UI.GridViewSummaryItem() {GridViewSummaryItem1, GridViewSummaryItem2, GridViewSummaryItem3, GridViewSummaryItem4, GridViewSummaryItem5, GridViewSummaryItem6, GridViewSummaryItem7, GridViewSummaryItem8, GridViewSummaryItem9, GridViewSummaryItem10, GridViewSummaryItem11, GridViewSummaryItem12}))
+        Me.GridDaily.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.GridDaily.Name = "GridDaily"
         Me.GridDaily.Size = New System.Drawing.Size(380, 503)
         Me.GridDaily.TabIndex = 5
@@ -313,41 +378,6 @@ Partial Class SalesDailyWin
         '
         'TimerFrm
         '
-        '
-        'MskTxtInvDateFrom
-        '
-        Me.MskTxtInvDateFrom.CustomFormat = "dd/MM/yyyy"
-        Me.MskTxtInvDateFrom.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MskTxtInvDateFrom.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.MskTxtInvDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.MskTxtInvDateFrom.Location = New System.Drawing.Point(3, 87)
-        Me.MskTxtInvDateFrom.Name = "MskTxtInvDateFrom"
-        Me.MskTxtInvDateFrom.ShowCheckBox = True
-        Me.MskTxtInvDateFrom.Size = New System.Drawing.Size(166, 24)
-        Me.MskTxtInvDateFrom.TabIndex = 22
-        Me.MskTxtInvDateFrom.TabStop = False
-        Me.MskTxtInvDateFrom.Text = "15/01/2023"
-        Me.MskTxtInvDateFrom.ThemeName = "Office2010Blue"
-        Me.MskTxtInvDateFrom.Value = New Date(2023, 1, 14, 0, 0, 0, 0)
-        CType(Me.MskTxtInvDateFrom.GetChildAt(0), Telerik.WinControls.UI.RadDateTimePickerElement).RightToLeft = True
-        CType(Me.MskTxtInvDateFrom.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "15/01/2023"
-        '
-        'MskTxtInvDateTo
-        '
-        Me.MskTxtInvDateTo.CustomFormat = "dd/MM/yyyy"
-        Me.MskTxtInvDateTo.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.MskTxtInvDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.MskTxtInvDateTo.Location = New System.Drawing.Point(3, 117)
-        Me.MskTxtInvDateTo.Name = "MskTxtInvDateTo"
-        Me.MskTxtInvDateTo.ShowCheckBox = True
-        Me.MskTxtInvDateTo.Size = New System.Drawing.Size(166, 24)
-        Me.MskTxtInvDateTo.TabIndex = 21
-        Me.MskTxtInvDateTo.TabStop = False
-        Me.MskTxtInvDateTo.Text = "15/01/2023"
-        Me.MskTxtInvDateTo.ThemeName = "Office2010Blue"
-        Me.MskTxtInvDateTo.Value = New Date(2023, 1, 14, 0, 0, 0, 0)
-        CType(Me.MskTxtInvDateTo.GetChildAt(0), Telerik.WinControls.UI.RadDateTimePickerElement).RightToLeft = True
-        CType(Me.MskTxtInvDateTo.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "15/01/2023"
         '
         'SalesDailyWin
         '
@@ -377,14 +407,14 @@ Partial Class SalesDailyWin
         CType(Me.BtnReset, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
+        CType(Me.MskTxtInvDateTo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MskTxtInvDateFrom, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtCustomer, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DropPaymentType, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel2.ResumeLayout(False)
         CType(Me.BtnRefrech, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridDaily.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridDaily, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MskTxtInvDateFrom, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MskTxtInvDateTo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

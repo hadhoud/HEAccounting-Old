@@ -8,7 +8,7 @@ Public Class FrmTreasury
         InitiateDatePicker()
         FillDropCurrencyFromCurrencyData(Me.DropCurrency, "CurrencyID", True)
         Initiatedropdownlist(Me.DropCurrency, False)
-        Me.DropCurrency.SelectedValue = 1
+        Me.DropCurrency.SelectedValue = ProgramFormCurrency
         FirstRunTimer.Enabled = True
     End Sub
 
@@ -62,16 +62,16 @@ Public Class FrmTreasury
         ConvertMaskedTextToCurrency(TxtOut, Summarydt.Rows(0).Item("TotalOutcome").ToString, selected_Currecny)
 
         ConvertMaskedTextToCurrency(txtSalesLL, Summarydt.Rows(0).Item("TotalSOLL").ToString, Currency.LebaneaseLire)
-        ConvertMaskedTextToCurrency(txtSalesDollar, Summarydt.Rows(0).Item("TotalSODollar").ToString, Currency.Dollar)
+        ConvertMaskedTextToCurrency(txtSalesDollar, Summarydt.Rows(0).Item("TotalSOUSD").ToString, Currency.Dollar)
         ConvertMaskedTextToCurrency(txtSOPOLL, Summarydt.Rows(0).Item("TotalSOPOLL").ToString, Currency.LebaneaseLire)
-        ConvertMaskedTextToCurrency(txtSOPODollar, Summarydt.Rows(0).Item("TotalSOPODollar").ToString, Currency.Dollar)
+        ConvertMaskedTextToCurrency(txtSOPODollar, Summarydt.Rows(0).Item("TotalSOPOUSD").ToString, Currency.Dollar)
 
         ConvertMaskedTextToCurrency(txtAllItemsPriceLL, Summarydt.Rows(0).Item("AllIemsPriceLL").ToString, Currency.LebaneaseLire)
         ConvertMaskedTextToCurrency(txtAllItemsPriceUSD, Summarydt.Rows(0).Item("AllIemsPriceUSD").ToString, Currency.Dollar)
         ConvertMaskedTextToCurrency(txtAllItemsPrice, Summarydt.Rows(0).Item("AllIemsPrice").ToString, selected_Currecny)
 
         ConvertMaskedTextToCurrency(txtSalesProfitLL, Summarydt.Rows(0).Item("SOProfitsLL").ToString, Currency.LebaneaseLire)
-        ConvertMaskedTextToCurrency(txtSalesProfitDollar, Val(Summarydt.Rows(0).Item("SOProfitsLL")) / Val(LastDollarCurrencyRate), Currency.Dollar)
+        ConvertMaskedTextToCurrency(txtSalesProfitDollar, Summarydt.Rows(0).Item("SOProfitsUSD").ToString, Currency.Dollar)
 
         txtSalesProfitPercent.Text = Summarydt.Rows(0).Item("SOProfitsPercent").ToString
 
@@ -109,7 +109,7 @@ Public Class FrmTreasury
     Private Sub BtnReset_Click(sender As Object, e As EventArgs) Handles BtnReset.Click
         Me.DateTimePickerFrom.Value = DateTime.Now
         Me.DateTimePickerTo.Value = DateTime.Now
-        Me.DropCurrency.SelectedValue = 1
+        Me.DropCurrency.SelectedValue = ProgramFormCurrency
         FillSummaryInformation()
     End Sub
 End Class

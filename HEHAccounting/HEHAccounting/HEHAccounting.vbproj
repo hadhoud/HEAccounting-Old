@@ -233,6 +233,12 @@
     <Compile Include="Invoices\PurchaseOrders\PurchaseOrderFrm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Invoices\ShowINVPayments.Designer.vb">
+      <DependentUpon>ShowINVPayments.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Invoices\ShowINVPayments.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Invoices\SalesOrders\CalculateQuantity.Designer.vb">
       <DependentUpon>CalculateQuantity.vb</DependentUpon>
     </Compile>
@@ -493,6 +499,12 @@
     <Compile Include="Tools\Settings\CompanyInfo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Tools\Settings\UserFieldsSetting.Designer.vb">
+      <DependentUpon>UserFieldsSetting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Settings\UserFieldsSetting.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Tools\Users\SystemDatabaseConfiguration.Designer.vb">
       <DependentUpon>SystemDatabaseConfiguration.vb</DependentUpon>
     </Compile>
@@ -591,6 +603,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Invoices\PurchaseOrders\PurchaseOrderFrm.resx">
       <DependentUpon>PurchaseOrderFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoices\ShowINVPayments.resx">
+      <DependentUpon>ShowINVPayments.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Invoices\SalesOrders\AddNewSaleInvoice.resx">
       <DependentUpon>AddNewSaleInvoice.vb</DependentUpon>
@@ -701,6 +716,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\Settings\CompanyInfo.resx">
       <DependentUpon>CompanyInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Settings\UserFieldsSetting.resx">
+      <DependentUpon>UserFieldsSetting.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\Users\SystemDatabaseConfiguration.resx">
       <DependentUpon>SystemDatabaseConfiguration.vb</DependentUpon>
@@ -874,9 +892,6 @@
     <None Include="Resources\DatabasePic.png" />
     <None Include="Resources\Dollars.png" />
     <None Include="Resources\Target.png" />
-    <Content Include="Reports\6.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Reports\Untitled.jpg" />
     <None Include="Resources\Refresh16.png" />
     <Content Include="SQL\NeededSqlFiles\DefaultData.sql" />

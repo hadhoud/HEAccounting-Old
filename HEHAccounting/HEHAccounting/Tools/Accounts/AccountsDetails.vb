@@ -61,10 +61,10 @@ Public Class AccountsDetails
         Me.DropCurrency.DisplayMember = IIf(BoolLTRLanguage = True, "LatinName", "CurrName")
         Me.DropCurrency.DataSource = Currencydata
         Initiatedropdownlist(Me.DropCurrency, False)
-
+        Me.DropCurrency.SelectedValue = ProgramFormCurrency
     End Sub
     Private Sub AccountsDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.DropCurrency.SelectedValue = 1
+        Me.txtDollarRate.Text = LastDollarCurrencyRate
         Me.MskTxtInvDateFrom.Value = DateSerial(Year(Date.Now), Month(Date.Now), 1)
         Me.MskTxtInvDateTo.Value = DateSerial(Year(Date.Now), Month(Date.Now) + 1, 0)
     End Sub
@@ -183,6 +183,7 @@ Public Class AccountsDetails
     End Sub
 
     Private Sub BtnReset_Click(sender As Object, e As EventArgs) Handles BtnReset.Click
+        Me.txtDollarRate.Text = LastDollarCurrencyRate
         Me.TxtAccounts.Text = String.Empty
         Me.CheckDateFrom.Checked = False
         Me.CheckDateTo.Checked = False

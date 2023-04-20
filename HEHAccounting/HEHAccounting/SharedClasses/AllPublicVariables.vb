@@ -4,6 +4,7 @@
     Public Username As String
     Public FullName As String
     Public UserType As String
+    Public UserPassword As String
 
     'CompanyInfo
     Public CompanyInfoName As String
@@ -38,9 +39,6 @@
     Public BoolShowItemsInSOMainForm As Boolean
     Public BoolShowSOAsWindow As Boolean
     Public DefaultSOStatus As Integer
-    Public BoolShowAddSalesOrdersColPurchasePrice As Boolean
-    Public BoolShowSalesOrdersColCustomerTitle As Boolean
-    Public BoolShowSalesOrdersColCurrencySymb As Boolean
     Public iSalesOrderDefaultCustomerID As Integer
     Public BoolShowSalesOrdersPrintQuestionAfterSave As Boolean
 
@@ -49,9 +47,8 @@
     Public BoolUpdateItemPurchasingPriceAfterPO As Boolean
     Public BoolUpdateItemSellingPriceAfterPO As Boolean
     Public DefaultPOStatus As Integer
-    Public BoolShowAddPurchasesOrdersColPurchasePrice As Boolean
-    Public BoolShowPurchasesOrdersColVendorTitle As Boolean
-    Public BoolShowPurchasesOrdersColCurrencySymb As Boolean
+    'Public BoolShowPurchasesOrdersColVendorTitle As Boolean
+    'Public BoolShowPurchasesOrdersColCurrencySymb As Boolean
 
     'Notes Pay Setting
     Public DefaultNPStatus As Integer
@@ -78,7 +75,7 @@
     Public BoolShowDailyPageWhenOpen As Boolean
     Public TimerHomeForm As Integer
     Public TimerDailyForm As Integer
-    Public HomeFormCurrency As Integer
+    Public ProgramFormCurrency As Integer
     Public ShowChequesDay As Integer
 
     'Report Setting
@@ -96,6 +93,85 @@
     Public BoolForcingEnterCurrencyNameLatin As Boolean
     Public BoolForcingEnterCurrencyPartLatin As Boolean
     Public BoolForcingEnterCurrencySymbLatin As Boolean
+
+    'Fields Visible Setting
+    'Sales Order
+    Public BoolShowSalesOrdersColCustomerTitle As Boolean
+    Public BoolShowSalesOrdersColTotalDueLL As Boolean
+    Public BoolShowSalesOrdersColTotalDueUSD As Boolean
+    Public BoolShowSalesOrdersColDiscountLL As Boolean
+    Public BoolShowSalesOrdersColDiscountUSD As Boolean
+    Public BoolShowSalesOrdersColSubTotalLL As Boolean
+    Public BoolShowSalesOrdersColSubTotalUSD As Boolean
+    Public BoolShowSalesOrdersColCurrencySymb As Boolean
+    Public BoolShowSalesOrdersColCurrencyRate As Boolean
+    Public BoolShowSalesOrdersColStatus As Boolean
+
+    'sales Win
+    Public BoolShowSalesWinColTotalDueLL As Boolean
+    Public BoolShowSalesWinColTotalDueUSD As Boolean
+    Public BoolShowSalesWinColDiscountLL As Boolean
+    Public BoolShowSalesWinColDiscountUSD As Boolean
+    Public BoolShowSalesWinColSubTotalLL As Boolean
+    Public BoolShowSalesWinColSubTotalUSD As Boolean
+    Public BoolShowSalesWinColSubTotalPurchasingLL As Boolean
+    Public BoolShowSalesWinColSubTotalPurchasingUSD As Boolean
+    Public BoolShowSalesWinColColProfitLL As Boolean
+    Public BoolShowSalesWinColColProfitUSD As Boolean
+    Public BoolShowSalesWinColCurrencyRate As Boolean
+
+    'sales Items Win
+    Public BoolShowSalesItemsWinColPurchasingPriceLL As Boolean
+    Public BoolShowSalesItemsWinColPurchasingPriceUSD As Boolean
+    Public BoolShowSalesItemsWinColSellingPriceLL As Boolean
+    Public BoolShowSalesItemsWinColSellingPriceUSD As Boolean
+    Public BoolShowSalesItemsWinColTotalPurchasingPriceLL As Boolean
+    Public BoolShowSalesItemsWinColTotalPurchasingPriceUSD As Boolean
+    Public BoolShowSalesItemsWinColSubTotalSellingPriceLL As Boolean
+    Public BoolShowSalesItemsWinColSubTotalSellingPriceUSD As Boolean
+    Public BoolShowSalesItemsWinColDiscountLL As Boolean
+    Public BoolShowSalesItemsWinColDiscountUSD As Boolean
+    Public BoolShowSalesItemsWinColTotalDueSellingPriceLL As Boolean
+    Public BoolShowSalesItemsWinColTotalDueSellingPriceUSD As Boolean
+    Public BoolShowSalesItemsWinColSellPurchaseDifferenceLL As Boolean
+    Public BoolShowSalesItemsWinColSellPurchaseDifferenceUSD As Boolean
+    Public BoolShowSalesItemsWinColCurrencyRate As Boolean
+
+    'Purchase Order
+    Public BoolShowPurchaseOrdersColVendorTitle As Boolean
+    Public BoolShowPurchaseOrdersColSubTotalLL As Boolean
+    Public BoolShowPurchaseOrdersColSubTotalUSD As Boolean
+    Public BoolShowPurchaseOrdersColDiscountLL As Boolean
+    Public BoolShowPurchaseOrdersColDiscountUSD As Boolean
+    Public BoolShowPurchaseOrdersColTotalDueLL As Boolean
+    Public BoolShowPurchaseOrdersColTotalDueUSD As Boolean
+    Public BoolShowPurchaseOrdersColCurrencySymb As Boolean
+    Public BoolShowPurchaseOrdersColCurrencyRate As Boolean
+    Public BoolShowPurchaseOrdersColStatus As Boolean
+
+    'Add Sales Order
+    Public BoolShowAddSalesOrdersColPurchasePrice As Boolean
+
+    'Add Purchase Order
+    Public BoolShowAddPurchasesOrdersColPurchasePrice As Boolean
+
+    'Invoice Sales Order
+    Public BoolShowInvSaleOrderSubTotalLL As Boolean
+    Public BoolShowInvSaleOrderDiscountLL As Boolean
+    Public BoolShowInvSaleOrderTotalDueLL As Boolean
+    Public BoolShowInvSaleOrderSubTotalUSD As Boolean
+    Public BoolShowInvSaleOrderDiscountUSD As Boolean
+    Public BoolShowInvSaleOrderTotalDueUSD As Boolean
+    Public BoolShowInvSaleOrderCurrencyRate As Boolean
+    Public BoolShowInvSaleOrderBalanceLL As Boolean
+    Public BoolShowInvSaleOrderBalanceUSD As Boolean
+
+    'Customer Invoices Report
+    Public BoolShowCustomerInvSalesOrdersTotalDueUSD As Boolean
+    Public BoolShowCustomerInvSalesOrdersTotalDueLL As Boolean
+    Public BoolShowCustomerInvSalesOrdersCurrencyRate As Boolean
+
+    'End Fields visible setting
 
     'General Variable Data
     Public CustomerNameAuto As AutoCompleteStringCollection

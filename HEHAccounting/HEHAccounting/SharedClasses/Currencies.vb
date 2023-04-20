@@ -49,6 +49,26 @@ Module Currencies
         End Select
     End Sub
 
+    Function ConvertStringTextToCurrency(amount As String, currency_id As Currency, Optional show_symbol As Boolean = False)
+
+        Select Case currency_id
+            Case Currency.LebaneaseLire
+                Dim culture = New CultureInfo("ar-LB")
+                If BoolLTRLanguage = True Then
+                    culture.NumberFormat.CurrencySymbol = IIf(show_symbol, "L.L", "")
+                Else
+                    culture.NumberFormat.CurrencySymbol = IIf(show_symbol, "ل.ل", "")
+                End If
+                ConvertStringTextToCurrency = String.Format(culture, "{0:C0}", Convert.ToDecimal(amount))
+            Case Currency.Dollar
+                Dim culture = New CultureInfo("en-US")
+                culture.NumberFormat.CurrencySymbol = IIf(show_symbol, "$", "")
+                ConvertStringTextToCurrency = String.Format(culture, "{0:C3}", Convert.ToDecimal(amount))
+            Case Else
+                ConvertStringTextToCurrency = amount
+        End Select
+
+    End Function
     Function FormatGridColumnAsCurrency(amount As String, currency_id As Currency, withDecimal As Boolean, Optional show_symbol As Boolean = False) As String
 
         Select Case currency_id

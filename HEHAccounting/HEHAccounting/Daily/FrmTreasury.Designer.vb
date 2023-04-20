@@ -91,6 +91,8 @@ Partial Class FrmTreasury
         Me.Label24 = New System.Windows.Forms.Label()
         Me.txtSalesLL = New Telerik.WinControls.UI.RadMaskedEditBox()
         Me.Label29 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.txtAllItemsPrice = New Telerik.WinControls.UI.RadMaskedEditBox()
         Me.pnlFirst = New System.Windows.Forms.Panel()
         Me.pnlSecond = New System.Windows.Forms.Panel()
         Me.tblSecond = New System.Windows.Forms.TableLayoutPanel()
@@ -121,8 +123,6 @@ Partial Class FrmTreasury
         Me.Label10 = New System.Windows.Forms.Label()
         Me.TxtInCash = New Telerik.WinControls.UI.RadMaskedEditBox()
         Me.FirstRunTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.txtAllItemsPrice = New Telerik.WinControls.UI.RadMaskedEditBox()
         CType(Me.PnlOptions, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PnlOptions.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -160,6 +160,7 @@ Partial Class FrmTreasury
         CType(Me.txtSOPOLL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtSalesDollar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtSalesLL, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtAllItemsPrice, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlFirst.SuspendLayout()
         Me.pnlSecond.SuspendLayout()
         Me.tblSecond.SuspendLayout()
@@ -175,7 +176,6 @@ Partial Class FrmTreasury
         CType(Me.TxtNoteReceive, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtNoteReceiveCheck, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtInCash, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtAllItemsPrice, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -252,14 +252,14 @@ Partial Class FrmTreasury
         Me.DateTimePickerFrom.Size = New System.Drawing.Size(169, 24)
         Me.DateTimePickerFrom.TabIndex = 29
         Me.DateTimePickerFrom.TabStop = False
-        Me.DateTimePickerFrom.Text = "11/01/2023"
+        Me.DateTimePickerFrom.Text = "01/11/2023"
         Me.DateTimePickerFrom.ThemeName = "Office2010Blue"
-        Me.DateTimePickerFrom.Value = New Date(2023, 1, 11, 0, 0, 0, 0)
+        Me.DateTimePickerFrom.Value = New Date(2023, 11, 1, 0, 0, 0, 0)
         CType(Me.DateTimePickerFrom.GetChildAt(0), Telerik.WinControls.UI.RadDateTimePickerElement).Shape = Nothing
         CType(Me.DateTimePickerFrom.GetChildAt(0), Telerik.WinControls.UI.RadDateTimePickerElement).RightToLeft = True
         CType(Me.DateTimePickerFrom.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadCheckBoxElement).TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         CType(Me.DateTimePickerFrom.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadCheckBoxElement).Visibility = Telerik.WinControls.ElementVisibility.Collapsed
-        CType(Me.DateTimePickerFrom.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "11/01/2023"
+        CType(Me.DateTimePickerFrom.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "01/11/2023"
         CType(Me.DateTimePickerFrom.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         '
         'DateTimePickerTo
@@ -273,14 +273,14 @@ Partial Class FrmTreasury
         Me.DateTimePickerTo.Size = New System.Drawing.Size(169, 24)
         Me.DateTimePickerTo.TabIndex = 30
         Me.DateTimePickerTo.TabStop = False
-        Me.DateTimePickerTo.Text = "01/11/2023"
+        Me.DateTimePickerTo.Text = "11/01/2023"
         Me.DateTimePickerTo.ThemeName = "Office2010Blue"
-        Me.DateTimePickerTo.Value = New Date(2023, 11, 1, 0, 0, 0, 0)
+        Me.DateTimePickerTo.Value = New Date(2023, 1, 11, 0, 0, 0, 0)
         CType(Me.DateTimePickerTo.GetChildAt(0), Telerik.WinControls.UI.RadDateTimePickerElement).Shape = Nothing
         CType(Me.DateTimePickerTo.GetChildAt(0), Telerik.WinControls.UI.RadDateTimePickerElement).RightToLeft = True
         CType(Me.DateTimePickerTo.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadCheckBoxElement).TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         CType(Me.DateTimePickerTo.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadCheckBoxElement).Visibility = Telerik.WinControls.ElementVisibility.Collapsed
-        CType(Me.DateTimePickerTo.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "01/11/2023"
+        CType(Me.DateTimePickerTo.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "11/01/2023"
         CType(Me.DateTimePickerTo.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         '
         'LblTo
@@ -1271,6 +1271,36 @@ Partial Class FrmTreasury
         Me.Label29.Text = "إجماليات"
         Me.Label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label20.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label20.Location = New System.Drawing.Point(144, 209)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(144, 30)
+        Me.Label20.TabIndex = 107
+        Me.Label20.Text = "رأس مال أصناف"
+        Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txtAllItemsPrice
+        '
+        Me.txtAllItemsPrice.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtAllItemsPrice.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtAllItemsPrice.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.txtAllItemsPrice.ForeColor = System.Drawing.Color.Black
+        Me.txtAllItemsPrice.Location = New System.Drawing.Point(20, 212)
+        Me.txtAllItemsPrice.MaskType = Telerik.WinControls.UI.MaskType.Numeric
+        Me.txtAllItemsPrice.Name = "txtAllItemsPrice"
+        Me.txtAllItemsPrice.ReadOnly = True
+        Me.txtAllItemsPrice.ShortcutsEnabled = False
+        Me.txtAllItemsPrice.Size = New System.Drawing.Size(118, 24)
+        Me.txtAllItemsPrice.TabIndex = 108
+        Me.txtAllItemsPrice.TabStop = False
+        Me.txtAllItemsPrice.Text = "0"
+        Me.txtAllItemsPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtAllItemsPrice.ThemeName = "Office2010Blue"
+        '
         'pnlFirst
         '
         Me.pnlFirst.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -1731,36 +1761,6 @@ Partial Class FrmTreasury
         '
         Me.FirstRunTimer.Interval = 200
         '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label20.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label20.Location = New System.Drawing.Point(144, 209)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(144, 30)
-        Me.Label20.TabIndex = 107
-        Me.Label20.Text = "رأس مال أصناف"
-        Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'txtAllItemsPrice
-        '
-        Me.txtAllItemsPrice.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.txtAllItemsPrice.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtAllItemsPrice.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.txtAllItemsPrice.ForeColor = System.Drawing.Color.Black
-        Me.txtAllItemsPrice.Location = New System.Drawing.Point(20, 212)
-        Me.txtAllItemsPrice.MaskType = Telerik.WinControls.UI.MaskType.Numeric
-        Me.txtAllItemsPrice.Name = "txtAllItemsPrice"
-        Me.txtAllItemsPrice.ReadOnly = True
-        Me.txtAllItemsPrice.ShortcutsEnabled = False
-        Me.txtAllItemsPrice.Size = New System.Drawing.Size(118, 24)
-        Me.txtAllItemsPrice.TabIndex = 108
-        Me.txtAllItemsPrice.TabStop = False
-        Me.txtAllItemsPrice.Text = "0"
-        Me.txtAllItemsPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtAllItemsPrice.ThemeName = "Office2010Blue"
-        '
         'FrmTreasury
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1817,6 +1817,7 @@ Partial Class FrmTreasury
         CType(Me.txtSOPOLL, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtSalesDollar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtSalesLL, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtAllItemsPrice, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlFirst.ResumeLayout(False)
         Me.pnlSecond.ResumeLayout(False)
         Me.tblSecond.ResumeLayout(False)
@@ -1833,7 +1834,6 @@ Partial Class FrmTreasury
         CType(Me.TxtNoteReceive, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtNoteReceiveCheck, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtInCash, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtAllItemsPrice, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

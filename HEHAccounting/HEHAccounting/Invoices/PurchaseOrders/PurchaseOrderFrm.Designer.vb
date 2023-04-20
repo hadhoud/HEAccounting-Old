@@ -51,8 +51,9 @@ Partial Class PurchaseOrderFrm
         Me.BtnRefrech = New Telerik.WinControls.UI.RadButton()
         Me.BtnPayInvoice = New Telerik.WinControls.UI.RadButton()
         Me.BtnEdit = New Telerik.WinControls.UI.RadButton()
-        Me.BtnPrint = New Telerik.WinControls.UI.RadButton()
         Me.BtnDelete = New Telerik.WinControls.UI.RadButton()
+        Me.BtnPrint = New Telerik.WinControls.UI.RadButton()
+        Me.btnAllPayments = New Telerik.WinControls.UI.RadButton()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.BtnFiltering = New Telerik.WinControls.UI.RadButton()
         Me.BtnReset = New Telerik.WinControls.UI.RadButton()
@@ -76,8 +77,9 @@ Partial Class PurchaseOrderFrm
         CType(Me.BtnRefrech, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnPayInvoice, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnEdit, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BtnPrint, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnDelete, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BtnPrint, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnAllPayments, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel3.SuspendLayout()
         CType(Me.BtnFiltering, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnReset, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -125,10 +127,9 @@ Partial Class PurchaseOrderFrm
         Me.TableLayoutPanel1.Controls.Add(Me.LblInvType, 0, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.LblDropCurrency, 0, 2)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 151)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 171)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 10
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
@@ -137,9 +138,9 @@ Partial Class PurchaseOrderFrm
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(249, 307)
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(249, 287)
         Me.TableLayoutPanel1.TabIndex = 14
         '
         'MskTxtInvDateTo
@@ -147,41 +148,41 @@ Partial Class PurchaseOrderFrm
         Me.MskTxtInvDateTo.CustomFormat = "dd/MM/yyyy"
         Me.MskTxtInvDateTo.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.MskTxtInvDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.MskTxtInvDateTo.Location = New System.Drawing.Point(3, 222)
+        Me.MskTxtInvDateTo.Location = New System.Drawing.Point(3, 217)
         Me.MskTxtInvDateTo.Name = "MskTxtInvDateTo"
         Me.MskTxtInvDateTo.ShowCheckBox = True
         Me.MskTxtInvDateTo.Size = New System.Drawing.Size(166, 24)
         Me.MskTxtInvDateTo.TabIndex = 9
         Me.MskTxtInvDateTo.TabStop = False
-        Me.MskTxtInvDateTo.Text = "14/01/2023"
+        Me.MskTxtInvDateTo.Text = "04/11/2023"
         Me.MskTxtInvDateTo.ThemeName = "Office2010Blue"
-        Me.MskTxtInvDateTo.Value = New Date(2023, 1, 14, 0, 0, 0, 0)
+        Me.MskTxtInvDateTo.Value = New Date(2023, 11, 4, 0, 0, 0, 0)
         CType(Me.MskTxtInvDateTo.GetChildAt(0), Telerik.WinControls.UI.RadDateTimePickerElement).RightToLeft = True
-        CType(Me.MskTxtInvDateTo.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "14/01/2023"
+        CType(Me.MskTxtInvDateTo.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "04/11/2023"
         '
         'MskTxtInvDateFrom
         '
         Me.MskTxtInvDateFrom.CustomFormat = "dd/MM/yyyy"
         Me.MskTxtInvDateFrom.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.MskTxtInvDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.MskTxtInvDateFrom.Location = New System.Drawing.Point(3, 192)
+        Me.MskTxtInvDateFrom.Location = New System.Drawing.Point(3, 187)
         Me.MskTxtInvDateFrom.Name = "MskTxtInvDateFrom"
         Me.MskTxtInvDateFrom.ShowCheckBox = True
         Me.MskTxtInvDateFrom.Size = New System.Drawing.Size(166, 24)
         Me.MskTxtInvDateFrom.TabIndex = 8
         Me.MskTxtInvDateFrom.TabStop = False
-        Me.MskTxtInvDateFrom.Text = "14/01/2023"
+        Me.MskTxtInvDateFrom.Text = "04/11/2023"
         Me.MskTxtInvDateFrom.ThemeName = "Office2010Blue"
-        Me.MskTxtInvDateFrom.Value = New Date(2023, 1, 14, 0, 0, 0, 0)
+        Me.MskTxtInvDateFrom.Value = New Date(2023, 11, 4, 0, 0, 0, 0)
         CType(Me.MskTxtInvDateFrom.GetChildAt(0), Telerik.WinControls.UI.RadDateTimePickerElement).RightToLeft = True
-        CType(Me.MskTxtInvDateFrom.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "14/01/2023"
+        CType(Me.MskTxtInvDateFrom.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "04/11/2023"
         '
         'LblStatus
         '
         Me.LblStatus.AutoSize = True
         Me.LblStatus.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LblStatus.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblStatus.Location = New System.Drawing.Point(175, 5)
+        Me.LblStatus.Location = New System.Drawing.Point(175, 0)
         Me.LblStatus.Name = "LblStatus"
         Me.LblStatus.Size = New System.Drawing.Size(71, 30)
         Me.LblStatus.TabIndex = 31
@@ -192,7 +193,7 @@ Partial Class PurchaseOrderFrm
         '
         Me.DropPaymentType.DropDownAnimationEnabled = True
         Me.DropPaymentType.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DropPaymentType.Location = New System.Drawing.Point(3, 162)
+        Me.DropPaymentType.Location = New System.Drawing.Point(3, 157)
         Me.DropPaymentType.MaxLength = 65535
         Me.DropPaymentType.Name = "DropPaymentType"
         Me.DropPaymentType.Size = New System.Drawing.Size(166, 24)
@@ -205,7 +206,7 @@ Partial Class PurchaseOrderFrm
         Me.DropStatus.BackColor = System.Drawing.Color.White
         Me.DropStatus.DropDownAnimationEnabled = True
         Me.DropStatus.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DropStatus.Location = New System.Drawing.Point(3, 8)
+        Me.DropStatus.Location = New System.Drawing.Point(3, 3)
         Me.DropStatus.MaxLength = 65535
         Me.DropStatus.Name = "DropStatus"
         Me.DropStatus.Size = New System.Drawing.Size(166, 24)
@@ -217,7 +218,7 @@ Partial Class PurchaseOrderFrm
         '
         Me.LblTo.AutoSize = True
         Me.LblTo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LblTo.Location = New System.Drawing.Point(175, 219)
+        Me.LblTo.Location = New System.Drawing.Point(175, 214)
         Me.LblTo.Name = "LblTo"
         Me.LblTo.Size = New System.Drawing.Size(71, 30)
         Me.LblTo.TabIndex = 20
@@ -228,7 +229,7 @@ Partial Class PurchaseOrderFrm
         '
         Me.LblFrom.AutoSize = True
         Me.LblFrom.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LblFrom.Location = New System.Drawing.Point(175, 189)
+        Me.LblFrom.Location = New System.Drawing.Point(175, 184)
         Me.LblFrom.Name = "LblFrom"
         Me.LblFrom.Size = New System.Drawing.Size(71, 30)
         Me.LblFrom.TabIndex = 18
@@ -242,7 +243,7 @@ Partial Class PurchaseOrderFrm
         Me.TxtVendor.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtVendor.HideSelection = False
         Me.TxtVendor.LeftButtonItems.AddRange(New Telerik.WinControls.RadItem() {Me.TxtVendorBtn})
-        Me.TxtVendor.Location = New System.Drawing.Point(3, 132)
+        Me.TxtVendor.Location = New System.Drawing.Point(3, 127)
         Me.TxtVendor.MaxLength = 65535
         Me.TxtVendor.Name = "TxtVendor"
         Me.TxtVendor.ShowClearButton = True
@@ -265,7 +266,7 @@ Partial Class PurchaseOrderFrm
         'TxtInvID
         '
         Me.TxtInvID.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtInvID.Location = New System.Drawing.Point(3, 102)
+        Me.TxtInvID.Location = New System.Drawing.Point(3, 97)
         Me.TxtInvID.Name = "TxtInvID"
         Me.TxtInvID.ShortcutsEnabled = False
         Me.TxtInvID.ShowClearButton = True
@@ -278,7 +279,7 @@ Partial Class PurchaseOrderFrm
         '
         Me.DropCurrency.DropDownAnimationEnabled = True
         Me.DropCurrency.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DropCurrency.Location = New System.Drawing.Point(3, 38)
+        Me.DropCurrency.Location = New System.Drawing.Point(3, 33)
         Me.DropCurrency.MaxLength = 65535
         Me.DropCurrency.Name = "DropCurrency"
         Me.DropCurrency.Size = New System.Drawing.Size(166, 24)
@@ -290,7 +291,7 @@ Partial Class PurchaseOrderFrm
         '
         Me.LblPaymentType.AutoSize = True
         Me.LblPaymentType.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LblPaymentType.Location = New System.Drawing.Point(175, 159)
+        Me.LblPaymentType.Location = New System.Drawing.Point(175, 154)
         Me.LblPaymentType.Name = "LblPaymentType"
         Me.LblPaymentType.Size = New System.Drawing.Size(71, 30)
         Me.LblPaymentType.TabIndex = 21
@@ -301,7 +302,7 @@ Partial Class PurchaseOrderFrm
         '
         Me.LblInvID.AutoSize = True
         Me.LblInvID.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LblInvID.Location = New System.Drawing.Point(175, 99)
+        Me.LblInvID.Location = New System.Drawing.Point(175, 94)
         Me.LblInvID.Name = "LblInvID"
         Me.LblInvID.Size = New System.Drawing.Size(71, 30)
         Me.LblInvID.TabIndex = 17
@@ -312,7 +313,7 @@ Partial Class PurchaseOrderFrm
         '
         Me.LblVendor.AutoSize = True
         Me.LblVendor.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LblVendor.Location = New System.Drawing.Point(175, 129)
+        Me.LblVendor.Location = New System.Drawing.Point(175, 124)
         Me.LblVendor.Name = "LblVendor"
         Me.LblVendor.Size = New System.Drawing.Size(71, 30)
         Me.LblVendor.TabIndex = 17
@@ -327,7 +328,7 @@ Partial Class PurchaseOrderFrm
         Me.TableLayoutPanel4.Controls.Add(Me.RadioPurchase, 0, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.RadioReturns, 1, 0)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 68)
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 63)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.RowCount = 1
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle())
@@ -366,7 +367,7 @@ Partial Class PurchaseOrderFrm
         '
         Me.LblInvType.AutoSize = True
         Me.LblInvType.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LblInvType.Location = New System.Drawing.Point(175, 65)
+        Me.LblInvType.Location = New System.Drawing.Point(175, 60)
         Me.LblInvType.Name = "LblInvType"
         Me.LblInvType.Size = New System.Drawing.Size(71, 34)
         Me.LblInvType.TabIndex = 19
@@ -378,7 +379,7 @@ Partial Class PurchaseOrderFrm
         Me.LblDropCurrency.AutoSize = True
         Me.LblDropCurrency.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LblDropCurrency.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblDropCurrency.Location = New System.Drawing.Point(175, 35)
+        Me.LblDropCurrency.Location = New System.Drawing.Point(175, 30)
         Me.LblDropCurrency.Name = "LblDropCurrency"
         Me.LblDropCurrency.Size = New System.Drawing.Size(71, 30)
         Me.LblDropCurrency.TabIndex = 28
@@ -395,18 +396,20 @@ Partial Class PurchaseOrderFrm
         Me.TableLayoutPanel2.Controls.Add(Me.BtnRefrech, 1, 3)
         Me.TableLayoutPanel2.Controls.Add(Me.BtnPayInvoice, 0, 2)
         Me.TableLayoutPanel2.Controls.Add(Me.BtnEdit, 1, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.BtnPrint, 0, 3)
         Me.TableLayoutPanel2.Controls.Add(Me.BtnDelete, 1, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.BtnPrint, 0, 4)
+        Me.TableLayoutPanel2.Controls.Add(Me.btnAllPayments, 0, 3)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 5
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel2.RowCount = 6
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 2.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(249, 148)
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(249, 168)
         Me.TableLayoutPanel2.TabIndex = 18
         '
         'BtnNew
@@ -415,7 +418,7 @@ Partial Class PurchaseOrderFrm
         Me.BtnNew.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNew.Image = Global.HEHAccounting.My.Resources.Resources.Creates
         Me.BtnNew.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnNew.Location = New System.Drawing.Point(142, 23)
+        Me.BtnNew.Location = New System.Drawing.Point(142, 3)
         Me.BtnNew.Name = "BtnNew"
         Me.BtnNew.Size = New System.Drawing.Size(90, 36)
         Me.BtnNew.TabIndex = 21
@@ -428,7 +431,7 @@ Partial Class PurchaseOrderFrm
         Me.BtnRefrech.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.BtnRefrech.Image = Global.HEHAccounting.My.Resources.Resources.Sync
         Me.BtnRefrech.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.BtnRefrech.Location = New System.Drawing.Point(18, 107)
+        Me.BtnRefrech.Location = New System.Drawing.Point(18, 87)
         Me.BtnRefrech.Name = "BtnRefrech"
         Me.BtnRefrech.Size = New System.Drawing.Size(90, 36)
         Me.BtnRefrech.TabIndex = 3
@@ -441,7 +444,7 @@ Partial Class PurchaseOrderFrm
         Me.BtnPayInvoice.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.BtnPayInvoice.Image = Global.HEHAccounting.My.Resources.Resources.money
         Me.BtnPayInvoice.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnPayInvoice.Location = New System.Drawing.Point(142, 65)
+        Me.BtnPayInvoice.Location = New System.Drawing.Point(142, 45)
         Me.BtnPayInvoice.Name = "BtnPayInvoice"
         Me.BtnPayInvoice.Size = New System.Drawing.Size(90, 36)
         Me.BtnPayInvoice.TabIndex = 20
@@ -454,25 +457,12 @@ Partial Class PurchaseOrderFrm
         Me.BtnEdit.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnEdit.Image = Global.HEHAccounting.My.Resources.Resources.feedback
         Me.BtnEdit.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnEdit.Location = New System.Drawing.Point(18, 23)
+        Me.BtnEdit.Location = New System.Drawing.Point(18, 3)
         Me.BtnEdit.Name = "BtnEdit"
         Me.BtnEdit.Size = New System.Drawing.Size(90, 36)
         Me.BtnEdit.TabIndex = 1
         Me.BtnEdit.Text = "تعديل"
         Me.BtnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        '
-        'BtnPrint
-        '
-        Me.BtnPrint.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.BtnPrint.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnPrint.Image = Global.HEHAccounting.My.Resources.Resources.print
-        Me.BtnPrint.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnPrint.Location = New System.Drawing.Point(142, 107)
-        Me.BtnPrint.Name = "BtnPrint"
-        Me.BtnPrint.Size = New System.Drawing.Size(90, 36)
-        Me.BtnPrint.TabIndex = 17
-        Me.BtnPrint.Text = "طباعة"
-        Me.BtnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         '
         'BtnDelete
         '
@@ -481,12 +471,38 @@ Partial Class PurchaseOrderFrm
         Me.BtnDelete.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.BtnDelete.Image = CType(resources.GetObject("BtnDelete.Image"), System.Drawing.Image)
         Me.BtnDelete.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnDelete.Location = New System.Drawing.Point(18, 65)
+        Me.BtnDelete.Location = New System.Drawing.Point(18, 45)
         Me.BtnDelete.Name = "BtnDelete"
         Me.BtnDelete.Size = New System.Drawing.Size(90, 36)
         Me.BtnDelete.TabIndex = 2
         Me.BtnDelete.Text = "حذف"
         Me.BtnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        '
+        'BtnPrint
+        '
+        Me.BtnPrint.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.BtnPrint.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnPrint.Image = Global.HEHAccounting.My.Resources.Resources.print
+        Me.BtnPrint.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnPrint.Location = New System.Drawing.Point(142, 129)
+        Me.BtnPrint.Name = "BtnPrint"
+        Me.BtnPrint.Size = New System.Drawing.Size(90, 36)
+        Me.BtnPrint.TabIndex = 17
+        Me.BtnPrint.Text = "طباعة"
+        Me.BtnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        '
+        'btnAllPayments
+        '
+        Me.btnAllPayments.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnAllPayments.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnAllPayments.Image = Global.HEHAccounting.My.Resources.Resources.money
+        Me.btnAllPayments.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnAllPayments.Location = New System.Drawing.Point(142, 87)
+        Me.btnAllPayments.Name = "btnAllPayments"
+        Me.btnAllPayments.Size = New System.Drawing.Size(90, 36)
+        Me.btnAllPayments.TabIndex = 22
+        Me.btnAllPayments.Text = "الدفعات"
+        Me.btnAllPayments.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         '
         'TableLayoutPanel3
         '
@@ -590,8 +606,9 @@ Partial Class PurchaseOrderFrm
         CType(Me.BtnRefrech, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnPayInvoice, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnEdit, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BtnPrint, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnDelete, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BtnPrint, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnAllPayments, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel3.ResumeLayout(False)
         CType(Me.BtnFiltering, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnReset, System.ComponentModel.ISupportInitialize).EndInit()
@@ -635,5 +652,6 @@ Partial Class PurchaseOrderFrm
     Friend WithEvents MskTxtInvDateTo As Telerik.WinControls.UI.RadDateTimePicker
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents BtnNew As Telerik.WinControls.UI.RadButton
+    Friend WithEvents btnAllPayments As Telerik.WinControls.UI.RadButton
 End Class
 

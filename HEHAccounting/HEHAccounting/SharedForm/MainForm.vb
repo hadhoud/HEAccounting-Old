@@ -1254,6 +1254,13 @@ Public Class MainForm
         stripLblDollarRateValue.Visibility = IIf(stripLblDollarRateValue.IsElementVisible, ElementVisibility.Collapsed, ElementVisibility.Visible)
     End Sub
 
+    Private Sub RibBtnUserFieldsSetting_Click(sender As Object, e As EventArgs) Handles RibBtnUserFieldsSetting.Click
+        Dim FrmUserFieldsSetting As New UserFieldsSetting
+        FrmUserFieldsSetting.ShowDialog()
+        'Reload User Fields Setting
+        Home.GetUserFieldsSetting()
+    End Sub
+
     'Private Sub RibBtnDashboard_Click(sender As Object, e As EventArgs)
     '    FrmToOpen = "FrmDashboard"
     '    FrmOpenTimer.Start()

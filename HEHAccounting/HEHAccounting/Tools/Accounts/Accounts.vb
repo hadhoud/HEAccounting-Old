@@ -35,13 +35,13 @@ Public Class Accounts
         If Me.BtnAccWithBalance.IsChecked = True Then
             Dim Param(1) As String
             Param(0) = "@IAllAccounts , 0"
-            Param(1) = "@ICurrencyID , " & ReportFormCurrency
+            Param(1) = "@ICurrencyID , " & ProgramFormCurrency
             FillGridViewProcedureWithParameters(Me.GridAccounts, "SelectAccounts", Param)
             HideShowColummn(Me.GridAccounts, Me.GridAccounts.Columns("Balance").Index, False)
         Else
             Dim Param(1) As String
             Param(0) = "@IAllAccounts , 1"
-            Param(1) = "@ICurrencyID , " & ReportFormCurrency
+            Param(1) = "@ICurrencyID , " & ProgramFormCurrency
             FillGridViewProcedureWithParameters(Me.GridAccounts, "SelectAccounts", Param)
         End If
         InitiateGrid(Me.GridAccounts)

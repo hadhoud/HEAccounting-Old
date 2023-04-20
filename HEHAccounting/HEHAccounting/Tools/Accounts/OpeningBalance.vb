@@ -59,6 +59,7 @@
         Me.DropCurrency.DisplayMember = IIf(BoolLTRLanguage = True, "LatinName", "CurrName")
         Me.DropCurrency.DataSource = Currencydata
         Initiatedropdownlist(Me.DropCurrency, False)
+        Me.DropCurrency.SelectedValue = ProgramFormCurrency
     End Sub
     Private Sub FormClear()
         Me.TxtAccName.Text = String.Empty

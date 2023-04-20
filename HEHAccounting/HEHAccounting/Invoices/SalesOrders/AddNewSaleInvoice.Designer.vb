@@ -755,6 +755,8 @@ Partial Class AddNewSaleInvoice
         Me.MskTxtInvDate.Mask = "dd/MM/yyyy"
         Me.MskTxtInvDate.MaskType = Telerik.WinControls.UI.MaskType.DateTime
         Me.MskTxtInvDate.Name = "MskTxtInvDate"
+        Me.MskTxtInvDate.SelectedText = "01"
+        Me.MskTxtInvDate.SelectionLength = 2
         Me.MskTxtInvDate.Size = New System.Drawing.Size(153, 24)
         Me.MskTxtInvDate.TabIndex = 11
         Me.MskTxtInvDate.TabStop = False
@@ -1089,7 +1091,6 @@ Partial Class AddNewSaleInvoice
     Friend WithEvents TxtCurrencyVal As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents BtnGetCurrencyVal As Telerik.WinControls.UI.RadButton
     Friend WithEvents LblPaid As Label
-    Friend WithEvents txtDollarRate As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents lblItemPurchasePriceLira As Telerik.WinControls.UI.RadLabel
     Friend WithEvents lblItemPurchasePriceDollar As Telerik.WinControls.UI.RadLabel
     Friend WithEvents TimerPurchasePrice As Timer
@@ -1100,5 +1101,6 @@ Partial Class AddNewSaleInvoice
     Friend WithEvents RadioCurrencyLebanease As Telerik.WinControls.UI.RadRadioButton
     Friend WithEvents txtTotalDueBig As Telerik.WinControls.UI.RadMaskedEditBox
     Friend WithEvents CustomTxtItemName As CustomItemNameTextBoxControl
+    Friend WithEvents txtDollarRate As Telerik.WinControls.UI.RadTextBox
 End Class
 

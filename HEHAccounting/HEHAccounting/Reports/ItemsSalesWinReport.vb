@@ -20,11 +20,35 @@ Public Class ItemsSalesWinReport
 
         RefrechGrid()
 
-        Me.GridDaily.BottomPinnedRowsMode = GridViewBottomPinnedRowsMode.Fixed
-        GridDaily.MasterView.SummaryRows(0).PinPosition = PinnedRowPosition.Bottom
+        'Me.GridDaily.BottomPinnedRowsMode = GridViewBottomPinnedRowsMode.Fixed
+        'GridDaily.MasterView.SummaryRows(0).PinPosition = PinnedRowPosition.Bottom
 
         InitiateGrid(Me.GridDaily, Grouping:=True)
+
+        ShowGridSummaryRow()
+
     End Sub
+
+    Private Sub ShowGridSummaryRow()
+        GridViewAddSummaryRow(GridDaily, "InvoiceNumber", "{0}", GridAggregateFunction.Count)
+        GridViewAddSummaryRow(GridDaily, "Qty", "{0}", GridAggregateFunction.Sum)
+        GridViewAddSummaryRow(GridDaily, "PurchasingPriceLL", "{0}", GridAggregateFunction.Sum)
+        GridViewAddSummaryRow(GridDaily, "PurchasingPriceUSD", "{0}", GridAggregateFunction.Sum)
+        GridViewAddSummaryRow(GridDaily, "SellingPriceLL", "{0}", GridAggregateFunction.Sum)
+        GridViewAddSummaryRow(GridDaily, "SellingPriceUSD", "{0}", GridAggregateFunction.Sum)
+        GridViewAddSummaryRow(GridDaily, "TotalPurchasingPriceLL", "{0}", GridAggregateFunction.Sum)
+        GridViewAddSummaryRow(GridDaily, "TotalPurchasingPriceUSD", "{0}", GridAggregateFunction.Sum)
+        GridViewAddSummaryRow(GridDaily, "SubTotalSellingPriceLL", "{0}", GridAggregateFunction.Sum)
+        GridViewAddSummaryRow(GridDaily, "SubTotalSellingPriceUSD", "{0}", GridAggregateFunction.Sum)
+        GridViewAddSummaryRow(GridDaily, "DiscountLL", "{0}", GridAggregateFunction.Sum)
+        GridViewAddSummaryRow(GridDaily, "DiscountUSD", "{0}", GridAggregateFunction.Sum)
+        GridViewAddSummaryRow(GridDaily, "TotalDueSellingPriceLL", "{0}", GridAggregateFunction.Sum)
+        GridViewAddSummaryRow(GridDaily, "TotalDueSellingPriceUSD", "{0}", GridAggregateFunction.Sum)
+        GridViewAddSummaryRow(GridDaily, "SellPurchaseDifferenceLL", "{0}", GridAggregateFunction.Sum)
+        GridViewAddSummaryRow(GridDaily, "SellPurchaseDifferenceUSD", "{0}", GridAggregateFunction.Sum)
+        GridViewAddSummaryRow(GridDaily, "DollarRate", "{0}", GridAggregateFunction.Max)
+    End Sub
+
     Private Sub Daily_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AutoComplete()
         TimerFrm.Start()
@@ -36,6 +60,22 @@ Public Class ItemsSalesWinReport
         Param(1) = "@tTODate , " & Me.MskTxtInvDateTo.Value
         FillGridViewProcedureWithParameters(Me.GridDaily, "GetItemsSalesDailyWin", Param)
         HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("PaymentType").Index, False)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("PurchasingPriceLL").Index, BoolShowSalesItemsWinColPurchasingPriceLL)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("PurchasingPriceUSD").Index, BoolShowSalesItemsWinColPurchasingPriceUSD)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("SellingPriceLL").Index, BoolShowSalesItemsWinColSellingPriceLL)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("SellingPriceUSD").Index, BoolShowSalesItemsWinColSellingPriceUSD)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("TotalPurchasingPriceLL").Index, BoolShowSalesItemsWinColTotalPurchasingPriceLL)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("TotalPurchasingPriceUSD").Index, BoolShowSalesItemsWinColTotalPurchasingPriceUSD)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("SubTotalSellingPriceLL").Index, BoolShowSalesItemsWinColSubTotalSellingPriceLL)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("SubTotalSellingPriceUSD").Index, BoolShowSalesItemsWinColSubTotalSellingPriceUSD)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("DiscountLL").Index, BoolShowSalesItemsWinColDiscountLL)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("DiscountUSD").Index, BoolShowSalesItemsWinColDiscountUSD)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("TotalDueSellingPriceLL").Index, BoolShowSalesItemsWinColTotalDueSellingPriceLL)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("TotalDueSellingPriceUSD").Index, BoolShowSalesItemsWinColTotalDueSellingPriceUSD)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("SellPurchaseDifferenceLL").Index, BoolShowSalesItemsWinColSellPurchaseDifferenceLL)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("SellPurchaseDifferenceUSD").Index, BoolShowSalesItemsWinColSellPurchaseDifferenceUSD)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("DollarRate").Index, BoolShowSalesItemsWinColCurrencyRate)
+
     End Sub
 
     Private Sub RefrechWithFilterGrid()
@@ -98,6 +138,11 @@ Public Class ItemsSalesWinReport
             e.CellElement.RowElement.DrawFill = True
             e.CellElement.RowElement.GradientStyle = Telerik.WinControls.GradientStyles.Solid
             e.CellElement.RowElement.BackColor = Color.FromArgb(239, 246, 255)
+            If e.Column.Name = "PurchasingPriceLL" Or e.Column.Name = "SellingPriceLL" Or e.Column.Name = "TotalPurchasingPriceLL" _
+                Or e.Column.Name = "SubTotalSellingPriceLL" Or e.Column.Name = "DiscountLL" Or e.Column.Name = "TotalDueSellingPriceLL" _
+                Or e.Column.Name = "SellPurchaseDifferenceLL" Or e.Column.Name = "DollarRate" Then
+                e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, 0, False, False)
+            End If
         Else
             e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, ValueResetFlags.Local)
             e.CellElement.RowElement.ResetValue(LightVisualElement.GradientStyleProperty, ValueResetFlags.Local)
@@ -106,18 +151,6 @@ Public Class ItemsSalesWinReport
     End Sub
 
     Private Sub GridDaily_CellFormatting(sender As Object, e As CellFormattingEventArgs) Handles GridDaily.CellFormatting
-        'If e.CellElement.ColumnInfo.Name = "SellPurchaseDifference" Then
-        '    'e.CellElement.ForeColor = Color.Blue
-        '    If e.CellElement.Value < 0 Then
-        '        e.CellElement.DrawFill = True
-        '        e.CellElement.GradientStyle = Telerik.WinControls.GradientStyles.Solid
-        '        e.CellElement.BackColor = Color.Red
-        '    Else
-        '        e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, ValueResetFlags.Local)
-        '        e.CellElement.ResetValue(LightVisualElement.GradientStyleProperty, ValueResetFlags.Local)
-        '        e.CellElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
-        '    End If
-        'End If
         Dim column As GridViewDataColumn = TryCast(e.Column, GridViewDataColumn)
         If TypeOf e.Row Is GridViewDataRowInfo AndAlso column IsNot Nothing Then
             If column.Name = "PaymentTypeName" Then
@@ -144,6 +177,12 @@ Public Class ItemsSalesWinReport
                 e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, ValueResetFlags.Local)
                 e.CellElement.ResetValue(LightVisualElement.GradientStyleProperty, ValueResetFlags.Local)
                 e.CellElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
+            End If
+
+            If e.Column.Name = "PurchasingPriceLL" Or e.Column.Name = "SellingPriceLL" Or e.Column.Name = "TotalPurchasingPriceLL" _
+                Or e.Column.Name = "SubTotalSellingPriceLL" Or e.Column.Name = "DiscountLL" Or e.Column.Name = "TotalDueSellingPriceLL" _
+                Or e.Column.Name = "SellPurchaseDifferenceLL" Or e.Column.Name = "DollarRate" Then
+                e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, 0, False, False)
             End If
         End If
     End Sub

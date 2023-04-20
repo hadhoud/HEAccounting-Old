@@ -47,7 +47,7 @@ Public Class NoteReceive
 
     Private Sub FormClear()
         Me.TxtDueDate.Value = Date.Now.Date
-        Me.DropCurrency.SelectedValue = 1
+        Me.DropCurrency.SelectedValue = ProgramFormCurrency
         Me.TxtCustomer.Clear()
         Me.TxtAmount.Value = 0
         Me.TxtEqualValue.Text = "0"
@@ -111,6 +111,7 @@ Public Class NoteReceive
         Me.DropCurrency.DisplayMember = IIf(BoolLTRLanguage = True, "LatinName", "CurrName")
         Me.DropCurrency.DataSource = Currencydata
         Initiatedropdownlist(Me.DropCurrency)
+        Me.DropCurrency.SelectedValue = ProgramFormCurrency
     End Sub
 
     Public Sub ShowEdit()
@@ -267,7 +268,6 @@ Public Class NoteReceive
     Private Sub DropCurerncySelectedChange()
         If Me.DropCurrency.SelectedIndex <> -1 Then
             Dim CurrencyRow As DataRow = Currencydata.Select("CurrencyID = " & Me.DropCurrency.SelectedValue).First
-            CurrencyinitialState = CurrencyRow("initialstate").ToString
             CurrencyRound = CurrencyRow("CurrFloat").ToString
             If Me.DropCurrency.SelectedValue.ToString = "1" Then
                 Me.TxtCurrencyVal.Text = "1"
@@ -284,10 +284,10 @@ Public Class NoteReceive
                 Me.TxtEqualValue.Mask = "F" & CurrencyRound
             End If
             EditCurrencyRateID = Me.TxtCurrencyVal.Tag
-            If CurrencyinitialState = "S" Then
-                Me.TxtEqualValue.Text = Math.Round(Me.TxtAmount.Value / Me.TxtCurrencyVal.Text, 3)
+            If Me.DropCurrency.SelectedValue = 1 Then
+                Me.TxtEqualValue.Text = Math.Round(Me.TxtAmount.Value / Me.txtDollarRateAmt.Text, 3)
             Else
-                Me.TxtEqualValue.Text = Math.Round(Me.TxtAmount.Value * Me.TxtCurrencyVal.Text, 3)
+                Me.TxtEqualValue.Text = Math.Round(Me.TxtAmount.Value * Me.txtDollarRateAmt.Text, 0)
             End If
         End If
         GetBalance()
@@ -305,21 +305,21 @@ Public Class NoteReceive
         If FormCheck() Then
             If MessageShowAsk(IIf(BtnSaveAndNew.Tag = "Edit", Con.Ask_Edit, Con.Ask_Add)) = DialogResult.Yes Then
                 Dim Param(14) As String
-                Param(0) = "@INotesID  , " & Me.TxtCode.Text
-                Param(1) = "@ICustomerID , " & CustomerID
-                Param(2) = "@FAmount , " & Me.TxtAmount.Value
-                Param(3) = "@FBalance, " & Me.TxtAccBalance.Text
-                Param(4) = "@FAmountEuality , " & Me.TxtEqualValue.Text
-                Param(5) = "@ICurrencyRateID , " & EditCurrencyRateID
-                Param(6) = "@ICurrencyID , " & Me.DropCurrency.SelectedValue
+                Param(0) = "@iNotesID  , " & Me.TxtCode.Text
+                Param(1) = "@iCustomerID , " & CustomerID
+                Param(2) = "@fAmount , " & Me.TxtAmount.Value
+                Param(3) = "@fBalance, " & Me.TxtAccBalance.Text
+                Param(4) = "@fAmountEuality , " & Me.TxtEqualValue.Text
+                Param(5) = "@iCurrencyRateID , " & EditCurrencyRateID
+                Param(6) = "@iCurrencyID , " & Me.DropCurrency.SelectedValue
                 Param(7) = "@fDollarRate_amt , " & txtDollarRateAmt.Text
                 Param(8) = "@TDueDate , " & Me.TxtDueDate.Value
                 Param(9) = "@CPaymentType , " & IIf(Me.RadioCash.IsChecked, "C", "Check")
                 Param(10) = "@CDescription , " & Evalquote(Me.TxtDesc.Text)
-                Param(11) = "@ICheckID , " & IIf(Me.RadioCheck.IsChecked, CheckID, Nothing)
-                Param(12) = "@IInvoiceReference , " & InvoiceReference
-                Param(13) = "@IStatus , " & Me.DropStatus.SelectedValue
-                Param(14) = "@IUserID , " & UserID
+                Param(11) = "@iCheckID , " & IIf(Me.RadioCheck.IsChecked, CheckID, Nothing)
+                Param(12) = "@iInvoiceReference , " & InvoiceReference
+                Param(13) = "@iStatus , " & Me.DropStatus.SelectedValue
+                Param(14) = "@iUserID , " & UserID
                 If BtnSaveAndNew.Tag = "Save" Then
                     ExecuteProcedureWithParameters("InsertNotesReceive", Param)
                     If Me.RadioCheck.IsChecked Then
@@ -400,10 +400,10 @@ Public Class NoteReceive
 
     Private Sub TxtAmount_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles TxtAmount.Validating
         If Me.TxtCurrencyVal.Text <> String.Empty And Me.TxtAmount.Value <> String.Empty Then
-            If CurrencyinitialState = "S" Then
-                Me.TxtEqualValue.Text = Math.Round(Me.TxtAmount.Value / Me.TxtCurrencyVal.Text, 3)
+            If Me.DropCurrency.SelectedValue = 1 Then
+                Me.TxtEqualValue.Text = Math.Round(Me.TxtAmount.Value / Me.txtDollarRateAmt.Text, 3)
             Else
-                Me.TxtEqualValue.Text = Math.Round(Me.TxtAmount.Value * Me.TxtCurrencyVal.Text, 3)
+                Me.TxtEqualValue.Text = Math.Round(Me.TxtAmount.Value * Me.txtDollarRateAmt.Text, 0)
             End If
         End If
         'Me.TxtDesc.Text = GetDescription()

@@ -65,21 +65,30 @@ Public Class SalesOrderFrm
     Public Sub RefrechGrid()
 
         FillGridViewProcedure(Me.GridSalesOrders, "SelectSalesOrdersJoinCustomers")
+
+        'Always Hidden
         HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("ReferType").Index, False)
         HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("PaymentType").Index, False)
         HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("status").Index, False)
-
-        HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("CurrencyVal").Index, False)
+        HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("CurrencySymb").Index, False)
+        ''End
 
         HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("CustomerTitle").Index, BoolShowSalesOrdersColCustomerTitle)
-
-        HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("CurrencySymb").Index, False)
         HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("InvoiceCurrencySymb").Index, BoolShowSalesOrdersColCurrencySymb)
+        HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("SubTotalLL").Index, BoolShowSalesOrdersColSubTotalLL)
+        HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("SubTotalUSD").Index, BoolShowSalesOrdersColSubTotalUSD)
+        HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("DiscountLL").Index, BoolShowSalesOrdersColDiscountLL)
+        HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("DiscountUSD").Index, BoolShowSalesOrdersColDiscountUSD)
+        HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("TotalDueLL").Index, BoolShowSalesOrdersColTotalDueLL)
+        HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("TotalDueUSD").Index, BoolShowSalesOrdersColTotalDueUSD)
+        HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("DollarRate").Index, BoolShowSalesOrdersColCurrencyRate)
+        HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("StatusName").Index, BoolShowSalesOrdersColStatus)
+
         If BoolShowItemsInSOMainForm Then
             ShowItemsInGrid()
         End If
 
-        FilterGrid(Me.GridSalesOrders, "DueDate", DateSerial(Year(Date.Now), Month(Date.Now), DateAndTime.Day(Date.Now)), FilterOperator.IsEqualTo)
+        FilterGrid(Me.GridSalesOrders, "DueDate", DateSerial(Year(Date.Now), Month(Date.Now), DateAndTime.Day(Date.Now)), FilterOperator.IsGreaterThanOrEqualTo)
     End Sub
 
     Private Sub FillDropList()
@@ -118,6 +127,7 @@ Public Class SalesOrderFrm
         Initiatedropdownlist(Me.DropCurrency)
         Initiatedropdownlist(Me.DropStatus, False)
         Initiatedropdownlist(Me.DropPaymentType, False)
+
     End Sub
 
     Private Sub AddLinkColumn()
@@ -335,7 +345,8 @@ Public Class SalesOrderFrm
             And Me.GridSalesOrders.SelectedRows.Count <> 0 Then
             If Me.GridSalesOrders.CurrentRow.HierarchyLevel = 0 Then
                 If Me.GridSalesOrders.CurrentRow.Cells("Status").Value.ToString = Status.Posted Then
-                    If Me.GridSalesOrders.CurrentRow.Cells("PaymentType").Value.ToString = "D" Then
+                    If Me.GridSalesOrders.CurrentRow.Cells("PaymentType").Value.ToString = "D" _
+                            Or Me.GridSalesOrders.CurrentRow.Cells("PaymentType").Value.ToString = "TA" Then
                         Dim FrmPayInvoice As New PayInvoice
                         FrmPayInvoice.BoolForShowInv = True
                         FrmPayInvoice.InvNum = Me.GridSalesOrders.CurrentRow.Cells("InvID").Value
@@ -355,7 +366,8 @@ Public Class SalesOrderFrm
                 End If
             Else
                 If Me.GridSalesOrders.CurrentRow.ViewInfo.ParentRow.Cells("Status").Value.ToString = Status.Posted Then
-                    If Me.GridSalesOrders.CurrentRow.ViewInfo.ParentRow.Cells("PaymentType").Value.ToString = "D" Then
+                    If Me.GridSalesOrders.CurrentRow.ViewInfo.ParentRow.Cells("PaymentType").Value.ToString = "D" _
+                            Or Me.GridSalesOrders.CurrentRow.ViewInfo.ParentRow.Cells("PaymentType").Value.ToString = "TA" Then
                         Dim FrmPayInvoice As New PayInvoice
                         FrmPayInvoice.BoolForShowInv = True
                         FrmPayInvoice.InvNum = Me.GridSalesOrders.CurrentRow.ViewInfo.ParentRow.Cells("InvID").Value
@@ -391,9 +403,18 @@ Public Class SalesOrderFrm
 
     Private Sub BtnPrintInvoice_Click(sender As Object, e As EventArgs) Handles BtnPrintInvoice.Click
         If Me.GridSalesOrders.ChildRows.Count <> 0 And Me.GridSalesOrders.Rows.Count <> 0 Then
-            Dim param(1) As String
+            Dim param(10) As String
             param(0) = "InvID , " & Me.GridSalesOrders.CurrentRow.Cells("InvID").Value
             param(1) = "WaterMark , " & CompanyLatinName
+            param(2) = "ShowSubTotalLL , " & BoolShowInvSaleOrderSubTotalLL
+            param(3) = "ShowDiscountLL , " & BoolShowInvSaleOrderDiscountLL
+            param(4) = "ShowTotalDueLL , " & BoolShowInvSaleOrderTotalDueLL
+            param(5) = "ShowSubTotalUSD , " & BoolShowInvSaleOrderSubTotalUSD
+            param(6) = "ShowDiscountUSD , " & BoolShowInvSaleOrderDiscountUSD
+            param(7) = "ShowTotalDueUSD , " & BoolShowInvSaleOrderTotalDueUSD
+            param(8) = "ShowCurrencyRate , " & BoolShowInvSaleOrderCurrencyRate
+            param(9) = "ShowBalanceLL , " & BoolShowInvSaleOrderBalanceLL
+            param(10) = "ShowBalanceUSD , " & BoolShowInvSaleOrderBalanceUSD
             OpenReport(Con.RptSalesOrder, param)
         End If
     End Sub
@@ -402,7 +423,7 @@ Public Class SalesOrderFrm
         If Me.TxtCustomer.Text.Trim.Length <> 0 Then
             BtnFiltering.PerformClick()
             If Me.GridSalesOrders.ChildRows.Count <> 0 And Me.GridSalesOrders.Rows.Count <> 0 Then
-                Dim param(6) As String
+                Dim param(9) As String
                 param(0) = "ICustomerID , " & CustomerID
                 If Me.DropCurrency.SelectedIndex <> -1 Then
                     param(1) = "ICurrencyID , " & Me.DropCurrency.SelectedValue
@@ -438,6 +459,9 @@ Public Class SalesOrderFrm
                 Else
                     param(6) = "IInvID , 0"
                 End If
+                param(7) = "ShowTotalDueUSD , " & BoolShowCustomerInvSalesOrdersTotalDueUSD
+                param(8) = "ShowTotalDueLL , " & BoolShowCustomerInvSalesOrdersTotalDueLL
+                param(9) = "ShowCurrencyRate , " & BoolShowCustomerInvSalesOrdersCurrencyRate
 
                 OpenReport(Con.RptSOCustomers, param)
             End If
@@ -461,12 +485,24 @@ Public Class SalesOrderFrm
             Dim InvID As String = Me.GridSalesOrders.CurrentRow.Cells("InvID").Value
             If MessageShowAsk(Con.Ask_Delete) = DialogResult.Yes Then
                 If poppassword.ShowDialog = DialogResult.Yes Then
-                    If MessageShowAsk(Con.Ask_Delete_Confirm) = DialogResult.Yes Then
-                        Dim Param(1) As String
-                        Param(0) = "@IInvID , " & InvID
-                        Param(1) = "@IUserID , " & UserID
-                        ExecuteProcedureWithParameters("DeleteSalesOrdersHeader", Param)
-                        RefrechGrid()
+                    If MessageShowAsk(Con.Ask_Delete_With_Quantity_Confirm) = DialogResult.Yes Then
+                        If MessageShowAsk(Con.Ask_Delete_Confirm) = DialogResult.Yes Then
+                            Dim Param(2) As String
+                            Param(0) = "@IInvID , " & InvID
+                            Param(1) = "@IUserID , " & UserID
+                            Param(2) = "@bReturnQty , " & True
+                            ExecuteProcedureWithParameters("DeleteSalesOrdersHeader", Param)
+                            RefrechGrid()
+                        End If
+                    Else
+                        If MessageShowAsk(Con.Ask_Delete_Confirm) = DialogResult.Yes Then
+                            Dim Param(2) As String
+                            Param(0) = "@IInvID , " & InvID
+                            Param(1) = "@IUserID , " & UserID
+                            Param(2) = "@bReturnQty , " & False
+                            ExecuteProcedureWithParameters("DeleteSalesOrdersHeader", Param)
+                            RefrechGrid()
+                        End If
                     End If
                 End If
             End If
@@ -481,18 +517,23 @@ Public Class SalesOrderFrm
             e.CellElement.RowElement.DrawFill = True
             e.CellElement.RowElement.GradientStyle = Telerik.WinControls.GradientStyles.Solid
             e.CellElement.RowElement.BackColor = Color.FromArgb(239, 246, 255)
+            If e.Column.Name = "SubTotalLL" Or e.Column.Name = "DiscountLL" Or e.Column.Name = "TotalDueLL" Or e.Column.Name = "DollarRate" Then
+                e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, 0, False, False)
+            ElseIf e.Column.Name = "TotalDueUSD" Then
+                e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, 0, True, False)
+            End If
         Else
             e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, ValueResetFlags.Local)
             e.CellElement.RowElement.ResetValue(LightVisualElement.GradientStyleProperty, ValueResetFlags.Local)
             e.CellElement.RowElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
         End If
-        If Not TypeOf e.CellElement Is GridDetailViewCellElement Then
-            If e.Column.Name = "SubTotal.LL" Or e.Column.Name = "Discount" Or e.Column.Name = "TotalDue.LL" Then
-                e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, 0, False, False)
-            ElseIf e.Column.Name = "TotalDue.$" Then
-                e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, 0, True, False)
-            End If
-        End If
+        'If Not TypeOf e.CellElement Is GridDetailViewCellElement Then
+        '    If e.Column.Name = "SubTotalLL" Or e.Column.Name = "Discount" Or e.Column.Name = "TotalDue.LL" Then
+        '        e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, 0, False, False)
+        '    ElseIf e.Column.Name = "TotalDue.$" Then
+        '        e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, 0, True, False)
+        '    End If
+        'End If
 
     End Sub
 
@@ -502,6 +543,10 @@ Public Class SalesOrderFrm
                 e.CellElement.DrawFill = True
                 e.CellElement.GradientStyle = Telerik.WinControls.GradientStyles.Solid
                 e.CellElement.BackColor = Color.Red
+            ElseIf e.Row.Cells("PaymentType").Value = "TA" Then
+                e.CellElement.DrawFill = True
+                e.CellElement.GradientStyle = Telerik.WinControls.GradientStyles.Solid
+                e.CellElement.BackColor = Color.Yellow
             Else
                 e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, ValueResetFlags.Local)
                 e.CellElement.ResetValue(LightVisualElement.GradientStyleProperty, ValueResetFlags.Local)
@@ -509,9 +554,9 @@ Public Class SalesOrderFrm
             End If
         End If
 
-        If e.Column.Name = "SubTotal.LL" Or e.Column.Name = "Discount" Or e.Column.Name = "TotalDue.LL" Then
+        If e.Column.Name = "SubTotalLL" Or e.Column.Name = "DiscountLL" Or e.Column.Name = "TotalDueLL" Or e.Column.Name = "DollarRate" Then
             e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, 0, False, False)
-        ElseIf e.Column.Name = "TotalDue.$" Then
+        ElseIf e.Column.Name = "TotalDueUSD" Then
             e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, 0, True, False)
         End If
         'iCurrencyID
@@ -521,5 +566,45 @@ Public Class SalesOrderFrm
 
         End If
 
+    End Sub
+
+    Private Sub btnAllPayments_Click(sender As Object, e As EventArgs) Handles btnAllPayments.Click
+        If Me.GridSalesOrders.ChildRows.Count <> 0 And Me.GridSalesOrders.Rows.Count <> 0 _
+    And Me.GridSalesOrders.SelectedRows.Count <> 0 Then
+            If Me.GridSalesOrders.CurrentRow.HierarchyLevel = 0 Then
+                If Me.GridSalesOrders.CurrentRow.Cells("Status").Value.ToString = Status.Posted Then
+                    If Me.GridSalesOrders.CurrentRow.Cells("PaymentType").Value.ToString = "PI" _
+                            Or Me.GridSalesOrders.CurrentRow.Cells("PaymentType").Value.ToString = "TA" Then
+                        Dim InvNum As Integer = Me.GridSalesOrders.CurrentRow.Cells("InvID").Value
+                        Dim ReferType As String = Me.GridSalesOrders.CurrentRow.Cells("ReferType").Value
+                        Dim FrmSOAllPayments As New ShowINVPayments(InvNum, ReferType)
+                        FrmSOAllPayments.ShowDialog()
+                    Else
+                        MessageShowInfo(Con.Msg_INV_Do_Not_Have_Payments)
+                    End If
+                Else
+                    MessageShowInfo(Con.Msg_Invoice_Status_ISUnposted)
+                End If
+            Else
+                If Me.GridSalesOrders.CurrentRow.ViewInfo.ParentRow.Cells("Status").Value.ToString = Status.Posted Then
+                    If Me.GridSalesOrders.CurrentRow.ViewInfo.ParentRow.Cells("PaymentType").Value.ToString = "PI" _
+                            Or Me.GridSalesOrders.CurrentRow.ViewInfo.ParentRow.Cells("PaymentType").Value.ToString = "TA" Then
+                        Dim InvNum As Integer = Me.GridSalesOrders.CurrentRow.Cells("InvID").Value
+                        Dim ReferType As String = Me.GridSalesOrders.CurrentRow.Cells("ReferType").Value
+                        Dim FrmSOAllPayments As New ShowINVPayments(InvNum, ReferType)
+                        FrmSOAllPayments.ShowDialog()
+                    Else
+                        MessageShowInfo(Con.Msg_INV_Do_Not_Have_Payments)
+                    End If
+                Else
+                    MessageShowInfo(Con.Msg_Invoice_Status_ISUnposted)
+                End If
+            End If
+        End If
+    End Sub
+
+    Private Sub BtnRefrech_Click(sender As Object, e As EventArgs) Handles BtnRefrech.Click
+        RefrechGrid()
+        BtnFiltering_Click(New Object, New EventArgs)
     End Sub
 End Class

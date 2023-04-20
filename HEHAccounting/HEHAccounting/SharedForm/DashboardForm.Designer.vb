@@ -84,7 +84,7 @@ Partial Class DashboardForm
         Me.DashboardIemsPanel.Location = New System.Drawing.Point(2, 2)
         Me.DashboardIemsPanel.Name = "DashboardIemsPanel"
         Me.DashboardIemsPanel.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.DashboardIemsPanel.Size = New System.Drawing.Size(652, 181)
+        Me.DashboardIemsPanel.Size = New System.Drawing.Size(652, 372)
         Me.DashboardIemsPanel.TabIndex = 0
         Me.DashboardIemsPanel.Visible = False
         '
@@ -96,7 +96,7 @@ Partial Class DashboardForm
         Me.DashMostSellingItem.HEBackColor1 = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.DashMostSellingItem.HEBackColor2 = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.DashMostSellingItem.HEFirstText = "1"
-        Me.DashMostSellingItem.HEFirstTextColor = System.Drawing.Color.BlanchedAlmond
+        Me.DashMostSellingItem.HEFirstTextColor = System.Drawing.Color.PeachPuff
         Me.DashMostSellingItem.HEFirstTextFont = New System.Drawing.Font("Times New Roman", 15.75!)
         Me.DashMostSellingItem.HEGradientAngle = New Decimal(New Integer() {100, 0, 0, 0})
         Me.DashMostSellingItem.HEImage = Global.HEHAccounting.My.Resources.Resources.Groups
@@ -115,7 +115,7 @@ Partial Class DashboardForm
         Me.DashMostSellingCustomer.HEBackColor1 = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.DashMostSellingCustomer.HEBackColor2 = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.DashMostSellingCustomer.HEFirstText = "2"
-        Me.DashMostSellingCustomer.HEFirstTextColor = System.Drawing.Color.BlanchedAlmond
+        Me.DashMostSellingCustomer.HEFirstTextColor = System.Drawing.Color.PeachPuff
         Me.DashMostSellingCustomer.HEFirstTextFont = New System.Drawing.Font("Times New Roman", 15.75!)
         Me.DashMostSellingCustomer.HEGradientAngle = New Decimal(New Integer() {100, 0, 0, 0})
         Me.DashMostSellingCustomer.HEImage = Global.HEHAccounting.My.Resources.Resources.Supplier
@@ -134,7 +134,7 @@ Partial Class DashboardForm
         Me.DashTotalPurchases.HEBackColor1 = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.DashTotalPurchases.HEBackColor2 = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.DashTotalPurchases.HEFirstText = "5"
-        Me.DashTotalPurchases.HEFirstTextColor = System.Drawing.Color.BlanchedAlmond
+        Me.DashTotalPurchases.HEFirstTextColor = System.Drawing.Color.PeachPuff
         Me.DashTotalPurchases.HEFirstTextFont = New System.Drawing.Font("Times New Roman", 15.75!)
         Me.DashTotalPurchases.HEGradientAngle = New Decimal(New Integer() {100, 0, 0, 0})
         Me.DashTotalPurchases.HEImage = Global.HEHAccounting.My.Resources.Resources.billing
@@ -153,7 +153,7 @@ Partial Class DashboardForm
         Me.DashSalesCount.HEBackColor1 = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.DashSalesCount.HEBackColor2 = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.DashSalesCount.HEFirstText = "3"
-        Me.DashSalesCount.HEFirstTextColor = System.Drawing.Color.BlanchedAlmond
+        Me.DashSalesCount.HEFirstTextColor = System.Drawing.Color.PeachPuff
         Me.DashSalesCount.HEFirstTextFont = New System.Drawing.Font("Times New Roman", 15.75!)
         Me.DashSalesCount.HEGradientAngle = New Decimal(New Integer() {100, 0, 0, 0})
         Me.DashSalesCount.HEImage = Global.HEHAccounting.My.Resources.Resources.List
@@ -161,7 +161,7 @@ Partial Class DashboardForm
         Me.DashSalesCount.Margin = New System.Windows.Forms.Padding(0)
         Me.DashSalesCount.Name = "DashSalesCount"
         Me.DashSalesCount.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.DashSalesCount.Size = New System.Drawing.Size(208, 94)
+        Me.DashSalesCount.Size = New System.Drawing.Size(208, 92)
         Me.DashSalesCount.TabIndex = 7
         '
         'DashTotalSales
@@ -172,7 +172,7 @@ Partial Class DashboardForm
         Me.DashTotalSales.HEBackColor1 = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.DashTotalSales.HEBackColor2 = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.DashTotalSales.HEFirstText = "4"
-        Me.DashTotalSales.HEFirstTextColor = System.Drawing.Color.Black
+        Me.DashTotalSales.HEFirstTextColor = System.Drawing.Color.PeachPuff
         Me.DashTotalSales.HEFirstTextFont = New System.Drawing.Font("Times New Roman", 15.75!)
         Me.DashTotalSales.HEGradientAngle = New Decimal(New Integer() {100, 0, 0, 0})
         Me.DashTotalSales.HEImage = Global.HEHAccounting.My.Resources.Resources.billing
@@ -180,7 +180,7 @@ Partial Class DashboardForm
         Me.DashTotalSales.Margin = New System.Windows.Forms.Padding(0)
         Me.DashTotalSales.Name = "DashTotalSales"
         Me.DashTotalSales.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.DashTotalSales.Size = New System.Drawing.Size(208, 94)
+        Me.DashTotalSales.Size = New System.Drawing.Size(208, 92)
         Me.DashTotalSales.TabIndex = 8
         '
         'DashSalesWin
@@ -191,7 +191,7 @@ Partial Class DashboardForm
         Me.DashSalesWin.HEBackColor1 = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.DashSalesWin.HEBackColor2 = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(231, Byte), Integer))
         Me.DashSalesWin.HEFirstText = "6"
-        Me.DashSalesWin.HEFirstTextColor = System.Drawing.Color.Black
+        Me.DashSalesWin.HEFirstTextColor = System.Drawing.Color.PeachPuff
         Me.DashSalesWin.HEFirstTextFont = New System.Drawing.Font("Times New Roman", 15.75!)
         Me.DashSalesWin.HEGradientAngle = New Decimal(New Integer() {100, 0, 0, 0})
         Me.DashSalesWin.HEImage = Global.HEHAccounting.My.Resources.Resources.invoice
@@ -199,7 +199,7 @@ Partial Class DashboardForm
         Me.DashSalesWin.Margin = New System.Windows.Forms.Padding(0)
         Me.DashSalesWin.Name = "DashSalesWin"
         Me.DashSalesWin.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.DashSalesWin.Size = New System.Drawing.Size(208, 94)
+        Me.DashSalesWin.Size = New System.Drawing.Size(208, 92)
         Me.DashSalesWin.TabIndex = 6
         '
         'chartPayemntValues
@@ -210,7 +210,7 @@ Partial Class DashboardForm
         Me.chartPayemntValues.Location = New System.Drawing.Point(2, 2)
         Me.chartPayemntValues.Name = "chartPayemntValues"
         Me.chartPayemntValues.ShowGrid = False
-        Me.chartPayemntValues.Size = New System.Drawing.Size(469, 181)
+        Me.chartPayemntValues.Size = New System.Drawing.Size(469, 189)
         Me.chartPayemntValues.TabIndex = 2
         CType(Me.chartPayemntValues.GetChildAt(0), Telerik.WinControls.UI.RadChartElement).BorderBoxStyle = Telerik.WinControls.BorderBoxStyle.FourBorders
         '
@@ -229,7 +229,7 @@ Partial Class DashboardForm
         Me.PieChartPaymentType.ShowGrid = False
         Me.PieChartPaymentType.ShowLegend = True
         Me.PieChartPaymentType.ShowTitle = True
-        Me.PieChartPaymentType.Size = New System.Drawing.Size(285, 131)
+        Me.PieChartPaymentType.Size = New System.Drawing.Size(285, 123)
         Me.PieChartPaymentType.TabIndex = 1
         '
         'lblPaymentType
@@ -270,8 +270,8 @@ Partial Class DashboardForm
         Me.tblMain.Location = New System.Drawing.Point(0, 0)
         Me.tblMain.Name = "tblMain"
         Me.tblMain.RowCount = 2
-        Me.tblMain.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tblMain.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tblMain.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.90576!))
+        Me.tblMain.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.09424!))
         Me.tblMain.Size = New System.Drawing.Size(1273, 382)
         Me.tblMain.TabIndex = 11
         '
@@ -286,7 +286,7 @@ Partial Class DashboardForm
         Me.tblLeftTopChart.Name = "tblLeftTopChart"
         Me.tblLeftTopChart.RowCount = 1
         Me.tblLeftTopChart.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tblLeftTopChart.Size = New System.Drawing.Size(594, 185)
+        Me.tblLeftTopChart.Size = New System.Drawing.Size(594, 177)
         Me.tblLeftTopChart.TabIndex = 9
         '
         'pnlPaymentTypeChart
@@ -297,7 +297,7 @@ Partial Class DashboardForm
         Me.pnlPaymentTypeChart.Location = New System.Drawing.Point(300, 3)
         Me.pnlPaymentTypeChart.Name = "pnlPaymentTypeChart"
         Me.pnlPaymentTypeChart.Padding = New System.Windows.Forms.Padding(3)
-        Me.pnlPaymentTypeChart.Size = New System.Drawing.Size(291, 179)
+        Me.pnlPaymentTypeChart.Size = New System.Drawing.Size(291, 171)
         Me.pnlPaymentTypeChart.TabIndex = 11
         '
         'pnlMultiSalesChart
@@ -305,10 +305,10 @@ Partial Class DashboardForm
         Me.pnlMultiSalesChart.Controls.Add(Me.chartPayemntValues)
         Me.pnlMultiSalesChart.Controls.Add(Me.TableLayoutPanel1)
         Me.pnlMultiSalesChart.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlMultiSalesChart.Location = New System.Drawing.Point(3, 194)
+        Me.pnlMultiSalesChart.Location = New System.Drawing.Point(3, 186)
         Me.pnlMultiSalesChart.Name = "pnlMultiSalesChart"
         Me.pnlMultiSalesChart.Padding = New System.Windows.Forms.Padding(2)
-        Me.pnlMultiSalesChart.Size = New System.Drawing.Size(594, 185)
+        Me.pnlMultiSalesChart.Size = New System.Drawing.Size(594, 193)
         Me.pnlMultiSalesChart.TabIndex = 10
         '
         'TableLayoutPanel1
@@ -326,7 +326,7 @@ Partial Class DashboardForm
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(121, 181)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(121, 189)
         Me.TableLayoutPanel1.TabIndex = 11
         '
         'radioSalesChart
@@ -363,7 +363,8 @@ Partial Class DashboardForm
         '
         '
         Me.RadPanel1.RootElement.EnableBorderHighlight = False
-        Me.RadPanel1.Size = New System.Drawing.Size(656, 185)
+        Me.tblMain.SetRowSpan(Me.RadPanel1, 2)
+        Me.RadPanel1.Size = New System.Drawing.Size(656, 376)
         Me.RadPanel1.TabIndex = 11
         '
         'PnlOptions

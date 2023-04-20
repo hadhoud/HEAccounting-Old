@@ -64,6 +64,22 @@ Public Class SalesDailyWin
         Param(1) = "@tTODate , " & IIf(Me.MskTxtInvDateTo.Checked, Me.MskTxtInvDateTo.Value, "")
         Param(2) = "@sPaymentType , " & IIf(Me.DropPaymentType.SelectedIndex <> -1, Me.DropPaymentType.SelectedValue, "0")
         FillGridViewProcedureWithParameters(Me.GridDaily, "GetSalesOrdersDailyWin", Param)
+
+        'Always hidden
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("PaymentType").Index, False)
+
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("TotalDueLL").Index, BoolShowSalesWinColTotalDueLL)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("TotalDueUSD").Index, BoolShowSalesWinColTotalDueUSD)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("DiscountLL").Index, BoolShowSalesWinColDiscountLL)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("DiscountUSD").Index, BoolShowSalesWinColDiscountUSD)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("SubTotalLL").Index, BoolShowSalesWinColSubTotalLL)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("SubTotalUSD").Index, BoolShowSalesWinColSubTotalUSD)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("PurchaseTotalDueLL").Index, BoolShowSalesWinColSubTotalPurchasingLL)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("PurchaseTotalDueUSD").Index, BoolShowSalesWinColSubTotalPurchasingUSD)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("SellPurchaseDifferenceLL").Index, BoolShowSalesWinColColProfitLL)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("SellPurchaseDifferenceUSD").Index, BoolShowSalesWinColColProfitUSD)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("DollarRate").Index, BoolShowSalesWinColCurrencyRate)
+
     End Sub
 
     Private Sub RefrechWithFilterGrid()
@@ -146,6 +162,11 @@ Public Class SalesDailyWin
             e.CellElement.RowElement.DrawFill = True
             e.CellElement.RowElement.GradientStyle = Telerik.WinControls.GradientStyles.Solid
             e.CellElement.RowElement.BackColor = Color.FromArgb(239, 246, 255)
+
+            If e.Column.Name = "SubTotalLL" Or e.Column.Name = "DiscountLL" Or e.Column.Name = "TotalDueLL" Or e.Column.Name = "PurchaseTotalDueLL" Or e.Column.Name = "SellPurchaseDifferenceLL" Or e.Column.Name = "DollarRate" Then
+                e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, 0, False, False)
+            End If
+
         Else
             e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, ValueResetFlags.Local)
             e.CellElement.RowElement.ResetValue(LightVisualElement.GradientStyleProperty, ValueResetFlags.Local)
@@ -165,7 +186,23 @@ Public Class SalesDailyWin
                 e.CellElement.ResetValue(LightVisualElement.GradientStyleProperty, ValueResetFlags.Local)
                 e.CellElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
             End If
+
+        ElseIf e.CellElement.ColumnInfo.Name = "Type" Then
+            If e.Row.Cells("PaymentType").Value = "D" Then
+                e.CellElement.DrawFill = True
+                e.CellElement.GradientStyle = Telerik.WinControls.GradientStyles.Solid
+                e.CellElement.BackColor = Color.Red
+            Else
+                e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, ValueResetFlags.Local)
+                e.CellElement.ResetValue(LightVisualElement.GradientStyleProperty, ValueResetFlags.Local)
+                e.CellElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
+            End If
         End If
+
+        If e.Column.Name = "SubTotalLL" Or e.Column.Name = "DiscountLL" Or e.Column.Name = "TotalDueLL" Or e.Column.Name = "PurchaseTotalDueLL" Or e.Column.Name = "SellPurchaseDifferenceLL" Or e.Column.Name = "DollarRate" Then
+            e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, 0, False, False)
+        End If
+
     End Sub
 
     Private Sub LblPaymentType_Click(sender As Object, e As EventArgs) Handles LblPaymentType.Click

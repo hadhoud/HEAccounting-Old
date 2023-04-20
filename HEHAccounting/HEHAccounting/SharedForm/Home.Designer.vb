@@ -109,7 +109,7 @@ Partial Class Home
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(168, 40)
         Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Copiright © 2022"
+        Me.Label3.Text = "Copiright © 2023"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label2

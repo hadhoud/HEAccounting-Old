@@ -98,6 +98,7 @@ Partial Class MainForm
         Me.RBTabSetting = New Telerik.WinControls.UI.RibbonTab()
         Me.RGSettingSetting = New Telerik.WinControls.UI.RadRibbonBarGroup()
         Me.RibBtnUserSettings = New Telerik.WinControls.UI.RadButtonElement()
+        Me.RibBtnUserFieldsSetting = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnDatabase = New Telerik.WinControls.UI.RadDropDownButtonElement()
         Me.RadMenuBackup = New Telerik.WinControls.UI.RadMenuItem()
         Me.RadMenuSeparatorItem2 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
@@ -765,7 +766,7 @@ Partial Class MainForm
         'RGSettingSetting
         '
         Me.RGSettingSetting.CreateAdapterMethod = Nothing
-        Me.RGSettingSetting.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnUserSettings, Me.RibBtnDatabase})
+        Me.RGSettingSetting.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnUserSettings, Me.RibBtnUserFieldsSetting, Me.RibBtnDatabase})
         Me.RGSettingSetting.Name = "RGSettingSetting"
         Me.RGSettingSetting.Text = "الإعدادات"
         '
@@ -776,6 +777,14 @@ Partial Class MainForm
         Me.RibBtnUserSettings.Name = "RibBtnUserSettings"
         Me.RibBtnUserSettings.Text = "الإعدادات"
         Me.RibBtnUserSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'RibBtnUserFieldsSetting
+        '
+        Me.RibBtnUserFieldsSetting.Image = Global.HEHAccounting.My.Resources.Resources.Listt
+        Me.RibBtnUserFieldsSetting.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RibBtnUserFieldsSetting.Name = "RibBtnUserFieldsSetting"
+        Me.RibBtnUserFieldsSetting.Text = "الحقول"
+        Me.RibBtnUserFieldsSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'RibBtnDatabase
         '
@@ -1188,4 +1197,5 @@ Partial Class MainForm
     Friend WithEvents RGSettingUsers As Telerik.WinControls.UI.RadRibbonBarGroup
     Friend WithEvents RGSettingProgrammer As Telerik.WinControls.UI.RadRibbonBarGroup
     Friend WithEvents RibBtnAllInventory As Telerik.WinControls.UI.RadButtonElement
+    Friend WithEvents RibBtnUserFieldsSetting As Telerik.WinControls.UI.RadButtonElement
 End Class

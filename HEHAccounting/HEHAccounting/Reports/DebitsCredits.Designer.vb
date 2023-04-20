@@ -22,7 +22,7 @@ Partial Class DebitsCredits
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition6 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.PnlOptions = New Telerik.WinControls.UI.RadPanel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.BtnFiltering = New Telerik.WinControls.UI.RadButton()
@@ -36,6 +36,13 @@ Partial Class DebitsCredits
         Me.BtnAccRpt = New Telerik.WinControls.UI.RadButton()
         Me.BtnRefrech = New Telerik.WinControls.UI.RadButton()
         Me.GridDebitsCredits = New Telerik.WinControls.UI.RadGridView()
+        Me.DropCurrency = New Telerik.WinControls.UI.RadDropDownList()
+        Me.LblCurrency = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
+        Me.RadioAccGeneral = New Telerik.WinControls.UI.RadRadioButton()
+        Me.RadioCustVend = New Telerik.WinControls.UI.RadRadioButton()
+        Me.RadioAccAll = New Telerik.WinControls.UI.RadRadioButton()
+        Me.lblAccounts = New System.Windows.Forms.Label()
         CType(Me.PnlOptions, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PnlOptions.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
@@ -49,6 +56,11 @@ Partial Class DebitsCredits
         CType(Me.BtnRefrech, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridDebitsCredits, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridDebitsCredits.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DropCurrency, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel4.SuspendLayout()
+        CType(Me.RadioAccGeneral, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadioCustVend, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadioAccAll, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -76,7 +88,7 @@ Partial Class DebitsCredits
         Me.TableLayoutPanel3.Controls.Add(Me.BtnFiltering, 0, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.BtnReset, 1, 0)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 201)
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 332)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 2
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
@@ -118,26 +130,31 @@ Partial Class DebitsCredits
         Me.TableLayoutPanel1.ColumnCount = 2
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.LblCustomerName, 0, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.LblCustomerCode, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.TxtAccName, 1, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.DropType, 1, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel4, 1, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.LblCurrency, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.DropCurrency, 1, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.LblCustomerName, 0, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.LblCustomerCode, 0, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.TxtAccName, 1, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.DropType, 1, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.lblAccounts, 0, 4)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 92)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 4
+        Me.TableLayoutPanel1.RowCount = 5
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(249, 109)
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(249, 240)
         Me.TableLayoutPanel1.TabIndex = 14
         '
         'LblCustomerName
         '
         Me.LblCustomerName.AutoSize = True
         Me.LblCustomerName.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LblCustomerName.Location = New System.Drawing.Point(173, 50)
+        Me.LblCustomerName.Location = New System.Drawing.Point(173, 80)
         Me.LblCustomerName.Name = "LblCustomerName"
         Me.LblCustomerName.Size = New System.Drawing.Size(73, 30)
         Me.LblCustomerName.TabIndex = 19
@@ -148,7 +165,7 @@ Partial Class DebitsCredits
         '
         Me.LblCustomerCode.AutoSize = True
         Me.LblCustomerCode.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LblCustomerCode.Location = New System.Drawing.Point(173, 20)
+        Me.LblCustomerCode.Location = New System.Drawing.Point(173, 50)
         Me.LblCustomerCode.Name = "LblCustomerCode"
         Me.LblCustomerCode.Size = New System.Drawing.Size(73, 30)
         Me.LblCustomerCode.TabIndex = 18
@@ -159,7 +176,7 @@ Partial Class DebitsCredits
         '
         Me.TxtAccName.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TxtAccName.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtAccName.Location = New System.Drawing.Point(3, 53)
+        Me.TxtAccName.Location = New System.Drawing.Point(3, 83)
         Me.TxtAccName.Name = "TxtAccName"
         Me.TxtAccName.ShortcutsEnabled = False
         Me.TxtAccName.ShowClearButton = True
@@ -171,8 +188,9 @@ Partial Class DebitsCredits
         'DropType
         '
         Me.DropType.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DropType.DropDownAnimationEnabled = True
         Me.DropType.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DropType.Location = New System.Drawing.Point(3, 23)
+        Me.DropType.Location = New System.Drawing.Point(3, 53)
         Me.DropType.MaxLength = 65535
         Me.DropType.Name = "DropType"
         Me.DropType.Size = New System.Drawing.Size(164, 24)
@@ -235,11 +253,109 @@ Partial Class DebitsCredits
         '
         '
         '
-        Me.GridDebitsCredits.MasterTemplate.ViewDefinition = TableViewDefinition2
+        Me.GridDebitsCredits.MasterTemplate.ViewDefinition = TableViewDefinition6
         Me.GridDebitsCredits.Name = "GridDebitsCredits"
         Me.GridDebitsCredits.Size = New System.Drawing.Size(572, 500)
         Me.GridDebitsCredits.TabIndex = 6
         Me.GridDebitsCredits.ThemeName = "Office2010Blue"
+        '
+        'DropCurrency
+        '
+        Me.DropCurrency.BackColor = System.Drawing.Color.White
+        Me.DropCurrency.DropDownAnimationEnabled = True
+        Me.DropCurrency.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DropCurrency.Location = New System.Drawing.Point(3, 23)
+        Me.DropCurrency.MaxLength = 65535
+        Me.DropCurrency.Name = "DropCurrency"
+        Me.DropCurrency.Size = New System.Drawing.Size(164, 24)
+        Me.DropCurrency.TabIndex = 42
+        Me.DropCurrency.Tag = ""
+        Me.DropCurrency.ThemeName = "Office2010Blue"
+        '
+        'LblCurrency
+        '
+        Me.LblCurrency.AutoSize = True
+        Me.LblCurrency.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LblCurrency.Location = New System.Drawing.Point(173, 20)
+        Me.LblCurrency.Name = "LblCurrency"
+        Me.LblCurrency.Size = New System.Drawing.Size(73, 30)
+        Me.LblCurrency.TabIndex = 41
+        Me.LblCurrency.Text = "العملة"
+        Me.LblCurrency.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'TableLayoutPanel4
+        '
+        Me.TableLayoutPanel4.AutoSize = True
+        Me.TableLayoutPanel4.ColumnCount = 1
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel4.Controls.Add(Me.RadioCustVend, 0, 1)
+        Me.TableLayoutPanel4.Controls.Add(Me.RadioAccGeneral, 0, 2)
+        Me.TableLayoutPanel4.Controls.Add(Me.RadioAccAll, 0, 3)
+        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 113)
+        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
+        Me.TableLayoutPanel4.RowCount = 5
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(164, 124)
+        Me.TableLayoutPanel4.TabIndex = 19
+        '
+        'RadioAccGeneral
+        '
+        Me.RadioAccGeneral.AutoSize = False
+        Me.RadioAccGeneral.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RadioAccGeneral.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioAccGeneral.Location = New System.Drawing.Point(3, 51)
+        Me.RadioAccGeneral.Name = "RadioAccGeneral"
+        Me.RadioAccGeneral.Size = New System.Drawing.Size(158, 22)
+        Me.RadioAccGeneral.TabIndex = 0
+        Me.RadioAccGeneral.TabStop = False
+        Me.RadioAccGeneral.Tag = "SO"
+        Me.RadioAccGeneral.Text = "عامة"
+        Me.RadioAccGeneral.ThemeName = "Office2010Blue"
+        '
+        'RadioCustVend
+        '
+        Me.RadioCustVend.AutoSize = False
+        Me.RadioCustVend.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.RadioCustVend.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RadioCustVend.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioCustVend.Location = New System.Drawing.Point(3, 23)
+        Me.RadioCustVend.Name = "RadioCustVend"
+        Me.RadioCustVend.Size = New System.Drawing.Size(158, 22)
+        Me.RadioCustVend.TabIndex = 1
+        Me.RadioCustVend.Tag = "RSO"
+        Me.RadioCustVend.Text = "الزبائن / الموردين"
+        Me.RadioCustVend.ThemeName = "Office2010Blue"
+        Me.RadioCustVend.ToggleState = Telerik.WinControls.Enumerations.ToggleState.[On]
+        '
+        'RadioAccAll
+        '
+        Me.RadioAccAll.AutoSize = False
+        Me.RadioAccAll.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RadioAccAll.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioAccAll.Location = New System.Drawing.Point(3, 79)
+        Me.RadioAccAll.Name = "RadioAccAll"
+        Me.RadioAccAll.Size = New System.Drawing.Size(158, 22)
+        Me.RadioAccAll.TabIndex = 2
+        Me.RadioAccAll.TabStop = False
+        Me.RadioAccAll.Tag = "SO"
+        Me.RadioAccAll.Text = "الجميع"
+        Me.RadioAccAll.ThemeName = "Office2010Blue"
+        '
+        'lblAccounts
+        '
+        Me.lblAccounts.AutoSize = True
+        Me.lblAccounts.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lblAccounts.Location = New System.Drawing.Point(173, 110)
+        Me.lblAccounts.Name = "lblAccounts"
+        Me.lblAccounts.Size = New System.Drawing.Size(73, 130)
+        Me.lblAccounts.TabIndex = 43
+        Me.lblAccounts.Text = "الحسابات"
+        Me.lblAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'DebitsCredits
         '
@@ -277,6 +393,11 @@ Partial Class DebitsCredits
         CType(Me.BtnRefrech, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridDebitsCredits.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridDebitsCredits, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DropCurrency, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TableLayoutPanel4.ResumeLayout(False)
+        CType(Me.RadioAccGeneral, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadioCustVend, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadioAccAll, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -295,5 +416,12 @@ Partial Class DebitsCredits
     Friend WithEvents BtnRefrech As Telerik.WinControls.UI.RadButton
     Friend WithEvents GridDebitsCredits As Telerik.WinControls.UI.RadGridView
     Friend WithEvents BtnAccRpt As Telerik.WinControls.UI.RadButton
+    Friend WithEvents DropCurrency As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents LblCurrency As Label
+    Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
+    Friend WithEvents RadioCustVend As Telerik.WinControls.UI.RadRadioButton
+    Friend WithEvents RadioAccGeneral As Telerik.WinControls.UI.RadRadioButton
+    Friend WithEvents RadioAccAll As Telerik.WinControls.UI.RadRadioButton
+    Friend WithEvents lblAccounts As Label
 End Class
 

@@ -38,7 +38,7 @@ Public Class NotesPayable
     End Sub
     Private Sub FormClear()
         Me.TxtDueDate.Value = Date.Now.Date
-        Me.DropCurrency.SelectedValue = 1
+        Me.DropCurrency.SelectedValue = ProgramFormCurrency
         Me.TxtVendor.Clear()
         Me.TxtAmount.Text = "0"
         Me.TxtEqualValue.Text = "0"
@@ -105,6 +105,7 @@ Public Class NotesPayable
         Me.DropCurrency.DisplayMember = IIf(BoolLTRLanguage = True, "LatinName", "CurrName")
         Me.DropCurrency.DataSource = Currencydata
         Initiatedropdownlist(Me.DropCurrency, False)
+        Me.DropCurrency.SelectedValue = ProgramFormCurrency
     End Sub
     Private Sub NotesPayable_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AutoComplete()
@@ -295,10 +296,10 @@ Public Class NotesPayable
             End If
 
             EditCurrencyRateID = Me.TxtCurrencyVal.Tag
-            If CurrencyinitialState = "S" Then
-                Me.TxtEqualValue.Text = Math.Round(Me.TxtAmount.Value / Me.TxtCurrencyVal.Text, 3)
+            If Me.DropCurrency.SelectedValue = 1 Then
+                Me.TxtEqualValue.Text = Math.Round(Me.TxtAmount.Value / Me.txtDollarRateAmt.Text, 3)
             Else
-                Me.TxtEqualValue.Text = Math.Round(Me.TxtAmount.Value * Me.TxtCurrencyVal.Text, 3)
+                Me.TxtEqualValue.Text = Math.Round(Me.TxtAmount.Value * Me.txtDollarRateAmt.Text, 0)
             End If
         End If
         GetBalance()
@@ -407,10 +408,10 @@ Public Class NotesPayable
 
     Private Sub TxtAmount_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles TxtAmount.Validating
         If Me.TxtCurrencyVal.Text <> String.Empty And Me.TxtAmount.Value <> String.Empty Then
-            If CurrencyinitialState = "S" Then
-                Me.TxtEqualValue.Text = Math.Round(Me.TxtAmount.Value / Me.TxtCurrencyVal.Text, 3)
+            If Me.DropCurrency.SelectedValue = 1 Then
+                Me.TxtEqualValue.Text = Math.Round(Me.TxtAmount.Value / Me.txtDollarRateAmt.Text, 3)
             Else
-                Me.TxtEqualValue.Text = Math.Round(Me.TxtAmount.Value * Me.TxtCurrencyVal.Text, 3)
+                Me.TxtEqualValue.Text = Math.Round(Me.TxtAmount.Value * Me.txtDollarRateAmt.Text, 0)
             End If
 
         End If

@@ -137,7 +137,7 @@ Public Class UserSettings
         Me.TimerHome.Value = TimerHomeForm
         Me.TimerDaily.Value = TimerDailyForm
         Me.NumChequesDay.Value = ShowChequesDay
-        Me.DropCurrency.SelectedValue = HomeFormCurrency
+        Me.DropCurrency.SelectedValue = ProgramFormCurrency
 
         'Customer Setting
         Me.ChkAllowCustomerRepetition.Checked = BoolAllowCustomerRepetition
@@ -151,9 +151,12 @@ Public Class UserSettings
         Me.ChkShowItemsInSOMainForm.Checked = BoolShowItemsInSOMainForm
         Me.ChkShowSOInWindow.Checked = BoolShowSOAsWindow
         Me.DropSOStatus.SelectedValue = DefaultSOStatus
-        Me.chkAddSalesOrdersColPurchasePrice.Checked = BoolShowAddSalesOrdersColPurchasePrice
-        Me.ChkSalesOrdersColCustomerTitle.Checked = BoolShowSalesOrdersColCustomerTitle
-        Me.ChkSalesOrdersColCurrencySymb.Checked = BoolShowSalesOrdersColCurrencySymb
+
+        'Me.chkAddSalesOrdersColPurchasePrice.Checked = BoolShowAddSalesOrdersColPurchasePrice
+        'Me.ChkSalesOrdersColCustomerTitle.Checked = BoolShowSalesOrdersColCustomerTitle
+        'Me.ChkSalesOrdersColCurrencySymb.Checked = BoolShowSalesOrdersColCurrencySymb
+
+
         Me.chkSOShowPrintQuestionAfterSave.Checked = BoolShowSalesOrdersPrintQuestionAfterSave
         LoadSODefaultCustomer()
 
@@ -162,9 +165,10 @@ Public Class UserSettings
         Me.ChkUpdateItemPurchasingPriceAfterPO.Checked = BoolUpdateItemPurchasingPriceAfterPO
         Me.ChkUpdateItemSellingPriceAfterPO.Checked = BoolUpdateItemSellingPriceAfterPO
         Me.DropPOStatus.SelectedValue = DefaultPOStatus
-        Me.ChkPurchasesOrdersColVendorTitle.Checked = BoolShowPurchasesOrdersColVendorTitle
-        Me.ChkPurchasesOrdersColCurrencySymb.Checked = BoolShowPurchasesOrdersColCurrencySymb
-        Me.chkAddPurchasesOrdersColPurchasePrice.Checked = BoolShowAddPurchasesOrdersColPurchasePrice
+
+        'Me.ChkPurchasesOrdersColVendorTitle.Checked = BoolShowPurchasesOrdersColVendorTitle
+        'Me.ChkPurchasesOrdersColCurrencySymb.Checked = BoolShowPurchasesOrdersColCurrencySymb
+        'Me.chkAddPurchasesOrdersColPurchasePrice.Checked = BoolShowAddPurchasesOrdersColPurchasePrice
 
 
         'Notes Pay Setting
@@ -243,7 +247,7 @@ Public Class UserSettings
 
     Private Sub BtnSaveAndNew_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         If MessageShowAsk(Con.Ask_Edit) = DialogResult.Yes Then
-            Dim Param(28) As String
+            Dim Param(22) As String
             Param(0) = "@BSShowDailyPage , " & IIf(ChkShowDailyPageWhenOpen.Checked = True, True, False)
             Param(1) = "@BSShowProgramAlerts , " & IIf(ChkShowProgramAlerts.Checked = True, True, False)
             Param(2) = "@BSAllowCustomerRepetition , " & IIf(ChkAllowCustomerRepetition.Checked = True, True, False)
@@ -265,16 +269,17 @@ Public Class UserSettings
             Param(18) = "@ISNPStatus , " & IIf(Me.DropNPStatus.SelectedValue <> Nothing, Me.DropNPStatus.SelectedValue, 1)
             Param(19) = "@ISNRStatus , " & IIf(Me.DropNRStatus.SelectedValue <> Nothing, Me.DropNRStatus.SelectedValue, 1)
 
-            Param(20) = "@BSAddSalesOrdersColPurchasePrice , " & IIf(chkAddSalesOrdersColPurchasePrice.Checked = True, True, False)
-            Param(21) = "@BSAddPurchasesOrdersColPurchasePrice , " & IIf(chkAddPurchasesOrdersColPurchasePrice.Checked = True, True, False)
-            Param(22) = "@BSSalesOrdersColCustomerTitle , " & IIf(ChkSalesOrdersColCustomerTitle.Checked = True, True, False)
-            Param(23) = "@BSSalesOrdersColCurrencySymb , " & IIf(ChkSalesOrdersColCurrencySymb.Checked = True, True, False)
-            Param(24) = "@BSPurchasesOrdersColVendorTitle , " & IIf(ChkPurchasesOrdersColVendorTitle.Checked = True, True, False)
-            Param(25) = "@BSPurchasesOrdersColCurrencySymb , " & IIf(ChkPurchasesOrdersColCurrencySymb.Checked = True, True, False)
-            Param(26) = "@iSODefaultCustomerID , " & IIf(SODefaultCustomerID = String.Empty, 0, SODefaultCustomerID)
-            Param(27) = "@bSOShowPrintQuestionAfterSave , " & IIf(chkSOShowPrintQuestionAfterSave.Checked = True, True, False)
+            'Param(20) = "@BSAddSalesOrdersColPurchasePrice , " & IIf(chkAddSalesOrdersColPurchasePrice.Checked = True, True, False)
+            ''Param(21) = "@BSAddPurchasesOrdersColPurchasePrice , " & IIf(chkAddPurchasesOrdersColPurchasePrice.Checked = True, True, False)
+            'Param(22) = "@BSSalesOrdersColCustomerTitle , " & IIf(ChkSalesOrdersColCustomerTitle.Checked = True, True, False)
+            ' Param(23) = "@BSSalesOrdersColCurrencySymb , " & IIf(ChkSalesOrdersColCurrencySymb.Checked = True, True, False)
+            ' Param(24) = "@BSPurchasesOrdersColVendorTitle , " & IIf(ChkPurchasesOrdersColVendorTitle.Checked = True, True, False)
+            'Param(25) = "@BSPurchasesOrdersColCurrencySymb , " & IIf(ChkPurchasesOrdersColCurrencySymb.Checked = True, True, False)
 
-            Param(28) = "@IUserID , " & UserID
+            Param(20) = "@iSODefaultCustomerID , " & IIf(SODefaultCustomerID = String.Empty, 0, SODefaultCustomerID)
+            Param(21) = "@bSOShowPrintQuestionAfterSave , " & IIf(chkSOShowPrintQuestionAfterSave.Checked = True, True, False)
+
+            Param(22) = "@IUserID , " & UserID
             ExecuteProcedureWithParameters("UpdateUserSettings", Param)
             UpdateUserShortcuts()
             UpdateUserOptionsPanelSetting()
@@ -339,4 +344,5 @@ Public Class UserSettings
     Private Sub TxtSODefaultCustomer_ToolTipTextNeeded(sender As Object, e As ToolTipTextNeededEventArgs) Handles TxtSODefaultCustomer.ToolTipTextNeeded
         e.ToolTipText = SODefaultCustomerTitle
     End Sub
+
 End Class

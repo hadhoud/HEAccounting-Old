@@ -18,7 +18,7 @@
         GroupNameAuto = New AutoCompleteStringCollection
         Dim dtGroupNameAuto As New DataTable
         dtGroupNameAuto.BeginLoadData()
-        dtGroupNameAuto = ExecuteQueryDatatable("Select [GroupName] From [Groups]")
+        dtGroupNameAuto = ExecuteQueryDatatable("Select GroupName From Groups")
         dtGroupNameAuto.EndLoadData()
         For i As Integer = 0 To dtGroupNameAuto.Rows.Count - 1
             GroupNameAuto.Add(dtGroupNameAuto.Rows(i).Item(0).ToString.ToLower)
@@ -63,6 +63,7 @@
         ReloadUserRoles()
         GetUserSettings()
         GetUserOptionPanelsSettings()
+        GetUserFieldsSetting()
         GetAppSettings()
         GetCompanyInfo()
         FrmMainForm = New MainForm
@@ -99,11 +100,11 @@
             TimerHomeForm = UserSettingDt.Rows(0).Item("SHomeTimer").ToString
             TimerDailyForm = UserSettingDt.Rows(0).Item("SDailyTimer").ToString
             ShowChequesDay = UserSettingDt.Rows(0).Item("SShowChequesDay").ToString
-            HomeFormCurrency = UserSettingDt.Rows(0).Item("SHomeFormCurrency").ToString
+            ProgramFormCurrency = UserSettingDt.Rows(0).Item("SHomeFormCurrency").ToString
 
             'User Permissions:
             BoolShowHomeScreenByUser = UserSettingDt.Rows(0).Item("bShowHomeScreenByUser")
-            BoolShowPurchasingPriceInScreensByUser = UserSettingDt.Rows(0).Item("bShowHomeScreenByUser")
+            'BoolShowPurchasingPriceInScreensByUser = UserSettingDt.Rows(0).Item("bShowHomeScreenByUser")
             BoolShowDashboardScreenByUser = UserSettingDt.Rows(0).Item("bShowDashboardFormByUser")
             BoolShowSalesDailyWinScreenByUser = UserSettingDt.Rows(0).Item("bShowSalesDailyWinScreenByUser")
             BoolShowPurchasingPriceInScreensByUser = UserSettingDt.Rows(0).Item("bShowPurchasingPriceInScreensByUser")
@@ -122,9 +123,9 @@
             BoolShowItemsInSOMainForm = UserSettingDt.Rows(0).Item("SShowItemsInSOMainForm")
             BoolShowSOAsWindow = UserSettingDt.Rows(0).Item("SShowSOAsWindow")
             DefaultSOStatus = UserSettingDt.Rows(0).Item("SSOStatus")
-            BoolShowAddSalesOrdersColPurchasePrice = UserSettingDt.Rows(0).Item("SAddSalesOrdersColPurchasePrice")
-            BoolShowSalesOrdersColCustomerTitle = UserSettingDt.Rows(0).Item("SSalesOrdersColCustomerTitle")
-            BoolShowSalesOrdersColCurrencySymb = UserSettingDt.Rows(0).Item("SSalesOrdersColCurrencySymb")
+            'BoolShowAddSalesOrdersColPurchasePrice = UserSettingDt.Rows(0).Item("SAddSalesOrdersColPurchasePrice")
+            'BoolShowSalesOrdersColCustomerTitle = UserSettingDt.Rows(0).Item("SSalesOrdersColCustomerTitle")
+            ' BoolShowSalesOrdersColCurrencySymb = UserSettingDt.Rows(0).Item("SSalesOrdersColCurrencySymb")
             iSalesOrderDefaultCustomerID = UserSettingDt.Rows(0).Item("iSODefaultCustomerID")
             BoolShowSalesOrdersPrintQuestionAfterSave = UserSettingDt.Rows(0).Item("bSalesOrdersShowPrintQuestionAfterSave")
 
@@ -133,9 +134,7 @@
             BoolUpdateItemSellingPriceAfterPO = UserSettingDt.Rows(0).Item("SUpdateItemSellingPriceAfterPO")
             BoolUpdateItemPurchasingPriceAfterPO = UserSettingDt.Rows(0).Item("SUpdateItemPurchasingPriceAfterPO")
             DefaultPOStatus = UserSettingDt.Rows(0).Item("SPOStatus")
-            BoolShowAddPurchasesOrdersColPurchasePrice = UserSettingDt.Rows(0).Item("SAddPurchasesOrdersColPurchasePrice")
-            BoolShowPurchasesOrdersColVendorTitle = UserSettingDt.Rows(0).Item("SPurchasesOrdersColVendorTitle")
-            BoolShowPurchasesOrdersColCurrencySymb = UserSettingDt.Rows(0).Item("SPurchasesOrdersColCurrencySymb")
+            'BoolShowAddPurchasesOrdersColPurchasePrice = UserSettingDt.Rows(0).Item("SAddPurchasesOrdersColPurchasePrice")
 
             'Notes Pay Setting
             DefaultNPStatus = UserSettingDt.Rows(0).Item("SNPStatus")
@@ -174,6 +173,92 @@
             BoolOptionPanelAllInventory = UserOptionPanelsSettingDt.Rows(0).Item("bAllInventoryShow_fl")
         End If
     End Sub
+
+    Public Sub GetUserFieldsSetting()
+        Dim Param(0) As String
+        Param(0) = "@IUserID , " & UserID
+        Dim UserFieldsSettingDt As DataTable = ExecuteProcedureDatatableWithParameters("SelectUserFieldsVisibleSettings", Param)
+        If UserFieldsSettingDt.Rows.Count > 0 Then
+            'Fields Visible settings
+            BoolShowSalesOrdersColCustomerTitle = UserFieldsSettingDt.Rows(0).Item("bShowSalesOrdersColCustomerTitle")
+            BoolShowSalesOrdersColTotalDueLL = UserFieldsSettingDt.Rows(0).Item("bShowSalesOrdersColTotalDueLL")
+            BoolShowSalesOrdersColTotalDueUSD = UserFieldsSettingDt.Rows(0).Item("bShowSalesOrdersColTotalDueUSD").ToString
+            BoolShowSalesOrdersColDiscountLL = UserFieldsSettingDt.Rows(0).Item("bShowSalesOrdersColDiscountLL").ToString
+            BoolShowSalesOrdersColDiscountUSD = UserFieldsSettingDt.Rows(0).Item("bShowSalesOrdersColDiscountUSD").ToString
+            BoolShowSalesOrdersColSubTotalLL = UserFieldsSettingDt.Rows(0).Item("bShowSalesOrdersColSubTotalLL").ToString
+            BoolShowSalesOrdersColSubTotalUSD = UserFieldsSettingDt.Rows(0).Item("bShowSalesOrdersColSubTotalUSD")
+            BoolShowSalesOrdersColCurrencySymb = UserFieldsSettingDt.Rows(0).Item("bShowSalesOrdersColCurrencySymb").ToString
+            BoolShowSalesOrdersColCurrencyRate = UserFieldsSettingDt.Rows(0).Item("bShowSalesOrdersColCurrencyRate").ToString
+            BoolShowSalesOrdersColStatus = UserFieldsSettingDt.Rows(0).Item("bShowSalesOrdersColStatus").ToString
+
+            'Sales Win
+            BoolShowSalesWinColTotalDueLL = UserFieldsSettingDt.Rows(0).Item("bShowSalesWinColTotalDueLL").ToString
+            BoolShowSalesWinColTotalDueUSD = UserFieldsSettingDt.Rows(0).Item("bShowSalesWinColTotalDueUSD").ToString
+            BoolShowSalesWinColDiscountLL = UserFieldsSettingDt.Rows(0).Item("bShowSalesWinColDiscountLL").ToString
+            BoolShowSalesWinColDiscountUSD = UserFieldsSettingDt.Rows(0).Item("bShowSalesWinColDiscountUSD").ToString
+            BoolShowSalesWinColSubTotalLL = UserFieldsSettingDt.Rows(0).Item("bShowSalesWinColSubTotalLL").ToString
+            BoolShowSalesWinColSubTotalUSD = UserFieldsSettingDt.Rows(0).Item("bShowSalesWinColSubTotalUSD").ToString
+            BoolShowSalesWinColSubTotalPurchasingLL = UserFieldsSettingDt.Rows(0).Item("bShowSalesWinColSubTotalPurchasingLL").ToString
+            BoolShowSalesWinColSubTotalPurchasingUSD = UserFieldsSettingDt.Rows(0).Item("bShowSalesWinColSubTotalPurchasingUSD").ToString
+            BoolShowSalesWinColColProfitLL = UserFieldsSettingDt.Rows(0).Item("bShowSalesWinColProfitLL").ToString
+            BoolShowSalesWinColColProfitUSD = UserFieldsSettingDt.Rows(0).Item("bShowSalesWinColProfitUSD").ToString
+            BoolShowSalesWinColCurrencyRate = UserFieldsSettingDt.Rows(0).Item("bShowSalesWinColCurrencyRate").ToString
+
+            'sales Items Win
+            BoolShowSalesItemsWinColPurchasingPriceLL = UserFieldsSettingDt.Rows(0).Item("bShowSalesItemsWinColPurchasingPriceLL").ToString
+            BoolShowSalesItemsWinColPurchasingPriceUSD = UserFieldsSettingDt.Rows(0).Item("bShowSalesItemsWinColPurchasingPriceUSD").ToString
+            BoolShowSalesItemsWinColSellingPriceLL = UserFieldsSettingDt.Rows(0).Item("bShowSalesItemsWinColSellingPriceLL").ToString
+            BoolShowSalesItemsWinColSellingPriceUSD = UserFieldsSettingDt.Rows(0).Item("bShowSalesItemsWinColSellingPriceUSD").ToString
+            BoolShowSalesItemsWinColTotalPurchasingPriceLL = UserFieldsSettingDt.Rows(0).Item("bShowSalesItemsWinColTotalPurchasingPriceLL").ToString
+            BoolShowSalesItemsWinColTotalPurchasingPriceUSD = UserFieldsSettingDt.Rows(0).Item("bShowSalesItemsWinColTotalPurchasingPriceUSD").ToString
+            BoolShowSalesItemsWinColSubTotalSellingPriceLL = UserFieldsSettingDt.Rows(0).Item("bShowSalesItemsWinColSubTotalSellingPriceLL").ToString
+            BoolShowSalesItemsWinColSubTotalSellingPriceUSD = UserFieldsSettingDt.Rows(0).Item("bShowSalesItemsWinColSubTotalSellingPriceUSD").ToString
+            BoolShowSalesItemsWinColDiscountLL = UserFieldsSettingDt.Rows(0).Item("bShowSalesItemsWinColDiscountLL").ToString
+            BoolShowSalesItemsWinColDiscountUSD = UserFieldsSettingDt.Rows(0).Item("bShowSalesItemsWinColDiscountUSD").ToString
+            BoolShowSalesItemsWinColTotalDueSellingPriceLL = UserFieldsSettingDt.Rows(0).Item("bShowSalesItemsWinColTotalDueSellingPriceLL").ToString
+            BoolShowSalesItemsWinColTotalDueSellingPriceUSD = UserFieldsSettingDt.Rows(0).Item("bShowSalesItemsWinColTotalDueSellingPriceUSD").ToString
+            BoolShowSalesItemsWinColSellPurchaseDifferenceLL = UserFieldsSettingDt.Rows(0).Item("bShowSalesItemsWinColSellPurchaseDifferenceLL").ToString
+            BoolShowSalesItemsWinColSellPurchaseDifferenceUSD = UserFieldsSettingDt.Rows(0).Item("bShowSalesItemsWinColSellPurchaseDifferenceUSD").ToString
+            BoolShowSalesItemsWinColCurrencyRate = UserFieldsSettingDt.Rows(0).Item("bShowSalesItemsWinColCurrencyRate").ToString
+
+
+            'Purchase Order
+            BoolShowPurchaseOrdersColVendorTitle = UserFieldsSettingDt.Rows(0).Item("bShowPurchaseOrdersColVendorTitle").ToString
+            BoolShowPurchaseOrdersColSubTotalLL = UserFieldsSettingDt.Rows(0).Item("bShowPurchaseOrdersColSubTotalLL").ToString
+            BoolShowPurchaseOrdersColSubTotalUSD = UserFieldsSettingDt.Rows(0).Item("bShowPurchaseOrdersColSubTotalUSD").ToString
+            BoolShowPurchaseOrdersColDiscountLL = UserFieldsSettingDt.Rows(0).Item("bShowPurchaseOrdersColDiscountLL").ToString
+            BoolShowPurchaseOrdersColDiscountUSD = UserFieldsSettingDt.Rows(0).Item("bShowPurchaseOrdersColDiscountUSD").ToString
+            BoolShowPurchaseOrdersColTotalDueLL = UserFieldsSettingDt.Rows(0).Item("bShowPurchaseOrdersColTotalDueLL").ToString
+            BoolShowPurchaseOrdersColTotalDueUSD = UserFieldsSettingDt.Rows(0).Item("bShowPurchaseOrdersColTotalDueUSD").ToString
+            BoolShowPurchaseOrdersColCurrencyRate = UserFieldsSettingDt.Rows(0).Item("bShowPurchaseOrdersColCurrencyRate").ToString
+            BoolShowPurchaseOrdersColStatus = UserFieldsSettingDt.Rows(0).Item("bShowPurchaseOrdersColStatus").ToString
+            BoolShowPurchaseOrdersColCurrencySymb = UserFieldsSettingDt.Rows(0).Item("bShowPurchaseOrdersColCurrencySymb").ToString
+
+            'Add Sales ORder
+            BoolShowAddSalesOrdersColPurchasePrice = UserFieldsSettingDt.Rows(0).Item("bShowAddSalesOrdersColPurchasePrice")
+
+            'Add Purchase Order
+            BoolShowAddPurchasesOrdersColPurchasePrice = UserFieldsSettingDt.Rows(0).Item("bShowAddPurchasesOrdersColPurchasePrice")
+
+            'Invoice Sales order Report
+            BoolShowInvSaleOrderSubTotalLL = UserFieldsSettingDt.Rows(0).Item("bShowInvSaleOrderSubTotalLL").ToString
+            BoolShowInvSaleOrderDiscountLL = UserFieldsSettingDt.Rows(0).Item("bShowInvSaleOrderDiscountLL").ToString
+            BoolShowInvSaleOrderTotalDueLL = UserFieldsSettingDt.Rows(0).Item("bShowInvSaleOrderTotalDueLL").ToString
+            BoolShowInvSaleOrderSubTotalUSD = UserFieldsSettingDt.Rows(0).Item("bShowInvSaleOrderSubTotalUSD").ToString
+            BoolShowInvSaleOrderDiscountUSD = UserFieldsSettingDt.Rows(0).Item("bShowInvSaleOrderDiscountUSD").ToString
+            BoolShowInvSaleOrderTotalDueUSD = UserFieldsSettingDt.Rows(0).Item("bShowInvSaleOrderTotalDueUSD").ToString
+            BoolShowInvSaleOrderCurrencyRate = UserFieldsSettingDt.Rows(0).Item("bShowInvSaleOrderCurrencyRate").ToString
+            BoolShowInvSaleOrderBalanceLL = UserFieldsSettingDt.Rows(0).Item("bShowInvSaleOrderBalanceLL").ToString
+            BoolShowInvSaleOrderBalanceUSD = UserFieldsSettingDt.Rows(0).Item("bShowInvSaleOrderBalanceUSD").ToString
+
+            'Customer Invoices Sales order Report
+            BoolShowCustomerInvSalesOrdersTotalDueUSD = UserFieldsSettingDt.Rows(0).Item("bShowCustomerInvSaleOrderTotalDueUSD").ToString
+            BoolShowCustomerInvSalesOrdersTotalDueLL = UserFieldsSettingDt.Rows(0).Item("bShowCustomerInvSaleOrderTotalDueLL").ToString
+            BoolShowCustomerInvSalesOrdersCurrencyRate = UserFieldsSettingDt.Rows(0).Item("bShowCustomerInvSaleOrderCurrencyRate").ToString
+
+        End If
+    End Sub
+
     Public Sub GetAppSettings()
 
         Dim AppSettingDt As DataTable = ExecuteProcedureDatatable("SelectAppSettings")

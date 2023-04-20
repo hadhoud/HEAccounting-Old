@@ -15,11 +15,18 @@ Public Class DebitsCredits
         FillDropList()
     End Sub
     Private Sub DebitsCredits_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.DropCurrency.ValueMember = "CurrencyID"
+        Me.DropCurrency.DisplayMember = IIf(BoolLTRLanguage = True, "LatinName", "CurrName")
+        Me.DropCurrency.DataSource = Currencydata
+        Initiatedropdownlist(Me.DropCurrency, False)
+        Me.DropCurrency.SelectedValue = ProgramFormCurrency
+
         RefrechGrid()
         InitiateGrid(Me.GridDebitsCredits)
     End Sub
 
     Private Sub FillDropList()
+
         'DropTrxType
         Dim item As New RadListDataItem With {
             .Text = Con.Creditors,
@@ -51,13 +58,17 @@ Public Class DebitsCredits
     Public Sub RefrechGrid()
         Dim Param(1) As String
         Param(0) = "@CWhatToSelect ," & WhatToSelect
-        Param(1) = "@ICurrencyID ," & ReportFormCurrency
+        Param(1) = "@ICurrencyID ," & Me.DropCurrency.SelectedValue
         FillGridViewProcedureWithParameters(Me.GridDebitsCredits, "GetCreditDebitAccount", Param)
+        'Always Hidden
+        HideShowColummn(Me.GridDebitsCredits, Me.GridDebitsCredits.Columns("AccountType").Index, False)
+
         'HideShowColummn(Me.GridDebitsCredits, IIf(BoolLTRLanguage, Me.GridDebitsCredits.Columns("Description").Index, Me.GridDebitsCredits.Columns("LatinDescription").Index), False)
         'HideShowColummn(Me.GridDebitsCredits, Me.GridDebitsCredits.Columns("Refertype").Index, False)
     End Sub
 
     Private Sub FormClear()
+        Me.DropCurrency.SelectedValue = ProgramFormCurrency
         Me.TxtAccName.Text = String.Empty
     End Sub
 
@@ -75,9 +86,16 @@ Public Class DebitsCredits
     End Sub
 
     Private Sub BtnFiltering_Click(sender As Object, e As EventArgs) Handles BtnFiltering.Click
+        'RefrechGrid()
         Me.GridDebitsCredits.FilterDescriptors.Clear()
         If Me.TxtAccName.Text.Trim.Length <> 0 Then
             FilterGrid(Me.GridDebitsCredits, "AccountName", Me.TxtAccName.Text.Trim, FilterOperator.Contains)
+        End If
+        If RadioCustVend.IsChecked Then
+            FilterGrid(Me.GridDebitsCredits, "AccountType", Con.ACC_Cust_VEND, FilterOperator.IsEqualTo)
+        End If
+        If RadioAccGeneral.IsChecked Then
+            FilterGrid(Me.GridDebitsCredits, "AccountType", Con.ACC_GENERAL, FilterOperator.IsEqualTo)
         End If
     End Sub
 
@@ -92,5 +110,22 @@ Public Class DebitsCredits
 
     Private Sub BtnRefrech_Click(sender As Object, e As EventArgs) Handles BtnRefrech.Click
         RefrechGrid()
+    End Sub
+
+    Private Sub RadioCustVend_ToggleStateChanged(sender As Object, args As StateChangedEventArgs) Handles RadioCustVend.ToggleStateChanged
+        BtnFiltering_Click(New Object, New EventArgs)
+    End Sub
+
+    Private Sub RadioAccGeneral_ToggleStateChanged(sender As Object, args As StateChangedEventArgs) Handles RadioAccGeneral.ToggleStateChanged
+        BtnFiltering_Click(New Object, New EventArgs)
+    End Sub
+
+    Private Sub RadioAccAll_ToggleStateChanged(sender As Object, args As StateChangedEventArgs) Handles RadioAccAll.ToggleStateChanged
+        BtnFiltering_Click(New Object, New EventArgs)
+    End Sub
+
+    Private Sub DropCurrency_SelectedIndexChanged(sender As Object, e As Data.PositionChangedEventArgs) Handles DropCurrency.SelectedIndexChanged
+        RefrechGrid()
+        'BtnFiltering_Click(New Object, New EventArgs)
     End Sub
 End Class

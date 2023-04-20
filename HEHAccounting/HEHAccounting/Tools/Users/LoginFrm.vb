@@ -40,6 +40,7 @@ Public Class LoginFrm
                             FullName = UserDt.Rows(0).Item("FullName").ToString
                             Username = UserDt.Rows(0).Item("Username").ToString
                             UserType = UserDt.Rows(0).Item("UserType").ToString
+                            UserPassword = UserPass
                             If ChkRememberme.CheckState = CheckState.Checked Then
                                 My.Settings.RemmberUserName = Me.TxtUserName.Text
                             Else

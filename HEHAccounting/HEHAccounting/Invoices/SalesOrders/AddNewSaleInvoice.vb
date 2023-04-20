@@ -102,6 +102,7 @@ Public Class AddNewSaleInvoice
         Me.DropCurrency.DisplayMember = IIf(BoolLTRLanguage = True, "LatinName", "CurrName")
         Me.DropCurrency.DataSource = Currencydata
         Initiatedropdownlist(Me.DropCurrency)
+        Me.DropCurrency.SelectedValue = ProgramFormCurrency
 
     End Sub
     Sub AutoComplete()
@@ -603,9 +604,18 @@ Public Class AddNewSaleInvoice
                         ExecuteProcedureWithParameters("InsertNewSalesOrderHeader", Param)
                         InsertItemDetails()
 
-                        Dim Rptparam(1) As String
+                        Dim Rptparam(10) As String
                         Rptparam(0) = "InvID , " & Me.TxtInvID.Text
                         Rptparam(1) = "WaterMark , " & CompanyLatinName
+                        Rptparam(2) = "ShowSubTotalLL , " & BoolShowInvSaleOrderSubTotalLL
+                        Rptparam(3) = "ShowDiscountLL , " & BoolShowInvSaleOrderDiscountLL
+                        Rptparam(4) = "ShowTotalDueLL , " & BoolShowInvSaleOrderTotalDueLL
+                        Rptparam(5) = "ShowSubTotalUSD , " & BoolShowInvSaleOrderSubTotalUSD
+                        Rptparam(6) = "ShowDiscountUSD , " & BoolShowInvSaleOrderDiscountUSD
+                        Rptparam(7) = "ShowTotalDueUSD , " & BoolShowInvSaleOrderTotalDueUSD
+                        Rptparam(8) = "ShowCurrencyRate , " & BoolShowInvSaleOrderCurrencyRate
+                        Rptparam(9) = "ShowBalanceLL , " & BoolShowInvSaleOrderBalanceLL
+                        Rptparam(10) = "ShowBalanceUSD , " & BoolShowInvSaleOrderBalanceUSD
                         If Not BoolForPrint Then
                             If BoolShowSalesOrdersPrintQuestionAfterSave Then
                                 If MessageShowAsk(Con.Ask_Do_You_Want_Print_Invoice) = DialogResult.Yes Then
@@ -631,9 +641,18 @@ Public Class AddNewSaleInvoice
                             EnableDisable(False)
                         End If
                         ToDoRefrech = True
-                        Dim Rptparam(1) As String
+                        Dim Rptparam(10) As String
                         Rptparam(0) = "InvID , " & Me.TxtInvID.Text
                         Rptparam(1) = "WaterMark , " & CompanyLatinName
+                        Rptparam(2) = "ShowSubTotalLL , " & BoolShowInvSaleOrderSubTotalLL
+                        Rptparam(3) = "ShowDiscountLL , " & BoolShowInvSaleOrderDiscountLL
+                        Rptparam(4) = "ShowTotalDueLL , " & BoolShowInvSaleOrderTotalDueLL
+                        Rptparam(5) = "ShowSubTotalUSD , " & BoolShowInvSaleOrderSubTotalUSD
+                        Rptparam(6) = "ShowDiscountUSD , " & BoolShowInvSaleOrderDiscountUSD
+                        Rptparam(7) = "ShowTotalDueUSD , " & BoolShowInvSaleOrderTotalDueUSD
+                        Rptparam(8) = "ShowCurrencyRate , " & BoolShowInvSaleOrderCurrencyRate
+                        Rptparam(9) = "ShowBalanceLL , " & BoolShowInvSaleOrderBalanceLL
+                        Rptparam(10) = "ShowBalanceUSD , " & BoolShowInvSaleOrderBalanceUSD
                         If Not BoolForPrint Then
                             If BoolShowSalesOrdersPrintQuestionAfterSave Then
                                 If MessageShowAsk(Con.Ask_Do_You_Want_Print_Invoice) = DialogResult.Yes Then
@@ -656,7 +675,7 @@ Public Class AddNewSaleInvoice
 
     Private Sub InsertItemDetails()
         For i As Integer = 0 To GridInvItem.ChildRows.Count - 1
-            Dim ParamDetails(12) As String
+            Dim ParamDetails(13) As String
             ParamDetails(0) = "@TDueDate , " & Me.MskTxtInvDate.Value
             ParamDetails(1) = "@IItemID , " & Me.GridInvItem.Rows(i).Cells("Item_id").Value
             ParamDetails(2) = "@FSubTotal , " & Me.GridInvItem.Rows(i).Cells("SubTotal").Value
@@ -669,7 +688,8 @@ Public Class AddNewSaleInvoice
             ParamDetails(9) = "@FAvailableQty , " & Me.GridInvItem.Rows(i).Cells("AvailableQty").Value
             ParamDetails(10) = "@ISpecialOfferItemID , " & 0
             ParamDetails(11) = "@ILineID , " & i + 1
-            ParamDetails(12) = "@IUserID , " & UserID
+            ParamDetails(12) = "@fDollarRate_amt , " & Me.txtDollarRate.Text
+            ParamDetails(13) = "@IUserID , " & UserID
             ExecuteProcedureWithParameters("InsertNewSalesOrdersDetails", ParamDetails)
         Next
     End Sub
@@ -683,8 +703,9 @@ Public Class AddNewSaleInvoice
         Me.GridInvItem.Rows.Clear()
         Me.RadioCash.IsChecked = True
         Me.RadioSales.IsChecked = True
-        Me.DropCurrency.SelectedValue = 1
-        Me.RadioCurrencyLebanease.CheckState = CheckState.Checked
+        Me.DropCurrency.SelectedValue = ProgramFormCurrency
+        Me.RadioCurrencyLebanease.CheckState = IIf(ProgramFormCurrency = 1, CheckState.Checked, CheckState.Unchecked)
+        Me.RadioCurrencyDollar.CheckState = IIf(ProgramFormCurrency = 2, CheckState.Checked, CheckState.Unchecked)
         Me.txtDollarRate.Text = LastDollarCurrencyRate
         Me.MskTxtInvDate.Focus()
         LoadSODefaultCustomer()
@@ -842,9 +863,18 @@ Public Class AddNewSaleInvoice
 
     Private Sub BtnPrint_Click(sender As Object, e As EventArgs) Handles BtnPrint.Click
         If Me.BtnSaveAndNew.Enabled = False Then
-            Dim Rptparam(1) As String
+            Dim Rptparam(10) As String
             Rptparam(0) = "InvID , " & Me.TxtInvID.Text
             Rptparam(1) = "WaterMark , " & CompanyLatinName
+            Rptparam(2) = "ShowSubTotalLL , " & BoolShowInvSaleOrderSubTotalLL
+            Rptparam(3) = "ShowDiscountLL , " & BoolShowInvSaleOrderDiscountLL
+            Rptparam(4) = "ShowTotalDueLL , " & BoolShowInvSaleOrderTotalDueLL
+            Rptparam(5) = "ShowSubTotalUSD , " & BoolShowInvSaleOrderSubTotalUSD
+            Rptparam(6) = "ShowDiscountUSD , " & BoolShowInvSaleOrderDiscountUSD
+            Rptparam(7) = "ShowTotalDueUSD , " & BoolShowInvSaleOrderTotalDueUSD
+            Rptparam(8) = "ShowCurrencyRate , " & BoolShowInvSaleOrderCurrencyRate
+            Rptparam(9) = "ShowBalanceLL , " & BoolShowInvSaleOrderBalanceLL
+            Rptparam(10) = "ShowBalanceUSD , " & BoolShowInvSaleOrderBalanceUSD
             OpenReport(Con.RptSalesOrder, Rptparam)
         Else
             BoolForPrint = True

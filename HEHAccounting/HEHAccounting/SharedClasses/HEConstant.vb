@@ -52,6 +52,10 @@
     Public PanelMessages As String
     Public PanelShortcuts As String
 
+    'Constant Value
+    Public ACC_Cust_VEND As String
+    Public ACC_GENERAL As String
+
     ''Settings:
     'Public AllowAdd As String
     'Public AllowDelete As String
@@ -91,6 +95,7 @@
     Public Ask_Edit As String
     Public Ask_Delete As String
     Public Ask_Delete_Confirm As String
+    Public Ask_Delete_With_Quantity_Confirm As String
     Public Ask_Grid_Has_Error As String
     Public Ask_Are_You_Sure_You_Want_To_Move_Item As String
     Public Ask_To_Group As String
@@ -143,14 +148,19 @@
     Public Msg_Notes_Status_ISUnposted As String
     Public Msg_Choose_a_Customer As String
     Public Msg_System_Config_Enter_User_And_Pass As String
-
+    Public Msg_INV_Do_Not_Have_Payments As String
     Sub New()
 
         'version
         Lbl_One_Version = 1
         Lbl_Two_Version = 9
         Lbl_Year_One_Version = 2
-        Lbl_Year_Two_Version = 3
+        Lbl_Year_Two_Version = 9
+
+        'Always not related to lang
+        'Constant Value
+        ACC_Cust_VEND = "Cust/Vend"
+        ACC_GENERAL = "General"
 
         If BoolLTRLanguage Then
 
@@ -240,6 +250,7 @@
             Ask_Edit = "Are you sure you want to Edit?"
             Ask_Delete = "Are You Sure you want to Delete?"
             Ask_Delete_Confirm = "Are You Sure you want to Delete?"
+            Ask_Delete_With_Quantity_Confirm = "You Want to ReAdd the Quantity To Items"
             Ask_Grid_Has_Error = "You Have Some Error in Item Do You Want Continue?"
             Ask_Are_You_Sure_You_Want_To_Move_Item = "Are You Sure You Want To Move Item ("
             Ask_To_Group = ") To Group ("
@@ -283,6 +294,7 @@
             Msg_Cannot_Delete_User = "Cannot Delete This User"
             Msg_Successfully_Done = "Successfully Done"
             Msg_Is_Not_Debt_Invoice = "Is Not A Debit Invoice"
+            Msg_INV_Do_Not_Have_Payments = "Invoice does Not Have Payments"
             Msg_Invoice_Status_ISUnposted = "Invoice Is Unposted"
             Msg_Notes_Status_ISUnposted = "Notes Is Unposted"
             Msg_Choose_a_Customer = "Choose a Customer"
@@ -370,6 +382,7 @@
             Ask_Edit = "هل أنت متأكد أنك تريد التعديل؟"
             Ask_Delete = "هل أنت متأكد أنك تريد الحذف؟"
             Ask_Delete_Confirm = "لا يمكنك الرجوع لاحقا!هل أنت متأكد أنك تريد الحذف؟"
+            Ask_Delete_With_Quantity_Confirm = "هل تريد تعديل الكمية بعد الحذف؟"
             Ask_Grid_Has_Error = "يوجد أخطاء في الأصناف هل تريد المتابعة؟"
             Ask_Are_You_Sure_You_Want_To_Move_Item = "هل أنت متأكد أنك تريد نقل الصنف ( "
             Ask_To_Group = " ) إلى المجموعة ( "
@@ -417,6 +430,7 @@
             Msg_Cannot_Delete_User = "لا يمكنك حذف هذا المستخدم"
             Msg_Successfully_Done = "تمت العملية بنجاح"
             Msg_Is_Not_Debt_Invoice = "هذه الفاتورة مسددة"
+            Msg_INV_Do_Not_Have_Payments = "لا يوجد دفعات لهذه الفاتورة"
             Msg_Invoice_Status_ISUnposted = "هذه الفاتورة غير مرحلة"
             Msg_Notes_Status_ISUnposted = "السند غير مرحل"
             Msg_Choose_a_Customer = "يجب إختيار زبون"

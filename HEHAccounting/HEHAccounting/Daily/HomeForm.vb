@@ -230,7 +230,7 @@
 
         Dim Summarydt As New DataTable
         Dim param(0) As String
-        param(0) = "@ICurrencyID , " & HomeFormCurrency
+        param(0) = "@ICurrencyID , " & ProgramFormCurrency
         Summarydt = ExecuteProcedureDatatableWithParameters("GetHomeSummarySOCach", param)
         Me.TxtSOCash.Text = Summarydt.Rows(0).Item("SOCach").ToString
         Me.TxtSODebt.Text = Summarydt.Rows(0).Item("SODebit").ToString

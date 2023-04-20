@@ -23,14 +23,6 @@ Partial Class ItemsSalesWinReport
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim GridViewSummaryItem1 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
-        Dim GridViewSummaryItem2 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
-        Dim GridViewSummaryItem3 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
-        Dim GridViewSummaryItem4 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
-        Dim GridViewSummaryItem5 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
-        Dim GridViewSummaryItem6 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
-        Dim GridViewSummaryItem7 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
-        Dim GridViewSummaryItem8 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
         Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.PnlOptions = New Telerik.WinControls.UI.RadPanel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
@@ -282,39 +274,6 @@ Partial Class ItemsSalesWinReport
         '
         '
         Me.GridDaily.MasterTemplate.BottomPinnedRowsMode = Telerik.WinControls.UI.GridViewBottomPinnedRowsMode.Fixed
-        GridViewSummaryItem1.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
-        GridViewSummaryItem1.AggregateExpression = Nothing
-        GridViewSummaryItem1.FormatString = "{0}"
-        GridViewSummaryItem1.Name = "PurchasingPrice"
-        GridViewSummaryItem2.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
-        GridViewSummaryItem2.AggregateExpression = Nothing
-        GridViewSummaryItem2.FormatString = "{0}"
-        GridViewSummaryItem2.Name = "SellingPrice"
-        GridViewSummaryItem3.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
-        GridViewSummaryItem3.AggregateExpression = Nothing
-        GridViewSummaryItem3.FormatString = "{0}"
-        GridViewSummaryItem3.Name = "TotalPurchasingPrice"
-        GridViewSummaryItem4.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
-        GridViewSummaryItem4.AggregateExpression = Nothing
-        GridViewSummaryItem4.FormatString = "{0}"
-        GridViewSummaryItem4.Name = "TotalSellingPrice"
-        GridViewSummaryItem5.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
-        GridViewSummaryItem5.AggregateExpression = Nothing
-        GridViewSummaryItem5.FormatString = "{0}"
-        GridViewSummaryItem5.Name = "ItemDiscount"
-        GridViewSummaryItem6.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
-        GridViewSummaryItem6.AggregateExpression = Nothing
-        GridViewSummaryItem6.FormatString = "{0}"
-        GridViewSummaryItem6.Name = "TotalDueSellingPrice"
-        GridViewSummaryItem7.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
-        GridViewSummaryItem7.AggregateExpression = Nothing
-        GridViewSummaryItem7.FormatString = "{0}"
-        GridViewSummaryItem7.Name = "SellPurchaseDifference"
-        GridViewSummaryItem8.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
-        GridViewSummaryItem8.AggregateExpression = Nothing
-        GridViewSummaryItem8.FormatString = "{0}"
-        GridViewSummaryItem8.Name = "Qty"
-        Me.GridDaily.MasterTemplate.SummaryRowsBottom.Add(New Telerik.WinControls.UI.GridViewSummaryRowItem(New Telerik.WinControls.UI.GridViewSummaryItem() {GridViewSummaryItem1, GridViewSummaryItem2, GridViewSummaryItem3, GridViewSummaryItem4, GridViewSummaryItem5, GridViewSummaryItem6, GridViewSummaryItem7, GridViewSummaryItem8}))
         Me.GridDaily.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.GridDaily.Name = "GridDaily"
         Me.GridDaily.Size = New System.Drawing.Size(138, 497)

@@ -30,6 +30,7 @@ Public Class AddNewItem
         Me.DropCurrency.DisplayMember = IIf(BoolLTRLanguage = True, "LatinName", "CurrName")
         Me.DropCurrency.DataSource = Currencydata
         Initiatedropdownlist(Me.DropCurrency, False)
+        Me.DropCurrency.SelectedValue = ProgramFormCurrency
     End Sub
     Sub ShowPermissions()
         Me.LblBarcode.Visible = BoolShowBarcode
@@ -237,7 +238,7 @@ Public Class AddNewItem
 
         Me.TxtPriceOne.Enabled = False
         Me.TxtFactorOne.Enabled = False
-        Me.DropCurrency.SelectedValue = 1
+        Me.DropCurrency.SelectedValue = ProgramFormCurrency
         GetID()
 
         Me.TxtItemName.Focus()

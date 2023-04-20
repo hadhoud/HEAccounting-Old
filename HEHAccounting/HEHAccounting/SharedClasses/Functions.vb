@@ -12,6 +12,91 @@ Module Functions
 
     Function ChangeColNameToArabic(ByVal ColName As String) As String
         Select Case ColName
+
+            'New ReFormat 29-3-2023
+
+            'Form Sales Orders
+            Case "SubTotalUSD"
+                Return "المجموع $"
+
+            Case "SubTotalLL"
+                Return "المجموع ل.ل"
+
+            Case "TotalDueUSD"
+                Return "صافي $"
+
+            Case "TotalDueLL"
+                Return "صافي ل.ل"
+
+            Case "DiscountUSD"
+                Return "الحسم $"
+
+            Case "DiscountLL"
+                Return "الحسم ل.ل"
+
+            'End Form Sales Orders
+
+            'Form Sales Win
+            Case "SellPurchaseDifferenceLL"
+                Return "ربح / خسارة ل.ل"
+
+            Case "PurchaseTotalDueLL"
+                Return "صافي الشراء ل.ل"
+
+            Case "SellPurchaseDifferenceUSD"
+                Return "ربح / خسارة $"
+
+            Case "PurchaseTotalDueUSD"
+                Return "صافي الشراء $"
+
+            'End Form Sales Win
+
+            'Form Items Sales Win
+
+            Case "TotalDueSellingPriceLL"
+                Return "صافي المبيع ل.ل"
+
+            Case "TotalDueSellingPriceUSD"
+                Return "صافي المبيع $"
+
+            Case "SubTotalSellingPriceLL"
+                Return "مجموع المبيع ل.ل"
+
+            Case "SubTotalSellingPriceUSD"
+                Return "مجموع المبيع $"
+
+            Case "PurchasingPriceLL"
+                Return "سعر الشراء ل.ل"
+
+            Case "SellingPriceLL"
+                Return "سعر المبيع ل.ل"
+
+            Case "SellingPriceUSD"
+                Return "سعر المبيع $"
+
+
+            'End Items Sales Win
+
+            'Form All Payments
+
+            Case "PaymentAmountLL"
+                Return "الدفعة ل.ل"
+
+            Case "PaymentAmountUSD"
+                Return "الدفعة $"
+
+            Case "PaymentCurrencySymb"
+                Return "العملة"
+
+            Case "PaymentDate"
+                Return "تاريخ الدفعة"
+
+            Case "PaymentDesc"
+                Return "ملاحظات"
+            'End All Payments
+
+            'End new Reformat
+
             'Form Items:
             Case "ID", "Item_id", "ItemID", "CustomerID", "VendorID", "CurrencyID", "UserID", "CheckID"
                 Return "كود"
@@ -34,8 +119,7 @@ Module Functions
             Case "PurchasingPriceUSD"
                 Return "سعر الشراء $"
 
-            Case "PurchasingPriceLL"
-                Return "سعر الشراء ل.ل"
+
 
             Case "InventoryNote"
                 Return "ملاحظات"
@@ -122,17 +206,12 @@ Module Functions
             Case "DollarRate"
                 Return "سعر الصرف"
 
-            Case "SellPurchaseDifference"
-                Return "ربح / خسارة"
-
-            Case "PurchaseTotalDue"
-                Return "صافي الشراء"
 
             Case "HyperInvID", "InvID", "TrsID", "InventoryID"
                 Return "الرقم"
 
             Case "Discount", "ItemDiscount"
-                Return "الخصم"
+                Return "الحسم"
 
             Case "CellPhone"
                 Return "الخليوي"
@@ -170,17 +249,8 @@ Module Functions
             Case "SubTotal", "BeforeDiscount"
                 Return "المجموع"
 
-            Case "SubTotal.LL"
-                Return "المجموع ل.ل"
 
-            Case "SubTotal.$"
-                Return "المجموع $"
 
-            Case "TotalDue.LL"
-                Return "صافي ل.ل"
-
-            Case "TotalDue.$"
-                Return "صافي $"
 
             Case "Status", "StatusName"
                 Return "الحالة"

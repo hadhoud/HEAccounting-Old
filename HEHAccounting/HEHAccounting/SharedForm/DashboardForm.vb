@@ -70,18 +70,26 @@ Public Class DashboardForm
     End Sub
 
     Sub LoadDashboardTotalSales()
-        Dim totalSales As String = GetScalarProcedureWithoutParam("GetDashboardTotalSales")
+        Dim Param(0) As String
+        Param(0) = "@iCurrencyID ," & ProgramFormCurrency
+        Dim totalSales As String = GetScalarProcedure("GetDashboardTotalSales", Param)
         If totalSales = "0" Then
             totalSales = ""
+        Else
+            totalSales = Currencies.ConvertStringTextToCurrency(totalSales, ProgramFormCurrency, True)
         End If
 
         Me.DashTotalSales.HEFirstText = totalSales
     End Sub
 
     Sub LoadDashboardMostTotalPurchases()
-        Dim totalPurchases As String = GetScalarProcedureWithoutParam("GetDashboardTotalPurchases")
+        Dim Param(0) As String
+        Param(0) = "@iCurrencyID ," & ProgramFormCurrency
+        Dim totalPurchases As String = GetScalarProcedure("GetDashboardTotalPurchases", Param)
         If totalPurchases = "0" Then
             totalPurchases = ""
+        Else
+            totalPurchases = Currencies.ConvertStringTextToCurrency(totalPurchases, ProgramFormCurrency, True)
         End If
 
         Me.DashTotalPurchases.HEFirstText = totalPurchases
@@ -99,9 +107,13 @@ Public Class DashboardForm
     End Sub
 
     Sub LoadDashboardSalesWin()
-        Dim totalSalesWin As String = GetScalarProcedureWithoutParam("GetDashboardtotalSalesWin")
+        Dim Param(0) As String
+        Param(0) = "@iCurrencyID ," & ProgramFormCurrency
+        Dim totalSalesWin As String = GetScalarProcedure("GetDashboardtotalSalesWin", Param)
         If totalSalesWin = "0" Then
             totalSalesWin = ""
+        Else
+            totalSalesWin = Currencies.ConvertStringTextToCurrency(totalSalesWin, ProgramFormCurrency, True)
         End If
 
         Me.DashSalesWin.HEFirstText = totalSalesWin
@@ -156,7 +168,9 @@ Public Class DashboardForm
 
 
         Dim verticalMaxValue As Integer = 0
-        Dim dt As DataTable = ExecuteQueryDatatable("GetDashboardTotalSalesByMonth")
+        Dim Param(0) As String
+        Param(0) = "@iCurrencyID ," & ProgramFormCurrency
+        Dim dt As DataTable = ExecuteProcedureDatatableWithParameters("GetDashboardTotalSalesByMonth", Param)
 
         For Each ItemsRow As DataRow In dt.Rows
             If radioSalesChart.IsChecked Then
