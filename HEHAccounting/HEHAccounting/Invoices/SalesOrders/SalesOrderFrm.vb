@@ -32,6 +32,16 @@ Public Class SalesOrderFrm
     End Sub
 
     Private Sub ChangeToEng()
+
+        For Each c As Control In Me.PnlOptions.Controls
+            c.Font = New Font("Times New Roman", 10, FontStyle.Bold)
+            If c.Controls.Count > 0 Then
+                For Each subC As Control In c.Controls
+                    subC.Font = New Font("Times New Roman", 10, FontStyle.Bold)
+                Next
+            End If
+        Next
+
         Me.RightToLeft = RightToLeft.No
         Me.Text = LoStrId.LblSalesOrders
         Me.LblInvID.Text = LoStrId.LblNum
@@ -53,6 +63,11 @@ Public Class SalesOrderFrm
         Me.BtnPrint.Text = LoStrId.LblPrint
         Me.LblStatus.Text = LoStrId.LblStatus
         Me.BtnPayInvoice.Text = LoStrId.LblPay
+        Me.btnAllPayments.Text = LoStrId.LblAllPayments
+        Me.BtnRefrech.Text = LoStrId.LblRefrech
+        Me.BtnPrintInvoice.Text = LoStrId.LblPrintInvoiceAFour
+        Me.BtnInvoicesReport.Text = LoStrId.LblPrintInvoicesReportAFour
+
         ChangeTextButtonToRight(Me.TxtCustomer, TxtCustomerBtn)
 
     End Sub
@@ -104,24 +119,7 @@ Public Class SalesOrderFrm
         }
         Me.DropStatus.Items.Add(Sitem)
 
-
-        Dim PaymentTypeItem As New RadListDataItem With {
-            .Text = Con.Cash,
-            .Value = PaymentType.Cash
-        }
-        Me.DropPaymentType.Items.Add(PaymentTypeItem)
-
-        PaymentTypeItem = New RadListDataItem With {
-            .Text = Con.Debt,
-            .Value = PaymentType.Debt
-        }
-        Me.DropPaymentType.Items.Add(PaymentTypeItem)
-
-        PaymentTypeItem = New RadListDataItem With {
-            .Text = Con.Paid,
-            .Value = PaymentType.Paid
-        }
-        Me.DropPaymentType.Items.Add(PaymentTypeItem)
+        LoadPaymentTypesDropDown(DropPaymentType)
 
         FillDropCurrencyFromCurrencyData(Me.DropCurrency, IIf(BoolLTRLanguage = True, "LatinSymb", "Symb"), True)
         Initiatedropdownlist(Me.DropCurrency)
@@ -417,6 +415,11 @@ Public Class SalesOrderFrm
             param(10) = "ShowBalanceUSD , " & BoolShowInvSaleOrderBalanceUSD
             OpenReport(Con.RptSalesOrder, param)
         End If
+        'If Me.GridSalesOrders.ChildRows.Count <> 0 And Me.GridSalesOrders.Rows.Count <> 0 Then
+        '    Dim param(0) As String
+        '    param(0) = "InvID , " & Me.GridSalesOrders.CurrentRow.Cells("InvID").Value
+        '    OpenReport(Con.RptThermalInvSalesOrder, param, True)
+        'End If
     End Sub
 
     Private Sub BtnInvoicesReport_Click(sender As Object, e As EventArgs) Handles BtnInvoicesReport.Click

@@ -4,6 +4,36 @@ Imports System.Threading
 Imports Telerik.WinControls.UI
 
 Public Class FrmTreasury
+
+    Sub New()
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        If BoolLTRLanguage Then
+            ChangeToEng()
+        End If
+    End Sub
+
+    Private Sub ChangeToEng()
+
+        'For Each c As Control In Me.PnlOptions.Controls
+        '    c.Font = New Font("Times New Roman", 10, FontStyle.Bold)
+        '    If c.Controls.Count > 0 Then
+        '        For Each subC As Control In c.Controls
+        '            subC.Font = New Font("Times New Roman", 10, FontStyle.Bold)
+        '        Next
+        '    End If
+        'Next
+
+        Me.RightToLeft = RightToLeft.No
+        Me.LblDropCurrency.Text = LoStrId.LblCurrency
+        Me.LblFrom.Text = LoStrId.LblFrom
+        Me.LblTo.Text = LoStrId.LblTo
+        Me.BtnReset.Text = LoStrId.LblReset
+        Me.BtnFiltering.Text = LoStrId.LblFiltering
+
+    End Sub
     Private Sub FrmTreasury_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         InitiateDatePicker()
         FillDropCurrencyFromCurrencyData(Me.DropCurrency, "CurrencyID", True)

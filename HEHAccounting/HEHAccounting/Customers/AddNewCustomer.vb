@@ -27,6 +27,7 @@
         Me.LblLatinName.Text = LoStrId.LblLatinName
         Me.LblTitle.Text = LoStrId.LblTitle
         Me.Text = LoStrId.LblAddCustomer
+        Me.LblCellPhone.Text = LoStrId.LblCellPhone
     End Sub
     Private Function NameRepetition() As Boolean
         Dim Param(2) As String

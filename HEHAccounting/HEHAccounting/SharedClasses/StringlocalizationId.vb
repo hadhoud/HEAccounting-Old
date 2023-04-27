@@ -34,6 +34,9 @@
     Public LblCurrency As String
     Public LblCurrencyRate As String
     Public LblPrint As String
+    Public LblPrintInvoiceAFour As String
+    Public LblPrintInvoicesReportAFour As String
+
     Public LblReference As String
     Public LblDueDate As String
     Public LblForms As String
@@ -42,6 +45,7 @@
     Public LblCheckNumber As String
     Public lblBalance As String
     Public LblPay As String
+
     'Accounts
     Public LblAddAccounts As String
     Public LblAccounts As String
@@ -118,7 +122,8 @@
     Public LblGroupName As String
     Public LblGroup As String
     Public LblNote As String
-    Public LblInevntoryItems As String
+    Public LblInventoryItems As String
+    Public LblAllInventory As String
 
     'Purchase ORder sales Order
     Public LblAddPO As String
@@ -139,6 +144,7 @@
     Public LblDueTotal As String
     Public LblPayment As String
     Public LblCheck As String
+    Public LblAllPayments As String
 
     Public lblCashSales As String
     Public lblDebtSales As String
@@ -172,12 +178,18 @@
 
     'Database
     Public LblDatabase As String
+    Public LblDatabaseBackup As String
+    Public LblDatabaseRestore As String
 
     'About
     Public LblAbout As String
     Public LblInfo As String
     'Setting
     Public LblSetting As String
+    Public LblFieldsSetting As String
+    Public lblProgram As String
+    Public lblProgrammer As String
+    Public LblVersion As String
 
     'Notes PAy
     Public LblNotePayable As String
@@ -248,6 +260,9 @@
         LblCurrency = "Currency"
         LblCurrencyRate = "Rate"
         LblPrint = "Print"
+        LblPrintInvoiceAFour = "Invoice A4"
+        LblPrintInvoicesReportAFour = "Customer Invoices A4"
+
         LblReference = "Reference"
         LblDueDate = "Due Date"
         LblForms = "Forms"
@@ -333,7 +348,8 @@
         LblGroupName = "Group Name"
         LblNote = "Note"
         LblGroup = "Group"
-        LblInevntoryItems = "Inevntory Items"
+        LblInventoryItems = "Inventory Items"
+        LblAllInventory = "All Inventory"
 
         'Purchase ORder sales Order
         LblAddPO = "Purchases"
@@ -355,6 +371,7 @@
         LblDueTotal = "Due Total"
         LblPayment = "Payment"
         LblCheck = "Check"
+        LblAllPayments = "Payments"
 
         lblCashSales = "Cash Sales"
         lblDebtSales = "Debt Sales"
@@ -389,9 +406,15 @@
 
         'Database
         LblDatabase = "Database"
+        LblDatabaseBackup = "Backup Database"
+        LblDatabaseRestore = "Restore Database"
 
         'Setting
         LblSetting = "Setting"
+        LblFieldsSetting = "Fields"
+        lblProgram = "Program"
+        lblProgrammer = "Programmer"
+        LblVersion = "Version"
 
         'About
         LblAbout = "About"

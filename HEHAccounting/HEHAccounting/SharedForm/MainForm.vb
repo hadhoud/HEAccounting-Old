@@ -19,6 +19,7 @@ Public Class MainForm
     Dim FrmDashboard As DashboardForm
     Dim FrmTreasuryForm As FrmTreasury
     Dim FrmAllInventory As AllInventory
+    Dim FrmQuantityHistory As QuantityHistory
 
     Dim FrmToOpen As String
     Dim FrmOpenTimer As New Timer
@@ -318,6 +319,7 @@ Public Class MainForm
         Me.BtnCommandBarMostanadNew.Text = LoStrId.LblNew
         Me.BtnCommandBarEdit.Text = LoStrId.LblEdit
         Me.BtnCommandBarShowHideForm.Text = LoStrId.LblShow
+        Me.BtnCommandBarExitApp.Text = LoStrId.LblLatinExit
 
         Me.RibBtnDaily.Text = LoStrId.LblDaily
         Me.RibButtonDashboard.Text = LoStrId.LblDashboard
@@ -336,42 +338,40 @@ Public Class MainForm
         Me.RibBtnNotesPay.Text = LoStrId.LblNotePayable
         Me.RibBtnNotesReceive.Text = LoStrId.LblNoteReceive
 
+        '-------------- Start Tools Tab --------------------
+        'Tools Tab
+        Me.RibTabTools.Text = LoStrId.lblTools
+        'Items Group
         Me.RGToolsItems.Text = LoStrId.LblItems
         Me.RibBtnItemsTree.Text = LoStrId.LblItemTree
         Me.RibBtnGroups.Text = LoStrId.LblGroups
-        Me.RibBtnInventoryItems.Text = LoStrId.LblItems
-        Me.RibBtnItemsInventory.Text = LoStrId.LblInevntoryItems
+        Me.RibBtnItemsInventory.Text = LoStrId.LblInventoryItems
+        Me.RibBtnAllInventory.Text = LoStrId.LblAllInventory
 
+        'Journal Group
         Me.RGGournalEntry.Text = LoStrId.LblJournalEntry
         Me.RibBtnKoyod.Text = LoStrId.LblJournalEntry
-        Me.GeneralNotesPayable.Text = LoStrId.LblGeneralJournalPay
-        Me.GeneralNotesReceive.Text = LoStrId.LblGeneralJournalReceive
 
+        'Accounts Group
         Me.RGToolsAccounts.Text = LoStrId.LblAccounts
         Me.RibBtnAccounts.Text = LoStrId.LblAccounts
         Me.RibBtnAddAccount.Text = LoStrId.LblAddAccounts
         Me.RibBtnOpenningBalance.Text = LoStrId.LblOpenningBalance
         Me.RibBtnAccountReport.Text = LoStrId.LblAccountStatement
 
-
+        'Currencies Group
+        Me.RGToolsCurrency.Text = LoStrId.LblCurrencies
         Me.RibBtnCurrencies.Text = LoStrId.LblCurrencies
         Me.RibBtnCurrRate.Text = LoStrId.LblCurrenciesRate
+        '-------------- END Tools Tab --------------------
 
-        Me.RGToolsCurrency.Text = LoStrId.LblSetting
-        Me.RibBtnUserInfo.Text = LoStrId.LblInfo
-        Me.RibBtnUserSettings.Text = LoStrId.LblSetting
-        Me.RibBtnDatabase.Text = LoStrId.LblDatabase
-        Me.RibBtnAbout.Text = LoStrId.LblAbout
-        Me.RibBtnExit.Text = LoStrId.LblLatinExit
-
-        Me.RGSettingUsers.Text = LoStrId.LblUsers
-        Me.RibBtnChangePass.Text = LoStrId.LblChangePassword
-        Me.RibBtnUsers.Text = LoStrId.LblUsers
-
+        '-------------- Start Reports Tab --------------------
+        'Debtors Creditors Group
         Me.RGReportsDebitCredit.Text = LoStrId.LblDebtorsCreditors
         Me.RibBtnCreditsReport.Text = LoStrId.LblCreditors
         Me.RibBtnDebitsReport.Text = LoStrId.LblDebtors
 
+        'Items Reports Group
         Me.RGItemsReports.Text = LoStrId.LblItemsReports
         Me.RibBtnPurchasePrices.Text = LoStrId.LblPurchasingPriceReport
         Me.RibBtnItemPurchase.Text = LoStrId.LblPurchasingCountReport
@@ -381,12 +381,44 @@ Public Class MainForm
         Me.RibBtnInventoryItems.Text = LoStrId.LblInevntoryItemsReport
         Me.RibBtnItemsSalesWin.Text = LoStrId.LblItemsSalesProfitReport
 
+        'General Reports Group
         Me.RGReportsGeneralReports.Text = LoStrId.LblGeneralReports
         Me.RibBtnRptCheques.Text = LoStrId.LblChequesReport
 
+        '-------------- END Reports Tab --------------------
+
+        '-------------- Start Setting Tab --------------------
+        Me.RBTabSetting.Text = LoStrId.LblSetting
+        'Setting Group
+        Me.RGSettingSetting.Text = LoStrId.LblSetting
+        Me.RibBtnUserSettings.Text = LoStrId.LblSetting
+        Me.RibBtnUserFieldsSetting.Text = LoStrId.LblFieldsSetting
+        Me.RibBtnDatabase.Text = LoStrId.LblDatabase
+        Me.RadMenuBackup.Text = LoStrId.LblDatabaseBackup
+        Me.RadMenuRestore.Text = LoStrId.LblDatabaseRestore
+
+        'Users Group
+        Me.RGSettingUsers.Text = LoStrId.LblUsers
+        Me.RibBtnChangePass.Text = LoStrId.LblChangePassword
+        Me.RibBtnUsers.Text = LoStrId.LblUsers
+        'Programs Group
+        Me.RGSettingProgram.Text = LoStrId.lblProgram
+        Me.RibBtnUserInfo.Text = LoStrId.LblInfo
+        Me.RibBtnAbout.Text = LoStrId.LblAbout
+        Me.RibBtnExit.Text = LoStrId.LblLatinExit
+        'Programmer Group 
+        Me.RGSettingProgrammer.Text = LoStrId.lblProgrammer
+
+        '-------------- END Setting Tab --------------------
+
+
+        Me.RibBtnInventoryItems.Text = LoStrId.LblItems
+        Me.GeneralNotesPayable.Text = LoStrId.LblGeneralJournalPay
+        Me.GeneralNotesReceive.Text = LoStrId.LblGeneralJournalReceive
+
         'Tabs
         Me.RibbonTabHome.Text = LoStrId.lblHome
-        Me.RibTabTools.Text = LoStrId.lblTools
+
         Me.RibTabReports.Text = LoStrId.lblReports
 
         'Groups
@@ -394,8 +426,11 @@ Public Class MainForm
         Me.RibGOption.Text = LoStrId.LblPageOption
         Me.RibGForms.Text = LoStrId.LblForms
 
+        '-------------- Start Status Strip --------------------
         Me.LblUserName.Text = LoStrId.LblLatinUsername
         Me.stripLblLastDollarRate.Text = LoStrId.LblDollarRate
+        Me.StriplblVersion.Text = LoStrId.LblVersion
+        '-------------- END Status Strip --------------------
     End Sub
 
     Sub SubscribeEvents()
@@ -624,6 +659,18 @@ Public Class MainForm
             End If
             ActWindow(FrmAllInventory)
 
+        ElseIf FrmToOpen = "FrmQuantityHistory" Then
+            If FrmQuantityHistory Is Nothing Then
+                FrmQuantityHistory = New QuantityHistory With {
+                    .Width = WindowDock.Width,
+                    .Height = WindowDock.Height,
+                    .MdiParent = Me
+                }
+                FrmQuantityHistory.PnlOptions.Visible = BoolOptionPanelQuantityHistory
+                FrmQuantityHistory.Show()
+            End If
+            ActWindow(FrmQuantityHistory)
+
         End If
 
         Me.Cursor = Cursors.Default
@@ -812,6 +859,8 @@ Public Class MainForm
                     Exit Select
                 Case "FrmAllInventory"
                     FrmAllInventory.PnlOptions.Visible = Vis
+                Case "FrmQuantityHistory"
+                    FrmQuantityHistory.PnlOptions.Visible = Vis
                     Exit Select
             End Select
         End If
@@ -860,6 +909,8 @@ Public Class MainForm
                 Exit Select
             Case "FrmAllInventory"
                 FrmAllInventory = Nothing
+            Case "FrmQuantityHistory"
+                FrmQuantityHistory = Nothing
                 Exit Select
         End Select
     End Sub
@@ -981,6 +1032,12 @@ Public Class MainForm
                         Me.BtnCommandBarEdit.Enabled = True
                         Me.BtnCommandBarMostanadNew.Enabled = True
                         Me.BtnCommandBarShowHideForm.CheckState = IIf(FrmAllInventory.PnlOptions.Visible, CheckState.Checked, CheckState.Unchecked)
+                    End If
+                Case "FrmQuantityHistory"
+                    If FrmQuantityHistory IsNot Nothing Then
+                        Me.BtnCommandBarEdit.Enabled = False
+                        Me.BtnCommandBarMostanadNew.Enabled = False
+                        Me.BtnCommandBarShowHideForm.CheckState = IIf(FrmQuantityHistory.PnlOptions.Visible, CheckState.Checked, CheckState.Unchecked)
                     End If
                     Exit Select
             End Select
@@ -1114,6 +1171,8 @@ Public Class MainForm
         'Reload User Setting
         Home.GetUserSettings()
         Home.GetUserOptionPanelsSettings()
+        Me.stripLblDollarRateValue.Visibility = IIf(BoolShowCurrencyRateInStatus, ElementVisibility.Visible, ElementVisibility.Collapsed)
+        Me.stripLblLastDollarRate.Visibility = IIf(BoolShowCurrencyRateInStatus, ElementVisibility.Visible, ElementVisibility.Collapsed)
     End Sub
 
     Private Sub RibBtnCurrencies_Click(sender As Object, e As EventArgs) Handles RibBtnCurrencies.Click
@@ -1194,15 +1253,18 @@ Public Class MainForm
     End Sub
 
     Private Sub RibBtnQuantity_Click(sender As Object, e As EventArgs) Handles RibBtnQuantity.Click
-        Me.Cursor = Cursors.WaitCursor
-        Dim FrmQuantityHistory As New QuantityHistory
-        FrmQuantityHistory.ShowDialog()
-        Me.Cursor = Cursors.Default
+        'Me.Cursor = Cursors.WaitCursor
+        'Dim FrmQuantityHistory As New QuantityHistory
+        'FrmQuantityHistory.ShowDialog()
+        FrmToOpen = "FrmQuantityHistory"
+        FrmOpenTimer.Start()
+        ' Me.Cursor = Cursors.Default
     End Sub
 
     Private Sub RibBtnUsers_Click(sender As Object, e As EventArgs) Handles RibBtnUsers.Click
         Dim FrmUsers As New AddUsers
         FrmUsers.ShowDialog()
+        Home.GetUserSettings()
     End Sub
 
     Private Sub RibBtnUserInfo_Click(sender As Object, e As EventArgs) Handles RibBtnUserInfo.Click

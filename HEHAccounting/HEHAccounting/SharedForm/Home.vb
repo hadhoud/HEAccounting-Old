@@ -109,7 +109,7 @@
             BoolShowSalesDailyWinScreenByUser = UserSettingDt.Rows(0).Item("bShowSalesDailyWinScreenByUser")
             BoolShowPurchasingPriceInScreensByUser = UserSettingDt.Rows(0).Item("bShowPurchasingPriceInScreensByUser")
             BoolShowItemsSalesWinReportScreenByUser = UserSettingDt.Rows(0).Item("bShowItemsSalesWinReportScreenByUser")
-
+            BoolShowProfitsTextInScreenByUser = UserSettingDt.Rows(0).Item("bShowProfitsTextInScreenByUser")
 
             'Customer Setting
             BoolAllowCustomerRepetition = UserSettingDt.Rows(0).Item("SAllowCustomerRepetition")
@@ -123,9 +123,6 @@
             BoolShowItemsInSOMainForm = UserSettingDt.Rows(0).Item("SShowItemsInSOMainForm")
             BoolShowSOAsWindow = UserSettingDt.Rows(0).Item("SShowSOAsWindow")
             DefaultSOStatus = UserSettingDt.Rows(0).Item("SSOStatus")
-            'BoolShowAddSalesOrdersColPurchasePrice = UserSettingDt.Rows(0).Item("SAddSalesOrdersColPurchasePrice")
-            'BoolShowSalesOrdersColCustomerTitle = UserSettingDt.Rows(0).Item("SSalesOrdersColCustomerTitle")
-            ' BoolShowSalesOrdersColCurrencySymb = UserSettingDt.Rows(0).Item("SSalesOrdersColCurrencySymb")
             iSalesOrderDefaultCustomerID = UserSettingDt.Rows(0).Item("iSODefaultCustomerID")
             BoolShowSalesOrdersPrintQuestionAfterSave = UserSettingDt.Rows(0).Item("bSalesOrdersShowPrintQuestionAfterSave")
 
@@ -149,6 +146,9 @@
 
             'Report Setting
             ReportFormCurrency = UserSettingDt.Rows(0).Item("SReportFormCurrency").ToString
+
+            BoolShowCurrencyRateInStatus = UserSettingDt.Rows(0).Item("bShowCurrencyRateInStatus")
+
             'LogMessage("GetUserSettings3")
         End If
     End Sub
@@ -171,6 +171,7 @@
             BoolOptionPanelPurchasesOrders = UserOptionPanelsSettingDt.Rows(0).Item("bPurchasesOrdersShow_fl")
             BoolOptionPanelCreditorsDebitors = UserOptionPanelsSettingDt.Rows(0).Item("bCreditorsDebitorsShow_fl")
             BoolOptionPanelAllInventory = UserOptionPanelsSettingDt.Rows(0).Item("bAllInventoryShow_fl")
+            BoolOptionPanelQuantityHistory = UserOptionPanelsSettingDt.Rows(0).Item("bQuantityHistoryShow_fl")
         End If
     End Sub
 
@@ -236,9 +237,12 @@
 
             'Add Sales ORder
             BoolShowAddSalesOrdersColPurchasePrice = UserFieldsSettingDt.Rows(0).Item("bShowAddSalesOrdersColPurchasePrice")
+            BoolShowAddSalesOrdersTextCurrencyRate = UserFieldsSettingDt.Rows(0).Item("bShowAddSalesOrdersTextCurrencyRate")
+            BoolShowAddSalesOrdersTextProftis = UserFieldsSettingDt.Rows(0).Item("bShowAddSalesOrdersTextProftis")
 
             'Add Purchase Order
             BoolShowAddPurchasesOrdersColPurchasePrice = UserFieldsSettingDt.Rows(0).Item("bShowAddPurchasesOrdersColPurchasePrice")
+            BoolShowAddPurchasesOrdersTextCurrencyRate = UserFieldsSettingDt.Rows(0).Item("bShowAddPurchasesOrdersTextCurrencyRate")
 
             'Invoice Sales order Report
             BoolShowInvSaleOrderSubTotalLL = UserFieldsSettingDt.Rows(0).Item("bShowInvSaleOrderSubTotalLL").ToString
@@ -255,6 +259,25 @@
             BoolShowCustomerInvSalesOrdersTotalDueUSD = UserFieldsSettingDt.Rows(0).Item("bShowCustomerInvSaleOrderTotalDueUSD").ToString
             BoolShowCustomerInvSalesOrdersTotalDueLL = UserFieldsSettingDt.Rows(0).Item("bShowCustomerInvSaleOrderTotalDueLL").ToString
             BoolShowCustomerInvSalesOrdersCurrencyRate = UserFieldsSettingDt.Rows(0).Item("bShowCustomerInvSaleOrderCurrencyRate").ToString
+
+            'Account Details
+            BoolShowAccountDetailsTextCurrencyRate = UserFieldsSettingDt.Rows(0).Item("bShowAccountDetailsTextCurrencyRate")
+
+            'Items Form
+            BoolShowItemsFormColBarcode = UserFieldsSettingDt.Rows(0).Item("bShowItemsFormColBarcode")
+            BoolShowItemsFormColLatinName = UserFieldsSettingDt.Rows(0).Item("bShowItemsFormColLatinName")
+
+            'Notes Pay
+            BoolShowNotePayTextCurrencyRate = UserFieldsSettingDt.Rows(0).Item("bShowNotePayTextCurrencyRate")
+            BoolShowNotePayTextAmountEquality = UserFieldsSettingDt.Rows(0).Item("bShowNotePayTextAmountEquality")
+
+            'Notes Receive
+            BoolShowNoteReceiveTextCurrencyRate = UserFieldsSettingDt.Rows(0).Item("bShowNoteReceiveTextCurrencyRate")
+            BoolShowNoteReceiveTextAmountEquality = UserFieldsSettingDt.Rows(0).Item("bShowNoteReceiveTextAmountEquality")
+
+            'General Notes
+            BoolShowGeneralNoteTextCurrencyRate = UserFieldsSettingDt.Rows(0).Item("bShowGeneralNoteTextCurrencyRate")
+            BoolShowGeneralNoteTextAmountEquality = UserFieldsSettingDt.Rows(0).Item("bShowGeneralNoteTextAmountEquality")
 
         End If
     End Sub
@@ -273,7 +296,6 @@
                 BoolShowUsers = AppSettingDt.Rows(0).Item("ShowUsers")
                 BoolShowSalesDailyWin = AppSettingDt.Rows(0).Item("bShowSalesDailyWinScreen")
                 BoolShowDashboardForm = AppSettingDt.Rows(0).Item("bShowDashboardForm")
-                BoolShowCurrencyRateInStatus = AppSettingDt.Rows(0).Item("bShowCurrencyRateInStatus")
             End If
             'LogMessage("GetAppSettings4")
         Else
@@ -285,7 +307,6 @@
             BoolShowUsers = False
             BoolShowSalesDailyWin = False
             BoolShowDashboardForm = False
-            BoolShowCurrencyRateInStatus = False
         End If
 
     End Sub

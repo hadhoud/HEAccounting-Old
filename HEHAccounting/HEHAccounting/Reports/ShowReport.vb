@@ -1,9 +1,14 @@
-﻿Imports Telerik.Reporting
+﻿Imports System.ComponentModel.DataAnnotations
+Imports System.Drawing.Printing
+Imports System.Globalization
+Imports Telerik.Reporting
+Imports Telerik.Reporting.Processing
+Imports Telerik.WinControls.UI
 
 Public Class ShowReport
 
     Public RptName As String
-    Public AllParamter As Parameter()
+    Public AllParamter As Telerik.Reporting.Parameter()
 
     Private ReadOnly MInstanceReport As InstanceReportSource = New InstanceReportSource()
     Private ReadOnly MReportBook As ReportBook = New ReportBook()
@@ -17,6 +22,7 @@ Public Class ShowReport
     Sub AddSources()
         MUriReportSource.Uri = Application.StartupPath.ToString & "\Reports\" & RptName & ".trdp"
         MReportBook.ReportSources.Add(MUriReportSource)
+
         MInstanceReport.ReportDocument = MReportBook
         Me.RptViewer.ReportSource = MInstanceReport
         Me.RptViewer.ViewMode = Telerik.ReportViewer.WinForms.ViewMode.PrintPreview
@@ -29,6 +35,33 @@ Public Class ShowReport
     End Sub
     Public Sub RefrechReport()
         RptViewer.RefreshReport()
+    End Sub
+
+    Public Sub PrintReport()
+        AddSources()
+        AddParameters()
+        ' RefrechReport()
+        Dim processor As ReportProcessor = New ReportProcessor()
+        Dim Controller As System.Drawing.Printing.PrintController = New System.Drawing.Printing.StandardPrintController()
+        processor.PrintController = Controller
+        Dim printerSettings As System.Drawing.Printing.PrinterSettings = New System.Drawing.Printing.PrinterSettings()
+
+        printerSettings.PrinterName = "GP-80160(Cut) Series"
+        printerSettings.Copies = 1
+        printerSettings.Collate = False
+        'Dim repSource As Telerik.Reporting.InstanceReportSource = MInstanceReport
+
+        Dim culture = New CultureInfo("ar-LB")
+        If BoolLTRLanguage = True Then
+            culture.NumberFormat.CurrencySymbol = "L.L"
+        Else
+            culture.NumberFormat.CurrencySymbol = "ل.ل"
+        End If
+
+
+
+        processor.PrintReport(MInstanceReport, printerSettings)
+        'Me.RptViewer.PrintReport()
     End Sub
     Private Sub ShowReport_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AddSources()

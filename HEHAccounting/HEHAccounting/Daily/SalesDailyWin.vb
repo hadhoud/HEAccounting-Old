@@ -37,23 +37,7 @@ Public Class SalesDailyWin
     End Sub
     Private Sub FillDropList()
 
-        Dim PaymentTypeItem As New RadListDataItem With {
-            .Text = Con.Cash,
-            .Value = PaymentType.Cash
-        }
-        Me.DropPaymentType.Items.Add(PaymentTypeItem)
-
-        PaymentTypeItem = New RadListDataItem With {
-            .Text = Con.Debt,
-            .Value = PaymentType.Debt
-        }
-        Me.DropPaymentType.Items.Add(PaymentTypeItem)
-
-        PaymentTypeItem = New RadListDataItem With {
-            .Text = Con.Paid,
-            .Value = PaymentType.Paid
-        }
-        Me.DropPaymentType.Items.Add(PaymentTypeItem)
+        LoadPaymentTypesDropDown(DropPaymentType)
 
         Initiatedropdownlist(Me.DropPaymentType, False)
     End Sub

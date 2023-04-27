@@ -12,10 +12,10 @@ Module Enums
     End Enum
 
     Structure PaymentType
-        'Order current status. Posted = 1 morhal ;UnPosted = 2 Not Morahal;
         Const Cash = "C"
         Const Debt = "D"
         Const Paid = "PI"
+        Const Taasit = "TA"
     End Structure
 
     Enum UserRole

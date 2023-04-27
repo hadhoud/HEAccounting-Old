@@ -43,6 +43,10 @@ Public Class NoteReceive
         Else
             Me.DropStatus.SelectedValue = DefaultNRStatus
         End If
+        tblCurrencyRow.Visible = BoolShowNoteReceiveTextCurrencyRate
+        LblCurrencyVal.Visible = BoolShowNoteReceiveTextCurrencyRate
+        TxtEqualValue.Visible = BoolShowNoteReceiveTextAmountEquality
+        LblEqualValue.Visible = BoolShowNoteReceiveTextAmountEquality
     End Sub
 
     Private Sub FormClear()
@@ -179,6 +183,7 @@ Public Class NoteReceive
         Me.BtnPrint.Text = LoStrId.LblPrint
         Me.ChkAlert.Text = LoStrId.LblAlertOnCheckDueDate
         Me.LblDesc.Text = LoStrId.LblDescription
+        Me.LblStatus.Text = LoStrId.LblStatus
         ChangeTextButtonToRight(Me.TxtCustomer, Me.TxtCustomerBtn)
     End Sub
     Sub AutoComplete()

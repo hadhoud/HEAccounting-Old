@@ -755,8 +755,6 @@ Partial Class AddNewSaleInvoice
         Me.MskTxtInvDate.Mask = "dd/MM/yyyy"
         Me.MskTxtInvDate.MaskType = Telerik.WinControls.UI.MaskType.DateTime
         Me.MskTxtInvDate.Name = "MskTxtInvDate"
-        Me.MskTxtInvDate.SelectedText = "01"
-        Me.MskTxtInvDate.SelectionLength = 2
         Me.MskTxtInvDate.Size = New System.Drawing.Size(153, 24)
         Me.MskTxtInvDate.TabIndex = 11
         Me.MskTxtInvDate.TabStop = False

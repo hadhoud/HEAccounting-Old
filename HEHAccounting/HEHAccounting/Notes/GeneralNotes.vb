@@ -34,6 +34,10 @@ Public Class GeneralNotes
         Else
             Me.DropStatus.SelectedValue = IIf(GeneralType = "NGP", DefaultNPStatus, DefaultNRStatus)
         End If
+        tblCurrencyRow.Visible = BoolShowGeneralNoteTextCurrencyRate
+        LblCurrencyVal.Visible = BoolShowGeneralNoteTextCurrencyRate
+        TxtEqualValue.Visible = BoolShowGeneralNoteTextAmountEquality
+        LblEqualValue.Visible = BoolShowGeneralNoteTextAmountEquality
     End Sub
 
     Private Sub ChangeToEng()

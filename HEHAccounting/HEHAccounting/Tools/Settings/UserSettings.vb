@@ -152,11 +152,6 @@ Public Class UserSettings
         Me.ChkShowSOInWindow.Checked = BoolShowSOAsWindow
         Me.DropSOStatus.SelectedValue = DefaultSOStatus
 
-        'Me.chkAddSalesOrdersColPurchasePrice.Checked = BoolShowAddSalesOrdersColPurchasePrice
-        'Me.ChkSalesOrdersColCustomerTitle.Checked = BoolShowSalesOrdersColCustomerTitle
-        'Me.ChkSalesOrdersColCurrencySymb.Checked = BoolShowSalesOrdersColCurrencySymb
-
-
         Me.chkSOShowPrintQuestionAfterSave.Checked = BoolShowSalesOrdersPrintQuestionAfterSave
         LoadSODefaultCustomer()
 
@@ -208,6 +203,7 @@ Public Class UserSettings
         Me.chkOptionPurchasesOrders.Checked = BoolOptionPanelPurchasesOrders
         Me.chkOptionCreditorsDebitors.Checked = BoolOptionPanelCreditorsDebitors
         Me.chkOptionAllInventory.Checked = BoolOptionPanelAllInventory
+        Me.chkOptionQuantityHistory.Checked = BoolOptionPanelQuantityHistory
     End Sub
 
     Private Sub GridShortcuts_KeyDown(sender As Object, e As KeyEventArgs) Handles GridShortcuts.KeyDown
@@ -228,7 +224,7 @@ Public Class UserSettings
     End Sub
 
     Private Sub UpdateUserOptionsPanelSetting()
-        Dim Param(12) As String
+        Dim Param(13) As String
         Param(0) = "@bTreasuryShow_fl , " & chkOptionTreasury.Checked
         Param(1) = "@bDailyShow_fl , " & chkOptionDaily.Checked
         Param(2) = "@bAnalysisShow_fl , " & chkOptionAnalysis.Checked
@@ -241,13 +237,15 @@ Public Class UserSettings
         Param(9) = "@bPurchasesOrdersShow_fl , " & chkOptionPurchasesOrders.Checked
         Param(10) = "@bCreditorsDebitorsShow_fl , " & chkOptionCreditorsDebitors.Checked
         Param(11) = "@bAllInventoryShow_fl , " & chkOptionAllInventory.Checked
-        Param(12) = "@IUserID , " & UserID
+        Param(12) = "@bQuantityHistoryShow_fl , " & chkOptionQuantityHistory.Checked
+
+        Param(13) = "@IUserID , " & UserID
         ExecuteProcedureWithParameters("UpdateUserDefaultOptionPanelsSetting", Param)
     End Sub
 
     Private Sub BtnSaveAndNew_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         If MessageShowAsk(Con.Ask_Edit) = DialogResult.Yes Then
-            Dim Param(22) As String
+            Dim Param(23) As String
             Param(0) = "@BSShowDailyPage , " & IIf(ChkShowDailyPageWhenOpen.Checked = True, True, False)
             Param(1) = "@BSShowProgramAlerts , " & IIf(ChkShowProgramAlerts.Checked = True, True, False)
             Param(2) = "@BSAllowCustomerRepetition , " & IIf(ChkAllowCustomerRepetition.Checked = True, True, False)
@@ -278,8 +276,9 @@ Public Class UserSettings
 
             Param(20) = "@iSODefaultCustomerID , " & IIf(SODefaultCustomerID = String.Empty, 0, SODefaultCustomerID)
             Param(21) = "@bSOShowPrintQuestionAfterSave , " & IIf(chkSOShowPrintQuestionAfterSave.Checked = True, True, False)
+            Param(22) = "@bShowCurrencyRateInStatus , " & IIf(chkShowCurrencyRateInStatus.Checked = True, True, False)
 
-            Param(22) = "@IUserID , " & UserID
+            Param(23) = "@IUserID , " & UserID
             ExecuteProcedureWithParameters("UpdateUserSettings", Param)
             UpdateUserShortcuts()
             UpdateUserOptionsPanelSetting()
@@ -290,7 +289,7 @@ Public Class UserSettings
     End Sub
 
     Private Sub UpdateAppSettings()
-        Dim Param(8) As String
+        Dim Param(7) As String
         Param(0) = "@Clang , " & Me.DropLang.SelectedValue.ToString
         Param(1) = "@BShowBarcode , " & IIf(ChkShowBarcode.Checked = True, True, False)
         Param(2) = "@BShowLanguage , " & IIf(ChkShowLang.Checked = True, True, False)
@@ -299,7 +298,7 @@ Public Class UserSettings
         Param(5) = "@BShowUnits , " & IIf(ChkShowItemsUnits.Checked = True, True, False)
         Param(6) = "@bShowSalesDailyWin , " & IIf(chkShowSalesDailyWin.Checked = True, True, False)
         Param(7) = "@bShowDashboardForm , " & IIf(chkShowDashboardForm.Checked = True, True, False)
-        Param(8) = "@bShowCurrencyRateInStatus , " & IIf(chkShowCurrencyRateInStatus.Checked = True, True, False)
+
         ExecuteProcedureWithParameters("UpdateAppSettings", Param)
     End Sub
 

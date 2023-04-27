@@ -37,6 +37,19 @@ Public Class AddNewSaleInvoice
         Else
             Me.DropStatus.SelectedValue = DefaultPOStatus
         End If
+
+        tblCurrencyRow.Visible = BoolShowAddSalesOrdersTextCurrencyRate
+        LblCurrValue.Visible = BoolShowAddSalesOrdersTextCurrencyRate
+
+        If BoolShowProfitsTextInScreenByUser = False Then
+            lblProfit.Visible = False
+            TxtProfit.Visible = False
+        Else
+            lblProfit.Visible = True
+            TxtProfit.Visible = BoolShowAddSalesOrdersTextProftis
+        End If
+
+
     End Sub
     Private Sub ChangeToEng()
         Me.RightToLeft = RightToLeft.No
@@ -316,6 +329,8 @@ Public Class AddNewSaleInvoice
         HideShowColummn(GridInvItem, Me.GridInvItem.Columns.Item("IsAlertQtyOnBuy").Index, False)
         ' HideShowColummn(GridInvItem, Me.GridInvItem.Columns.Item("SpecialOfferID").Index, False)
         HideShowColummn(GridInvItem, Me.GridInvItem.Columns.Item("PurchasingPrice").Index, BoolShowPurchasingPriceInScreensByUser And BoolShowAddSalesOrdersColPurchasePrice)
+        HideShowColummn(GridInvItem, Me.GridInvItem.Columns.Item("SalesProfitByQty").Index, BoolShowProfitsTextInScreenByUser And BoolShowAddSalesOrdersTextProftis)
+
     End Sub
 
     Private Sub GridInvItem_CommandCellClick(sender As Object, e As GridViewCellEventArgs) Handles GridInvItem.CommandCellClick
@@ -999,8 +1014,10 @@ Public Class AddNewSaleInvoice
                 Me.GridInvItem.Columns.Item("PurchasingPrice").Width = 90
             End If
         ElseIf e.KeyCode = Keys.F10 Then
-            HideShowColummn(GridInvItem, Me.GridInvItem.Columns.Item("SalesProfitByQty").Index, Not Me.GridInvItem.Columns.Item("SalesProfitByQty").IsVisible)
-            Me.GridInvItem.Columns.Item("SalesProfitByQty").Width = 90
+            If BoolShowProfitsTextInScreenByUser Then
+                HideShowColummn(GridInvItem, Me.GridInvItem.Columns.Item("SalesProfitByQty").Index, Not Me.GridInvItem.Columns.Item("SalesProfitByQty").IsVisible)
+                Me.GridInvItem.Columns.Item("SalesProfitByQty").Width = 90
+            End If
         End If
 
     End Sub

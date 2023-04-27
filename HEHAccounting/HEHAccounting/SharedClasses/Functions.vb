@@ -1,4 +1,5 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Configuration
+Imports System.Data.SqlClient
 Imports System.Drawing.Imaging
 Imports System.IO
 Imports System.Security.Cryptography
@@ -94,6 +95,19 @@ Module Functions
             Case "PaymentDesc"
                 Return "ملاحظات"
             'End All Payments
+
+            'FORM Quantity History Report
+
+            'END FORM Quantity History Report
+
+            Case "Startdate"
+                Return "من تاريخ"
+
+            Case "Enddate"
+                Return "إلى تاريخ"
+
+            Case "Startdate"
+                Return "من تاريخ"
 
             'End new Reformat
 
@@ -359,6 +373,78 @@ Module Functions
 
     Function ChangeColNameToEnglish(ByVal ColName As String) As String
         Select Case ColName
+
+            'New ReFormat 29-3-2023
+
+                'All Form
+            Case "CreatedDate"
+                Return "Created Date"
+
+            Case "ModifiedDate"
+                Return "Modified Date"
+
+            '----------- Currency ----------- 
+            Case "CurrName"
+                Return "Currency"
+
+            Case "CurrencyVal"
+                Return "Cur. Rate"
+
+            Case "DollarRate"
+                Return "Dollar Rate"
+
+            Case "Symb"
+                Return "Symbol"
+
+            Case "InvoiceCurrencySymb"
+                Return "Currency"
+
+            Case "PartName"
+                Return "Part Name"
+
+            Case "PartPrecision"
+                Return "Part Precision"
+
+            '----------- END Currency -----------
+
+            'Form Sales Orders , Purchases Orders
+            Case "SubTotalUSD"
+                Return "SubTotal $"
+
+            Case "SubTotalLL"
+                Return "SubTotal LL"
+
+            Case "TotalDueUSD"
+                Return "TotalDue $"
+
+            Case "TotalDueLL"
+                Return "TotalDue LL"
+
+            Case "DiscountUSD"
+                Return "Discount $"
+
+            Case "DiscountLL"
+                Return "Discount LL"
+
+            'End Form Sales Orders
+
+           'Form Sales Win
+            Case "SellPurchaseDifferenceLL"
+                Return "profit/loss LL"
+
+            Case "PurchaseTotalDueLL"
+                Return "Net Purchase LL"
+
+            Case "SellPurchaseDifferenceUSD"
+                Return "profit/loss $"
+
+            Case "PurchaseTotalDueUSD"
+                Return "Net Purchase $"
+
+            'End Form Sales Win
+
+            'End new Reformat
+
             'Form Items:
             Case "ID", "Item_id", "ItemID", "CustomerID", "VendorID", "CurrencyID", "GroupID", "TrsID", "UserID"
                 Return "Code"
@@ -433,12 +519,6 @@ Module Functions
                 Return "Company"
 
 
-                'All Form
-            Case "CreatedDate"
-                Return "Created Date"
-
-            Case "ModifiedDate"
-                Return "Modified Date"
 
                  'Sales Invoices
             Case "Delete"
@@ -511,26 +591,7 @@ Module Functions
             Case "Status", "StatusName"
                 Return "Status"
 
-                'Currency
-            Case "CurrName"
-                Return "Cur. Name"
 
-            Case "CurrencyVal"
-                Return "Cur. Rate"
-            Case "DollarRate"
-                Return "Dollar Rate"
-
-            Case "Symb"
-                Return "Symbol"
-
-            Case "InvoiceCurrencySymb"
-                Return "Currency"
-
-            Case "PartName"
-                Return "Part Name"
-
-            Case "PartPrecision"
-                Return "Part Precision"
 
             Case "ReferID", "Refer"
                 Return "Reference No."
@@ -588,17 +649,23 @@ Module Functions
                 Return "Total Purchasing Price"
 
             Case Else
-                Return ColName
+                Return "Not:" & ColName
         End Select
 
     End Function
 
-    Public Sub OpenReport(ByVal RptName As String, ByVal Param() As String)
+    Public Sub OpenReport(ByVal RptName As String, ByVal Param() As String, Optional boolprint As Boolean = False)
         Dim FrmOpenReport As New ShowReport With {
             .RptName = RptName,
             .AllParamter = GetParameterRports(Param)
         }
-        FrmOpenReport.Show()
+        If boolprint Then
+            FrmOpenReport.PrintReport()
+        Else
+            FrmOpenReport.Show()
+        End If
+
+
     End Sub
 
     Function GetParameterRports(ByVal Param() As String) As Parameter()

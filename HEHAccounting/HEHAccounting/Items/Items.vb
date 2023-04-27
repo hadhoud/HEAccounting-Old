@@ -47,8 +47,9 @@ Partial Friend Class Items
 
     Public Sub RefrechGrid()
         FillGridViewProcedure(Me.GridItems, "SelectItems")
-        HideShowColummn(Me.GridItems, 1, BoolShowBarcode)
+        HideShowColummn(Me.GridItems, Me.GridItems.Columns("Barcode").Index, BoolShowBarcode And BoolShowItemsFormColBarcode)
         HideShowColummn(Me.GridItems, Me.GridItems.Columns("PurchasingPrice").Index, BoolShowPurchasingPriceInScreensByUser)
+        HideShowColummn(Me.GridItems, Me.GridItems.Columns("ItemLatinName").Index, BoolShowItemsFormColLatinName)
     End Sub
     'Protected Overrides Sub OnLoad(e As EventArgs)
     '    If Not ProgramHasError Then

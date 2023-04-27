@@ -53,7 +53,12 @@ Module ControlsFunctions
         grid.AutoSizeRows = False
         grid.TableElement.RowHeight = 35
         grid.TableElement.TableHeaderHeight = 35
-        grid.Font = New System.Drawing.Font("Times New Roman", 12, FontStyle.Bold, GraphicsUnit.Point)
+        If BoolLTRLanguage Then
+            grid.Font = New System.Drawing.Font("Times New Roman", 10, FontStyle.Bold, GraphicsUnit.Point)
+        Else
+            grid.Font = New System.Drawing.Font("Times New Roman", 12, FontStyle.Bold, GraphicsUnit.Point)
+        End If
+
         For Each Col As GridViewDataColumn In grid.Columns
             Col.TextAlignment = ContentAlignment.MiddleCenter
             If BoolLTRLanguage Then
@@ -71,6 +76,8 @@ Module ControlsFunctions
                 Col.FormatString = "{0:dd/MM/yyyy}"
                 Col.AutoSizeMode = BestFitColumnMode.AllCells
                 Col.BestFit()
+            ElseIf Col.Name.Contains("date") Then
+                Col.FormatString = "{0:dd/MM/yyyy}"
             End If
         Next
 
@@ -122,6 +129,33 @@ Module ControlsFunctions
         End If
     End Sub
 
+    Public Sub LoadPaymentTypesDropDown(ByVal dropddown As RadDropDownList)
+
+        Dim PaymentTypeItem As New RadListDataItem With {
+            .Text = Con.Cash,
+            .Value = PaymentType.Cash
+        }
+        dropddown.Items.Add(PaymentTypeItem)
+
+        PaymentTypeItem = New RadListDataItem With {
+            .Text = Con.Debt,
+            .Value = PaymentType.Debt
+        }
+        dropddown.Items.Add(PaymentTypeItem)
+
+        PaymentTypeItem = New RadListDataItem With {
+            .Text = Con.Paid,
+            .Value = PaymentType.Paid
+        }
+        dropddown.Items.Add(PaymentTypeItem)
+
+        PaymentTypeItem = New RadListDataItem With {
+            .Text = Con.Taasit,
+            .Value = PaymentType.Taasit
+        }
+        dropddown.Items.Add(PaymentTypeItem)
+
+    End Sub
     Public Sub HideShowColummn(ByVal Grid As RadGridView, ByVal Index As Integer, ByVal IsVsible As Boolean)
         Grid.Columns(Index).IsVisible = IsVsible
     End Sub

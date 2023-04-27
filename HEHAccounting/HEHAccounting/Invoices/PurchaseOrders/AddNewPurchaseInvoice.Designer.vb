@@ -29,7 +29,7 @@ Partial Class AddNewPurchaseInvoice
         Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TLPSOHeader = New System.Windows.Forms.TableLayoutPanel()
-        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
+        Me.tblCurrencyRow = New System.Windows.Forms.TableLayoutPanel()
         Me.txtDollarRate = New Telerik.WinControls.UI.RadTextBox()
         Me.BtnGetCurrencyVal = New Telerik.WinControls.UI.RadButton()
         Me.TxtInvoiceReference = New Telerik.WinControls.UI.RadTextBox()
@@ -78,7 +78,7 @@ Partial Class AddNewPurchaseInvoice
         Me.ToolTipVendor = New System.Windows.Forms.ToolTip(Me.components)
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TLPSOHeader.SuspendLayout()
-        Me.TableLayoutPanel4.SuspendLayout()
+        Me.tblCurrencyRow.SuspendLayout()
         CType(Me.txtDollarRate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnGetCurrencyVal, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtInvoiceReference, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -139,7 +139,7 @@ Partial Class AddNewPurchaseInvoice
         Me.TLPSOHeader.ColumnCount = 2
         Me.TLPSOHeader.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TLPSOHeader.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TLPSOHeader.Controls.Add(Me.TableLayoutPanel4, 1, 2)
+        Me.TLPSOHeader.Controls.Add(Me.tblCurrencyRow, 1, 2)
         Me.TLPSOHeader.Controls.Add(Me.TxtInvoiceReference, 1, 4)
         Me.TLPSOHeader.Controls.Add(Me.LblInvID, 0, 3)
         Me.TLPSOHeader.Controls.Add(Me.LblDueTotal, 0, 11)
@@ -191,22 +191,22 @@ Partial Class AddNewPurchaseInvoice
         Me.TLPSOHeader.Size = New System.Drawing.Size(242, 433)
         Me.TLPSOHeader.TabIndex = 0
         '
-        'TableLayoutPanel4
+        'tblCurrencyRow
         '
-        Me.TableLayoutPanel4.AutoSize = True
-        Me.TableLayoutPanel4.ColumnCount = 2
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel4.Controls.Add(Me.txtDollarRate, 0, 0)
-        Me.TableLayoutPanel4.Controls.Add(Me.BtnGetCurrencyVal, 1, 0)
-        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(0, 47)
-        Me.TableLayoutPanel4.Margin = New System.Windows.Forms.Padding(0, 3, 0, 3)
-        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
-        Me.TableLayoutPanel4.RowCount = 1
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(159, 30)
-        Me.TableLayoutPanel4.TabIndex = 44
+        Me.tblCurrencyRow.AutoSize = True
+        Me.tblCurrencyRow.ColumnCount = 2
+        Me.tblCurrencyRow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tblCurrencyRow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.tblCurrencyRow.Controls.Add(Me.txtDollarRate, 0, 0)
+        Me.tblCurrencyRow.Controls.Add(Me.BtnGetCurrencyVal, 1, 0)
+        Me.tblCurrencyRow.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tblCurrencyRow.Location = New System.Drawing.Point(0, 47)
+        Me.tblCurrencyRow.Margin = New System.Windows.Forms.Padding(0, 3, 0, 3)
+        Me.tblCurrencyRow.Name = "tblCurrencyRow"
+        Me.tblCurrencyRow.RowCount = 1
+        Me.tblCurrencyRow.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tblCurrencyRow.Size = New System.Drawing.Size(159, 30)
+        Me.tblCurrencyRow.TabIndex = 44
         '
         'txtDollarRate
         '
@@ -531,6 +531,8 @@ Partial Class AddNewPurchaseInvoice
         Me.MskTxtInvDate.Mask = "dd/MM/yyyy"
         Me.MskTxtInvDate.MaskType = Telerik.WinControls.UI.MaskType.DateTime
         Me.MskTxtInvDate.Name = "MskTxtInvDate"
+        Me.MskTxtInvDate.SelectedText = "01"
+        Me.MskTxtInvDate.SelectionLength = 2
         Me.MskTxtInvDate.Size = New System.Drawing.Size(153, 24)
         Me.MskTxtInvDate.TabIndex = 11
         Me.MskTxtInvDate.TabStop = False
@@ -904,7 +906,7 @@ Partial Class AddNewPurchaseInvoice
         Me.TableLayoutPanel1.PerformLayout()
         Me.TLPSOHeader.ResumeLayout(False)
         Me.TLPSOHeader.PerformLayout()
-        Me.TableLayoutPanel4.ResumeLayout(False)
+        Me.tblCurrencyRow.ResumeLayout(False)
         CType(Me.txtDollarRate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnGetCurrencyVal, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtInvoiceReference, System.ComponentModel.ISupportInitialize).EndInit()
@@ -985,7 +987,7 @@ Partial Class AddNewPurchaseInvoice
     Friend WithEvents BtnSaveAndNew As Telerik.WinControls.UI.RadButton
     Friend WithEvents BtnPrint As Telerik.WinControls.UI.RadButton
     Friend WithEvents ToolTipVendor As ToolTip
-    Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
+    Friend WithEvents tblCurrencyRow As TableLayoutPanel
     Friend WithEvents TxtCurrencyVal As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents BtnGetCurrencyVal As Telerik.WinControls.UI.RadButton
     Friend WithEvents LblPaid As Label

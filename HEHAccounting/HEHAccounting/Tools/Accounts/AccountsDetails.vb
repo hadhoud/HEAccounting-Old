@@ -9,12 +9,19 @@ Public Class AccountsDetails
         If BoolLTRLanguage Then
             ChangeToEng()
         End If
+        ShowPermissions()
         FillDropList()
         SubscribeEvents()
     End Sub
     Private Sub SubscribeEvents()
         AddHandler Me.RadConOpen.Click, AddressOf ShowCard
     End Sub
+
+    Sub ShowPermissions()
+        tblCurrencyRow.Visible = BoolShowAccountDetailsTextCurrencyRate
+        LblCurrencyVal.Visible = BoolShowAccountDetailsTextCurrencyRate
+    End Sub
+
     Private Sub ShowCard()
         If Me.GridAccountsDetails.ChildRows.Count > 0 Then
             Dim ReferID As String

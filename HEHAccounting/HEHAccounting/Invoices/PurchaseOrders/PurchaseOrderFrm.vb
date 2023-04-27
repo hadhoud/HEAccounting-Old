@@ -70,7 +70,7 @@ Public Class PurchaseOrderFrm
         Me.BtnPrint.Text = LoStrId.LblPrint
         Me.LblStatus.Text = LoStrId.LblStatus
         Me.BtnPayInvoice.Text = LoStrId.LblPay
-
+        Me.btnAllPayments.Text = LoStrId.LblAllPayments
         ChangeTextButtonToRight(Me.TxtVendor, TxtVendorBtn)
 
     End Sub
@@ -116,23 +116,7 @@ Public Class PurchaseOrderFrm
         }
         Me.DropStatus.Items.Add(Sitem)
 
-        Dim PaymentTypeItem As New RadListDataItem With {
-            .Text = Con.Cash,
-            .Value = PaymentType.Cash
-        }
-        Me.DropPaymentType.Items.Add(PaymentTypeItem)
-
-        PaymentTypeItem = New RadListDataItem With {
-            .Text = Con.Debt,
-            .Value = PaymentType.Debt
-        }
-        Me.DropPaymentType.Items.Add(PaymentTypeItem)
-
-        PaymentTypeItem = New RadListDataItem With {
-            .Text = Con.Paid,
-            .Value = PaymentType.Paid
-        }
-        Me.DropPaymentType.Items.Add(PaymentTypeItem)
+        LoadPaymentTypesDropDown(DropPaymentType)
 
         FillDropCurrencyFromCurrencyData(Me.DropCurrency, IIf(BoolLTRLanguage = True, "LatinSymb", "Symb"), True)
         Initiatedropdownlist(Me.DropCurrency)

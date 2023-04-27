@@ -49,13 +49,14 @@ Partial Class AddUsers
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.lblPermissions = New System.Windows.Forms.Label()
         Me.chkShowHomeForm = New Telerik.WinControls.UI.RadCheckBox()
-        Me.chkShowSalesDailyWin = New Telerik.WinControls.UI.RadCheckBox()
         Me.chkShowDashboardForm = New Telerik.WinControls.UI.RadCheckBox()
         Me.chkShowPurchasingPriceInProg = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkShowItemsSalesWinReport = New Telerik.WinControls.UI.RadCheckBox()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.BtnClose = New Telerik.WinControls.UI.RadButton()
         Me.BtnSave = New Telerik.WinControls.UI.RadButton()
-        Me.chkShowItemsSalesWinReport = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkShowProfitsTextInScreen = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkShowSalesDailyWin = New Telerik.WinControls.UI.RadCheckBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TblGridPermissions.SuspendLayout()
         CType(Me.GridPermissions, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,13 +78,14 @@ Partial Class AddUsers
         CType(Me.TxtUserName, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FlowLayoutPanel1.SuspendLayout()
         CType(Me.chkShowHomeForm, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chkShowSalesDailyWin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkShowDashboardForm, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkShowPurchasingPriceInProg, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkShowItemsSalesWinReport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.BtnClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnSave, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chkShowItemsSalesWinReport, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkShowProfitsTextInScreen, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkShowSalesDailyWin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -388,10 +390,11 @@ Partial Class AddUsers
         '
         Me.FlowLayoutPanel1.Controls.Add(Me.lblPermissions)
         Me.FlowLayoutPanel1.Controls.Add(Me.chkShowHomeForm)
-        Me.FlowLayoutPanel1.Controls.Add(Me.chkShowSalesDailyWin)
         Me.FlowLayoutPanel1.Controls.Add(Me.chkShowDashboardForm)
-        Me.FlowLayoutPanel1.Controls.Add(Me.chkShowPurchasingPriceInProg)
+        Me.FlowLayoutPanel1.Controls.Add(Me.chkShowSalesDailyWin)
         Me.FlowLayoutPanel1.Controls.Add(Me.chkShowItemsSalesWinReport)
+        Me.FlowLayoutPanel1.Controls.Add(Me.chkShowProfitsTextInScreen)
+        Me.FlowLayoutPanel1.Controls.Add(Me.chkShowPurchasingPriceInProg)
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(609, 148)
@@ -419,20 +422,10 @@ Partial Class AddUsers
         Me.chkShowHomeForm.Text = "إظهار شاشة الرئيسية"
         Me.chkShowHomeForm.ThemeName = "Office2010Blue"
         '
-        'chkShowSalesDailyWin
-        '
-        Me.chkShowSalesDailyWin.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkShowSalesDailyWin.Location = New System.Drawing.Point(115, 54)
-        Me.chkShowSalesDailyWin.Name = "chkShowSalesDailyWin"
-        Me.chkShowSalesDailyWin.Size = New System.Drawing.Size(168, 22)
-        Me.chkShowSalesDailyWin.TabIndex = 48
-        Me.chkShowSalesDailyWin.Text = "إظهار شاشة أرباح المبيعات"
-        Me.chkShowSalesDailyWin.ThemeName = "Office2010Blue"
-        '
         'chkShowDashboardForm
         '
         Me.chkShowDashboardForm.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkShowDashboardForm.Location = New System.Drawing.Point(143, 82)
+        Me.chkShowDashboardForm.Location = New System.Drawing.Point(143, 54)
         Me.chkShowDashboardForm.Name = "chkShowDashboardForm"
         Me.chkShowDashboardForm.Size = New System.Drawing.Size(140, 22)
         Me.chkShowDashboardForm.TabIndex = 7
@@ -442,12 +435,22 @@ Partial Class AddUsers
         'chkShowPurchasingPriceInProg
         '
         Me.chkShowPurchasingPriceInProg.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkShowPurchasingPriceInProg.Location = New System.Drawing.Point(95, 110)
+        Me.chkShowPurchasingPriceInProg.Location = New System.Drawing.Point(95, 166)
         Me.chkShowPurchasingPriceInProg.Name = "chkShowPurchasingPriceInProg"
         Me.chkShowPurchasingPriceInProg.Size = New System.Drawing.Size(188, 22)
         Me.chkShowPurchasingPriceInProg.TabIndex = 8
         Me.chkShowPurchasingPriceInProg.Text = "إظهار سعر الشراء في الشاشات"
         Me.chkShowPurchasingPriceInProg.ThemeName = "Office2010Blue"
+        '
+        'chkShowItemsSalesWinReport
+        '
+        Me.chkShowItemsSalesWinReport.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkShowItemsSalesWinReport.Location = New System.Drawing.Point(81, 110)
+        Me.chkShowItemsSalesWinReport.Name = "chkShowItemsSalesWinReport"
+        Me.chkShowItemsSalesWinReport.Size = New System.Drawing.Size(202, 22)
+        Me.chkShowItemsSalesWinReport.TabIndex = 9
+        Me.chkShowItemsSalesWinReport.Text = "إظهار شاشة أرباح أصناف مبيعات"
+        Me.chkShowItemsSalesWinReport.ThemeName = "Office2010Blue"
         '
         'TableLayoutPanel2
         '
@@ -491,15 +494,25 @@ Partial Class AddUsers
         Me.BtnSave.Text = "حفظ"
         Me.BtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         '
-        'chkShowItemsSalesWinReport
+        'chkShowProfitsTextInScreen
         '
-        Me.chkShowItemsSalesWinReport.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkShowItemsSalesWinReport.Location = New System.Drawing.Point(81, 138)
-        Me.chkShowItemsSalesWinReport.Name = "chkShowItemsSalesWinReport"
-        Me.chkShowItemsSalesWinReport.Size = New System.Drawing.Size(202, 22)
-        Me.chkShowItemsSalesWinReport.TabIndex = 9
-        Me.chkShowItemsSalesWinReport.Text = "إظهار شاشة أرباح أصناف مبيعات"
-        Me.chkShowItemsSalesWinReport.ThemeName = "Office2010Blue"
+        Me.chkShowProfitsTextInScreen.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkShowProfitsTextInScreen.Location = New System.Drawing.Point(99, 138)
+        Me.chkShowProfitsTextInScreen.Name = "chkShowProfitsTextInScreen"
+        Me.chkShowProfitsTextInScreen.Size = New System.Drawing.Size(184, 22)
+        Me.chkShowProfitsTextInScreen.TabIndex = 10
+        Me.chkShowProfitsTextInScreen.Text = "إظهار مربع الربح في الشاشات"
+        Me.chkShowProfitsTextInScreen.ThemeName = "Office2010Blue"
+        '
+        'chkShowSalesDailyWin
+        '
+        Me.chkShowSalesDailyWin.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkShowSalesDailyWin.Location = New System.Drawing.Point(115, 82)
+        Me.chkShowSalesDailyWin.Name = "chkShowSalesDailyWin"
+        Me.chkShowSalesDailyWin.Size = New System.Drawing.Size(168, 22)
+        Me.chkShowSalesDailyWin.TabIndex = 48
+        Me.chkShowSalesDailyWin.Text = "إظهار شاشة أرباح المبيعات"
+        Me.chkShowSalesDailyWin.ThemeName = "Office2010Blue"
         '
         'AddUsers
         '
@@ -546,13 +559,14 @@ Partial Class AddUsers
         Me.FlowLayoutPanel1.ResumeLayout(False)
         Me.FlowLayoutPanel1.PerformLayout()
         CType(Me.chkShowHomeForm, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chkShowSalesDailyWin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkShowDashboardForm, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkShowPurchasingPriceInProg, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkShowItemsSalesWinReport, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel2.ResumeLayout(False)
         CType(Me.BtnClose, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnSave, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chkShowItemsSalesWinReport, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkShowProfitsTextInScreen, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkShowSalesDailyWin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -583,11 +597,12 @@ Partial Class AddUsers
     Friend WithEvents BtnSelectAll As Telerik.WinControls.UI.RadButton
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents lblPermissions As Label
-    Friend WithEvents chkShowSalesDailyWin As Telerik.WinControls.UI.RadCheckBox
     Friend WithEvents chkShowDashboardForm As Telerik.WinControls.UI.RadCheckBox
     Friend WithEvents chkShowPurchasingPriceInProg As Telerik.WinControls.UI.RadCheckBox
     Friend WithEvents btnNewUser As Telerik.WinControls.UI.RadButton
     Friend WithEvents chkShowHomeForm As Telerik.WinControls.UI.RadCheckBox
     Friend WithEvents chkShowItemsSalesWinReport As Telerik.WinControls.UI.RadCheckBox
+    Friend WithEvents chkShowSalesDailyWin As Telerik.WinControls.UI.RadCheckBox
+    Friend WithEvents chkShowProfitsTextInScreen As Telerik.WinControls.UI.RadCheckBox
 End Class
 

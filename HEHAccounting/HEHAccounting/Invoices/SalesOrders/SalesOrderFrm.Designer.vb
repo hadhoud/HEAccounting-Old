@@ -24,15 +24,15 @@ Partial Class SalesOrderFrm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SalesOrderFrm))
-        Dim GridViewSummaryItem9 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
-        Dim GridViewSummaryItem10 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
-        Dim GridViewSummaryItem11 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
-        Dim GridViewSummaryItem12 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
-        Dim GridViewSummaryItem13 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
-        Dim GridViewSummaryItem14 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
-        Dim GridViewSummaryItem15 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
-        Dim GridViewSummaryItem16 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
-        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewSummaryItem1 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
+        Dim GridViewSummaryItem2 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
+        Dim GridViewSummaryItem3 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
+        Dim GridViewSummaryItem4 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
+        Dim GridViewSummaryItem5 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
+        Dim GridViewSummaryItem6 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
+        Dim GridViewSummaryItem7 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
+        Dim GridViewSummaryItem8 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.PnlOptions = New Telerik.WinControls.UI.RadPanel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.MskTxtInvDateFrom = New Telerik.WinControls.UI.RadDateTimePicker()
@@ -56,20 +56,20 @@ Partial Class SalesOrderFrm
         Me.LblFrom = New System.Windows.Forms.Label()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.BtnDelete = New Telerik.WinControls.UI.RadButton()
-        Me.btnAllPayments = New Telerik.WinControls.UI.RadButton()
         Me.BtnEdit = New Telerik.WinControls.UI.RadButton()
         Me.BtnNew = New Telerik.WinControls.UI.RadButton()
         Me.BtnPayInvoice = New Telerik.WinControls.UI.RadButton()
         Me.BtnPrint = New Telerik.WinControls.UI.RadDropDownButton()
         Me.BtnPrintInvoice = New Telerik.WinControls.UI.RadMenuItem()
         Me.BtnInvoicesReport = New Telerik.WinControls.UI.RadMenuItem()
+        Me.BtnRefrech = New Telerik.WinControls.UI.RadButton()
+        Me.btnAllPayments = New Telerik.WinControls.UI.RadButton()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.BtnFiltering = New Telerik.WinControls.UI.RadButton()
         Me.BtnReset = New Telerik.WinControls.UI.RadButton()
         Me.GridSalesOrders = New Telerik.WinControls.UI.RadGridView()
         Me.CustomerTooltip = New System.Windows.Forms.ToolTip(Me.components)
         Me.Office2010BlueTheme1 = New Telerik.WinControls.Themes.Office2010BlueTheme()
-        Me.BtnRefrech = New Telerik.WinControls.UI.RadButton()
         CType(Me.PnlOptions, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PnlOptions.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -85,17 +85,17 @@ Partial Class SalesOrderFrm
         CType(Me.MskTxtInvDateTo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.BtnDelete, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnAllPayments, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnEdit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnNew, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnPayInvoice, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnPrint, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BtnRefrech, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnAllPayments, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel3.SuspendLayout()
         CType(Me.BtnFiltering, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnReset, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridSalesOrders, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridSalesOrders.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BtnRefrech, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -106,11 +106,14 @@ Partial Class SalesOrderFrm
         Me.PnlOptions.Controls.Add(Me.TableLayoutPanel2)
         Me.PnlOptions.Controls.Add(Me.TableLayoutPanel3)
         Me.PnlOptions.Dock = System.Windows.Forms.DockStyle.Left
-        Me.PnlOptions.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.PnlOptions.Location = New System.Drawing.Point(0, 0)
         Me.PnlOptions.Name = "PnlOptions"
         Me.PnlOptions.Padding = New System.Windows.Forms.Padding(3)
-        Me.PnlOptions.Size = New System.Drawing.Size(255, 467)
+        '
+        '
+        '
+        Me.PnlOptions.RootElement.CustomFont = "None"
+        Me.PnlOptions.Size = New System.Drawing.Size(255, 463)
         Me.PnlOptions.TabIndex = 3
         Me.PnlOptions.Tag = ""
         Me.PnlOptions.Visible = False
@@ -152,7 +155,7 @@ Partial Class SalesOrderFrm
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(249, 251)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(249, 247)
         Me.TableLayoutPanel1.TabIndex = 14
         '
         'MskTxtInvDateFrom
@@ -201,6 +204,7 @@ Partial Class SalesOrderFrm
         '
         Me.LblInvID.AutoSize = True
         Me.LblInvID.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LblInvID.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblInvID.Location = New System.Drawing.Point(175, 94)
         Me.LblInvID.Name = "LblInvID"
         Me.LblInvID.Size = New System.Drawing.Size(71, 30)
@@ -212,6 +216,7 @@ Partial Class SalesOrderFrm
         '
         Me.LblCustomer.AutoSize = True
         Me.LblCustomer.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LblCustomer.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblCustomer.Location = New System.Drawing.Point(175, 124)
         Me.LblCustomer.Name = "LblCustomer"
         Me.LblCustomer.Size = New System.Drawing.Size(71, 30)
@@ -223,6 +228,7 @@ Partial Class SalesOrderFrm
         '
         Me.LblInvType.AutoSize = True
         Me.LblInvType.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LblInvType.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblInvType.Location = New System.Drawing.Point(175, 60)
         Me.LblInvType.Name = "LblInvType"
         Me.LblInvType.Size = New System.Drawing.Size(71, 34)
@@ -376,6 +382,7 @@ Partial Class SalesOrderFrm
         '
         Me.LblPaymentType.AutoSize = True
         Me.LblPaymentType.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LblPaymentType.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblPaymentType.Location = New System.Drawing.Point(175, 154)
         Me.LblPaymentType.Name = "LblPaymentType"
         Me.LblPaymentType.Size = New System.Drawing.Size(71, 30)
@@ -387,6 +394,7 @@ Partial Class SalesOrderFrm
         '
         Me.LblTo.AutoSize = True
         Me.LblTo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LblTo.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblTo.Location = New System.Drawing.Point(175, 214)
         Me.LblTo.Name = "LblTo"
         Me.LblTo.Size = New System.Drawing.Size(71, 30)
@@ -398,6 +406,7 @@ Partial Class SalesOrderFrm
         '
         Me.LblFrom.AutoSize = True
         Me.LblFrom.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LblFrom.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblFrom.Location = New System.Drawing.Point(175, 184)
         Me.LblFrom.Name = "LblFrom"
         Me.LblFrom.Size = New System.Drawing.Size(71, 30)
@@ -415,9 +424,9 @@ Partial Class SalesOrderFrm
         Me.TableLayoutPanel2.Controls.Add(Me.BtnEdit, 1, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.BtnNew, 0, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.BtnPayInvoice, 0, 2)
-        Me.TableLayoutPanel2.Controls.Add(Me.btnAllPayments, 0, 3)
         Me.TableLayoutPanel2.Controls.Add(Me.BtnPrint, 0, 4)
         Me.TableLayoutPanel2.Controls.Add(Me.BtnRefrech, 1, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.btnAllPayments, 0, 3)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
@@ -437,25 +446,12 @@ Partial Class SalesOrderFrm
         Me.BtnDelete.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.BtnDelete.Image = CType(resources.GetObject("BtnDelete.Image"), System.Drawing.Image)
         Me.BtnDelete.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnDelete.Location = New System.Drawing.Point(18, 45)
+        Me.BtnDelete.Location = New System.Drawing.Point(11, 45)
         Me.BtnDelete.Name = "BtnDelete"
-        Me.BtnDelete.Size = New System.Drawing.Size(90, 36)
+        Me.BtnDelete.Size = New System.Drawing.Size(103, 36)
         Me.BtnDelete.TabIndex = 2
         Me.BtnDelete.Text = "حذف"
         Me.BtnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        '
-        'btnAllPayments
-        '
-        Me.btnAllPayments.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnAllPayments.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnAllPayments.Image = Global.HEHAccounting.My.Resources.Resources.money
-        Me.btnAllPayments.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnAllPayments.Location = New System.Drawing.Point(142, 87)
-        Me.btnAllPayments.Name = "btnAllPayments"
-        Me.btnAllPayments.Size = New System.Drawing.Size(90, 36)
-        Me.btnAllPayments.TabIndex = 20
-        Me.btnAllPayments.Text = "الدفعات"
-        Me.btnAllPayments.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         '
         'BtnEdit
         '
@@ -463,9 +459,9 @@ Partial Class SalesOrderFrm
         Me.BtnEdit.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnEdit.Image = Global.HEHAccounting.My.Resources.Resources.feedback
         Me.BtnEdit.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnEdit.Location = New System.Drawing.Point(18, 3)
+        Me.BtnEdit.Location = New System.Drawing.Point(11, 3)
         Me.BtnEdit.Name = "BtnEdit"
-        Me.BtnEdit.Size = New System.Drawing.Size(90, 36)
+        Me.BtnEdit.Size = New System.Drawing.Size(103, 36)
         Me.BtnEdit.TabIndex = 1
         Me.BtnEdit.Text = "تعديل"
         Me.BtnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -476,9 +472,9 @@ Partial Class SalesOrderFrm
         Me.BtnNew.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNew.Image = Global.HEHAccounting.My.Resources.Resources.Creates
         Me.BtnNew.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnNew.Location = New System.Drawing.Point(142, 3)
+        Me.BtnNew.Location = New System.Drawing.Point(136, 3)
         Me.BtnNew.Name = "BtnNew"
-        Me.BtnNew.Size = New System.Drawing.Size(90, 36)
+        Me.BtnNew.Size = New System.Drawing.Size(103, 36)
         Me.BtnNew.TabIndex = 0
         Me.BtnNew.Text = "جديد"
         Me.BtnNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -489,9 +485,9 @@ Partial Class SalesOrderFrm
         Me.BtnPayInvoice.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.BtnPayInvoice.Image = Global.HEHAccounting.My.Resources.Resources.money
         Me.BtnPayInvoice.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnPayInvoice.Location = New System.Drawing.Point(142, 45)
+        Me.BtnPayInvoice.Location = New System.Drawing.Point(136, 45)
         Me.BtnPayInvoice.Name = "BtnPayInvoice"
-        Me.BtnPayInvoice.Size = New System.Drawing.Size(90, 36)
+        Me.BtnPayInvoice.Size = New System.Drawing.Size(103, 36)
         Me.BtnPayInvoice.TabIndex = 19
         Me.BtnPayInvoice.Text = "تسديد"
         Me.BtnPayInvoice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -504,9 +500,9 @@ Partial Class SalesOrderFrm
         Me.BtnPrint.Image = Global.HEHAccounting.My.Resources.Resources.print
         Me.BtnPrint.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
         Me.BtnPrint.Items.AddRange(New Telerik.WinControls.RadItem() {Me.BtnPrintInvoice, Me.BtnInvoicesReport})
-        Me.BtnPrint.Location = New System.Drawing.Point(142, 129)
+        Me.BtnPrint.Location = New System.Drawing.Point(136, 129)
         Me.BtnPrint.Name = "BtnPrint"
-        Me.BtnPrint.Size = New System.Drawing.Size(90, 36)
+        Me.BtnPrint.Size = New System.Drawing.Size(103, 36)
         Me.BtnPrint.TabIndex = 1
         Me.BtnPrint.Text = "طباعة"
         Me.BtnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -524,6 +520,37 @@ Partial Class SalesOrderFrm
         Me.BtnInvoicesReport.Name = "BtnInvoicesReport"
         Me.BtnInvoicesReport.Text = "كشف فواتير"
         '
+        'BtnRefrech
+        '
+        Me.BtnRefrech.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.BtnRefrech.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnRefrech.Image = Global.HEHAccounting.My.Resources.Resources.Sync
+        Me.BtnRefrech.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.BtnRefrech.Location = New System.Drawing.Point(11, 87)
+        Me.BtnRefrech.Name = "BtnRefrech"
+        Me.BtnRefrech.Size = New System.Drawing.Size(103, 36)
+        Me.BtnRefrech.TabIndex = 21
+        Me.BtnRefrech.Text = "تحديث"
+        Me.BtnRefrech.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        '
+        'btnAllPayments
+        '
+        Me.btnAllPayments.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnAllPayments.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAllPayments.Image = Global.HEHAccounting.My.Resources.Resources.money
+        Me.btnAllPayments.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnAllPayments.Location = New System.Drawing.Point(137, 88)
+        Me.btnAllPayments.Name = "btnAllPayments"
+        '
+        '
+        '
+        Me.btnAllPayments.RootElement.CustomFont = "None"
+        Me.btnAllPayments.RootElement.CustomFontStyle = System.Drawing.FontStyle.Regular
+        Me.btnAllPayments.Size = New System.Drawing.Size(100, 34)
+        Me.btnAllPayments.TabIndex = 20
+        Me.btnAllPayments.Text = "الدفعات"
+        Me.btnAllPayments.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        '
         'TableLayoutPanel3
         '
         Me.TableLayoutPanel3.AutoSize = True
@@ -533,7 +560,7 @@ Partial Class SalesOrderFrm
         Me.TableLayoutPanel3.Controls.Add(Me.BtnFiltering, 0, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.BtnReset, 1, 0)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 422)
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 418)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 1
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
@@ -578,57 +605,44 @@ Partial Class SalesOrderFrm
         '
         '
         Me.GridSalesOrders.MasterTemplate.BottomPinnedRowsMode = Telerik.WinControls.UI.GridViewBottomPinnedRowsMode.Fixed
-        GridViewSummaryItem9.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Count
-        GridViewSummaryItem9.AggregateExpression = Nothing
-        GridViewSummaryItem9.FormatString = "{0}"
-        GridViewSummaryItem9.Name = "InvID"
-        GridViewSummaryItem10.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
-        GridViewSummaryItem10.AggregateExpression = Nothing
-        GridViewSummaryItem10.FormatString = "{0}"
-        GridViewSummaryItem10.Name = "SubTotalLL"
-        GridViewSummaryItem11.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
-        GridViewSummaryItem11.AggregateExpression = Nothing
-        GridViewSummaryItem11.FormatString = "{0}"
-        GridViewSummaryItem11.Name = "SubTotalUSD"
-        GridViewSummaryItem12.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
-        GridViewSummaryItem12.AggregateExpression = Nothing
-        GridViewSummaryItem12.FormatString = "{0}"
-        GridViewSummaryItem12.Name = "TotalDueLL"
-        GridViewSummaryItem13.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
-        GridViewSummaryItem13.AggregateExpression = Nothing
-        GridViewSummaryItem13.FormatString = "{0}"
-        GridViewSummaryItem13.Name = "TotalDueUSD"
-        GridViewSummaryItem14.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
-        GridViewSummaryItem14.AggregateExpression = Nothing
-        GridViewSummaryItem14.FormatString = "{0}"
-        GridViewSummaryItem14.Name = "DiscountLL"
-        GridViewSummaryItem15.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
-        GridViewSummaryItem15.AggregateExpression = Nothing
-        GridViewSummaryItem15.FormatString = "{0}"
-        GridViewSummaryItem15.Name = "DiscountUSD"
-        GridViewSummaryItem16.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Max
-        GridViewSummaryItem16.AggregateExpression = Nothing
-        GridViewSummaryItem16.FormatString = "{0}"
-        GridViewSummaryItem16.Name = "DollarRate"
-        Me.GridSalesOrders.MasterTemplate.SummaryRowsBottom.Add(New Telerik.WinControls.UI.GridViewSummaryRowItem(New Telerik.WinControls.UI.GridViewSummaryItem() {GridViewSummaryItem9, GridViewSummaryItem10, GridViewSummaryItem11, GridViewSummaryItem12, GridViewSummaryItem13, GridViewSummaryItem14, GridViewSummaryItem15, GridViewSummaryItem16}))
-        Me.GridSalesOrders.MasterTemplate.ViewDefinition = TableViewDefinition2
+        GridViewSummaryItem1.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Count
+        GridViewSummaryItem1.AggregateExpression = Nothing
+        GridViewSummaryItem1.FormatString = "{0}"
+        GridViewSummaryItem1.Name = "InvID"
+        GridViewSummaryItem2.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
+        GridViewSummaryItem2.AggregateExpression = Nothing
+        GridViewSummaryItem2.FormatString = "{0}"
+        GridViewSummaryItem2.Name = "SubTotalLL"
+        GridViewSummaryItem3.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
+        GridViewSummaryItem3.AggregateExpression = Nothing
+        GridViewSummaryItem3.FormatString = "{0}"
+        GridViewSummaryItem3.Name = "SubTotalUSD"
+        GridViewSummaryItem4.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
+        GridViewSummaryItem4.AggregateExpression = Nothing
+        GridViewSummaryItem4.FormatString = "{0}"
+        GridViewSummaryItem4.Name = "TotalDueLL"
+        GridViewSummaryItem5.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
+        GridViewSummaryItem5.AggregateExpression = Nothing
+        GridViewSummaryItem5.FormatString = "{0}"
+        GridViewSummaryItem5.Name = "TotalDueUSD"
+        GridViewSummaryItem6.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
+        GridViewSummaryItem6.AggregateExpression = Nothing
+        GridViewSummaryItem6.FormatString = "{0}"
+        GridViewSummaryItem6.Name = "DiscountLL"
+        GridViewSummaryItem7.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
+        GridViewSummaryItem7.AggregateExpression = Nothing
+        GridViewSummaryItem7.FormatString = "{0}"
+        GridViewSummaryItem7.Name = "DiscountUSD"
+        GridViewSummaryItem8.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Max
+        GridViewSummaryItem8.AggregateExpression = Nothing
+        GridViewSummaryItem8.FormatString = "{0}"
+        GridViewSummaryItem8.Name = "DollarRate"
+        Me.GridSalesOrders.MasterTemplate.SummaryRowsBottom.Add(New Telerik.WinControls.UI.GridViewSummaryRowItem(New Telerik.WinControls.UI.GridViewSummaryItem() {GridViewSummaryItem1, GridViewSummaryItem2, GridViewSummaryItem3, GridViewSummaryItem4, GridViewSummaryItem5, GridViewSummaryItem6, GridViewSummaryItem7, GridViewSummaryItem8}))
+        Me.GridSalesOrders.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.GridSalesOrders.Name = "GridSalesOrders"
-        Me.GridSalesOrders.Size = New System.Drawing.Size(278, 467)
+        Me.GridSalesOrders.Size = New System.Drawing.Size(210, 463)
         Me.GridSalesOrders.TabIndex = 4
         Me.GridSalesOrders.ThemeName = "Office2010Blue"
-        '
-        'BtnRefrech
-        '
-        Me.BtnRefrech.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.BtnRefrech.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnRefrech.Image = Global.HEHAccounting.My.Resources.Resources.Sync
-        Me.BtnRefrech.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.BtnRefrech.Location = New System.Drawing.Point(18, 87)
-        Me.BtnRefrech.Name = "BtnRefrech"
-        Me.BtnRefrech.Size = New System.Drawing.Size(90, 36)
-        Me.BtnRefrech.TabIndex = 21
-        Me.BtnRefrech.Text = "تحديث"
-        Me.BtnRefrech.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         '
         'SalesOrderFrm
         '
@@ -636,7 +650,7 @@ Partial Class SalesOrderFrm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(234, Byte), Integer), CType(CType(245, Byte), Integer))
         Me.CancelButton = Me.BtnReset
-        Me.ClientSize = New System.Drawing.Size(533, 467)
+        Me.ClientSize = New System.Drawing.Size(465, 463)
         Me.Controls.Add(Me.GridSalesOrders)
         Me.Controls.Add(Me.PnlOptions)
         Me.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -669,17 +683,17 @@ Partial Class SalesOrderFrm
         CType(Me.MskTxtInvDateTo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel2.ResumeLayout(False)
         CType(Me.BtnDelete, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnAllPayments, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnEdit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnNew, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnPayInvoice, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnPrint, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BtnRefrech, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnAllPayments, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel3.ResumeLayout(False)
         CType(Me.BtnFiltering, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnReset, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridSalesOrders.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridSalesOrders, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BtnRefrech, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

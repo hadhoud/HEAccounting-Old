@@ -43,11 +43,13 @@ Partial Class UserSettings
         Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TimerHome = New System.Windows.Forms.NumericUpDown()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TimerDaily = New System.Windows.Forms.NumericUpDown()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.FlowLayoutPanel4 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.NumChequesDay = New System.Windows.Forms.NumericUpDown()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.FlowLayoutPanel14 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TimerDaily = New System.Windows.Forms.NumericUpDown()
         Me.PageSuppliers = New Telerik.WinControls.UI.RadPageViewPage()
         Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
         Me.RadLabel7 = New Telerik.WinControls.UI.RadLabel()
@@ -61,9 +63,6 @@ Partial Class UserSettings
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.FlowLayoutPanel6 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.ChkShowItemsInSOMainForm = New Telerik.WinControls.UI.RadCheckBox()
-        Me.ChkShowSOInWindow = New Telerik.WinControls.UI.RadCheckBox()
-        Me.chkSOShowPrintQuestionAfterSave = New Telerik.WinControls.UI.RadCheckBox()
         Me.FlowLayoutPanel5 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.TxtSODefaultCustomer = New Telerik.WinControls.UI.RadButtonTextBox()
@@ -71,11 +70,11 @@ Partial Class UserSettings
         Me.FlowLayoutPanel7 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.DropSOStatus = New Telerik.WinControls.UI.RadDropDownList()
+        Me.ChkShowItemsInSOMainForm = New Telerik.WinControls.UI.RadCheckBox()
+        Me.ChkShowSOInWindow = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkSOShowPrintQuestionAfterSave = New Telerik.WinControls.UI.RadCheckBox()
         Me.FlowLayoutPanel8 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.ChkShowItemsInPOMainForm = New Telerik.WinControls.UI.RadCheckBox()
-        Me.ChkUpdateItemPurchasingPriceAfterPO = New Telerik.WinControls.UI.RadCheckBox()
-        Me.ChkUpdateItemSellingPriceAfterPO = New Telerik.WinControls.UI.RadCheckBox()
         Me.FlowLayoutPanel9 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.DropPOStatus = New Telerik.WinControls.UI.RadDropDownList()
@@ -89,6 +88,9 @@ Partial Class UserSettings
         Me.FlowLayoutPanel13 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.DropNPStatus = New Telerik.WinControls.UI.RadDropDownList()
+        Me.ChkShowItemsInPOMainForm = New Telerik.WinControls.UI.RadCheckBox()
+        Me.ChkUpdateItemPurchasingPriceAfterPO = New Telerik.WinControls.UI.RadCheckBox()
+        Me.ChkUpdateItemSellingPriceAfterPO = New Telerik.WinControls.UI.RadCheckBox()
         Me.PageOptionsPanel = New Telerik.WinControls.UI.RadPageViewPage()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel9 = New System.Windows.Forms.TableLayoutPanel()
@@ -105,6 +107,7 @@ Partial Class UserSettings
         Me.chkOptionPurchasesOrders = New Telerik.WinControls.UI.RadCheckBox()
         Me.chkOptionCreditorsDebitors = New Telerik.WinControls.UI.RadCheckBox()
         Me.chkOptionAllInventory = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkOptionQuantityHistory = New Telerik.WinControls.UI.RadCheckBox()
         Me.PageShortcuts = New Telerik.WinControls.UI.RadPageViewPage()
         Me.GridShortcuts = New Telerik.WinControls.UI.RadGridView()
         Me.PageReports = New Telerik.WinControls.UI.RadPageViewPage()
@@ -124,11 +127,9 @@ Partial Class UserSettings
         Me.ChkShowItemsUnits = New Telerik.WinControls.UI.RadCheckBox()
         Me.chkShowSalesDailyWin = New Telerik.WinControls.UI.RadCheckBox()
         Me.chkShowDashboardForm = New Telerik.WinControls.UI.RadCheckBox()
-        Me.chkShowCurrencyRateInStatus = New Telerik.WinControls.UI.RadCheckBox()
         Me.DropLang = New Telerik.WinControls.UI.RadDropDownList()
         Me.Office2010BlueTheme1 = New Telerik.WinControls.Themes.Office2010BlueTheme()
-        Me.FlowLayoutPanel4 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.FlowLayoutPanel14 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.chkShowCurrencyRateInStatus = New Telerik.WinControls.UI.RadCheckBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.BtnClose, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -145,8 +146,10 @@ Partial Class UserSettings
         CType(Me.ChkShowProgramAlerts, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FlowLayoutPanel3.SuspendLayout()
         CType(Me.TimerHome, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TimerDaily, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FlowLayoutPanel4.SuspendLayout()
         CType(Me.NumChequesDay, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FlowLayoutPanel14.SuspendLayout()
+        CType(Me.TimerDaily, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PageSuppliers.SuspendLayout()
         Me.TableLayoutPanel7.SuspendLayout()
         CType(Me.RadLabel7, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -158,17 +161,14 @@ Partial Class UserSettings
         Me.PageInvoices.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.FlowLayoutPanel6.SuspendLayout()
-        CType(Me.ChkShowItemsInSOMainForm, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ChkShowSOInWindow, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chkSOShowPrintQuestionAfterSave, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FlowLayoutPanel5.SuspendLayout()
         CType(Me.TxtSODefaultCustomer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FlowLayoutPanel7.SuspendLayout()
         CType(Me.DropSOStatus, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ChkShowItemsInSOMainForm, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ChkShowSOInWindow, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkSOShowPrintQuestionAfterSave, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FlowLayoutPanel8.SuspendLayout()
-        CType(Me.ChkShowItemsInPOMainForm, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ChkUpdateItemPurchasingPriceAfterPO, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ChkUpdateItemSellingPriceAfterPO, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FlowLayoutPanel9.SuspendLayout()
         CType(Me.DropPOStatus, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FlowLayoutPanel10.SuspendLayout()
@@ -177,6 +177,9 @@ Partial Class UserSettings
         Me.FlowLayoutPanel12.SuspendLayout()
         Me.FlowLayoutPanel13.SuspendLayout()
         CType(Me.DropNPStatus, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ChkShowItemsInPOMainForm, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ChkUpdateItemPurchasingPriceAfterPO, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ChkUpdateItemSellingPriceAfterPO, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PageOptionsPanel.SuspendLayout()
         Me.TableLayoutPanel6.SuspendLayout()
         Me.TableLayoutPanel9.SuspendLayout()
@@ -192,6 +195,7 @@ Partial Class UserSettings
         CType(Me.chkOptionPurchasesOrders, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkOptionCreditorsDebitors, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkOptionAllInventory, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkOptionQuantityHistory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PageShortcuts.SuspendLayout()
         CType(Me.GridShortcuts, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridShortcuts.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -208,10 +212,8 @@ Partial Class UserSettings
         CType(Me.ChkShowItemsUnits, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkShowSalesDailyWin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkShowDashboardForm, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chkShowCurrencyRateInStatus, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DropLang, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.FlowLayoutPanel4.SuspendLayout()
-        Me.FlowLayoutPanel14.SuspendLayout()
+        CType(Me.chkShowCurrencyRateInStatus, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -238,7 +240,7 @@ Partial Class UserSettings
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.01504!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.98496!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 207.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 209.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.BtnClose, 2, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.BtnSave, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.TxtItemPicture, 0, 0)
@@ -255,7 +257,7 @@ Partial Class UserSettings
         Me.BtnClose.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.Image = Global.HEHAccounting.My.Resources.Resources.Close
         Me.BtnClose.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.BtnClose.Location = New System.Drawing.Point(219, 3)
+        Me.BtnClose.Location = New System.Drawing.Point(221, 3)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(104, 36)
         Me.BtnClose.TabIndex = 1
@@ -268,7 +270,7 @@ Partial Class UserSettings
         Me.BtnSave.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSave.Image = Global.HEHAccounting.My.Resources.Resources.Save
         Me.BtnSave.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.BtnSave.Location = New System.Drawing.Point(365, 3)
+        Me.BtnSave.Location = New System.Drawing.Point(366, 3)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(103, 36)
         Me.BtnSave.TabIndex = 0
@@ -387,6 +389,7 @@ Partial Class UserSettings
         '
         Me.FlowLayoutPanel1.Controls.Add(Me.Label4)
         Me.FlowLayoutPanel1.Controls.Add(Me.FlowLayoutPanel2)
+        Me.FlowLayoutPanel1.Controls.Add(Me.chkShowCurrencyRateInStatus)
         Me.FlowLayoutPanel1.Controls.Add(Me.ChkShowDailyPageWhenOpen)
         Me.FlowLayoutPanel1.Controls.Add(Me.ChkShowProgramAlerts)
         Me.FlowLayoutPanel1.Controls.Add(Me.LblTimerHome)
@@ -448,7 +451,7 @@ Partial Class UserSettings
         'ChkShowDailyPageWhenOpen
         '
         Me.ChkShowDailyPageWhenOpen.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkShowDailyPageWhenOpen.Location = New System.Drawing.Point(53, 58)
+        Me.ChkShowDailyPageWhenOpen.Location = New System.Drawing.Point(53, 86)
         Me.ChkShowDailyPageWhenOpen.Name = "ChkShowDailyPageWhenOpen"
         Me.ChkShowDailyPageWhenOpen.Size = New System.Drawing.Size(222, 22)
         Me.ChkShowDailyPageWhenOpen.TabIndex = 0
@@ -458,7 +461,7 @@ Partial Class UserSettings
         'ChkShowProgramAlerts
         '
         Me.ChkShowProgramAlerts.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkShowProgramAlerts.Location = New System.Drawing.Point(168, 86)
+        Me.ChkShowProgramAlerts.Location = New System.Drawing.Point(168, 114)
         Me.ChkShowProgramAlerts.Name = "ChkShowProgramAlerts"
         Me.ChkShowProgramAlerts.Size = New System.Drawing.Size(107, 22)
         Me.ChkShowProgramAlerts.TabIndex = 3
@@ -469,7 +472,7 @@ Partial Class UserSettings
         '
         Me.LblTimerHome.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LblTimerHome.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.LblTimerHome.Location = New System.Drawing.Point(5, 111)
+        Me.LblTimerHome.Location = New System.Drawing.Point(5, 139)
         Me.LblTimerHome.Name = "LblTimerHome"
         Me.LblTimerHome.Size = New System.Drawing.Size(270, 19)
         Me.LblTimerHome.TabIndex = 10
@@ -482,7 +485,7 @@ Partial Class UserSettings
         Me.FlowLayoutPanel3.Controls.Add(Me.Label2)
         Me.FlowLayoutPanel3.Controls.Add(Me.TimerHome)
         Me.FlowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel3.Location = New System.Drawing.Point(5, 133)
+        Me.FlowLayoutPanel3.Location = New System.Drawing.Point(5, 161)
         Me.FlowLayoutPanel3.Name = "FlowLayoutPanel3"
         Me.FlowLayoutPanel3.Size = New System.Drawing.Size(270, 32)
         Me.FlowLayoutPanel3.TabIndex = 4
@@ -507,38 +510,16 @@ Partial Class UserSettings
         Me.TimerHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.TimerHome.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
-        'Label1
+        'FlowLayoutPanel4
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(5, 206)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(270, 19)
-        Me.Label1.TabIndex = 12
-        Me.Label1.Text = "الصفحة اليومية"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'TimerDaily
-        '
-        Me.TimerDaily.Location = New System.Drawing.Point(26, 3)
-        Me.TimerDaily.Maximum = New Decimal(New Integer() {60, 0, 0, 0})
-        Me.TimerDaily.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.TimerDaily.Name = "TimerDaily"
-        Me.TimerDaily.Size = New System.Drawing.Size(154, 26)
-        Me.TimerDaily.TabIndex = 13
-        Me.TimerDaily.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TimerDaily.Value = New Decimal(New Integer() {1, 0, 0, 0})
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(186, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(81, 19)
-        Me.Label5.TabIndex = 26
-        Me.Label5.Text = "مؤقت التحديث"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.FlowLayoutPanel4.AutoSize = True
+        Me.FlowLayoutPanel4.Controls.Add(Me.Label6)
+        Me.FlowLayoutPanel4.Controls.Add(Me.NumChequesDay)
+        Me.FlowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FlowLayoutPanel4.Location = New System.Drawing.Point(5, 199)
+        Me.FlowLayoutPanel4.Name = "FlowLayoutPanel4"
+        Me.FlowLayoutPanel4.Size = New System.Drawing.Size(270, 32)
+        Me.FlowLayoutPanel4.TabIndex = 26
         '
         'Label6
         '
@@ -560,6 +541,49 @@ Partial Class UserSettings
         Me.NumChequesDay.TabIndex = 28
         Me.NumChequesDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.NumChequesDay.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(5, 234)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(270, 19)
+        Me.Label1.TabIndex = 12
+        Me.Label1.Text = "الصفحة اليومية"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'FlowLayoutPanel14
+        '
+        Me.FlowLayoutPanel14.Controls.Add(Me.Label5)
+        Me.FlowLayoutPanel14.Controls.Add(Me.TimerDaily)
+        Me.FlowLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FlowLayoutPanel14.Location = New System.Drawing.Point(5, 256)
+        Me.FlowLayoutPanel14.Name = "FlowLayoutPanel14"
+        Me.FlowLayoutPanel14.Size = New System.Drawing.Size(270, 57)
+        Me.FlowLayoutPanel14.TabIndex = 27
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(186, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(81, 19)
+        Me.Label5.TabIndex = 26
+        Me.Label5.Text = "مؤقت التحديث"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'TimerDaily
+        '
+        Me.TimerDaily.Location = New System.Drawing.Point(26, 3)
+        Me.TimerDaily.Maximum = New Decimal(New Integer() {60, 0, 0, 0})
+        Me.TimerDaily.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.TimerDaily.Name = "TimerDaily"
+        Me.TimerDaily.Size = New System.Drawing.Size(154, 26)
+        Me.TimerDaily.TabIndex = 13
+        Me.TimerDaily.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TimerDaily.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'PageSuppliers
         '
@@ -720,11 +744,11 @@ Partial Class UserSettings
         '
         Me.FlowLayoutPanel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.FlowLayoutPanel6.Controls.Add(Me.Label11)
+        Me.FlowLayoutPanel6.Controls.Add(Me.FlowLayoutPanel5)
+        Me.FlowLayoutPanel6.Controls.Add(Me.FlowLayoutPanel7)
         Me.FlowLayoutPanel6.Controls.Add(Me.ChkShowItemsInSOMainForm)
         Me.FlowLayoutPanel6.Controls.Add(Me.ChkShowSOInWindow)
         Me.FlowLayoutPanel6.Controls.Add(Me.chkSOShowPrintQuestionAfterSave)
-        Me.FlowLayoutPanel6.Controls.Add(Me.FlowLayoutPanel5)
-        Me.FlowLayoutPanel6.Controls.Add(Me.FlowLayoutPanel7)
         Me.FlowLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FlowLayoutPanel6.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.FlowLayoutPanel6.Location = New System.Drawing.Point(288, 3)
@@ -744,44 +768,12 @@ Partial Class UserSettings
         Me.Label11.Text = "فواتير المبيعات"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'ChkShowItemsInSOMainForm
-        '
-        Me.ChkShowItemsInSOMainForm.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkShowItemsInSOMainForm.Location = New System.Drawing.Point(69, 22)
-        Me.ChkShowItemsInSOMainForm.Name = "ChkShowItemsInSOMainForm"
-        Me.ChkShowItemsInSOMainForm.Size = New System.Drawing.Size(204, 22)
-        Me.ChkShowItemsInSOMainForm.TabIndex = 0
-        Me.ChkShowItemsInSOMainForm.Text = "إظهار الأصناف في فواتير المبيعات"
-        Me.ChkShowItemsInSOMainForm.ThemeName = "Office2010Blue"
-        '
-        'ChkShowSOInWindow
-        '
-        Me.ChkShowSOInWindow.AutoSize = False
-        Me.ChkShowSOInWindow.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkShowSOInWindow.Location = New System.Drawing.Point(0, 50)
-        Me.ChkShowSOInWindow.Name = "ChkShowSOInWindow"
-        Me.ChkShowSOInWindow.Size = New System.Drawing.Size(273, 22)
-        Me.ChkShowSOInWindow.TabIndex = 7
-        Me.ChkShowSOInWindow.Text = "عرض إضافة فاتورة مبيع ضمن المستندات "
-        Me.ChkShowSOInWindow.ThemeName = "Office2010Blue"
-        '
-        'chkSOShowPrintQuestionAfterSave
-        '
-        Me.chkSOShowPrintQuestionAfterSave.AutoSize = False
-        Me.chkSOShowPrintQuestionAfterSave.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkSOShowPrintQuestionAfterSave.Location = New System.Drawing.Point(0, 78)
-        Me.chkSOShowPrintQuestionAfterSave.Name = "chkSOShowPrintQuestionAfterSave"
-        Me.chkSOShowPrintQuestionAfterSave.Size = New System.Drawing.Size(273, 22)
-        Me.chkSOShowPrintQuestionAfterSave.TabIndex = 8
-        Me.chkSOShowPrintQuestionAfterSave.Text = "إظهار سؤال الطباعة بعد الحفظ"
-        Me.chkSOShowPrintQuestionAfterSave.ThemeName = "Office2010Blue"
-        '
         'FlowLayoutPanel5
         '
         Me.FlowLayoutPanel5.Controls.Add(Me.Label21)
         Me.FlowLayoutPanel5.Controls.Add(Me.TxtSODefaultCustomer)
         Me.FlowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel5.Location = New System.Drawing.Point(0, 106)
+        Me.FlowLayoutPanel5.Location = New System.Drawing.Point(0, 22)
         Me.FlowLayoutPanel5.Name = "FlowLayoutPanel5"
         Me.FlowLayoutPanel5.Size = New System.Drawing.Size(273, 32)
         Me.FlowLayoutPanel5.TabIndex = 6
@@ -828,7 +820,7 @@ Partial Class UserSettings
         Me.FlowLayoutPanel7.Controls.Add(Me.Label9)
         Me.FlowLayoutPanel7.Controls.Add(Me.DropSOStatus)
         Me.FlowLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel7.Location = New System.Drawing.Point(0, 144)
+        Me.FlowLayoutPanel7.Location = New System.Drawing.Point(0, 60)
         Me.FlowLayoutPanel7.Name = "FlowLayoutPanel7"
         Me.FlowLayoutPanel7.Size = New System.Drawing.Size(273, 33)
         Me.FlowLayoutPanel7.TabIndex = 42
@@ -856,17 +848,49 @@ Partial Class UserSettings
         Me.DropSOStatus.Tag = ""
         Me.DropSOStatus.ThemeName = "Office2010Blue"
         '
+        'ChkShowItemsInSOMainForm
+        '
+        Me.ChkShowItemsInSOMainForm.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkShowItemsInSOMainForm.Location = New System.Drawing.Point(69, 99)
+        Me.ChkShowItemsInSOMainForm.Name = "ChkShowItemsInSOMainForm"
+        Me.ChkShowItemsInSOMainForm.Size = New System.Drawing.Size(204, 22)
+        Me.ChkShowItemsInSOMainForm.TabIndex = 0
+        Me.ChkShowItemsInSOMainForm.Text = "إظهار الأصناف في فواتير المبيعات"
+        Me.ChkShowItemsInSOMainForm.ThemeName = "Office2010Blue"
+        '
+        'ChkShowSOInWindow
+        '
+        Me.ChkShowSOInWindow.AutoSize = False
+        Me.ChkShowSOInWindow.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkShowSOInWindow.Location = New System.Drawing.Point(0, 127)
+        Me.ChkShowSOInWindow.Name = "ChkShowSOInWindow"
+        Me.ChkShowSOInWindow.Size = New System.Drawing.Size(273, 22)
+        Me.ChkShowSOInWindow.TabIndex = 7
+        Me.ChkShowSOInWindow.Text = "عرض إضافة فاتورة مبيع ضمن المستندات "
+        Me.ChkShowSOInWindow.ThemeName = "Office2010Blue"
+        '
+        'chkSOShowPrintQuestionAfterSave
+        '
+        Me.chkSOShowPrintQuestionAfterSave.AutoSize = False
+        Me.chkSOShowPrintQuestionAfterSave.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkSOShowPrintQuestionAfterSave.Location = New System.Drawing.Point(0, 155)
+        Me.chkSOShowPrintQuestionAfterSave.Name = "chkSOShowPrintQuestionAfterSave"
+        Me.chkSOShowPrintQuestionAfterSave.Size = New System.Drawing.Size(273, 22)
+        Me.chkSOShowPrintQuestionAfterSave.TabIndex = 8
+        Me.chkSOShowPrintQuestionAfterSave.Text = "إظهار سؤال الطباعة بعد الحفظ"
+        Me.chkSOShowPrintQuestionAfterSave.ThemeName = "Office2010Blue"
+        '
         'FlowLayoutPanel8
         '
         Me.FlowLayoutPanel8.AutoSize = True
         Me.FlowLayoutPanel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.FlowLayoutPanel8.Controls.Add(Me.Label12)
-        Me.FlowLayoutPanel8.Controls.Add(Me.ChkShowItemsInPOMainForm)
-        Me.FlowLayoutPanel8.Controls.Add(Me.ChkUpdateItemPurchasingPriceAfterPO)
-        Me.FlowLayoutPanel8.Controls.Add(Me.ChkUpdateItemSellingPriceAfterPO)
         Me.FlowLayoutPanel8.Controls.Add(Me.FlowLayoutPanel9)
         Me.FlowLayoutPanel8.Controls.Add(Me.FlowLayoutPanel10)
         Me.FlowLayoutPanel8.Controls.Add(Me.FlowLayoutPanel12)
+        Me.FlowLayoutPanel8.Controls.Add(Me.ChkShowItemsInPOMainForm)
+        Me.FlowLayoutPanel8.Controls.Add(Me.ChkUpdateItemPurchasingPriceAfterPO)
+        Me.FlowLayoutPanel8.Controls.Add(Me.ChkUpdateItemSellingPriceAfterPO)
         Me.FlowLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FlowLayoutPanel8.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.FlowLayoutPanel8.Location = New System.Drawing.Point(3, 3)
@@ -884,45 +908,11 @@ Partial Class UserSettings
         Me.Label12.Text = "فواتير الشراء"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'ChkShowItemsInPOMainForm
-        '
-        Me.ChkShowItemsInPOMainForm.AutoSize = False
-        Me.ChkShowItemsInPOMainForm.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkShowItemsInPOMainForm.Location = New System.Drawing.Point(14, 25)
-        Me.ChkShowItemsInPOMainForm.Name = "ChkShowItemsInPOMainForm"
-        Me.ChkShowItemsInPOMainForm.Size = New System.Drawing.Size(260, 22)
-        Me.ChkShowItemsInPOMainForm.TabIndex = 1
-        Me.ChkShowItemsInPOMainForm.Text = "عرض الأصناف في فواتير المشتريات"
-        Me.ChkShowItemsInPOMainForm.ThemeName = "Office2010Blue"
-        '
-        'ChkUpdateItemPurchasingPriceAfterPO
-        '
-        Me.ChkUpdateItemPurchasingPriceAfterPO.AccessibleName = ""
-        Me.ChkUpdateItemPurchasingPriceAfterPO.AutoSize = False
-        Me.ChkUpdateItemPurchasingPriceAfterPO.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkUpdateItemPurchasingPriceAfterPO.Location = New System.Drawing.Point(14, 53)
-        Me.ChkUpdateItemPurchasingPriceAfterPO.Name = "ChkUpdateItemPurchasingPriceAfterPO"
-        Me.ChkUpdateItemPurchasingPriceAfterPO.Size = New System.Drawing.Size(260, 22)
-        Me.ChkUpdateItemPurchasingPriceAfterPO.TabIndex = 2
-        Me.ChkUpdateItemPurchasingPriceAfterPO.Text = "تعديل سعر شراء الصنف بعد فاتورة الشراء"
-        Me.ChkUpdateItemPurchasingPriceAfterPO.ThemeName = "Office2010Blue"
-        '
-        'ChkUpdateItemSellingPriceAfterPO
-        '
-        Me.ChkUpdateItemSellingPriceAfterPO.AutoSize = False
-        Me.ChkUpdateItemSellingPriceAfterPO.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkUpdateItemSellingPriceAfterPO.Location = New System.Drawing.Point(14, 81)
-        Me.ChkUpdateItemSellingPriceAfterPO.Name = "ChkUpdateItemSellingPriceAfterPO"
-        Me.ChkUpdateItemSellingPriceAfterPO.Size = New System.Drawing.Size(260, 22)
-        Me.ChkUpdateItemSellingPriceAfterPO.TabIndex = 3
-        Me.ChkUpdateItemSellingPriceAfterPO.Text = "تعديل سعر مبيع الصنف بعد فاتورة الشراء"
-        Me.ChkUpdateItemSellingPriceAfterPO.ThemeName = "Office2010Blue"
-        '
         'FlowLayoutPanel9
         '
         Me.FlowLayoutPanel9.Controls.Add(Me.Label10)
         Me.FlowLayoutPanel9.Controls.Add(Me.DropPOStatus)
-        Me.FlowLayoutPanel9.Location = New System.Drawing.Point(14, 109)
+        Me.FlowLayoutPanel9.Location = New System.Drawing.Point(14, 25)
         Me.FlowLayoutPanel9.Name = "FlowLayoutPanel9"
         Me.FlowLayoutPanel9.Size = New System.Drawing.Size(260, 29)
         Me.FlowLayoutPanel9.TabIndex = 47
@@ -954,7 +944,7 @@ Partial Class UserSettings
         '
         Me.FlowLayoutPanel10.Controls.Add(Me.Label13)
         Me.FlowLayoutPanel10.Controls.Add(Me.FlowLayoutPanel11)
-        Me.FlowLayoutPanel10.Location = New System.Drawing.Point(7, 144)
+        Me.FlowLayoutPanel10.Location = New System.Drawing.Point(7, 60)
         Me.FlowLayoutPanel10.Name = "FlowLayoutPanel10"
         Me.FlowLayoutPanel10.Size = New System.Drawing.Size(267, 66)
         Me.FlowLayoutPanel10.TabIndex = 6
@@ -1006,7 +996,7 @@ Partial Class UserSettings
         Me.FlowLayoutPanel12.AutoSize = True
         Me.FlowLayoutPanel12.Controls.Add(Me.Label14)
         Me.FlowLayoutPanel12.Controls.Add(Me.FlowLayoutPanel13)
-        Me.FlowLayoutPanel12.Location = New System.Drawing.Point(8, 216)
+        Me.FlowLayoutPanel12.Location = New System.Drawing.Point(8, 132)
         Me.FlowLayoutPanel12.Name = "FlowLayoutPanel12"
         Me.FlowLayoutPanel12.Size = New System.Drawing.Size(266, 63)
         Me.FlowLayoutPanel12.TabIndex = 53
@@ -1053,6 +1043,40 @@ Partial Class UserSettings
         Me.DropNPStatus.Tag = ""
         Me.DropNPStatus.ThemeName = "Office2010Blue"
         '
+        'ChkShowItemsInPOMainForm
+        '
+        Me.ChkShowItemsInPOMainForm.AutoSize = False
+        Me.ChkShowItemsInPOMainForm.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkShowItemsInPOMainForm.Location = New System.Drawing.Point(14, 201)
+        Me.ChkShowItemsInPOMainForm.Name = "ChkShowItemsInPOMainForm"
+        Me.ChkShowItemsInPOMainForm.Size = New System.Drawing.Size(260, 22)
+        Me.ChkShowItemsInPOMainForm.TabIndex = 1
+        Me.ChkShowItemsInPOMainForm.Text = "عرض الأصناف في فواتير المشتريات"
+        Me.ChkShowItemsInPOMainForm.ThemeName = "Office2010Blue"
+        '
+        'ChkUpdateItemPurchasingPriceAfterPO
+        '
+        Me.ChkUpdateItemPurchasingPriceAfterPO.AccessibleName = ""
+        Me.ChkUpdateItemPurchasingPriceAfterPO.AutoSize = False
+        Me.ChkUpdateItemPurchasingPriceAfterPO.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkUpdateItemPurchasingPriceAfterPO.Location = New System.Drawing.Point(14, 229)
+        Me.ChkUpdateItemPurchasingPriceAfterPO.Name = "ChkUpdateItemPurchasingPriceAfterPO"
+        Me.ChkUpdateItemPurchasingPriceAfterPO.Size = New System.Drawing.Size(260, 22)
+        Me.ChkUpdateItemPurchasingPriceAfterPO.TabIndex = 2
+        Me.ChkUpdateItemPurchasingPriceAfterPO.Text = "تعديل سعر شراء الصنف بعد فاتورة الشراء"
+        Me.ChkUpdateItemPurchasingPriceAfterPO.ThemeName = "Office2010Blue"
+        '
+        'ChkUpdateItemSellingPriceAfterPO
+        '
+        Me.ChkUpdateItemSellingPriceAfterPO.AutoSize = False
+        Me.ChkUpdateItemSellingPriceAfterPO.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkUpdateItemSellingPriceAfterPO.Location = New System.Drawing.Point(14, 257)
+        Me.ChkUpdateItemSellingPriceAfterPO.Name = "ChkUpdateItemSellingPriceAfterPO"
+        Me.ChkUpdateItemSellingPriceAfterPO.Size = New System.Drawing.Size(260, 22)
+        Me.ChkUpdateItemSellingPriceAfterPO.TabIndex = 3
+        Me.ChkUpdateItemSellingPriceAfterPO.Text = "تعديل سعر مبيع الصنف بعد فاتورة الشراء"
+        Me.ChkUpdateItemSellingPriceAfterPO.ThemeName = "Office2010Blue"
+        '
         'PageOptionsPanel
         '
         Me.PageOptionsPanel.Controls.Add(Me.TableLayoutPanel6)
@@ -1095,6 +1119,7 @@ Partial Class UserSettings
         Me.TableLayoutPanel9.Controls.Add(Me.chkOptionPurchasesOrders, 0, 10)
         Me.TableLayoutPanel9.Controls.Add(Me.chkOptionCreditorsDebitors, 0, 11)
         Me.TableLayoutPanel9.Controls.Add(Me.chkOptionAllInventory, 1, 1)
+        Me.TableLayoutPanel9.Controls.Add(Me.chkOptionQuantityHistory, 1, 2)
         Me.TableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel9.Location = New System.Drawing.Point(288, 3)
         Me.TableLayoutPanel9.Name = "TableLayoutPanel9"
@@ -1247,6 +1272,16 @@ Partial Class UserSettings
         Me.chkOptionAllInventory.TabIndex = 13
         Me.chkOptionAllInventory.Text = "الجردات"
         Me.chkOptionAllInventory.ThemeName = "Office2010Blue"
+        '
+        'chkOptionQuantityHistory
+        '
+        Me.chkOptionQuantityHistory.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkOptionQuantityHistory.Location = New System.Drawing.Point(50, 50)
+        Me.chkOptionQuantityHistory.Name = "chkOptionQuantityHistory"
+        Me.chkOptionQuantityHistory.Size = New System.Drawing.Size(86, 22)
+        Me.chkOptionQuantityHistory.TabIndex = 14
+        Me.chkOptionQuantityHistory.Text = "حركة الكمية"
+        Me.chkOptionQuantityHistory.ThemeName = "Office2010Blue"
         '
         'PageShortcuts
         '
@@ -1405,7 +1440,6 @@ Partial Class UserSettings
         Me.FlowLayoutPanel16.Controls.Add(Me.ChkShowItemsUnits)
         Me.FlowLayoutPanel16.Controls.Add(Me.chkShowSalesDailyWin)
         Me.FlowLayoutPanel16.Controls.Add(Me.chkShowDashboardForm)
-        Me.FlowLayoutPanel16.Controls.Add(Me.chkShowCurrencyRateInStatus)
         Me.FlowLayoutPanel16.Controls.Add(Me.DropLang)
         Me.FlowLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FlowLayoutPanel16.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
@@ -1486,23 +1520,13 @@ Partial Class UserSettings
         Me.chkShowDashboardForm.Text = "إظهار شاشة التحليلات"
         Me.chkShowDashboardForm.ThemeName = "Office2010Blue"
         '
-        'chkShowCurrencyRateInStatus
-        '
-        Me.chkShowCurrencyRateInStatus.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkShowCurrencyRateInStatus.Location = New System.Drawing.Point(49, 194)
-        Me.chkShowCurrencyRateInStatus.Name = "chkShowCurrencyRateInStatus"
-        Me.chkShowCurrencyRateInStatus.Size = New System.Drawing.Size(224, 22)
-        Me.chkShowCurrencyRateInStatus.TabIndex = 5
-        Me.chkShowCurrencyRateInStatus.Text = "إظهار سعر الصرف في شريط البرنامج"
-        Me.chkShowCurrencyRateInStatus.ThemeName = "Office2010Blue"
-        '
         'DropLang
         '
         Me.DropLang.AutoSize = False
         Me.DropLang.BackColor = System.Drawing.Color.White
         Me.DropLang.DropDownAnimationEnabled = True
         Me.DropLang.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DropLang.Location = New System.Drawing.Point(105, 222)
+        Me.DropLang.Location = New System.Drawing.Point(105, 194)
         Me.DropLang.MaxLength = 65535
         Me.DropLang.Name = "DropLang"
         Me.DropLang.Size = New System.Drawing.Size(168, 24)
@@ -1510,26 +1534,15 @@ Partial Class UserSettings
         Me.DropLang.Tag = ""
         Me.DropLang.ThemeName = "Office2010Blue"
         '
-        'FlowLayoutPanel4
+        'chkShowCurrencyRateInStatus
         '
-        Me.FlowLayoutPanel4.AutoSize = True
-        Me.FlowLayoutPanel4.Controls.Add(Me.Label6)
-        Me.FlowLayoutPanel4.Controls.Add(Me.NumChequesDay)
-        Me.FlowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel4.Location = New System.Drawing.Point(5, 171)
-        Me.FlowLayoutPanel4.Name = "FlowLayoutPanel4"
-        Me.FlowLayoutPanel4.Size = New System.Drawing.Size(270, 32)
-        Me.FlowLayoutPanel4.TabIndex = 26
-        '
-        'FlowLayoutPanel14
-        '
-        Me.FlowLayoutPanel14.Controls.Add(Me.Label5)
-        Me.FlowLayoutPanel14.Controls.Add(Me.TimerDaily)
-        Me.FlowLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel14.Location = New System.Drawing.Point(5, 228)
-        Me.FlowLayoutPanel14.Name = "FlowLayoutPanel14"
-        Me.FlowLayoutPanel14.Size = New System.Drawing.Size(270, 57)
-        Me.FlowLayoutPanel14.TabIndex = 27
+        Me.chkShowCurrencyRateInStatus.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkShowCurrencyRateInStatus.Location = New System.Drawing.Point(51, 58)
+        Me.chkShowCurrencyRateInStatus.Name = "chkShowCurrencyRateInStatus"
+        Me.chkShowCurrencyRateInStatus.Size = New System.Drawing.Size(224, 22)
+        Me.chkShowCurrencyRateInStatus.TabIndex = 28
+        Me.chkShowCurrencyRateInStatus.Text = "إظهار سعر الصرف في شريط البرنامج"
+        Me.chkShowCurrencyRateInStatus.ThemeName = "Office2010Blue"
         '
         'UserSettings
         '
@@ -1571,8 +1584,12 @@ Partial Class UserSettings
         CType(Me.ChkShowProgramAlerts, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FlowLayoutPanel3.ResumeLayout(False)
         CType(Me.TimerHome, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TimerDaily, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FlowLayoutPanel4.ResumeLayout(False)
+        Me.FlowLayoutPanel4.PerformLayout()
         CType(Me.NumChequesDay, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FlowLayoutPanel14.ResumeLayout(False)
+        Me.FlowLayoutPanel14.PerformLayout()
+        CType(Me.TimerDaily, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PageSuppliers.ResumeLayout(False)
         Me.TableLayoutPanel7.ResumeLayout(False)
         Me.TableLayoutPanel7.PerformLayout()
@@ -1587,19 +1604,16 @@ Partial Class UserSettings
         Me.TableLayoutPanel4.PerformLayout()
         Me.FlowLayoutPanel6.ResumeLayout(False)
         Me.FlowLayoutPanel6.PerformLayout()
-        CType(Me.ChkShowItemsInSOMainForm, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ChkShowSOInWindow, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chkSOShowPrintQuestionAfterSave, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FlowLayoutPanel5.ResumeLayout(False)
         CType(Me.TxtSODefaultCustomer, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FlowLayoutPanel7.ResumeLayout(False)
         Me.FlowLayoutPanel7.PerformLayout()
         CType(Me.DropSOStatus, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ChkShowItemsInSOMainForm, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ChkShowSOInWindow, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkSOShowPrintQuestionAfterSave, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FlowLayoutPanel8.ResumeLayout(False)
         Me.FlowLayoutPanel8.PerformLayout()
-        CType(Me.ChkShowItemsInPOMainForm, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ChkUpdateItemPurchasingPriceAfterPO, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ChkUpdateItemSellingPriceAfterPO, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FlowLayoutPanel9.ResumeLayout(False)
         CType(Me.DropPOStatus, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FlowLayoutPanel10.ResumeLayout(False)
@@ -1608,6 +1622,9 @@ Partial Class UserSettings
         Me.FlowLayoutPanel12.ResumeLayout(False)
         Me.FlowLayoutPanel13.ResumeLayout(False)
         CType(Me.DropNPStatus, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ChkShowItemsInPOMainForm, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ChkUpdateItemPurchasingPriceAfterPO, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ChkUpdateItemSellingPriceAfterPO, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PageOptionsPanel.ResumeLayout(False)
         Me.TableLayoutPanel6.ResumeLayout(False)
         Me.TableLayoutPanel9.ResumeLayout(False)
@@ -1624,6 +1641,7 @@ Partial Class UserSettings
         CType(Me.chkOptionPurchasesOrders, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkOptionCreditorsDebitors, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkOptionAllInventory, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkOptionQuantityHistory, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PageShortcuts.ResumeLayout(False)
         CType(Me.GridShortcuts.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridShortcuts, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1642,12 +1660,8 @@ Partial Class UserSettings
         CType(Me.ChkShowItemsUnits, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkShowSalesDailyWin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkShowDashboardForm, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chkShowCurrencyRateInStatus, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DropLang, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.FlowLayoutPanel4.ResumeLayout(False)
-        Me.FlowLayoutPanel4.PerformLayout()
-        Me.FlowLayoutPanel14.ResumeLayout(False)
-        Me.FlowLayoutPanel14.PerformLayout()
+        CType(Me.chkShowCurrencyRateInStatus, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -1749,7 +1763,6 @@ Partial Class UserSettings
     Friend WithEvents ChkShowItemsUnits As Telerik.WinControls.UI.RadCheckBox
     Friend WithEvents chkShowSalesDailyWin As Telerik.WinControls.UI.RadCheckBox
     Friend WithEvents chkShowDashboardForm As Telerik.WinControls.UI.RadCheckBox
-    Friend WithEvents chkShowCurrencyRateInStatus As Telerik.WinControls.UI.RadCheckBox
     Friend WithEvents DropLang As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents TableLayoutPanel10 As TableLayoutPanel
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
@@ -1757,5 +1770,7 @@ Partial Class UserSettings
     Friend WithEvents FlowLayoutPanel3 As FlowLayoutPanel
     Friend WithEvents FlowLayoutPanel4 As FlowLayoutPanel
     Friend WithEvents FlowLayoutPanel14 As FlowLayoutPanel
+    Friend WithEvents chkOptionQuantityHistory As Telerik.WinControls.UI.RadCheckBox
+    Friend WithEvents chkShowCurrencyRateInStatus As Telerik.WinControls.UI.RadCheckBox
 End Class
 

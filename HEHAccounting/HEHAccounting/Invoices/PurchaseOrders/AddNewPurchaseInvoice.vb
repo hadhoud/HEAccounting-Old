@@ -34,6 +34,8 @@ Public Class AddNewPurchaseInvoice
         Else
             Me.DropStatus.SelectedValue = DefaultPOStatus
         End If
+        tblCurrencyRow.Visible = BoolShowAddPurchasesOrdersTextCurrencyRate
+        LblCurrValue.Visible = BoolShowAddPurchasesOrdersTextCurrencyRate
     End Sub
     Private Sub ChangeToEng()
         Me.RightToLeft = RightToLeft.No

@@ -40,7 +40,7 @@ Partial Class AccountsDetails
         Me.BtnFiltering = New Telerik.WinControls.UI.RadButton()
         Me.BtnReset = New Telerik.WinControls.UI.RadButton()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
+        Me.tblCurrencyRow = New System.Windows.Forms.TableLayoutPanel()
         Me.txtDollarRate = New Telerik.WinControls.UI.RadTextBox()
         Me.BtnGetCurrencyVal = New Telerik.WinControls.UI.RadButton()
         Me.LblCurrencyVal = New System.Windows.Forms.Label()
@@ -76,7 +76,7 @@ Partial Class AccountsDetails
         CType(Me.BtnFiltering, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnReset, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
-        Me.TableLayoutPanel7.SuspendLayout()
+        Me.tblCurrencyRow.SuspendLayout()
         CType(Me.txtDollarRate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnGetCurrencyVal, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtAccounts, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -310,7 +310,7 @@ Partial Class AccountsDetails
         Me.TableLayoutPanel1.ColumnCount = 2
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel7, 1, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.tblCurrencyRow, 1, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.LblCurrencyVal, 0, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.LblTo, 0, 6)
         Me.TableLayoutPanel1.Controls.Add(Me.LblAccounts, 0, 1)
@@ -338,22 +338,22 @@ Partial Class AccountsDetails
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(231, 218)
         Me.TableLayoutPanel1.TabIndex = 14
         '
-        'TableLayoutPanel7
+        'tblCurrencyRow
         '
-        Me.TableLayoutPanel7.AutoSize = True
-        Me.TableLayoutPanel7.ColumnCount = 2
-        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel7.Controls.Add(Me.txtDollarRate, 0, 0)
-        Me.TableLayoutPanel7.Controls.Add(Me.BtnGetCurrencyVal, 1, 0)
-        Me.TableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel7.Location = New System.Drawing.Point(0, 78)
-        Me.TableLayoutPanel7.Margin = New System.Windows.Forms.Padding(0, 3, 0, 3)
-        Me.TableLayoutPanel7.Name = "TableLayoutPanel7"
-        Me.TableLayoutPanel7.RowCount = 1
-        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel7.Size = New System.Drawing.Size(176, 30)
-        Me.TableLayoutPanel7.TabIndex = 47
+        Me.tblCurrencyRow.AutoSize = True
+        Me.tblCurrencyRow.ColumnCount = 2
+        Me.tblCurrencyRow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tblCurrencyRow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.tblCurrencyRow.Controls.Add(Me.txtDollarRate, 0, 0)
+        Me.tblCurrencyRow.Controls.Add(Me.BtnGetCurrencyVal, 1, 0)
+        Me.tblCurrencyRow.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tblCurrencyRow.Location = New System.Drawing.Point(0, 78)
+        Me.tblCurrencyRow.Margin = New System.Windows.Forms.Padding(0, 3, 0, 3)
+        Me.tblCurrencyRow.Name = "tblCurrencyRow"
+        Me.tblCurrencyRow.RowCount = 1
+        Me.tblCurrencyRow.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tblCurrencyRow.Size = New System.Drawing.Size(176, 30)
+        Me.tblCurrencyRow.TabIndex = 47
         '
         'txtDollarRate
         '
@@ -512,8 +512,6 @@ Partial Class AccountsDetails
         Me.MskTxtInvDateFrom.Mask = "dd/MM/yyyy"
         Me.MskTxtInvDateFrom.MaskType = Telerik.WinControls.UI.MaskType.DateTime
         Me.MskTxtInvDateFrom.Name = "MskTxtInvDateFrom"
-        Me.MskTxtInvDateFrom.SelectedText = "01"
-        Me.MskTxtInvDateFrom.SelectionLength = 2
         Me.MskTxtInvDateFrom.Size = New System.Drawing.Size(143, 24)
         Me.MskTxtInvDateFrom.TabIndex = 25
         Me.MskTxtInvDateFrom.TabStop = False
@@ -557,6 +555,8 @@ Partial Class AccountsDetails
         Me.MskTxtInvDateTo.Mask = "dd/MM/yyyy"
         Me.MskTxtInvDateTo.MaskType = Telerik.WinControls.UI.MaskType.DateTime
         Me.MskTxtInvDateTo.Name = "MskTxtInvDateTo"
+        Me.MskTxtInvDateTo.SelectedText = "01"
+        Me.MskTxtInvDateTo.SelectionLength = 2
         Me.MskTxtInvDateTo.Size = New System.Drawing.Size(143, 24)
         Me.MskTxtInvDateTo.TabIndex = 44
         Me.MskTxtInvDateTo.TabStop = False
@@ -673,7 +673,7 @@ Partial Class AccountsDetails
         CType(Me.BtnReset, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
-        Me.TableLayoutPanel7.ResumeLayout(False)
+        Me.tblCurrencyRow.ResumeLayout(False)
         CType(Me.txtDollarRate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnGetCurrencyVal, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtAccounts, System.ComponentModel.ISupportInitialize).EndInit()
@@ -725,7 +725,7 @@ Partial Class AccountsDetails
     Friend WithEvents BtnPrint As Telerik.WinControls.UI.RadButton
     Friend WithEvents CheckDetailsWithCurrency As Telerik.WinControls.UI.RadCheckBox
     Friend WithEvents LblCurrencyVal As Label
-    Friend WithEvents TableLayoutPanel7 As TableLayoutPanel
+    Friend WithEvents tblCurrencyRow As TableLayoutPanel
     Friend WithEvents TxtCurrencyVal As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents BtnGetCurrencyVal As Telerik.WinControls.UI.RadButton
     Friend WithEvents ContextManagerGrid As Telerik.WinControls.UI.RadContextMenuManager

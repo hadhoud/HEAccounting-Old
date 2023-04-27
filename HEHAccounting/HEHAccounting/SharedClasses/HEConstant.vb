@@ -20,6 +20,7 @@
     Public RPO_Description As String
     Public Cash As String
     Public Paid As String
+    Public Taasit As String
     Public Check As String
     Public Debt As String
     Public Collected As String
@@ -90,6 +91,8 @@
     Public RptNotesReceive As String
     Public RptQuantityHistory As String
 
+    Public RptThermalInvSalesOrder As String
+
     ' For Ask 
     Public Ask_Add As String
     Public Ask_Edit As String
@@ -104,6 +107,7 @@
     Public Ask_Do_You_Want_Print_Voucher As String
     Public Ask_Do_You_Want_Exit As String
     Public Ask_Pay As String
+    Public Ask_Pay_with_amount_zero As String
 
     ' For Information 
     Public Msg_Db_NotConnected As String
@@ -186,6 +190,7 @@
             Cash = "Cash"
             Paid = "Paid"
             Debt = "Debt"
+            Taasit = "Installement"
             Check = "Check"
             Collected = "Collected"
             NotCollected = "NotCollected"
@@ -240,6 +245,8 @@
             RptNotesReceive = "ArNR101"
             RptQuantityHistory = "ArQuantityHistory101"
 
+            RptThermalInvSalesOrder = "/Thermal/AR/ArSODetails101"
+
             Msg_Check_Username_Password = "Check Your Username And Password"
             Msg_Empty_Username = "Enter Your Username"
             Msg_Empty_Password = "Enter Your Password"
@@ -259,7 +266,7 @@
             Ask_Do_You_Want_Print_Voucher = "Do you want Print This Voucher?"
             Ask_Do_You_Want_Exit = "Are you Sure You Want Exit?"
             Ask_Pay = "Are you sure you want to Pay?"
-
+            Ask_Pay_with_amount_zero = "The amount is Zero , this will close the invoice and make it as paid , Continue?"
             ' For Information
             Msg_Enter_All_Fields = "Enter Required Fields"
             Msg_Press_Search_Button = "Press Search Buton"
@@ -324,6 +331,7 @@
             Cash = "نقدا"
             Paid = "مسددة"
             Debt = "آجل"
+            Taasit = "تقسيط"
             Check = "شيك"
             Collected = "محصل"
             NotCollected = "قيد التحصيل"
@@ -377,6 +385,8 @@
             RptNotesReceive = "ArNR101"
             RptQuantityHistory = "ArQuantityHistory101"
 
+            RptThermalInvSalesOrder = "/Thermal/AR/ArSODetails101"
+
             ' For Ask 
             Ask_Add = "هل أنت متأكد أنك تريد الإضافة؟"
             Ask_Edit = "هل أنت متأكد أنك تريد التعديل؟"
@@ -392,6 +402,7 @@
             Ask_Do_You_Want_Print_Voucher = "هل تريد طباعة السند؟"
             Ask_Do_You_Want_Exit = "هل أنت متأكد أنك تريد الخروج؟"
             Ask_Pay = "هل أنت متأكد أنك تريد التسديد؟"
+            Ask_Pay_with_amount_zero = "المبلغ المسدد 0 مما سيجعل الفاتورة مسددة , هل تريد المتابعة؟"
 
             ' For Information
             Msg_Enter_All_Fields = "يجب تعبئة الحقول المطلوبة"

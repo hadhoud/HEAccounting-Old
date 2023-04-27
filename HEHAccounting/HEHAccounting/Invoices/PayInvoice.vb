@@ -76,42 +76,45 @@ Public Class PayInvoice
     End Sub
 
     Private Sub BtnPay_Click(sender As Object, e As EventArgs) Handles BtnPay.Click
-        If Val(TxtPaymentAmount.Text) > 0 And Val(txtDollarRate.Text) > 0 Then
-            If MessageShowAsk(Con.Ask_Pay) = DialogResult.Yes Then
-                Dim Param(8) As String
-                Param(0) = "@iReferID  , " & TxtInvID.Text
-                Param(1) = "@cReferType , " & ReferType
-                Param(2) = "@tPaymentDate , " & MskTxtPayDate.Value
-                Param(3) = "@fPaymentAmount, " & TxtPaymentAmount.Text
-                Param(4) = "@cDescription, " & TxtDesc.Text
-                Param(5) = "@fDollarRate_amt, " & txtDollarRate.Text
-                Param(6) = "@iCurrencyID , " & Me.DropCurrency.SelectedValue
-                Param(7) = "@bIsFullyPaid , " & IIf(chkInvoiceISCompletePaid.Checked, True, False)
-                Param(8) = "@iUserID , " & UserID
-                'Param(8) = "@iInvoiceTotalLL , " & Me.txtInvTotalLL.Text
-                'Param(9) = "@iInvoiceTotalUSD , " & Me.txtInvTotalUSD.Text
-                'Param(10) = "@iInvPaymentTotalLL , " & Me.txtInvPaymentTotalLL.Text
-                'Param(11) = "@iInvPaymentTotalUSD , " & Me.txtInvPaymentTotalUSD.Text
 
+        If Val(TxtPaymentAmount.Text) >= 0 And Val(txtDollarRate.Text) > 0 Then
+            If Val(TxtPaymentAmount.Text) > 0 Then
+                If MessageShowAsk(Con.Ask_Pay) = DialogResult.Yes Then
+                    Dim Param(8) As String
+                    Param(0) = "@iReferID  , " & TxtInvID.Text
+                    Param(1) = "@cReferType , " & ReferType
+                    Param(2) = "@tPaymentDate , " & MskTxtPayDate.Value
+                    Param(3) = "@fPaymentAmount, " & TxtPaymentAmount.Text
+                    Param(4) = "@cDescription, " & TxtDesc.Text
+                    Param(5) = "@fDollarRate_amt, " & txtDollarRate.Text
+                    Param(6) = "@iCurrencyID , " & Me.DropCurrency.SelectedValue
+                    Param(7) = "@bIsFullyPaid , " & IIf(chkInvoiceISCompletePaid.Checked, True, False)
+                    Param(8) = "@iUserID , " & UserID
 
-                ExecuteProcedureWithParameters("PayInvoice", Param)
-                Dim Rptparam(1) As String
-                'Rptparam(0) = "NotesID , " & TxtCode.Text
-                'If BoolLTRLanguage Then
-                '    Rptparam(1) = "AmountWord , " & AmountInWords.AmountInWordsEn(TxtAmount.Text, CurrencyID:=DropCurrency.SelectedValue)
-                'Else
-                '    Rptparam(1) = "AmountWord , " & AmountInWords.AmountInWordsAr(TxtAmount.Text, CurrencyID:=DropCurrency.SelectedValue)
-                'End If
-                'If Not BoolForPrint Then
-                '    If MessageShowAsk(Con.Ask_Do_You_Want_Print_Voucher) = DialogResult.Yes Then
-                '        OpenReport(Con.RptNotesReceive, Rptparam)
-                '    End If
-                'Else
-                '    OpenReport(Con.RptNotesReceive, Rptparam)
-                'End If
-                FormClear()
-                ToDoRefrech = True
-                Close()
+                    ExecuteProcedureWithParameters("PayInvoice", Param)
+                    FormClear()
+                    ToDoRefrech = True
+                    Close()
+                End If
+            Else
+                'show message to ask user if the payment is zero mean (paid all invoice and close)
+                If MessageShowAsk(Con.Ask_Pay_with_amount_zero) = DialogResult.Yes Then
+                    Dim Param(8) As String
+                    Param(0) = "@iReferID  , " & TxtInvID.Text
+                    Param(1) = "@cReferType , " & ReferType
+                    Param(2) = "@tPaymentDate , " & MskTxtPayDate.Value
+                    Param(3) = "@fPaymentAmount, 0"
+                    Param(4) = "@cDescription, " & TxtDesc.Text
+                    Param(5) = "@fDollarRate_amt, " & txtDollarRate.Text
+                    Param(6) = "@iCurrencyID , " & Me.DropCurrency.SelectedValue
+                    Param(7) = "@bIsFullyPaid , " & True
+                    Param(8) = "@iUserID , " & UserID
+
+                    ExecuteProcedureWithParameters("PayInvoice", Param)
+                    FormClear()
+                    ToDoRefrech = True
+                    Close()
+                End If
             End If
         Else
             MessageShowInfo(Con.Msg_Enter_All_Fields)

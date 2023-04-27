@@ -33,11 +33,10 @@ Partial Class QuantityHistory
         Me.BtnFiltering = New Telerik.WinControls.UI.RadButton()
         Me.BtnReset = New Telerik.WinControls.UI.RadButton()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.CustomTxtItemName = New HEHAccounting.CustomItemNameTextBoxControl()
         Me.LblTo = New System.Windows.Forms.Label()
         Me.LblItemName = New System.Windows.Forms.Label()
         Me.LblFrom = New System.Windows.Forms.Label()
-        Me.TxtItemName = New Telerik.WinControls.UI.RadButtonTextBox()
-        Me.TxtItemsBtn = New Telerik.WinControls.UI.RadButtonElement()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.MskTxtInvDateFrom = New Telerik.WinControls.UI.RadMaskedEditBox()
         Me.CheckDateFrom = New Telerik.WinControls.UI.RadCheckBox()
@@ -58,7 +57,7 @@ Partial Class QuantityHistory
         CType(Me.BtnFiltering, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnReset, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel2.SuspendLayout()
-        CType(Me.TxtItemName, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CustomTxtItemName, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel4.SuspendLayout()
         CType(Me.MskTxtInvDateFrom, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CheckDateFrom, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -81,8 +80,9 @@ Partial Class QuantityHistory
         '
         Me.GridQuantity.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.GridQuantity.Name = "GridQuantity"
-        Me.GridQuantity.Size = New System.Drawing.Size(623, 408)
+        Me.GridQuantity.Size = New System.Drawing.Size(631, 444)
         Me.GridQuantity.TabIndex = 5
+        Me.GridQuantity.ThemeName = "Office2010Blue"
         '
         'TableLayoutPanel1
         '
@@ -96,7 +96,7 @@ Partial Class QuantityHistory
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(872, 414)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(880, 450)
         Me.TableLayoutPanel1.TabIndex = 1
         '
         'PnlOptions
@@ -106,11 +106,12 @@ Partial Class QuantityHistory
         Me.PnlOptions.Controls.Add(Me.TableLayoutPanel2)
         Me.PnlOptions.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PnlOptions.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.PnlOptions.Location = New System.Drawing.Point(632, 3)
+        Me.PnlOptions.Location = New System.Drawing.Point(640, 3)
         Me.PnlOptions.Name = "PnlOptions"
         Me.PnlOptions.Padding = New System.Windows.Forms.Padding(3)
-        Me.PnlOptions.Size = New System.Drawing.Size(237, 408)
+        Me.PnlOptions.Size = New System.Drawing.Size(237, 444)
         Me.PnlOptions.TabIndex = 4
+        Me.PnlOptions.Visible = False
         '
         'TableLayoutPanel3
         '
@@ -121,8 +122,8 @@ Partial Class QuantityHistory
         Me.TableLayoutPanel3.Controls.Add(Me.BtnPrint, 0, 1)
         Me.TableLayoutPanel3.Controls.Add(Me.BtnFiltering, 0, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.BtnReset, 1, 0)
-        Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 256)
+        Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 357)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 2
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
@@ -180,13 +181,13 @@ Partial Class QuantityHistory
         Me.TableLayoutPanel2.Controls.Add(Me.LblTo, 0, 3)
         Me.TableLayoutPanel2.Controls.Add(Me.LblItemName, 0, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.LblFrom, 0, 2)
-        Me.TableLayoutPanel2.Controls.Add(Me.TxtItemName, 1, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.TableLayoutPanel4, 1, 2)
         Me.TableLayoutPanel2.Controls.Add(Me.TableLayoutPanel5, 1, 3)
         Me.TableLayoutPanel2.Controls.Add(Me.RadioSales, 1, 4)
         Me.TableLayoutPanel2.Controls.Add(Me.RadioPurchase, 1, 5)
         Me.TableLayoutPanel2.Controls.Add(Me.RadoAll, 1, 7)
         Me.TableLayoutPanel2.Controls.Add(Me.RadioInventory, 1, 6)
+        Me.TableLayoutPanel2.Controls.Add(Me.CustomTxtItemName, 1, 1)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
@@ -203,11 +204,20 @@ Partial Class QuantityHistory
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(231, 253)
         Me.TableLayoutPanel2.TabIndex = 17
         '
+        'CustomTxtItemName
+        '
+        Me.CustomTxtItemName.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.CustomTxtItemName.Location = New System.Drawing.Point(3, 31)
+        Me.CustomTxtItemName.Name = "CustomTxtItemName"
+        Me.CustomTxtItemName.Size = New System.Drawing.Size(174, 22)
+        Me.CustomTxtItemName.TabIndex = 19
+        Me.CustomTxtItemName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'LblTo
         '
         Me.LblTo.AutoSize = True
         Me.LblTo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LblTo.Location = New System.Drawing.Point(183, 94)
+        Me.LblTo.Location = New System.Drawing.Point(183, 92)
         Me.LblTo.Name = "LblTo"
         Me.LblTo.Size = New System.Drawing.Size(45, 36)
         Me.LblTo.TabIndex = 18
@@ -220,7 +230,7 @@ Partial Class QuantityHistory
         Me.LblItemName.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LblItemName.Location = New System.Drawing.Point(183, 28)
         Me.LblItemName.Name = "LblItemName"
-        Me.LblItemName.Size = New System.Drawing.Size(45, 30)
+        Me.LblItemName.Size = New System.Drawing.Size(45, 28)
         Me.LblItemName.TabIndex = 17
         Me.LblItemName.Text = "الصنف"
         Me.LblItemName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -229,42 +239,12 @@ Partial Class QuantityHistory
         '
         Me.LblFrom.AutoSize = True
         Me.LblFrom.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LblFrom.Location = New System.Drawing.Point(183, 58)
+        Me.LblFrom.Location = New System.Drawing.Point(183, 56)
         Me.LblFrom.Name = "LblFrom"
         Me.LblFrom.Size = New System.Drawing.Size(45, 36)
         Me.LblFrom.TabIndex = 17
         Me.LblFrom.Text = "من"
         Me.LblFrom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'TxtItemName
-        '
-        Me.TxtItemName.AcceptsTab = True
-        Me.TxtItemName.AutoSize = False
-        Me.TxtItemName.BackColor = System.Drawing.Color.White
-        Me.TxtItemName.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TxtItemName.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtItemName.HideSelection = False
-        Me.TxtItemName.LeftButtonItems.AddRange(New Telerik.WinControls.RadItem() {Me.TxtItemsBtn})
-        Me.TxtItemName.Location = New System.Drawing.Point(3, 31)
-        Me.TxtItemName.MaxLength = 65535
-        Me.TxtItemName.Name = "TxtItemName"
-        Me.TxtItemName.ShortcutsEnabled = False
-        Me.TxtItemName.ShowClearButton = True
-        Me.TxtItemName.Size = New System.Drawing.Size(174, 24)
-        Me.TxtItemName.TabIndex = 39
-        Me.TxtItemName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.TxtItemName.ThemeName = "Office2010Blue"
-        Me.TxtItemName.WordWrap = False
-        '
-        'TxtItemsBtn
-        '
-        Me.TxtItemsBtn.DisplayStyle = Telerik.WinControls.DisplayStyle.Image
-        Me.TxtItemsBtn.Image = Global.HEHAccounting.My.Resources.Resources.find
-        Me.TxtItemsBtn.Margin = New System.Windows.Forms.Padding(2, 0, 0, 0)
-        Me.TxtItemsBtn.Name = "TxtItemsBtn"
-        Me.TxtItemsBtn.SmallImage = Global.HEHAccounting.My.Resources.Resources.find
-        Me.TxtItemsBtn.Text = ""
-        Me.TxtItemsBtn.UseCompatibleTextRendering = False
         '
         'TableLayoutPanel4
         '
@@ -275,7 +255,7 @@ Partial Class QuantityHistory
         Me.TableLayoutPanel4.Controls.Add(Me.MskTxtInvDateFrom, 1, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.CheckDateFrom, 0, 0)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 61)
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 59)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.RowCount = 1
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle())
@@ -292,6 +272,8 @@ Partial Class QuantityHistory
         Me.MskTxtInvDateFrom.Mask = "dd/MM/yyyy"
         Me.MskTxtInvDateFrom.MaskType = Telerik.WinControls.UI.MaskType.DateTime
         Me.MskTxtInvDateFrom.Name = "MskTxtInvDateFrom"
+        Me.MskTxtInvDateFrom.SelectedText = "01"
+        Me.MskTxtInvDateFrom.SelectionLength = 2
         Me.MskTxtInvDateFrom.Size = New System.Drawing.Size(147, 24)
         Me.MskTxtInvDateFrom.TabIndex = 25
         Me.MskTxtInvDateFrom.TabStop = False
@@ -318,7 +300,7 @@ Partial Class QuantityHistory
         Me.TableLayoutPanel5.Controls.Add(Me.MskTxtInvDateTo, 1, 0)
         Me.TableLayoutPanel5.Controls.Add(Me.CheckDateTo, 0, 0)
         Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel5.Location = New System.Drawing.Point(3, 97)
+        Me.TableLayoutPanel5.Location = New System.Drawing.Point(3, 95)
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.RowCount = 2
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle())
@@ -335,6 +317,8 @@ Partial Class QuantityHistory
         Me.MskTxtInvDateTo.Mask = "dd/MM/yyyy"
         Me.MskTxtInvDateTo.MaskType = Telerik.WinControls.UI.MaskType.DateTime
         Me.MskTxtInvDateTo.Name = "MskTxtInvDateTo"
+        Me.MskTxtInvDateTo.SelectedText = "01"
+        Me.MskTxtInvDateTo.SelectionLength = 2
         Me.MskTxtInvDateTo.Size = New System.Drawing.Size(147, 24)
         Me.MskTxtInvDateTo.TabIndex = 44
         Me.MskTxtInvDateTo.TabStop = False
@@ -358,7 +342,7 @@ Partial Class QuantityHistory
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadioSales.CheckState = System.Windows.Forms.CheckState.Checked
         Me.RadioSales.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioSales.Location = New System.Drawing.Point(95, 133)
+        Me.RadioSales.Location = New System.Drawing.Point(95, 131)
         Me.RadioSales.Name = "RadioSales"
         Me.RadioSales.Size = New System.Drawing.Size(82, 22)
         Me.RadioSales.TabIndex = 44
@@ -373,7 +357,7 @@ Partial Class QuantityHistory
         Me.RadioPurchase.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadioPurchase.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioPurchase.Location = New System.Drawing.Point(90, 161)
+        Me.RadioPurchase.Location = New System.Drawing.Point(90, 159)
         Me.RadioPurchase.Name = "RadioPurchase"
         Me.RadioPurchase.Size = New System.Drawing.Size(87, 22)
         Me.RadioPurchase.TabIndex = 45
@@ -388,7 +372,7 @@ Partial Class QuantityHistory
         Me.RadoAll.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadoAll.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadoAll.Location = New System.Drawing.Point(120, 217)
+        Me.RadoAll.Location = New System.Drawing.Point(120, 215)
         Me.RadoAll.Name = "RadoAll"
         Me.RadoAll.Size = New System.Drawing.Size(57, 22)
         Me.RadoAll.TabIndex = 46
@@ -403,7 +387,7 @@ Partial Class QuantityHistory
         Me.RadioInventory.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadioInventory.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioInventory.Location = New System.Drawing.Point(112, 189)
+        Me.RadioInventory.Location = New System.Drawing.Point(112, 187)
         Me.RadioInventory.Name = "RadioInventory"
         Me.RadioInventory.Size = New System.Drawing.Size(65, 22)
         Me.RadioInventory.TabIndex = 47
@@ -417,10 +401,10 @@ Partial Class QuantityHistory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(872, 414)
+        Me.ClientSize = New System.Drawing.Size(880, 450)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -431,7 +415,7 @@ Partial Class QuantityHistory
         '
         Me.RootElement.ApplyShapeToControl = True
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.Tag = "FrmQuantityHistory"
         Me.Text = "حركة الكمية"
         Me.ThemeName = "Office2010Blue"
         CType(Me.GridQuantity.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
@@ -446,7 +430,7 @@ Partial Class QuantityHistory
         CType(Me.BtnReset, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
-        CType(Me.TxtItemName, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CustomTxtItemName, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.TableLayoutPanel4.PerformLayout()
         CType(Me.MskTxtInvDateFrom, System.ComponentModel.ISupportInitialize).EndInit()
@@ -476,8 +460,6 @@ Partial Class QuantityHistory
     Friend WithEvents LblTo As Label
     Friend WithEvents LblItemName As Label
     Friend WithEvents LblFrom As Label
-    Friend WithEvents TxtItemName As Telerik.WinControls.UI.RadButtonTextBox
-    Friend WithEvents TxtItemsBtn As Telerik.WinControls.UI.RadButtonElement
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents MskTxtInvDateFrom As Telerik.WinControls.UI.RadMaskedEditBox
     Friend WithEvents CheckDateFrom As Telerik.WinControls.UI.RadCheckBox
@@ -488,5 +470,6 @@ Partial Class QuantityHistory
     Friend WithEvents RadioPurchase As Telerik.WinControls.UI.RadRadioButton
     Friend WithEvents RadoAll As Telerik.WinControls.UI.RadRadioButton
     Friend WithEvents RadioInventory As Telerik.WinControls.UI.RadRadioButton
+    Friend WithEvents CustomTxtItemName As CustomItemNameTextBoxControl
 End Class
 

@@ -32,6 +32,7 @@
     Public BoolShowDashboardScreenByUser As Boolean
     Public BoolShowPurchasingPriceInScreensByUser As Boolean
     Public BoolShowItemsSalesWinReportScreenByUser As Boolean
+    Public BoolShowProfitsTextInScreenByUser As Boolean
 
     'UserSettings
 
@@ -69,6 +70,8 @@
     Public BoolOptionPanelPurchasesOrders As Boolean
     Public BoolOptionPanelCreditorsDebitors As Boolean
     Public BoolOptionPanelAllInventory As Boolean
+    Public BoolOptionPanelQuantityHistory As Boolean
+
 
     'Program General Setting
     Public BoolShowProgramAlerts As Boolean
@@ -151,9 +154,12 @@
 
     'Add Sales Order
     Public BoolShowAddSalesOrdersColPurchasePrice As Boolean
+    Public BoolShowAddSalesOrdersTextCurrencyRate As Boolean
+    Public BoolShowAddSalesOrdersTextProftis As Boolean
 
     'Add Purchase Order
     Public BoolShowAddPurchasesOrdersColPurchasePrice As Boolean
+    Public BoolShowAddPurchasesOrdersTextCurrencyRate As Boolean
 
     'Invoice Sales Order
     Public BoolShowInvSaleOrderSubTotalLL As Boolean
@@ -170,6 +176,25 @@
     Public BoolShowCustomerInvSalesOrdersTotalDueUSD As Boolean
     Public BoolShowCustomerInvSalesOrdersTotalDueLL As Boolean
     Public BoolShowCustomerInvSalesOrdersCurrencyRate As Boolean
+
+    'Account Details
+    Public BoolShowAccountDetailsTextCurrencyRate As Boolean
+
+    'Items Form
+    Public BoolShowItemsFormColBarcode As Boolean
+    Public BoolShowItemsFormColLatinName As Boolean
+
+    'Notes Pay
+    Public BoolShowNotePayTextCurrencyRate As Boolean
+    Public BoolShowNotePayTextAmountEquality As Boolean
+
+    'Notes Receive
+    Public BoolShowNoteReceiveTextCurrencyRate As Boolean
+    Public BoolShowNoteReceiveTextAmountEquality As Boolean
+
+    'General Notes
+    Public BoolShowGeneralNoteTextCurrencyRate As Boolean
+    Public BoolShowGeneralNoteTextAmountEquality As Boolean
 
     'End Fields visible setting
 

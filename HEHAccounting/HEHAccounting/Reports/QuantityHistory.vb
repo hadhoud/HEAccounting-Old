@@ -1,4 +1,6 @@
-﻿Public Class QuantityHistory
+﻿Imports Telerik.WinControls.UI
+
+Public Class QuantityHistory
     Sub New()
 
         ' This call is required by the designer.
@@ -26,21 +28,21 @@
         'IN Load to check Sales or purchases
     End Sub
     Private Sub Formclear()
-        Me.TxtItemName.Text = String.Empty
+        Me.CustomTxtItemName.Text = String.Empty
         Me.CheckDateTo.Checked = False
         Me.CheckDateFrom.Checked = False
         Me.MskTxtInvDateFrom.Value = DateSerial(Year(Date.Now), Month(Date.Now), 1)
         Me.MskTxtInvDateTo.Value = DateSerial(Year(Date.Now), Month(Date.Now) + 1, 0)
+        RefrechGrid()
     End Sub
     Sub AutoComplete()
-        Me.TxtItemName.AutoCompleteSource = AutoCompleteSource.CustomSource
-        Me.TxtItemName.AutoCompleteCustomSource = ItemsNameAuto
-        Me.TxtItemName.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+        Me.CustomTxtItemName.AutoCompleteDataSource = ItemsNameAuto
+        Me.CustomTxtItemName.AutoCompleteMode = AutoCompleteMode.Suggest
     End Sub
     Private Sub RefrechGrid()
         Dim Param(3) As String
-        If Me.TxtItemName.Text <> String.Empty Then
-            Param(0) = "@CItemName , " & Me.TxtItemName.Text
+        If Me.CustomTxtItemName.Text <> String.Empty Then
+            Param(0) = "@CItemName , " & Me.CustomTxtItemName.Text
         Else
             Param(0) = "@CItemName , Nothing "
         End If
@@ -64,10 +66,11 @@
             Param(3) = "@CFromWhere , Nothing"
         End If
 
-        FillGridViewProcedureWithParameters(Me.GridQuantity, "GetItemsQuantityHistory", Param)
-        If Me.GridQuantity.Columns.Count > 0 Then
-            HideShowColummn(Me.GridQuantity, Me.GridQuantity.Columns("CreatedDate").Index, False)
-        End If
+        ' FillGridViewProcedureWithParameters(Me.GridQuantity, "GetItemsQuantityHistory", Param)
+        FillGridViewProcedureWithParameters(Me.GridQuantity, "SelectItemsQuantityHistory", Param)
+        'If Me.GridQuantity.Columns.Count > 0 Then
+        '    HideShowColummn(Me.GridQuantity, Me.GridQuantity.Columns("CreatedDate").Index, False)
+        'End If
     End Sub
 
     Private Sub CheckDateFrom_ToggleStateChanged(sender As Object, args As Telerik.WinControls.UI.StateChangedEventArgs) Handles CheckDateFrom.ToggleStateChanged
@@ -76,20 +79,6 @@
 
     Private Sub CheckDateTo_ToggleStateChanged(sender As Object, args As Telerik.WinControls.UI.StateChangedEventArgs) Handles CheckDateTo.ToggleStateChanged
         Me.MskTxtInvDateTo.Enabled = Me.CheckDateTo.Checked
-    End Sub
-
-    Private Sub TxtItemsBtn_Click(sender As Object, e As EventArgs) Handles TxtItemsBtn.Click
-        Dim FrmGetItem As New ItemsPopup
-        FrmGetItem.ShowDialog()
-        If Not FrmGetItem.GetITemName.Length = 0 Then
-            Me.TxtItemName.Text = FrmGetItem.GetITemName
-        End If
-    End Sub
-
-    Private Sub TxtItemName_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles TxtItemName.Validating
-        If Not ItemsNameAuto.Contains(Me.TxtItemName.Text.ToLower) Then
-            Me.TxtItemName.Text = String.Empty
-        End If
     End Sub
 
     Private Sub RadioPurchase_ToggleStateChanged(sender As Object, args As Telerik.WinControls.UI.StateChangedEventArgs) Handles RadioPurchase.ToggleStateChanged
@@ -118,8 +107,8 @@
 
     Private Sub BtnPrint_Click(sender As Object, e As EventArgs) Handles BtnPrint.Click
         Dim Rptparam(3) As String
-        If Me.TxtItemName.Text <> String.Empty Then
-            Rptparam(0) = "ItemName , " & Me.TxtItemName.Text
+        If Me.CustomTxtItemName.Text <> String.Empty Then
+            Rptparam(0) = "ItemName , " & Me.CustomTxtItemName.Text
         Else
             Rptparam(0) = "ItemName , Nothing"
         End If
@@ -143,5 +132,17 @@
             Rptparam(3) = "FromWhere ,Nothing"
         End If
         OpenReport(Con.RptQuantityHistory, Rptparam)
+    End Sub
+
+    Private Sub CustomTxtItemName_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles CustomTxtItemName.Validating
+        If Not ItemsNameAuto.Contains(Me.CustomTxtItemName.Text.ToLower) Then
+            Me.CustomTxtItemName.Text = String.Empty
+        End If
+    End Sub
+
+    Private Sub CustomTxtItemName_KeyDown(sender As Object, e As KeyEventArgs) Handles CustomTxtItemName.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            BtnFiltering.PerformClick()
+        End If
     End Sub
 End Class

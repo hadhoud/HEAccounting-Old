@@ -35,6 +35,10 @@ Public Class NotesPayable
         Else
             Me.DropStatus.SelectedValue = DefaultNPStatus
         End If
+        tblCurrencyRow.Visible = BoolShowNotePayTextCurrencyRate
+        LblCurrencyVal.Visible = BoolShowNotePayTextCurrencyRate
+        TxtEqualValue.Visible = BoolShowNotePayTextAmountEquality
+        LblEqualValue.Visible = BoolShowNotePayTextAmountEquality
     End Sub
     Private Sub FormClear()
         Me.TxtDueDate.Value = Date.Now.Date
@@ -180,6 +184,7 @@ Public Class NotesPayable
         Me.ChkAlert.Text = LoStrId.LblAlertOnCheckDueDate
         Me.LblDesc.Text = LoStrId.LblDescription
         Me.BtnClose.Text = LoStrId.LblClose
+        Me.LblStatus.Text = LoStrId.LblStatus
         ChangeTextButtonToRight(Me.TxtVendor, TxtVendorBtn)
 
     End Sub
