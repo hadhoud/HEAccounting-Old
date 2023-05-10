@@ -72,6 +72,7 @@ Partial Class MainForm
         Me.GeneralNotesPayable = New Telerik.WinControls.UI.RadMenuItem()
         Me.RadMenuSeparatorItem1 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
         Me.GeneralNotesReceive = New Telerik.WinControls.UI.RadMenuItem()
+        Me.btnAllNotes = New Telerik.WinControls.UI.RadButtonElement()
         Me.RGToolsAccounts = New Telerik.WinControls.UI.RadRibbonBarGroup()
         Me.RibBtnAccounts = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnAddAccount = New Telerik.WinControls.UI.RadButtonElement()
@@ -92,6 +93,7 @@ Partial Class MainForm
         Me.RibBtnItemMostSell = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnInventoryItems = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnItemsSalesWin = New Telerik.WinControls.UI.RadButtonElement()
+        Me.RibBtnInvoicesDetails = New Telerik.WinControls.UI.RadButtonElement()
         Me.RGReportsGeneralReports = New Telerik.WinControls.UI.RadRibbonBarGroup()
         Me.RadButtonElement5 = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnRptCheques = New Telerik.WinControls.UI.RadButtonElement()
@@ -541,7 +543,7 @@ Partial Class MainForm
         '
         Me.RGGournalEntry.AutoSize = True
         Me.RGGournalEntry.CreateAdapterMethod = Nothing
-        Me.RGGournalEntry.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnKoyod})
+        Me.RGGournalEntry.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnKoyod, Me.btnAllNotes})
         Me.RGGournalEntry.Name = "RGGournalEntry"
         Me.RGGournalEntry.Text = "القيود"
         '
@@ -575,6 +577,15 @@ Partial Class MainForm
         Me.GeneralNotesReceive.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GeneralNotesReceive.Name = "GeneralNotesReceive"
         Me.GeneralNotesReceive.Text = "سند قبض عام"
+        '
+        'btnAllNotes
+        '
+        Me.btnAllNotes.Image = Global.HEHAccounting.My.Resources.Resources.List
+        Me.btnAllNotes.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btnAllNotes.Name = "btnAllNotes"
+        Me.btnAllNotes.Text = "سندات"
+        Me.btnAllNotes.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btnAllNotes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'RGToolsAccounts
         '
@@ -672,7 +683,7 @@ Partial Class MainForm
         'RGItemsReports
         '
         Me.RGItemsReports.CreateAdapterMethod = Nothing
-        Me.RGItemsReports.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnPurchasePrices, Me.RibBtnItemPurchase, Me.RibBtnQuantity, Me.RibBtnSalesPrices, Me.RibBtnItemMostSell, Me.RibBtnInventoryItems, Me.RibBtnItemsSalesWin})
+        Me.RGItemsReports.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnPurchasePrices, Me.RibBtnItemPurchase, Me.RibBtnQuantity, Me.RibBtnSalesPrices, Me.RibBtnItemMostSell, Me.RibBtnInventoryItems, Me.RibBtnItemsSalesWin, Me.RibBtnInvoicesDetails})
         Me.RGItemsReports.Name = "RGItemsReports"
         Me.RGItemsReports.Text = "حركة أصناف"
         '
@@ -733,6 +744,14 @@ Partial Class MainForm
         Me.RibBtnItemsSalesWin.Name = "RibBtnItemsSalesWin"
         Me.RibBtnItemsSalesWin.Text = "أرباح مبيعات أصناف"
         Me.RibBtnItemsSalesWin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'RibBtnInvoicesDetails
+        '
+        Me.RibBtnInvoicesDetails.Image = Global.HEHAccounting.My.Resources.Resources.List
+        Me.RibBtnInvoicesDetails.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RibBtnInvoicesDetails.Name = "RibBtnInvoicesDetails"
+        Me.RibBtnInvoicesDetails.Text = "فواتير تفصيلي"
+        Me.RibBtnInvoicesDetails.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'RGReportsGeneralReports
         '
@@ -1198,4 +1217,6 @@ Partial Class MainForm
     Friend WithEvents RGSettingProgrammer As Telerik.WinControls.UI.RadRibbonBarGroup
     Friend WithEvents RibBtnAllInventory As Telerik.WinControls.UI.RadButtonElement
     Friend WithEvents RibBtnUserFieldsSetting As Telerik.WinControls.UI.RadButtonElement
+    Friend WithEvents RibBtnInvoicesDetails As Telerik.WinControls.UI.RadButtonElement
+    Friend WithEvents btnAllNotes As Telerik.WinControls.UI.RadButtonElement
 End Class

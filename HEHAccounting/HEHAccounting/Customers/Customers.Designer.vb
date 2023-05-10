@@ -71,7 +71,7 @@ Partial Class Customers
         Me.PnlOptions.Location = New System.Drawing.Point(0, 0)
         Me.PnlOptions.Name = "PnlOptions"
         Me.PnlOptions.Padding = New System.Windows.Forms.Padding(3)
-        Me.PnlOptions.Size = New System.Drawing.Size(255, 493)
+        Me.PnlOptions.Size = New System.Drawing.Size(255, 495)
         Me.PnlOptions.TabIndex = 3
         Me.PnlOptions.Visible = False
         '
@@ -267,6 +267,7 @@ Partial Class Customers
         Me.BtnDelete.TabIndex = 2
         Me.BtnDelete.Text = "حذف"
         Me.BtnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BtnDelete.Visible = False
         '
         'BtnEdit
         '
@@ -305,7 +306,7 @@ Partial Class Customers
         '
         Me.GridCustomers.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.GridCustomers.Name = "GridCustomers"
-        Me.GridCustomers.Size = New System.Drawing.Size(253, 493)
+        Me.GridCustomers.Size = New System.Drawing.Size(233, 495)
         Me.GridCustomers.TabIndex = 9
         '
         'Customers
@@ -314,7 +315,7 @@ Partial Class Customers
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.BtnReset
-        Me.ClientSize = New System.Drawing.Size(508, 493)
+        Me.ClientSize = New System.Drawing.Size(488, 495)
         Me.Controls.Add(Me.GridCustomers)
         Me.Controls.Add(Me.PnlOptions)
         Me.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

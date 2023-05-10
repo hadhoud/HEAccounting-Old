@@ -550,6 +550,10 @@ Public Class SalesOrderFrm
                 e.CellElement.DrawFill = True
                 e.CellElement.GradientStyle = Telerik.WinControls.GradientStyles.Solid
                 e.CellElement.BackColor = Color.Yellow
+            ElseIf e.Row.Cells("PaymentType").Value = "PI" Then
+                e.CellElement.DrawFill = True
+                e.CellElement.GradientStyle = Telerik.WinControls.GradientStyles.Solid
+                e.CellElement.BackColor = Color.Green
             Else
                 e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, ValueResetFlags.Local)
                 e.CellElement.ResetValue(LightVisualElement.GradientStyleProperty, ValueResetFlags.Local)

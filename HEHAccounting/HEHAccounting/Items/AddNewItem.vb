@@ -99,6 +99,7 @@ Public Class AddNewItem
             ChkAlertBeforeExpiredDt.Checked = IIf(dt.Rows(0).Item("IsAlertExpiredDate") = False, False, True)
             ChkAlertMinQty.Checked = IIf(dt.Rows(0).Item("IsAlertMinQty") = False, False, True)
             ChkCheckQtyInSale.Checked = IIf(dt.Rows(0).Item("IsAlertQtyOnBuy") = False, False, True)
+            ChkItemWithoutQuantity.Checked = IIf(dt.Rows(0).Item("IsItemWithoutQuantity") = False, False, True)
             Me.BtnSaveAndNew.Text = IIf(BoolLTRLanguage, LoStrId.LblEdit, "تعديل")
             Me.BtnSaveAndNew.Tag = "Edit"
             'Me.TxtItemName.Enabled = False
@@ -162,7 +163,7 @@ Public Class AddNewItem
                     MessageShowInfo(Con.Msg_Items_Already_Added)
                     Exit Sub
                 End If
-                Dim Param(21) As String
+                Dim Param(22) As String
                 Param(0) = "@CBarcode , " & Me.TxtItemBarcode.Text.Trim
                 Param(1) = "@CItemName , " & Evalquote(Me.TxtItemName.Text)
                 Param(2) = "@CItemLatinName , " & Evalquote(Me.TxtLatinName.Text)
@@ -172,19 +173,22 @@ Public Class AddNewItem
                 Param(6) = "@ICurrencyID , " & Me.DropCurrency.SelectedValue
                 Param(7) = "@FQty , " & Me.MTxtItemQty.Value
                 Param(8) = "@FMinQty , " & Me.MTxtMinQty.Value
-                Param(9) = "@BIsHasExpiredDate , " & IIf(ChkItemHasExpiredDt.Checked = True, True, False)
-                Param(10) = "@BIsAlertExpiredDate , " & IIf(ChkAlertBeforeExpiredDt.Checked = True, True, False)
-                Param(11) = "@BIsAlertMinQty , " & IIf(ChkAlertMinQty.Checked = True, True, False)
-                Param(12) = "@BIsAlertQtyOnBuy , " & IIf(ChkCheckQtyInSale.Checked = True, True, False)
-                Param(13) = "@CPicture , " & IIf(Me.TxtItemPicture.Text.Length > 0, ImageToBase64(PictureBox1.Image, ImageFormat.Png), Nothing)
-                Param(14) = "@IItemID  , " & Me.TxtItemid.Text
-                Param(15) = "@CUnitOne  , " & Evalquote(Me.TxtUnitOne.Text)
-                Param(16) = "@CUnitTwo  , " & Evalquote(Me.TxtUnitTwo.Text)
-                Param(17) = "@FFactorOne  , " & Me.TxtFactorOne.Value
-                Param(18) = "@FFactorTwo  , " & Me.TxtFactorTwo.Value
-                Param(19) = "@FSellingPriceOne  , " & Me.TxtPriceOne.Value
-                Param(20) = "@FSellingPriceTwo  , " & Me.TxtPriceTwo.Value
-                Param(21) = "@IUserID  , " & UserID
+                Param(9) = "@bIsHasExpiredDate , " & IIf(ChkItemHasExpiredDt.Checked = True, True, False)
+                Param(10) = "@bIsAlertExpiredDate , " & IIf(ChkAlertBeforeExpiredDt.Checked = True, True, False)
+                Param(11) = "@bIsAlertMinQty , " & IIf(ChkAlertMinQty.Checked = True, True, False)
+                Param(12) = "@bIsAlertQtyOnBuy , " & IIf(ChkCheckQtyInSale.Checked = True, True, False)
+                Param(13) = "@bIsItemWithoutQuantity , " & IIf(ChkItemWithoutQuantity.Checked = True, True, False)
+
+                Param(14) = "@CPicture , " & IIf(Me.TxtItemPicture.Text.Length > 0, ImageToBase64(PictureBox1.Image, ImageFormat.Png), Nothing)
+                Param(15) = "@IItemID  , " & Me.TxtItemid.Text
+                Param(16) = "@CUnitOne  , " & Evalquote(Me.TxtUnitOne.Text)
+                Param(17) = "@CUnitTwo  , " & Evalquote(Me.TxtUnitTwo.Text)
+                Param(18) = "@FFactorOne  , " & Me.TxtFactorOne.Value
+                Param(19) = "@FFactorTwo  , " & Me.TxtFactorTwo.Value
+                Param(20) = "@FSellingPriceOne  , " & Me.TxtPriceOne.Value
+                Param(21) = "@FSellingPriceTwo  , " & Me.TxtPriceTwo.Value
+
+                Param(22) = "@IUserID  , " & UserID
                 If BtnSaveAndNew.Tag = "Save" Then
                     ExecuteProcedureWithParameters("InsertNewItem", Param)
                     ItemsNameAuto.Add(Me.TxtItemName.Text.ToLower)

@@ -223,6 +223,7 @@ Partial Class AddNewSaleInvoice
         '
         'CustomTxtItemName
         '
+        Me.CustomTxtItemName.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CustomTxtItemName.Location = New System.Drawing.Point(512, 33)
         Me.CustomTxtItemName.Name = "CustomTxtItemName"
         Me.CustomTxtItemName.Size = New System.Drawing.Size(162, 24)
@@ -755,6 +756,8 @@ Partial Class AddNewSaleInvoice
         Me.MskTxtInvDate.Mask = "dd/MM/yyyy"
         Me.MskTxtInvDate.MaskType = Telerik.WinControls.UI.MaskType.DateTime
         Me.MskTxtInvDate.Name = "MskTxtInvDate"
+        Me.MskTxtInvDate.SelectedText = "01"
+        Me.MskTxtInvDate.SelectionLength = 2
         Me.MskTxtInvDate.Size = New System.Drawing.Size(153, 24)
         Me.MskTxtInvDate.TabIndex = 11
         Me.MskTxtInvDate.TabStop = False

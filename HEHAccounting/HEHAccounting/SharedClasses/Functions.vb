@@ -109,6 +109,27 @@ Module Functions
             Case "Startdate"
                 Return "من تاريخ"
 
+            'Form Invoices Details
+
+            Case "InvoiceTypeName"
+                Return "نوع الفاتورة"
+
+
+            Case "InvoiceNum"
+                Return "رقم الفاتورة"
+
+            Case "Name"
+                Return "الإسم"
+            'End Form Invoices Details
+
+            'Form All Notes
+            Case "AmountLL"
+                Return "القيمة ل.ل"
+
+            Case "AmountUSD"
+                Return "القيمة $"
+            'End Form All Notes
+
             'End new Reformat
 
             'Form Items:
@@ -442,6 +463,24 @@ Module Functions
                 Return "Net Purchase $"
 
             'End Form Sales Win
+
+            'Form Invoices Details
+
+            Case "InvoiceTypeName"
+                Return "Invoice Type"
+
+
+            Case "InvoiceNum"
+                Return "Invoice Num"
+
+            'End Form Invoices Details
+             'Form All Notes
+            Case "AmountLL"
+                Return "Amount LL"
+
+            Case "AmountUSD"
+                Return "Amount $"
+            'End Form All Notes
 
             'End new Reformat
 

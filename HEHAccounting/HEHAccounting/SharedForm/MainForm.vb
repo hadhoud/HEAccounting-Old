@@ -20,6 +20,8 @@ Public Class MainForm
     Dim FrmTreasuryForm As FrmTreasury
     Dim FrmAllInventory As AllInventory
     Dim FrmQuantityHistory As QuantityHistory
+    Dim FrmInvoicesDetails As InvoicesDetails
+    Dim FrmAllNotes As AllNotes
 
     Dim FrmToOpen As String
     Dim FrmOpenTimer As New Timer
@@ -671,6 +673,29 @@ Public Class MainForm
             End If
             ActWindow(FrmQuantityHistory)
 
+        ElseIf FrmToOpen = "FrmInvoicesDetails" Then
+            If FrmInvoicesDetails Is Nothing Then
+                FrmInvoicesDetails = New InvoicesDetails With {
+                    .Width = WindowDock.Width,
+                    .Height = WindowDock.Height,
+                    .MdiParent = Me
+                }
+                FrmInvoicesDetails.PnlOptions.Visible = BoolOptionPanelInvoiceDetails
+                FrmInvoicesDetails.Show()
+            End If
+            ActWindow(FrmInvoicesDetails)
+
+        ElseIf FrmToOpen = "FrmAllNotes" Then
+            If FrmAllNotes Is Nothing Then
+                FrmAllNotes = New AllNotes With {
+                    .Width = WindowDock.Width,
+                    .Height = WindowDock.Height,
+                    .MdiParent = Me
+                }
+                FrmAllNotes.PnlOptions.Visible = BoolOptionPanelAllNotes
+                FrmAllNotes.Show()
+            End If
+            ActWindow(FrmAllNotes)
         End If
 
         Me.Cursor = Cursors.Default
@@ -861,6 +886,11 @@ Public Class MainForm
                     FrmAllInventory.PnlOptions.Visible = Vis
                 Case "FrmQuantityHistory"
                     FrmQuantityHistory.PnlOptions.Visible = Vis
+                Case "FrmInvoicesDetails"
+                    FrmInvoicesDetails.PnlOptions.Visible = Vis
+                    Exit Select
+                Case "FrmAllNotes"
+                    FrmAllNotes.PnlOptions.Visible = Vis
                     Exit Select
             End Select
         End If
@@ -911,6 +941,11 @@ Public Class MainForm
                 FrmAllInventory = Nothing
             Case "FrmQuantityHistory"
                 FrmQuantityHistory = Nothing
+            Case "FrmInvoicesDetails"
+                FrmInvoicesDetails = Nothing
+                Exit Select
+            Case "FrmAllNotes"
+                FrmAllNotes = Nothing
                 Exit Select
         End Select
     End Sub
@@ -1038,6 +1073,18 @@ Public Class MainForm
                         Me.BtnCommandBarEdit.Enabled = False
                         Me.BtnCommandBarMostanadNew.Enabled = False
                         Me.BtnCommandBarShowHideForm.CheckState = IIf(FrmQuantityHistory.PnlOptions.Visible, CheckState.Checked, CheckState.Unchecked)
+                    End If
+                Case "FrmInvoicesDetails"
+                    If FrmInvoicesDetails IsNot Nothing Then
+                        Me.BtnCommandBarEdit.Enabled = False
+                        Me.BtnCommandBarMostanadNew.Enabled = False
+                        Me.BtnCommandBarShowHideForm.CheckState = IIf(FrmInvoicesDetails.PnlOptions.Visible, CheckState.Checked, CheckState.Unchecked)
+                    End If
+                Case "FrmAllNotes"
+                    If FrmAllNotes IsNot Nothing Then
+                        Me.BtnCommandBarEdit.Enabled = False
+                        Me.BtnCommandBarMostanadNew.Enabled = False
+                        Me.BtnCommandBarShowHideForm.CheckState = IIf(FrmAllNotes.PnlOptions.Visible, CheckState.Checked, CheckState.Unchecked)
                     End If
                     Exit Select
             End Select
@@ -1321,6 +1368,16 @@ Public Class MainForm
         FrmUserFieldsSetting.ShowDialog()
         'Reload User Fields Setting
         Home.GetUserFieldsSetting()
+    End Sub
+
+    Private Sub RibBtnInvoicesDetails_Click(sender As Object, e As EventArgs) Handles RibBtnInvoicesDetails.Click
+        FrmToOpen = "FrmInvoicesDetails"
+        FrmOpenTimer.Start()
+    End Sub
+
+    Private Sub btnAllNotes_Click(sender As Object, e As EventArgs) Handles btnAllNotes.Click
+        FrmToOpen = "FrmAllNotes"
+        FrmOpenTimer.Start()
     End Sub
 
     'Private Sub RibBtnDashboard_Click(sender As Object, e As EventArgs)

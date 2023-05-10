@@ -22,6 +22,10 @@ Partial Class QuantityHistory
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim GridViewSummaryItem1 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
+        Dim GridViewSummaryItem2 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
+        Dim GridViewSummaryItem3 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
+        Dim GridViewSummaryItem4 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
         Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(QuantityHistory))
         Me.Office2010BlueTheme1 = New Telerik.WinControls.Themes.Office2010BlueTheme()
@@ -33,7 +37,6 @@ Partial Class QuantityHistory
         Me.BtnFiltering = New Telerik.WinControls.UI.RadButton()
         Me.BtnReset = New Telerik.WinControls.UI.RadButton()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.CustomTxtItemName = New HEHAccounting.CustomItemNameTextBoxControl()
         Me.LblTo = New System.Windows.Forms.Label()
         Me.LblItemName = New System.Windows.Forms.Label()
         Me.LblFrom = New System.Windows.Forms.Label()
@@ -47,6 +50,7 @@ Partial Class QuantityHistory
         Me.RadioPurchase = New Telerik.WinControls.UI.RadRadioButton()
         Me.RadoAll = New Telerik.WinControls.UI.RadRadioButton()
         Me.RadioInventory = New Telerik.WinControls.UI.RadRadioButton()
+        Me.CustomTxtItemName = New HEHAccounting.CustomItemNameTextBoxControl()
         CType(Me.GridQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridQuantity.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -57,7 +61,6 @@ Partial Class QuantityHistory
         CType(Me.BtnFiltering, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnReset, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel2.SuspendLayout()
-        CType(Me.CustomTxtItemName, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel4.SuspendLayout()
         CType(Me.MskTxtInvDateFrom, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CheckDateFrom, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,6 +71,7 @@ Partial Class QuantityHistory
         CType(Me.RadioPurchase, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadoAll, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadioInventory, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CustomTxtItemName, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -78,6 +82,24 @@ Partial Class QuantityHistory
         '
         '
         '
+        Me.GridQuantity.MasterTemplate.BottomPinnedRowsMode = Telerik.WinControls.UI.GridViewBottomPinnedRowsMode.Fixed
+        GridViewSummaryItem1.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Count
+        GridViewSummaryItem1.AggregateExpression = Nothing
+        GridViewSummaryItem1.FormatString = "{0}"
+        GridViewSummaryItem1.Name = "ItemID"
+        GridViewSummaryItem2.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
+        GridViewSummaryItem2.AggregateExpression = Nothing
+        GridViewSummaryItem2.FormatString = "{0}"
+        GridViewSummaryItem2.Name = "AvailableQty"
+        GridViewSummaryItem3.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
+        GridViewSummaryItem3.AggregateExpression = Nothing
+        GridViewSummaryItem3.FormatString = "{0}"
+        GridViewSummaryItem3.Name = "Qty"
+        GridViewSummaryItem4.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
+        GridViewSummaryItem4.AggregateExpression = Nothing
+        GridViewSummaryItem4.FormatString = "{0}"
+        GridViewSummaryItem4.Name = "Balance"
+        Me.GridQuantity.MasterTemplate.SummaryRowsBottom.Add(New Telerik.WinControls.UI.GridViewSummaryRowItem(New Telerik.WinControls.UI.GridViewSummaryItem() {GridViewSummaryItem1, GridViewSummaryItem2, GridViewSummaryItem3, GridViewSummaryItem4}))
         Me.GridQuantity.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.GridQuantity.Name = "GridQuantity"
         Me.GridQuantity.Size = New System.Drawing.Size(631, 444)
@@ -204,15 +226,6 @@ Partial Class QuantityHistory
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(231, 253)
         Me.TableLayoutPanel2.TabIndex = 17
         '
-        'CustomTxtItemName
-        '
-        Me.CustomTxtItemName.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CustomTxtItemName.Location = New System.Drawing.Point(3, 31)
-        Me.CustomTxtItemName.Name = "CustomTxtItemName"
-        Me.CustomTxtItemName.Size = New System.Drawing.Size(174, 22)
-        Me.CustomTxtItemName.TabIndex = 19
-        Me.CustomTxtItemName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'LblTo
         '
         Me.LblTo.AutoSize = True
@@ -272,8 +285,6 @@ Partial Class QuantityHistory
         Me.MskTxtInvDateFrom.Mask = "dd/MM/yyyy"
         Me.MskTxtInvDateFrom.MaskType = Telerik.WinControls.UI.MaskType.DateTime
         Me.MskTxtInvDateFrom.Name = "MskTxtInvDateFrom"
-        Me.MskTxtInvDateFrom.SelectedText = "01"
-        Me.MskTxtInvDateFrom.SelectionLength = 2
         Me.MskTxtInvDateFrom.Size = New System.Drawing.Size(147, 24)
         Me.MskTxtInvDateFrom.TabIndex = 25
         Me.MskTxtInvDateFrom.TabStop = False
@@ -317,8 +328,6 @@ Partial Class QuantityHistory
         Me.MskTxtInvDateTo.Mask = "dd/MM/yyyy"
         Me.MskTxtInvDateTo.MaskType = Telerik.WinControls.UI.MaskType.DateTime
         Me.MskTxtInvDateTo.Name = "MskTxtInvDateTo"
-        Me.MskTxtInvDateTo.SelectedText = "01"
-        Me.MskTxtInvDateTo.SelectionLength = 2
         Me.MskTxtInvDateTo.Size = New System.Drawing.Size(147, 24)
         Me.MskTxtInvDateTo.TabIndex = 44
         Me.MskTxtInvDateTo.TabStop = False
@@ -397,6 +406,16 @@ Partial Class QuantityHistory
         Me.RadioInventory.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         Me.RadioInventory.ThemeName = "Office2010Blue"
         '
+        'CustomTxtItemName
+        '
+        Me.CustomTxtItemName.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.CustomTxtItemName.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CustomTxtItemName.Location = New System.Drawing.Point(3, 31)
+        Me.CustomTxtItemName.Name = "CustomTxtItemName"
+        Me.CustomTxtItemName.Size = New System.Drawing.Size(174, 22)
+        Me.CustomTxtItemName.TabIndex = 19
+        Me.CustomTxtItemName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'QuantityHistory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -430,7 +449,6 @@ Partial Class QuantityHistory
         CType(Me.BtnReset, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
-        CType(Me.CustomTxtItemName, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.TableLayoutPanel4.PerformLayout()
         CType(Me.MskTxtInvDateFrom, System.ComponentModel.ISupportInitialize).EndInit()
@@ -443,6 +461,7 @@ Partial Class QuantityHistory
         CType(Me.RadioPurchase, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadoAll, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadioInventory, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CustomTxtItemName, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

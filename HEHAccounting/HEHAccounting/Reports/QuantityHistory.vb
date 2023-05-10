@@ -14,6 +14,8 @@ Public Class QuantityHistory
     Private Sub QuantityHistory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AutoComplete()
         RefrechGrid()
+        GridQuantity.BottomPinnedRowsMode = GridViewBottomPinnedRowsMode.Fixed
+        GridQuantity.MasterView.SummaryRows(0).PinPosition = PinnedRowPosition.Bottom
         InitiateGrid(Me.GridQuantity)
         Formclear()
     End Sub
@@ -36,6 +38,7 @@ Public Class QuantityHistory
         RefrechGrid()
     End Sub
     Sub AutoComplete()
+        Me.CustomTxtItemName.Tag = FormPopupType.FrmGetItem
         Me.CustomTxtItemName.AutoCompleteDataSource = ItemsNameAuto
         Me.CustomTxtItemName.AutoCompleteMode = AutoCompleteMode.Suggest
     End Sub

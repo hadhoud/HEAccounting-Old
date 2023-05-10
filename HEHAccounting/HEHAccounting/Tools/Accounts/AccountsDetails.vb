@@ -28,7 +28,7 @@ Public Class AccountsDetails
             Dim ReferType As String
             ReferID = Me.GridAccountsDetails.CurrentRow.Cells("Refer").Value.ToString
             ReferType = Me.GridAccountsDetails.CurrentRow.Cells("ReferType").Value.ToString
-            Select Case ReferType
+            Select Case ReferType.Trim
                 Case AbbTransaction.SalesOrders, AbbTransaction.ReturnSales
                     Dim FrmShowSalesOrder As New AddNewSaleInvoice
                     FrmShowSalesOrder.BoolForEdit = True
@@ -120,7 +120,7 @@ Public Class AccountsDetails
         HideShowColummn(Me.GridAccountsDetails, Me.GridAccountsDetails.Columns("AccountNumber").Index, False)
         HideShowColummn(Me.GridAccountsDetails, Me.GridAccountsDetails.Columns("AccountName").Index, False)
         HideShowColummn(Me.GridAccountsDetails, Me.GridAccountsDetails.Columns("AccountLatinName").Index, False)
-        HideShowColummn(Me.GridAccountsDetails, Me.GridAccountsDetails.Columns("CurrencyVal").Index, False)
+        HideShowColummn(Me.GridAccountsDetails, Me.GridAccountsDetails.Columns("CurrencyVal").Index, BoolShowAccountDetailsTextCurrencyRate)
 
         If Me.CheckDetailsWithCurrency.Checked = False Then
             Dim DtSum As DataTable = ExecuteProcedureDatatableWithParameters("SelectAccountDetailsSum", Param)

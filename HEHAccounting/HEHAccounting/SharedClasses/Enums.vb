@@ -1,6 +1,13 @@
 ﻿
 Module Enums
 
+    Structure FormPopupType
+        Const FrmGetItem = "FrmGetItem"
+        Const FrmGetVendors = "FrmGetVendors"
+        Const FrmGetCustomers = "FrmGetCustomers"
+        Const FrmGetVendorsCustomers = "FrmGetVendorsCustomers"
+    End Structure
+
     Structure TagValue
         Const CurrencyUSDCommas = "CurrencyUSDCommas"
         Const CurrencyLLCommas = "CurrencyLLCommas"
@@ -37,6 +44,8 @@ Module Enums
         Const NotesPay = "NP"
         Const NotesReceive = "NR"
         Const GeneralNotes = "NG"
+        Const GeneralNotesReceive = "NGR"
+        Const GeneralNotesPay = "NGP"
     End Structure
 
     'Structure FormsPermissions

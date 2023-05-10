@@ -119,6 +119,7 @@ Public Class AddNewSaleInvoice
 
     End Sub
     Sub AutoComplete()
+        Me.CustomTxtItemName.Tag = FormPopupType.FrmGetItem
         Me.CustomTxtItemName.AutoCompleteDataSource = ItemsNameAuto
         Me.CustomTxtItemName.AutoCompleteMode = AutoCompleteMode.Suggest
 
@@ -156,6 +157,9 @@ Public Class AddNewSaleInvoice
 
             Me.txtDollarRate.Text = DtSalesOrderHeaders.Rows(0).Item("fDollarRate_amt").ToString
             Me.DropCurrency.SelectedValue = DtSalesOrderHeaders.Rows(0).Item("CurrencyID")
+            Me.RadioCurrencyLebanease.CheckState = IIf(Me.DropCurrency.SelectedValue = 1, CheckState.Checked, CheckState.Unchecked)
+            Me.RadioCurrencyDollar.CheckState = IIf(Me.DropCurrency.SelectedValue = 2, CheckState.Checked, CheckState.Unchecked)
+
             Me.TxtCurrencyVal.Text = DtSalesOrderHeaders.Rows(0).Item("CurrencyVal").ToString
             Me.TxtCurrencyVal.Tag = DtSalesOrderHeaders.Rows(0).Item("CurrencyRateID").ToString
 

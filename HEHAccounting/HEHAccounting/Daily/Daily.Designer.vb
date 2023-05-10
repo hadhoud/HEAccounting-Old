@@ -23,13 +23,17 @@ Partial Class Daily
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim TableViewDefinition4 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.PnlOptions = New Telerik.WinControls.UI.RadPanel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.BtnFiltering = New Telerik.WinControls.UI.RadButton()
         Me.BtnReset = New Telerik.WinControls.UI.RadButton()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.LblTo = New System.Windows.Forms.Label()
+        Me.LblFrom = New System.Windows.Forms.Label()
+        Me.MskTxtInvDateTo = New Telerik.WinControls.UI.RadDateTimePicker()
         Me.lblStatus = New System.Windows.Forms.Label()
+        Me.MskTxtInvDateFrom = New Telerik.WinControls.UI.RadDateTimePicker()
         Me.LblCustomerVendor = New System.Windows.Forms.Label()
         Me.LblType = New System.Windows.Forms.Label()
         Me.TxtCustomerVendor = New Telerik.WinControls.UI.RadTextBox()
@@ -37,29 +41,25 @@ Partial Class Daily
         Me.DropStatus = New Telerik.WinControls.UI.RadDropDownList()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.BtnOpen = New Telerik.WinControls.UI.RadButton()
-        Me.BtnRefrech = New Telerik.WinControls.UI.RadButton()
         Me.GridDaily = New Telerik.WinControls.UI.RadGridView()
         Me.TimerFrm = New System.Windows.Forms.Timer(Me.components)
-        Me.MskTxtInvDateTo = New Telerik.WinControls.UI.RadDateTimePicker()
-        Me.MskTxtInvDateFrom = New Telerik.WinControls.UI.RadDateTimePicker()
-        Me.LblFrom = New System.Windows.Forms.Label()
-        Me.LblTo = New System.Windows.Forms.Label()
+        Me.BtnRefrech = New Telerik.WinControls.UI.RadButton()
         CType(Me.PnlOptions, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PnlOptions.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         CType(Me.BtnFiltering, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnReset, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
+        CType(Me.MskTxtInvDateTo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MskTxtInvDateFrom, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtCustomerVendor, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DropTrxType, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DropStatus, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.BtnOpen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BtnRefrech, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridDaily, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridDaily.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MskTxtInvDateTo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MskTxtInvDateFrom, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BtnRefrech, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -91,7 +91,7 @@ Partial Class Daily
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 1
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42.0!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(249, 42)
         Me.TableLayoutPanel3.TabIndex = 17
         '
@@ -155,6 +155,46 @@ Partial Class Daily
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(249, 230)
         Me.TableLayoutPanel1.TabIndex = 14
         '
+        'LblTo
+        '
+        Me.LblTo.AutoSize = True
+        Me.LblTo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LblTo.Location = New System.Drawing.Point(180, 140)
+        Me.LblTo.Name = "LblTo"
+        Me.LblTo.Size = New System.Drawing.Size(66, 30)
+        Me.LblTo.TabIndex = 21
+        Me.LblTo.Text = "إلى"
+        Me.LblTo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'LblFrom
+        '
+        Me.LblFrom.AutoSize = True
+        Me.LblFrom.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LblFrom.Location = New System.Drawing.Point(180, 110)
+        Me.LblFrom.Name = "LblFrom"
+        Me.LblFrom.Size = New System.Drawing.Size(66, 30)
+        Me.LblFrom.TabIndex = 19
+        Me.LblFrom.Text = "من"
+        Me.LblFrom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'MskTxtInvDateTo
+        '
+        Me.MskTxtInvDateTo.CustomFormat = "dd/MM/yyyy"
+        Me.MskTxtInvDateTo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MskTxtInvDateTo.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.MskTxtInvDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.MskTxtInvDateTo.Location = New System.Drawing.Point(3, 143)
+        Me.MskTxtInvDateTo.Name = "MskTxtInvDateTo"
+        Me.MskTxtInvDateTo.ShowCheckBox = True
+        Me.MskTxtInvDateTo.Size = New System.Drawing.Size(171, 24)
+        Me.MskTxtInvDateTo.TabIndex = 20
+        Me.MskTxtInvDateTo.TabStop = False
+        Me.MskTxtInvDateTo.Text = "28/04/2023"
+        Me.MskTxtInvDateTo.ThemeName = "Office2010Blue"
+        Me.MskTxtInvDateTo.Value = New Date(2023, 1, 14, 0, 0, 0, 0)
+        CType(Me.MskTxtInvDateTo.GetChildAt(0), Telerik.WinControls.UI.RadDateTimePickerElement).RightToLeft = True
+        CType(Me.MskTxtInvDateTo.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "28/04/2023"
+        '
         'lblStatus
         '
         Me.lblStatus.AutoSize = True
@@ -165,6 +205,24 @@ Partial Class Daily
         Me.lblStatus.TabIndex = 20
         Me.lblStatus.Text = "الحالة"
         Me.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'MskTxtInvDateFrom
+        '
+        Me.MskTxtInvDateFrom.CustomFormat = "dd/MM/yyyy"
+        Me.MskTxtInvDateFrom.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MskTxtInvDateFrom.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.MskTxtInvDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.MskTxtInvDateFrom.Location = New System.Drawing.Point(3, 113)
+        Me.MskTxtInvDateFrom.Name = "MskTxtInvDateFrom"
+        Me.MskTxtInvDateFrom.ShowCheckBox = True
+        Me.MskTxtInvDateFrom.Size = New System.Drawing.Size(171, 24)
+        Me.MskTxtInvDateFrom.TabIndex = 19
+        Me.MskTxtInvDateFrom.TabStop = False
+        Me.MskTxtInvDateFrom.Text = "28/04/2023"
+        Me.MskTxtInvDateFrom.ThemeName = "Office2010Blue"
+        Me.MskTxtInvDateFrom.Value = New Date(2023, 1, 14, 0, 0, 0, 0)
+        CType(Me.MskTxtInvDateFrom.GetChildAt(0), Telerik.WinControls.UI.RadDateTimePickerElement).RightToLeft = True
+        CType(Me.MskTxtInvDateFrom.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "28/04/2023"
         '
         'LblCustomerVendor
         '
@@ -261,6 +319,22 @@ Partial Class Daily
         Me.BtnOpen.Text = "معاينة"
         Me.BtnOpen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         '
+        'GridDaily
+        '
+        Me.GridDaily.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridDaily.Location = New System.Drawing.Point(255, 0)
+        '
+        '
+        '
+        Me.GridDaily.MasterTemplate.ViewDefinition = TableViewDefinition2
+        Me.GridDaily.Name = "GridDaily"
+        Me.GridDaily.Size = New System.Drawing.Size(380, 503)
+        Me.GridDaily.TabIndex = 5
+        Me.GridDaily.ThemeName = "Office2010Blue"
+        '
+        'TimerFrm
+        '
+        '
         'BtnRefrech
         '
         Me.BtnRefrech.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -274,80 +348,6 @@ Partial Class Daily
         Me.BtnRefrech.TabIndex = 1
         Me.BtnRefrech.Text = "تحديث"
         Me.BtnRefrech.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        '
-        'GridDaily
-        '
-        Me.GridDaily.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridDaily.Location = New System.Drawing.Point(255, 0)
-        '
-        '
-        '
-        Me.GridDaily.MasterTemplate.ViewDefinition = TableViewDefinition4
-        Me.GridDaily.Name = "GridDaily"
-        Me.GridDaily.Size = New System.Drawing.Size(380, 503)
-        Me.GridDaily.TabIndex = 5
-        Me.GridDaily.ThemeName = "Office2010Blue"
-        '
-        'TimerFrm
-        '
-        '
-        'MskTxtInvDateTo
-        '
-        Me.MskTxtInvDateTo.CustomFormat = "dd/MM/yyyy"
-        Me.MskTxtInvDateTo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MskTxtInvDateTo.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.MskTxtInvDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.MskTxtInvDateTo.Location = New System.Drawing.Point(3, 143)
-        Me.MskTxtInvDateTo.Name = "MskTxtInvDateTo"
-        Me.MskTxtInvDateTo.ShowCheckBox = True
-        Me.MskTxtInvDateTo.Size = New System.Drawing.Size(171, 24)
-        Me.MskTxtInvDateTo.TabIndex = 20
-        Me.MskTxtInvDateTo.TabStop = False
-        Me.MskTxtInvDateTo.Text = "14/01/2023"
-        Me.MskTxtInvDateTo.ThemeName = "Office2010Blue"
-        Me.MskTxtInvDateTo.Value = New Date(2023, 1, 14, 0, 0, 0, 0)
-        CType(Me.MskTxtInvDateTo.GetChildAt(0), Telerik.WinControls.UI.RadDateTimePickerElement).RightToLeft = True
-        CType(Me.MskTxtInvDateTo.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "14/01/2023"
-        '
-        'MskTxtInvDateFrom
-        '
-        Me.MskTxtInvDateFrom.CustomFormat = "dd/MM/yyyy"
-        Me.MskTxtInvDateFrom.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MskTxtInvDateFrom.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.MskTxtInvDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.MskTxtInvDateFrom.Location = New System.Drawing.Point(3, 113)
-        Me.MskTxtInvDateFrom.Name = "MskTxtInvDateFrom"
-        Me.MskTxtInvDateFrom.ShowCheckBox = True
-        Me.MskTxtInvDateFrom.Size = New System.Drawing.Size(171, 24)
-        Me.MskTxtInvDateFrom.TabIndex = 19
-        Me.MskTxtInvDateFrom.TabStop = False
-        Me.MskTxtInvDateFrom.Text = "14/01/2023"
-        Me.MskTxtInvDateFrom.ThemeName = "Office2010Blue"
-        Me.MskTxtInvDateFrom.Value = New Date(2023, 1, 14, 0, 0, 0, 0)
-        CType(Me.MskTxtInvDateFrom.GetChildAt(0), Telerik.WinControls.UI.RadDateTimePickerElement).RightToLeft = True
-        CType(Me.MskTxtInvDateFrom.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "14/01/2023"
-        '
-        'LblFrom
-        '
-        Me.LblFrom.AutoSize = True
-        Me.LblFrom.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LblFrom.Location = New System.Drawing.Point(180, 110)
-        Me.LblFrom.Name = "LblFrom"
-        Me.LblFrom.Size = New System.Drawing.Size(66, 30)
-        Me.LblFrom.TabIndex = 19
-        Me.LblFrom.Text = "من"
-        Me.LblFrom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'LblTo
-        '
-        Me.LblTo.AutoSize = True
-        Me.LblTo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LblTo.Location = New System.Drawing.Point(180, 140)
-        Me.LblTo.Name = "LblTo"
-        Me.LblTo.Size = New System.Drawing.Size(66, 30)
-        Me.LblTo.TabIndex = 21
-        Me.LblTo.Text = "إلى"
-        Me.LblTo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Daily
         '
@@ -377,16 +377,16 @@ Partial Class Daily
         CType(Me.BtnReset, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
+        CType(Me.MskTxtInvDateTo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MskTxtInvDateFrom, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtCustomerVendor, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DropTrxType, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DropStatus, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel2.ResumeLayout(False)
         CType(Me.BtnOpen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BtnRefrech, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridDaily.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridDaily, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MskTxtInvDateTo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MskTxtInvDateFrom, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BtnRefrech, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -404,7 +404,6 @@ Partial Class Daily
     Friend WithEvents DropTrxType As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents BtnOpen As Telerik.WinControls.UI.RadButton
-    Friend WithEvents BtnRefrech As Telerik.WinControls.UI.RadButton
     Friend WithEvents lblStatus As Label
     Friend WithEvents DropStatus As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents TimerFrm As Timer
@@ -412,5 +411,6 @@ Partial Class Daily
     Friend WithEvents MskTxtInvDateFrom As Telerik.WinControls.UI.RadDateTimePicker
     Friend WithEvents LblFrom As Label
     Friend WithEvents LblTo As Label
+    Friend WithEvents BtnRefrech As Telerik.WinControls.UI.RadButton
 End Class
 

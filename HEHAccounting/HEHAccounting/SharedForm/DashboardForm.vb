@@ -167,7 +167,7 @@ Public Class DashboardForm
         End If
 
 
-        Dim verticalMaxValue As Integer = 0
+        Dim verticalMaxValue As Int64 = 0
         Dim Param(0) As String
         Param(0) = "@iCurrencyID ," & ProgramFormCurrency
         Dim dt As DataTable = ExecuteProcedureDatatableWithParameters("GetDashboardTotalSalesByMonth", Param)

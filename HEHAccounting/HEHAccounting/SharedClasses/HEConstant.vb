@@ -124,6 +124,8 @@
     Public Msg_Invoice_Has_Been_Updated As String
     Public Msg_NotesPay_Has_Been_Updated As String
     Public Msg_NotesReceive_Has_Been_Updated As String
+    Public Msg_NotesPay_Cannot_Delete_Permission As String
+    Public Msg_NotesReceive_Cannot_Delete_Permission As String
     Public Msg_Customer_Has_Been_Updated As String
     Public Msg_Vendor_Has_Been_Updated As String
     Public Msg_An_Error_Occured As String
@@ -281,6 +283,8 @@
             Msg_Vendor_Has_Been_Updated = "Vendor Has Been Modified"
             Msg_NotesReceive_Has_Been_Updated = "Notes Receive Has Been Modified"
             Msg_NotesPay_Has_Been_Updated = "Notes Pay Has Been Modified"
+            Msg_NotesPay_Cannot_Delete_Permission = "You dont Have Permission to Delete"
+            Msg_NotesReceive_Cannot_Delete_Permission = "You dont Have Permission to Delete"
             Msg_Qty_Must_Be_Smaller_Than_Available_Quantity = "-Quantity Must Be Smaller Than Available Quantity-"
             Msg_Discount_Is_Greater_Than_Total_Price = "-Discount Is Greater Than Total Price-"
             Msg_Selling_Is_Smaller_Than_Purchasing_Price = "-Selling Price Is Smaller Than Purchasing Price-"
@@ -418,6 +422,8 @@
             Msg_Vendor_Has_Been_Updated = "تم تعديل المورد"
             Msg_NotesReceive_Has_Been_Updated = "تم تعديل سند القبض"
             Msg_NotesPay_Has_Been_Updated = "تم تعديل سند الصرف"
+            Msg_NotesPay_Cannot_Delete_Permission = "لا تمتلك صلاحية لحذف السند , بإمكانك مراجعة المدير"
+            Msg_NotesReceive_Cannot_Delete_Permission = "لا تمتلك صلاحية لحذف السند , بإمكانك مراجعة المدير"
             Msg_Qty_Must_Be_Smaller_Than_Available_Quantity = "-الكمية يجب أن تكون أقل من الكمية المتاحة-"
             Msg_Discount_Is_Greater_Than_Total_Price = "-الخصم أكبر من المجموع-"
             Msg_Selling_Is_Smaller_Than_Purchasing_Price = "-سعر البيع أصغر من سعر الشراء-"

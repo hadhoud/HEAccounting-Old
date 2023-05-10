@@ -59,6 +59,20 @@
                                 & "/" & dtVendorNameAuto.Rows(i).Item("VendorID").ToString)
         Next
 
+
+        'Vendors Customers Data
+        Dim dtVendorsCustomersNameAuto As New DataTable
+        VendorsCustomersAuto = New AutoCompleteStringCollection
+        dtVendorsCustomersNameAuto.BeginLoadData()
+        dtVendorsCustomersNameAuto = ExecuteProcedureDatatable("SelectVendorsCustomers")
+        dtVendorsCustomersNameAuto.EndLoadData()
+        For i As Integer = 0 To dtVendorsCustomersNameAuto.Rows.Count - 1
+            VendorsCustomersAuto.Add(dtVendorsCustomersNameAuto.Rows(i).Item("Name").ToString.ToLower _
+                                & "/" & dtVendorsCustomersNameAuto.Rows(i).Item("Title").ToString.ToLower _
+                                & "/" & dtVendorsCustomersNameAuto.Rows(i).Item("ID").ToString _
+                                 & "/" & dtVendorsCustomersNameAuto.Rows(i).Item("Type").ToString)
+        Next
+
         ReloadCurrency()
         ReloadUserRoles()
         GetUserSettings()

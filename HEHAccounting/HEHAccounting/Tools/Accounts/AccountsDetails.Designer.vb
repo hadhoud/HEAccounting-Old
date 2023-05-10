@@ -512,6 +512,8 @@ Partial Class AccountsDetails
         Me.MskTxtInvDateFrom.Mask = "dd/MM/yyyy"
         Me.MskTxtInvDateFrom.MaskType = Telerik.WinControls.UI.MaskType.DateTime
         Me.MskTxtInvDateFrom.Name = "MskTxtInvDateFrom"
+        Me.MskTxtInvDateFrom.SelectedText = "01"
+        Me.MskTxtInvDateFrom.SelectionLength = 2
         Me.MskTxtInvDateFrom.Size = New System.Drawing.Size(143, 24)
         Me.MskTxtInvDateFrom.TabIndex = 25
         Me.MskTxtInvDateFrom.TabStop = False
@@ -555,8 +557,6 @@ Partial Class AccountsDetails
         Me.MskTxtInvDateTo.Mask = "dd/MM/yyyy"
         Me.MskTxtInvDateTo.MaskType = Telerik.WinControls.UI.MaskType.DateTime
         Me.MskTxtInvDateTo.Name = "MskTxtInvDateTo"
-        Me.MskTxtInvDateTo.SelectedText = "01"
-        Me.MskTxtInvDateTo.SelectionLength = 2
         Me.MskTxtInvDateTo.Size = New System.Drawing.Size(143, 24)
         Me.MskTxtInvDateTo.TabIndex = 44
         Me.MskTxtInvDateTo.TabStop = False

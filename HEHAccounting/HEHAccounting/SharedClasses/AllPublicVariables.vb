@@ -71,7 +71,8 @@
     Public BoolOptionPanelCreditorsDebitors As Boolean
     Public BoolOptionPanelAllInventory As Boolean
     Public BoolOptionPanelQuantityHistory As Boolean
-
+    Public BoolOptionPanelInvoiceDetails As Boolean
+    Public BoolOptionPanelAllNotes As Boolean
 
     'Program General Setting
     Public BoolShowProgramAlerts As Boolean
@@ -203,6 +204,7 @@
     Public ItemsNameAuto As AutoCompleteStringCollection
     Public VendorNameAuto As AutoCompleteStringCollection
     Public GroupNameAuto As AutoCompleteStringCollection
+    Public VendorsCustomersAuto As AutoCompleteStringCollection
 
     'General
     Public ToDoRefrech As Boolean = False

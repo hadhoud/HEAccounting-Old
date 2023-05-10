@@ -1,5 +1,7 @@
-﻿Imports Telerik.WinControls
+﻿Imports Telerik.Reporting.Interfaces.Transition
+Imports Telerik.WinControls
 Imports Telerik.WinControls.UI
+Imports Telerik.WinForms.Documents.Model
 
 Public Class AddNewPurchaseInvoice
     Public BoolForEdit As Boolean = False
@@ -297,6 +299,7 @@ Public Class AddNewPurchaseInvoice
         Me.TxtVendor.AutoCompleteSource = AutoCompleteSource.CustomSource
         Me.TxtVendor.AutoCompleteCustomSource = VendorNameAuto
         Me.TxtVendor.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+
     End Sub
 
     Public Sub ShowEdit()
@@ -593,7 +596,7 @@ Public Class AddNewPurchaseInvoice
         End If
         If Me.GridInvItem.ChildRows.Count > 0 Then
             Me.DropCurrency.Enabled = False
-            Me.BtnGetCurrencyVal.Enabled=False
+            Me.BtnGetCurrencyVal.Enabled = False
         Else
             Me.DropCurrency.Enabled = True
             Me.BtnGetCurrencyVal.Enabled = True
@@ -746,5 +749,6 @@ Public Class AddNewPurchaseInvoice
             End If
         End If
     End Sub
+
 End Class
 

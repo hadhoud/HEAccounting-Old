@@ -83,4 +83,10 @@ Public Class Customers
         Me.GridCustomers.FilterDescriptors.Clear()
         Me.TxtCustomerCode.Focus()
     End Sub
+
+    Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
+        'Dim Param(0) As String
+        'Param(0) = "@iCustomerID , " & Me.GridCustomers.CurrentRow.Cells(0).Value.ToString
+
+    End Sub
 End Class

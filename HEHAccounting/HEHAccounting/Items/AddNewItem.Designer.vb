@@ -80,6 +80,7 @@ Partial Class AddNewItem
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.BtnClose = New Telerik.WinControls.UI.RadButton()
         Me.BtnSaveAndNew = New Telerik.WinControls.UI.RadButton()
+        Me.ChkItemWithoutQuantity = New System.Windows.Forms.CheckBox()
         CType(Me.TxtItemPicture, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AddNewPages, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.AddNewPages.SuspendLayout()
@@ -767,22 +768,24 @@ Partial Class AddNewItem
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 96.48438!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.515624!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 169.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.ChkAlertMinQty, 0, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.ChkCheckQtyInSale, 0, 2)
-        Me.TableLayoutPanel2.Controls.Add(Me.ChkItemHasExpiredDt, 0, 3)
-        Me.TableLayoutPanel2.Controls.Add(Me.ChkAlertBeforeExpiredDt, 0, 4)
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.PictureBox1, 2, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.ChkAlertBeforeExpiredDt, 0, 5)
+        Me.TableLayoutPanel2.Controls.Add(Me.ChkItemHasExpiredDt, 0, 4)
+        Me.TableLayoutPanel2.Controls.Add(Me.ChkCheckQtyInSale, 0, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.ChkAlertMinQty, 0, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.ChkItemWithoutQuantity, 0, 1)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 6
+        Me.TableLayoutPanel2.RowCount = 7
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(511, 182)
         Me.TableLayoutPanel2.TabIndex = 76
         '
@@ -791,9 +794,9 @@ Partial Class AddNewItem
         Me.ChkAlertMinQty.Checked = True
         Me.ChkAlertMinQty.CheckState = System.Windows.Forms.CheckState.Checked
         Me.ChkAlertMinQty.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ChkAlertMinQty.Location = New System.Drawing.Point(301, 23)
+        Me.ChkAlertMinQty.Location = New System.Drawing.Point(302, 51)
         Me.ChkAlertMinQty.Name = "ChkAlertMinQty"
-        Me.ChkAlertMinQty.Size = New System.Drawing.Size(207, 34)
+        Me.ChkAlertMinQty.Size = New System.Drawing.Size(206, 22)
         Me.ChkAlertMinQty.TabIndex = 12
         Me.ChkAlertMinQty.Text = "تنبيه عند أقل كمية"
         Me.ChkAlertMinQty.UseVisualStyleBackColor = True
@@ -803,9 +806,9 @@ Partial Class AddNewItem
         Me.ChkCheckQtyInSale.Checked = True
         Me.ChkCheckQtyInSale.CheckState = System.Windows.Forms.CheckState.Checked
         Me.ChkCheckQtyInSale.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ChkCheckQtyInSale.Location = New System.Drawing.Point(301, 63)
+        Me.ChkCheckQtyInSale.Location = New System.Drawing.Point(302, 79)
         Me.ChkCheckQtyInSale.Name = "ChkCheckQtyInSale"
-        Me.ChkCheckQtyInSale.Size = New System.Drawing.Size(207, 34)
+        Me.ChkCheckQtyInSale.Size = New System.Drawing.Size(206, 22)
         Me.ChkCheckQtyInSale.TabIndex = 13
         Me.ChkCheckQtyInSale.Text = "إنتباه للكمية عند البيع"
         Me.ChkCheckQtyInSale.UseVisualStyleBackColor = True
@@ -813,9 +816,9 @@ Partial Class AddNewItem
         'ChkItemHasExpiredDt
         '
         Me.ChkItemHasExpiredDt.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ChkItemHasExpiredDt.Location = New System.Drawing.Point(301, 103)
+        Me.ChkItemHasExpiredDt.Location = New System.Drawing.Point(302, 107)
         Me.ChkItemHasExpiredDt.Name = "ChkItemHasExpiredDt"
-        Me.ChkItemHasExpiredDt.Size = New System.Drawing.Size(207, 34)
+        Me.ChkItemHasExpiredDt.Size = New System.Drawing.Size(206, 22)
         Me.ChkItemHasExpiredDt.TabIndex = 14
         Me.ChkItemHasExpiredDt.Text = "صنف له تاريخ صلاحية"
         Me.ChkItemHasExpiredDt.UseVisualStyleBackColor = True
@@ -824,9 +827,9 @@ Partial Class AddNewItem
         '
         Me.ChkAlertBeforeExpiredDt.AutoSize = True
         Me.ChkAlertBeforeExpiredDt.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ChkAlertBeforeExpiredDt.Location = New System.Drawing.Point(301, 143)
+        Me.ChkAlertBeforeExpiredDt.Location = New System.Drawing.Point(302, 135)
         Me.ChkAlertBeforeExpiredDt.Name = "ChkAlertBeforeExpiredDt"
-        Me.ChkAlertBeforeExpiredDt.Size = New System.Drawing.Size(207, 34)
+        Me.ChkAlertBeforeExpiredDt.Size = New System.Drawing.Size(206, 23)
         Me.ChkAlertBeforeExpiredDt.TabIndex = 15
         Me.ChkAlertBeforeExpiredDt.Text = "تنبيه قبل إنتهاء الصلاحية"
         Me.ChkAlertBeforeExpiredDt.UseVisualStyleBackColor = True
@@ -836,10 +839,10 @@ Partial Class AddNewItem
         Me.TableLayoutPanel2.SetColumnSpan(Me.PictureBox1, 2)
         Me.PictureBox1.ErrorImage = Global.HEHAccounting.My.Resources.Resources.Danger
         Me.PictureBox1.Image = Global.HEHAccounting.My.Resources.Resources.photo
-        Me.PictureBox1.Location = New System.Drawing.Point(7, 3)
+        Me.PictureBox1.Location = New System.Drawing.Point(8, 3)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.TableLayoutPanel2.SetRowSpan(Me.PictureBox1, 5)
-        Me.PictureBox1.Size = New System.Drawing.Size(281, 174)
+        Me.TableLayoutPanel2.SetRowSpan(Me.PictureBox1, 7)
+        Me.PictureBox1.Size = New System.Drawing.Size(281, 176)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 71
         Me.PictureBox1.TabStop = False
@@ -888,6 +891,16 @@ Partial Class AddNewItem
         Me.BtnSaveAndNew.Tag = "Save"
         Me.BtnSaveAndNew.Text = "حفظ _ جديد"
         Me.BtnSaveAndNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        '
+        'ChkItemWithoutQuantity
+        '
+        Me.ChkItemWithoutQuantity.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ChkItemWithoutQuantity.Location = New System.Drawing.Point(302, 23)
+        Me.ChkItemWithoutQuantity.Name = "ChkItemWithoutQuantity"
+        Me.ChkItemWithoutQuantity.Size = New System.Drawing.Size(206, 22)
+        Me.ChkItemWithoutQuantity.TabIndex = 72
+        Me.ChkItemWithoutQuantity.Text = "صنف بدون كمية"
+        Me.ChkItemWithoutQuantity.UseVisualStyleBackColor = True
         '
         'AddNewItem
         '
@@ -1013,5 +1026,6 @@ Partial Class AddNewItem
     Friend WithEvents MTxtItemSellingPrice As Telerik.WinControls.UI.RadMaskedEditBox
     Friend WithEvents LblCurrency As Label
     Friend WithEvents DropCurrency As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents ChkItemWithoutQuantity As CheckBox
 End Class
 
