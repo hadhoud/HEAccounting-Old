@@ -76,7 +76,12 @@ Public Class PurchaseOrderFrm
     End Sub
 
     Public Sub RefrechGrid()
-        FillGridViewProcedure(Me.GridPurchaseOrders, "SelectPurchasesOrdersJoinVendor")
+
+        Dim Param(1) As String
+        Param(0) = "@iUserID , " & UserID
+        Param(1) = "@iUserType , " & UserType
+
+        FillGridViewProcedureWithParameters(Me.GridPurchaseOrders, "SelectPurchasesOrdersJoinVendor", Param)
 
         'Always Hidden
         HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns.Item("InvoiceNumber").Index, False)
@@ -86,6 +91,9 @@ Public Class PurchaseOrderFrm
         HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("CurrencySymb").Index, False)
         '#End ---
 
+        Dim checkIsAdmin As Boolean = (UserType = UserRole.Programmer Or UserType = UserRole.Admin)
+
+        HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("Username").Index, checkIsAdmin)
         HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("VendorTitle").Index, BoolShowPurchaseOrdersColVendorTitle)
         HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("SubTotalLL").Index, BoolShowPurchaseOrdersColSubTotalLL)
         HideShowColummn(Me.GridPurchaseOrders, Me.GridPurchaseOrders.Columns("SubTotalUSD").Index, BoolShowPurchaseOrdersColSubTotalUSD)

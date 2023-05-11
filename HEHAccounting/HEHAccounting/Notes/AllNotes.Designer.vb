@@ -23,10 +23,10 @@ Partial Class AllNotes
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AllNotes))
-        Dim GridViewSummaryItem4 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
-        Dim GridViewSummaryItem5 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
-        Dim GridViewSummaryItem6 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
-        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewSummaryItem1 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
+        Dim GridViewSummaryItem2 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
+        Dim GridViewSummaryItem3 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.PnlOptions = New Telerik.WinControls.UI.RadPanel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.MskTxtInvDateFrom = New Telerik.WinControls.UI.RadDateTimePicker()
@@ -42,12 +42,12 @@ Partial Class AllNotes
         Me.BtnInvoicesReport = New Telerik.WinControls.UI.RadMenuItem()
         Me.BtnDelete = New Telerik.WinControls.UI.RadButton()
         Me.BtnRefrech = New Telerik.WinControls.UI.RadButton()
+        Me.BtnOpen = New Telerik.WinControls.UI.RadButton()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.BtnFiltering = New Telerik.WinControls.UI.RadButton()
         Me.BtnReset = New Telerik.WinControls.UI.RadButton()
         Me.GridNotes = New Telerik.WinControls.UI.RadGridView()
         Me.Office2010BlueTheme1 = New Telerik.WinControls.Themes.Office2010BlueTheme()
-        Me.BtnOpen = New Telerik.WinControls.UI.RadButton()
         CType(Me.PnlOptions, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PnlOptions.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -59,12 +59,12 @@ Partial Class AllNotes
         CType(Me.BtnPrint, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnDelete, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnRefrech, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BtnOpen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel3.SuspendLayout()
         CType(Me.BtnFiltering, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnReset, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridNotes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridNotes.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BtnOpen, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -79,7 +79,7 @@ Partial Class AllNotes
         Me.PnlOptions.Location = New System.Drawing.Point(0, 0)
         Me.PnlOptions.Name = "PnlOptions"
         Me.PnlOptions.Padding = New System.Windows.Forms.Padding(3)
-        Me.PnlOptions.Size = New System.Drawing.Size(255, 431)
+        Me.PnlOptions.Size = New System.Drawing.Size(255, 419)
         Me.PnlOptions.TabIndex = 3
         Me.PnlOptions.Tag = ""
         Me.PnlOptions.Visible = False
@@ -106,7 +106,7 @@ Partial Class AllNotes
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(249, 228)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(249, 216)
         Me.TableLayoutPanel1.TabIndex = 14
         '
         'MskTxtInvDateFrom
@@ -121,11 +121,11 @@ Partial Class AllNotes
         Me.MskTxtInvDateFrom.Size = New System.Drawing.Size(202, 24)
         Me.MskTxtInvDateFrom.TabIndex = 68
         Me.MskTxtInvDateFrom.TabStop = False
-        Me.MskTxtInvDateFrom.Text = "11/01/2023"
+        Me.MskTxtInvDateFrom.Text = "01/11/2023"
         Me.MskTxtInvDateFrom.ThemeName = "Office2010Blue"
-        Me.MskTxtInvDateFrom.Value = New Date(2023, 1, 11, 0, 0, 0, 0)
+        Me.MskTxtInvDateFrom.Value = New Date(2023, 11, 1, 0, 0, 0, 0)
         CType(Me.MskTxtInvDateFrom.GetChildAt(0), Telerik.WinControls.UI.RadDateTimePickerElement).RightToLeft = True
-        CType(Me.MskTxtInvDateFrom.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "11/01/2023"
+        CType(Me.MskTxtInvDateFrom.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "01/11/2023"
         '
         'LblInvID
         '
@@ -163,11 +163,11 @@ Partial Class AllNotes
         Me.MskTxtInvDateTo.Size = New System.Drawing.Size(202, 24)
         Me.MskTxtInvDateTo.TabIndex = 67
         Me.MskTxtInvDateTo.TabStop = False
-        Me.MskTxtInvDateTo.Text = "01/11/2023"
+        Me.MskTxtInvDateTo.Text = "11/01/2023"
         Me.MskTxtInvDateTo.ThemeName = "Office2010Blue"
-        Me.MskTxtInvDateTo.Value = New Date(2023, 11, 1, 0, 0, 0, 0)
+        Me.MskTxtInvDateTo.Value = New Date(2023, 1, 11, 0, 0, 0, 0)
         CType(Me.MskTxtInvDateTo.GetChildAt(0), Telerik.WinControls.UI.RadDateTimePickerElement).RightToLeft = True
-        CType(Me.MskTxtInvDateTo.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "01/11/2023"
+        CType(Me.MskTxtInvDateTo.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadMaskedEditBoxElement).Text = "11/01/2023"
         '
         'LblTo
         '
@@ -284,6 +284,19 @@ Partial Class AllNotes
         Me.BtnRefrech.Text = "تحديث"
         Me.BtnRefrech.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         '
+        'BtnOpen
+        '
+        Me.BtnOpen.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.BtnOpen.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnOpen.Image = Global.HEHAccounting.My.Resources.Resources.book_open
+        Me.BtnOpen.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnOpen.Location = New System.Drawing.Point(142, 23)
+        Me.BtnOpen.Name = "BtnOpen"
+        Me.BtnOpen.Size = New System.Drawing.Size(90, 36)
+        Me.BtnOpen.TabIndex = 4
+        Me.BtnOpen.Text = "معاينة"
+        Me.BtnOpen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        '
         'TableLayoutPanel3
         '
         Me.TableLayoutPanel3.AutoSize = True
@@ -293,7 +306,7 @@ Partial Class AllNotes
         Me.TableLayoutPanel3.Controls.Add(Me.BtnFiltering, 0, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.BtnReset, 1, 0)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 386)
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 374)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 1
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
@@ -338,37 +351,24 @@ Partial Class AllNotes
         '
         '
         Me.GridNotes.MasterTemplate.BottomPinnedRowsMode = Telerik.WinControls.UI.GridViewBottomPinnedRowsMode.Fixed
-        GridViewSummaryItem4.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Count
-        GridViewSummaryItem4.AggregateExpression = Nothing
-        GridViewSummaryItem4.FormatString = "{0}"
-        GridViewSummaryItem4.Name = "InventoryID"
-        GridViewSummaryItem5.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
-        GridViewSummaryItem5.AggregateExpression = Nothing
-        GridViewSummaryItem5.FormatString = "{0}"
-        GridViewSummaryItem5.Name = "TotalPurchasingPriceLL"
-        GridViewSummaryItem6.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
-        GridViewSummaryItem6.AggregateExpression = Nothing
-        GridViewSummaryItem6.FormatString = "{0}"
-        GridViewSummaryItem6.Name = "TotalPurchasingPriceUSD"
-        Me.GridNotes.MasterTemplate.SummaryRowsBottom.Add(New Telerik.WinControls.UI.GridViewSummaryRowItem(New Telerik.WinControls.UI.GridViewSummaryItem() {GridViewSummaryItem4, GridViewSummaryItem5, GridViewSummaryItem6}))
-        Me.GridNotes.MasterTemplate.ViewDefinition = TableViewDefinition2
+        GridViewSummaryItem1.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Count
+        GridViewSummaryItem1.AggregateExpression = Nothing
+        GridViewSummaryItem1.FormatString = "{0}"
+        GridViewSummaryItem1.Name = "NotesID"
+        GridViewSummaryItem2.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
+        GridViewSummaryItem2.AggregateExpression = Nothing
+        GridViewSummaryItem2.FormatString = "{0}"
+        GridViewSummaryItem2.Name = "AmountLL"
+        GridViewSummaryItem3.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Sum
+        GridViewSummaryItem3.AggregateExpression = Nothing
+        GridViewSummaryItem3.FormatString = "{0}"
+        GridViewSummaryItem3.Name = "AmountUSD"
+        Me.GridNotes.MasterTemplate.SummaryRowsBottom.Add(New Telerik.WinControls.UI.GridViewSummaryRowItem(New Telerik.WinControls.UI.GridViewSummaryItem() {GridViewSummaryItem1, GridViewSummaryItem2, GridViewSummaryItem3}))
+        Me.GridNotes.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.GridNotes.Name = "GridNotes"
-        Me.GridNotes.Size = New System.Drawing.Size(176, 431)
+        Me.GridNotes.Size = New System.Drawing.Size(142, 419)
         Me.GridNotes.TabIndex = 4
         Me.GridNotes.ThemeName = "Office2010Blue"
-        '
-        'BtnOpen
-        '
-        Me.BtnOpen.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.BtnOpen.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnOpen.Image = Global.HEHAccounting.My.Resources.Resources.book_open
-        Me.BtnOpen.ImageAlignment = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnOpen.Location = New System.Drawing.Point(142, 23)
-        Me.BtnOpen.Name = "BtnOpen"
-        Me.BtnOpen.Size = New System.Drawing.Size(90, 36)
-        Me.BtnOpen.TabIndex = 4
-        Me.BtnOpen.Text = "معاينة"
-        Me.BtnOpen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         '
         'AllNotes
         '
@@ -376,7 +376,7 @@ Partial Class AllNotes
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(234, Byte), Integer), CType(CType(245, Byte), Integer))
         Me.CancelButton = Me.BtnReset
-        Me.ClientSize = New System.Drawing.Size(431, 431)
+        Me.ClientSize = New System.Drawing.Size(397, 419)
         Me.Controls.Add(Me.GridNotes)
         Me.Controls.Add(Me.PnlOptions)
         Me.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -404,12 +404,12 @@ Partial Class AllNotes
         CType(Me.BtnPrint, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnDelete, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnRefrech, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BtnOpen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel3.ResumeLayout(False)
         CType(Me.BtnFiltering, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnReset, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridNotes.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridNotes, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BtnOpen, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

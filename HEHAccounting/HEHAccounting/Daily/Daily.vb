@@ -119,12 +119,21 @@ Public Class Daily
     'End Sub
 
     Public Sub RefrechGrid()
-        Dim Param(1) As String
+        Dim Param(3) As String
         Param(0) = "@tFromDate , " & IIf(Me.MskTxtInvDateFrom.Checked, Me.MskTxtInvDateFrom.Value, "")
         Param(1) = "@tTODate , " & IIf(Me.MskTxtInvDateTo.Checked, Me.MskTxtInvDateTo.Value, "")
+        Param(2) = "@iUserID , " & UserID
+        Param(3) = "@iUserType , " & UserType
+
         FillGridViewProcedureWithParameters(Me.GridDaily, "SelectDaily", Param)
-        HideShowColummn(Me.GridDaily, IIf(BoolLTRLanguage, Me.GridDaily.Columns("Description").Index, Me.GridDaily.Columns("LatinDescription").Index), False)
+
+        'Always Hidden
         HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("Refertype").Index, False)
+
+        Dim checkIsAdmin As Boolean = (UserType = UserRole.Programmer Or UserType = UserRole.Admin)
+        HideShowColummn(Me.GridDaily, Me.GridDaily.Columns("Username").Index, checkIsAdmin)
+        HideShowColummn(Me.GridDaily, IIf(BoolLTRLanguage, Me.GridDaily.Columns("Description").Index, Me.GridDaily.Columns("LatinDescription").Index), False)
+
     End Sub
 
     Private Sub RefrechDateGrid()

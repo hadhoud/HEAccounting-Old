@@ -79,7 +79,11 @@ Public Class SalesOrderFrm
 
     Public Sub RefrechGrid()
 
-        FillGridViewProcedure(Me.GridSalesOrders, "SelectSalesOrdersJoinCustomers")
+        Dim Param(1) As String
+        Param(0) = "@iUserID , " & UserID
+        Param(1) = "@iUserType , " & UserType
+
+        FillGridViewProcedureWithParameters(Me.GridSalesOrders, "SelectSalesOrdersJoinCustomers", Param)
 
         'Always Hidden
         HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("ReferType").Index, False)
@@ -88,6 +92,9 @@ Public Class SalesOrderFrm
         HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("CurrencySymb").Index, False)
         ''End
 
+        Dim checkIsAdmin As Boolean = (UserType = UserRole.Programmer Or UserType = UserRole.Admin)
+
+        HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("Username").Index, checkIsAdmin)
         HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("CustomerTitle").Index, BoolShowSalesOrdersColCustomerTitle)
         HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("InvoiceCurrencySymb").Index, BoolShowSalesOrdersColCurrencySymb)
         HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("SubTotalLL").Index, BoolShowSalesOrdersColSubTotalLL)

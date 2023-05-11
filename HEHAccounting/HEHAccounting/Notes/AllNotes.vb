@@ -50,7 +50,12 @@ Public Class AllNotes
 
     Public Sub RefrechGrid()
 
-        FillGridViewProcedure(Me.GridNotes, "SelectAllNotes")
+        Dim Param(1) As String
+        Param(0) = "@iUserID , " & UserID
+        Param(1) = "@iUserType , " & UserType
+
+        FillGridViewProcedureWithParameters(Me.GridNotes, "SelectAllNotes", Param)
+
         'Always Hidden
         HideShowColummn(Me.GridNotes, Me.GridNotes.Columns("NotesType").Index, False)
 
