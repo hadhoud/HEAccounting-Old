@@ -117,6 +117,7 @@ Public Class AddUsers
         Me.chkShowPurchasingPriceInProg.Checked = False
         Me.chkShowItemsSalesWinReport.Checked = False
         Me.chkShowProfitsTextInScreen.Checked = False
+        Me.chkShowJemliSellingPriceInProg.Checked = False
         BtnDeselectAll.PerformClick()
         GetID()
     End Sub
@@ -206,14 +207,15 @@ Public Class AddUsers
     End Sub
 
     Private Sub UpdateUserPermissions()
-        Dim ParamPermissions(6) As String
+        Dim ParamPermissions(7) As String
         ParamPermissions(0) = "@bShowHomeScreenByUser , " & Me.chkShowHomeForm.Checked
         ParamPermissions(1) = "@bShowDashboardFormByUser , " & Me.chkShowDashboardForm.Checked
         ParamPermissions(2) = "@bShowPurchasingPriceInScreensByUser , " & Me.chkShowPurchasingPriceInProg.Checked
         ParamPermissions(3) = "@bShowSalesDailyWinScreenByUser , " & Me.chkShowSalesDailyWin.Checked
         ParamPermissions(4) = "@bShowItemsSalesWinReportScreenByUser , " & Me.chkShowItemsSalesWinReport.Checked
         ParamPermissions(5) = "@bShowProfitsTextInScreenByUser , " & Me.chkShowProfitsTextInScreen.Checked
-        ParamPermissions(6) = "@IUserID , " & Me.TxtNewUserID.Text
+        ParamPermissions(6) = "@bShowJemliSellingPriceInScreenByUser , " & Me.chkShowJemliSellingPriceInProg.Checked
+        ParamPermissions(7) = "@IUserID , " & Me.TxtNewUserID.Text
         ExecuteProcedureWithParameters("UpdateUserPermissions", ParamPermissions)
 
     End Sub
@@ -274,6 +276,7 @@ Public Class AddUsers
             Me.chkShowPurchasingPriceInProg.Checked = dtUserPermissions.Rows(0).Item("bShowPurchasingPriceInScreensByUser")
             Me.chkShowItemsSalesWinReport.Checked = dtUserPermissions.Rows(0).Item("bShowItemsSalesWinReportScreenByUser")
             Me.chkShowProfitsTextInScreen.Checked = dtUserPermissions.Rows(0).Item("bShowProfitsTextInScreenByUser")
+            Me.chkShowJemliSellingPriceInProg.Checked = dtUserPermissions.Rows(0).Item("bShowJemliSellingPriceInScreenByUser")
         End If
     End Sub
 

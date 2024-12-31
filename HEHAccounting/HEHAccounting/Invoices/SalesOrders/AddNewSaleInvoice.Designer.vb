@@ -84,6 +84,7 @@ Partial Class AddNewSaleInvoice
         Me.TLPCommand = New System.Windows.Forms.TableLayoutPanel()
         Me.BtnSaveAndNew = New Telerik.WinControls.UI.RadButton()
         Me.BtnPrint = New Telerik.WinControls.UI.RadButton()
+        Me.btnAttachments = New Telerik.WinControls.UI.RadButton()
         Me.CustomerTooltip = New System.Windows.Forms.ToolTip(Me.components)
         Me.TimerPurchasePrice = New System.Windows.Forms.Timer(Me.components)
         CType(Me.GridInvItem, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -123,6 +124,7 @@ Partial Class AddNewSaleInvoice
         Me.TLPCommand.SuspendLayout()
         CType(Me.BtnSaveAndNew, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnPrint, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnAttachments, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -162,7 +164,7 @@ Partial Class AddNewSaleInvoice
         Me.GridInvItem.Name = "GridInvItem"
         Me.GridInvItem.NewRowEnterKeyMode = Telerik.WinControls.UI.RadGridViewNewRowEnterKeyMode.EnterMovesToNextCell
         Me.TableLayoutPanel1.SetRowSpan(Me.GridInvItem, 2)
-        Me.GridInvItem.Size = New System.Drawing.Size(979, 426)
+        Me.GridInvItem.Size = New System.Drawing.Size(979, 454)
         Me.GridInvItem.TabIndex = 4
         Me.GridInvItem.TabStop = False
         Me.GridInvItem.ThemeName = "Office2010Blue"
@@ -923,7 +925,7 @@ Partial Class AddNewSaleInvoice
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1229, 500)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1229, 528)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'TLPCommand
@@ -932,18 +934,19 @@ Partial Class AddNewSaleInvoice
         Me.TLPCommand.ColumnCount = 2
         Me.TLPCommand.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TLPCommand.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TLPCommand.Controls.Add(Me.BtnSaveAndNew, 0, 0)
-        Me.TLPCommand.Controls.Add(Me.BtnPrint, 1, 0)
+        Me.TLPCommand.Controls.Add(Me.BtnSaveAndNew, 0, 1)
+        Me.TLPCommand.Controls.Add(Me.BtnPrint, 1, 1)
+        Me.TLPCommand.Controls.Add(Me.btnAttachments, 0, 0)
         Me.TLPCommand.Dock = System.Windows.Forms.DockStyle.Top
         Me.TLPCommand.Location = New System.Drawing.Point(987, 421)
         Me.TLPCommand.Margin = New System.Windows.Forms.Padding(0)
         Me.TLPCommand.Name = "TLPCommand"
         Me.TLPCommand.Padding = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.TLPCommand.RowCount = 2
+        Me.TLPCommand.RowCount = 3
         Me.TLPCommand.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TLPCommand.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TLPCommand.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TLPCommand.Size = New System.Drawing.Size(242, 49)
+        Me.TLPCommand.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TLPCommand.Size = New System.Drawing.Size(242, 83)
         Me.TLPCommand.TabIndex = 1
         '
         'BtnSaveAndNew
@@ -952,7 +955,7 @@ Partial Class AddNewSaleInvoice
         Me.BtnSaveAndNew.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSaveAndNew.Image = Global.HEHAccounting.My.Resources.Resources.Save
         Me.BtnSaveAndNew.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.BtnSaveAndNew.Location = New System.Drawing.Point(131, 3)
+        Me.BtnSaveAndNew.Location = New System.Drawing.Point(131, 41)
         Me.BtnSaveAndNew.Name = "BtnSaveAndNew"
         Me.BtnSaveAndNew.Size = New System.Drawing.Size(104, 32)
         Me.BtnSaveAndNew.TabIndex = 1
@@ -966,13 +969,27 @@ Partial Class AddNewSaleInvoice
         Me.BtnPrint.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnPrint.Image = Global.HEHAccounting.My.Resources.Resources.Save
         Me.BtnPrint.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.BtnPrint.Location = New System.Drawing.Point(14, 3)
+        Me.BtnPrint.Location = New System.Drawing.Point(14, 41)
         Me.BtnPrint.Name = "BtnPrint"
         Me.BtnPrint.Size = New System.Drawing.Size(104, 33)
         Me.BtnPrint.TabIndex = 2
         Me.BtnPrint.Tag = "Print"
         Me.BtnPrint.Text = "طباعة"
         Me.BtnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        '
+        'btnAttachments
+        '
+        Me.btnAttachments.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnAttachments.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAttachments.Image = Global.HEHAccounting.My.Resources.Resources.report_add
+        Me.btnAttachments.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btnAttachments.Location = New System.Drawing.Point(131, 3)
+        Me.btnAttachments.Name = "btnAttachments"
+        Me.btnAttachments.Size = New System.Drawing.Size(104, 32)
+        Me.btnAttachments.TabIndex = 3
+        Me.btnAttachments.Tag = "Save"
+        Me.btnAttachments.Text = "مرفقات"
+        Me.btnAttachments.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         '
         'TimerPurchasePrice
         '
@@ -982,7 +999,7 @@ Partial Class AddNewSaleInvoice
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(234, Byte), Integer), CType(CType(245, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1229, 500)
+        Me.ClientSize = New System.Drawing.Size(1229, 528)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
@@ -1043,6 +1060,7 @@ Partial Class AddNewSaleInvoice
         Me.TLPCommand.ResumeLayout(False)
         CType(Me.BtnSaveAndNew, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnPrint, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnAttachments, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -1103,5 +1121,6 @@ Partial Class AddNewSaleInvoice
     Friend WithEvents txtTotalDueBig As Telerik.WinControls.UI.RadMaskedEditBox
     Friend WithEvents CustomTxtItemName As CustomItemNameTextBoxControl
     Friend WithEvents txtDollarRate As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents btnAttachments As Telerik.WinControls.UI.RadButton
 End Class
 

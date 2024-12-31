@@ -3,6 +3,7 @@ Module Enums
 
     Structure FormPopupType
         Const FrmGetItem = "FrmGetItem"
+        Const FrmGetItemNoBarcode = "FrmGetItemNoBarcode"
         Const FrmGetVendors = "FrmGetVendors"
         Const FrmGetCustomers = "FrmGetCustomers"
         Const FrmGetVendorsCustomers = "FrmGetVendorsCustomers"

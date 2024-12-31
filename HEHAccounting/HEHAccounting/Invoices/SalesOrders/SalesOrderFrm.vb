@@ -1,4 +1,5 @@
-﻿Imports Telerik.WinControls
+﻿Imports System.Text
+Imports Telerik.WinControls
 Imports Telerik.WinControls.Data
 Imports Telerik.WinControls.UI
 
@@ -90,6 +91,7 @@ Public Class SalesOrderFrm
         HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("PaymentType").Index, False)
         HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("status").Index, False)
         HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("CurrencySymb").Index, False)
+        HideShowColummn(Me.GridSalesOrders, Me.GridSalesOrders.Columns("InvoiceDescription").Index, False)
         ''End
 
         Dim checkIsAdmin As Boolean = (UserType = UserRole.Programmer Or UserType = UserRole.Admin)
@@ -528,9 +530,9 @@ Public Class SalesOrderFrm
             e.CellElement.RowElement.GradientStyle = Telerik.WinControls.GradientStyles.Solid
             e.CellElement.RowElement.BackColor = Color.FromArgb(239, 246, 255)
             If e.Column.Name = "SubTotalLL" Or e.Column.Name = "DiscountLL" Or e.Column.Name = "TotalDueLL" Or e.Column.Name = "DollarRate" Then
-                e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, 0, False, False)
+                e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Text, 0, False, False)
             ElseIf e.Column.Name = "TotalDueUSD" Then
-                e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, 0, True, False)
+                e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Text, 0, True, False)
             End If
         Else
             e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, ValueResetFlags.Local)
@@ -568,15 +570,27 @@ Public Class SalesOrderFrm
             End If
         End If
 
+        If e.CellElement.ColumnInfo.Name = "InvID" Then
+            If e.Row.Cells("InvoiceDescription").Value <> String.Empty Then
+                e.CellElement.DrawFill = True
+                e.CellElement.GradientStyle = Telerik.WinControls.GradientStyles.Solid
+                e.CellElement.BackColor = Color.Green
+            Else
+                e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, ValueResetFlags.Local)
+                e.CellElement.ResetValue(LightVisualElement.GradientStyleProperty, ValueResetFlags.Local)
+                e.CellElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
+            End If
+        End If
+
         If e.Column.Name = "SubTotalLL" Or e.Column.Name = "DiscountLL" Or e.Column.Name = "TotalDueLL" Or e.Column.Name = "DollarRate" Then
-            e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, 0, False, False)
-        ElseIf e.Column.Name = "TotalDueUSD" Then
-            e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, 0, True, False)
+            e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Text, 0, False, False)
+        ElseIf e.Column.Name = "TotalDueUSD" And e.CellElement.Text <> Nothing Then
+            e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Text, 0, True, False)
         End If
         'iCurrencyID
         If e.Column.Name = "TotalDue" Or e.Column.Name = "SubTotal" Or e.Column.Name = "SellingPrice" Or e.Column.Name = "PurchasingPrice" Then
 
-            e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, e.Row.Cells("iCurrencyID").Value, True, False)
+            e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Text, e.Row.Cells("iCurrencyID").Value, True, False)
 
         End If
 
@@ -620,5 +634,49 @@ Public Class SalesOrderFrm
     Private Sub BtnRefrech_Click(sender As Object, e As EventArgs) Handles BtnRefrech.Click
         RefrechGrid()
         BtnFiltering_Click(New Object, New EventArgs)
+    End Sub
+
+    Private Sub GridSalesOrders_CellDoubleClick(sender As Object, e As GridViewCellEventArgs) Handles GridSalesOrders.CellDoubleClick
+        If e.Column.Name = "InvID" And e.Row.Cells("InvoiceDescription").Value.ToString() <> String.Empty Then
+            Dim FrmInvoiceAttachments As New InvoiceAttachments With {
+                .InvNum = e.Value.ToString(),
+                .InvoiceDescription = e.Row.Cells("InvoiceDescription").Value.ToString(),
+                .enableBtnSaveAttachments = False
+            }
+            FrmInvoiceAttachments.ShowDialog()
+        End If
+    End Sub
+
+    Dim printerr = 0
+    Private Sub BtnPrintXprinterInvoice_Click(sender As Object, e As EventArgs) Handles BtnPrintXprinterInvoice.Click
+        If printerr <> 0 Then
+            ReleasePrinter(printerr)
+        End If
+        printerr = InitPrinter("XP-P300")
+        Dim result = OpenPort(printerr, "USB,")
+        If result = 0 Then
+            PrintInvoiceToXprinter(printerr)
+            If printerr <> 0 Then
+                ReleasePrinter(printerr)
+            End If
+        Else
+            MsgBox("Fail to open USB port, please check!", MsgBoxStyle.Critical)
+        End If
+    End Sub
+
+    Sub PrintInvoiceToXprinter(printer As Object)
+
+        Dim ArabicChars As String = "الصنف    الكمية  السعر  المجموع"
+        Dim arabic As Encoding = Encoding.GetEncoding(1256)
+        Dim bytes As Byte() = arabic.GetBytes(ArabicChars)
+        Dim arabicText As String = arabic.GetString(bytes)
+
+        PrinterInitialize(printer)
+        SetCodePage(printer, 22)
+        PrintTextS(printer, arabicText & Chr(10))
+        PrintAndFeedLine(printer)
+        PrintAndFeedLine(printer)
+        CutPaperWithDistance(printer, 10)
+        CutPaper(printer, 0)
     End Sub
 End Class

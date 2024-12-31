@@ -1,0 +1,177 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|c:\\users\\hp\\source\\repos\\hehaccounting\\hehaccounting\\hehaccounting\\tools\\barcode\\managebarcodes.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|solutionrelative:hehaccounting\\tools\\barcode\\managebarcodes.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|c:\\users\\hp\\source\\repos\\hehaccounting\\hehaccounting\\hehaccounting\\sharedclasses\\heconstant.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|solutionrelative:hehaccounting\\sharedclasses\\heconstant.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|c:\\users\\hp\\source\\repos\\hehaccounting\\hehaccounting\\hehaccounting\\tools\\barcode\\managebarcodes.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|solutionrelative:hehaccounting\\tools\\barcode\\managebarcodes.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|c:\\users\\hp\\source\\repos\\hehaccounting\\hehaccounting\\hehaccounting\\items\\items.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|solutionrelative:hehaccounting\\items\\items.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|c:\\users\\hp\\source\\repos\\hehaccounting\\hehaccounting\\hehaccounting\\sharedclasses\\controlsfunctions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|solutionrelative:hehaccounting\\sharedclasses\\controlsfunctions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|c:\\users\\hp\\source\\repos\\hehaccounting\\hehaccounting\\hehaccounting\\items\\items.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|solutionrelative:hehaccounting\\items\\items.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 16,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Items.vb",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\Items\\Items.vb",
+              "RelativeDocumentMoniker": "HEHAccounting\\Items\\Items.vb",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\Items\\Items.vb",
+              "RelativeToolTip": "HEHAccounting\\Items\\Items.vb",
+              "ViewState": "AQIAAKEAAAAAAAAAAAAowK8AAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-12-31T09:38:13.937Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:141:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:140:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:142:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:137:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:139:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:138:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HEConstant.vb",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\SharedClasses\\HEConstant.vb",
+              "RelativeDocumentMoniker": "HEHAccounting\\SharedClasses\\HEConstant.vb",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\SharedClasses\\HEConstant.vb",
+              "RelativeToolTip": "HEHAccounting\\SharedClasses\\HEConstant.vb",
+              "ViewState": "AQIAAJIBAAAAAAAAAAAuwJ4BAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-12-31T12:02:36.445Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ManageBarcodes.vb",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\Tools\\Barcode\\ManageBarcodes.vb",
+              "RelativeDocumentMoniker": "HEHAccounting\\Tools\\Barcode\\ManageBarcodes.vb",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\Tools\\Barcode\\ManageBarcodes.vb",
+              "RelativeToolTip": "HEHAccounting\\Tools\\Barcode\\ManageBarcodes.vb",
+              "ViewState": "AQIAAF4BAAAAAAAAAAAIwG0BAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-12-31T12:02:04.493Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ManageBarcodes.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\Tools\\Barcode\\ManageBarcodes.vb",
+              "RelativeDocumentMoniker": "HEHAccounting\\Tools\\Barcode\\ManageBarcodes.vb",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\Tools\\Barcode\\ManageBarcodes.vb [Design]",
+              "RelativeToolTip": "HEHAccounting\\Tools\\Barcode\\ManageBarcodes.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-12-31T12:02:01.117Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ControlsFunctions.vb",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\SharedClasses\\ControlsFunctions.vb",
+              "RelativeDocumentMoniker": "HEHAccounting\\SharedClasses\\ControlsFunctions.vb",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\SharedClasses\\ControlsFunctions.vb",
+              "RelativeToolTip": "HEHAccounting\\SharedClasses\\ControlsFunctions.vb",
+              "ViewState": "AQIAAJYAAAAAAAAAAAAowKcAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-12-31T09:40:37.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Items.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\Items\\Items.vb",
+              "RelativeDocumentMoniker": "HEHAccounting\\Items\\Items.vb",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\Items\\Items.vb [Design]",
+              "RelativeToolTip": "HEHAccounting\\Items\\Items.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-12-31T09:38:25.031Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -407,7 +407,7 @@ Public Class PurchaseOrderFrm
             e.CellElement.RowElement.BackColor = Color.FromArgb(239, 246, 255)
 
             If e.Column.Name = "SubTotalLL" Or e.Column.Name = "DiscountLL" Or e.Column.Name = "TotalDueLL" Or e.Column.Name = "DollarRate" Then
-                e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, 0, False, False)
+                e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Text, 0, False, False)
             End If
         Else
             e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, ValueResetFlags.Local)
@@ -433,8 +433,9 @@ Public Class PurchaseOrderFrm
             End If
         End If
 
-        If e.Column.Name = "SubTotalLL" Or e.Column.Name = "DiscountLL" Or e.Column.Name = "TotalDueLL" Or e.Column.Name = "DollarRate" Then
-            e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, 0, False, False)
+        If (e.Column.Name = "SubTotalLL" Or e.Column.Name = "DiscountLL" Or e.Column.Name = "TotalDueLL" Or e.Column.Name = "DollarRate") _
+            And e.CellElement.Text <> Nothing Then
+            e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Text, 0, False, False)
         End If
     End Sub
 

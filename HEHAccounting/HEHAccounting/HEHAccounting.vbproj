@@ -98,7 +98,11 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Toolkit.Uwp.Notifications, Version=7.0.0.0, Culture=neutral, PublicKeyToken=4aff67a105548ee2" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Toolkit.Uwp.Notifications, Version=7.0.0.0, Culture=neutral, PublicKeyToken=4aff67a105548ee2, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Microsoft.Toolkit.Uwp.Notifications.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -122,51 +126,60 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Progress\Telerik Reporting R2 2022\Bin\Telerik.ReportViewer.WinForms.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.WinControls, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.WinControls.dll</HintPath>
+    <Reference Include="Telerik.WinControls, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.ChartView, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.GridView, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.WinControls.GridView.dll</HintPath>
+    <Reference Include="Telerik.WinControls.ChartView, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.ChartView.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.RadDock, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.WinControls.RadDock.dll</HintPath>
+    <Reference Include="Telerik.WinControls.GridView, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.GridView.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.RadToastNotification, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.RichTextEditor, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.WinControls.RichTextEditor.dll</HintPath>
+    <Reference Include="Telerik.WinControls.RadDock, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.RadDock.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Office2007Black, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.WinControls.Themes.Office2007Black.dll</HintPath>
+    <Reference Include="Telerik.WinControls.RadToastNotification, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.RadToastNotification.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Office2010Blue, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.WinControls.Themes.Office2010Blue.dll</HintPath>
+    <Reference Include="Telerik.WinControls.RichTextEditor, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.RichTextEditor.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Office2019, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.Themes.Windows7, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.WinControls.Themes.Windows7.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.Office2007Black, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.Themes.Office2007Black.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.UI, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.WinControls.UI.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.Office2010Blue, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.Themes.Office2010Blue.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.Windows.Documents.Core, Version=2022.2.613.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.Windows.Documents.Core.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.Office2019, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.Themes.Office2019.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.Windows.Zip, Version=2022.2.613.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2022.2.622.40\Telerik.Windows.Zip.dll</HintPath>
+    <Reference Include="Telerik.WinControls.Themes.Windows7, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.Themes.Windows7.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="TelerikCommon, Version=2022.2.622.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2022.2.622.40\TelerikCommon.dll</HintPath>
+    <Reference Include="Telerik.WinControls.UI, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.WinControls.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2023.1.104.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.Windows.Documents.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip, Version=2023.1.104.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\Telerik.Windows.Zip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2023.1.117.48, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2023.1.117.48\TelerikCommon.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="UIAutomationClient" />
@@ -185,6 +198,12 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CashDrawers\AddCashDrawer.Designer.vb">
+      <DependentUpon>AddCashDrawer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CashDrawers\AddCashDrawer.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CustomControls\CustomItemNameTextBox.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -230,6 +249,12 @@
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Invoices\InvoiceAttachments.Designer.vb">
+      <DependentUpon>InvoiceAttachments.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Invoices\InvoiceAttachments.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Invoices\PayInvoice.Designer.vb">
       <DependentUpon>PayInvoice.vb</DependentUpon>
     </Compile>
@@ -254,6 +279,12 @@
     <Compile Include="Invoices\SalesOrders\CalculateQuantity.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CashDrawers\CashDrawers.Designer.vb">
+      <DependentUpon>CashDrawers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CashDrawers\CashDrawers.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Items\Inventory.Designer.vb">
       <DependentUpon>Inventory.vb</DependentUpon>
     </Compile>
@@ -264,6 +295,12 @@
       <DependentUpon>AllInventory.vb</DependentUpon>
     </Compile>
     <Compile Include="Items\AllInventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\PriceEdit.Designer.vb">
+      <DependentUpon>PriceEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Items\PriceEdit.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
@@ -412,10 +449,13 @@
     </Compile>
     <Compile Include="SharedClasses\Currencies.vb" />
     <Compile Include="SharedClasses\ControlsFunctions.vb" />
+    <Compile Include="SharedClasses\ClsFieldsVisibleSetting.vb" />
     <Compile Include="SharedClasses\Enums.vb" />
     <Compile Include="SharedClasses\DatabaseFunctions.vb" />
     <Compile Include="SharedClasses\HEConstant.vb" />
+    <Compile Include="SharedClasses\Xprinter\PosPrinter.vb" />
     <Compile Include="SharedClasses\StringlocalizationId.vb" />
+    <Compile Include="SharedClasses\Xprinter\XprinterUtils.vb" />
     <Compile Include="SharedForm\HEMessage.Designer.vb">
       <DependentUpon>HEMessage.vb</DependentUpon>
     </Compile>
@@ -490,6 +530,12 @@
     <Compile Include="Tools\Accounts\OpeningBalance.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Tools\Barcode\ManageBarcodes.Designer.vb">
+      <DependentUpon>ManageBarcodes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Barcode\ManageBarcodes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Tools\Curreny\AddNewCurrency.Designer.vb">
       <DependentUpon>AddNewCurrency.vb</DependentUpon>
     </Compile>
@@ -506,6 +552,12 @@
       <DependentUpon>FrmCurrency.vb</DependentUpon>
     </Compile>
     <Compile Include="Tools\Curreny\FrmCurrency.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Programmer\ProgramLog.Designer.vb">
+      <DependentUpon>ProgramLog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Programmer\ProgramLog.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Tools\Settings\AddUsers.Designer.vb">
@@ -588,6 +640,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CashDrawers\AddCashDrawer.resx">
+      <DependentUpon>AddCashDrawer.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\CustomItemNameTextBox.resx">
       <DependentUpon>CustomItemNameTextBox.vb</DependentUpon>
     </EmbeddedResource>
@@ -625,6 +680,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Invoices\InvoiceAttachments.resx">
+      <DependentUpon>InvoiceAttachments.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Invoices\PayInvoice.resx">
       <DependentUpon>PayInvoice.vb</DependentUpon>
     </EmbeddedResource>
@@ -646,6 +704,9 @@
     <EmbeddedResource Include="Invoices\SalesOrders\SalesOrderFrm.resx">
       <DependentUpon>SalesOrderFrm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CashDrawers\CashDrawers.resx">
+      <DependentUpon>CashDrawers.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Items\Groups.resx">
       <DependentUpon>Groups.vb</DependentUpon>
     </EmbeddedResource>
@@ -654,6 +715,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Items\ItemsPopup.resx">
       <DependentUpon>ItemsPopup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\PriceEdit.resx">
+      <DependentUpon>PriceEdit.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Items\ItemTree.resx">
       <DependentUpon>ItemTree.vb</DependentUpon>
@@ -738,6 +802,9 @@
     <EmbeddedResource Include="Tools\Accounts\OpeningBalance.resx">
       <DependentUpon>OpeningBalance.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Barcode\ManageBarcodes.resx">
+      <DependentUpon>ManageBarcodes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tools\Curreny\AddNewCurrency.resx">
       <DependentUpon>AddNewCurrency.vb</DependentUpon>
     </EmbeddedResource>
@@ -746,6 +813,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\Curreny\FrmCurrency.resx">
       <DependentUpon>FrmCurrency.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Programmer\ProgramLog.resx">
+      <DependentUpon>ProgramLog.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\Settings\AddUsers.resx">
       <DependentUpon>AddUsers.vb</DependentUpon>
@@ -932,6 +1002,10 @@
     <None Include="Resources\Dollars.png" />
     <None Include="Resources\Target.png" />
     <None Include="Resources\Refresh16.png" />
+    <None Include="Resources\BO_Price_32x32.png" />
+    <None Include="Resources\barcode-scan.png" />
+    <None Include="Resources\import.png" />
+    <None Include="Resources\import %281%29.png" />
     <Content Include="SQL\NeededSqlFiles\DefaultData.sql" />
     <Content Include="SQL\NeededSqlFiles\ResetProgramData.sql" />
     <Content Include="WhatsNew.txt" />

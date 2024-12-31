@@ -1,4 +1,5 @@
 ﻿Imports System.ComponentModel
+Imports Telerik.WinControls
 Imports Telerik.WinControls.Data
 Imports Telerik.WinControls.UI
 
@@ -14,6 +15,8 @@ Partial Friend Class Items
         End If
         SubscribeEvents()
         ShowPermissions()
+        Me.GridItems.BottomPinnedRowsMode = GridViewBottomPinnedRowsMode.Fixed
+        GridItems.MasterView.SummaryRows(0).PinPosition = PinnedRowPosition.Bottom
         RefrechGrid()
         InitiateGrid(Me.GridItems, Grouping:=True)
     End Sub
@@ -47,9 +50,13 @@ Partial Friend Class Items
 
     Public Sub RefrechGrid()
         FillGridViewProcedure(Me.GridItems, "SelectItems")
+        'Always hidden
+        HideShowColummn(Me.GridItems, Me.GridItems.Columns("CurrencyID").Index, False)
+
         HideShowColummn(Me.GridItems, Me.GridItems.Columns("Barcode").Index, BoolShowBarcode And BoolShowItemsFormColBarcode)
         HideShowColummn(Me.GridItems, Me.GridItems.Columns("PurchasingPrice").Index, BoolShowPurchasingPriceInScreensByUser)
         HideShowColummn(Me.GridItems, Me.GridItems.Columns("ItemLatinName").Index, BoolShowItemsFormColLatinName)
+        HideShowColummn(GridItems, Me.GridItems.Columns.Item("JemliSellingPrice").Index, BoolShowJemliSellingPriceInScreenByUser And BoolShowAddSalesOrdersTextJemliPrice)
     End Sub
     'Protected Overrides Sub OnLoad(e As EventArgs)
     '    If Not ProgramHasError Then
@@ -84,8 +91,8 @@ Partial Friend Class Items
         Me.GridItems.FilterDescriptors.Clear()
         FilterGrid(Me.GridItems, "Item_name", Me.TxtItemName.Text.Trim, FilterOperator.Contains)
 
-        If Val(Me.TxtItemid.Text.Trim) <> 0 Then
-            FilterGrid(Me.GridItems, "Item_id", Me.TxtItemid.Text.Trim, FilterOperator.IsEqualTo)
+        If Val(Me.TxtItemid.Text.Trim) <> 0 And Me.TxtItemid.Text.Length < 8 Then
+            FilterGrid(Me.GridItems, "Item_id", Val(Me.TxtItemid.Text.Trim), FilterOperator.IsEqualTo)
         End If
         FilterGrid(Me.GridItems, "Barcode", Me.TxtItemBarcode.Text.Trim, FilterOperator.Contains)
         Me.TxtItemBarcode.Text = ""
@@ -171,6 +178,10 @@ Partial Friend Class Items
         End If
     End Sub
 
+    Private Sub BtnRefrech_Click(sender As Object, e As EventArgs) Handles BtnRefrech.Click
+        RefrechGrid()
+    End Sub
+
     'Private Sub SetupAutoComplete(ByVal radAutoCompleteBox As RadAutoCompleteBox)
     '    AddHandler radAutoCompleteBox.Items.CollectionChanged, AddressOf OnItemsCollectionChanged
     '    radAutoCompleteBox.AutoCompleteDisplayMember = "Name"
@@ -180,5 +191,22 @@ Partial Friend Class Items
     '    radAutoCompleteBox.DropDownMaxSize = New Size(200, 0)
     '    Me.FillList(radAutoCompleteBox.Items)
     'End Sub
+
+
+    Private Sub GridItems_ViewCellFormatting(sender As Object, e As CellFormattingEventArgs) Handles GridItems.ViewCellFormatting, GridItems.CellFormatting
+        If (e.CellElement.RowInfo.Group Is Nothing And TypeOf e.CellElement Is GridSummaryCellElement) Then
+            e.CellElement.ForeColor = Color.Blue
+            e.CellElement.RowElement.DrawFill = True
+            e.CellElement.RowElement.GradientStyle = Telerik.WinControls.GradientStyles.Solid
+            e.CellElement.RowElement.BackColor = Color.FromArgb(239, 246, 255)
+        Else
+            e.CellElement.ResetValue(LightVisualElement.ForeColorProperty, ValueResetFlags.Local)
+            e.CellElement.RowElement.ResetValue(LightVisualElement.GradientStyleProperty, ValueResetFlags.Local)
+            e.CellElement.RowElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
+            If (e.Column.Name = "PurchasingPrice" Or e.Column.Name = "SellingPrice") And e.CellElement.Text <> Nothing And e.Row.Cells("CurrencyID").Value <> Nothing Then
+                e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, IIf(e.Row.Cells("CurrencyID").Value.ToString() = "", Currency.noCurrency, e.Row.Cells("CurrencyID").Value), False)
+            End If
+        End If
+    End Sub
 
 End Class

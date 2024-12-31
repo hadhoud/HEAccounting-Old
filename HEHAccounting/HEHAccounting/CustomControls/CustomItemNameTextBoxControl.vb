@@ -78,6 +78,14 @@ Public Class CustomItemNameTextBoxControl
                     Me.Text = FrmGetItem.GetITemName
                 End If
 
+            Case FormPopupType.FrmGetItemNoBarcode
+                Dim FrmGetItem As New ItemsPopup(True)
+                FrmGetItem.NoBarcodeItems = True
+                FrmGetItem.ShowDialog()
+                If Not FrmGetItem.GetITemName.Length = 0 Then
+                    Me.Text = FrmGetItem.GetITemName
+                End If
+
             Case FormPopupType.FrmGetVendors
                 Dim FrmGetVendors As New VendorsPopup
                 FrmGetVendors.ShowDialog()

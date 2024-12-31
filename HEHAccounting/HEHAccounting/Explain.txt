@@ -1,6 +1,14 @@
 ﻿DEbit    دين
 Credit   
 
+Jarrour => Drawers 
+==================
+- Enable jarour Feature (Programmer)
+- Enable jarour Feature Multi Jaruor (Programmer)
+- Button to create New Jarour (jarours - Drawers ) (Programmer / Or Enabled Multi)
+
+
+==================
 Continue:
 On TRX For ITem QTY and Price Reports
 Check To Show LAtin OR Not (Settings Options)

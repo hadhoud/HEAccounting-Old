@@ -124,6 +124,7 @@
             BoolShowPurchasingPriceInScreensByUser = UserSettingDt.Rows(0).Item("bShowPurchasingPriceInScreensByUser")
             BoolShowItemsSalesWinReportScreenByUser = UserSettingDt.Rows(0).Item("bShowItemsSalesWinReportScreenByUser")
             BoolShowProfitsTextInScreenByUser = UserSettingDt.Rows(0).Item("bShowProfitsTextInScreenByUser")
+            BoolShowJemliSellingPriceInScreenByUser = UserSettingDt.Rows(0).Item("bShowJemliSellingPriceInScreenByUser")
 
             'Customer Setting
             BoolAllowCustomerRepetition = UserSettingDt.Rows(0).Item("SAllowCustomerRepetition")
@@ -253,6 +254,7 @@
             BoolShowAddSalesOrdersColPurchasePrice = UserFieldsSettingDt.Rows(0).Item("bShowAddSalesOrdersColPurchasePrice")
             BoolShowAddSalesOrdersTextCurrencyRate = UserFieldsSettingDt.Rows(0).Item("bShowAddSalesOrdersTextCurrencyRate")
             BoolShowAddSalesOrdersTextProftis = UserFieldsSettingDt.Rows(0).Item("bShowAddSalesOrdersTextProftis")
+            BoolShowAddSalesOrdersTextJemliPrice = UserFieldsSettingDt.Rows(0).Item("bShowAddSalesOrdersTextJemliPrice")
 
             'Add Purchase Order
             BoolShowAddPurchasesOrdersColPurchasePrice = UserFieldsSettingDt.Rows(0).Item("bShowAddPurchasesOrdersColPurchasePrice")
@@ -293,6 +295,9 @@
             BoolShowGeneralNoteTextCurrencyRate = UserFieldsSettingDt.Rows(0).Item("bShowGeneralNoteTextCurrencyRate")
             BoolShowGeneralNoteTextAmountEquality = UserFieldsSettingDt.Rows(0).Item("bShowGeneralNoteTextAmountEquality")
 
+            myFieldVisibleSetting.bShowSalesOrdersColUsername = UserFieldsSettingDt.Rows(0).Item("bShowSalesOrdersColUsername")
+            myFieldVisibleSetting.bShowPurchasesOrdersColUsername = UserFieldsSettingDt.Rows(0).Item("bShowSalesOrdersColCustomerTitle")
+
         End If
     End Sub
 
@@ -310,6 +315,7 @@
                 BoolShowUsers = AppSettingDt.Rows(0).Item("ShowUsers")
                 BoolShowSalesDailyWin = AppSettingDt.Rows(0).Item("bShowSalesDailyWinScreen")
                 BoolShowDashboardForm = AppSettingDt.Rows(0).Item("bShowDashboardForm")
+                BarcodeInitialStartingNumber = AppSettingDt.Rows(0).Item("BarcodeInitialNumber")
             End If
             'LogMessage("GetAppSettings4")
         Else
@@ -321,6 +327,7 @@
             BoolShowUsers = False
             BoolShowSalesDailyWin = False
             BoolShowDashboardForm = False
+            BarcodeInitialStartingNumber = 0
         End If
 
     End Sub

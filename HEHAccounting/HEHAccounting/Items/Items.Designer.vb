@@ -22,6 +22,7 @@ Partial Friend Class Items
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim GridViewSummaryItem1 As Telerik.WinControls.UI.GridViewSummaryItem = New Telerik.WinControls.UI.GridViewSummaryItem()
         Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Items))
         Me.GridItems = New Telerik.WinControls.UI.RadGridView()
@@ -67,9 +68,14 @@ Partial Friend Class Items
         '
         '
         '
+        GridViewSummaryItem1.Aggregate = Telerik.WinControls.UI.GridAggregateFunction.Count
+        GridViewSummaryItem1.AggregateExpression = Nothing
+        GridViewSummaryItem1.FormatString = "{0}"
+        GridViewSummaryItem1.Name = "Item_id"
+        Me.GridItems.MasterTemplate.SummaryRowsBottom.Add(New Telerik.WinControls.UI.GridViewSummaryRowItem(New Telerik.WinControls.UI.GridViewSummaryItem() {GridViewSummaryItem1}))
         Me.GridItems.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.GridItems.Name = "GridItems"
-        Me.GridItems.Size = New System.Drawing.Size(20, 521)
+        Me.GridItems.Size = New System.Drawing.Size(254, 525)
         Me.GridItems.TabIndex = 11
         Me.GridItems.ThemeName = "Office2010Blue"
         '
@@ -84,7 +90,7 @@ Partial Friend Class Items
         Me.PnlOptions.Location = New System.Drawing.Point(0, 0)
         Me.PnlOptions.Name = "PnlOptions"
         Me.PnlOptions.Padding = New System.Windows.Forms.Padding(3)
-        Me.PnlOptions.Size = New System.Drawing.Size(255, 521)
+        Me.PnlOptions.Size = New System.Drawing.Size(255, 525)
         Me.PnlOptions.TabIndex = 2
         Me.PnlOptions.Visible = False
         '
@@ -302,14 +308,13 @@ Partial Friend Class Items
         Me.BtnRefrech.TabIndex = 3
         Me.BtnRefrech.Text = "تحديث"
         Me.BtnRefrech.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BtnRefrech.Visible = False
         '
         'Items
         '
         Me.AcceptButton = Me.BtnFiltering
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.CancelButton = Me.BtnReset
-        Me.ClientSize = New System.Drawing.Size(275, 521)
+        Me.ClientSize = New System.Drawing.Size(509, 525)
         Me.Controls.Add(Me.GridItems)
         Me.Controls.Add(Me.PnlOptions)
         Me.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -348,7 +353,7 @@ Partial Friend Class Items
 
     End Sub
 
-    Friend GridItems As Telerik.WinControls.UI.RadGridView
+    Friend WithEvents GridItems As Telerik.WinControls.UI.RadGridView
     Friend PnlOptions As Telerik.WinControls.UI.RadPanel
     Friend WithEvents TxtItemName As Telerik.WinControls.UI.RadTextBox
     Friend TxtItemid As Telerik.WinControls.UI.RadTextBox

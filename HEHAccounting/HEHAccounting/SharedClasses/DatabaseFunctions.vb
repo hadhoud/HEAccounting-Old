@@ -10,6 +10,10 @@ Imports Telerik.WinControls.UI
 Module DatabaseFunctions
     ReadOnly Db As New Database
 
+    Function CheckConnection() As Boolean
+        Return Db.checkConnection()
+    End Function
+
     Public Sub UpdateLang(ByVal Lang As String)
         Dim param(1) As String
         param(0) = "@lang , " & Lang
@@ -17,6 +21,12 @@ Module DatabaseFunctions
         ExecuteProcedureWithParameters("UpdateLanguage", param)
         Home.GetAppSettings()
     End Sub
+
+    Function GetInitialIDValue(ByVal VTableName As String)
+        Dim Param(0) As String
+        Param(0) = "@VTableName , " & VTableName
+        Return GetScalarProcedure("GetID", Param)
+    End Function
 
     Public Sub FillGridViewProcedure(ByVal Grid As RadGridView, ByVal ProcedureName As String)
         Grid.MasterTemplate.BeginUpdate()

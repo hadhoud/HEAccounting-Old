@@ -10,12 +10,17 @@ Imports Telerik.WinControls.UI
 
 Module Functions
     ReadOnly Db As New Database
+    Public myFieldVisibleSetting As New ClsFieldsVisibleSetting
 
     Function ChangeColNameToArabic(ByVal ColName As String) As String
         Select Case ColName
 
             'New ReFormat 29-3-2023
 
+            'Form Barcode Desginer
+            Case "Barcode_Qty"
+                Return "عدد الطباعة"
+            'end barcode desginer
             'Form Sales Orders
             Case "SubTotalUSD"
                 Return "المجموع $"
@@ -130,6 +135,51 @@ Module Functions
                 Return "القيمة $"
             'End Form All Notes
 
+             'Cash Drawers
+            Case "DrawerID"
+                Return "رقم الصندوق"
+
+            Case "DrawerName"
+                Return "إسم الصندوق"
+
+            Case "DrawerDescription"
+                Return "ملاحظات"
+                'End Cash Drawers
+
+                'Price Edit
+            Case "PurchasingPriceAfter"
+                Return "سعر الشراء معدل"
+
+            Case "SellingPriceAfter"
+                Return "سعر المبيع معدل"
+                'End Price Edit
+
+                'Program Log
+            Case "MethodName"
+                Return "الحدث"
+
+            Case "LatinMethodName"
+                Return "Event"
+
+            Case "Description"
+                Return "الشرح"
+
+            Case "UserName"
+                Return "UserName"
+
+            Case "LatinDescription"
+                Return "Description"
+
+            Case "ReferID"
+                Return "المرجع"
+
+            Case "ReferForm"
+                Return "النموذج"
+
+            Case "LatinReferForm"
+                Return "Form"
+                'End Price Edit
+
             'End new Reformat
 
             'Form Items:
@@ -147,6 +197,9 @@ Module Functions
 
             Case "SellingPrice"
                 Return "سعر المبيع"
+
+            Case "JemliSellingPrice"
+                Return "سعر المبيع جملة"
 
             Case "PurchasingPrice"
                 Return "سعر الشراء"
@@ -861,4 +914,30 @@ Module Functions
         Catch ex As Exception
         End Try
     End Function
+
+    Public Sub readConfigurationXmlFile()
+        Dim xmlFilePath As String = "dbConfig.xml"
+        ' Load the XML file
+        Dim xdoc As XDocument = XDocument.Load(xmlFilePath)
+        For Each item In xdoc.Descendants("item")
+            Dim name As String = item.Attribute("name").Value
+            If name = "dbConnection" Then
+                Dim servername As String = item.Element("servername").Value
+                dbServerName = servername
+                Dim dbname As String = item.Element("dbname").Value
+                dbDatabaseName = dbname
+                Dim connectiontype As String = item.Element("connectiontype").Value
+                dbConnectionType = connectiontype
+                If connectiontype.ToLower() <> "windows" Then
+                    Dim username As String = item.Element("username").Value
+                    Dim password As String = item.Element("password").Value
+                    dbUserName = username
+                    dbPassword = password
+                Else
+                    dbUserName = ""
+                    dbPassword = ""
+                End If
+            End If
+        Next
+    End Sub
 End Module

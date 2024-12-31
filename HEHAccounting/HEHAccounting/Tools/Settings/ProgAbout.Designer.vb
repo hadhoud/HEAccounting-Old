@@ -30,6 +30,7 @@ Partial Class ProgAbout
         Me.Version = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,6 +69,7 @@ Partial Class ProgAbout
         '
         Me.TableLayoutPanel2.ColumnCount = 1
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel2.Controls.Add(Me.Label4, 0, 5)
         Me.TableLayoutPanel2.Controls.Add(Me.Label1, 0, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.Version, 0, 2)
         Me.TableLayoutPanel2.Controls.Add(Me.Label3, 0, 3)
@@ -121,7 +123,7 @@ Partial Class ProgAbout
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(145, 40)
         Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Copiright © 2023"
+        Me.Label3.Text = "Copiright © 2024"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label2
@@ -136,6 +138,19 @@ Partial Class ProgAbout
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "By Hadi Serhan"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.Label4.Location = New System.Drawing.Point(3, 197)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(145, 38)
+        Me.Label4.TabIndex = 4
+        Me.Label4.Text = "70861884"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'ProgAbout
         '
@@ -172,5 +187,6 @@ Partial Class ProgAbout
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
+    Friend WithEvents Label4 As Label
 End Class
 

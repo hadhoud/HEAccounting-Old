@@ -25,6 +25,14 @@
     Public BoolShowSalesDailyWin As Boolean
     Public BoolShowDashboardForm As Boolean
     Public BoolShowCurrencyRateInStatus As Boolean
+    Public BarcodeInitialStartingNumber As String
+
+    'Database
+    Public dbDatabaseName As String = ""
+    Public dbServerName As String = ""
+    Public dbUserName As String = ""
+    Public dbConnectionType As String = ""
+    Public dbPassword As String = ""
 
     'User Permissions:
     Public BoolShowHomeScreenByUser As Boolean
@@ -33,6 +41,7 @@
     Public BoolShowPurchasingPriceInScreensByUser As Boolean
     Public BoolShowItemsSalesWinReportScreenByUser As Boolean
     Public BoolShowProfitsTextInScreenByUser As Boolean
+    Public BoolShowJemliSellingPriceInScreenByUser As Boolean
 
     'UserSettings
 
@@ -77,10 +86,10 @@
     'Program General Setting
     Public BoolShowProgramAlerts As Boolean
     Public BoolShowDailyPageWhenOpen As Boolean
-    Public TimerHomeForm As Integer
-    Public TimerDailyForm As Integer
+    Public TimerHomeForm As Integer = 1
+    Public TimerDailyForm As Integer = 1
     Public ProgramFormCurrency As Integer
-    Public ShowChequesDay As Integer
+    Public ShowChequesDay As Integer = 1
 
     'Report Setting
     Public ReportFormCurrency As Integer
@@ -157,6 +166,7 @@
     Public BoolShowAddSalesOrdersColPurchasePrice As Boolean
     Public BoolShowAddSalesOrdersTextCurrencyRate As Boolean
     Public BoolShowAddSalesOrdersTextProftis As Boolean
+    Public BoolShowAddSalesOrdersTextJemliPrice As Boolean
 
     'Add Purchase Order
     Public BoolShowAddPurchasesOrdersColPurchasePrice As Boolean

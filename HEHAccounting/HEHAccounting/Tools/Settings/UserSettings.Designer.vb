@@ -37,6 +37,7 @@ Partial Class UserSettings
         Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.DropCurrency = New Telerik.WinControls.UI.RadDropDownList()
+        Me.chkShowCurrencyRateInStatus = New Telerik.WinControls.UI.RadCheckBox()
         Me.ChkShowDailyPageWhenOpen = New Telerik.WinControls.UI.RadCheckBox()
         Me.ChkShowProgramAlerts = New Telerik.WinControls.UI.RadCheckBox()
         Me.LblTimerHome = New System.Windows.Forms.Label()
@@ -52,13 +53,13 @@ Partial Class UserSettings
         Me.TimerDaily = New System.Windows.Forms.NumericUpDown()
         Me.PageSuppliers = New Telerik.WinControls.UI.RadPageViewPage()
         Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
-        Me.RadLabel7 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel8 = New Telerik.WinControls.UI.RadLabel()
         Me.ChkAllowCustomerRepetition = New Telerik.WinControls.UI.RadCheckBox()
         Me.ChkAllowVendorRepetition = New Telerik.WinControls.UI.RadCheckBox()
         Me.ChkForcingEnterVendorLatin = New Telerik.WinControls.UI.RadCheckBox()
         Me.ChkForcingEnterCustomerLatin = New Telerik.WinControls.UI.RadCheckBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.labelCustomers = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.PageInvoices = New Telerik.WinControls.UI.RadPageViewPage()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.FlowLayoutPanel6 = New System.Windows.Forms.FlowLayoutPanel()
@@ -129,7 +130,9 @@ Partial Class UserSettings
         Me.chkShowDashboardForm = New Telerik.WinControls.UI.RadCheckBox()
         Me.DropLang = New Telerik.WinControls.UI.RadDropDownList()
         Me.Office2010BlueTheme1 = New Telerik.WinControls.Themes.Office2010BlueTheme()
-        Me.chkShowCurrencyRateInStatus = New Telerik.WinControls.UI.RadCheckBox()
+        Me.TxtBarCodeStartNumber = New Telerik.WinControls.UI.RadMaskedEditBox()
+        Me.FlowLayoutPanel15 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.BtnClose, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -142,6 +145,7 @@ Partial Class UserSettings
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.FlowLayoutPanel2.SuspendLayout()
         CType(Me.DropCurrency, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkShowCurrencyRateInStatus, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChkShowDailyPageWhenOpen, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChkShowProgramAlerts, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FlowLayoutPanel3.SuspendLayout()
@@ -152,8 +156,6 @@ Partial Class UserSettings
         CType(Me.TimerDaily, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PageSuppliers.SuspendLayout()
         Me.TableLayoutPanel7.SuspendLayout()
-        CType(Me.RadLabel7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChkAllowCustomerRepetition, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChkAllowVendorRepetition, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChkForcingEnterVendorLatin, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -213,7 +215,8 @@ Partial Class UserSettings
         CType(Me.chkShowSalesDailyWin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkShowDashboardForm, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DropLang, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chkShowCurrencyRateInStatus, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TxtBarCodeStartNumber, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FlowLayoutPanel15.SuspendLayout()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -240,7 +243,7 @@ Partial Class UserSettings
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.01504!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.98496!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 209.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 211.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.BtnClose, 2, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.BtnSave, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.TxtItemPicture, 0, 0)
@@ -257,7 +260,7 @@ Partial Class UserSettings
         Me.BtnClose.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.Image = Global.HEHAccounting.My.Resources.Resources.Close
         Me.BtnClose.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.BtnClose.Location = New System.Drawing.Point(221, 3)
+        Me.BtnClose.Location = New System.Drawing.Point(223, 3)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(104, 36)
         Me.BtnClose.TabIndex = 1
@@ -270,7 +273,7 @@ Partial Class UserSettings
         Me.BtnSave.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSave.Image = Global.HEHAccounting.My.Resources.Resources.Save
         Me.BtnSave.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.BtnSave.Location = New System.Drawing.Point(366, 3)
+        Me.BtnSave.Location = New System.Drawing.Point(368, 3)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(103, 36)
         Me.BtnSave.TabIndex = 0
@@ -310,7 +313,7 @@ Partial Class UserSettings
         '
         '
         Me.PagesSettings.RootElement.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize
-        Me.PagesSettings.SelectedPage = Me.PageGeneral
+        Me.PagesSettings.SelectedPage = Me.PageProgrammer
         Me.PagesSettings.Size = New System.Drawing.Size(735, 369)
         Me.PagesSettings.TabIndex = 0
         Me.PagesSettings.ViewMode = Telerik.WinControls.UI.PageViewMode.Backstage
@@ -355,9 +358,9 @@ Partial Class UserSettings
         CType(Me.PagesSettings.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.RadPageViewLabelElement).ShouldPaint = True
         CType(Me.PagesSettings.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.RadPageViewLabelElement).DrawFill = False
         CType(Me.PagesSettings.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.RadPageViewLabelElement).DrawBorder = False
-        CType(Me.PagesSettings.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.RadPageViewLabelElement).Text = "عام"
+        CType(Me.PagesSettings.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.RadPageViewLabelElement).Text = "المبرمج"
         CType(Me.PagesSettings.GetChildAt(0).GetChildAt(3), Telerik.WinControls.UI.RadPageViewLabelElement).ShouldPaint = True
-        CType(Me.PagesSettings.GetChildAt(0).GetChildAt(3), Telerik.WinControls.UI.RadPageViewLabelElement).Text = "عام"
+        CType(Me.PagesSettings.GetChildAt(0).GetChildAt(3), Telerik.WinControls.UI.RadPageViewLabelElement).Text = "المبرمج"
         '
         'PageGeneral
         '
@@ -447,6 +450,16 @@ Partial Class UserSettings
         Me.DropCurrency.TabIndex = 23
         Me.DropCurrency.Tag = ""
         Me.DropCurrency.ThemeName = "Office2010Blue"
+        '
+        'chkShowCurrencyRateInStatus
+        '
+        Me.chkShowCurrencyRateInStatus.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkShowCurrencyRateInStatus.Location = New System.Drawing.Point(51, 58)
+        Me.chkShowCurrencyRateInStatus.Name = "chkShowCurrencyRateInStatus"
+        Me.chkShowCurrencyRateInStatus.Size = New System.Drawing.Size(224, 22)
+        Me.chkShowCurrencyRateInStatus.TabIndex = 28
+        Me.chkShowCurrencyRateInStatus.Text = "إظهار سعر الصرف في شريط البرنامج"
+        Me.chkShowCurrencyRateInStatus.ThemeName = "Office2010Blue"
         '
         'ChkShowDailyPageWhenOpen
         '
@@ -607,13 +620,13 @@ Partial Class UserSettings
         Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel7.Controls.Add(Me.RadLabel7, 0, 4)
-        Me.TableLayoutPanel7.Controls.Add(Me.RadLabel8, 0, 1)
         Me.TableLayoutPanel7.Controls.Add(Me.ChkAllowCustomerRepetition, 0, 2)
         Me.TableLayoutPanel7.Controls.Add(Me.ChkAllowVendorRepetition, 0, 5)
         Me.TableLayoutPanel7.Controls.Add(Me.ChkForcingEnterVendorLatin, 0, 6)
         Me.TableLayoutPanel7.Controls.Add(Me.ChkForcingEnterCustomerLatin, 0, 3)
         Me.TableLayoutPanel7.Controls.Add(Me.Panel2, 2, 0)
+        Me.TableLayoutPanel7.Controls.Add(Me.labelCustomers, 0, 1)
+        Me.TableLayoutPanel7.Controls.Add(Me.Label17, 0, 4)
         Me.TableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel7.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TableLayoutPanel7.Location = New System.Drawing.Point(0, 0)
@@ -631,41 +644,11 @@ Partial Class UserSettings
         Me.TableLayoutPanel7.Size = New System.Drawing.Size(569, 359)
         Me.TableLayoutPanel7.TabIndex = 2
         '
-        'RadLabel7
-        '
-        Me.RadLabel7.AutoSize = False
-        Me.TableLayoutPanel7.SetColumnSpan(Me.RadLabel7, 2)
-        Me.RadLabel7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RadLabel7.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadLabel7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.RadLabel7.Location = New System.Drawing.Point(356, 96)
-        Me.RadLabel7.Name = "RadLabel7"
-        Me.RadLabel7.Size = New System.Drawing.Size(210, 22)
-        Me.RadLabel7.TabIndex = 9
-        Me.RadLabel7.Text = "الموردين"
-        Me.RadLabel7.TextAlignment = System.Drawing.ContentAlignment.TopRight
-        Me.RadLabel7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        '
-        'RadLabel8
-        '
-        Me.RadLabel8.AutoSize = False
-        Me.TableLayoutPanel7.SetColumnSpan(Me.RadLabel8, 2)
-        Me.RadLabel8.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RadLabel8.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadLabel8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.RadLabel8.Location = New System.Drawing.Point(356, 12)
-        Me.RadLabel8.Name = "RadLabel8"
-        Me.RadLabel8.Size = New System.Drawing.Size(210, 22)
-        Me.RadLabel8.TabIndex = 8
-        Me.RadLabel8.Text = "الزبائن"
-        Me.RadLabel8.TextAlignment = System.Drawing.ContentAlignment.TopRight
-        Me.RadLabel8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        '
         'ChkAllowCustomerRepetition
         '
         Me.TableLayoutPanel7.SetColumnSpan(Me.ChkAllowCustomerRepetition, 2)
         Me.ChkAllowCustomerRepetition.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAllowCustomerRepetition.Location = New System.Drawing.Point(407, 40)
+        Me.ChkAllowCustomerRepetition.Location = New System.Drawing.Point(407, 31)
         Me.ChkAllowCustomerRepetition.Name = "ChkAllowCustomerRepetition"
         Me.ChkAllowCustomerRepetition.Size = New System.Drawing.Size(159, 22)
         Me.ChkAllowCustomerRepetition.TabIndex = 1
@@ -676,7 +659,7 @@ Partial Class UserSettings
         '
         Me.TableLayoutPanel7.SetColumnSpan(Me.ChkAllowVendorRepetition, 2)
         Me.ChkAllowVendorRepetition.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkAllowVendorRepetition.Location = New System.Drawing.Point(407, 124)
+        Me.ChkAllowVendorRepetition.Location = New System.Drawing.Point(407, 106)
         Me.ChkAllowVendorRepetition.Name = "ChkAllowVendorRepetition"
         Me.ChkAllowVendorRepetition.Size = New System.Drawing.Size(159, 22)
         Me.ChkAllowVendorRepetition.TabIndex = 2
@@ -687,7 +670,7 @@ Partial Class UserSettings
         '
         Me.TableLayoutPanel7.SetColumnSpan(Me.ChkForcingEnterVendorLatin, 2)
         Me.ChkForcingEnterVendorLatin.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkForcingEnterVendorLatin.Location = New System.Drawing.Point(357, 152)
+        Me.ChkForcingEnterVendorLatin.Location = New System.Drawing.Point(357, 134)
         Me.ChkForcingEnterVendorLatin.Name = "ChkForcingEnterVendorLatin"
         Me.ChkForcingEnterVendorLatin.Size = New System.Drawing.Size(209, 22)
         Me.ChkForcingEnterVendorLatin.TabIndex = 5
@@ -698,7 +681,7 @@ Partial Class UserSettings
         '
         Me.TableLayoutPanel7.SetColumnSpan(Me.ChkForcingEnterCustomerLatin, 2)
         Me.ChkForcingEnterCustomerLatin.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkForcingEnterCustomerLatin.Location = New System.Drawing.Point(356, 68)
+        Me.ChkForcingEnterCustomerLatin.Location = New System.Drawing.Point(356, 59)
         Me.ChkForcingEnterCustomerLatin.Name = "ChkForcingEnterCustomerLatin"
         Me.ChkForcingEnterCustomerLatin.Size = New System.Drawing.Size(210, 22)
         Me.ChkForcingEnterCustomerLatin.TabIndex = 4
@@ -709,11 +692,33 @@ Partial Class UserSettings
         '
         Me.Panel2.BackColor = System.Drawing.Color.Black
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(349, 3)
+        Me.Panel2.Location = New System.Drawing.Point(289, 3)
         Me.Panel2.Name = "Panel2"
         Me.TableLayoutPanel7.SetRowSpan(Me.Panel2, 8)
         Me.Panel2.Size = New System.Drawing.Size(1, 333)
         Me.Panel2.TabIndex = 15
+        '
+        'labelCustomers
+        '
+        Me.labelCustomers.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.labelCustomers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.labelCustomers.Location = New System.Drawing.Point(296, 9)
+        Me.labelCustomers.Name = "labelCustomers"
+        Me.labelCustomers.Size = New System.Drawing.Size(270, 19)
+        Me.labelCustomers.TabIndex = 26
+        Me.labelCustomers.Text = "الزبائن"
+        Me.labelCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label17
+        '
+        Me.Label17.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Label17.Location = New System.Drawing.Point(296, 84)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(270, 19)
+        Me.Label17.TabIndex = 27
+        Me.Label17.Text = "الموردين"
+        Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'PageInvoices
         '
@@ -1441,6 +1446,7 @@ Partial Class UserSettings
         Me.FlowLayoutPanel16.Controls.Add(Me.chkShowSalesDailyWin)
         Me.FlowLayoutPanel16.Controls.Add(Me.chkShowDashboardForm)
         Me.FlowLayoutPanel16.Controls.Add(Me.DropLang)
+        Me.FlowLayoutPanel16.Controls.Add(Me.FlowLayoutPanel15)
         Me.FlowLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FlowLayoutPanel16.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.FlowLayoutPanel16.Location = New System.Drawing.Point(288, 3)
@@ -1452,7 +1458,7 @@ Partial Class UserSettings
         '
         Me.Label22.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label22.Location = New System.Drawing.Point(34, 0)
+        Me.Label22.Location = New System.Drawing.Point(-1, 0)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(239, 23)
         Me.Label22.TabIndex = 46
@@ -1534,15 +1540,38 @@ Partial Class UserSettings
         Me.DropLang.Tag = ""
         Me.DropLang.ThemeName = "Office2010Blue"
         '
-        'chkShowCurrencyRateInStatus
+        'TxtBarCodeStartNumber
         '
-        Me.chkShowCurrencyRateInStatus.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkShowCurrencyRateInStatus.Location = New System.Drawing.Point(51, 58)
-        Me.chkShowCurrencyRateInStatus.Name = "chkShowCurrencyRateInStatus"
-        Me.chkShowCurrencyRateInStatus.Size = New System.Drawing.Size(224, 22)
-        Me.chkShowCurrencyRateInStatus.TabIndex = 28
-        Me.chkShowCurrencyRateInStatus.Text = "إظهار سعر الصرف في شريط البرنامج"
-        Me.chkShowCurrencyRateInStatus.ThemeName = "Office2010Blue"
+        Me.TxtBarCodeStartNumber.BackColor = System.Drawing.Color.White
+        Me.TxtBarCodeStartNumber.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBarCodeStartNumber.Location = New System.Drawing.Point(15, 3)
+        Me.TxtBarCodeStartNumber.Mask = "G"
+        Me.TxtBarCodeStartNumber.MaskType = Telerik.WinControls.UI.MaskType.Numeric
+        Me.TxtBarCodeStartNumber.Name = "TxtBarCodeStartNumber"
+        Me.TxtBarCodeStartNumber.Size = New System.Drawing.Size(153, 24)
+        Me.TxtBarCodeStartNumber.TabIndex = 77
+        Me.TxtBarCodeStartNumber.TabStop = False
+        Me.TxtBarCodeStartNumber.Text = "0"
+        Me.TxtBarCodeStartNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtBarCodeStartNumber.ThemeName = "Office2010Blue"
+        '
+        'FlowLayoutPanel15
+        '
+        Me.FlowLayoutPanel15.Controls.Add(Me.Label18)
+        Me.FlowLayoutPanel15.Controls.Add(Me.TxtBarCodeStartNumber)
+        Me.FlowLayoutPanel15.Location = New System.Drawing.Point(-1, 224)
+        Me.FlowLayoutPanel15.Name = "FlowLayoutPanel15"
+        Me.FlowLayoutPanel15.Size = New System.Drawing.Size(274, 33)
+        Me.FlowLayoutPanel15.TabIndex = 78
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(174, 0)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(97, 19)
+        Me.Label18.TabIndex = 78
+        Me.Label18.Text = "رقم ترميز باركود"
         '
         'UserSettings
         '
@@ -1557,10 +1586,6 @@ Partial Class UserSettings
         Me.MinimizeBox = False
         Me.Name = "UserSettings"
         Me.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        '
-        '
-        '
-        Me.RootElement.ApplyShapeToControl = True
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "إعدادات المستخدم"
@@ -1580,6 +1605,7 @@ Partial Class UserSettings
         Me.FlowLayoutPanel2.ResumeLayout(False)
         Me.FlowLayoutPanel2.PerformLayout()
         CType(Me.DropCurrency, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkShowCurrencyRateInStatus, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ChkShowDailyPageWhenOpen, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ChkShowProgramAlerts, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FlowLayoutPanel3.ResumeLayout(False)
@@ -1593,8 +1619,6 @@ Partial Class UserSettings
         Me.PageSuppliers.ResumeLayout(False)
         Me.TableLayoutPanel7.ResumeLayout(False)
         Me.TableLayoutPanel7.PerformLayout()
-        CType(Me.RadLabel7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ChkAllowCustomerRepetition, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ChkAllowVendorRepetition, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ChkForcingEnterVendorLatin, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1661,7 +1685,9 @@ Partial Class UserSettings
         CType(Me.chkShowSalesDailyWin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkShowDashboardForm, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DropLang, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chkShowCurrencyRateInStatus, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TxtBarCodeStartNumber, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FlowLayoutPanel15.ResumeLayout(False)
+        Me.FlowLayoutPanel15.PerformLayout()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -1689,8 +1715,6 @@ Partial Class UserSettings
     Friend WithEvents NumChequesDay As NumericUpDown
     Friend WithEvents PageSuppliers As Telerik.WinControls.UI.RadPageViewPage
     Friend WithEvents TableLayoutPanel7 As TableLayoutPanel
-    Friend WithEvents RadLabel7 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadLabel8 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents ChkAllowCustomerRepetition As Telerik.WinControls.UI.RadCheckBox
     Friend WithEvents ChkAllowVendorRepetition As Telerik.WinControls.UI.RadCheckBox
     Friend WithEvents ChkForcingEnterVendorLatin As Telerik.WinControls.UI.RadCheckBox
@@ -1772,5 +1796,10 @@ Partial Class UserSettings
     Friend WithEvents FlowLayoutPanel14 As FlowLayoutPanel
     Friend WithEvents chkOptionQuantityHistory As Telerik.WinControls.UI.RadCheckBox
     Friend WithEvents chkShowCurrencyRateInStatus As Telerik.WinControls.UI.RadCheckBox
+    Friend WithEvents labelCustomers As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents FlowLayoutPanel15 As FlowLayoutPanel
+    Friend WithEvents Label18 As Label
+    Private WithEvents TxtBarCodeStartNumber As Telerik.WinControls.UI.RadMaskedEditBox
 End Class
 

@@ -120,6 +120,55 @@
   <metadata name="Office2010BlueTheme1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="RibButtonDashboard.SvgImageXml" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;svg x="0px" y="0px" viewBox="0, 0, 32, 32" xml:space="preserve" id="Layer_1" xml="http://www.w3.org/XML/1998/namespace" enable-background="new 0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace" version="1.1"&gt;
+  &lt;style type="text/css"&gt;
+	.Blue{fill:#1177D7;}
+	.White{fill:#FFFFFF;}
+	.Black{fill:#727272;}
+	.Red{fill:#D11C1C;}
+	.st0{opacity:0.6;}
+&lt;/style&gt;
+  &lt;polygon points="24,10 24,6 20,6 20,2 2,2 2,24 6,24 6,28 10,28 10,32 28,32 28,10" class="Black" style="fill:#727272;" /&gt;
+  &lt;polygon points="26,18 26,12 24,12 24,18 22,18 22,16 22,8 20,8 20,16 18,16 18,4 4,4 4,22 18,22 18,24 8,24 8,26 18,26 18,28 12,28 12,30 18,30 18,32 28,32 28,18" class="White" style="fill:white;" /&gt;
+  &lt;path d="M11 6 C8.2 6 6 8.2 6 11 C6 13.8 8.2 16 11 16 C13.8 16 16 13.8 16 11 L11 11 L11 6 z M13 6 L13 9 L16 9 L13 6 z" class="Blue" style="fill:#1177D7;" /&gt;
+  &lt;path d="M22 28 C20.9 28 20 28.9 20 30 C20 31.1 20.9 32 22 32 C23.1 32 24 31.1 24 30 C24 28.9 23.1 28 22 28 z M28 28 C26.9 28 26 28.9 26 30 C26 31.1 26.9 32 28 32 C29.1 32 30 31.1 30 30 C30 28.9 29.1 28 28 28 z" class="Red" style="fill:#D11C1C;" /&gt;
+  &lt;polygon points="22,20 19,17 18,18 20,20 20,26 28,26 32,20" class="Red" style="fill:#D11C1C;" /&gt;
+  &lt;g id="Layer_2" opacity="0.6" class="st0"&gt;
+    &lt;rect x="6" y="18" width="10" height="2" class="Black" style="fill:#727272;" /&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;</value>
+  </data>
+  <data name="RibBtnVendors.SvgImageXml" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;svg x="0px" y="0px" viewBox="0, 0, 32, 32" xml:space="preserve" id="Layer_1" xml="http://www.w3.org/XML/1998/namespace" enable-background="new 0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace" version="1.1"&gt;
+  &lt;style type="text/css"&gt;
+	.Green{fill:#8BB7F0;}
+	.White{fill:#FFFFFF;}
+&lt;/style&gt;
+  &lt;g id="Layer_2"&gt;
+    &lt;path d="M22 21 C19.4 20.3 19 18.7 19 18 C20.6 16.4 22 13.3 22 10 C22 9.8 22 9.5 22 9 C22 6.5 19.2 4 16.1 4 L16 4 L15.9 4 C12.8 4 10 6.5 10 9 C10 9.5 10 9.8 10 10 C10 13.3 11.4 16.4 13 18 C13 18.7 12.6 20.3 10 21 C5 22.4 4 22.1 4 28 L16 28 L28 28 C28 22.1 27 22.4 22 21 z" class="Green" style="fill:#8BB7F0;" /&gt;
+    &lt;path d="M13 18 L9 23 L13 23 L16 26 L19 23 L23 23 L19 18 L18.6 19 L16 24 L13.4 19 L13 18" class="White" style="fill:white;" /&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;</value>
+  </data>
+  <data name="RibBtnAddSalesInvoices.SvgImageXml" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;svg x="0px" y="0px" viewBox="0, 0, 32, 32" xml:space="preserve" id="Layer_1" xml="http://www.w3.org/XML/1998/namespace" enable-background="new 0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace" version="1.1"&gt;
+  &lt;style type="text/css"&gt;
+	.Green{fill:#039C23;}
+	.White{fill:#FFFFFF;}
+	.Red{fill:#D11C1C;}
+	.Black{fill:#727272;}
+&lt;/style&gt;
+  &lt;path d="M9 24 C7.3 24 6 25.3 6 27 C6 28.7 7.3 30 9 30 C10.7 30 12 28.7 12 27 C12 25.3 10.7 24 9 24 z M21 24 C19.3 24 18 25.3 18 27 C18 28.7 19.3 30 21 30 C22.7 30 24 28.7 24 27 C24 25.3 22.7 24 21 24 z" class="Black" style="fill:#727272;" /&gt;
+  &lt;polygon points="8,20.2 8,10.2 3,5.2 2,6.2 6,10.2 6,22.2 26,22.2 26,20.2" class="Red" style="fill:#D11C1C;" /&gt;
+  &lt;path d="M25 16 C20.4 16 16.6 12.5 16.1 8 L10 8 L10 18 L26 18 L26 15.9 C25.7 16 25.3 16 25 16 z" class="Red" style="fill:#D11C1C;" /&gt;
+  &lt;path d="M25 0 C28.9 0 32 3.1 32 7 C32 10.9 28.9 14 25 14 C21.1 14 18 10.9 18 7 C18 3.1 21.1 0 25 0 z" class="Green" style="fill:#039C23;" /&gt;
+  &lt;path d="M30 8 L26 8 L26 12 L24 12 L24 8 L20 8 L20 6 L24 6 L24 2 L26 2 L26 6 L30 6 L30 8 z" class="White" style="fill:white;" /&gt;
+&lt;/svg&gt;</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="RibBtnUserInfo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -154,6 +203,19 @@
         WsIul0v9Hc//V9BnywaasFiTyZRMW76R+NArSXO0O6+JHs+gKHrqTSbzTrrnv3y2MPZvT5r3ZH4o25YA
         AAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="BtnCommandBarExitApp.SvgImageXml" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;svg x="0px" y="0px" viewBox="0, 0, 32, 32" xml:space="preserve" id="Layer_1" xml="http://www.w3.org/XML/1998/namespace" enable-background="new 0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace" version="1.1"&gt;
+  &lt;style type="text/css"&gt;
+	.White{fill:#FFFFFF;}
+	.Red{fill:#D11C1C;}
+&lt;/style&gt;
+  &lt;g id="Layer_2"&gt;
+    &lt;path d="M16 2 C23.7 2 30 8.3 30 16 C30 23.7 23.7 30 16 30 C8.299999 30 2 23.7 2 16 C2 8.3 8.3 2 16 2 z" class="Red" style="fill:#D11C1C;" /&gt;
+    &lt;path d="M24 22 L22 24 L16 18 L10 24 L8 22 L14 16 L8 10 L10 8 L16 14 L22 8 L24 10 L18 16 L24 22 z" class="White" style="fill:white;" /&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;</value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>79</value>

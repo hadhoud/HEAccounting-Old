@@ -184,6 +184,9 @@ Public Class UserSettings
         Me.chkShowSalesDailyWin.Checked = BoolShowSalesDailyWin
         Me.chkShowDashboardForm.Checked = BoolShowDashboardForm
         Me.chkShowCurrencyRateInStatus.Checked = BoolShowCurrencyRateInStatus
+        Me.TxtBarCodeStartNumber.Value = BarcodeInitialStartingNumber
+
+
 
         Me.TxtSODefaultCustomer.AutoCompleteSource = AutoCompleteSource.CustomSource
         Me.TxtSODefaultCustomer.AutoCompleteCustomSource = CustomerNameAuto
@@ -289,7 +292,7 @@ Public Class UserSettings
     End Sub
 
     Private Sub UpdateAppSettings()
-        Dim Param(7) As String
+        Dim Param(8) As String
         Param(0) = "@Clang , " & Me.DropLang.SelectedValue.ToString
         Param(1) = "@BShowBarcode , " & IIf(ChkShowBarcode.Checked = True, True, False)
         Param(2) = "@BShowLanguage , " & IIf(ChkShowLang.Checked = True, True, False)
@@ -298,8 +301,10 @@ Public Class UserSettings
         Param(5) = "@BShowUnits , " & IIf(ChkShowItemsUnits.Checked = True, True, False)
         Param(6) = "@bShowSalesDailyWin , " & IIf(chkShowSalesDailyWin.Checked = True, True, False)
         Param(7) = "@bShowDashboardForm , " & IIf(chkShowDashboardForm.Checked = True, True, False)
-
+        Param(8) = "@CBarcodeInitialNumber , " & Me.TxtBarCodeStartNumber.Value
         ExecuteProcedureWithParameters("UpdateAppSettings", Param)
+
+        BarcodeInitialStartingNumber = Me.TxtBarCodeStartNumber.Value
     End Sub
 
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="sqlDataSource1" Width="8.101in" Name="Invoice" xmlns="http://schemas.telerik.com/reporting/2021/2.0">
+  <Style BackgroundColor="White" />
+  <DataSources>
+    <SqlDataSource QueryDesignerState="PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTE2Ij8+PERNIHhtbG5zOno9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vMjAwMy8xMC9TZXJpYWxpemF0aW9uLyIgeG1sbnM6aT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zPSJodHRwOi8vc2NoZW1hcy5kYXRhY29udHJhY3Qub3JnLzIwMDQvMDcvVGVsZXJpay5SZXBvcnRpbmcuRGVzaWduLlF1ZXJ5RGVzaWduZXIiPjxFcz48RSB6OklkPSJpMSI+PE1CTj5Db21wYW55SW5mbzwvTUJOPjxNQlAgejpJZD0iaTIiIGk6dHlwZT0iTmFtZXNwYWNlIj48TUJOPjwvTUJOPjxNT0M+PE1CIHo6UmVmPSJpMSIgLz48L01PQz48L01CUD48TU9DPjxNQiB6OklkPSJpMyIgaTp0eXBlPSJQIj48TUJOPkNvbXBhbnlOYW1lPC9NQk4+PE1CUCB6OlJlZj0iaTEiIC8+PFBPPnRydWU8L1BPPjwvTUI+PE1CIHo6SWQ9Imk0IiBpOnR5cGU9IlAiPjxNQk4+QWRkcmVzczwvTUJOPjxNQlAgejpSZWY9ImkxIiAvPjxQTz50cnVlPC9QTz48L01CPjxNQiB6OklkPSJpNSIgaTp0eXBlPSJQIj48TUJOPlBob25lPC9NQk4+PE1CUCB6OlJlZj0iaTEiIC8+PFBPPnRydWU8L1BPPjwvTUI+PE1CIHo6SWQ9Imk2IiBpOnR5cGU9IlAiPjxNQk4+Q2VsbFBob25lPC9NQk4+PE1CUCB6OlJlZj0iaTEiIC8+PFBPPnRydWU8L1BPPjwvTUI+PE1CIHo6SWQ9Imk3IiBpOnR5cGU9IlAiPjxNQk4+TGF0aW5BZGRyZXNzPC9NQk4+PE1CUCB6OlJlZj0iaTEiIC8+PFBPPnRydWU8L1BPPjwvTUI+PE1CIHo6SWQ9Imk4IiBpOnR5cGU9IlAiPjxNQk4+TGF0aW5OYW1lPC9NQk4+PE1CUCB6OlJlZj0iaTEiIC8+PFBPPnRydWU8L1BPPjwvTUI+PE1CIHo6SWQ9Imk5IiBpOnR5cGU9IlAiPjxNQk4+RW1haWw8L01CTj48TUJQIHo6UmVmPSJpMSIgLz48UE8+dHJ1ZTwvUE8+PC9NQj48L01PQz48RVIgLz48L0U+PC9Fcz48RnMgLz48TVI+ZmFsc2U8L01SPjxQcz48UCB6OlJlZj0iaTMiIC8+PFAgejpSZWY9Imk0IiAvPjxQIHo6UmVmPSJpNSIgLz48UCB6OlJlZj0iaTYiIC8+PFAgejpSZWY9Imk3IiAvPjxQIHo6UmVmPSJpOCIgLz48UCB6OlJlZj0iaTkiIC8+PC9Qcz48UnMgLz48L0RNPg==" ParameterValues="null" ConnectionString="HEHAccounting.My.MySettings.HEAccountingReportDB" SelectCommand="SELECT&#xD;&#xA;&#x9;[CompanyInfo].[CompanyName], &#xD;&#xA;&#x9;[CompanyInfo].[Address], &#xD;&#xA;&#x9;[CompanyInfo].[Phone], &#xD;&#xA;&#x9;[CompanyInfo].[CellPhone], &#xD;&#xA;&#x9;[CompanyInfo].[LatinAddress], &#xD;&#xA;&#x9;[CompanyInfo].[LatinName], &#xD;&#xA;&#x9;[CompanyInfo].[Email],&#xD;&#xA;&#x9;[CompanyInfo].[CompPic]&#xD;&#xA;FROM [CompanyInfo]" Name="sqlDataSource1" />
+  </DataSources>
+  <Items>
+    <DetailSection KeepTogether="False" Height="0.052in" Name="detail">
+      <Style Visible="False" />
+    </DetailSection>
+    <ReportHeaderSection Height="1.3in" Name="reportHeaderSection1">
+      <Items>
+        <PictureBox Value="= Fields.CompPic" Width="2.1in" Height="1in" Left="5.8in" Top="0.2in" Sizing="Stretch" MimeType="" Name="pictureBox2" />
+        <TextBox Width="2.783in" Height="0.371in" Left="2.659in" Top="0in" Value="= Fields.CompanyName" Name="textBox2">
+          <Style Color="Black" TextAlign="Center" VerticalAlign="Middle">
+            <Font Name="Times New Roman" Size="16pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.783in" Height="0.29in" Left="2.659in" Top="0.4in" Value="= Fields.Address" Name="textBox4">
+          <Style Color="Black" TextAlign="Center" VerticalAlign="Middle">
+            <Font Name="Times New Roman" Size="11pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.783in" Height="0.29in" Left="2.659in" Top="0.69in" Value="{Fields.CellPhone} - {Fields.Phone}" Name="textBox3">
+          <Style Color="Black" TextAlign="Center" VerticalAlign="Middle">
+            <Font Name="Times New Roman" Size="11pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.783in" Height="0.29in" Left="2.659in" Top="0.98in" Value="= Fields.Email" Name="textBox5">
+          <Style Color="Black" TextAlign="Center" VerticalAlign="Middle">
+            <Font Name="Times New Roman" Size="11pt" Bold="True" />
+          </Style>
+        </TextBox>
+      </Items>
+    </ReportHeaderSection>
+  </Items>
+  <PageSettings PaperKind="A4" Landscape="False">
+    <Margins>
+      <MarginsU Left="0in" Right="0in" Top="0.3in" Bottom="0.4in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <Font Name="Segoe UI" Size="10pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextBox" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <Font Name="Segoe UI Light" Size="16pt" Bold="True" />
+        <Padding Left="0in" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Header" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+</Report>

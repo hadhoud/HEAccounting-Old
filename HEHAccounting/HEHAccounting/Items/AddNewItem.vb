@@ -35,6 +35,8 @@ Public Class AddNewItem
     Sub ShowPermissions()
         Me.LblBarcode.Visible = BoolShowBarcode
         Me.TxtItemBarcode.Visible = BoolShowBarcode
+        Me.MTxtItemJemliSellingPrice.Visible = BoolShowJemliSellingPriceInScreenByUser
+        Me.lblJemliSellingPrice.Visible = BoolShowJemliSellingPriceInScreenByUser
         If Not BoolShowUnits Then
             Me.PageUnits.Item.Visibility = ElementVisibility.Collapsed
         End If
@@ -82,6 +84,7 @@ Public Class AddNewItem
             Me.MTxtMinQty.Value = dt.Rows(0).Item("MinQty").ToString
             Me.DropCurrency.SelectedValue = dt.Rows(0).Item("CurrencyID")
             Me.MTxtItemSellingPrice.Value = dt.Rows(0).Item("SellingPrice")  'سعر البيع
+            Me.MTxtItemJemliSellingPrice.Value = dt.Rows(0).Item("JemliSellingPrice")
             Me.MTxtItemPurchasingPrice.Value = dt.Rows(0).Item("PurchasingPrice")   'سعر الشراء
             Me.TxtGroupID.Text = dt.Rows(0).Item("GroupName").ToString
             If dt.Rows(0).Item("Picture").ToString.Length > 0 Then
@@ -163,7 +166,7 @@ Public Class AddNewItem
                     MessageShowInfo(Con.Msg_Items_Already_Added)
                     Exit Sub
                 End If
-                Dim Param(22) As String
+                Dim Param(23) As String
                 Param(0) = "@CBarcode , " & Me.TxtItemBarcode.Text.Trim
                 Param(1) = "@CItemName , " & Evalquote(Me.TxtItemName.Text)
                 Param(2) = "@CItemLatinName , " & Evalquote(Me.TxtLatinName.Text)
@@ -187,8 +190,8 @@ Public Class AddNewItem
                 Param(19) = "@FFactorTwo  , " & Me.TxtFactorTwo.Value
                 Param(20) = "@FSellingPriceOne  , " & Me.TxtPriceOne.Value
                 Param(21) = "@FSellingPriceTwo  , " & Me.TxtPriceTwo.Value
-
-                Param(22) = "@IUserID  , " & UserID
+                Param(22) = "@FJemliSellingPrice , " & Me.MTxtItemJemliSellingPrice.Value
+                Param(23) = "@IUserID  , " & UserID
                 If BtnSaveAndNew.Tag = "Save" Then
                     ExecuteProcedureWithParameters("InsertNewItem", Param)
                     ItemsNameAuto.Add(Me.TxtItemName.Text.ToLower)
@@ -219,6 +222,7 @@ Public Class AddNewItem
         Me.TxtItemBarcode.Clear()
         Me.MTxtItemPurchasingPrice.Value = 0
         Me.MTxtItemSellingPrice.Value = 0
+        Me.MTxtItemJemliSellingPrice.Value = 0
         Me.MTxtItemQty.Value = 0
         Me.MTxtMinQty.Value = 0
         Me.TxtItemPicture.Clear()
@@ -346,10 +350,11 @@ Public Class AddNewItem
                     Me.MTxtItemSellingPrice.Mask = "F0"
                     Me.TxtPriceOne.Mask = "F0"
                     Me.TxtPriceTwo.Mask = "F0"
-
+                    Me.MTxtItemJemliSellingPrice.Mask = "F0"
                 Else
                     Me.MTxtItemPurchasingPrice.Mask = "F" & CurrencyRow("CurrFloat").ToString
                     Me.MTxtItemSellingPrice.Mask = "F" & CurrencyRow("CurrFloat").ToString
+                    Me.MTxtItemJemliSellingPrice.Mask = "F" & CurrencyRow("CurrFloat").ToString
                     Me.TxtPriceOne.Mask = "F" & CurrencyRow("CurrFloat").ToString
                     Me.TxtPriceTwo.Mask = "F" & CurrencyRow("CurrFloat").ToString
                 End If
@@ -358,12 +363,14 @@ Public Class AddNewItem
                 If CurrencyRow("CurrFloat").ToString = "-1" Then
                     Me.MTxtItemPurchasingPrice.Mask = "F0"
                     Me.MTxtItemSellingPrice.Mask = "F0"
+                    Me.MTxtItemJemliSellingPrice.Mask = "F0"
                     Me.TxtPriceOne.Mask = "F0"
                     Me.TxtPriceTwo.Mask = "F0"
 
                 Else
                     Me.MTxtItemPurchasingPrice.Mask = "F" & CurrencyRow("CurrFloat").ToString
                     Me.MTxtItemSellingPrice.Mask = "F" & CurrencyRow("CurrFloat").ToString
+                    Me.MTxtItemJemliSellingPrice.Mask = "F" & CurrencyRow("CurrFloat").ToString
                     Me.TxtPriceOne.Mask = "F" & CurrencyRow("CurrFloat").ToString
                     Me.TxtPriceTwo.Mask = "F" & CurrencyRow("CurrFloat").ToString
                 End If

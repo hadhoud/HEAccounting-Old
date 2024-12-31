@@ -13,6 +13,7 @@ Public Class AddNewSaleInvoice
     Dim CustomerTitle As String
     Dim oldstatus As Integer
     Dim boolTimerStarted As Boolean = False
+    Dim InvoiceDescriptionAttachment As String = ""
     Sub New()
 
         ' This call is required by the designer.
@@ -164,6 +165,8 @@ Public Class AddNewSaleInvoice
             Me.TxtCurrencyVal.Tag = DtSalesOrderHeaders.Rows(0).Item("CurrencyRateID").ToString
 
             Me.TxtDiscount.Value = DtSalesOrderHeaders.Rows(0).Item("Discount").ToString
+            InvoiceDescriptionAttachment = DtSalesOrderHeaders.Rows(0).Item("InvoiceDescription").ToString
+
             Dim DtSalesOrderDetailsItems As DataTable = ExecuteProcedureDatatableWithParameters("SelectSalesOrdersDetailsJoinItemsByID", Param)
             For i As Integer = 0 To DtSalesOrderDetailsItems.Rows.Count - 1
                 '  Me.GridInvItem.Rows.Add(DtSalesOrderDetailsItems.Rows(i).ItemArray)
@@ -172,7 +175,7 @@ Public Class AddNewSaleInvoice
                 newrow.Cells("Item_name").Value = DtSalesOrderDetailsItems.Rows(i).Item("Item_name")
                 newrow.Cells("PurchasingPrice").Value = DtSalesOrderDetailsItems.Rows(i).Item("PurchasingPrice")
                 newrow.Cells("SellingPrice").Value = DtSalesOrderDetailsItems.Rows(i).Item("SellingPrice")
-
+                newrow.Cells("JemliSellingPrice").Value = DtSalesOrderDetailsItems.Rows(i).Item("JemliSellingPrice")
 
                 'If Me.DropStatus.SelectedValue = Status.Posted Then
                 '    newrow.Cells("AvailableQty").Value = DtSalesOrderDetailsItems.Rows(i).Item("AvailableQty")
@@ -252,6 +255,14 @@ Public Class AddNewSaleInvoice
             .Minimum = 0
         }
 
+        Dim JemliSellingPrice As New GridViewDecimalColumn With
+        {
+            .Name = "JemliSellingPrice",  'سعر البيع
+            .FieldName = "JemliSellingPrice",
+            .[ReadOnly] = True,
+            .Minimum = 0
+        }
+
         Dim RefreshPriceColumn As New GridViewCommandColumn With {
             .Name = "Refresh",
             .HeaderText = "",
@@ -315,6 +326,7 @@ Public Class AddNewSaleInvoice
         Me.GridInvItem.MasterTemplate.Columns.Add(ItemName)
         Me.GridInvItem.MasterTemplate.Columns.Add(PurchasingPrice)
         Me.GridInvItem.MasterTemplate.Columns.Add(SellingPrice)
+        Me.GridInvItem.MasterTemplate.Columns.Add(JemliSellingPrice)
         Me.GridInvItem.MasterTemplate.Columns.Add(RefreshPriceColumn)
         Me.GridInvItem.MasterTemplate.Columns.Add(AvailableQty)
         Me.GridInvItem.MasterTemplate.Columns.Add(QuantityCol)
@@ -334,7 +346,7 @@ Public Class AddNewSaleInvoice
         ' HideShowColummn(GridInvItem, Me.GridInvItem.Columns.Item("SpecialOfferID").Index, False)
         HideShowColummn(GridInvItem, Me.GridInvItem.Columns.Item("PurchasingPrice").Index, BoolShowPurchasingPriceInScreensByUser And BoolShowAddSalesOrdersColPurchasePrice)
         HideShowColummn(GridInvItem, Me.GridInvItem.Columns.Item("SalesProfitByQty").Index, BoolShowProfitsTextInScreenByUser And BoolShowAddSalesOrdersTextProftis)
-
+        HideShowColummn(GridInvItem, Me.GridInvItem.Columns.Item("JemliSellingPrice").Index, BoolShowJemliSellingPriceInScreenByUser And BoolShowAddSalesOrdersTextJemliPrice)
     End Sub
 
     Private Sub GridInvItem_CommandCellClick(sender As Object, e As GridViewCellEventArgs) Handles GridInvItem.CommandCellClick
@@ -360,6 +372,7 @@ Public Class AddNewSaleInvoice
 
             Me.GridInvItem.CurrentRow.Cells.Item("PurchasingPrice").Value = dtItem.Rows(0).Item("PurchasingPrice").ToString
             Me.GridInvItem.CurrentRow.Cells.Item("SellingPrice").Value = dtItem.Rows(0).Item("SellingPrice").ToString
+            Me.GridInvItem.CurrentRow.Cells.Item("JemliSellingPrice").Value = dtItem.Rows(0).Item("JemliSellingPrice").ToString
             Me.GridInvItem.CurrentRow.Cells.Item("AvailableQty").Value = dtItem.Rows(0).Item("Qty").ToString
             Me.GridInvItem.CurrentRow.Cells.Item("IsAlertQtyOnBuy").Value = dtItem.Rows(0).Item("IsAlertQtyOnBuy").ToString
             GridInvItem.Focus()
@@ -412,7 +425,6 @@ Public Class AddNewSaleInvoice
             For Each row In GridInvItem.Rows
                 If row.Cells("Item_id").Value.ToString = dt.Rows(0).Item("Item_id").ToString Then
                     row.Cells("Qty").Value = row.Cells("Qty").Value + 1
-                    'MessageShowInfo(Con.Msg_Item_Has_Been_Added)
                     Me.GridInvItem.Rows.Item(row.Index).IsCurrent = True
                     ' Me.GridInvItem.Rows.
                     Exit Sub
@@ -423,6 +435,7 @@ Public Class AddNewSaleInvoice
             rowInfo.Cells("Item_name").Value = dt.Rows(0).Item("Item_name").ToString
             rowInfo.Cells("PurchasingPrice").Value = dt.Rows(0).Item("PurchasingPrice").ToString
             rowInfo.Cells("SellingPrice").Value = dt.Rows(0).Item("SellingPrice").ToString
+            rowInfo.Cells("JemliSellingPrice").Value = dt.Rows(0).Item("JemliSellingPrice").ToString
             'rowInfo.Cells("SellingPricePercent").Value = dt.Rows(0).Item("SellingPricePercent").ToString
             rowInfo.Cells("AvailableQty").Value = dt.Rows(0).Item("Qty").ToString
             rowInfo.Cells("Qty").Value = 1
@@ -469,7 +482,7 @@ Public Class AddNewSaleInvoice
             e.CellElement.RowElement.ResetValue(LightVisualElement.BackColorProperty, ValueResetFlags.Local)
         End If
 
-        If e.Column.Name = "PurchasingPrice" Or e.Column.Name = "SellingPrice" Or e.Column.Name = "SalesProfitByQty" _
+        If e.Column.Name = "PurchasingPrice" Or e.Column.Name = "SellingPrice" Or e.Column.Name = "JemliSellingPrice" Or e.Column.Name = "SalesProfitByQty" _
                 Or e.Column.Name = "ItemDiscount" Or e.Column.Name = "TotalDue" Or e.Column.Name = "SubTotal" Then
             e.CellElement.Text = FormatGridColumnAsCurrency(e.CellElement.Value, Me.DropCurrency.SelectedValue, False)
         End If
@@ -602,7 +615,7 @@ Public Class AddNewSaleInvoice
                         End If
                     End If
 
-                    Dim Param(14) As String
+                    Dim Param(15) As String
                     Param(0) = "@TDueDate , " & Me.MskTxtInvDate.Value
                     Param(1) = "@ICustomerID , " & CustomerID
                     Param(2) = "@CPaymentType , " & IIf(Me.RadioCash.IsChecked, "C", "D")
@@ -617,7 +630,8 @@ Public Class AddNewSaleInvoice
                     Param(11) = "@ISpecialOfferSOID , " & 0
                     Param(12) = "@FDiscount , " & Me.TxtDiscount.Text
                     Param(13) = "@IInvID , " & Me.TxtInvID.Text
-                    Param(14) = "@IUserID , " & UserID
+                    Param(14) = "@CInvoiceDescription , " & InvoiceDescriptionAttachment
+                    Param(15) = "@IUserID , " & UserID
 
                     If BtnSaveAndNew.Tag = "Save" Then
                         ExecuteProcedureWithParameters("InsertNewSalesOrderHeader", Param)
@@ -728,6 +742,7 @@ Public Class AddNewSaleInvoice
         Me.txtDollarRate.Text = LastDollarCurrencyRate
         Me.MskTxtInvDate.Focus()
         LoadSODefaultCustomer()
+        InvoiceDescriptionAttachment = String.Empty
     End Sub
 
     Private Sub LoadSODefaultCustomer()
@@ -865,12 +880,14 @@ Public Class AddNewSaleInvoice
             For i As Integer = 0 To GridInvItem.ChildRows.Count - 1
                 If Me.DropCurrency.SelectedValue.ToString = "1" Then
                     Me.GridInvItem.Rows(i).Cells("SellingPrice").Value = Math.Round(Me.GridInvItem.Rows(i).Cells("SellingPrice").Value * Me.txtDollarRate.Text, 0)
+                    Me.GridInvItem.Rows(i).Cells("JemliSellingPrice").Value = Math.Round(Me.GridInvItem.Rows(i).Cells("JemliSellingPrice").Value * Me.txtDollarRate.Text, 0)
                     Me.GridInvItem.Rows(i).Cells("PurchasingPrice").Value = Math.Round(Me.GridInvItem.Rows(i).Cells("PurchasingPrice").Value * Me.txtDollarRate.Text, 0)
                     Me.GridInvItem.Rows(i).Cells("ItemDiscount").Value = Math.Round(Me.GridInvItem.Rows(i).Cells("ItemDiscount").Value * Me.txtDollarRate.Text, 0)
                     Me.TxtDiscount.Text = Math.Round(currentInvoiceDiscount * Me.txtDollarRate.Text, 0)
                 Else
                     Dim currRound As Integer = CurrencyRow("CurrFloat")
                     Me.GridInvItem.Rows(i).Cells("SellingPrice").Value = Math.Round(Me.GridInvItem.Rows(i).Cells("SellingPrice").Value / Me.txtDollarRate.Text, currRound)
+                    Me.GridInvItem.Rows(i).Cells("JemliSellingPrice").Value = Math.Round(Me.GridInvItem.Rows(i).Cells("JemliSellingPrice").Value / Me.txtDollarRate.Text, currRound)
                     Me.GridInvItem.Rows(i).Cells("PurchasingPrice").Value = Math.Round(Me.GridInvItem.Rows(i).Cells("PurchasingPrice").Value / Me.txtDollarRate.Text, currRound)
                     Me.GridInvItem.Rows(i).Cells("ItemDiscount").Value = Math.Round(Me.GridInvItem.Rows(i).Cells("ItemDiscount").Value / Me.txtDollarRate.Text, currRound)
                     Me.TxtDiscount.Text = Math.Round(currentInvoiceDiscount / Me.txtDollarRate.Text, currRound)
@@ -966,6 +983,11 @@ Public Class AddNewSaleInvoice
                     Me.GridInvItem.CurrentRow.Cells("Qty").Value = formCalculateQuantity.CalculatedQuantity
                     Me.GridInvItem.CurrentRow.Cells("SellingPrice").Value = formCalculateQuantity.SellingPrice
                 End If
+
+            ElseIf column.Name = "JemliSellingPrice" Then
+                If (Me.GridInvItem.CurrentRow.Cells("JemliSellingPrice").Value > 0) Then
+                    Me.GridInvItem.CurrentRow.Cells("SellingPrice").Value = Me.GridInvItem.CurrentRow.Cells("JemliSellingPrice").Value
+                End If
             End If
         End If
     End Sub
@@ -1028,5 +1050,16 @@ Public Class AddNewSaleInvoice
 
     Private Sub LblCurrValue_Click(sender As Object, e As EventArgs) Handles LblCurrValue.Click
         tblCurrencyRow.Visible = Not tblCurrencyRow.Visible
+    End Sub
+
+    Private Sub btnAttachments_Click(sender As Object, e As EventArgs) Handles btnAttachments.Click
+        Dim FrmInvoiceAttachments As New InvoiceAttachments With {
+            .InvNum = Me.TxtInvID.Text,
+            .InvoiceDescription = InvoiceDescriptionAttachment
+        }
+        If FrmInvoiceAttachments.ShowDialog() = DialogResult.OK Then
+            InvoiceDescriptionAttachment = FrmInvoiceAttachments.InvoiceDescription
+        End If
+
     End Sub
 End Class

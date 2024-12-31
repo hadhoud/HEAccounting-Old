@@ -62,7 +62,7 @@ Partial Class Accounts
         '
         Me.GridAccounts.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.GridAccounts.Name = "GridAccounts"
-        Me.GridAccounts.Size = New System.Drawing.Size(511, 219)
+        Me.GridAccounts.Size = New System.Drawing.Size(655, 294)
         Me.GridAccounts.TabIndex = 1
         '
         'TableLayoutPanel1
@@ -80,7 +80,7 @@ Partial Class Accounts
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(517, 334)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(661, 409)
         Me.TableLayoutPanel1.TabIndex = 3
         '
         'TableLayoutPanel2
@@ -103,13 +103,13 @@ Partial Class Accounts
         Me.TableLayoutPanel2.RowCount = 2
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(511, 52)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(655, 52)
         Me.TableLayoutPanel2.TabIndex = 69
         '
         'TxtAccName
         '
         Me.TxtAccName.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtAccName.Location = New System.Drawing.Point(198, 27)
+        Me.TxtAccName.Location = New System.Drawing.Point(342, 27)
         Me.TxtAccName.Name = "TxtAccName"
         Me.TxtAccName.ShowClearButton = True
         Me.TxtAccName.Size = New System.Drawing.Size(153, 24)
@@ -121,7 +121,7 @@ Partial Class Accounts
         '
         Me.TxtAccNum.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtAccNum.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtAccNum.Location = New System.Drawing.Point(357, 27)
+        Me.TxtAccNum.Location = New System.Drawing.Point(501, 27)
         Me.TxtAccNum.Name = "TxtAccNum"
         Me.TxtAccNum.ShowClearButton = True
         Me.TxtAccNum.Size = New System.Drawing.Size(151, 24)
@@ -133,7 +133,7 @@ Partial Class Accounts
         '
         Me.LblAccNum.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LblAccNum.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblAccNum.Location = New System.Drawing.Point(357, 0)
+        Me.LblAccNum.Location = New System.Drawing.Point(501, 0)
         Me.LblAccNum.Name = "LblAccNum"
         Me.LblAccNum.Size = New System.Drawing.Size(151, 24)
         Me.LblAccNum.TabIndex = 65
@@ -145,7 +145,7 @@ Partial Class Accounts
         Me.LblِAccName.AutoSize = True
         Me.LblِAccName.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LblِAccName.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblِAccName.Location = New System.Drawing.Point(198, 0)
+        Me.LblِAccName.Location = New System.Drawing.Point(342, 0)
         Me.LblِAccName.Name = "LblِAccName"
         Me.LblِAccName.Size = New System.Drawing.Size(153, 24)
         Me.LblِAccName.TabIndex = 65
@@ -179,11 +179,11 @@ Partial Class Accounts
         Me.TableLayoutPanel3.Controls.Add(Me.BtnEdit, 1, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.BtnAccWithBalance, 2, 0)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 286)
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 361)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 1
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(511, 45)
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(655, 45)
         Me.TableLayoutPanel3.TabIndex = 2
         '
         'BtnClose
@@ -192,7 +192,7 @@ Partial Class Accounts
         Me.BtnClose.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.Image = Global.HEHAccounting.My.Resources.Resources.Close
         Me.BtnClose.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.BtnClose.Location = New System.Drawing.Point(13, 3)
+        Me.BtnClose.Location = New System.Drawing.Point(31, 3)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(104, 36)
         Me.BtnClose.TabIndex = 1
@@ -205,7 +205,7 @@ Partial Class Accounts
         Me.BtnAdd.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnAdd.Image = Global.HEHAccounting.My.Resources.Resources.Create
         Me.BtnAdd.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.BtnAdd.Location = New System.Drawing.Point(396, 3)
+        Me.BtnAdd.Location = New System.Drawing.Point(522, 3)
         Me.BtnAdd.Name = "BtnAdd"
         Me.BtnAdd.Size = New System.Drawing.Size(104, 36)
         Me.BtnAdd.TabIndex = 0
@@ -219,7 +219,7 @@ Partial Class Accounts
         Me.BtnEdit.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnEdit.Image = Global.HEHAccounting.My.Resources.Resources.Modify
         Me.BtnEdit.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.BtnEdit.Location = New System.Drawing.Point(269, 3)
+        Me.BtnEdit.Location = New System.Drawing.Point(359, 3)
         Me.BtnEdit.Name = "BtnEdit"
         Me.BtnEdit.Size = New System.Drawing.Size(104, 36)
         Me.BtnEdit.TabIndex = 38
@@ -232,7 +232,7 @@ Partial Class Accounts
         Me.BtnAccWithBalance.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.BtnAccWithBalance.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.BtnAccWithBalance.Image = Global.HEHAccounting.My.Resources.Resources.my_invoices
-        Me.BtnAccWithBalance.Location = New System.Drawing.Point(142, 3)
+        Me.BtnAccWithBalance.Location = New System.Drawing.Point(196, 3)
         Me.BtnAccWithBalance.Name = "BtnAccWithBalance"
         Me.BtnAccWithBalance.Size = New System.Drawing.Size(104, 36)
         Me.BtnAccWithBalance.TabIndex = 1
@@ -244,7 +244,7 @@ Partial Class Accounts
         Me.AcceptButton = Me.BtnSearch
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(517, 334)
+        Me.ClientSize = New System.Drawing.Size(661, 409)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog

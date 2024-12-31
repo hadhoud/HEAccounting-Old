@@ -22,6 +22,8 @@ Public Class MainForm
     Dim FrmQuantityHistory As QuantityHistory
     Dim FrmInvoicesDetails As InvoicesDetails
     Dim FrmAllNotes As AllNotes
+    Dim FrmProgLog As ProgramLog
+    Dim FrmManageBarCodes As ManageBarcodes
 
     Dim FrmToOpen As String
     Dim FrmOpenTimer As New Timer
@@ -56,6 +58,7 @@ Public Class MainForm
             Me.RibBtnItemsSalesWin.Visibility = IIf(BoolShowItemsSalesWinReportScreenByUser, ElementVisibility.Visible, ElementVisibility.Collapsed)
             Me.RibBtnPurchasePrices.Visibility = IIf(BoolShowPurchasingPriceInScreensByUser, ElementVisibility.Visible, ElementVisibility.Collapsed)
             Me.RGSettingProgrammer.Visibility = ElementVisibility.Visible
+            Me.RibTabTreasury.Visibility = ElementVisibility.Visible
         Else
             Me.RibBtnUsers.Visibility = IIf(BoolShowUsers, ElementVisibility.Visible, ElementVisibility.Collapsed)
             Me.RibBtnCurrencies.Visibility = IIf(BoolShowUsers, ElementVisibility.Visible, ElementVisibility.Collapsed)
@@ -67,8 +70,10 @@ Public Class MainForm
             Me.RibBtnItemsSalesWin.Visibility = IIf(BoolShowItemsSalesWinReportScreenByUser, ElementVisibility.Visible, ElementVisibility.Collapsed)
             Me.RibBtnPurchasePrices.Visibility = IIf(BoolShowPurchasingPriceInScreensByUser, ElementVisibility.Visible, ElementVisibility.Collapsed)
             Me.RGSettingProgrammer.Visibility = ElementVisibility.Collapsed
-        End If
+            Me.RibTabTreasury.Visibility = ElementVisibility.Collapsed
 
+        End If
+        Me.RibbonTabHome.IsSelected = True
 
         Dim PORow As DataRow = UserRolesdt.Select("KeyName = 'PO'").First
         Me.RibBtnAddPurchaseInvoices.Enabled = PORow("AllowAdd").ToString
@@ -696,6 +701,29 @@ Public Class MainForm
                 FrmAllNotes.Show()
             End If
             ActWindow(FrmAllNotes)
+
+        ElseIf FrmToOpen = "FrmProgLog" Then
+            If FrmProgLog Is Nothing Then
+                FrmProgLog = New ProgramLog With {
+                    .Width = WindowDock.Width,
+                    .Height = WindowDock.Height,
+                    .MdiParent = Me
+                }
+                FrmProgLog.PnlOptions.Visible = True
+                FrmProgLog.Show()
+            End If
+            ActWindow(FrmProgLog)
+        ElseIf FrmToOpen = "FrmManageBarCodes" Then
+            If FrmManageBarCodes Is Nothing Then
+                FrmManageBarCodes = New ManageBarcodes With {
+                    .Width = WindowDock.Width,
+                    .Height = WindowDock.Height,
+                    .MdiParent = Me
+                }
+                FrmManageBarCodes.PnlOptions.Visible = True
+                FrmManageBarCodes.Show()
+            End If
+            ActWindow(FrmManageBarCodes)
         End If
 
         Me.Cursor = Cursors.Default
@@ -892,6 +920,9 @@ Public Class MainForm
                 Case "FrmAllNotes"
                     FrmAllNotes.PnlOptions.Visible = Vis
                     Exit Select
+                Case "FrmProgLog"
+                    FrmProgLog.PnlOptions.Visible = Vis
+                    Exit Select
             End Select
         End If
     End Sub
@@ -947,6 +978,11 @@ Public Class MainForm
             Case "FrmAllNotes"
                 FrmAllNotes = Nothing
                 Exit Select
+            Case "FrmProgLog"
+                FrmProgLog = Nothing
+            Case "FrmManageBarCodes"
+                FrmManageBarCodes = Nothing
+                Exit Select
         End Select
     End Sub
     Private Sub ActWindow(Frm As Form)
@@ -969,6 +1005,7 @@ Public Class MainForm
     Private Sub EnableDocumentBtn()
         If WindowDock.DockWindows.DocumentWindows.Count > 0 Then
             ' e.DockWindow.TabStripItem.ForeColor = Color.Blue
+            Me.BtnCommandBarShowHideForm.Enabled = True
             Me.BtnCommandBarShowHideForm.Enabled = True
             Select Case Me.WindowDock.ActiveWindow.Tag
                 Case "Items"
@@ -1085,6 +1122,19 @@ Public Class MainForm
                         Me.BtnCommandBarEdit.Enabled = False
                         Me.BtnCommandBarMostanadNew.Enabled = False
                         Me.BtnCommandBarShowHideForm.CheckState = IIf(FrmAllNotes.PnlOptions.Visible, CheckState.Checked, CheckState.Unchecked)
+                    End If
+                Case "FrmProgLog"
+                    If FrmProgLog IsNot Nothing Then
+                        Me.BtnCommandBarEdit.Enabled = False
+                        Me.BtnCommandBarMostanadNew.Enabled = False
+                        Me.BtnCommandBarShowHideForm.CheckState = IIf(FrmProgLog.PnlOptions.Visible, CheckState.Checked, CheckState.Unchecked)
+                    End If
+                Case "FrmManageBarCodes"
+                    If FrmManageBarCodes IsNot Nothing Then
+                        Me.BtnCommandBarEdit.Enabled = False
+                        Me.BtnCommandBarMostanadNew.Enabled = False
+                        Me.BtnCommandBarShowHideForm.Enabled = False
+                        Me.BtnCommandBarShowHideForm.CheckState = CheckState.Checked
                     End If
                     Exit Select
             End Select
@@ -1377,6 +1427,31 @@ Public Class MainForm
 
     Private Sub btnAllNotes_Click(sender As Object, e As EventArgs) Handles btnAllNotes.Click
         FrmToOpen = "FrmAllNotes"
+        FrmOpenTimer.Start()
+    End Sub
+
+    Private Sub RibBtnDrawers_Click(sender As Object, e As EventArgs) Handles RibBtnDrawers.Click
+        Dim FrmDrawers As New CashDrawers
+        FrmDrawers.ShowDialog()
+    End Sub
+
+    Private Sub RibBtnAddDrawer_Click(sender As Object, e As EventArgs) Handles RibBtnAddDrawer.Click
+        Dim Frm_AddDrawer As New AddCashDrawer
+        Frm_AddDrawer.ShowDialog()
+    End Sub
+
+    Private Sub RibToolsBtnPricesEdit_Click(sender As Object, e As EventArgs) Handles RibToolsBtnPricesEdit.Click
+        Dim FrmPriceEdit As New PriceEdit
+        FrmPriceEdit.ShowDialog()
+    End Sub
+
+    Private Sub RibBtnLog_Click(sender As Object, e As EventArgs) Handles RibBtnLog.Click
+        FrmToOpen = "FrmProgLog"
+        FrmOpenTimer.Start()
+    End Sub
+
+    Private Sub RGToolsManageBarcode_Click(sender As Object, e As EventArgs) Handles RGToolsManageBarcode.Click
+        FrmToOpen = "FrmManageBarCodes"
         FrmOpenTimer.Start()
     End Sub
 

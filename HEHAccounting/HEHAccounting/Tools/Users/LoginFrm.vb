@@ -78,6 +78,7 @@ Public Class LoginFrm
     End Sub
 
     Private Sub LoginFrm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        readConfigurationXmlFile()
         CheckRight()
         Me.TxtUserName.Text = My.Settings.RemmberUserName
         If Me.TxtUserName.Text.Trim.Length <> 0 Then

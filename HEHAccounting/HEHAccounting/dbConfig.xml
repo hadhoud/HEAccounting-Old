@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <item name="dbConnection">
+    <servername>DESKTOP-SRG0AOE</servername>
+    <dbname>HEColdStorage</dbname>
+    <connectiontype>SQLServer</connectiontype>
+    <username>sa</username>
+    <password>01o1j2uxVqU=</password>
+  </item>
+</root>

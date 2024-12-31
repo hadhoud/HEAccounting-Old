@@ -33,6 +33,11 @@
     Public RestoreDatabase As String
     Public Restore As String
 
+    'BarCode Type string
+    Public Lbl_UPCA As String
+    Public Lbl_UPCE As String
+
+
     'Arabic - En
     Public ForHim As String
     Public OnHim As String
@@ -92,6 +97,9 @@
     Public RptQuantityHistory As String
 
     Public RptThermalInvSalesOrder As String
+
+    'Barcode
+    Public RptBarcodeFormtecA4_1056 As String
 
     ' For Ask 
     Public Ask_Add As String
@@ -155,18 +163,29 @@
     Public Msg_Choose_a_Customer As String
     Public Msg_System_Config_Enter_User_And_Pass As String
     Public Msg_INV_Do_Not_Have_Payments As String
+
+    'Drawers
+    Public Msg_Drawer_Has_Been_Updated As String
+    Public Msg_Drawer_Already_Added As String
+
+    'barcodes
+    Public Msg_UPCA_Type_Allow_11_Number As String
+    Public Msg_UPCE_Type_Allow_13_Number As String
+
     Sub New()
 
         'version
         Lbl_One_Version = 1
         Lbl_Two_Version = 9
-        Lbl_Year_One_Version = 2
-        Lbl_Year_Two_Version = 9
+        Lbl_Year_One_Version = 3
+        Lbl_Year_Two_Version = 2
 
         'Always not related to lang
         'Constant Value
         ACC_Cust_VEND = "Cust/Vend"
         ACC_GENERAL = "General"
+        Lbl_UPCA = "UPCA"
+        Lbl_UPCE = "UPCE"
 
         If BoolLTRLanguage Then
 
@@ -246,7 +265,7 @@
             RptNotesPay = "ArNP101"
             RptNotesReceive = "ArNR101"
             RptQuantityHistory = "ArQuantityHistory101"
-
+            RptBarcodeFormtecA4_1056 = "ArBarcodeFormtecA41024"
             RptThermalInvSalesOrder = "/Thermal/AR/ArSODetails101"
 
             Msg_Check_Username_Password = "Check Your Username And Password"
@@ -288,7 +307,7 @@
             Msg_Qty_Must_Be_Smaller_Than_Available_Quantity = "-Quantity Must Be Smaller Than Available Quantity-"
             Msg_Discount_Is_Greater_Than_Total_Price = "-Discount Is Greater Than Total Price-"
             Msg_Selling_Is_Smaller_Than_Purchasing_Price = "-Selling Price Is Smaller Than Purchasing Price-"
-            Msg_Item_Has_Been_Added = "Item Has been Added , Change Quantiy"
+            Msg_Item_Has_Been_Added = "Item Has been Added"
             Msg_Item_Not_Found = "Item Not Exist"
             Msg_You_Cannot_Move_This_Item_To_This_Group = "You Cannot Move This Item To This Group"
             Msg_Cust_Updated_From_Customer_Form = "It's a Customer Account Update It From Customer Form"
@@ -310,6 +329,10 @@
             Msg_Notes_Status_ISUnposted = "Notes Is Unposted"
             Msg_Choose_a_Customer = "Choose a Customer"
             Msg_System_Config_Enter_User_And_Pass = "Please Enter UserName and Password"
+            'Drawers
+            Msg_Drawer_Has_Been_Updated = "Drawer Has Been Modified"
+            Msg_Drawer_Already_Added = "Drawer Already Added Before"
+            Msg_UPCA_Type_Allow_11_Number = "Only 11 numbers are allowed"
         Else
 
 
@@ -391,6 +414,9 @@
 
             RptThermalInvSalesOrder = "/Thermal/AR/ArSODetails101"
 
+            'Barcode 
+            RptBarcodeFormtecA4_1056 = "ArBarcodeFormtecA41056"
+
             ' For Ask 
             Ask_Add = "هل أنت متأكد أنك تريد الإضافة؟"
             Ask_Edit = "هل أنت متأكد أنك تريد التعديل؟"
@@ -427,7 +453,7 @@
             Msg_Qty_Must_Be_Smaller_Than_Available_Quantity = "-الكمية يجب أن تكون أقل من الكمية المتاحة-"
             Msg_Discount_Is_Greater_Than_Total_Price = "-الخصم أكبر من المجموع-"
             Msg_Selling_Is_Smaller_Than_Purchasing_Price = "-سعر البيع أصغر من سعر الشراء-"
-            Msg_Item_Has_Been_Added = "تم إضافة الصنف يمكنك تغيير الكمية"
+            Msg_Item_Has_Been_Added = "تم إضافة الصنف"
             Msg_Item_Not_Found = "صنف غير موجود"
             Msg_Check_Username_Password = "تأكد من إسم المستخدم و كلمة المرور"
             Msg_Check_Old_Password = "تأكد من كلمة المرور القديمة"
@@ -452,6 +478,15 @@
             Msg_Notes_Status_ISUnposted = "السند غير مرحل"
             Msg_Choose_a_Customer = "يجب إختيار زبون"
             Msg_System_Config_Enter_User_And_Pass = "تأكد من إسم المستخدم و كلمة المرور"
+
+            'Drawers
+            Msg_Drawer_Has_Been_Updated = "تم تعديل الصندوق"
+            Msg_Drawer_Already_Added = "الصندوق موجود لا يمكن تكرار الإسم"
+
+            'Barcodes
+            Msg_UPCA_Type_Allow_11_Number = "يمكنك إدخال فقط 11 رقم"
+            Msg_UPCE_Type_Allow_13_Number = "يمكنك إدخال فقط 13 رقم"
+
         End If
 
 

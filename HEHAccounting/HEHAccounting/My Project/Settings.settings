@@ -2,23 +2,8 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
   <Profiles />
   <Settings>
-    <Setting Name="ServerName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">(Local)</Value>
-    </Setting>
-    <Setting Name="ServerMode" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Windows</Value>
-    </Setting>
     <Setting Name="RemmberUserName" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="DBUserPassword" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="DBName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">HEAccounting</Value>
-    </Setting>
-    <Setting Name="DBUserName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">sa</Value>
     </Setting>
     <Setting Name="HEAccountingReportDB" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;

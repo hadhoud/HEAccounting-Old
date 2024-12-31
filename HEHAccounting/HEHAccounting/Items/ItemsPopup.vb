@@ -1,9 +1,12 @@
 ﻿Imports Telerik.WinControls.Data
 Imports Telerik.WinControls.UI
+Imports Telerik.WinControls.VirtualKeyboard
 
 Public Class ItemsPopup
 
     Public GetITemName As String = ""
+    Public NoBarcodeItems As Boolean = False
+
     Sub New()
 
         ' This call is required by the designer.
@@ -18,13 +21,33 @@ Public Class ItemsPopup
         InitiateGrid(Me.GridItems)
 
     End Sub
+
+    Sub New(NoBarcode As Boolean)
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        If BoolLTRLanguage Then
+            ChangeToEng()
+        End If
+        ShowPermissions()
+        NoBarcodeItems = NoBarcode
+        RefrechGrid()
+        InitiateGrid(Me.GridItems)
+
+    End Sub
+
     Sub ShowPermissions()
         Me.LblBarcode.Visible = BoolShowBarcode
         Me.TxtBarcode.Visible = BoolShowBarcode
     End Sub
 
     Public Sub RefrechGrid()
-        FillGridViewProcedure(Me.GridItems, "SelectItems")
+        Dim Param(0) As String
+        Param(0) = "@BNoBarcodeItems  , " & NoBarcodeItems
+        FillGridViewProcedureWithParameters(Me.GridItems, "SelectItems", Param)
+
         HideShowColummn(Me.GridItems, Me.GridItems.Columns("Qty").Index, False)
         HideShowColummn(Me.GridItems, Me.GridItems.Columns("Barcode").Index, BoolShowBarcode)
         HideShowColummn(Me.GridItems, Me.GridItems.Columns("MinQty").Index, False)

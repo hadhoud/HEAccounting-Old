@@ -37,6 +37,8 @@ Partial Class UserFieldsSetting
         Me.chkShowItemsFormColLatinName = New Telerik.WinControls.UI.RadCheckBox()
         Me.ContentPageSalesOrders = New Telerik.WinControls.UI.RadPageViewPage()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.ChkShowSalesOrdersColUsername = New Telerik.WinControls.UI.RadCheckBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.FlowPanelSalesInvoices = New System.Windows.Forms.FlowLayoutPanel()
         Me.ChkShowSalesOrdersColCustomerTitle = New Telerik.WinControls.UI.RadCheckBox()
@@ -53,6 +55,7 @@ Partial Class UserFieldsSetting
         Me.FlowPanelAddSaleInvoice = New System.Windows.Forms.FlowLayoutPanel()
         Me.chkShowAddSalesOrdersColPurchasePrice = New Telerik.WinControls.UI.RadCheckBox()
         Me.chkShowAddSalesOrdersTextCurrencyRate = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkShowAddSalesOrdersTextProfits = New Telerik.WinControls.UI.RadCheckBox()
         Me.PagePurchasesOrders = New Telerik.WinControls.UI.RadPageViewPage()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -144,7 +147,7 @@ Partial Class UserFieldsSetting
         Me.Label8 = New System.Windows.Forms.Label()
         Me.lblSaleOrderCustomerInvoicesHeader = New System.Windows.Forms.Label()
         Me.Office2010BlueTheme1 = New Telerik.WinControls.Themes.Office2010BlueTheme()
-        Me.chkShowAddSalesOrdersTextProfits = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkShowAddSalesOrdersTextJemliPrice = New Telerik.WinControls.UI.RadCheckBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.BtnClose, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -159,6 +162,8 @@ Partial Class UserFieldsSetting
         CType(Me.chkShowItemsFormColLatinName, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContentPageSalesOrders.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
+        Me.FlowLayoutPanel2.SuspendLayout()
+        CType(Me.ChkShowSalesOrdersColUsername, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FlowPanelSalesInvoices.SuspendLayout()
         CType(Me.ChkShowSalesOrdersColCustomerTitle, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChkShowSalesOrdersColSubTotalLL, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -173,6 +178,7 @@ Partial Class UserFieldsSetting
         Me.FlowPanelAddSaleInvoice.SuspendLayout()
         CType(Me.chkShowAddSalesOrdersColPurchasePrice, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkShowAddSalesOrdersTextCurrencyRate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkShowAddSalesOrdersTextProfits, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PagePurchasesOrders.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.FlowPanelAddPurchaseInvoice.SuspendLayout()
@@ -252,7 +258,7 @@ Partial Class UserFieldsSetting
         CType(Me.chkShowCustomerInvSaleOrderSubTotalLL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkShowCustomerInvSaleOrderSubTotalUSD, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkShowCustomerInvSaleOrderCurrencyRate, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chkShowAddSalesOrdersTextProfits, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkShowAddSalesOrdersTextJemliPrice, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -279,7 +285,7 @@ Partial Class UserFieldsSetting
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.01504!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.98496!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 217.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 221.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.BtnClose, 2, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.BtnSave, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.TxtItemPicture, 0, 0)
@@ -296,7 +302,7 @@ Partial Class UserFieldsSetting
         Me.BtnClose.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.Image = Global.HEHAccounting.My.Resources.Resources.Close
         Me.BtnClose.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.BtnClose.Location = New System.Drawing.Point(229, 3)
+        Me.BtnClose.Location = New System.Drawing.Point(233, 3)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(104, 36)
         Me.BtnClose.TabIndex = 1
@@ -309,7 +315,7 @@ Partial Class UserFieldsSetting
         Me.BtnSave.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSave.Image = Global.HEHAccounting.My.Resources.Resources.Save
         Me.BtnSave.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.BtnSave.Location = New System.Drawing.Point(372, 3)
+        Me.BtnSave.Location = New System.Drawing.Point(376, 3)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(103, 36)
         Me.BtnSave.TabIndex = 0
@@ -349,7 +355,7 @@ Partial Class UserFieldsSetting
         '
         '
         Me.PageSalesOrders.RootElement.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize
-        Me.PageSalesOrders.SelectedPage = Me.PageItems
+        Me.PageSalesOrders.SelectedPage = Me.ContentPageSalesOrders
         Me.PageSalesOrders.Size = New System.Drawing.Size(735, 369)
         Me.PageSalesOrders.TabIndex = 0
         Me.PageSalesOrders.ViewMode = Telerik.WinControls.UI.PageViewMode.Backstage
@@ -394,9 +400,9 @@ Partial Class UserFieldsSetting
         CType(Me.PageSalesOrders.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.RadPageViewLabelElement).ShouldPaint = True
         CType(Me.PageSalesOrders.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.RadPageViewLabelElement).DrawFill = False
         CType(Me.PageSalesOrders.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.RadPageViewLabelElement).DrawBorder = False
-        CType(Me.PageSalesOrders.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.RadPageViewLabelElement).Text = "الأصناف"
+        CType(Me.PageSalesOrders.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.RadPageViewLabelElement).Text = "المبيعات"
         CType(Me.PageSalesOrders.GetChildAt(0).GetChildAt(3), Telerik.WinControls.UI.RadPageViewLabelElement).ShouldPaint = True
-        CType(Me.PageSalesOrders.GetChildAt(0).GetChildAt(3), Telerik.WinControls.UI.RadPageViewLabelElement).Text = "الأصناف"
+        CType(Me.PageSalesOrders.GetChildAt(0).GetChildAt(3), Telerik.WinControls.UI.RadPageViewLabelElement).Text = "المبيعات"
         '
         'PageItems
         '
@@ -488,6 +494,7 @@ Partial Class UserFieldsSetting
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel3.Controls.Add(Me.FlowLayoutPanel2, 0, 1)
         Me.TableLayoutPanel3.Controls.Add(Me.Label1, 0, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.FlowPanelSalesInvoices, 0, 1)
         Me.TableLayoutPanel3.Controls.Add(Me.Label2, 2, 0)
@@ -500,6 +507,27 @@ Partial Class UserFieldsSetting
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 333.0!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(625, 359)
         Me.TableLayoutPanel3.TabIndex = 49
+        '
+        'FlowLayoutPanel2
+        '
+        Me.FlowLayoutPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.FlowLayoutPanel2.Controls.Add(Me.ChkShowSalesOrdersColUsername)
+        Me.FlowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FlowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(316, 29)
+        Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
+        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(150, 327)
+        Me.FlowLayoutPanel2.TabIndex = 54
+        '
+        'ChkShowSalesOrdersColUsername
+        '
+        Me.ChkShowSalesOrdersColUsername.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkShowSalesOrdersColUsername.Location = New System.Drawing.Point(51, 3)
+        Me.ChkShowSalesOrdersColUsername.Name = "ChkShowSalesOrdersColUsername"
+        Me.ChkShowSalesOrdersColUsername.Size = New System.Drawing.Size(94, 22)
+        Me.ChkShowSalesOrdersColUsername.TabIndex = 46
+        Me.ChkShowSalesOrdersColUsername.Text = "إسم المستخدم"
+        Me.ChkShowSalesOrdersColUsername.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label1
         '
@@ -648,7 +676,9 @@ Partial Class UserFieldsSetting
         Me.FlowPanelAddSaleInvoice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.FlowPanelAddSaleInvoice.Controls.Add(Me.chkShowAddSalesOrdersColPurchasePrice)
         Me.FlowPanelAddSaleInvoice.Controls.Add(Me.chkShowAddSalesOrdersTextCurrencyRate)
+        Me.FlowPanelAddSaleInvoice.Controls.Add(Me.chkShowAddSalesOrdersTextJemliPrice)
         Me.FlowPanelAddSaleInvoice.Controls.Add(Me.chkShowAddSalesOrdersTextProfits)
+        Me.FlowPanelAddSaleInvoice.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FlowPanelAddSaleInvoice.Location = New System.Drawing.Point(160, 29)
         Me.FlowPanelAddSaleInvoice.Name = "FlowPanelAddSaleInvoice"
         Me.FlowPanelAddSaleInvoice.Size = New System.Drawing.Size(150, 327)
@@ -673,6 +703,16 @@ Partial Class UserFieldsSetting
         Me.chkShowAddSalesOrdersTextCurrencyRate.TabIndex = 49
         Me.chkShowAddSalesOrdersTextCurrencyRate.Text = "سعر الصرف"
         Me.chkShowAddSalesOrdersTextCurrencyRate.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'chkShowAddSalesOrdersTextProfits
+        '
+        Me.chkShowAddSalesOrdersTextProfits.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkShowAddSalesOrdersTextProfits.Location = New System.Drawing.Point(95, 87)
+        Me.chkShowAddSalesOrdersTextProfits.Name = "chkShowAddSalesOrdersTextProfits"
+        Me.chkShowAddSalesOrdersTextProfits.Size = New System.Drawing.Size(50, 22)
+        Me.chkShowAddSalesOrdersTextProfits.TabIndex = 50
+        Me.chkShowAddSalesOrdersTextProfits.Text = "الربح"
+        Me.chkShowAddSalesOrdersTextProfits.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
         'PagePurchasesOrders
         '
@@ -1688,15 +1728,15 @@ Partial Class UserFieldsSetting
         Me.lblSaleOrderCustomerInvoicesHeader.Text = "كشف فواتير مبيعات"
         Me.lblSaleOrderCustomerInvoicesHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'chkShowAddSalesOrdersTextProfits
+        'chkShowAddSalesOrdersTextJemliPrice
         '
-        Me.chkShowAddSalesOrdersTextProfits.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkShowAddSalesOrdersTextProfits.Location = New System.Drawing.Point(95, 59)
-        Me.chkShowAddSalesOrdersTextProfits.Name = "chkShowAddSalesOrdersTextProfits"
-        Me.chkShowAddSalesOrdersTextProfits.Size = New System.Drawing.Size(50, 22)
-        Me.chkShowAddSalesOrdersTextProfits.TabIndex = 50
-        Me.chkShowAddSalesOrdersTextProfits.Text = "الربح"
-        Me.chkShowAddSalesOrdersTextProfits.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.chkShowAddSalesOrdersTextJemliPrice.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkShowAddSalesOrdersTextJemliPrice.Location = New System.Drawing.Point(42, 59)
+        Me.chkShowAddSalesOrdersTextJemliPrice.Name = "chkShowAddSalesOrdersTextJemliPrice"
+        Me.chkShowAddSalesOrdersTextJemliPrice.Size = New System.Drawing.Size(103, 22)
+        Me.chkShowAddSalesOrdersTextJemliPrice.TabIndex = 51
+        Me.chkShowAddSalesOrdersTextJemliPrice.Text = "سعر مبيع جملة"
+        Me.chkShowAddSalesOrdersTextJemliPrice.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
         'UserFieldsSetting
         '
@@ -1735,6 +1775,9 @@ Partial Class UserFieldsSetting
         CType(Me.chkShowItemsFormColLatinName, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContentPageSalesOrders.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
+        Me.FlowLayoutPanel2.ResumeLayout(False)
+        Me.FlowLayoutPanel2.PerformLayout()
+        CType(Me.ChkShowSalesOrdersColUsername, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FlowPanelSalesInvoices.ResumeLayout(False)
         Me.FlowPanelSalesInvoices.PerformLayout()
         CType(Me.ChkShowSalesOrdersColCustomerTitle, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1751,6 +1794,7 @@ Partial Class UserFieldsSetting
         Me.FlowPanelAddSaleInvoice.PerformLayout()
         CType(Me.chkShowAddSalesOrdersColPurchasePrice, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkShowAddSalesOrdersTextCurrencyRate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkShowAddSalesOrdersTextProfits, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PagePurchasesOrders.ResumeLayout(False)
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.FlowPanelAddPurchaseInvoice.ResumeLayout(False)
@@ -1841,7 +1885,7 @@ Partial Class UserFieldsSetting
         CType(Me.chkShowCustomerInvSaleOrderSubTotalLL, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkShowCustomerInvSaleOrderSubTotalUSD, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkShowCustomerInvSaleOrderCurrencyRate, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chkShowAddSalesOrdersTextProfits, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkShowAddSalesOrdersTextJemliPrice, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -1968,5 +2012,8 @@ Partial Class UserFieldsSetting
     Friend WithEvents FlowLayoutPanelGeneralNote As FlowLayoutPanel
     Friend WithEvents chkShowGeneralNoteTextAmountEquality As Telerik.WinControls.UI.RadCheckBox
     Friend WithEvents chkShowAddSalesOrdersTextProfits As Telerik.WinControls.UI.RadCheckBox
+    Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
+    Friend WithEvents ChkShowSalesOrdersColUsername As Telerik.WinControls.UI.RadCheckBox
+    Friend WithEvents chkShowAddSalesOrdersTextJemliPrice As Telerik.WinControls.UI.RadCheckBox
 End Class
 

@@ -1,34 +1,33 @@
-﻿Imports System.Data.OleDb
-Imports System.Data.SqlClient
-Imports HEHAccounting.My
-Imports HEHAccounting.My.MySettings
+﻿Imports System.Data.SqlClient
+Imports System.Configuration
 
 Public Class Database
     Dim connectionstrng As String
     Private ReadOnly ConSql As New SqlConnection
     Public Function Connectionstr() As String
-        Dim dbUserPassword As String = ""
-        Dim dbUSerName As String = ""
-        Dim dbName As String = ""
-        Dim serverName As String = ""
 
-        dbName = My.Settings.DBName.ToString()
-        serverName = My.Settings.ServerName.ToString()
-
-        If My.Settings.ServerMode = "Windows" Then
-            connectionstrng = "Data Source=(" & serverName & ");Initial Catalog=" & dbName & ";Integrated Security=True;"
-
-        ElseIf My.Settings.ServerMode = "SQLServer" Then
-
-            dbUSerName = My.Settings.DBUserName.ToString()
-            dbUserPassword = Decode(My.Settings.DBUserPassword.ToString())
-
-            connectionstrng = "Data Source=" & serverName & ";Initial Catalog=" & dbName & ";Integrated Security=False; User ID=" & dbUSerName & " ;Password=" & dbUserPassword & ";"
+        If dbConnectionType.ToLower() = "windows" Then
+            connectionstrng = "Data Source=(" & dbServerName & ");Initial Catalog=" & dbDatabaseName & ";Integrated Security=True;"
+            'connectionstrng = "Data Source=(" & dbServerName & ");Initial Catalog=" & dbDatabaseName & ";TrustServerCertificate=True;Integrated Security=SSPI;"
+        ElseIf dbConnectionType = "SQLServer" Then
+            connectionstrng = "Data Source=" & dbServerName & ";Initial Catalog=" & dbDatabaseName & ";Integrated Security=False; User ID=" & dbUSerName & " ;Password=" & Decode(dbPassword) & ";"
+            'connectionstrng = "Data Source=" & dbServerName & ";Encrypt=False;Initial Catalog=" & dbDatabaseName & ";Integrated Security=False;TrustServerCertificate=False; User ID=" & dbUSerName & " ;Password=" & Decode(dbPassword) & ";"
         End If
+        saveReportConnectionString(connectionstrng)
         Return String.Concat(connectionstrng)
-        'Return String.Concat(connectionstrng)
     End Function
 
+
+    Private Sub saveReportConnectionString(ByVal connectionstrng As String)
+
+        Dim config As Configuration = ConfigurationManager.OpenExeConfiguration(System.Reflection.Assembly.GetExecutingAssembly().Location)
+        Dim section As ConnectionStringsSection = DirectCast(config.GetSection("connectionStrings"), ConnectionStringsSection)
+        Dim settings As ConnectionStringSettings = section.ConnectionStrings("HEHAccounting.My.MySettings.HEAccountingReportDB")
+        settings.ConnectionString = connectionstrng
+        settings.ProviderName = "System.Data.SqlClient"
+        config.Save()
+
+    End Sub
     Public Function Connect() As Boolean
         Try
             If ConSql.State = ConnectionState.Open Then
@@ -46,6 +45,16 @@ Public Class Database
     Public Sub Close()
         ConSql.Close()
     End Sub
+
+    Function checkConnection() As Boolean
+        If Connect() Then
+            Close()
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
     Public Sub ExecuteQuery(Query As String)  
         'Try
         If Connect() Then

@@ -250,7 +250,6 @@ Public Class Inventory
         If dt.Rows.Count > 0 Then
             For Each row In Me.GridInvItems.Rows
                 If row.Cells("Item_id").Value.ToString = dt.Rows(0).Item("Item_id").ToString Then
-                    'MessageShowInfo(Con.Msg_Item_Has_Been_Added)
                     row.Cells("Qty").Value = row.Cells("Qty").Value + 1
                     Me.GridInvItems.Rows.Item(row.Index).IsCurrent = True
                     Exit Sub

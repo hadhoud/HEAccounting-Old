@@ -224,6 +224,12 @@
     'General Reports
     Public LblGeneralReports As String
     Public LblChequesReport As String
+
+    'Drawers
+    Public lblAddDrawer As String
+    Public LblDrawerNote As String
+    Public LblDrawerName As String
+
     Sub New()
 
         'Ribbon Main
@@ -453,6 +459,11 @@
         'General Reports
         LblGeneralReports = "General Reports"
         LblChequesReport = "Cheques"
+
+        'Drawers
+        lblAddDrawer = "Add Drawer"
+        LblDrawerNote = "Drawer Note"
+        LblDrawerName = "Drawer Name"
 
     End Sub
 End Class

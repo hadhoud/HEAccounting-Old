@@ -45,15 +45,17 @@ Partial Class AddNewItem
         Me.TxtLatinName = New Telerik.WinControls.UI.RadTextBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.DropCurrency = New Telerik.WinControls.UI.RadDropDownList()
-        Me.MTxtMinQty = New Telerik.WinControls.UI.RadMaskedEditBox()
-        Me.LblMinQty = New System.Windows.Forms.Label()
         Me.MTxtItemPurchasingPrice = New Telerik.WinControls.UI.RadMaskedEditBox()
-        Me.MTxtItemQty = New Telerik.WinControls.UI.RadMaskedEditBox()
         Me.LblPurchasingPrice = New System.Windows.Forms.Label()
         Me.MTxtItemSellingPrice = New Telerik.WinControls.UI.RadMaskedEditBox()
-        Me.LblQuantity = New System.Windows.Forms.Label()
         Me.LblCurrency = New System.Windows.Forms.Label()
         Me.LblSellingPrice = New System.Windows.Forms.Label()
+        Me.LblMinQty = New System.Windows.Forms.Label()
+        Me.MTxtMinQty = New Telerik.WinControls.UI.RadMaskedEditBox()
+        Me.MTxtItemQty = New Telerik.WinControls.UI.RadMaskedEditBox()
+        Me.lblJemliSellingPrice = New System.Windows.Forms.Label()
+        Me.LblQuantity = New System.Windows.Forms.Label()
+        Me.MTxtItemJemliSellingPrice = New Telerik.WinControls.UI.RadMaskedEditBox()
         Me.PageUnits = New Telerik.WinControls.UI.RadPageViewPage()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutRight = New System.Windows.Forms.TableLayoutPanel()
@@ -64,23 +66,23 @@ Partial Class AddNewItem
         Me.TxtPriceOne = New Telerik.WinControls.UI.RadMaskedEditBox()
         Me.TxtUnitOne = New Telerik.WinControls.UI.RadTextBox()
         Me.TableLayoutLeft = New System.Windows.Forms.TableLayoutPanel()
-        Me.TxtFactorTwo = New Telerik.WinControls.UI.RadMaskedEditBox()
-        Me.TxtPriceTwo = New Telerik.WinControls.UI.RadMaskedEditBox()
         Me.LblPriceTwo = New System.Windows.Forms.Label()
         Me.LbLFactorTwo = New System.Windows.Forms.Label()
         Me.LblUnitTwo = New System.Windows.Forms.Label()
+        Me.TxtFactorTwo = New Telerik.WinControls.UI.RadMaskedEditBox()
+        Me.TxtPriceTwo = New Telerik.WinControls.UI.RadMaskedEditBox()
         Me.TxtUnitTwo = New Telerik.WinControls.UI.RadTextBox()
         Me.PageOption = New Telerik.WinControls.UI.RadPageViewPage()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.ChkAlertMinQty = New System.Windows.Forms.CheckBox()
-        Me.ChkCheckQtyInSale = New System.Windows.Forms.CheckBox()
-        Me.ChkItemHasExpiredDt = New System.Windows.Forms.CheckBox()
-        Me.ChkAlertBeforeExpiredDt = New System.Windows.Forms.CheckBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ChkAlertBeforeExpiredDt = New System.Windows.Forms.CheckBox()
+        Me.ChkItemHasExpiredDt = New System.Windows.Forms.CheckBox()
+        Me.ChkCheckQtyInSale = New System.Windows.Forms.CheckBox()
+        Me.ChkAlertMinQty = New System.Windows.Forms.CheckBox()
+        Me.ChkItemWithoutQuantity = New System.Windows.Forms.CheckBox()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.BtnClose = New Telerik.WinControls.UI.RadButton()
         Me.BtnSaveAndNew = New Telerik.WinControls.UI.RadButton()
-        Me.ChkItemWithoutQuantity = New System.Windows.Forms.CheckBox()
         CType(Me.TxtItemPicture, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AddNewPages, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.AddNewPages.SuspendLayout()
@@ -94,10 +96,11 @@ Partial Class AddNewItem
         CType(Me.TxtLatinName, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.DropCurrency, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MTxtMinQty, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MTxtItemPurchasingPrice, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MTxtItemQty, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MTxtItemSellingPrice, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MTxtMinQty, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MTxtItemQty, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MTxtItemJemliSellingPrice, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PageUnits.SuspendLayout()
         Me.TableLayoutPanel6.SuspendLayout()
         Me.TableLayoutRight.SuspendLayout()
@@ -120,7 +123,7 @@ Partial Class AddNewItem
         'TxtItemPicture
         '
         Me.TxtItemPicture.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtItemPicture.Location = New System.Drawing.Point(529, 3)
+        Me.TxtItemPicture.Location = New System.Drawing.Point(543, 3)
         Me.TxtItemPicture.Name = "TxtItemPicture"
         Me.TxtItemPicture.ShowClearButton = True
         Me.TxtItemPicture.Size = New System.Drawing.Size(1, 5)
@@ -150,8 +153,8 @@ Partial Class AddNewItem
         Me.AddNewPages.Name = "AddNewPages"
         Me.AddNewPages.PageBackColor = System.Drawing.Color.White
         Me.AddNewPages.SelectedPage = Me.PageGeneral
-        Me.AddNewPages.Size = New System.Drawing.Size(533, 236)
-        Me.AddNewPages.TabIndex = 0
+        Me.AddNewPages.Size = New System.Drawing.Size(547, 268)
+        Me.AddNewPages.TabIndex = 1
         Me.AddNewPages.ThemeName = "Windows7"
         CType(Me.AddNewPages.GetChildAt(0), Telerik.WinControls.UI.RadPageViewStripElement).StripButtons = Telerik.WinControls.UI.StripViewButtons.None
         '
@@ -162,7 +165,7 @@ Partial Class AddNewItem
         Me.PageGeneral.ItemSize = New System.Drawing.SizeF(49.0!, 34.0!)
         Me.PageGeneral.Location = New System.Drawing.Point(11, 43)
         Me.PageGeneral.Name = "PageGeneral"
-        Me.PageGeneral.Size = New System.Drawing.Size(511, 182)
+        Me.PageGeneral.Size = New System.Drawing.Size(525, 214)
         Me.PageGeneral.Text = "عام"
         '
         'TableLayoutPanel5
@@ -177,7 +180,7 @@ Partial Class AddNewItem
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.RowCount = 1
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(511, 182)
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(525, 214)
         Me.TableLayoutPanel5.TabIndex = 0
         '
         'TableLayoutPanel4
@@ -196,7 +199,7 @@ Partial Class AddNewItem
         Me.TableLayoutPanel4.Controls.Add(Me.TxtItemName, 1, 3)
         Me.TableLayoutPanel4.Controls.Add(Me.TxtLatinName, 1, 4)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(259, 3)
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(266, 3)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.RowCount = 7
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 14.0!))
@@ -206,7 +209,7 @@ Partial Class AddNewItem
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(249, 176)
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(256, 208)
         Me.TableLayoutPanel4.TabIndex = 0
         '
         'LblItemID
@@ -214,7 +217,7 @@ Partial Class AddNewItem
         Me.LblItemID.AutoSize = True
         Me.LblItemID.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LblItemID.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblItemID.Location = New System.Drawing.Point(167, 14)
+        Me.LblItemID.Location = New System.Drawing.Point(174, 14)
         Me.LblItemID.Name = "LblItemID"
         Me.LblItemID.Size = New System.Drawing.Size(79, 30)
         Me.LblItemID.TabIndex = 62
@@ -229,7 +232,7 @@ Partial Class AddNewItem
         Me.TxtGroupID.Location = New System.Drawing.Point(3, 137)
         Me.TxtGroupID.Name = "TxtGroupID"
         Me.TxtGroupID.ShowClearButton = True
-        Me.TxtGroupID.Size = New System.Drawing.Size(158, 24)
+        Me.TxtGroupID.Size = New System.Drawing.Size(165, 24)
         Me.TxtGroupID.TabIndex = 4
         Me.TxtGroupID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.TxtGroupID.ThemeName = "Office2010Blue"
@@ -250,7 +253,7 @@ Partial Class AddNewItem
         Me.LblBarcode.AutoSize = True
         Me.LblBarcode.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LblBarcode.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblBarcode.Location = New System.Drawing.Point(167, 44)
+        Me.LblBarcode.Location = New System.Drawing.Point(174, 44)
         Me.LblBarcode.Name = "LblBarcode"
         Me.LblBarcode.Size = New System.Drawing.Size(79, 30)
         Me.LblBarcode.TabIndex = 61
@@ -262,7 +265,7 @@ Partial Class AddNewItem
         Me.LblItemName.AutoSize = True
         Me.LblItemName.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LblItemName.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblItemName.Location = New System.Drawing.Point(167, 74)
+        Me.LblItemName.Location = New System.Drawing.Point(174, 74)
         Me.LblItemName.Name = "LblItemName"
         Me.LblItemName.Size = New System.Drawing.Size(79, 30)
         Me.LblItemName.TabIndex = 63
@@ -274,7 +277,7 @@ Partial Class AddNewItem
         Me.LblLatinName.AutoSize = True
         Me.LblLatinName.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LblLatinName.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLatinName.Location = New System.Drawing.Point(167, 104)
+        Me.LblLatinName.Location = New System.Drawing.Point(174, 104)
         Me.LblLatinName.Name = "LblLatinName"
         Me.LblLatinName.Size = New System.Drawing.Size(79, 30)
         Me.LblLatinName.TabIndex = 65
@@ -289,7 +292,7 @@ Partial Class AddNewItem
         Me.TxtItemid.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtItemid.Location = New System.Drawing.Point(3, 17)
         Me.TxtItemid.Name = "TxtItemid"
-        Me.TxtItemid.Size = New System.Drawing.Size(158, 24)
+        Me.TxtItemid.Size = New System.Drawing.Size(165, 24)
         Me.TxtItemid.TabIndex = 0
         Me.TxtItemid.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.TxtItemid.ThemeName = "Office2010Blue"
@@ -299,7 +302,7 @@ Partial Class AddNewItem
         Me.LblGroupName.AutoSize = True
         Me.LblGroupName.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LblGroupName.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblGroupName.Location = New System.Drawing.Point(167, 134)
+        Me.LblGroupName.Location = New System.Drawing.Point(174, 134)
         Me.LblGroupName.Name = "LblGroupName"
         Me.LblGroupName.Size = New System.Drawing.Size(79, 30)
         Me.LblGroupName.TabIndex = 80
@@ -313,7 +316,7 @@ Partial Class AddNewItem
         Me.TxtItemBarcode.Location = New System.Drawing.Point(3, 47)
         Me.TxtItemBarcode.Name = "TxtItemBarcode"
         Me.TxtItemBarcode.ShowClearButton = True
-        Me.TxtItemBarcode.Size = New System.Drawing.Size(158, 24)
+        Me.TxtItemBarcode.Size = New System.Drawing.Size(165, 24)
         Me.TxtItemBarcode.TabIndex = 1
         Me.TxtItemBarcode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.TxtItemBarcode.ThemeName = "Office2010Blue"
@@ -325,7 +328,7 @@ Partial Class AddNewItem
         Me.TxtItemName.Location = New System.Drawing.Point(3, 77)
         Me.TxtItemName.Name = "TxtItemName"
         Me.TxtItemName.ShowClearButton = True
-        Me.TxtItemName.Size = New System.Drawing.Size(158, 24)
+        Me.TxtItemName.Size = New System.Drawing.Size(165, 24)
         Me.TxtItemName.TabIndex = 2
         Me.TxtItemName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.TxtItemName.ThemeName = "Office2010Blue"
@@ -337,7 +340,7 @@ Partial Class AddNewItem
         Me.TxtLatinName.Location = New System.Drawing.Point(3, 107)
         Me.TxtLatinName.Name = "TxtLatinName"
         Me.TxtLatinName.ShowClearButton = True
-        Me.TxtLatinName.Size = New System.Drawing.Size(158, 24)
+        Me.TxtLatinName.Size = New System.Drawing.Size(165, 24)
         Me.TxtLatinName.TabIndex = 3
         Me.TxtLatinName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.TxtLatinName.ThemeName = "Office2010Blue"
@@ -349,27 +352,30 @@ Partial Class AddNewItem
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutPanel1.Controls.Add(Me.DropCurrency, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.MTxtMinQty, 1, 5)
-        Me.TableLayoutPanel1.Controls.Add(Me.LblMinQty, 0, 5)
         Me.TableLayoutPanel1.Controls.Add(Me.MTxtItemPurchasingPrice, 1, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.MTxtItemQty, 1, 4)
         Me.TableLayoutPanel1.Controls.Add(Me.LblPurchasingPrice, 0, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.MTxtItemSellingPrice, 1, 3)
-        Me.TableLayoutPanel1.Controls.Add(Me.LblQuantity, 0, 4)
         Me.TableLayoutPanel1.Controls.Add(Me.LblCurrency, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.LblSellingPrice, 0, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.LblMinQty, 0, 6)
+        Me.TableLayoutPanel1.Controls.Add(Me.MTxtMinQty, 1, 6)
+        Me.TableLayoutPanel1.Controls.Add(Me.MTxtItemQty, 1, 5)
+        Me.TableLayoutPanel1.Controls.Add(Me.lblJemliSellingPrice, 0, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.LblQuantity, 0, 5)
+        Me.TableLayoutPanel1.Controls.Add(Me.MTxtItemJemliSellingPrice, 1, 4)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(3, 3)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 7
+        Me.TableLayoutPanel1.RowCount = 8
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 14.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(250, 176)
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(257, 208)
         Me.TableLayoutPanel1.TabIndex = 1
         '
         'DropCurrency
@@ -380,38 +386,10 @@ Partial Class AddNewItem
         Me.DropCurrency.Location = New System.Drawing.Point(3, 17)
         Me.DropCurrency.MaxLength = 65535
         Me.DropCurrency.Name = "DropCurrency"
-        Me.DropCurrency.Size = New System.Drawing.Size(169, 24)
-        Me.DropCurrency.TabIndex = 79
+        Me.DropCurrency.Size = New System.Drawing.Size(175, 24)
+        Me.DropCurrency.TabIndex = 1
         Me.DropCurrency.Tag = ""
         Me.DropCurrency.ThemeName = "Office2010Blue"
-        '
-        'MTxtMinQty
-        '
-        Me.MTxtMinQty.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MTxtMinQty.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MTxtMinQty.Location = New System.Drawing.Point(3, 137)
-        Me.MTxtMinQty.Mask = "F3"
-        Me.MTxtMinQty.MaskType = Telerik.WinControls.UI.MaskType.Numeric
-        Me.MTxtMinQty.Name = "MTxtMinQty"
-        Me.MTxtMinQty.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.MTxtMinQty.Size = New System.Drawing.Size(169, 24)
-        Me.MTxtMinQty.TabIndex = 4
-        Me.MTxtMinQty.TabStop = False
-        Me.MTxtMinQty.Text = "0.000"
-        Me.MTxtMinQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.MTxtMinQty.ThemeName = "Office2010Blue"
-        '
-        'LblMinQty
-        '
-        Me.LblMinQty.AutoSize = True
-        Me.LblMinQty.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LblMinQty.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblMinQty.Location = New System.Drawing.Point(178, 134)
-        Me.LblMinQty.Name = "LblMinQty"
-        Me.LblMinQty.Size = New System.Drawing.Size(69, 30)
-        Me.LblMinQty.TabIndex = 78
-        Me.LblMinQty.Text = "أقل كمية"
-        Me.LblMinQty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'MTxtItemPurchasingPrice
         '
@@ -423,28 +401,12 @@ Partial Class AddNewItem
         Me.MTxtItemPurchasingPrice.Name = "MTxtItemPurchasingPrice"
         Me.MTxtItemPurchasingPrice.PromptChar = Global.Microsoft.VisualBasic.ChrW(46)
         Me.MTxtItemPurchasingPrice.ShortcutsEnabled = False
-        Me.MTxtItemPurchasingPrice.Size = New System.Drawing.Size(169, 24)
-        Me.MTxtItemPurchasingPrice.TabIndex = 0
+        Me.MTxtItemPurchasingPrice.Size = New System.Drawing.Size(175, 24)
+        Me.MTxtItemPurchasingPrice.TabIndex = 2
         Me.MTxtItemPurchasingPrice.TabStop = False
         Me.MTxtItemPurchasingPrice.Text = "0"
         Me.MTxtItemPurchasingPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.MTxtItemPurchasingPrice.ThemeName = "Office2010Blue"
-        '
-        'MTxtItemQty
-        '
-        Me.MTxtItemQty.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MTxtItemQty.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MTxtItemQty.Location = New System.Drawing.Point(3, 107)
-        Me.MTxtItemQty.Mask = "F3"
-        Me.MTxtItemQty.MaskType = Telerik.WinControls.UI.MaskType.Numeric
-        Me.MTxtItemQty.Name = "MTxtItemQty"
-        Me.MTxtItemQty.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.MTxtItemQty.Size = New System.Drawing.Size(169, 24)
-        Me.MTxtItemQty.TabIndex = 3
-        Me.MTxtItemQty.TabStop = False
-        Me.MTxtItemQty.Text = "0.000"
-        Me.MTxtItemQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.MTxtItemQty.ThemeName = "Office2010Blue"
         '
         'LblPurchasingPrice
         '
@@ -452,9 +414,9 @@ Partial Class AddNewItem
         Me.LblPurchasingPrice.AutoSize = True
         Me.LblPurchasingPrice.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LblPurchasingPrice.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.LblPurchasingPrice.Location = New System.Drawing.Point(178, 44)
+        Me.LblPurchasingPrice.Location = New System.Drawing.Point(184, 44)
         Me.LblPurchasingPrice.Name = "LblPurchasingPrice"
-        Me.LblPurchasingPrice.Size = New System.Drawing.Size(69, 30)
+        Me.LblPurchasingPrice.Size = New System.Drawing.Size(70, 30)
         Me.LblPurchasingPrice.TabIndex = 66
         Me.LblPurchasingPrice.Text = "سعر الشراء"
         Me.LblPurchasingPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -470,33 +432,21 @@ Partial Class AddNewItem
         Me.MTxtItemSellingPrice.Name = "MTxtItemSellingPrice"
         Me.MTxtItemSellingPrice.PromptChar = Global.Microsoft.VisualBasic.ChrW(46)
         Me.MTxtItemSellingPrice.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.MTxtItemSellingPrice.Size = New System.Drawing.Size(169, 24)
-        Me.MTxtItemSellingPrice.TabIndex = 1
+        Me.MTxtItemSellingPrice.Size = New System.Drawing.Size(175, 24)
+        Me.MTxtItemSellingPrice.TabIndex = 3
         Me.MTxtItemSellingPrice.TabStop = False
         Me.MTxtItemSellingPrice.Text = "0"
         Me.MTxtItemSellingPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.MTxtItemSellingPrice.ThemeName = "Office2010Blue"
-        '
-        'LblQuantity
-        '
-        Me.LblQuantity.AutoSize = True
-        Me.LblQuantity.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LblQuantity.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblQuantity.Location = New System.Drawing.Point(178, 104)
-        Me.LblQuantity.Name = "LblQuantity"
-        Me.LblQuantity.Size = New System.Drawing.Size(69, 30)
-        Me.LblQuantity.TabIndex = 76
-        Me.LblQuantity.Text = "الكمية"
-        Me.LblQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblCurrency
         '
         Me.LblCurrency.AutoSize = True
         Me.LblCurrency.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LblCurrency.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblCurrency.Location = New System.Drawing.Point(178, 14)
+        Me.LblCurrency.Location = New System.Drawing.Point(184, 14)
         Me.LblCurrency.Name = "LblCurrency"
-        Me.LblCurrency.Size = New System.Drawing.Size(69, 30)
+        Me.LblCurrency.Size = New System.Drawing.Size(70, 30)
         Me.LblCurrency.TabIndex = 69
         Me.LblCurrency.Text = "العملة"
         Me.LblCurrency.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -506,12 +456,96 @@ Partial Class AddNewItem
         Me.LblSellingPrice.AutoSize = True
         Me.LblSellingPrice.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LblSellingPrice.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblSellingPrice.Location = New System.Drawing.Point(178, 74)
+        Me.LblSellingPrice.Location = New System.Drawing.Point(184, 74)
         Me.LblSellingPrice.Name = "LblSellingPrice"
-        Me.LblSellingPrice.Size = New System.Drawing.Size(69, 30)
+        Me.LblSellingPrice.Size = New System.Drawing.Size(70, 30)
         Me.LblSellingPrice.TabIndex = 67
         Me.LblSellingPrice.Text = "سعر البيع"
         Me.LblSellingPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'LblMinQty
+        '
+        Me.LblMinQty.AutoSize = True
+        Me.LblMinQty.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LblMinQty.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblMinQty.Location = New System.Drawing.Point(184, 164)
+        Me.LblMinQty.Name = "LblMinQty"
+        Me.LblMinQty.Size = New System.Drawing.Size(70, 30)
+        Me.LblMinQty.TabIndex = 78
+        Me.LblMinQty.Text = "أقل كمية"
+        Me.LblMinQty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'MTxtMinQty
+        '
+        Me.MTxtMinQty.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MTxtMinQty.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MTxtMinQty.Location = New System.Drawing.Point(3, 167)
+        Me.MTxtMinQty.Mask = "F3"
+        Me.MTxtMinQty.MaskType = Telerik.WinControls.UI.MaskType.Numeric
+        Me.MTxtMinQty.Name = "MTxtMinQty"
+        Me.MTxtMinQty.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.MTxtMinQty.Size = New System.Drawing.Size(175, 24)
+        Me.MTxtMinQty.TabIndex = 6
+        Me.MTxtMinQty.TabStop = False
+        Me.MTxtMinQty.Text = "0.000"
+        Me.MTxtMinQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.MTxtMinQty.ThemeName = "Office2010Blue"
+        '
+        'MTxtItemQty
+        '
+        Me.MTxtItemQty.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MTxtItemQty.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MTxtItemQty.Location = New System.Drawing.Point(3, 137)
+        Me.MTxtItemQty.Mask = "F3"
+        Me.MTxtItemQty.MaskType = Telerik.WinControls.UI.MaskType.Numeric
+        Me.MTxtItemQty.Name = "MTxtItemQty"
+        Me.MTxtItemQty.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.MTxtItemQty.Size = New System.Drawing.Size(175, 24)
+        Me.MTxtItemQty.TabIndex = 5
+        Me.MTxtItemQty.TabStop = False
+        Me.MTxtItemQty.Text = "0.000"
+        Me.MTxtItemQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.MTxtItemQty.ThemeName = "Office2010Blue"
+        '
+        'lblJemliSellingPrice
+        '
+        Me.lblJemliSellingPrice.AutoSize = True
+        Me.lblJemliSellingPrice.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lblJemliSellingPrice.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblJemliSellingPrice.Location = New System.Drawing.Point(184, 104)
+        Me.lblJemliSellingPrice.Name = "lblJemliSellingPrice"
+        Me.lblJemliSellingPrice.Size = New System.Drawing.Size(70, 30)
+        Me.lblJemliSellingPrice.TabIndex = 80
+        Me.lblJemliSellingPrice.Text = "سعر الجملة"
+        Me.lblJemliSellingPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'LblQuantity
+        '
+        Me.LblQuantity.AutoSize = True
+        Me.LblQuantity.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LblQuantity.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblQuantity.Location = New System.Drawing.Point(184, 134)
+        Me.LblQuantity.Name = "LblQuantity"
+        Me.LblQuantity.Size = New System.Drawing.Size(70, 30)
+        Me.LblQuantity.TabIndex = 76
+        Me.LblQuantity.Text = "الكمية"
+        Me.LblQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'MTxtItemJemliSellingPrice
+        '
+        Me.MTxtItemJemliSellingPrice.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MTxtItemJemliSellingPrice.Location = New System.Drawing.Point(3, 107)
+        Me.MTxtItemJemliSellingPrice.Mask = "G"
+        Me.MTxtItemJemliSellingPrice.MaskType = Telerik.WinControls.UI.MaskType.Numeric
+        Me.MTxtItemJemliSellingPrice.Name = "MTxtItemJemliSellingPrice"
+        Me.MTxtItemJemliSellingPrice.PromptChar = Global.Microsoft.VisualBasic.ChrW(46)
+        Me.MTxtItemJemliSellingPrice.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.MTxtItemJemliSellingPrice.Size = New System.Drawing.Size(175, 24)
+        Me.MTxtItemJemliSellingPrice.TabIndex = 4
+        Me.MTxtItemJemliSellingPrice.TabStop = False
+        Me.MTxtItemJemliSellingPrice.Text = "0"
+        Me.MTxtItemJemliSellingPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.MTxtItemJemliSellingPrice.ThemeName = "Office2010Blue"
         '
         'PageUnits
         '
@@ -519,7 +553,7 @@ Partial Class AddNewItem
         Me.PageUnits.ItemSize = New System.Drawing.SizeF(73.0!, 34.0!)
         Me.PageUnits.Location = New System.Drawing.Point(11, 43)
         Me.PageUnits.Name = "PageUnits"
-        Me.PageUnits.Size = New System.Drawing.Size(511, 181)
+        Me.PageUnits.Size = New System.Drawing.Size(525, 214)
         Me.PageUnits.Text = "الوحدات"
         '
         'TableLayoutPanel6
@@ -534,7 +568,7 @@ Partial Class AddNewItem
         Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
         Me.TableLayoutPanel6.RowCount = 1
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(511, 181)
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(525, 214)
         Me.TableLayoutPanel6.TabIndex = 0
         '
         'TableLayoutRight
@@ -549,7 +583,7 @@ Partial Class AddNewItem
         Me.TableLayoutRight.Controls.Add(Me.TxtPriceOne, 1, 3)
         Me.TableLayoutRight.Controls.Add(Me.TxtUnitOne, 1, 1)
         Me.TableLayoutRight.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutRight.Location = New System.Drawing.Point(259, 3)
+        Me.TableLayoutRight.Location = New System.Drawing.Point(266, 3)
         Me.TableLayoutRight.Name = "TableLayoutRight"
         Me.TableLayoutRight.RowCount = 5
         Me.TableLayoutRight.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 14.0!))
@@ -557,7 +591,7 @@ Partial Class AddNewItem
         Me.TableLayoutRight.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutRight.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutRight.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutRight.Size = New System.Drawing.Size(249, 175)
+        Me.TableLayoutRight.Size = New System.Drawing.Size(256, 208)
         Me.TableLayoutRight.TabIndex = 0
         '
         'LblPriceOne
@@ -565,7 +599,7 @@ Partial Class AddNewItem
         Me.LblPriceOne.AutoSize = True
         Me.LblPriceOne.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LblPriceOne.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblPriceOne.Location = New System.Drawing.Point(168, 63)
+        Me.LblPriceOne.Location = New System.Drawing.Point(175, 63)
         Me.LblPriceOne.Name = "LblPriceOne"
         Me.LblPriceOne.Size = New System.Drawing.Size(78, 19)
         Me.LblPriceOne.TabIndex = 65
@@ -577,7 +611,7 @@ Partial Class AddNewItem
         Me.LblUnitOne.AutoSize = True
         Me.LblUnitOne.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LblUnitOne.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblUnitOne.Location = New System.Drawing.Point(168, 14)
+        Me.LblUnitOne.Location = New System.Drawing.Point(175, 14)
         Me.LblUnitOne.Name = "LblUnitOne"
         Me.LblUnitOne.Size = New System.Drawing.Size(78, 30)
         Me.LblUnitOne.TabIndex = 63
@@ -589,7 +623,7 @@ Partial Class AddNewItem
         Me.LbLFactorOne.AutoSize = True
         Me.LbLFactorOne.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LbLFactorOne.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbLFactorOne.Location = New System.Drawing.Point(168, 44)
+        Me.LbLFactorOne.Location = New System.Drawing.Point(175, 44)
         Me.LbLFactorOne.Name = "LbLFactorOne"
         Me.LbLFactorOne.Size = New System.Drawing.Size(78, 19)
         Me.LbLFactorOne.TabIndex = 64
@@ -607,7 +641,7 @@ Partial Class AddNewItem
         Me.TxtFactorOne.Name = "TxtFactorOne"
         Me.TxtFactorOne.PromptChar = Global.Microsoft.VisualBasic.ChrW(46)
         Me.TxtFactorOne.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.TxtFactorOne.Size = New System.Drawing.Size(159, 13)
+        Me.TxtFactorOne.Size = New System.Drawing.Size(166, 13)
         Me.TxtFactorOne.TabIndex = 67
         Me.TxtFactorOne.TabStop = False
         Me.TxtFactorOne.Text = "0"
@@ -626,7 +660,7 @@ Partial Class AddNewItem
         Me.TxtPriceOne.Name = "TxtPriceOne"
         Me.TxtPriceOne.PromptChar = Global.Microsoft.VisualBasic.ChrW(46)
         Me.TxtPriceOne.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.TxtPriceOne.Size = New System.Drawing.Size(159, 13)
+        Me.TxtPriceOne.Size = New System.Drawing.Size(166, 13)
         Me.TxtPriceOne.TabIndex = 68
         Me.TxtPriceOne.TabStop = False
         Me.TxtPriceOne.Text = "0"
@@ -637,7 +671,7 @@ Partial Class AddNewItem
         'TxtUnitOne
         '
         Me.TxtUnitOne.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtUnitOne.Location = New System.Drawing.Point(4, 17)
+        Me.TxtUnitOne.Location = New System.Drawing.Point(11, 17)
         Me.TxtUnitOne.Name = "TxtUnitOne"
         Me.TxtUnitOne.ShowClearButton = True
         Me.TxtUnitOne.Size = New System.Drawing.Size(158, 24)
@@ -650,11 +684,11 @@ Partial Class AddNewItem
         Me.TableLayoutLeft.ColumnCount = 2
         Me.TableLayoutLeft.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutLeft.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutLeft.Controls.Add(Me.TxtFactorTwo, 1, 2)
-        Me.TableLayoutLeft.Controls.Add(Me.TxtPriceTwo, 1, 3)
         Me.TableLayoutLeft.Controls.Add(Me.LblPriceTwo, 0, 3)
         Me.TableLayoutLeft.Controls.Add(Me.LbLFactorTwo, 0, 2)
         Me.TableLayoutLeft.Controls.Add(Me.LblUnitTwo, 0, 1)
+        Me.TableLayoutLeft.Controls.Add(Me.TxtFactorTwo, 1, 2)
+        Me.TableLayoutLeft.Controls.Add(Me.TxtPriceTwo, 1, 3)
         Me.TableLayoutLeft.Controls.Add(Me.TxtUnitTwo, 1, 1)
         Me.TableLayoutLeft.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutLeft.Location = New System.Drawing.Point(3, 3)
@@ -665,8 +699,44 @@ Partial Class AddNewItem
         Me.TableLayoutLeft.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutLeft.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutLeft.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8.0!))
-        Me.TableLayoutLeft.Size = New System.Drawing.Size(250, 175)
+        Me.TableLayoutLeft.Size = New System.Drawing.Size(257, 208)
         Me.TableLayoutLeft.TabIndex = 1
+        '
+        'LblPriceTwo
+        '
+        Me.LblPriceTwo.AutoSize = True
+        Me.LblPriceTwo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LblPriceTwo.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblPriceTwo.Location = New System.Drawing.Point(176, 63)
+        Me.LblPriceTwo.Name = "LblPriceTwo"
+        Me.LblPriceTwo.Size = New System.Drawing.Size(78, 19)
+        Me.LblPriceTwo.TabIndex = 70
+        Me.LblPriceTwo.Text = "سعر "
+        Me.LblPriceTwo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'LbLFactorTwo
+        '
+        Me.LbLFactorTwo.AutoSize = True
+        Me.LbLFactorTwo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LbLFactorTwo.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbLFactorTwo.Location = New System.Drawing.Point(176, 44)
+        Me.LbLFactorTwo.Name = "LbLFactorTwo"
+        Me.LbLFactorTwo.Size = New System.Drawing.Size(78, 19)
+        Me.LbLFactorTwo.TabIndex = 71
+        Me.LbLFactorTwo.Text = "عامل التحويل"
+        Me.LbLFactorTwo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'LblUnitTwo
+        '
+        Me.LblUnitTwo.AutoSize = True
+        Me.LblUnitTwo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LblUnitTwo.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblUnitTwo.Location = New System.Drawing.Point(176, 14)
+        Me.LblUnitTwo.Name = "LblUnitTwo"
+        Me.LblUnitTwo.Size = New System.Drawing.Size(78, 30)
+        Me.LblUnitTwo.TabIndex = 72
+        Me.LblUnitTwo.Text = "الوحدة"
+        Me.LblUnitTwo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'TxtFactorTwo
         '
@@ -679,7 +749,7 @@ Partial Class AddNewItem
         Me.TxtFactorTwo.Name = "TxtFactorTwo"
         Me.TxtFactorTwo.PromptChar = Global.Microsoft.VisualBasic.ChrW(46)
         Me.TxtFactorTwo.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.TxtFactorTwo.Size = New System.Drawing.Size(160, 13)
+        Me.TxtFactorTwo.Size = New System.Drawing.Size(167, 13)
         Me.TxtFactorTwo.TabIndex = 68
         Me.TxtFactorTwo.TabStop = False
         Me.TxtFactorTwo.Text = "0"
@@ -698,7 +768,7 @@ Partial Class AddNewItem
         Me.TxtPriceTwo.Name = "TxtPriceTwo"
         Me.TxtPriceTwo.PromptChar = Global.Microsoft.VisualBasic.ChrW(46)
         Me.TxtPriceTwo.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.TxtPriceTwo.Size = New System.Drawing.Size(160, 13)
+        Me.TxtPriceTwo.Size = New System.Drawing.Size(167, 13)
         Me.TxtPriceTwo.TabIndex = 69
         Me.TxtPriceTwo.TabStop = False
         Me.TxtPriceTwo.Text = "0"
@@ -706,46 +776,10 @@ Partial Class AddNewItem
         Me.TxtPriceTwo.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         Me.TxtPriceTwo.ThemeName = "Office2010Blue"
         '
-        'LblPriceTwo
-        '
-        Me.LblPriceTwo.AutoSize = True
-        Me.LblPriceTwo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LblPriceTwo.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblPriceTwo.Location = New System.Drawing.Point(169, 63)
-        Me.LblPriceTwo.Name = "LblPriceTwo"
-        Me.LblPriceTwo.Size = New System.Drawing.Size(78, 19)
-        Me.LblPriceTwo.TabIndex = 70
-        Me.LblPriceTwo.Text = "سعر "
-        Me.LblPriceTwo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'LbLFactorTwo
-        '
-        Me.LbLFactorTwo.AutoSize = True
-        Me.LbLFactorTwo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LbLFactorTwo.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbLFactorTwo.Location = New System.Drawing.Point(169, 44)
-        Me.LbLFactorTwo.Name = "LbLFactorTwo"
-        Me.LbLFactorTwo.Size = New System.Drawing.Size(78, 19)
-        Me.LbLFactorTwo.TabIndex = 71
-        Me.LbLFactorTwo.Text = "عامل التحويل"
-        Me.LbLFactorTwo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'LblUnitTwo
-        '
-        Me.LblUnitTwo.AutoSize = True
-        Me.LblUnitTwo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LblUnitTwo.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblUnitTwo.Location = New System.Drawing.Point(169, 14)
-        Me.LblUnitTwo.Name = "LblUnitTwo"
-        Me.LblUnitTwo.Size = New System.Drawing.Size(78, 30)
-        Me.LblUnitTwo.TabIndex = 72
-        Me.LblUnitTwo.Text = "الوحدة"
-        Me.LblUnitTwo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'TxtUnitTwo
         '
         Me.TxtUnitTwo.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtUnitTwo.Location = New System.Drawing.Point(5, 17)
+        Me.TxtUnitTwo.Location = New System.Drawing.Point(12, 17)
         Me.TxtUnitTwo.Name = "TxtUnitTwo"
         Me.TxtUnitTwo.ShowClearButton = True
         Me.TxtUnitTwo.Size = New System.Drawing.Size(158, 24)
@@ -759,16 +793,16 @@ Partial Class AddNewItem
         Me.PageOption.ItemSize = New System.Drawing.SizeF(68.0!, 34.0!)
         Me.PageOption.Location = New System.Drawing.Point(11, 43)
         Me.PageOption.Name = "PageOption"
-        Me.PageOption.Size = New System.Drawing.Size(511, 182)
+        Me.PageOption.Size = New System.Drawing.Size(525, 214)
         Me.PageOption.Text = "خيارات"
         '
         'TableLayoutPanel2
         '
         Me.TableLayoutPanel2.ColumnCount = 4
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 96.48438!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.515624!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.515623!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 174.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.PictureBox1, 2, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.ChkAlertBeforeExpiredDt, 0, 5)
         Me.TableLayoutPanel2.Controls.Add(Me.ChkItemHasExpiredDt, 0, 4)
@@ -778,74 +812,86 @@ Partial Class AddNewItem
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 7
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel2.RowCount = 8
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(511, 182)
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(525, 214)
         Me.TableLayoutPanel2.TabIndex = 76
-        '
-        'ChkAlertMinQty
-        '
-        Me.ChkAlertMinQty.Checked = True
-        Me.ChkAlertMinQty.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.ChkAlertMinQty.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ChkAlertMinQty.Location = New System.Drawing.Point(302, 51)
-        Me.ChkAlertMinQty.Name = "ChkAlertMinQty"
-        Me.ChkAlertMinQty.Size = New System.Drawing.Size(206, 22)
-        Me.ChkAlertMinQty.TabIndex = 12
-        Me.ChkAlertMinQty.Text = "تنبيه عند أقل كمية"
-        Me.ChkAlertMinQty.UseVisualStyleBackColor = True
-        '
-        'ChkCheckQtyInSale
-        '
-        Me.ChkCheckQtyInSale.Checked = True
-        Me.ChkCheckQtyInSale.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.ChkCheckQtyInSale.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ChkCheckQtyInSale.Location = New System.Drawing.Point(302, 79)
-        Me.ChkCheckQtyInSale.Name = "ChkCheckQtyInSale"
-        Me.ChkCheckQtyInSale.Size = New System.Drawing.Size(206, 22)
-        Me.ChkCheckQtyInSale.TabIndex = 13
-        Me.ChkCheckQtyInSale.Text = "إنتباه للكمية عند البيع"
-        Me.ChkCheckQtyInSale.UseVisualStyleBackColor = True
-        '
-        'ChkItemHasExpiredDt
-        '
-        Me.ChkItemHasExpiredDt.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ChkItemHasExpiredDt.Location = New System.Drawing.Point(302, 107)
-        Me.ChkItemHasExpiredDt.Name = "ChkItemHasExpiredDt"
-        Me.ChkItemHasExpiredDt.Size = New System.Drawing.Size(206, 22)
-        Me.ChkItemHasExpiredDt.TabIndex = 14
-        Me.ChkItemHasExpiredDt.Text = "صنف له تاريخ صلاحية"
-        Me.ChkItemHasExpiredDt.UseVisualStyleBackColor = True
-        '
-        'ChkAlertBeforeExpiredDt
-        '
-        Me.ChkAlertBeforeExpiredDt.AutoSize = True
-        Me.ChkAlertBeforeExpiredDt.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ChkAlertBeforeExpiredDt.Location = New System.Drawing.Point(302, 135)
-        Me.ChkAlertBeforeExpiredDt.Name = "ChkAlertBeforeExpiredDt"
-        Me.ChkAlertBeforeExpiredDt.Size = New System.Drawing.Size(206, 23)
-        Me.ChkAlertBeforeExpiredDt.TabIndex = 15
-        Me.ChkAlertBeforeExpiredDt.Text = "تنبيه قبل إنتهاء الصلاحية"
-        Me.ChkAlertBeforeExpiredDt.UseVisualStyleBackColor = True
         '
         'PictureBox1
         '
         Me.TableLayoutPanel2.SetColumnSpan(Me.PictureBox1, 2)
         Me.PictureBox1.ErrorImage = Global.HEHAccounting.My.Resources.Resources.Danger
         Me.PictureBox1.Image = Global.HEHAccounting.My.Resources.Resources.photo
-        Me.PictureBox1.Location = New System.Drawing.Point(8, 3)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 3)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.TableLayoutPanel2.SetRowSpan(Me.PictureBox1, 7)
-        Me.PictureBox1.Size = New System.Drawing.Size(281, 176)
+        Me.TableLayoutPanel2.SetRowSpan(Me.PictureBox1, 9)
+        Me.PictureBox1.Size = New System.Drawing.Size(281, 208)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 71
         Me.PictureBox1.TabStop = False
+        '
+        'ChkAlertBeforeExpiredDt
+        '
+        Me.ChkAlertBeforeExpiredDt.AutoSize = True
+        Me.ChkAlertBeforeExpiredDt.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ChkAlertBeforeExpiredDt.Location = New System.Drawing.Point(307, 123)
+        Me.ChkAlertBeforeExpiredDt.Name = "ChkAlertBeforeExpiredDt"
+        Me.ChkAlertBeforeExpiredDt.Size = New System.Drawing.Size(215, 23)
+        Me.ChkAlertBeforeExpiredDt.TabIndex = 15
+        Me.ChkAlertBeforeExpiredDt.Text = "تنبيه قبل إنتهاء الصلاحية"
+        Me.ChkAlertBeforeExpiredDt.UseVisualStyleBackColor = True
+        '
+        'ChkItemHasExpiredDt
+        '
+        Me.ChkItemHasExpiredDt.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ChkItemHasExpiredDt.Location = New System.Drawing.Point(307, 95)
+        Me.ChkItemHasExpiredDt.Name = "ChkItemHasExpiredDt"
+        Me.ChkItemHasExpiredDt.Size = New System.Drawing.Size(215, 22)
+        Me.ChkItemHasExpiredDt.TabIndex = 14
+        Me.ChkItemHasExpiredDt.Text = "صنف له تاريخ صلاحية"
+        Me.ChkItemHasExpiredDt.UseVisualStyleBackColor = True
+        '
+        'ChkCheckQtyInSale
+        '
+        Me.ChkCheckQtyInSale.Checked = True
+        Me.ChkCheckQtyInSale.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.ChkCheckQtyInSale.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ChkCheckQtyInSale.Location = New System.Drawing.Point(307, 67)
+        Me.ChkCheckQtyInSale.Name = "ChkCheckQtyInSale"
+        Me.ChkCheckQtyInSale.Size = New System.Drawing.Size(215, 22)
+        Me.ChkCheckQtyInSale.TabIndex = 13
+        Me.ChkCheckQtyInSale.Text = "إنتباه للكمية عند البيع"
+        Me.ChkCheckQtyInSale.UseVisualStyleBackColor = True
+        '
+        'ChkAlertMinQty
+        '
+        Me.ChkAlertMinQty.Checked = True
+        Me.ChkAlertMinQty.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.ChkAlertMinQty.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ChkAlertMinQty.Location = New System.Drawing.Point(307, 39)
+        Me.ChkAlertMinQty.Name = "ChkAlertMinQty"
+        Me.ChkAlertMinQty.Size = New System.Drawing.Size(215, 22)
+        Me.ChkAlertMinQty.TabIndex = 12
+        Me.ChkAlertMinQty.Text = "تنبيه عند أقل كمية"
+        Me.ChkAlertMinQty.UseVisualStyleBackColor = True
+        '
+        'ChkItemWithoutQuantity
+        '
+        Me.ChkItemWithoutQuantity.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ChkItemWithoutQuantity.Location = New System.Drawing.Point(307, 11)
+        Me.ChkItemWithoutQuantity.Name = "ChkItemWithoutQuantity"
+        Me.ChkItemWithoutQuantity.Size = New System.Drawing.Size(215, 22)
+        Me.ChkItemWithoutQuantity.TabIndex = 72
+        Me.ChkItemWithoutQuantity.Text = "صنف بدون كمية"
+        Me.ChkItemWithoutQuantity.UseVisualStyleBackColor = True
         '
         'TableLayoutPanel3
         '
@@ -858,12 +904,12 @@ Partial Class AddNewItem
         Me.TableLayoutPanel3.Controls.Add(Me.BtnSaveAndNew, 1, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.TxtItemPicture, 0, 0)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(0, 236)
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(0, 268)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 1
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(533, 45)
-        Me.TableLayoutPanel3.TabIndex = 1
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(547, 45)
+        Me.TableLayoutPanel3.TabIndex = 0
         '
         'BtnClose
         '
@@ -871,7 +917,7 @@ Partial Class AddNewItem
         Me.BtnClose.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.Image = Global.HEHAccounting.My.Resources.Resources.Close
         Me.BtnClose.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.BtnClose.Location = New System.Drawing.Point(149, 3)
+        Me.BtnClose.Location = New System.Drawing.Point(155, 3)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(104, 36)
         Me.BtnClose.TabIndex = 1
@@ -884,7 +930,7 @@ Partial Class AddNewItem
         Me.BtnSaveAndNew.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSaveAndNew.Image = Global.HEHAccounting.My.Resources.Resources.Save
         Me.BtnSaveAndNew.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.BtnSaveAndNew.Location = New System.Drawing.Point(283, 3)
+        Me.BtnSaveAndNew.Location = New System.Drawing.Point(292, 3)
         Me.BtnSaveAndNew.Name = "BtnSaveAndNew"
         Me.BtnSaveAndNew.Size = New System.Drawing.Size(102, 36)
         Me.BtnSaveAndNew.TabIndex = 0
@@ -892,22 +938,12 @@ Partial Class AddNewItem
         Me.BtnSaveAndNew.Text = "حفظ _ جديد"
         Me.BtnSaveAndNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         '
-        'ChkItemWithoutQuantity
-        '
-        Me.ChkItemWithoutQuantity.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ChkItemWithoutQuantity.Location = New System.Drawing.Point(302, 23)
-        Me.ChkItemWithoutQuantity.Name = "ChkItemWithoutQuantity"
-        Me.ChkItemWithoutQuantity.Size = New System.Drawing.Size(206, 22)
-        Me.ChkItemWithoutQuantity.TabIndex = 72
-        Me.ChkItemWithoutQuantity.Text = "صنف بدون كمية"
-        Me.ChkItemWithoutQuantity.UseVisualStyleBackColor = True
-        '
         'AddNewItem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(234, Byte), Integer), CType(CType(245, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(533, 281)
+        Me.ClientSize = New System.Drawing.Size(547, 313)
         Me.Controls.Add(Me.AddNewPages)
         Me.Controls.Add(Me.TableLayoutPanel3)
         Me.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -941,10 +977,11 @@ Partial Class AddNewItem
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
         CType(Me.DropCurrency, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MTxtMinQty, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MTxtItemPurchasingPrice, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MTxtItemQty, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MTxtItemSellingPrice, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MTxtMinQty, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MTxtItemQty, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MTxtItemJemliSellingPrice, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PageUnits.ResumeLayout(False)
         Me.TableLayoutPanel6.ResumeLayout(False)
         Me.TableLayoutRight.ResumeLayout(False)
@@ -1027,5 +1064,7 @@ Partial Class AddNewItem
     Friend WithEvents LblCurrency As Label
     Friend WithEvents DropCurrency As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents ChkItemWithoutQuantity As CheckBox
+    Friend WithEvents lblJemliSellingPrice As Label
+    Friend WithEvents MTxtItemJemliSellingPrice As Telerik.WinControls.UI.RadMaskedEditBox
 End Class
 

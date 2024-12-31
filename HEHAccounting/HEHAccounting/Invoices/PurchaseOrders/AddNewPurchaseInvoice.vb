@@ -215,7 +215,6 @@ Public Class AddNewPurchaseInvoice
             For Each row In GridInvItem.Rows
                 If row.Cells("Item_id").Value.ToString = dt.Rows(0).Item("Item_id").ToString Then
                     row.Cells("Qty").Value = row.Cells("Qty").Value + 1
-                    'MessageShowInfo(Con.Msg_Item_Has_Been_Added)
                     Exit Sub
                 End If
             Next

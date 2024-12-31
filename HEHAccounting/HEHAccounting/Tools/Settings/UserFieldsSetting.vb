@@ -21,9 +21,11 @@ Public Class UserFieldsSetting
 
     Private Sub UserSettings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        'Hide not allowed field for users/ programmer options
         chkShowAddSalesOrdersColPurchasePrice.Visible = BoolShowPurchasingPriceInScreensByUser
         chkShowItemsFormColBarcode.Visible = BoolShowBarcode
         chkShowAddSalesOrdersTextProfits.Visible = BoolShowProfitsTextInScreenByUser
+        chkShowAddSalesOrdersTextJemliPrice.Visible = BoolShowJemliSellingPriceInScreenByUser
 
         'Sales Orders
         ChkShowSalesOrdersColCustomerTitle.Checked = BoolShowSalesOrdersColCustomerTitle
@@ -83,6 +85,8 @@ Public Class UserFieldsSetting
         chkShowAddSalesOrdersColPurchasePrice.Checked = BoolShowAddSalesOrdersColPurchasePrice
         chkShowAddSalesOrdersTextCurrencyRate.Checked = BoolShowAddSalesOrdersTextCurrencyRate
         chkShowAddSalesOrdersTextProfits.Checked = BoolShowAddSalesOrdersTextProftis
+        chkShowAddSalesOrdersTextJemliPrice.Checked = BoolShowAddSalesOrdersTextJemliPrice
+
 
         'Purchase Order Setting
         chkAddPurchasesOrdersColPurchasePrice.Checked = BoolShowAddPurchasesOrdersColPurchasePrice
@@ -123,11 +127,13 @@ Public Class UserFieldsSetting
         chkShowGeneralNoteTextCurrencyRate.Checked = BoolShowGeneralNoteTextCurrencyRate
         chkShowGeneralNoteTextAmountEquality.Checked = BoolShowGeneralNoteTextAmountEquality
 
+        ChkShowSalesOrdersColUsername.Checked = myFieldVisibleSetting.bShowSalesOrdersColUsername
+
     End Sub
 
     Private Sub BtnSaveAndNew_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         If MessageShowAsk(Con.Ask_Edit) = DialogResult.Yes Then
-            Dim Param(72) As String
+            Dim Param(73) As String
 
             'Sales Order
             Param(0) = "@bShowSalesOrdersColCustomerTitle , " & IIf(ChkShowSalesOrdersColCustomerTitle.Checked = True, True, False)
@@ -187,47 +193,48 @@ Public Class UserFieldsSetting
             Param(46) = "@bShowAddSalesOrdersColPurchasePrice , " & IIf(chkShowAddSalesOrdersColPurchasePrice.Checked = True, True, False)
             Param(47) = "@bShowAddSalesOrdersTextCurrencyRate , " & IIf(chkShowAddSalesOrdersTextCurrencyRate.Checked = True, True, False)
             Param(48) = "@bShowAddSalesOrdersTextProfits, " & IIf(chkShowAddSalesOrdersTextProfits.Checked = True, True, False)
+            Param(49) = "@bShowAddSalesOrdersTextJemliPrice, " & IIf(chkShowAddSalesOrdersTextJemliPrice.Checked = True, True, False)
 
             'add Purchase Orders
-            Param(49) = "@bShowAddPurchasesOrdersColPurchasePrice , " & IIf(chkAddPurchasesOrdersColPurchasePrice.Checked = True, True, False)
-            Param(50) = "@bShowAddPurchasesOrdersTextCurrencyRate , " & IIf(chkAddPurchasesOrdersTextCurrencyRate.Checked = True, True, False)
+            Param(50) = "@bShowAddPurchasesOrdersColPurchasePrice , " & IIf(chkAddPurchasesOrdersColPurchasePrice.Checked = True, True, False)
+            Param(51) = "@bShowAddPurchasesOrdersTextCurrencyRate , " & IIf(chkAddPurchasesOrdersTextCurrencyRate.Checked = True, True, False)
 
             'Invoice Sales order Report
-            Param(51) = "@bShowInvSaleOrderSubTotalLL , " & IIf(chkShowInvSaleOrderSubTotalLL.Checked = True, True, False)
-            Param(52) = "@bShowInvSaleOrderDiscountLL , " & IIf(chkShowInvSaleOrderDiscountLL.Checked = True, True, False)
-            Param(53) = "@bShowInvSaleOrderTotalDueLL , " & IIf(chkShowInvSaleOrderTotalDueLL.Checked = True, True, False)
-            Param(54) = "@bShowInvSaleOrderSubTotalUSD , " & IIf(chkShowInvSaleOrderSubTotalUSD.Checked = True, True, False)
-            Param(55) = "@bShowInvSaleOrderDiscountUSD , " & IIf(chkShowInvSaleOrderDiscountUSD.Checked = True, True, False)
-            Param(56) = "@bShowInvSaleOrderTotalDueUSD , " & IIf(chkShowInvSaleOrderTotalDueUSD.Checked = True, True, False)
-            Param(57) = "@bShowInvSaleOrderCurrencyRate , " & IIf(chkShowInvSaleOrderCurrencyRate.Checked = True, True, False)
-            Param(58) = "@bShowInvSaleOrderBalanceLL , " & IIf(chkShowInvSaleOrderBalanceLL.Checked = True, True, False)
-            Param(59) = "@bShowInvSaleOrderBalanceUSD , " & IIf(chkShowInvSaleOrderBalanceUSD.Checked = True, True, False)
+            Param(52) = "@bShowInvSaleOrderSubTotalLL , " & IIf(chkShowInvSaleOrderSubTotalLL.Checked = True, True, False)
+            Param(53) = "@bShowInvSaleOrderDiscountLL , " & IIf(chkShowInvSaleOrderDiscountLL.Checked = True, True, False)
+            Param(54) = "@bShowInvSaleOrderTotalDueLL , " & IIf(chkShowInvSaleOrderTotalDueLL.Checked = True, True, False)
+            Param(55) = "@bShowInvSaleOrderSubTotalUSD , " & IIf(chkShowInvSaleOrderSubTotalUSD.Checked = True, True, False)
+            Param(56) = "@bShowInvSaleOrderDiscountUSD , " & IIf(chkShowInvSaleOrderDiscountUSD.Checked = True, True, False)
+            Param(57) = "@bShowInvSaleOrderTotalDueUSD , " & IIf(chkShowInvSaleOrderTotalDueUSD.Checked = True, True, False)
+            Param(58) = "@bShowInvSaleOrderCurrencyRate , " & IIf(chkShowInvSaleOrderCurrencyRate.Checked = True, True, False)
+            Param(59) = "@bShowInvSaleOrderBalanceLL , " & IIf(chkShowInvSaleOrderBalanceLL.Checked = True, True, False)
+            Param(60) = "@bShowInvSaleOrderBalanceUSD , " & IIf(chkShowInvSaleOrderBalanceUSD.Checked = True, True, False)
 
             'Customer Invoices Sales order Report
-            Param(60) = "@bShowCustomerInvSalesOrdersTotalDueUSD, " & IIf(chkShowCustomerInvSaleOrderSubTotalUSD.Checked = True, True, False)
-            Param(61) = "@bShowCustomerInvSalesOrdersTotalDueLL , " & IIf(chkShowCustomerInvSaleOrderSubTotalLL.Checked = True, True, False)
-            Param(62) = "@bShowCustomerInvSalesOrdersCurrencyRate, " & IIf(chkShowCustomerInvSaleOrderCurrencyRate.Checked = True, True, False)
+            Param(61) = "@bShowCustomerInvSalesOrdersTotalDueUSD, " & IIf(chkShowCustomerInvSaleOrderSubTotalUSD.Checked = True, True, False)
+            Param(62) = "@bShowCustomerInvSalesOrdersTotalDueLL , " & IIf(chkShowCustomerInvSaleOrderSubTotalLL.Checked = True, True, False)
+            Param(63) = "@bShowCustomerInvSalesOrdersCurrencyRate, " & IIf(chkShowCustomerInvSaleOrderCurrencyRate.Checked = True, True, False)
 
             'Account Details
-            Param(63) = "@bShowAccountDetailsTextCurrencyRate, " & IIf(chkAccountDetailsTextCurrencyRate.Checked = True, True, False)
+            Param(64) = "@bShowAccountDetailsTextCurrencyRate, " & IIf(chkAccountDetailsTextCurrencyRate.Checked = True, True, False)
 
             'Items Form
-            Param(64) = "@bShowItemsFormColBarcode, " & IIf(chkShowItemsFormColBarcode.Checked = True, True, False)
-            Param(65) = "@bShowItemsFormColLatinName, " & IIf(chkShowItemsFormColLatinName.Checked = True, True, False)
+            Param(65) = "@bShowItemsFormColBarcode, " & IIf(chkShowItemsFormColBarcode.Checked = True, True, False)
+            Param(66) = "@bShowItemsFormColLatinName, " & IIf(chkShowItemsFormColLatinName.Checked = True, True, False)
 
             'Notes Pay
-            Param(66) = "@bShowNotePayTextCurrencyRate, " & IIf(chkShowNotePayTextCurrencyRate.Checked = True, True, False)
-            Param(67) = "@bShowNotePayTextAmountEquality, " & IIf(chkShowNotePayTextAmountEquality.Checked = True, True, False)
+            Param(67) = "@bShowNotePayTextCurrencyRate, " & IIf(chkShowNotePayTextCurrencyRate.Checked = True, True, False)
+            Param(68) = "@bShowNotePayTextAmountEquality, " & IIf(chkShowNotePayTextAmountEquality.Checked = True, True, False)
 
             'Notes Receive
-            Param(68) = "@bShowNoteReceiveTextCurrencyRate, " & IIf(chkShowNoteReceiveTextCurrencyRate.Checked = True, True, False)
-            Param(69) = "@bShowNoteReceiveTextAmountEquality, " & IIf(chkShowNoteReceiveTextAmountEquality.Checked = True, True, False)
+            Param(69) = "@bShowNoteReceiveTextCurrencyRate, " & IIf(chkShowNoteReceiveTextCurrencyRate.Checked = True, True, False)
+            Param(70) = "@bShowNoteReceiveTextAmountEquality, " & IIf(chkShowNoteReceiveTextAmountEquality.Checked = True, True, False)
 
             'General Notes
-            Param(70) = "@bShowGeneralNoteTextCurrencyRate, " & IIf(chkShowGeneralNoteTextCurrencyRate.Checked = True, True, False)
-            Param(71) = "@bShowGeneralNoteTextAmountEquality, " & IIf(chkShowGeneralNoteTextAmountEquality.Checked = True, True, False)
+            Param(71) = "@bShowGeneralNoteTextCurrencyRate, " & IIf(chkShowGeneralNoteTextCurrencyRate.Checked = True, True, False)
+            Param(72) = "@bShowGeneralNoteTextAmountEquality, " & IIf(chkShowGeneralNoteTextAmountEquality.Checked = True, True, False)
 
-            Param(72) = "@IUserID , " & UserID
+            Param(73) = "@IUserID , " & UserID
             ExecuteProcedureWithParameters("UpdateUserFieldsSetting", Param)
         End If
     End Sub

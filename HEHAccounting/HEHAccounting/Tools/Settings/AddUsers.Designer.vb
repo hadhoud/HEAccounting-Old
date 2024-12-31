@@ -50,13 +50,14 @@ Partial Class AddUsers
         Me.lblPermissions = New System.Windows.Forms.Label()
         Me.chkShowHomeForm = New Telerik.WinControls.UI.RadCheckBox()
         Me.chkShowDashboardForm = New Telerik.WinControls.UI.RadCheckBox()
-        Me.chkShowPurchasingPriceInProg = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkShowSalesDailyWin = New Telerik.WinControls.UI.RadCheckBox()
         Me.chkShowItemsSalesWinReport = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkShowProfitsTextInScreen = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkShowPurchasingPriceInProg = New Telerik.WinControls.UI.RadCheckBox()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.BtnClose = New Telerik.WinControls.UI.RadButton()
         Me.BtnSave = New Telerik.WinControls.UI.RadButton()
-        Me.chkShowProfitsTextInScreen = New Telerik.WinControls.UI.RadCheckBox()
-        Me.chkShowSalesDailyWin = New Telerik.WinControls.UI.RadCheckBox()
+        Me.chkShowJemliSellingPriceInProg = New Telerik.WinControls.UI.RadCheckBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TblGridPermissions.SuspendLayout()
         CType(Me.GridPermissions, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -79,13 +80,14 @@ Partial Class AddUsers
         Me.FlowLayoutPanel1.SuspendLayout()
         CType(Me.chkShowHomeForm, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkShowDashboardForm, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chkShowPurchasingPriceInProg, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkShowSalesDailyWin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkShowItemsSalesWinReport, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkShowProfitsTextInScreen, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkShowPurchasingPriceInProg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.BtnClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnSave, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chkShowProfitsTextInScreen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chkShowSalesDailyWin, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkShowJemliSellingPriceInProg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -395,6 +397,7 @@ Partial Class AddUsers
         Me.FlowLayoutPanel1.Controls.Add(Me.chkShowItemsSalesWinReport)
         Me.FlowLayoutPanel1.Controls.Add(Me.chkShowProfitsTextInScreen)
         Me.FlowLayoutPanel1.Controls.Add(Me.chkShowPurchasingPriceInProg)
+        Me.FlowLayoutPanel1.Controls.Add(Me.chkShowJemliSellingPriceInProg)
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(609, 148)
@@ -432,15 +435,15 @@ Partial Class AddUsers
         Me.chkShowDashboardForm.Text = "إظهار شاشة التحليلات"
         Me.chkShowDashboardForm.ThemeName = "Office2010Blue"
         '
-        'chkShowPurchasingPriceInProg
+        'chkShowSalesDailyWin
         '
-        Me.chkShowPurchasingPriceInProg.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkShowPurchasingPriceInProg.Location = New System.Drawing.Point(95, 166)
-        Me.chkShowPurchasingPriceInProg.Name = "chkShowPurchasingPriceInProg"
-        Me.chkShowPurchasingPriceInProg.Size = New System.Drawing.Size(188, 22)
-        Me.chkShowPurchasingPriceInProg.TabIndex = 8
-        Me.chkShowPurchasingPriceInProg.Text = "إظهار سعر الشراء في الشاشات"
-        Me.chkShowPurchasingPriceInProg.ThemeName = "Office2010Blue"
+        Me.chkShowSalesDailyWin.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkShowSalesDailyWin.Location = New System.Drawing.Point(115, 82)
+        Me.chkShowSalesDailyWin.Name = "chkShowSalesDailyWin"
+        Me.chkShowSalesDailyWin.Size = New System.Drawing.Size(168, 22)
+        Me.chkShowSalesDailyWin.TabIndex = 48
+        Me.chkShowSalesDailyWin.Text = "إظهار شاشة أرباح المبيعات"
+        Me.chkShowSalesDailyWin.ThemeName = "Office2010Blue"
         '
         'chkShowItemsSalesWinReport
         '
@@ -451,6 +454,26 @@ Partial Class AddUsers
         Me.chkShowItemsSalesWinReport.TabIndex = 9
         Me.chkShowItemsSalesWinReport.Text = "إظهار شاشة أرباح أصناف مبيعات"
         Me.chkShowItemsSalesWinReport.ThemeName = "Office2010Blue"
+        '
+        'chkShowProfitsTextInScreen
+        '
+        Me.chkShowProfitsTextInScreen.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkShowProfitsTextInScreen.Location = New System.Drawing.Point(99, 138)
+        Me.chkShowProfitsTextInScreen.Name = "chkShowProfitsTextInScreen"
+        Me.chkShowProfitsTextInScreen.Size = New System.Drawing.Size(184, 22)
+        Me.chkShowProfitsTextInScreen.TabIndex = 10
+        Me.chkShowProfitsTextInScreen.Text = "إظهار مربع الربح في الشاشات"
+        Me.chkShowProfitsTextInScreen.ThemeName = "Office2010Blue"
+        '
+        'chkShowPurchasingPriceInProg
+        '
+        Me.chkShowPurchasingPriceInProg.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkShowPurchasingPriceInProg.Location = New System.Drawing.Point(95, 166)
+        Me.chkShowPurchasingPriceInProg.Name = "chkShowPurchasingPriceInProg"
+        Me.chkShowPurchasingPriceInProg.Size = New System.Drawing.Size(188, 22)
+        Me.chkShowPurchasingPriceInProg.TabIndex = 8
+        Me.chkShowPurchasingPriceInProg.Text = "إظهار سعر الشراء في الشاشات"
+        Me.chkShowPurchasingPriceInProg.ThemeName = "Office2010Blue"
         '
         'TableLayoutPanel2
         '
@@ -494,25 +517,15 @@ Partial Class AddUsers
         Me.BtnSave.Text = "حفظ"
         Me.BtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         '
-        'chkShowProfitsTextInScreen
+        'chkShowJemliSellingPriceInProg
         '
-        Me.chkShowProfitsTextInScreen.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkShowProfitsTextInScreen.Location = New System.Drawing.Point(99, 138)
-        Me.chkShowProfitsTextInScreen.Name = "chkShowProfitsTextInScreen"
-        Me.chkShowProfitsTextInScreen.Size = New System.Drawing.Size(184, 22)
-        Me.chkShowProfitsTextInScreen.TabIndex = 10
-        Me.chkShowProfitsTextInScreen.Text = "إظهار مربع الربح في الشاشات"
-        Me.chkShowProfitsTextInScreen.ThemeName = "Office2010Blue"
-        '
-        'chkShowSalesDailyWin
-        '
-        Me.chkShowSalesDailyWin.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkShowSalesDailyWin.Location = New System.Drawing.Point(115, 82)
-        Me.chkShowSalesDailyWin.Name = "chkShowSalesDailyWin"
-        Me.chkShowSalesDailyWin.Size = New System.Drawing.Size(168, 22)
-        Me.chkShowSalesDailyWin.TabIndex = 48
-        Me.chkShowSalesDailyWin.Text = "إظهار شاشة أرباح المبيعات"
-        Me.chkShowSalesDailyWin.ThemeName = "Office2010Blue"
+        Me.chkShowJemliSellingPriceInProg.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkShowJemliSellingPriceInProg.Location = New System.Drawing.Point(67, 194)
+        Me.chkShowJemliSellingPriceInProg.Name = "chkShowJemliSellingPriceInProg"
+        Me.chkShowJemliSellingPriceInProg.Size = New System.Drawing.Size(216, 22)
+        Me.chkShowJemliSellingPriceInProg.TabIndex = 49
+        Me.chkShowJemliSellingPriceInProg.Text = "إظهار مربع سعر الجملة في الشاشات"
+        Me.chkShowJemliSellingPriceInProg.ThemeName = "Office2010Blue"
         '
         'AddUsers
         '
@@ -560,13 +573,14 @@ Partial Class AddUsers
         Me.FlowLayoutPanel1.PerformLayout()
         CType(Me.chkShowHomeForm, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkShowDashboardForm, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chkShowPurchasingPriceInProg, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkShowSalesDailyWin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkShowItemsSalesWinReport, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkShowProfitsTextInScreen, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkShowPurchasingPriceInProg, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel2.ResumeLayout(False)
         CType(Me.BtnClose, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnSave, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chkShowProfitsTextInScreen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chkShowSalesDailyWin, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkShowJemliSellingPriceInProg, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -604,5 +618,6 @@ Partial Class AddUsers
     Friend WithEvents chkShowItemsSalesWinReport As Telerik.WinControls.UI.RadCheckBox
     Friend WithEvents chkShowSalesDailyWin As Telerik.WinControls.UI.RadCheckBox
     Friend WithEvents chkShowProfitsTextInScreen As Telerik.WinControls.UI.RadCheckBox
+    Friend WithEvents chkShowJemliSellingPriceInProg As Telerik.WinControls.UI.RadCheckBox
 End Class
 

@@ -7,6 +7,7 @@ Imports Telerik.WinControls.UI
 Module Currencies
 
     Enum Currency
+        noCurrency = 0
         LebaneaseLire = 1
         Dollar = 2
     End Enum
@@ -87,6 +88,13 @@ Module Currencies
                 Dim culture = New CultureInfo("en-US")
                 culture.NumberFormat.CurrencySymbol = IIf(show_symbol, "$", "")
                 Return String.Format(culture, "{0:C}", Val(amount))
+
+            Case Currency.noCurrency
+                If amount <> Nothing Then
+                    Return amount.ToString()
+                Else
+                    Return "0"
+                End If
 
             Case Else
                 Dim culture = New CultureInfo("en-US")
