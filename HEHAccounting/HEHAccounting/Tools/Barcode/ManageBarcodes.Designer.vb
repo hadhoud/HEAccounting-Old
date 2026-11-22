@@ -97,10 +97,10 @@ Partial Class ManageBarcodes
         Me.PnlOptions.Controls.Add(Me.TableLayoutPanel1)
         Me.PnlOptions.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PnlOptions.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.PnlOptions.Location = New System.Drawing.Point(141, 3)
+        Me.PnlOptions.Location = New System.Drawing.Point(605, 3)
         Me.PnlOptions.Name = "PnlOptions"
         Me.PnlOptions.Padding = New System.Windows.Forms.Padding(3)
-        Me.PnlOptions.Size = New System.Drawing.Size(215, 364)
+        Me.PnlOptions.Size = New System.Drawing.Size(215, 470)
         Me.PnlOptions.TabIndex = 3
         Me.PnlOptions.Tag = ""
         '
@@ -280,10 +280,10 @@ Partial Class ManageBarcodes
         Me.RadPanel1.Controls.Add(Me.TableLayoutPanel5)
         Me.RadPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RadPanel1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.RadPanel1.Location = New System.Drawing.Point(-116, 3)
+        Me.RadPanel1.Location = New System.Drawing.Point(348, 3)
         Me.RadPanel1.Name = "RadPanel1"
         Me.RadPanel1.Padding = New System.Windows.Forms.Padding(3)
-        Me.RadPanel1.Size = New System.Drawing.Size(251, 364)
+        Me.RadPanel1.Size = New System.Drawing.Size(251, 470)
         Me.RadPanel1.TabIndex = 4
         Me.RadPanel1.Tag = ""
         '
@@ -543,7 +543,7 @@ Partial Class ManageBarcodes
         Me.GridItems.MasterTemplate.SummaryRowsBottom.Add(New Telerik.WinControls.UI.GridViewSummaryRowItem(New Telerik.WinControls.UI.GridViewSummaryItem() {GridViewSummaryItem1, GridViewSummaryItem2, GridViewSummaryItem3}))
         Me.GridItems.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.GridItems.Name = "GridItems"
-        Me.GridItems.Size = New System.Drawing.Size(1, 364)
+        Me.GridItems.Size = New System.Drawing.Size(339, 470)
         Me.GridItems.TabIndex = 5
         Me.GridItems.ThemeName = "Office2010Blue"
         '
@@ -561,7 +561,7 @@ Partial Class ManageBarcodes
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.RowCount = 1
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(359, 370)
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(823, 476)
         Me.TableLayoutPanel4.TabIndex = 17
         '
         'ManageBarcodes
@@ -570,7 +570,7 @@ Partial Class ManageBarcodes
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(234, Byte), Integer), CType(CType(245, Byte), Integer))
         Me.CancelButton = Me.BtnClearGrid
-        Me.ClientSize = New System.Drawing.Size(359, 370)
+        Me.ClientSize = New System.Drawing.Size(823, 476)
         Me.Controls.Add(Me.TableLayoutPanel4)
         Me.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

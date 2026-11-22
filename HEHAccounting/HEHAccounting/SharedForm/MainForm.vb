@@ -458,6 +458,7 @@ Public Class MainForm
         AddHandler GeneralNotesReceive.Click, AddressOf OpenGeneralNotesReceive
         AddHandler RadMenuBackup.Click, AddressOf OpenBackupDbForm
         AddHandler RadMenuRestore.Click, AddressOf OpenRestoreDbForm
+        AddHandler RibBtnDesignExcelReport.Click, AddressOf OpenReportSetting
         FrmOpenTimer.Interval = 200
     End Sub
 
@@ -764,6 +765,11 @@ Public Class MainForm
         Dim FrmGeneralNotesReceive As New GeneralNotes
         FrmGeneralNotesReceive.GeneralType = "NGR"
         FrmGeneralNotesReceive.ShowDialog()
+    End Sub
+
+    Private Sub OpenReportSetting()
+        Dim FrmManageExcelReports As New ManageExcelReports
+        FrmManageExcelReports.ShowDialog()
     End Sub
 
     Private Sub RibBtnCustomers_Click(sender As Object, e As EventArgs)

@@ -3,28 +3,35 @@
   "WorkspaceRootPath": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|c:\\users\\hp\\source\\repos\\hehaccounting\\hehaccounting\\hehaccounting\\tools\\barcode\\managebarcodes.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|solutionrelative:hehaccounting\\tools\\barcode\\managebarcodes.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|c:\\users\\hp\\source\\repos\\hehaccounting\\hehaccounting\\hehaccounting\\reports\\manageexcelreports.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|solutionrelative:hehaccounting\\reports\\manageexcelreports.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|c:\\users\\hp\\source\\repos\\hehaccounting\\hehaccounting\\hehaccounting\\sharedclasses\\heconstant.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|solutionrelative:hehaccounting\\sharedclasses\\heconstant.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|c:\\users\\hp\\source\\repos\\hehaccounting\\hehaccounting\\hehaccounting\\reports\\pricesreport.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|solutionrelative:hehaccounting\\reports\\pricesreport.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|c:\\users\\hp\\source\\repos\\hehaccounting\\hehaccounting\\hehaccounting\\tools\\barcode\\managebarcodes.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|solutionrelative:hehaccounting\\tools\\barcode\\managebarcodes.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|c:\\users\\hp\\source\\repos\\hehaccounting\\hehaccounting\\hehaccounting\\reports\\manageexcelreports.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|solutionrelative:hehaccounting\\reports\\manageexcelreports.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|c:\\users\\hp\\source\\repos\\hehaccounting\\hehaccounting\\hehaccounting\\items\\items.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|solutionrelative:hehaccounting\\items\\items.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\hehaccounting\\sharedform\\mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|solutionrelative:hehaccounting\\sharedform\\mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|c:\\users\\hp\\source\\repos\\hehaccounting\\hehaccounting\\hehaccounting\\sharedclasses\\controlsfunctions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|solutionrelative:hehaccounting\\sharedclasses\\controlsfunctions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\hehaccounting\\sharedform\\mainform.designer.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|solutionrelative:hehaccounting\\sharedform\\mainform.designer.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|c:\\users\\hp\\source\\repos\\hehaccounting\\hehaccounting\\hehaccounting\\items\\items.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|solutionrelative:hehaccounting\\items\\items.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|HEHAccounting||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|c:\\users\\hp\\source\\repos\\hehaccounting\\hehaccounting\\hehaccounting\\sharedform\\mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|solutionrelative:hehaccounting\\sharedform\\mainform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|c:\\users\\hp\\source\\repos\\hehaccounting\\hehaccounting\\hehaccounting\\my project\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{C78C0A0B-7BFA-460D-A8B2-156023B0C231}|HEHAccounting\\HEHAccounting.vbproj|solutionrelative:hehaccounting\\my project\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,22 +41,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 15,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Items.vb",
-              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\Items\\Items.vb",
-              "RelativeDocumentMoniker": "HEHAccounting\\Items\\Items.vb",
-              "ToolTip": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\Items\\Items.vb",
-              "RelativeToolTip": "HEHAccounting\\Items\\Items.vb",
-              "ViewState": "AQIAAKEAAAAAAAAAAAAowK8AAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-12-31T09:38:13.937Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
@@ -109,65 +102,89 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "HEConstant.vb",
-              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\SharedClasses\\HEConstant.vb",
-              "RelativeDocumentMoniker": "HEHAccounting\\SharedClasses\\HEConstant.vb",
-              "ToolTip": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\SharedClasses\\HEConstant.vb",
-              "RelativeToolTip": "HEHAccounting\\SharedClasses\\HEConstant.vb",
-              "ViewState": "AQIAAJIBAAAAAAAAAAAuwJ4BAABCAAAA",
+              "Title": "PricesReport.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\Reports\\PricesReport.vb",
+              "RelativeDocumentMoniker": "HEHAccounting\\Reports\\PricesReport.vb",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\Reports\\PricesReport.vb [Design]",
+              "RelativeToolTip": "HEHAccounting\\Reports\\PricesReport.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-12-31T12:02:36.445Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ManageBarcodes.vb",
-              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\Tools\\Barcode\\ManageBarcodes.vb",
-              "RelativeDocumentMoniker": "HEHAccounting\\Tools\\Barcode\\ManageBarcodes.vb",
-              "ToolTip": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\Tools\\Barcode\\ManageBarcodes.vb",
-              "RelativeToolTip": "HEHAccounting\\Tools\\Barcode\\ManageBarcodes.vb",
-              "ViewState": "AQIAAF4BAAAAAAAAAAAIwG0BAAALAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-12-31T12:02:04.493Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ManageBarcodes.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\Tools\\Barcode\\ManageBarcodes.vb",
-              "RelativeDocumentMoniker": "HEHAccounting\\Tools\\Barcode\\ManageBarcodes.vb",
-              "ToolTip": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\Tools\\Barcode\\ManageBarcodes.vb [Design]",
-              "RelativeToolTip": "HEHAccounting\\Tools\\Barcode\\ManageBarcodes.vb [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-12-31T12:02:01.117Z",
+              "WhenOpened": "2025-09-01T21:13:25.913Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ControlsFunctions.vb",
-              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\SharedClasses\\ControlsFunctions.vb",
-              "RelativeDocumentMoniker": "HEHAccounting\\SharedClasses\\ControlsFunctions.vb",
-              "ToolTip": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\SharedClasses\\ControlsFunctions.vb",
-              "RelativeToolTip": "HEHAccounting\\SharedClasses\\ControlsFunctions.vb",
-              "ViewState": "AQIAAJYAAAAAAAAAAAAowKcAAAAxAAAA",
+              "DocumentIndex": 0,
+              "Title": "ManageExcelReports.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\Reports\\ManageExcelReports.vb",
+              "RelativeDocumentMoniker": "HEHAccounting\\Reports\\ManageExcelReports.vb",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\Reports\\ManageExcelReports.vb [Design]",
+              "RelativeToolTip": "HEHAccounting\\Reports\\ManageExcelReports.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-12-31T09:40:37.622Z",
+              "WhenOpened": "2025-09-01T20:37:20.472Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ManageExcelReports.vb",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\Reports\\ManageExcelReports.vb",
+              "RelativeDocumentMoniker": "HEHAccounting\\Reports\\ManageExcelReports.vb",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\Reports\\ManageExcelReports.vb",
+              "RelativeToolTip": "HEHAccounting\\Reports\\ManageExcelReports.vb",
+              "ViewState": "AQIAACEAAAAAAAAAAAAkwC4AAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-09-01T20:44:22.227Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Items.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\Items\\Items.vb",
-              "RelativeDocumentMoniker": "HEHAccounting\\Items\\Items.vb",
-              "ToolTip": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\Items\\Items.vb [Design]",
-              "RelativeToolTip": "HEHAccounting\\Items\\Items.vb [Design]",
+              "Title": "HEHAccounting",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\HEHAccounting.vbproj",
+              "RelativeDocumentMoniker": "HEHAccounting\\HEHAccounting.vbproj",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\HEHAccounting.vbproj",
+              "RelativeToolTip": "HEHAccounting\\HEHAccounting.vbproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-01T20:31:50.885Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainForm.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\SharedForm\\MainForm.vb",
+              "RelativeDocumentMoniker": "HEHAccounting\\SharedForm\\MainForm.vb",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\SharedForm\\MainForm.vb [Design]",
+              "RelativeToolTip": "HEHAccounting\\SharedForm\\MainForm.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-12-31T09:38:25.031Z",
+              "WhenOpened": "2025-09-01T20:28:01.655Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainForm.Designer.vb",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\SharedForm\\MainForm.Designer.vb",
+              "RelativeDocumentMoniker": "HEHAccounting\\SharedForm\\MainForm.Designer.vb",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\SharedForm\\MainForm.Designer.vb",
+              "RelativeToolTip": "HEHAccounting\\SharedForm\\MainForm.Designer.vb",
+              "ViewState": "AQIAANoCAAAAAAAAAAAkwOUCAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-06-16T13:34:47.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainForm.vb",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\SharedForm\\MainForm.vb",
+              "RelativeDocumentMoniker": "HEHAccounting\\SharedForm\\MainForm.vb",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\HEHAccounting\\HEHAccounting\\HEHAccounting\\SharedForm\\MainForm.vb",
+              "RelativeToolTip": "HEHAccounting\\SharedForm\\MainForm.vb",
+              "ViewState": "AQIAALkBAAAAAAAAAAAYwMUBAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-06-16T13:34:46.053Z",
+              "EditorCaption": ""
             }
           ]
         }

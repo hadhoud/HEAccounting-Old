@@ -93,6 +93,8 @@ Partial Class MainForm
         Me.RGTreasuryProfits = New Telerik.WinControls.UI.RadRibbonBarGroup()
         Me.RGTreasuryReports = New Telerik.WinControls.UI.RadRibbonBarGroup()
         Me.RibTabReports = New Telerik.WinControls.UI.RibbonTab()
+        Me.RGReportsSettings = New Telerik.WinControls.UI.RadRibbonBarGroup()
+        Me.RibBtnDesignExcelReport = New Telerik.WinControls.UI.RadButtonElement()
         Me.RGReportsDebitCredit = New Telerik.WinControls.UI.RadRibbonBarGroup()
         Me.RibBtnCreditsReport = New Telerik.WinControls.UI.RadButtonElement()
         Me.RibBtnDebitsReport = New Telerik.WinControls.UI.RadButtonElement()
@@ -494,7 +496,7 @@ Partial Class MainForm
         '
         'RibTabTools
         '
-        Me.RibTabTools.IsSelected = True
+        Me.RibTabTools.IsSelected = False
         Me.RibTabTools.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RGToolsItems, Me.RGGournalEntry, Me.RGToolsAccounts, Me.RGToolsBarCode, Me.RGToolsCurrency})
         Me.RibTabTools.Name = "RibTabTools"
         Me.RibTabTools.Text = "أدوات"
@@ -721,11 +723,25 @@ Partial Class MainForm
         '
         'RibTabReports
         '
-        Me.RibTabReports.IsSelected = False
-        Me.RibTabReports.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RGReportsDebitCredit, Me.RGItemsReports, Me.RGReportsGeneralReports})
+        Me.RibTabReports.IsSelected = True
+        Me.RibTabReports.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RGReportsSettings, Me.RGReportsDebitCredit, Me.RGItemsReports, Me.RGReportsGeneralReports})
         Me.RibTabReports.Name = "RibTabReports"
         Me.RibTabReports.Text = "تقارير"
         Me.RibTabReports.UseMnemonic = False
+        '
+        'RGReportsSettings
+        '
+        Me.RGReportsSettings.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RibBtnDesignExcelReport})
+        Me.RGReportsSettings.Name = "RGReportsSettings"
+        Me.RGReportsSettings.Text = "الإعدادات"
+        '
+        'RibBtnDesignExcelReport
+        '
+        Me.RibBtnDesignExcelReport.Image = Global.HEHAccounting.My.Resources.Resources.excel32
+        Me.RibBtnDesignExcelReport.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RibBtnDesignExcelReport.Name = "RibBtnDesignExcelReport"
+        Me.RibBtnDesignExcelReport.Text = "تصميم إكسل"
+        Me.RibBtnDesignExcelReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'RGReportsDebitCredit
         '
@@ -1235,7 +1251,9 @@ Partial Class MainForm
     Friend WithEvents RibBtnAccountReport As Telerik.WinControls.UI.RadButtonElement
     Friend WithEvents RibBtnOpenningBalance As Telerik.WinControls.UI.RadButtonElement
     Friend WithEvents RGReportsDebitCredit As Telerik.WinControls.UI.RadRibbonBarGroup
+    Friend WithEvents RGReportsSettings As Telerik.WinControls.UI.RadRibbonBarGroup
     Friend WithEvents RibBtnCreditsReport As Telerik.WinControls.UI.RadButtonElement
+    Friend WithEvents RibBtnDesignExcelReport As Telerik.WinControls.UI.RadButtonElement
     Friend WithEvents RibBtnDebitsReport As Telerik.WinControls.UI.RadButtonElement
     Friend WithEvents RibBtnItemsInventory As Telerik.WinControls.UI.RadButtonElement
     Friend WithEvents RGItemsReports As Telerik.WinControls.UI.RadRibbonBarGroup

@@ -362,6 +362,12 @@
     <Compile Include="Reports\ItemsSell.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reports\ManageExcelReports.Designer.vb">
+      <DependentUpon>ManageExcelReports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ManageExcelReports.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reports\PricesReport.Designer.vb">
       <DependentUpon>PricesReport.vb</DependentUpon>
     </Compile>
@@ -752,6 +758,9 @@
     <EmbeddedResource Include="Reports\ItemsSell.resx">
       <DependentUpon>ItemsSell.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ManageExcelReports.resx">
+      <DependentUpon>ManageExcelReports.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\PricesReport.resx">
       <DependentUpon>PricesReport.vb</DependentUpon>
     </EmbeddedResource>
@@ -1006,6 +1015,8 @@
     <None Include="Resources\barcode-scan.png" />
     <None Include="Resources\import.png" />
     <None Include="Resources\import %281%29.png" />
+    <None Include="Resources\excel48.png" />
+    <None Include="Resources\excel32.png" />
     <Content Include="SQL\NeededSqlFiles\DefaultData.sql" />
     <Content Include="SQL\NeededSqlFiles\ResetProgramData.sql" />
     <Content Include="WhatsNew.txt" />
